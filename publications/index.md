@@ -25,23 +25,23 @@ image:
 
 22. J. Luo, P. Benjamin, **L. Gerhards**, H. J. Hogben, P. J. Hore. *Orientation of birds in radiofrequency fields in the absence of the Earth’s magnetic field – a possible test for the radical pair mechanism of magnetoreception*. J. Ro. Soc. Int., Volume 21, 217, 20240133, 2024.
 
-21. G. Gr\"uning, **L. Gerhards**, S. Y. Wong, D. R. Kattnig, I. A. Solov'yov. *The effect of spin relaxation on magnetic compass sensitivity in ErCry4a*. ChemPhysChem, e202400129, 1439-4235, 2024.
+21. G. Grüning, **L. Gerhards**, S. Y. Wong, D. R. Kattnig, I. A. Solov'yov. *The effect of spin relaxation on magnetic compass sensitivity in ErCry4a*. ChemPhysChem, e202400129, 1439-4235, 2024.
 
 20. A. Frederiksen, M. Aldag, I. A. Solov'yov, **L. Gerhards\***. *Activation of cryptochrome 4 from atlantic herring*. Biology, Volume 13, 4, 262, 2024.
 
-19. D. Timmer, G. Hergert, **L. Gerhards**, D. C. L\"unemann, N. Schr\"oder, A. De Sio, I. A. Solov'yov, J. Christoffers, C. Lienau. *Structural flexibility slows down charge Transfers in diaminoterephthalate-C60 dyads*. J. Phys. Chem. C, Volume 128, 6, 2380–2391, 2024.
+19. D. Timmer, G. Hergert, **L. Gerhards**, D. C. Lünemann, N. Schr\"oder, A. De Sio, I. A. Solov'yov, J. Christoffers, C. Lienau. *Structural flexibility slows down charge Transfers in diaminoterephthalate-C60 dyads*. J. Phys. Chem. C, Volume 128, 6, 2380–2391, 2024.
 
 18. J. C. Stephani, **L. Gerhards**, B. Khairalla, I. A. Solov’yov, I. Brand. *How do antimicrobial peptides interact with the outer membrane of gram-negative bacteria? Role of lipopolysaccharides in the peptide binding, anchoring and penetration*. ACS Infect. Dis., Volume 10, 2, 763–778, 2024.
 
 17. C. Yuan, **L. Gerhards**, I. A. Solov'yov, K. Dedek. *Biotin-cGMP and -cAMP are able to permeate through the gap junctions of some amacrine cells in the mouse retina despite their large size*. Front. Ophthalmol., Volume 3, 1334602, 2023.
 
-16. **L. Gerhards\***, M. Werr, O. H\"ubner, I. Solov'yov, H-J. Himmel. *On the peculiar differences of two copper complexes containing similar redox-active ligands: density functional and multiconfigurational calculations*. Inorg. Chem., Volume 63, 2, 961–975, 2024.
+16. **L. Gerhards\***, M. Werr, O. Hübner, I. Solov'yov, H-J. Himmel. *On the peculiar differences of two copper complexes containing similar redox-active ligands: density functional and multiconfigurational calculations*. Inorg. Chem., Volume 63, 2, 961–975, 2024.
 
 15. L. Jacobsen, J. Hungerland, V. Bačić, **L. Gerhards**, F. Schuhmann, I. A. Solov'yov. *Introducing the automated ligand searcher (ALISE)*. J. Chem. Inf. Model., Volume 63, 23, 7518–7528, 2023.
 
 14. N. Mitschke, W. C. Sum, K. Hassan, M. Kirchenwitz, H. Schrey, **L. Gerhards**, H. Kellner, T. E. B. Stradal, J. C. Matasyoh, M. Stadler. *Biologically active drimane derivatives isolated from submerged cultures of the wood-inhabiting basidiomycete dentipellis fragilis*. RSC Advances, Volume 13, Number 37, 25752-257610, 2023.
 
-13. N. Thoben, T. Kaper, S. de Graaff, **L. Gerhards**, M. Schmidtmann, T. Kl\"uner, R. Beckhaus, S. Doye. *Density functional theory calculations for multiple conformers explaining the regio-and stereoselectivity of Ti-catalyzed hydroaminoalkylation Reactions*. ChemPhysChem, e202300370, 2023.
+13. N. Thoben, T. Kaper, S. de Graaff, **L. Gerhards**, M. Schmidtmann, T. Klüner, R. Beckhaus, S. Doye. *Density functional theory calculations for multiple conformers explaining the regio-and stereoselectivity of Ti-catalyzed hydroaminoalkylation Reactions*. ChemPhysChem, e202300370, 2023.
 
 12. F. Schuhmann, L. Ryvkin, J. D. McLaren, **L. Gerhards**, I. A. Solov'yov. *Across atoms to crossing continents: application of similarity measures to biological location data*. PLoS One, Volume 18, Number 5, e0284736, 2023.
 
@@ -49,7 +49,7 @@ image:
 
 10. J. Matysik, **L. Gerhards**, T. Theiss, L. Timmermann, P. Kurle-Tucholski, G. Musabirova, R. Qin, F. Ortmann, I. A. Solov’yov, T. Gulder. *Spin dynamics of flavoproteins*. Int. J. Mol. Sci., Volume 24, Number 9, 8218, 2023.
 
-9. G. Gr\"uning, S. Y. Wong, **L. Gerhards**, F. Schuhmann, D. R. Kattnig, P. J. Hore, I. A. Solov'yov. *Effects of dynamical degrees of freedom on magnetic compass sensitivity: a comparison of plant and avian cryptochromes*. J. Am. Chem. Soc., Volume 144, Number 50, 22902-22914, 2022.
+9. G. Grüning, S. Y. Wong, **L. Gerhards**, F. Schuhmann, D. R. Kattnig, P. J. Hore, I. A. Solov'yov. *Effects of dynamical degrees of freedom on magnetic compass sensitivity: a comparison of plant and avian cryptochromes*. J. Am. Chem. Soc., Volume 144, Number 50, 22902-22914, 2022.
 
 8. F. Schuhmann, X. Tan, **L. Gerhards**, H. N. Bordallo, I. A. Solov’yov. *The same, but different, but still the same: structural and dynamical differences of neutrophil elastase and cathepsin G*. EPJD, Volume 76, Number 7, 126, 2022.
 
@@ -57,15 +57,15 @@ image:
 
 6. **L. Gerhards\***. *Quantum chemical investigation of the photocatalytic sulfoxidation of hydrocarbons: a potential new reaction for industry*. Ph.D. thesis, Universität Oldenburg, 2022.
 
-5. **L. Gerhards\***, T. Kl\"uner. *Theoretical investigation of CH-bond activation by photocatalytic excited SO2 and the effects of C-, N-, S-, and Se-doped TiO2*. Phys. Chem. Chem. Phys., Volume 24, Number 4, 2051-2069, 2022.
+5. **L. Gerhards\***, T. Klüner. *Theoretical investigation of CH-bond activation by photocatalytic excited SO2 and the effects of C-, N-, S-, and Se-doped TiO2*. Phys. Chem. Chem. Phys., Volume 24, Number 4, 2051-2069, 2022.
 
-4. **L. Gerhards\***, T. Kl\"uner. *Quantum chemical investigation of photocatalytical sulfoxidation of hydrocarbons on TiO2*. J. Phys. Chem. C, Volume 125, Number 24, 13313-13323, 2021.
+4. **L. Gerhards\***, T. Klüner. *Quantum chemical investigation of photocatalytical sulfoxidation of hydrocarbons on TiO2*. J. Phys. Chem. C, Volume 125, Number 24, 13313-13323, 2021.
 
-3. L. Mohrhusen, **L. Gerhards**, D. Hirsch, T. Kl\"uner, K. Al-Shamery. *Multidentate interaction of methylamine with rutile TiO2 (110)*. J. Phys. Chem. C, Volume 125, Number 22, 11975-11986, 2021.
+3. L. Mohrhusen, **L. Gerhards**, D. Hirsch, T. Klüner, K. Al-Shamery. *Multidentate interaction of methylamine with rutile TiO2 (110)*. J. Phys. Chem. C, Volume 125, Number 22, 11975-11986, 2021.
 
-2. F. Balzaretti, M. von Einem, **L. Gerhards**, W. Dononelli, T. Stauch, T. Kl\"uner, S. K\"oppen, S. Kl\"uner. *Charge-transfer promoted fixation of glyphosate on TiO2 - a multiscale approach*. ChemArxiv, 2021.
+2. F. Balzaretti, M. von Einem, **L. Gerhards**, W. Dononelli, T. Stauch, T. Klüner, S. Köppen. *Charge-transfer promoted fixation of glyphosate on TiO2 - a multiscale approach*. ChemArxiv, 2021.
 
-1. A. Markovic^+, **L. Gerhards^+**, P. Sander, C. Dosche, T. Kl\"uner, R. Beckhaus, G. Wittstock, T. Kl\"uner. *Electronic transitions in different redox states of trinuclear 5,6,11,12,17,18-hexaazatrinaphthylene-bridged titanium complexes: Spectroelectrochemistry and Quantum Chemistry*. ChemPhysChem, Volume 21, Number 22, 2506-2514, 2020.
+1. A. Markovic^+, **L. Gerhards^+**, P. Sander, C. Dosche, T. Klüner, R. Beckhaus, G. Wittstock. *Electronic transitions in different redox states of trinuclear 5,6,11,12,17,18-hexaazatrinaphthylene-bridged titanium complexes: Spectroelectrochemistry and Quantum Chemistry*. ChemPhysChem, Volume 21, Number 22, 2506-2514, 2020.
 
 ---
 
