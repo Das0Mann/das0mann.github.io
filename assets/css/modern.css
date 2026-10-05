@@ -1282,15 +1282,17 @@ h3 { font-size: 1.25rem; }
   fill: #e4ffff;
 }
 
+.rp-spin-left,
+.rp-spin-right {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
 .rp-spin-left {
-  transform-box: view-box;
-  transform-origin: 155px 128px;
   animation: rp-precess-left 6.4s ease-in-out infinite;
 }
 
 .rp-spin-right {
-  transform-box: view-box;
-  transform-origin: 265px 128px;
   animation: rp-precess-right 7.2s ease-in-out infinite;
 }
 
