@@ -9,12 +9,6 @@ The News page now tracks selected public research and professional updates rathe
 <div class="news-list">
 
 <article class="news-item">
-  <span class="news-meta">October 2026 · Website</span>
-  <h3>quantum-chemistry.org is now the home of this research website</h3>
-  <p>The site has moved to the dedicated <strong>quantum-chemistry.org</strong> domain and has been redesigned around current work in theoretical chemistry, spin dynamics and multiscale molecular modelling.</p>
-</article>
-
-<article class="news-item">
   <span class="news-meta">2026 · Review</span>
   <h3>Multiscale modeling approaches in biomolecular physics</h3>
   <p>A new review in <em>Advances in Physics: X</em> discusses how molecular simulation and quantum-level methods can be connected across scales in biomolecular physics. <a href="https://doi.org/10.1080/23746149.2026.2660655" target="_blank" rel="noopener">Publication →</a></p>
