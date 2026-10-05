@@ -400,11 +400,11 @@ permalink: /lecture/
       </div>
       <div class="lecture-equation compact">
       \[
-      P_T(t)=
-      \frac{4V^2}{\Delta^2+4V^2}
-      \sin^2\!\left(\pi\Omega t\right),
-      \qquad
-      \Omega=\sqrt{\Delta^2+4V^2}
+      \begin{aligned}
+      P_T(t)&=A\,\sin^2\!\left(\pi\Omega t\right),\\
+      A&=\frac{4V^2}{\Delta^2+4V^2},\\
+      \Omega&=\sqrt{\Delta^2+4V^2}.
+      \end{aligned}
       \]
       </div>
     </div>
@@ -470,7 +470,7 @@ permalink: /lecture/
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
     <div>
-      <p class="section-eyebrow">Molecular motion &amp; open systems</p>
+      <p class="section-eyebrow">Molecular motion</p>
       <h2>The Hamiltonian is often moving too</h2>
     </div>
   </div>
@@ -527,7 +527,7 @@ permalink: /lecture/
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
     <div>
-      <p class="section-eyebrow">What do we actually measure?</p>
+      <p class="section-eyebrow">From theory to experiment</p>
       <h2>Translate the dynamics into an experiment</h2>
     </div>
   </div>
