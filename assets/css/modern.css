@@ -1523,3 +1523,617 @@ h3 { font-size: 1.25rem; }
     animation: none !important;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture: electronic structure + spin dynamics
+   --------------------------------------------------------- */
+.page-lecture .site-main {
+  width: min(calc(100% - 44px), 1180px);
+}
+
+.page-lecture .page-content {
+  width: 100%;
+  max-width: none;
+  padding: clamp(30px, 4.5vw, 58px);
+}
+
+.lecture-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.lecture-intro {
+  max-width: 880px;
+  margin: 0 0 28px !important;
+  color: var(--ink-soft) !important;
+  font-size: 1.12rem !important;
+  line-height: 1.82 !important;
+}
+
+.lecture-toc {
+  position: sticky;
+  top: 84px;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 56px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.9);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+}
+
+.lecture-toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 0 !important;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--navy) !important;
+  font-family: "Inter", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.lecture-toc a:hover {
+  background: var(--navy);
+  color: white !important;
+}
+
+.lecture-section {
+  scroll-margin-top: 150px;
+  margin-top: 74px;
+  padding-top: 42px;
+  border-top: 1px solid var(--line);
+}
+
+.lecture-section:first-of-type {
+  margin-top: 0;
+}
+
+.lecture-section > h2 {
+  max-width: 840px;
+  margin: 0 0 20px;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+}
+
+.lecture-section > p {
+  max-width: 880px;
+}
+
+.lecture-equation {
+  margin: 25px 0;
+  padding: 18px 22px;
+  overflow-x: auto;
+  border: 1px solid #d4e6e9;
+  border-radius: 14px;
+  background:
+    linear-gradient(120deg, rgba(231,246,247,.7), rgba(255,255,255,.95));
+  color: var(--navy);
+  text-align: center;
+}
+
+.lecture-equation.compact {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.lecture-equation .MathJax_Display {
+  margin: .2em 0 !important;
+}
+
+.equation-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.lecture-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 28px 0 6px;
+}
+
+.lecture-concept {
+  position: relative;
+  min-height: 170px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.lecture-number {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.lecture-concept h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.lecture-concept p {
+  margin: 0;
+  color: var(--muted) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .86rem !important;
+  line-height: 1.6 !important;
+}
+
+.hamiltonian-legend {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 28px 0;
+}
+
+.hamiltonian-legend div {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+}
+
+.hamiltonian-legend strong,
+.hamiltonian-legend span {
+  display: block;
+}
+
+.hamiltonian-legend strong {
+  margin-bottom: 5px;
+  color: var(--navy);
+  font-size: .88rem;
+}
+
+.hamiltonian-legend span {
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.48;
+}
+
+.interactive-card {
+  margin: 34px 0;
+  padding: 25px;
+  border: 1px solid #cfe2e6;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 95% 5%, rgba(73,195,201,.09), transparent 15rem),
+    #fff;
+  box-shadow: 0 12px 34px rgba(7,29,49,.055);
+}
+
+.interactive-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 13px;
+}
+
+.interactive-head h3 {
+  margin: 3px 0 0;
+  font-size: 1.25rem;
+}
+
+.interactive-kicker {
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.interactive-model-note {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--navy);
+  font-size: .69rem;
+  font-weight: 700;
+}
+
+.interactive-card > p {
+  max-width: 850px;
+  margin-top: 8px;
+}
+
+.interactive-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+  gap: 28px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.interactive-controls label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 5px;
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.interactive-controls output {
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.interactive-controls input[type="range"] {
+  width: 100%;
+  margin: 0 0 21px;
+  accent-color: var(--accent);
+}
+
+.interactive-readout {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--canvas);
+}
+
+.interactive-readout span {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: .74rem;
+}
+
+.interactive-readout strong {
+  color: var(--navy);
+  font-size: .78rem;
+}
+
+.lecture-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    linear-gradient(rgba(20,80,100,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,80,100,.035) 1px, transparent 1px),
+    #fbfdfe;
+  background-size: 24px 24px;
+}
+
+.energy-line {
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.energy-line.muted {
+  stroke: #9eb1bb;
+}
+
+.energy-line.active {
+  stroke: var(--accent);
+}
+
+.mix-line {
+  fill: none;
+  stroke: rgba(28,136,148,.35);
+  stroke-width: 1.5;
+}
+
+.mix-line.faint {
+  stroke-dasharray: 4 5;
+}
+
+.svg-caption,
+.svg-label,
+.svg-tick {
+  fill: #617783;
+  font-family: "Inter", sans-serif;
+}
+
+.svg-caption {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .03em;
+}
+
+.svg-label {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.svg-tick {
+  font-size: 8px;
+}
+
+.precession-orbit {
+  fill: none;
+  stroke: rgba(28,136,148,.35);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 6;
+}
+
+.field-axis {
+  stroke: #7a909c;
+  stroke-width: 1.4;
+}
+
+.field-arrow {
+  fill: #7a909c;
+}
+
+.spin-origin,
+.spin-tip {
+  fill: var(--accent);
+}
+
+.spin-vector-demo {
+  stroke: var(--navy);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.spin-arrow-demo {
+  fill: var(--navy);
+}
+
+.spin-projection {
+  stroke: rgba(28,136,148,.42);
+  stroke-width: 1.1;
+  stroke-dasharray: 4 4;
+}
+
+.lecture-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.lecture-flow > div {
+  position: relative;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.lecture-flow span {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 16px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.lecture-flow strong,
+.lecture-flow small {
+  display: block;
+}
+
+.lecture-flow strong {
+  margin-bottom: 6px;
+  color: var(--navy);
+  font-size: .83rem;
+}
+
+.lecture-flow small {
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+.plot-wrap {
+  min-width: 0;
+}
+
+.plot-axis {
+  stroke: #9aaeb8;
+  stroke-width: 1;
+}
+
+.population-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.singlet-line {
+  stroke: var(--navy-2);
+}
+
+.triplet-line {
+  stroke: var(--accent);
+}
+
+.interactive-footnote {
+  margin: 18px 0 0 !important;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: var(--muted) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .75rem !important;
+  line-height: 1.55 !important;
+}
+
+.lecture-pipeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.lecture-pipeline > div:not(.pipeline-arrow) {
+  min-height: 112px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.lecture-pipeline span,
+.lecture-pipeline strong {
+  display: block;
+}
+
+.lecture-pipeline span {
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.lecture-pipeline strong {
+  color: var(--navy);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+.pipeline-arrow {
+  color: #9ab0b8;
+  font-size: 1.25rem;
+}
+
+.lecture-paper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.lecture-paper {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.lecture-paper > span {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.lecture-paper h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: .94rem;
+  line-height: 1.38;
+}
+
+.lecture-paper p {
+  margin: 0 0 12px;
+  color: var(--muted) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .78rem !important;
+  line-height: 1.55 !important;
+}
+
+.lecture-paper a {
+  width: fit-content;
+  margin-top: auto;
+  color: var(--navy) !important;
+  font-size: .76rem;
+  font-weight: 750;
+}
+
+@media (max-width: 900px) {
+  .lecture-concept-grid,
+  .lecture-paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hamiltonian-legend,
+  .lecture-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lecture-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .lecture-toc {
+    position: static;
+  }
+
+  .interactive-layout,
+  .equation-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-layout {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-lecture .site-main {
+    width: min(calc(100% - 28px), 1180px);
+  }
+
+  .lecture-concept-grid,
+  .lecture-paper-grid,
+  .hamiltonian-legend,
+  .lecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-card {
+    padding: 19px 16px;
+  }
+
+  .interactive-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lecture-equation {
+    padding: 14px 10px;
+  }
+}
