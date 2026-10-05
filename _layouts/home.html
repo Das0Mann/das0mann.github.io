@@ -29,50 +29,119 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="quantum-panel">
-        <div class="quantum-art">
-          <svg class="quantum-svg" viewBox="0 0 420 360" role="presentation">
-            <defs>
-              <radialGradient id="nodeGlow">
-                <stop offset="0%" stop-color="#eaffff"/>
-                <stop offset="38%" stop-color="#69dbe0"/>
-                <stop offset="100%" stop-color="#1c8894"/>
-              </radialGradient>
-              <linearGradient id="orbitStroke" x1="0" x2="1">
-                <stop offset="0%" stop-color="#4bc6cb" stop-opacity=".15"/>
-                <stop offset="50%" stop-color="#b7eff1" stop-opacity=".72"/>
-                <stop offset="100%" stop-color="#4bc6cb" stop-opacity=".15"/>
-              </linearGradient>
-            </defs>
-
-            <g fill="none" stroke="url(#orbitStroke)" stroke-width="1.35">
-              <ellipse class="quantum-orbit" cx="210" cy="175" rx="138" ry="52" transform="rotate(24 210 175)"/>
-              <ellipse class="quantum-orbit reverse" cx="210" cy="175" rx="138" ry="52" transform="rotate(92 210 175)"/>
-              <ellipse class="quantum-orbit" cx="210" cy="175" rx="138" ry="52" transform="rotate(154 210 175)"/>
-            </g>
-
-            <circle cx="210" cy="175" r="44" fill="none" stroke="#74d9de" stroke-opacity=".16"/>
-            <circle cx="210" cy="175" r="28" fill="#082b46" stroke="#87e1e4" stroke-opacity=".58"/>
-            <circle class="quantum-node" cx="199" cy="170" r="6.5" fill="url(#nodeGlow)"/>
-            <circle class="quantum-node" cx="222" cy="185" r="6.5" fill="url(#nodeGlow)"/>
-            <path d="M199 170 C205 152, 217 202, 222 185" fill="none" stroke="#d6fbfc" stroke-width="1.4" stroke-opacity=".68"/>
-
-            <circle class="quantum-node" cx="104" cy="108" r="4.8" fill="url(#nodeGlow)"/>
-            <circle class="quantum-node" cx="312" cy="106" r="4.8" fill="url(#nodeGlow)"/>
-            <circle class="quantum-node" cx="302" cy="253" r="4.8" fill="url(#nodeGlow)"/>
-            <circle class="quantum-node" cx="118" cy="257" r="4.8" fill="url(#nodeGlow)"/>
-
-            <path d="M70 238 C112 205, 137 254, 171 226 S241 185, 272 224 S321 263, 352 235"
-                  fill="none" stroke="#71d9de" stroke-width="1.35" stroke-opacity=".42"/>
-            <path d="M70 246 C112 213, 137 262, 171 234 S241 193, 272 232 S321 271, 352 243"
-                  fill="none" stroke="#71d9de" stroke-width=".7" stroke-opacity=".18"/>
-          </svg>
+      <div class="radical-pair-panel">
+        <div class="rp-panel-head">
+          <span class="rp-label">Radical-pair spin dynamics</span>
+          <span class="rp-state-badge">S ↔ T</span>
         </div>
 
+        <svg class="radical-pair-svg" viewBox="0 0 420 300" role="presentation">
+          <defs>
+            <radialGradient id="rpGlow">
+              <stop offset="0%" stop-color="#ecffff"/>
+              <stop offset="34%" stop-color="#75e0e4"/>
+              <stop offset="100%" stop-color="#1c8894"/>
+            </radialGradient>
+            <linearGradient id="rpCoupling" x1="0" x2="1">
+              <stop offset="0%" stop-color="#60d4da" stop-opacity=".10"/>
+              <stop offset="50%" stop-color="#d5f8f9" stop-opacity=".84"/>
+              <stop offset="100%" stop-color="#60d4da" stop-opacity=".10"/>
+            </linearGradient>
+            <linearGradient id="rpTrace" x1="0" x2="1">
+              <stop offset="0%" stop-color="#62d8dd" stop-opacity=".34"/>
+              <stop offset="45%" stop-color="#c7f5f6" stop-opacity=".92"/>
+              <stop offset="100%" stop-color="#62d8dd" stop-opacity=".24"/>
+            </linearGradient>
+          </defs>
+
+          <!-- external magnetic field -->
+          <g class="rp-b0">
+            <line x1="348" y1="38" x2="348" y2="92"/>
+            <path d="M348 25 L341 41 L355 41 Z"/>
+            <text x="360" y="52">B₀</text>
+          </g>
+
+          <!-- radical centers and coupling -->
+          <line x1="155" y1="128" x2="265" y2="128" class="rp-coupling"/>
+          <text x="194" y="116" class="rp-coupling-label">J, D</text>
+
+          <circle cx="155" cy="128" r="20" class="rp-radical-halo"/>
+          <circle cx="265" cy="128" r="20" class="rp-radical-halo"/>
+          <circle cx="155" cy="128" r="12" class="rp-radical-core"/>
+          <circle cx="265" cy="128" r="12" class="rp-radical-core"/>
+
+          <text x="145" y="132" class="rp-electron">e⁻</text>
+          <text x="255" y="132" class="rp-electron">e⁻</text>
+          <text x="136" y="168" class="rp-radical-label">D•⁺</text>
+          <text x="250" y="168" class="rp-radical-label">A•⁻</text>
+
+          <!-- local hyperfine environments -->
+          <g class="rp-hyperfine">
+            <circle cx="105" cy="91" r="4"/>
+            <circle cx="95" cy="145" r="4"/>
+            <circle cx="118" cy="183" r="4"/>
+            <line x1="111" y1="96" x2="142" y2="118"/>
+            <line x1="101" y1="143" x2="139" y2="132"/>
+            <line x1="122" y1="177" x2="145" y2="143"/>
+
+            <circle cx="315" cy="91" r="4"/>
+            <circle cx="325" cy="145" r="4"/>
+            <circle cx="302" cy="183" r="4"/>
+            <line x1="309" y1="96" x2="278" y2="118"/>
+            <line x1="319" y1="143" x2="281" y2="132"/>
+            <line x1="298" y1="177" x2="275" y2="143"/>
+          </g>
+
+          <!-- precession cones -->
+          <ellipse cx="155" cy="92" rx="29" ry="9" class="rp-precession-ring"/>
+          <ellipse cx="265" cy="92" rx="29" ry="9" class="rp-precession-ring"/>
+
+          <!-- spin 1 -->
+          <g transform="translate(155 128)">
+            <g class="rp-spin rp-spin-left">
+              <line x1="0" y1="0" x2="-8" y2="-43"/>
+              <path d="M-10 -54 L-15 -40 L-3 -43 Z"/>
+            </g>
+          </g>
+
+          <!-- spin 2 -->
+          <g transform="translate(265 128)">
+            <g class="rp-spin rp-spin-right">
+              <line x1="0" y1="0" x2="11" y2="-42"/>
+              <path d="M14 -53 L4 -42 L17 -39 Z"/>
+            </g>
+          </g>
+
+          <!-- singlet-triplet conversion cue -->
+          <g class="rp-st-cue">
+            <text x="186" y="70">|S⟩</text>
+            <path d="M210 65 C224 51, 245 51, 257 65"/>
+            <path d="M255 59 L261 66 L252 68 Z"/>
+            <text x="267" y="70">|T₀⟩</text>
+          </g>
+
+          <!-- singlet population trace -->
+          <g class="rp-trace-group">
+            <text x="54" y="244" class="rp-trace-label">P<tspan baseline-shift="sub" font-size="8">S</tspan>(t)</text>
+            <line x1="90" y1="238" x2="362" y2="238" class="rp-trace-axis"/>
+            <path class="rp-trace"
+              d="M90 219
+                 C104 198, 118 198, 132 219
+                 S160 240, 174 219
+                 S202 201, 216 219
+                 S244 237, 258 219
+                 S286 204, 300 219
+                 S328 234, 362 222"/>
+            <path class="rp-envelope"
+              d="M90 197 C160 205, 230 211, 362 218"/>
+            <text x="303" y="257" class="rp-time-label">time</text>
+          </g>
+        </svg>
+
         <div class="hero-equations">
-          <div class="hero-equation">\( i\hbar\,\frac{\partial}{\partial t}\lvert\psi\rangle = \hat{H}\lvert\psi\rangle \)</div>
-          <div class="hero-equation">\( \dot{\rho} = -\frac{i}{\hbar}[H,\rho] + \mathcal{L}(\rho) \)</div>
-          <div class="hero-equation">\( \hat{H}_{Z} = \mu_B\,\mathbf{B}_0\!\cdot\!\mathbf{g}\!\cdot\!\hat{\mathbf{S}} \)</div>
+          <div class="hero-equation">\( \hat H_{\mathrm{RP}} = \hat H_Z + \hat H_{\mathrm{HFC}} + \hat H_{\mathrm{ex}} + \hat H_{\mathrm{dip}} \)</div>
+          <div class="hero-equation">\( \dot{\rho} = -\frac{i}{\hbar}[\hat H_{\mathrm{RP}},\rho] + \mathcal{L}(\rho) \)</div>
+          <div class="hero-equation">\( P_S(t) = \mathrm{Tr}\!\left[\hat P_S\rho(t)\right] \)</div>
         </div>
       </div>
     </div>
