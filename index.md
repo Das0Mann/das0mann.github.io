@@ -28,32 +28,32 @@ image:
 
   <div class="card-grid">
     <div class="research-card">
-      <div class="card-icon">S</div>
+      <div class="card-icon">01</div>
       <h3>Spin chemistry</h3>
       <p>Radical pairs, magnetic-field effects, coherent spin evolution, spin relaxation and stochastic quantum dynamics.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">M</div>
+      <div class="card-icon">02</div>
       <h3>Multiscale modelling</h3>
       <p>Molecular dynamics, conformational ensembles, electronic structure and spin dynamics in one connected framework.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">R</div>
+      <div class="card-icon">03</div>
       <h3>Magnetic resonance</h3>
       <p>Photo-CIDNP, EPR, NMR and reaction-yield detected magnetic resonance as mechanistic probes of spin chemistry.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">F</div>
+      <div class="card-icon">04</div>
       <h3>Flavin photochemistry</h3>
       <p>Electron transfer, radical-pair formation and magnetosensitivity in cryptochromes and related flavoproteins.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">E</div>
+      <div class="card-icon">05</div>
       <h3>Electronic structure</h3>
       <p>DFT, TD-DFT and multireference methods for excited states, charge transfer and magnetic parameters.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">C</div>
+      <div class="card-icon">06</div>
       <h3>Scientific computing</h3>
       <p>General algorithms and high-performance implementations for open-system and large-spin-system simulations.</p>
     </div>
@@ -88,7 +88,7 @@ image:
 
 <section class="molspin-callout">
   <div>
-    <p class="section-eyebrow" style="color:#a7dde3">Open-source software</p>
+    <p class="section-eyebrow">Open-source software</p>
     <h2>MolSpin</h2>
     <p>I am the lead developer of MolSpin, a general and extensible molecular spin-dynamics framework for coherent and open-system simulations, relaxation, stochastic propagation and magnetic-resonance observables.</p>
   </div>
@@ -100,7 +100,7 @@ image:
   <h2 class="section-heading">Teaching and invited talks</h2>
   <p class="section-lead">In 2026 I taught at the international Spin-Chemistry summer school and gave an invited lecture at the German Federal Office for Radiation Protection (BfS) on the relevance of radical-pair mechanisms for radiation protection.</p>
   <div class="hero-actions">
-    <a class="button-primary" style="background:#0b2239;color:white !important" href="{{ site.url }}/about/">More about me</a>
-    <a class="button-secondary" style="border-color:#b9c9d2;color:#0b2239 !important;background:white" href="{{ site.url }}/publications/">Full publication list</a>
+    <a class="button-dark" href="{{ site.url }}/about/">More about me</a>
+    <a class="button-light" href="{{ site.url }}/publications/">Full publication list</a>
   </div>
 </section>
