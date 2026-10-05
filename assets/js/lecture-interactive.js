@@ -21,6 +21,7 @@
     const minGapOut = $("orbital-min-gap");
     const weightOut = $("orbital-weight");
     const weightBar = $("orbital-character-bar");
+    const explanation = $("orbital-explanation");
     const diabatic1 = $("diabatic-1");
     const diabatic2 = $("diabatic-2");
     const lower = $("adiabatic-minus");
@@ -58,6 +59,19 @@
       weightOut.textContent = (100 * w1).toFixed(1) + "%";
       if (weightBar) weightBar.style.width = (100 * w1).toFixed(1) + "%";
 
+      if (explanation) {
+        const mixing = denom < 1e-12 ? 1 : (2 * Math.abs(t)) / denom;
+        if (Math.abs(t) < 1e-10) {
+          explanation.textContent = "With t = 0 the two diabatic states do not talk to each other: they cross exactly at Δ = 0.";
+        } else if (mixing > 0.8) {
+          explanation.textContent = "Near the avoided crossing the two diabatic states are strongly mixed. Neither adiabatic state belongs cleanly to only one localized state.";
+        } else if (mixing > 0.35) {
+          explanation.textContent = "The states are partially mixed: coupling matters, but the energy offset still preserves noticeable localization.";
+        } else {
+          explanation.textContent = "Far from resonance, the energy offset dominates and the adiabatic states are mostly localized on one diabatic state.";
+        }
+      }
+
       diabatic1.setAttribute("d", curve((x) => -x / 2));
       diabatic2.setAttribute("d", curve((x) => +x / 2));
       lower.setAttribute("d", curve((x) => -Math.sqrt((x * x) / 4 + t * t)));
@@ -74,6 +88,15 @@
 
     delta.addEventListener("input", update);
     coupling.addEventListener("input", update);
+
+    document.querySelectorAll("[data-orbital-delta]").forEach((button) => {
+      button.addEventListener("click", () => {
+        delta.value = button.dataset.orbitalDelta;
+        coupling.value = button.dataset.orbitalCoupling;
+        update();
+      });
+    });
+
     update();
   }
 
@@ -87,6 +110,7 @@
     const gOut = $("larmor-g-out");
     const fOut = $("larmor-frequency");
     const periodOut = $("larmor-period");
+    const explanation = $("larmor-explanation");
     const vector = $("spin-vector");
     const projection = $("spin-projection");
     const tip = $("spin-tip");
@@ -109,6 +133,17 @@
       gOut.textContent = gVal.toFixed(4);
       fOut.textContent = freqMHz.toFixed(2) + " MHz";
       periodOut.textContent = periodNs.toFixed(2) + " ns";
+
+      if (explanation) {
+        if (bMt <= 0.075) {
+          explanation.textContent = "This is an Earth-strength field scale: the electron Larmor frequency is already in the MHz range.";
+        } else if (bMt < 2) {
+          explanation.textContent = "At millitesla fields the electron precession frequency scales linearly with B₀ and remains tens of MHz.";
+        } else {
+          explanation.textContent = "Increasing B₀ increases the Zeeman splitting and therefore the Larmor frequency linearly.";
+        }
+      }
+
       visualRate = 1.1 + 0.55 * Math.log10(1 + freqMHz);
     }
 
@@ -150,6 +185,14 @@
 
     b.addEventListener("input", updatePhysics);
     g.addEventListener("input", updatePhysics);
+
+    document.querySelectorAll("[data-larmor-b]").forEach((button) => {
+      button.addEventListener("click", () => {
+        b.value = button.dataset.larmorB;
+        updatePhysics();
+      });
+    });
+
     if (toggle) {
       toggle.textContent = running ? "Pause" : "Play";
       toggle.addEventListener("click", () => {
@@ -173,6 +216,7 @@
     const frequencyOut = $("st-frequency");
     const amplitudeOut = $("st-amplitude");
     const windowOut = $("st-window");
+    const explanation = $("st-explanation");
     const tMid = $("st-time-mid");
     const tMaxLabel = $("st-time-max");
     const singlet = $("singlet-path");
@@ -191,6 +235,19 @@
       frequencyOut.textContent = omega.toFixed(2) + " MHz";
       amplitudeOut.textContent = (100 * amp).toFixed(1) + "%";
       windowOut.textContent = tMax.toFixed(2) + " μs";
+
+      if (explanation) {
+        if (D < 0.25 * Math.max(V, 0.1)) {
+          explanation.textContent = "The two levels are nearly resonant, so the model permits almost complete singlet–triplet transfer.";
+        } else if (amp > 0.65) {
+          explanation.textContent = "Coupling is still strong compared with detuning, so large-amplitude singlet–triplet oscillations remain possible.";
+        } else if (amp > 0.2) {
+          explanation.textContent = "Detuning is suppressing the transfer: oscillations remain, but the triplet population cannot approach unity.";
+        } else {
+          explanation.textContent = "The states are strongly off-resonant. The coupling produces only a small triplet admixture.";
+        }
+      }
+
       tMid.textContent = (tMax / 2).toFixed(2);
       tMaxLabel.textContent = tMax.toFixed(2);
 
@@ -211,6 +268,15 @@
 
     coupling.addEventListener("input", update);
     detuning.addEventListener("input", update);
+
+    document.querySelectorAll("[data-st-v]").forEach((button) => {
+      button.addEventListener("click", () => {
+        coupling.value = button.dataset.stV;
+        detuning.value = button.dataset.stDelta;
+        update();
+      });
+    });
+
     update();
   }
 
