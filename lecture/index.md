@@ -10,18 +10,6 @@ permalink: /lecture/
 <header class="lecture-lead">
   <p class="lecture-intro"><strong>Here is the way I usually think about the problem:</strong> we do not start with “spins” as isolated arrows. We start with electrons in a molecule. Electronic-structure theory tells us where those electrons are and how they interact. From that we build a spin Hamiltonian. Only then do we ask how the spin state evolves and what an experiment can actually observe.</p>
 
-  <div class="lecture-map" aria-label="Conceptual path from molecular structure to experiment">
-    <div><span>1</span><strong>Molecular structure</strong><small>nuclei, geometry, environment</small></div>
-    <div class="map-arrow">→</div>
-    <div><span>2</span><strong>Electronic structure</strong><small>states, densities, excitations</small></div>
-    <div class="map-arrow">→</div>
-    <div><span>3</span><strong>Spin Hamiltonian</strong><small>\(g\), \(A\), \(J\), \(D\), SOC</small></div>
-    <div class="map-arrow">→</div>
-    <div><span>4</span><strong>Spin dynamics</strong><small>\(\rho(t)\), coherence, relaxation</small></div>
-    <div class="map-arrow">→</div>
-    <div><span>5</span><strong>Observable</strong><small>EPR, MFE, RYDMR, CIDNP</small></div>
-  </div>
-
   <nav class="lecture-route" aria-label="Lecture path">
     <a href="#electronic-structure"><span>01</span>Electronic structure</a>
     <a href="#spin-hamiltonian"><span>02</span>Spin Hamiltonian</a>
@@ -45,12 +33,15 @@ permalink: /lecture/
 
   <div class="lecture-equation">
   \[
+  \begin{aligned}
   \hat H_\mathrm{e}
-  =
+  &=
   -\frac{1}{2}\sum_i \nabla_i^2
-  -\sum_{iA}\frac{Z_A}{r_{iA}}
-  +\sum_{i<j}\frac{1}{r_{ij}}
+  -\sum_{iA}\frac{Z_A}{r_{iA}}\\
+  &\quad+
+  \sum_{i<j}\frac{1}{r_{ij}}
   +V_\mathrm{NN}.
+  \end{aligned}
   \]
   </div>
 
@@ -102,16 +93,21 @@ permalink: /lecture/
 
     <p>Here is the smallest model that already shows something important. Two localized states have an energy offset \(\Delta\) and interact through a coupling \(t\):</p>
 
-    <div class="lecture-equation compact">
-    \[
-    H =
-    \begin{pmatrix}
-      -\Delta/2 & t\\
-      t & +\Delta/2
-    \end{pmatrix},
-    \qquad
-    E_\pm = \pm\sqrt{(\Delta/2)^2+t^2}.
-    \]
+    <div class="lecture-equation-grid">
+      <div class="lecture-equation compact">
+      \[
+      H =
+      \begin{pmatrix}
+        -\Delta/2 & t\\
+        t & +\Delta/2
+      \end{pmatrix}
+      \]
+      </div>
+      <div class="lecture-equation compact">
+      \[
+      E_\pm = \pm\sqrt{(\Delta/2)^2+t^2}
+      \]
+      </div>
     </div>
 
     <div class="demo-prompt">
@@ -121,10 +117,10 @@ permalink: /lecture/
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="orbital-delta">Current offset \(\Delta\) <output id="orbital-delta-out">1.00 eV</output></label>
+        <label for="orbital-delta"><span class="control-name">Current offset \(\Delta\)</span><output id="orbital-delta-out">1.00 eV</output></label>
         <input id="orbital-delta" type="range" min="-4" max="4" step="0.05" value="1">
 
-        <label for="orbital-coupling">Coupling \(t\) <output id="orbital-coupling-out">0.50 eV</output></label>
+        <label for="orbital-coupling"><span class="control-name">Coupling \(t\)</span><output id="orbital-coupling-out">0.50 eV</output></label>
         <input id="orbital-coupling" type="range" min="0" max="1.2" step="0.025" value="0.5">
 
         <div class="demo-presets">
@@ -198,11 +194,11 @@ permalink: /lecture/
   \[
   \hat H_\mathrm{spin}
   =
-  \sum_i \mu_B\,\mathbf B\!\cdot\!\mathbf g_i\!\cdot\!\hat{\mathbf S}_i
-  +\sum_{ik}\hat{\mathbf S}_i\!\cdot\!\mathbf A_{ik}\!\cdot\!\hat{\mathbf I}_{ik}
-  +J\,\hat{\mathbf S}_1\!\cdot\!\hat{\mathbf S}_2
-  +\hat{\mathbf S}_1\!\cdot\!\mathbf D\!\cdot\!\hat{\mathbf S}_2
-  +\cdots .
+  \hat H_Z
+  +\hat H_\mathrm{hf}
+  +\hat H_J
+  +\hat H_D
+  +\cdots
   \]
   </div>
 
@@ -299,10 +295,10 @@ permalink: /lecture/
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="larmor-b">Magnetic field \(B_0\) <output id="larmor-b-out">1.00 mT</output></label>
+        <label for="larmor-b"><span class="control-name">Magnetic field \(B_0\)</span><output id="larmor-b-out">1.00 mT</output></label>
         <input id="larmor-b" type="range" min="0.05" max="10" step="0.05" value="1">
 
-        <label for="larmor-g"><em>g</em>-factor <output id="larmor-g-out">2.0023</output></label>
+        <label for="larmor-g"><span class="control-name"><em>g</em>-factor</span><output id="larmor-g-out">2.0023</output></label>
         <input id="larmor-g" type="range" min="1.8" max="2.2" step="0.0001" value="2.0023">
 
         <div class="demo-presets">
@@ -333,7 +329,7 @@ permalink: /lecture/
           <path id="spin-arrowhead" d="M342 92 L327 99 L336 108 Z" class="spin-arrow-demo"/>
           <circle cx="260" cy="230" r="7" class="spin-origin"/>
           <text x="276" y="243" class="svg-caption">spin origin</text>
-          <text x="178" y="278" class="svg-caption">2D projection of a fixed-angle precession cone</text>
+          <text x="260" y="278" text-anchor="middle" class="svg-caption">schematic precession cone</text>
         </svg>
       </div>
     </div>
@@ -392,18 +388,25 @@ permalink: /lecture/
 
     <p>A real radical pair can contain many nuclear spins and four electronic spin states. But a two-level model is enough to see what coupling and detuning do:</p>
 
-    <div class="lecture-equation compact">
-    \[
-    \frac{H}{h}=
-    \begin{pmatrix}
-      0 & V\\
-      V & \Delta
-    \end{pmatrix},
-    \qquad
-    P_T(t)=
-    \frac{4V^2}{\Delta^2+4V^2}
-    \sin^2\!\left(\pi\sqrt{\Delta^2+4V^2}\,t\right).
-    \]
+    <div class="lecture-equation-grid">
+      <div class="lecture-equation compact">
+      \[
+      \frac{H}{h}=
+      \begin{pmatrix}
+        0 & V\\
+        V & \Delta
+      \end{pmatrix}
+      \]
+      </div>
+      <div class="lecture-equation compact">
+      \[
+      P_T(t)=
+      \frac{4V^2}{\Delta^2+4V^2}
+      \sin^2\!\left(\pi\Omega t\right),
+      \qquad
+      \Omega=\sqrt{\Delta^2+4V^2}
+      \]
+      </div>
     </div>
 
     <div class="demo-prompt">
@@ -413,10 +416,10 @@ permalink: /lecture/
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="st-coupling">Effective coupling \(V\) <output id="st-coupling-out">3.00 MHz</output></label>
+        <label for="st-coupling"><span class="control-name">Effective coupling \(V\)</span><output id="st-coupling-out">3.00 MHz</output></label>
         <input id="st-coupling" type="range" min="0.1" max="10" step="0.1" value="3">
 
-        <label for="st-detuning">Detuning \(\Delta\) <output id="st-detuning-out">2.00 MHz</output></label>
+        <label for="st-detuning"><span class="control-name">Detuning \(\Delta\)</span><output id="st-detuning-out">2.00 MHz</output></label>
         <input id="st-detuning" type="range" min="0" max="20" step="0.1" value="2">
 
         <div class="demo-presets">
