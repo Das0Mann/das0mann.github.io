@@ -8,7 +8,7 @@
 {% include _browser-upgrade.html %}
 {% include _navigation.html %}
 
-<section class="home-hero" style="--hero-image: url('{{ site.url }}/images/{{ page.image.feature }}');">
+<section class="home-hero">
   <div class="hero-inner hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Theoretical chemistry · quantum dynamics · molecular biophysics</p>
@@ -30,50 +30,50 @@
 
     <div class="hero-visual" aria-hidden="true">
       <div class="quantum-panel">
-        <svg class="quantum-svg" viewBox="0 0 420 420" role="presentation">
-          <defs>
-            <radialGradient id="nodeGlow">
-              <stop offset="0%" stop-color="#d9ffff"/>
-              <stop offset="38%" stop-color="#69dbe0"/>
-              <stop offset="100%" stop-color="#1c8894"/>
-            </radialGradient>
-            <linearGradient id="orbitStroke" x1="0" x2="1">
-              <stop offset="0%" stop-color="#4bc6cb" stop-opacity=".18"/>
-              <stop offset="50%" stop-color="#b7eff1" stop-opacity=".78"/>
-              <stop offset="100%" stop-color="#4bc6cb" stop-opacity=".18"/>
-            </linearGradient>
-          </defs>
+        <div class="quantum-art">
+          <svg class="quantum-svg" viewBox="0 0 420 360" role="presentation">
+            <defs>
+              <radialGradient id="nodeGlow">
+                <stop offset="0%" stop-color="#eaffff"/>
+                <stop offset="38%" stop-color="#69dbe0"/>
+                <stop offset="100%" stop-color="#1c8894"/>
+              </radialGradient>
+              <linearGradient id="orbitStroke" x1="0" x2="1">
+                <stop offset="0%" stop-color="#4bc6cb" stop-opacity=".15"/>
+                <stop offset="50%" stop-color="#b7eff1" stop-opacity=".72"/>
+                <stop offset="100%" stop-color="#4bc6cb" stop-opacity=".15"/>
+              </linearGradient>
+            </defs>
 
-          <g fill="none" stroke="url(#orbitStroke)" stroke-width="1.4">
-            <ellipse class="quantum-orbit" cx="210" cy="210" rx="153" ry="62" transform="rotate(25 210 210)"/>
-            <ellipse class="quantum-orbit reverse" cx="210" cy="210" rx="153" ry="62" transform="rotate(95 210 210)"/>
-            <ellipse class="quantum-orbit" cx="210" cy="210" rx="153" ry="62" transform="rotate(155 210 210)"/>
-          </g>
+            <g fill="none" stroke="url(#orbitStroke)" stroke-width="1.35">
+              <ellipse class="quantum-orbit" cx="210" cy="175" rx="138" ry="52" transform="rotate(24 210 175)"/>
+              <ellipse class="quantum-orbit reverse" cx="210" cy="175" rx="138" ry="52" transform="rotate(92 210 175)"/>
+              <ellipse class="quantum-orbit" cx="210" cy="175" rx="138" ry="52" transform="rotate(154 210 175)"/>
+            </g>
 
-          <circle cx="210" cy="210" r="50" fill="none" stroke="#74d9de" stroke-opacity=".18"/>
-          <circle cx="210" cy="210" r="32" fill="#082b46" stroke="#87e1e4" stroke-opacity=".6"/>
-          <circle class="quantum-node" cx="198" cy="205" r="7" fill="url(#nodeGlow)"/>
-          <circle class="quantum-node" cx="224" cy="216" r="7" fill="url(#nodeGlow)"/>
-          <path d="M198 205 C206 184, 218 237, 224 216" fill="none" stroke="#d6fbfc" stroke-width="1.6" stroke-opacity=".72"/>
+            <circle cx="210" cy="175" r="44" fill="none" stroke="#74d9de" stroke-opacity=".16"/>
+            <circle cx="210" cy="175" r="28" fill="#082b46" stroke="#87e1e4" stroke-opacity=".58"/>
+            <circle class="quantum-node" cx="199" cy="170" r="6.5" fill="url(#nodeGlow)"/>
+            <circle class="quantum-node" cx="222" cy="185" r="6.5" fill="url(#nodeGlow)"/>
+            <path d="M199 170 C205 152, 217 202, 222 185" fill="none" stroke="#d6fbfc" stroke-width="1.4" stroke-opacity=".68"/>
 
-          <circle class="quantum-node" cx="92" cy="132" r="5.5" fill="url(#nodeGlow)"/>
-          <circle class="quantum-node" cx="324" cy="124" r="5.5" fill="url(#nodeGlow)"/>
-          <circle class="quantum-node" cx="311" cy="304" r="5.5" fill="url(#nodeGlow)"/>
-          <circle class="quantum-node" cx="112" cy="309" r="5.5" fill="url(#nodeGlow)"/>
+            <circle class="quantum-node" cx="104" cy="108" r="4.8" fill="url(#nodeGlow)"/>
+            <circle class="quantum-node" cx="312" cy="106" r="4.8" fill="url(#nodeGlow)"/>
+            <circle class="quantum-node" cx="302" cy="253" r="4.8" fill="url(#nodeGlow)"/>
+            <circle class="quantum-node" cx="118" cy="257" r="4.8" fill="url(#nodeGlow)"/>
 
-          <path d="M49 272 C92 231, 124 300, 169 257 S248 195, 282 244 S338 305, 374 266"
-                fill="none" stroke="#71d9de" stroke-width="1.5" stroke-opacity=".5"/>
-          <path d="M49 280 C92 239, 124 308, 169 265 S248 203, 282 252 S338 313, 374 274"
-                fill="none" stroke="#71d9de" stroke-width=".8" stroke-opacity=".2"/>
+            <path d="M70 238 C112 205, 137 254, 171 226 S241 185, 272 224 S321 263, 352 235"
+                  fill="none" stroke="#71d9de" stroke-width="1.35" stroke-opacity=".42"/>
+            <path d="M70 246 C112 213, 137 262, 171 234 S241 193, 272 232 S321 271, 352 243"
+                  fill="none" stroke="#71d9de" stroke-width=".7" stroke-opacity=".18"/>
+          </svg>
+        </div>
 
-          <g stroke="#a9e7e9" stroke-opacity=".34" stroke-width="1">
-            <line x1="70" y1="68" x2="350" y2="68"/>
-            <line x1="70" y1="352" x2="350" y2="352"/>
-          </g>
-        </svg>
-        <div class="hero-equation hero-eq-1">iℏ ∂<span>|ψ⟩</span>/∂t = Ĥ|ψ⟩</div>
-        <div class="hero-equation hero-eq-2">ρ̇ = −i[H,ρ] + 𝓛(ρ)</div>
-        <div class="hero-equation hero-eq-3">B₀ · S</div>
+        <div class="hero-equations">
+          <div class="hero-equation">\( i\hbar\,\frac{\partial}{\partial t}\lvert\psi\rangle = \hat{H}\lvert\psi\rangle \)</div>
+          <div class="hero-equation">\( \dot{\rho} = -\frac{i}{\hbar}[H,\rho] + \mathcal{L}(\rho) \)</div>
+          <div class="hero-equation">\( \hat{H}_{Z} = \mu_B\,\mathbf{B}_0\!\cdot\!\mathbf{g}\!\cdot\!\hat{\mathbf{S}} \)</div>
+        </div>
       </div>
     </div>
   </div>
