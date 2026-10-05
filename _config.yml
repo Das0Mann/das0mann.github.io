@@ -1,22 +1,20 @@
 # For general help on the options
-# # http://jekyllrb.com/docs/configuration/
+# http://jekyllrb.com/docs/configuration/
 
-# Site wide configuration
-
-title:            Luca Gerhards 
-locale:           da_DK
-#url:              https://commicgroup.ku.dk
-#url:              http://127.0.0.1:4000/
+# Site-wide configuration
+title: Luca Gerhards
+locale: en_GB
+url: https://das0mann.github.io
 
 # RSS Feed configuration
 name: Luca Gerhards
-description: Webpage of Luca Gerhards
+description: "Luca Gerhards — theoretical chemistry, spin dynamics, quantum biology, and multiscale biomolecular physics."
 rss: true
 
 # Jekyll configuration
-permalink:   /:categories/:title/
+permalink: /:categories/:title/
 post_dir: false
-markdown:    kramdown
+markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
@@ -31,9 +29,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
 
-# Github Specific Settings that *cannot* be changed
-# To ensure proper reproducibility
-# https://help.github.com/articles/configuring-jekyll/
+# GitHub-specific settings
 gist:
   noscript: false
 github: [metadata]
@@ -46,9 +42,13 @@ safe: true
 owner:
   name: Luca Gerhards
   avatar: sections.png
-  bio: "Spin Dnyamics and Quantum Chemistry."
-  github: das0mann
+  bio: "Theoretical chemist | spin dynamics, quantum biology & multiscale modelling"
+  email: luca.gerhards@uni-oldenburg.de
+  github: Das0Mann
+  linkedin: luca-gerhards-979718395
+  orcid: "0000-0002-8404-2421"
+  scholar: "https://scholar.google.com/citations?user=yVwAUf8AAAAJ&hl=en"
+  molspin: "https://molspin.eu"
 
 include: [".htaccess"]
-#exclude: [vendor, ruby]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "_utilities"]
