@@ -1,6 +1,12 @@
-<span><table border=0>
-<tr>
-<td>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}.<BR>Powered by <a target=new href="http://jekyllrb.com">Jekyll</a> using an adapted <a target=new href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</td>
-<td><a target=new href="https://molspin.eu/"><img height="40" src="{{ site.url }}/images/logo.png"></a></td>
-</tr>
-</table></span>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div>&copy; {{ site.time | date: '%Y' }} Luca Gerhards · Theoretical chemistry & spin dynamics</div>
+    <div class="footer-links">
+      <a href="{{ site.url }}/about/">About</a>
+      <a href="{{ site.url }}/publications/">Publications</a>
+      <a href="https://orcid.org/{{ site.owner.orcid }}" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/{{ site.owner.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://molspin.eu" target="_blank" rel="noopener">MolSpin</a>
+    </div>
+  </div>
+</footer>
