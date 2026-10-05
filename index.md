@@ -67,19 +67,19 @@ image:
   <div class="card-grid">
     <article class="work-card">
       <span class="meta">Chemical Reviews · 2025</span>
-      <h3>Weak radiofrequency fields and the radical-pair mechanism</h3>
+      <h3>Weak Radiofrequency Field Effects on Biological Systems Mediated through the Radical Pair Mechanism</h3>
       <p>A broad assessment of biological magnetic-field effects mediated by radical-pair chemistry.</p>
       <a href="https://doi.org/10.1021/acs.chemrev.5c00178" target="_blank" rel="noopener">Read publication →</a>
     </article>
     <article class="work-card">
       <span class="meta">Advances in Physics: X · 2026</span>
-      <h3>Multiscale modelling in biomolecular physics</h3>
+      <h3>Multiscale modeling approaches in biomolecular physics</h3>
       <p>A framework for connecting molecular structure, dynamics and quantum-level observables across scales.</p>
       <a href="https://doi.org/10.1080/23746149.2026.2660655" target="_blank" rel="noopener">Read publication →</a>
     </article>
     <article class="work-card">
       <span class="meta">Free Radical Biology & Medicine · 2026</span>
-      <h3>Magnetic-resonance spectroscopy of cryptochrome radical pairs</h3>
+      <h3>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</h3>
       <p>Reaction-yield detected magnetic resonance applied to radical-pair spin dynamics in cryptochrome-4a.</p>
       <a href="https://doi.org/10.1016/j.freeradbiomed.2026.04.015" target="_blank" rel="noopener">Read publication →</a>
     </article>
