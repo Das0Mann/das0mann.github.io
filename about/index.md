@@ -27,7 +27,7 @@ I am the **lead developer of [MolSpin](https://molspin.eu)**, where I work on ge
 
 ## Teaching and scientific communication
 
-In 2026 I was a teacher at the international **Spin-Chemistry** summer school, covering the theoretical foundations and computational treatment of spin chemistry. I also gave an invited lecture at the **German Federal Office for Radiation Protection (BfS)** on whether the radical-pair mechanism is relevant to radiation protection.
+In 2026 I taught at the international **Spin-Chemistry** summer school. On 13 February 2026, I gave the invited talk **“Is the radical pair mechanism relevant for radiation protection?”** at the German Federal Office for Radiation Protection (BfS) in Munich.
 
 ## Profiles and contact
 
