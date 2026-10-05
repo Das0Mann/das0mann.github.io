@@ -1076,37 +1076,38 @@ h3 { font-size: 1.25rem; }
 
 
 /* ---------------------------------------------------------
-   Hero correction pass: compact scientific graphic, no crop
+   Radical-pair hero: compact, spin-dynamics-specific, uncropped
    --------------------------------------------------------- */
 .home-hero {
   min-height: 0;
   background:
-    radial-gradient(circle at 83% 24%, rgba(73,195,201,.13), transparent 24rem),
-    radial-gradient(circle at 18% 78%, rgba(31,104,132,.13), transparent 28rem),
+    radial-gradient(circle at 82% 22%, rgba(73,195,201,.12), transparent 23rem),
+    radial-gradient(circle at 16% 82%, rgba(31,104,132,.12), transparent 28rem),
     linear-gradient(118deg, #041524 0%, #07263f 58%, #0b3a50 118%);
 }
 
 .home-hero::before {
-  opacity: .25;
+  opacity: .22;
   background-size: 46px 46px;
 }
 
 .home-hero::after {
-  width: 420px;
-  height: 420px;
-  right: -80px;
-  top: -110px;
-  opacity: .75;
+  width: 400px;
+  height: 400px;
+  right: -85px;
+  top: -105px;
+  opacity: .72;
 }
 
 .hero-inner {
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: 74px;
+  padding-bottom: 74px;
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1.35fr) 390px;
-  gap: 58px;
+  grid-template-columns: minmax(0, 1.35fr) 400px;
+  gap: 56px;
+  align-items: center;
 }
 
 .hero-visual {
@@ -1116,47 +1117,237 @@ h3 { font-size: 1.25rem; }
   justify-content: flex-end;
 }
 
-.quantum-panel {
+.radical-pair-panel {
+  position: relative;
   width: 390px;
   max-width: 100%;
-  aspect-ratio: auto;
-  padding: 16px 16px 13px;
+  overflow: hidden;
+  padding: 15px 16px 12px;
+  border: 1px solid rgba(177,235,238,.18);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 50% 36%, rgba(73,195,201,.11), transparent 38%),
-    linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+    radial-gradient(circle at 64% 27%, rgba(73,195,201,.10), transparent 36%),
+    linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.014));
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.08),
-    0 18px 52px rgba(0,0,0,.18);
+    0 18px 54px rgba(0,0,0,.18);
+  backdrop-filter: blur(4px);
 }
 
-.quantum-panel::before {
-  border-radius: inherit;
-  opacity: .16;
+.radical-pair-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  background-image:
+    linear-gradient(rgba(175,235,237,.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(175,235,237,.11) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-.quantum-art {
+.rp-panel-head {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.rp-label {
+  color: #9bdde1;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.rp-state-badge {
+  padding: 4px 8px;
+  border: 1px solid rgba(174,232,235,.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  color: #cdebed;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: .68rem;
+}
+
+.radical-pair-svg {
   position: relative;
   z-index: 1;
-}
-
-.quantum-svg {
-  position: relative;
-  inset: auto;
   display: block;
   width: 100%;
   height: auto;
-  overflow: hidden;
+  overflow: visible;
+}
+
+.rp-b0 line,
+.rp-coupling,
+.rp-hyperfine line,
+.rp-precession-ring,
+.rp-st-cue path,
+.rp-trace-axis,
+.rp-trace,
+.rp-envelope {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rp-b0 line {
+  stroke: rgba(197,241,243,.58);
+  stroke-width: 1.35;
+}
+
+.rp-b0 path {
+  fill: rgba(205,242,244,.8);
+}
+
+.rp-b0 text,
+.rp-coupling-label,
+.rp-radical-label,
+.rp-st-cue text,
+.rp-trace-label,
+.rp-time-label {
+  fill: #d5ebed;
+  font-family: "Inter", sans-serif;
+}
+
+.rp-b0 text {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.rp-coupling {
+  stroke: url(#rpCoupling);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+  animation: rp-coupling-flow 4.8s linear infinite;
+}
+
+.rp-coupling-label {
+  fill: #8fd7dc;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: .04em;
+}
+
+.rp-radical-halo {
+  fill: rgba(56,184,194,.06);
+  stroke: rgba(130,226,230,.25);
+  stroke-width: 1.1;
+}
+
+.rp-radical-core {
+  fill: url(#rpGlow);
+  filter: drop-shadow(0 0 10px rgba(105,219,224,.42));
+}
+
+.rp-electron {
+  fill: #06253c;
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.rp-radical-label {
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.rp-hyperfine circle {
+  fill: rgba(113,218,223,.72);
+  filter: drop-shadow(0 0 4px rgba(105,219,224,.28));
+}
+
+.rp-hyperfine line {
+  stroke: rgba(113,218,223,.18);
+  stroke-width: 1;
+}
+
+.rp-precession-ring {
+  stroke: rgba(150,229,232,.25);
+  stroke-width: 1.15;
+  stroke-dasharray: 3 5;
+}
+
+.rp-spin line {
+  stroke: #e4ffff;
+  stroke-width: 2.25;
+}
+
+.rp-spin path {
+  fill: #e4ffff;
+}
+
+.rp-spin-left,
+.rp-spin-right {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.rp-spin-left {
+  animation: rp-precess-left 6.4s ease-in-out infinite;
+}
+
+.rp-spin-right {
+  animation: rp-precess-right 7.2s ease-in-out infinite;
+}
+
+.rp-st-cue {
+  opacity: .78;
+  animation: rp-st-pulse 4.8s ease-in-out infinite;
+}
+
+.rp-st-cue text {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 11px;
+}
+
+.rp-st-cue path {
+  stroke: rgba(147,225,229,.4);
+  stroke-width: 1.1;
+}
+
+.rp-trace-label {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 10px;
+}
+
+.rp-time-label {
+  fill: #7fb8bf;
+  font-size: 8px;
+}
+
+.rp-trace-axis {
+  stroke: rgba(128,215,220,.18);
+  stroke-width: 1;
+}
+
+.rp-trace {
+  stroke: url(#rpTrace);
+  stroke-width: 1.75;
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: rp-trace-draw 5.2s ease-in-out infinite;
+}
+
+.rp-envelope {
+  stroke: rgba(115,218,223,.15);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
 }
 
 .hero-equations {
   position: relative;
   z-index: 2;
   display: grid;
-  gap: 3px;
-  margin-top: 2px;
-  padding: 12px 5px 2px;
-  border-top: 1px solid rgba(190,235,238,.13);
+  gap: 2px;
+  margin-top: 0;
+  padding: 11px 4px 1px;
+  border-top: 1px solid rgba(190,235,238,.12);
 }
 
 .hero-equation,
@@ -1164,20 +1355,45 @@ h3 { font-size: 1.25rem; }
 .hero-eq-2,
 .hero-eq-3 {
   position: static;
-  padding: 4px 2px;
+  padding: 3px 1px;
   border: 0;
   border-radius: 0;
   background: transparent;
   color: #c9e5e8;
   font-family: "Source Serif 4", Georgia, serif;
-  font-size: .76rem;
-  line-height: 1.45;
+  font-size: .72rem;
+  line-height: 1.42;
   letter-spacing: 0;
   backdrop-filter: none;
 }
 
 .hero-equation .MathJax {
   color: inherit !important;
+}
+
+@keyframes rp-precess-left {
+  0%, 100% { transform: rotate(-9deg); }
+  50% { transform: rotate(12deg); }
+}
+
+@keyframes rp-precess-right {
+  0%, 100% { transform: rotate(11deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes rp-st-pulse {
+  0%, 100% { opacity: .48; }
+  50% { opacity: .95; }
+}
+
+@keyframes rp-coupling-flow {
+  to { stroke-dashoffset: -28; }
+}
+
+@keyframes rp-trace-draw {
+  0% { stroke-dashoffset: 340; opacity: .45; }
+  48%, 78% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -40; opacity: .55; }
 }
 
 /* Current news */
@@ -1244,11 +1460,11 @@ h3 { font-size: 1.25rem; }
 
 @media (max-width: 980px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-columns: minmax(0, 1fr) 350px;
     gap: 36px;
   }
 
-  .quantum-panel {
+  .radical-pair-panel {
     width: 340px;
   }
 }
@@ -1263,7 +1479,7 @@ h3 { font-size: 1.25rem; }
     margin-top: 24px;
   }
 
-  .quantum-panel {
+  .radical-pair-panel {
     width: 330px;
   }
 }
@@ -1279,14 +1495,14 @@ h3 { font-size: 1.25rem; }
     margin-top: 20px;
   }
 
-  .quantum-panel {
+  .radical-pair-panel {
     width: min(100%, 320px);
     padding: 12px 12px 10px;
     border-radius: 18px;
   }
 
   .hero-equation {
-    font-size: .67rem;
+    font-size: .64rem;
   }
 
   .page-news .site-main {
@@ -1295,5 +1511,15 @@ h3 { font-size: 1.25rem; }
 
   .news-item {
     padding: 20px 20px 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-spin-left,
+  .rp-spin-right,
+  .rp-st-cue,
+  .rp-coupling,
+  .rp-trace {
+    animation: none !important;
   }
 }
