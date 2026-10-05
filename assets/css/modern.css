@@ -1526,70 +1526,79 @@ h3 { font-size: 1.25rem; }
 
 
 /* ---------------------------------------------------------
-   Lecture: electronic structure + spin dynamics
+   Lecture v2: scientific notes + corrected interactive figures
    --------------------------------------------------------- */
 .page-lecture .site-main {
-  width: min(calc(100% - 44px), 1180px);
+  width: min(calc(100% - 44px), 1120px);
 }
 
 .page-lecture .page-content {
   width: 100%;
   max-width: none;
-  padding: clamp(30px, 4.5vw, 58px);
+  padding: clamp(28px, 4vw, 52px);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .lecture-shell {
-  max-width: 1040px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.lecture-intro {
-  max-width: 880px;
-  margin: 0 0 28px !important;
-  color: var(--ink-soft) !important;
-  font-size: 1.12rem !important;
-  line-height: 1.82 !important;
+.lecture-lead {
+  margin-bottom: 54px;
+  padding: 30px 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255,255,255,.84);
+  box-shadow: 0 10px 30px rgba(7,29,49,.045);
 }
 
-.lecture-toc {
-  position: sticky;
-  top: 84px;
-  z-index: 20;
+.lecture-intro {
+  max-width: 850px;
+  margin: 0 0 24px !important;
+  color: var(--ink-soft) !important;
+  font-size: 1.13rem !important;
+  line-height: 1.8 !important;
+}
+
+.lecture-route {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 56px;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255,255,255,.9);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(12px);
 }
 
-.lecture-toc a {
+.lecture-route a {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   min-height: 34px;
   padding: 0 11px;
-  border: 0 !important;
+  border: 1px solid var(--line) !important;
   border-radius: 999px;
-  background: var(--accent-soft);
+  background: #fff;
   color: var(--navy) !important;
   font-family: "Inter", sans-serif;
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 700;
 }
 
-.lecture-toc a:hover {
-  background: var(--navy);
-  color: white !important;
+.lecture-route a:hover {
+  border-color: #b9dadd !important;
+  background: var(--accent-soft);
+}
+
+.lecture-route span {
+  color: var(--accent);
+  font-size: .66rem;
+  letter-spacing: .08em;
 }
 
 .lecture-section {
-  scroll-margin-top: 150px;
-  margin-top: 74px;
-  padding-top: 42px;
+  scroll-margin-top: 100px;
+  margin-top: 72px;
+  padding-top: 44px;
   border-top: 1px solid var(--line);
 }
 
@@ -1597,202 +1606,250 @@ h3 { font-size: 1.25rem; }
   margin-top: 0;
 }
 
-.lecture-section > h2 {
-  max-width: 840px;
-  margin: 0 0 20px;
-  font-size: clamp(1.8rem, 3vw, 2.45rem);
+.lecture-section-head {
+  display: grid;
+  grid-template-columns: 44px minmax(0,1fr);
+  gap: 15px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.lecture-index {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid #c9e3e6;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.lecture-section-head .section-eyebrow {
+  margin-bottom: 5px;
+}
+
+.lecture-section-head h2 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
 }
 
 .lecture-section > p {
-  max-width: 880px;
+  max-width: 860px;
+  margin-left: 59px;
 }
 
 .lecture-equation {
-  margin: 25px 0;
-  padding: 18px 22px;
+  margin: 25px 0 25px 59px;
+  padding: 16px 20px;
   overflow-x: auto;
-  border: 1px solid #d4e6e9;
-  border-radius: 14px;
-  background:
-    linear-gradient(120deg, rgba(231,246,247,.7), rgba(255,255,255,.95));
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: rgba(231,246,247,.55);
   color: var(--navy);
   text-align: center;
 }
 
 .lecture-equation.compact {
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 }
 
 .lecture-equation .MathJax_Display {
-  margin: .2em 0 !important;
+  margin: .15em 0 !important;
 }
 
 .equation-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.lecture-concept-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 28px 0 6px;
-}
-
-.lecture-concept {
-  position: relative;
-  min-height: 170px;
-  padding: 22px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: #fff;
-}
-
-.lecture-number {
-  display: inline-block;
-  margin-bottom: 22px;
-  color: var(--accent);
-  font-size: .68rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-}
-
-.lecture-concept h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.lecture-concept p {
-  margin: 0;
-  color: var(--muted) !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: .86rem !important;
-  line-height: 1.6 !important;
-}
-
-.hamiltonian-legend {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin: 28px 0;
 }
 
-.hamiltonian-legend div {
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  background: #fff;
+.lecture-output-strip,
+.hamiltonian-legend {
+  margin: 28px 0 4px 59px;
+  display: grid;
+  gap: 10px;
 }
 
+.lecture-output-strip,
+.hamiltonian-legend {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.lecture-output-strip > div,
+.hamiltonian-legend > div {
+  padding: 15px 14px;
+  border-top: 2px solid #c9e3e6;
+  background: rgba(255,255,255,.66);
+}
+
+.lecture-output-strip strong,
+.lecture-output-strip span,
 .hamiltonian-legend strong,
 .hamiltonian-legend span {
   display: block;
 }
 
+.lecture-output-strip strong,
 .hamiltonian-legend strong {
   margin-bottom: 5px;
   color: var(--navy);
-  font-size: .88rem;
+  font-size: .8rem;
 }
 
+.lecture-output-strip span,
 .hamiltonian-legend span {
   color: var(--muted);
-  font-size: .76rem;
-  line-height: 1.48;
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+.lecture-note {
+  margin: 22px 0 0 59px;
+  padding: 15px 18px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #d7e4e8;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+.lecture-note strong {
+  flex: 0 0 auto;
+  color: var(--navy);
+}
+
+.lecture-details {
+  margin: 18px 0 0 59px;
+  max-width: 760px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lecture-details summary {
+  padding: 12px 0;
+  cursor: pointer;
+  color: var(--navy);
+  font-size: .82rem;
+  font-weight: 750;
+}
+
+.lecture-details p {
+  margin: 0 0 14px !important;
+  color: var(--muted) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .8rem !important;
+  line-height: 1.6 !important;
 }
 
 .interactive-card {
-  margin: 34px 0;
-  padding: 25px;
-  border: 1px solid #cfe2e6;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 95% 5%, rgba(73,195,201,.09), transparent 15rem),
-    #fff;
-  box-shadow: 0 12px 34px rgba(7,29,49,.055);
+  margin: 34px 0 0 59px;
+  padding: 24px 26px 22px;
+  border: 1px solid #cfe1e5;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(247,251,252,.96), rgba(255,255,255,.96));
+  box-shadow: 0 10px 30px rgba(7,29,49,.045);
 }
 
 .interactive-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 13px;
+  gap: 18px;
+  margin-bottom: 10px;
 }
 
 .interactive-head h3 {
-  margin: 3px 0 0;
-  font-size: 1.25rem;
+  margin: 2px 0 0;
+  font-size: 1.18rem;
 }
 
 .interactive-kicker {
   color: var(--accent);
-  font-size: .68rem;
+  font-size: .66rem;
   font-weight: 800;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
 
-.interactive-model-note {
+.interactive-model-note,
+.demo-toggle {
   flex: 0 0 auto;
   padding: 5px 9px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--accent-soft);
+  background: #fff;
   color: var(--navy);
-  font-size: .69rem;
+  font-family: "Inter", sans-serif;
+  font-size: .68rem;
   font-weight: 700;
 }
 
+.demo-toggle {
+  cursor: pointer;
+}
+
+.demo-toggle:hover {
+  border-color: #b8d9dd;
+  background: var(--accent-soft);
+}
+
 .interactive-card > p {
-  max-width: 850px;
-  margin-top: 8px;
+  max-width: 820px;
+  margin: 7px 0 0;
+}
+
+.interactive-card .lecture-equation {
+  margin-left: 0;
 }
 
 .interactive-layout {
   display: grid;
-  grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
-  gap: 28px;
+  grid-template-columns: minmax(220px,.72fr) minmax(0,1.28fr);
+  gap: 26px;
   align-items: center;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .interactive-controls label {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   margin: 0 0 5px;
   color: var(--navy);
   font-family: "Inter", sans-serif;
-  font-size: .8rem;
+  font-size: .78rem;
   font-weight: 700;
 }
 
 .interactive-controls output {
   color: var(--accent);
-  font-size: .76rem;
+  font-size: .74rem;
   font-weight: 750;
   white-space: nowrap;
 }
 
 .interactive-controls input[type="range"] {
   width: 100%;
-  margin: 0 0 21px;
+  margin: 0 0 20px;
   accent-color: var(--accent);
 }
 
 .interactive-readout {
   display: grid;
-  gap: 8px;
-  margin-top: 4px;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--canvas);
+  gap: 7px;
+  margin-top: 2px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
 }
 
 .interactive-readout span {
@@ -1800,66 +1857,71 @@ h3 { font-size: 1.25rem; }
   justify-content: space-between;
   gap: 12px;
   color: var(--muted);
-  font-size: .74rem;
+  font-size: .73rem;
 }
 
 .interactive-readout strong {
   color: var(--navy);
-  font-size: .78rem;
+  font-size: .76rem;
+  white-space: nowrap;
+}
+
+.character-meter {
+  height: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dbe9ec;
+}
+
+.character-meter span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  transition: width .12s ease;
+}
+
+.plot-wrap {
+  min-width: 0;
 }
 
 .lecture-svg {
   display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background:
-    linear-gradient(rgba(20,80,100,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20,80,100,.035) 1px, transparent 1px),
-    #fbfdfe;
-  background-size: 24px 24px;
+  overflow: hidden;
+  border: 1px solid #dde8eb;
+  border-radius: 12px;
+  background: #fff;
 }
 
-.energy-line {
-  stroke-linecap: round;
-  stroke-width: 3;
+.plot-axis {
+  stroke: #91a6b0;
+  stroke-width: 1;
 }
 
-.energy-line.muted {
-  stroke: #9eb1bb;
-}
-
-.energy-line.active {
-  stroke: var(--accent);
-}
-
-.mix-line {
-  fill: none;
-  stroke: rgba(28,136,148,.35);
-  stroke-width: 1.5;
-}
-
-.mix-line.faint {
-  stroke-dasharray: 4 5;
+.plot-grid {
+  stroke: #dfe9ec;
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
 }
 
 .svg-caption,
 .svg-label,
 .svg-tick {
-  fill: #617783;
+  fill: #607581;
   font-family: "Inter", sans-serif;
 }
 
 .svg-caption {
   font-size: 10px;
   font-weight: 650;
-  letter-spacing: .03em;
 }
 
 .svg-label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
 }
 
@@ -1867,95 +1929,76 @@ h3 { font-size: 1.25rem; }
   font-size: 8px;
 }
 
-.precession-orbit {
+.diabatic-line {
   fill: none;
-  stroke: rgba(28,136,148,.35);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 6;
+  stroke: #9caeb7;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
 }
 
-.field-axis {
-  stroke: #7a909c;
-  stroke-width: 1.4;
+.adiabatic-line {
+  fill: none;
+  stroke-width: 2.2;
 }
 
-.field-arrow {
-  fill: #7a909c;
+.lower-line {
+  stroke: var(--navy-2);
 }
 
-.spin-origin,
-.spin-tip {
-  fill: var(--accent);
+.upper-line {
+  stroke: var(--accent);
 }
 
-.spin-vector-demo {
-  stroke: var(--navy);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-}
-
-.spin-arrow-demo {
-  fill: var(--navy);
-}
-
-.spin-projection {
+.plot-marker {
   stroke: rgba(28,136,148,.42);
-  stroke-width: 1.1;
+  stroke-width: 1.2;
   stroke-dasharray: 4 4;
 }
 
-.lecture-flow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 28px 0;
+.plot-point {
+  stroke: #fff;
+  stroke-width: 2;
 }
 
-.lecture-flow > div {
-  position: relative;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #fff;
+.lower-point { fill: var(--navy-2); }
+.upper-point { fill: var(--accent); }
+
+.field-axis {
+  stroke: #7b909b;
+  stroke-width: 1.4;
 }
 
-.lecture-flow span {
-  display: inline-grid;
-  width: 26px;
-  height: 26px;
-  margin-bottom: 16px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: .68rem;
-  font-weight: 800;
+.field-arrow { fill: #7b909b; }
+
+.precession-orbit {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-dasharray: 5 6;
+  opacity: .65;
 }
 
-.lecture-flow strong,
-.lecture-flow small {
-  display: block;
-}
-
-.lecture-flow strong {
-  margin-bottom: 6px;
-  color: var(--navy);
-  font-size: .83rem;
-}
-
-.lecture-flow small {
-  color: var(--muted);
-  font-size: .72rem;
-  line-height: 1.45;
-}
-
-.plot-wrap {
-  min-width: 0;
-}
-
-.plot-axis {
-  stroke: #9aaeb8;
+.cone-edge {
+  stroke: rgba(28,136,148,.17);
   stroke-width: 1;
+  stroke-dasharray: 4 5;
+}
+
+.spin-origin,
+.spin-tip { fill: var(--accent); }
+
+.spin-vector-demo {
+  stroke: var(--navy);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.spin-arrow-demo { fill: var(--navy); }
+
+.spin-projection {
+  stroke: rgba(28,136,148,.38);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
 }
 
 .population-line {
@@ -1965,22 +2008,63 @@ h3 { font-size: 1.25rem; }
   stroke-width: 2;
 }
 
-.singlet-line {
-  stroke: var(--navy-2);
-}
-
-.triplet-line {
-  stroke: var(--accent);
-}
+.singlet-line { stroke: var(--navy-2); }
+.triplet-line { stroke: var(--accent); }
 
 .interactive-footnote {
-  margin: 18px 0 0 !important;
-  padding-top: 13px;
+  margin: 16px 0 0 !important;
+  padding-top: 12px;
   border-top: 1px solid var(--line);
   color: var(--muted) !important;
   font-family: "Inter", sans-serif !important;
-  font-size: .75rem !important;
+  font-size: .74rem !important;
   line-height: 1.55 !important;
+}
+
+.lecture-mechanism {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 9px;
+  align-items: stretch;
+  margin: 27px 0 0 59px;
+}
+
+.lecture-mechanism > div:not(.mechanism-arrow) {
+  padding: 15px;
+  border-top: 2px solid #c9e3e6;
+  background: rgba(255,255,255,.7);
+}
+
+.lecture-mechanism span,
+.lecture-mechanism strong,
+.lecture-mechanism small {
+  display: block;
+}
+
+.lecture-mechanism span {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: .65rem;
+  font-weight: 800;
+}
+
+.lecture-mechanism strong {
+  margin-bottom: 5px;
+  color: var(--navy);
+  font-size: .8rem;
+}
+
+.lecture-mechanism small {
+  color: var(--muted);
+  font-size: .69rem;
+  line-height: 1.45;
+}
+
+.mechanism-arrow,
+.pipeline-arrow {
+  align-self: center;
+  color: #9bafb7;
+  font-size: 1.05rem;
 }
 
 .lecture-pipeline {
@@ -1988,18 +2072,17 @@ h3 { font-size: 1.25rem; }
   grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
   gap: 8px;
   align-items: center;
-  margin: 30px 0;
+  margin: 28px 0 0 59px;
 }
 
 .lecture-pipeline > div:not(.pipeline-arrow) {
-  min-height: 112px;
-  padding: 16px;
+  min-height: 100px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #fff;
+  border-top: 2px solid #c9e3e6;
+  background: rgba(255,255,255,.7);
 }
 
 .lecture-pipeline span,
@@ -2008,9 +2091,9 @@ h3 { font-size: 1.25rem; }
 }
 
 .lecture-pipeline span {
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   color: var(--accent);
-  font-size: .67rem;
+  font-size: .64rem;
   font-weight: 800;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -2018,122 +2101,161 @@ h3 { font-size: 1.25rem; }
 
 .lecture-pipeline strong {
   color: var(--navy);
-  font-size: .76rem;
-  line-height: 1.45;
+  font-size: .72rem;
+  line-height: 1.42;
 }
 
-.pipeline-arrow {
-  color: #9ab0b8;
-  font-size: 1.25rem;
-}
-
-.lecture-paper-grid {
+.lecture-reading-grid {
+  margin: 6px 0 0 59px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-  margin-top: 28px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
 }
 
-.lecture-paper {
-  display: flex;
-  flex-direction: column;
-  min-height: 245px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  background: #fff;
+.lecture-reading-grid article {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
 }
 
-.lecture-paper > span {
-  margin-bottom: 10px;
+.lecture-reading-grid article > span {
+  display: block;
+  margin-bottom: 7px;
   color: var(--accent);
-  font-size: .66rem;
+  font-size: .64rem;
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-.lecture-paper h3 {
-  margin: 0 0 10px;
-  color: var(--navy);
-  font-size: .94rem;
-  line-height: 1.38;
+.lecture-reading-grid h3 {
+  margin: 0 0 8px;
+  font-size: .91rem;
+  line-height: 1.4;
 }
 
-.lecture-paper p {
-  margin: 0 0 12px;
+.lecture-reading-grid p {
+  margin: 0 0 9px !important;
   color: var(--muted) !important;
   font-family: "Inter", sans-serif !important;
-  font-size: .78rem !important;
-  line-height: 1.55 !important;
+  font-size: .76rem !important;
+  line-height: 1.5 !important;
 }
 
-.lecture-paper a {
-  width: fit-content;
-  margin-top: auto;
+.lecture-reading-grid a {
+  border: 0 !important;
   color: var(--navy) !important;
-  font-size: .76rem;
+  font-size: .74rem;
   font-weight: 750;
 }
 
+.lecture-all-pubs {
+  margin: 20px 0 0 59px !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.lecture-all-pubs a {
+  display: inline-flex;
+  padding: 8px 12px;
+  border: 1px solid var(--line) !important;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy) !important;
+  font-size: .78rem;
+}
+
 @media (max-width: 900px) {
-  .lecture-concept-grid,
-  .lecture-paper-grid {
+  .lecture-output-strip,
+  .hamiltonian-legend {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hamiltonian-legend,
-  .lecture-flow {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lecture-pipeline {
+  .lecture-pipeline,
+  .lecture-mechanism {
     grid-template-columns: 1fr;
   }
 
-  .pipeline-arrow {
-    transform: rotate(90deg);
+  .pipeline-arrow,
+  .mechanism-arrow {
     justify-self: center;
+    transform: rotate(90deg);
   }
 }
 
 @media (max-width: 760px) {
-  .lecture-toc {
-    position: static;
-  }
-
-  .interactive-layout,
-  .equation-pair {
+  .equation-pair,
+  .interactive-layout {
     grid-template-columns: 1fr;
   }
 
   .interactive-layout {
     gap: 18px;
   }
+
+  .lecture-reading-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 620px) {
   .page-lecture .site-main {
-    width: min(calc(100% - 28px), 1180px);
+    width: min(calc(100% - 28px), 1120px);
   }
 
-  .lecture-concept-grid,
-  .lecture-paper-grid,
+  .page-lecture .page-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .lecture-lead {
+    padding: 23px 20px;
+    border-radius: 16px;
+  }
+
+  .lecture-section-head {
+    grid-template-columns: 34px minmax(0,1fr);
+    gap: 10px;
+  }
+
+  .lecture-index {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    font-size: .64rem;
+  }
+
+  .lecture-section > p,
+  .lecture-equation,
+  .lecture-output-strip,
   .hamiltonian-legend,
-  .lecture-flow {
+  .lecture-note,
+  .lecture-details,
+  .interactive-card,
+  .lecture-mechanism,
+  .lecture-pipeline,
+  .lecture-reading-grid,
+  .lecture-all-pubs {
+    margin-left: 0 !important;
+  }
+
+  .lecture-output-strip,
+  .hamiltonian-legend {
     grid-template-columns: 1fr;
   }
 
   .interactive-card {
-    padding: 19px 16px;
+    padding: 18px 15px;
+    border-radius: 15px;
   }
 
   .interactive-head {
-    flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .lecture-equation {
-    padding: 14px 10px;
+    padding: 12px 8px;
+  }
+
+  .lecture-note {
+    flex-direction: column;
   }
 }

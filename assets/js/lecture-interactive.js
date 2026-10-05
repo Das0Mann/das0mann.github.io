@@ -1,8 +1,14 @@
 (() => {
   "use strict";
 
-  const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
   const $ = (id) => document.getElementById(id);
+  const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
+
+  function makePath(points) {
+    return points.map((p, i) =>
+      (i === 0 ? "M" : "L") + p[0].toFixed(2) + " " + p[1].toFixed(2)
+    ).join(" ");
+  }
 
   function initOrbitalDemo() {
     const delta = $("orbital-delta");
@@ -12,80 +18,58 @@
     const deltaOut = $("orbital-delta-out");
     const couplingOut = $("orbital-coupling-out");
     const splittingOut = $("orbital-splitting");
+    const minGapOut = $("orbital-min-gap");
     const weightOut = $("orbital-weight");
+    const weightBar = $("orbital-character-bar");
+    const diabatic1 = $("diabatic-1");
+    const diabatic2 = $("diabatic-2");
+    const lower = $("adiabatic-minus");
+    const upper = $("adiabatic-plus");
+    const marker = $("orbital-marker");
+    const markerMinus = $("orbital-marker-minus");
+    const markerPlus = $("orbital-marker-plus");
 
-    const site1 = $("site1-line");
-    const site2 = $("site2-line");
-    const lower = $("bonding-line");
-    const upper = $("antibonding-line");
-    const site1Label = $("site1-label");
-    const site2Label = $("site2-label");
+    const x0 = 58, x1 = 528, y0 = 252, y1 = 30;
+    const dMin = -4, dMax = 4, eMin = -2.6, eMax = 2.6;
+    const xMap = (d) => x0 + (x1 - x0) * (d - dMin) / (dMax - dMin);
+    const yMap = (e) => y0 - (y0 - y1) * (e - eMin) / (eMax - eMin);
 
-    const yMap = (energy) => {
-      const e = clamp(energy, -4.5, 4.5);
-      return 135 - e * 24;
-    };
+    function curve(fn) {
+      const pts = [];
+      const n = 180;
+      for (let i = 0; i <= n; i++) {
+        const d = dMin + (dMax - dMin) * i / n;
+        pts.push([xMap(d), yMap(fn(d))]);
+      }
+      return makePath(pts);
+    }
 
     function update() {
       const d = parseFloat(delta.value);
       const t = parseFloat(coupling.value);
       const root = Math.sqrt((d * d) / 4 + t * t);
-      const e1 = -d / 2;
-      const e2 = d / 2;
-      const eMinus = -root;
-      const ePlus = root;
       const denom = Math.sqrt(d * d + 4 * t * t);
       const w1 = denom < 1e-12 ? 0.5 : 0.5 * (1 + d / denom);
 
       deltaOut.textContent = d.toFixed(2) + " eV";
       couplingOut.textContent = t.toFixed(2) + " eV";
       splittingOut.textContent = (2 * root).toFixed(2) + " eV";
+      minGapOut.textContent = (2 * Math.abs(t)).toFixed(2) + " eV";
       weightOut.textContent = (100 * w1).toFixed(1) + "%";
+      if (weightBar) weightBar.style.width = (100 * w1).toFixed(1) + "%";
 
-      const y1 = yMap(e1);
-      const y2 = yMap(e2);
-      const ym = yMap(eMinus);
-      const yp = yMap(ePlus);
+      diabatic1.setAttribute("d", curve((x) => -x / 2));
+      diabatic2.setAttribute("d", curve((x) => +x / 2));
+      lower.setAttribute("d", curve((x) => -Math.sqrt((x * x) / 4 + t * t)));
+      upper.setAttribute("d", curve((x) => +Math.sqrt((x * x) / 4 + t * t)));
 
-      [site1, site1Label].forEach((el) => {
-        if (!el) return;
-        if (el.tagName.toLowerCase() === "line") {
-          el.setAttribute("y1", y1);
-          el.setAttribute("y2", y1);
-        } else {
-          el.setAttribute("y", y1 + 20);
-        }
-      });
-
-      [site2, site2Label].forEach((el) => {
-        if (!el) return;
-        if (el.tagName.toLowerCase() === "line") {
-          el.setAttribute("y1", y2);
-          el.setAttribute("y2", y2);
-        } else {
-          el.setAttribute("y", y2 - 10);
-        }
-      });
-
-      [lower, upper].forEach((el, idx) => {
-        const y = idx === 0 ? ym : yp;
-        el.setAttribute("y1", y);
-        el.setAttribute("y2", y);
-      });
-
-      const p1 = $("mix-path-1");
-      const p2 = $("mix-path-2");
-      const p3 = $("mix-path-3");
-      const p4 = $("mix-path-4");
-      if (p1) p1.setAttribute("d", `M165 ${y1} C240 ${y1} 275 ${ym} 340 ${ym}`);
-      if (p2) p2.setAttribute("d", `M165 ${y2} C240 ${y2} 275 ${yp} 340 ${yp}`);
-      if (p3) p3.setAttribute("d", `M165 ${y1} C245 ${y1} 275 ${yp} 340 ${yp}`);
-      if (p4) p4.setAttribute("d", `M165 ${y2} C245 ${y2} 275 ${ym} 340 ${ym}`);
-
-      const mix = denom < 1e-12 ? 1 : (2 * Math.abs(t)) / denom;
-      [p3, p4].forEach((el) => {
-        if (el) el.style.opacity = String(0.12 + 0.55 * mix);
-      });
+      const x = xMap(d);
+      marker.setAttribute("x1", x);
+      marker.setAttribute("x2", x);
+      markerMinus.setAttribute("cx", x);
+      markerMinus.setAttribute("cy", yMap(-root));
+      markerPlus.setAttribute("cx", x);
+      markerPlus.setAttribute("cy", yMap(+root));
     }
 
     delta.addEventListener("input", update);
@@ -96,6 +80,7 @@
   function initLarmorDemo() {
     const b = $("larmor-b");
     const g = $("larmor-g");
+    const toggle = $("larmor-toggle");
     if (!b || !g) return;
 
     const bOut = $("larmor-b-out");
@@ -107,35 +92,31 @@
     const tip = $("spin-tip");
     const arrow = $("spin-arrowhead");
 
-    let freqMHz = 0;
-    let visualRate = 1;
-    let start = performance.now();
+    const origin = {x:260, y:230};
+    const center = {x:260, y:92};
+    const rx = 82, ry = 24;
+    let visualRate = 1.5;
+    let theta = 0;
+    let last = null;
+    let running = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function updatePhysics() {
       const bMt = parseFloat(b.value);
       const gVal = parseFloat(g.value);
-      freqMHz = 13.99624555 * gVal * bMt;
+      const freqMHz = 13.99624555 * gVal * bMt;
       const periodNs = 1000 / freqMHz;
-
       bOut.textContent = bMt.toFixed(2) + " mT";
       gOut.textContent = gVal.toFixed(4);
       fOut.textContent = freqMHz.toFixed(2) + " MHz";
       periodOut.textContent = periodNs.toFixed(2) + " ns";
-
-      visualRate = 0.65 + 0.55 * Math.log10(1 + freqMHz);
+      visualRate = 1.1 + 0.55 * Math.log10(1 + freqMHz);
     }
 
-    function animate(now) {
-      if (!vector || !projection || !tip || !arrow) return;
-      const t = (now - start) / 1000;
-      const theta = t * visualRate;
-      const cx = 205;
-      const cyBase = 193;
-      const rx = 95;
-      const ry = 34;
-      const x = cx + rx * Math.cos(theta);
-      const y = 135 + ry * Math.sin(theta);
-
+    function draw() {
+      const x = center.x + rx * Math.cos(theta);
+      const y = center.y + ry * Math.sin(theta);
+      projection.setAttribute("x1", center.x);
+      projection.setAttribute("y1", center.y);
       projection.setAttribute("x2", x.toFixed(2));
       projection.setAttribute("y2", y.toFixed(2));
       tip.setAttribute("cx", x.toFixed(2));
@@ -143,84 +124,93 @@
       vector.setAttribute("x2", x.toFixed(2));
       vector.setAttribute("y2", y.toFixed(2));
 
-      const dx = x - cx;
-      const dy = y - cyBase;
+      const dx = x - origin.x, dy = y - origin.y;
       const len = Math.sqrt(dx * dx + dy * dy) || 1;
-      const ux = dx / len;
-      const uy = dy / len;
-      const px = -uy;
-      const py = ux;
-      const baseX = x - ux * 15;
-      const baseY = y - uy * 15;
-      const p1x = baseX + px * 6;
-      const p1y = baseY + py * 6;
-      const p2x = baseX - px * 6;
-      const p2y = baseY - py * 6;
-      arrow.setAttribute("d", `M${x.toFixed(2)} ${y.toFixed(2)} L${p1x.toFixed(2)} ${p1y.toFixed(2)} L${p2x.toFixed(2)} ${p2y.toFixed(2)} Z`);
+      const ux = dx / len, uy = dy / len;
+      const px = -uy, py = ux;
+      const baseX = x - ux * 16, baseY = y - uy * 16;
+      const p1x = baseX + px * 6, p1y = baseY + py * 6;
+      const p2x = baseX - px * 6, p2y = baseY - py * 6;
+      arrow.setAttribute("d",
+        "M" + x.toFixed(2) + " " + y.toFixed(2) +
+        " L" + p1x.toFixed(2) + " " + p1y.toFixed(2) +
+        " L" + p2x.toFixed(2) + " " + p2y.toFixed(2) + " Z");
+    }
 
+    function animate(now) {
+      if (last === null) last = now;
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      if (running) {
+        theta += visualRate * dt;
+        draw();
+      }
       requestAnimationFrame(animate);
     }
 
     b.addEventListener("input", updatePhysics);
     g.addEventListener("input", updatePhysics);
-    updatePhysics();
-
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      requestAnimationFrame(animate);
+    if (toggle) {
+      toggle.textContent = running ? "Pause" : "Play";
+      toggle.addEventListener("click", () => {
+        running = !running;
+        toggle.textContent = running ? "Pause" : "Play";
+      });
     }
+
+    updatePhysics();
+    draw();
+    requestAnimationFrame(animate);
   }
 
   function initSTDemo() {
-    const v = $("st-coupling");
-    const delta = $("st-detuning");
-    if (!v || !delta) return;
+    const coupling = $("st-coupling");
+    const detuning = $("st-detuning");
+    if (!coupling || !detuning) return;
 
-    const vOut = $("st-coupling-out");
-    const dOut = $("st-detuning-out");
-    const fOut = $("st-frequency");
-    const aOut = $("st-amplitude");
+    const couplingOut = $("st-coupling-out");
+    const detuningOut = $("st-detuning-out");
+    const frequencyOut = $("st-frequency");
+    const amplitudeOut = $("st-amplitude");
+    const windowOut = $("st-window");
+    const tMid = $("st-time-mid");
+    const tMaxLabel = $("st-time-max");
     const singlet = $("singlet-path");
     const triplet = $("triplet-path");
-
-    const x0 = 50;
-    const x1 = 535;
-    const yTop = 30;
-    const yBottom = 205;
-    const tMax = 2.0;
-
-    function buildPath(fn) {
-      const n = 260;
-      let d = "";
-      for (let i = 0; i <= n; i++) {
-        const time = tMax * i / n;
-        const p = clamp(fn(time), 0, 1);
-        const x = x0 + (x1 - x0) * i / n;
-        const y = yBottom - (yBottom - yTop) * p;
-        d += (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2) + " ";
-      }
-      return d.trim();
-    }
+    const x0 = 58, x1 = 530, yTop = 35, yBottom = 248;
 
     function update() {
-      const V = parseFloat(v.value);
-      const D = parseFloat(delta.value);
+      const V = parseFloat(coupling.value);
+      const D = parseFloat(detuning.value);
       const omega = Math.sqrt(D * D + 4 * V * V);
-      const amp = omega === 0 ? 0 : (4 * V * V) / (omega * omega);
+      const amp = omega < 1e-12 ? 0 : (4 * V * V) / (omega * omega);
+      const tMax = clamp(4 / Math.max(omega, 0.05), 0.25, 8.0);
 
-      vOut.textContent = V.toFixed(2) + " MHz";
-      dOut.textContent = D.toFixed(2) + " MHz";
-      fOut.textContent = omega.toFixed(2) + " MHz";
-      aOut.textContent = (100 * amp).toFixed(1) + "%";
+      couplingOut.textContent = V.toFixed(2) + " MHz";
+      detuningOut.textContent = D.toFixed(2) + " MHz";
+      frequencyOut.textContent = omega.toFixed(2) + " MHz";
+      amplitudeOut.textContent = (100 * amp).toFixed(1) + "%";
+      windowOut.textContent = tMax.toFixed(2) + " μs";
+      tMid.textContent = (tMax / 2).toFixed(2);
+      tMaxLabel.textContent = tMax.toFixed(2);
 
-      const pT = (time) => amp * Math.pow(Math.sin(Math.PI * omega * time), 2);
-      const pS = (time) => 1 - pT(time);
+      const sPts = [], tPts = [];
+      const n = 360;
+      for (let i = 0; i <= n; i++) {
+        const time = tMax * i / n;
+        const pT = amp * Math.pow(Math.sin(Math.PI * omega * time), 2);
+        const pS = 1 - pT;
+        const x = x0 + (x1 - x0) * i / n;
+        sPts.push([x, yBottom - (yBottom - yTop) * pS]);
+        tPts.push([x, yBottom - (yBottom - yTop) * pT]);
+      }
 
-      singlet.setAttribute("d", buildPath(pS));
-      triplet.setAttribute("d", buildPath(pT));
+      singlet.setAttribute("d", makePath(sPts));
+      triplet.setAttribute("d", makePath(tPts));
     }
 
-    v.addEventListener("input", update);
-    delta.addEventListener("input", update);
+    coupling.addEventListener("input", update);
+    detuning.addEventListener("input", update);
     update();
   }
 
@@ -230,9 +220,6 @@
     initSTDemo();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
 })();
