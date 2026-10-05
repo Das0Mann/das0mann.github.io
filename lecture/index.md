@@ -15,9 +15,9 @@ permalink: /lecture/
     <div class="map-arrow">→</div>
     <div><span>2</span><strong>Electronic structure</strong><small>states, densities, excitations</small></div>
     <div class="map-arrow">→</div>
-    <div><span>3</span><strong>Spin Hamiltonian</strong><small>(g), (A), (J), (D), SOC</small></div>
+    <div><span>3</span><strong>Spin Hamiltonian</strong><small>\(g\), \(A\), \(J\), \(D\), SOC</small></div>
     <div class="map-arrow">→</div>
-    <div><span>4</span><strong>Spin dynamics</strong><small>(ho(t)), coherence, relaxation</small></div>
+    <div><span>4</span><strong>Spin dynamics</strong><small>\(\rho(t)\), coherence, relaxation</small></div>
     <div class="map-arrow">→</div>
     <div><span>5</span><strong>Observable</strong><small>EPR, MFE, RYDMR, CIDNP</small></div>
   </div>
@@ -44,15 +44,14 @@ permalink: /lecture/
   <p>If I put a molecular geometry on the board, the first question is not yet “how does the spin precess?” It is: <strong>what electronic state does this geometry support?</strong> Within the Born–Oppenheimer approximation we freeze the nuclei for the moment and solve the electronic problem. In atomic units, a useful schematic Hamiltonian is</p>
 
   <div class="lecture-equation">
-  [
-  hat H_mathrm{e}
+  \[
+  \hat H_\mathrm{e}
   =
-  -rac{1}{2}sum_i 
-abla_i^2
-  -sum_{iA}rac{Z_A}{r_{iA}}
-  +sum_{i<j}rac{1}{r_{ij}}
-  +V_mathrm{NN}.
-  ]
+  -\frac{1}{2}\sum_i \nabla_i^2
+  -\sum_{iA}\frac{Z_A}{r_{iA}}
+  +\sum_{i<j}\frac{1}{r_{ij}}
+  +V_\mathrm{NN}.
+  \]
   </div>
 
   <p>The first two electronic terms are familiar: kinetic energy and attraction to the nuclei. The hard part is the electron–electron repulsion. Every practical electronic-structure method is, in one way or another, a strategy for dealing with this many-electron problem without explicitly solving the exact wavefunction for every electron coordinate.</p>
@@ -89,7 +88,7 @@ abla_i^2
     <div><strong>Energies &amp; forces</strong><span>structures, reaction energetics and molecular motion</span></div>
     <div><strong>Charge &amp; spin density</strong><span>where charge and unpaired spin are actually localized</span></div>
     <div><strong>Excited states</strong><span>photoexcitation, charge transfer and state ordering</span></div>
-    <div><strong>Magnetic parameters</strong><span>(mathbf g), (mathbf A), (J), (mathbf D), SOC and ZFS</span></div>
+    <div><strong>Magnetic parameters</strong><span>\(\mathbf g\), \(\mathbf A\), \(J\), \(\mathbf D\), SOC and ZFS</span></div>
   </div>
 
   <div class="interactive-card" id="orbital-demo">
@@ -101,31 +100,31 @@ abla_i^2
       <span class="interactive-model-note">two-state Hamiltonian</span>
     </div>
 
-    <p>Here is the smallest model that already shows something important. Two localized states have an energy offset (Delta) and interact through a coupling (t):</p>
+    <p>Here is the smallest model that already shows something important. Two localized states have an energy offset \(\Delta\) and interact through a coupling \(t\):</p>
 
     <div class="lecture-equation compact">
-    [
+    \[
     H =
-    egin{pmatrix}
-      -Delta/2 & t\
-      t & +Delta/2
-    end{pmatrix},
-    qquad
-    E_pm = pmsqrt{(Delta/2)^2+t^2}.
-    ]
+    \begin{pmatrix}
+      -\Delta/2 & t\\
+      t & +\Delta/2
+    \end{pmatrix},
+    \qquad
+    E_\pm = \pm\sqrt{(\Delta/2)^2+t^2}.
+    \]
     </div>
 
     <div class="demo-prompt">
       <strong>Try this:</strong>
-      <span>first set (t=0): the states cross. Then increase (t). The crossing opens into a gap and the state character becomes mixed near (Delta=0).</span>
+      <span>first set \(t=0\): the states cross. Then increase \(t\). The crossing opens into a gap and the state character becomes mixed near \(\Delta=0\).</span>
     </div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="orbital-delta">Current offset (Delta) <output id="orbital-delta-out">1.00 eV</output></label>
+        <label for="orbital-delta">Current offset \(\Delta\) <output id="orbital-delta-out">1.00 eV</output></label>
         <input id="orbital-delta" type="range" min="-4" max="4" step="0.05" value="1">
 
-        <label for="orbital-coupling">Coupling (t) <output id="orbital-coupling-out">0.50 eV</output></label>
+        <label for="orbital-coupling">Coupling \(t\) <output id="orbital-coupling-out">0.50 eV</output></label>
         <input id="orbital-coupling" type="range" min="0" max="1.2" step="0.025" value="0.5">
 
         <div class="demo-presets">
@@ -196,33 +195,33 @@ abla_i^2
   <p>Once the electronic state is known, we usually do not want to carry the full electronic wavefunction through a spin-dynamics simulation. Instead, we project the relevant physics onto a much smaller spin space. For a pair of radicals a useful schematic Hamiltonian is</p>
 
   <div class="lecture-equation">
-  [
-  hat H_mathrm{spin}
+  \[
+  \hat H_\mathrm{spin}
   =
-  sum_i mu_B,mathbf B!cdot!mathbf g_i!cdot!hat{mathbf S}_i
-  +sum_{ik}hat{mathbf S}_i!cdot!mathbf A_{ik}!cdot!hat{mathbf I}_{ik}
-  +J,hat{mathbf S}_1!cdot!hat{mathbf S}_2
-  +hat{mathbf S}_1!cdot!mathbf D!cdot!hat{mathbf S}_2
-  +cdots .
-  ]
+  \sum_i \mu_B\,\mathbf B\!\cdot\!\mathbf g_i\!\cdot\!\hat{\mathbf S}_i
+  +\sum_{ik}\hat{\mathbf S}_i\!\cdot\!\mathbf A_{ik}\!\cdot\!\hat{\mathbf I}_{ik}
+  +J\,\hat{\mathbf S}_1\!\cdot\!\hat{\mathbf S}_2
+  +\hat{\mathbf S}_1\!\cdot\!\mathbf D\!\cdot\!\hat{\mathbf S}_2
+  +\cdots .
+  \]
   </div>
 
   <p>This is where electronic structure and spin dynamics meet. The symbols in this Hamiltonian are not arbitrary fitting decorations: they encode the underlying electron density, spin–orbit coupling and geometry.</p>
 
   <div class="hamiltonian-legend">
-    <div><strong>Zeeman / (g)</strong><span>how an electron spin couples to the external field; deviations from the free-electron value arise mainly through spin–orbit coupling and electronic structure</span></div>
-    <div><strong>Hyperfine / (A)</strong><span>electron–nuclear coupling; strongly connected to the spin density around a nucleus and often anisotropic</span></div>
-    <div><strong>Exchange / (J)</strong><span>an electronic interaction between two spins that can vary extremely strongly with distance, overlap and electronic configuration</span></div>
-    <div><strong>Dipolar / (D)</strong><span>anisotropic spin–spin interaction; in the point-dipole limit it scales approximately as (r^{-3})</span></div>
+    <div><strong>Zeeman / \(g\)</strong><span>how an electron spin couples to the external field; deviations from the free-electron value arise mainly through spin–orbit coupling and electronic structure</span></div>
+    <div><strong>Hyperfine / \(A\)</strong><span>electron–nuclear coupling; strongly connected to the spin density around a nucleus and often anisotropic</span></div>
+    <div><strong>Exchange / \(J\)</strong><span>an electronic interaction between two spins that can vary extremely strongly with distance, overlap and electronic configuration</span></div>
+    <div><strong>Dipolar / \(D\)</strong><span>anisotropic spin–spin interaction; in the point-dipole limit it scales approximately as \(r^{-3}\)</span></div>
   </div>
 
   <details class="lecture-details">
     <summary>What else can appear in the Hamiltonian?</summary>
-    <p>Nuclear Zeeman interactions, nuclear quadrupole tensors for nuclei with (I>1/2), zero-field splitting for higher-spin states, microwave or radiofrequency driving fields, and additional exchange or anisotropic terms depending on the experiment.</p>
+    <p>Nuclear Zeeman interactions, nuclear quadrupole tensors for nuclei with \(I>1/2\), zero-field splitting for higher-spin states, microwave or radiofrequency driving fields, and additional exchange or anisotropic terms depending on the experiment.</p>
   </details>
 
   <aside class="lecture-note">
-    <strong>A practical warning about (J).</strong>
+    <strong>A practical warning about \(J\).</strong>
     <span>Different communities use different exchange Hamiltonians and therefore different signs and prefactors. A quoted exchange coupling is incomplete unless the Hamiltonian convention is stated.</span>
   </aside>
 
@@ -244,39 +243,39 @@ abla_i^2
   <p>For a closed pure state, the answer is the time-dependent Schrödinger equation. In spin chemistry and magnetic resonance we very often deal with ensembles, incomplete information and environmental coupling, so the density matrix is usually the more useful language:</p>
 
   <div class="lecture-equation equation-pair">
-    <div>[
-    ihbarrac{partial}{partial t}lvertpsi(t)angle
-    =hat Hlvertpsi(t)angle
-    ]</div>
-    <div>[
-    dotho
-    =-rac{i}{hbar}[hat H,ho]
-    +mathcal R(ho).
-    ]</div>
+    <div>\[
+    i\hbar\frac{\partial}{\partial t}\lvert\psi(t)\rangle
+    =\hat H\lvert\psi(t)\rangle
+    \]</div>
+    <div>\[
+    \dot\rho
+    =-\frac{i}{\hbar}[\hat H,\rho]
+    +\mathcal R(\rho).
+    \]</div>
   </div>
 
-  <p>The commutator gives coherent evolution. The relaxation superoperator (mathcal R) represents the fact that the spin system is not isolated from molecular motion, solvent, vibrations and the rest of its environment. Once (ho(t)) is known, an observable follows from (langle Oangle=mathrm{Tr}[hohat O]).</p>
+  <p>The commutator gives coherent evolution. The relaxation superoperator \(\mathcal R\) represents the fact that the spin system is not isolated from molecular motion, solvent, vibrations and the rest of its environment. Once \(\rho(t)\) is known, an observable follows from \(\langle O\rangle=\mathrm{Tr}[\rho\hat O]\).</p>
 
   <details class="lecture-details">
     <summary>Why not just propagate a wavefunction?</summary>
     <p>You can, if the problem is a pure closed state or if you use a stochastic unraveling of an open-system equation. But a density matrix naturally represents statistical mixtures, decoherence and ensemble averages. This is why Liouville-space formulations are so common in EPR, NMR and radical-pair theory.</p>
   </details>
 
-  <h3 class="lecture-subhead">(T_1), (T_2) and dephasing are not the same thing</h3>
+  <h3 class="lecture-subhead">\(T_1\), \(T_2\) and dephasing are not the same thing</h3>
 
-  <p>(T_1) describes longitudinal population relaxation toward equilibrium. (T_2) describes decay of transverse coherence. A useful decomposition is</p>
+  <p>\(T_1\) describes longitudinal population relaxation toward equilibrium. \(T_2\) describes decay of transverse coherence. A useful decomposition is</p>
 
   <div class="lecture-equation">
-  [
-  rac{1}{T_2}
+  \[
+  \frac{1}{T_2}
   =
-  rac{1}{2T_1}
+  \frac{1}{2T_1}
   +
-  rac{1}{T_phi},
-  ]
+  \frac{1}{T_\phi},
+  \]
   </div>
 
-  <p>where (T_phi) is the pure-dephasing time. So (T_2) is <strong>not simply defined by (T_1)</strong>. In the absence of pure dephasing one obtains the upper limit (T_2=2T_1); additional dephasing makes (T_2) shorter.</p>
+  <p>where \(T_\phi\) is the pure-dephasing time. So \(T_2\) is <strong>not simply defined by \(T_1\)</strong>. In the absence of pure dephasing one obtains the upper limit \(T_2=2T_1\); additional dephasing makes \(T_2\) shorter.</p>
 
   <div class="interactive-card" id="larmor-demo">
     <div class="interactive-head">
@@ -289,18 +288,18 @@ abla_i^2
 
     <p>Before adding hyperfine coupling, relaxation or a second electron, it is worth understanding the simplest motion. An approximately isotropic electron spin in a static field precesses at</p>
 
-    <div class="lecture-equation compact">[
-    f_mathrm{L}=rac{gmu_B B_0}{h}.
-    ]</div>
+    <div class="lecture-equation compact">\[
+    f_\mathrm{L}=\frac{g\mu_B B_0}{h}.
+    \]</div>
 
     <div class="demo-prompt">
       <strong>Try this:</strong>
-      <span>compare (50~mu	ext{T}), (1~	ext{mT}) and (10~	ext{mT}). The frequency changes linearly with field.</span>
+      <span>compare \(50~\mu\text{T}\), \(1~\text{mT}\) and \(10~\text{mT}\). The frequency changes linearly with field.</span>
     </div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="larmor-b">Magnetic field (B_0) <output id="larmor-b-out">1.00 mT</output></label>
+        <label for="larmor-b">Magnetic field \(B_0\) <output id="larmor-b-out">1.00 mT</output></label>
         <input id="larmor-b" type="range" min="0.05" max="10" step="0.05" value="1">
 
         <label for="larmor-g"><em>g</em>-factor <output id="larmor-g-out">2.0023</output></label>
@@ -317,7 +316,7 @@ abla_i^2
           <span>Precession period <strong id="larmor-period">35.69 ns</strong></span>
         </div>
 
-        <p id="larmor-explanation" class="demo-explanation">At 1 mT an electron with (gapprox2) precesses at roughly 28 MHz.</p>
+        <p id="larmor-explanation" class="demo-explanation">At 1 mT an electron with \(g\approx2\) precesses at roughly 28 MHz.</p>
       </div>
 
       <div class="plot-wrap">
@@ -356,7 +355,7 @@ abla_i^2
 
   <details class="lecture-details">
     <summary>What do singlet and triplet actually mean?</summary>
-    <p>For two electron spins (1/2), the singlet is (lvert Sangle=(lvertalphaetaangle-lvertetaalphaangle)/sqrt2). The triplet manifold contains (lvert T_+angle=lvertalphaalphaangle), (lvert T_0angle=(lvertalphaetaangle+lvertetaalphaangle)/sqrt2), and (lvert T_-angle=lvertetaetaangle). The labels describe the coupled two-electron spin state, not two separate classical arrows.</p>
+    <p>For two electron spins \(1/2\), the singlet is \(\lvert S\rangle=(\lvert\alpha\beta\rangle-\lvert\beta\alpha\rangle)/\sqrt2\). The triplet manifold contains \(\lvert T_+\rangle=\lvert\alpha\alpha\rangle\), \(\lvert T_0\rangle=(\lvert\alpha\beta\rangle+\lvert\beta\alpha\rangle)/\sqrt2\), and \(\lvert T_-\rangle=\lvert\beta\beta\rangle\). The labels describe the coupled two-electron spin state, not two separate classical arrows.</p>
   </details>
 
   <div class="lecture-mechanism" aria-label="Radical pair mechanism">
@@ -372,15 +371,15 @@ abla_i^2
   <p>If singlet and triplet radical pairs have different reaction channels, the chemical product yield depends on the spin dynamics. In a simple first-order picture, a singlet product yield can be written schematically as</p>
 
   <div class="lecture-equation">
-  [
-  Phi_S
+  \[
+  \Phi_S
   =
-  k_Sint_0^infty
-  mathrm{Tr}!left[hat P_Sho(t)ight],dt,
-  ]
+  k_S\int_0^\infty
+  \mathrm{Tr}\!\left[\hat P_S\rho(t)\right]\,dt,
+  \]
   </div>
 
-  <p>provided the reaction kinetics are included consistently in the evolution of (ho(t)). This equation is the bridge from an evolving quantum state to a chemical observable.</p>
+  <p>provided the reaction kinetics are included consistently in the evolution of \(\rho(t)\). This equation is the bridge from an evolving quantum state to a chemical observable.</p>
 
   <div class="interactive-card" id="st-demo">
     <div class="interactive-head">
@@ -394,30 +393,30 @@ abla_i^2
     <p>A real radical pair can contain many nuclear spins and four electronic spin states. But a two-level model is enough to see what coupling and detuning do:</p>
 
     <div class="lecture-equation compact">
-    [
-    rac{H}{h}=
-    egin{pmatrix}
-      0 & V\
-      V & Delta
-    end{pmatrix},
-    qquad
+    \[
+    \frac{H}{h}=
+    \begin{pmatrix}
+      0 & V\\
+      V & \Delta
+    \end{pmatrix},
+    \qquad
     P_T(t)=
-    rac{4V^2}{Delta^2+4V^2}
-    sin^2!left(pisqrt{Delta^2+4V^2},tight).
-    ]
+    \frac{4V^2}{\Delta^2+4V^2}
+    \sin^2\!\left(\pi\sqrt{\Delta^2+4V^2}\,t\right).
+    \]
     </div>
 
     <div class="demo-prompt">
       <strong>Try this:</strong>
-      <span>set (Delta=0) and the transfer can reach 100%. Then increase (Delta): the states become off-resonant and the maximum triplet population drops.</span>
+      <span>set \(\Delta=0\) and the transfer can reach 100%. Then increase \(\Delta\): the states become off-resonant and the maximum triplet population drops.</span>
     </div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="st-coupling">Effective coupling (V) <output id="st-coupling-out">3.00 MHz</output></label>
+        <label for="st-coupling">Effective coupling \(V\) <output id="st-coupling-out">3.00 MHz</output></label>
         <input id="st-coupling" type="range" min="0.1" max="10" step="0.1" value="3">
 
-        <label for="st-detuning">Detuning (Delta) <output id="st-detuning-out">2.00 MHz</output></label>
+        <label for="st-detuning">Detuning \(\Delta\) <output id="st-detuning-out">2.00 MHz</output></label>
         <input id="st-detuning" type="range" min="0" max="20" step="0.1" value="2">
 
         <div class="demo-presets">
@@ -460,7 +459,7 @@ abla_i^2
       </div>
     </div>
 
-    <p class="interactive-footnote">This model is intentionally pedagogical. A realistic radical pair additionally contains (T_+), (T_0), (T_-), nuclear spins, anisotropy, orientation dependence, relaxation, molecular motion and spin-selective reaction kinetics.</p>
+    <p class="interactive-footnote">This model is intentionally pedagogical. A realistic radical pair additionally contains \(T_+\), \(T_0\), \(T_-\), nuclear spins, anisotropy, orientation dependence, relaxation, molecular motion and spin-selective reaction kinetics.</p>
   </div>
 </section>
 
@@ -476,27 +475,27 @@ abla_i^2
   <p>In a protein, solvent or flexible donor–acceptor system, the geometry changes continuously. That means the magnetic interactions can become time-dependent:</p>
 
   <div class="lecture-equation">
-  [
-  hat H(t)=hat H!left[mathbf R(t)ight].
-  ]
+  \[
+  \hat H(t)=\hat H\!\left[\mathbf R(t)\right].
+  \]
   </div>
 
-  <p>This compact equation is easy to underestimate. A side-chain rotation can change a hyperfine tensor. A donor–acceptor distance can change exchange coupling by orders of magnitude. Protein motion can reorient anisotropic (g)- and dipolar tensors. So molecular dynamics is not merely “structural decoration” around the spin calculation—it can determine the spin dynamics itself.</p>
+  <p>This compact equation is easy to underestimate. A side-chain rotation can change a hyperfine tensor. A donor–acceptor distance can change exchange coupling by orders of magnitude. Protein motion can reorient anisotropic \(g\)- and dipolar tensors. So molecular dynamics is not merely “structural decoration” around the spin calculation—it can determine the spin dynamics itself.</p>
 
   <div class="timescale-strip">
     <div>
       <strong>Fast motion</strong>
-      <span>(	au_cll	au_mathrm{spin})</span>
+      <span>\(\tau_c\ll\tau_\mathrm{spin}\)</span>
       <p>Interactions can be motionally averaged.</p>
     </div>
     <div>
       <strong>Comparable timescales</strong>
-      <span>(	au_csim	au_mathrm{spin})</span>
+      <span>\(\tau_c\sim\tau_\mathrm{spin}\)</span>
       <p>Fluctuations can drive efficient relaxation and strongly modify coherent dynamics.</p>
     </div>
     <div>
       <strong>Slow motion</strong>
-      <span>(	au_cgg	au_mathrm{spin})</span>
+      <span>\(\tau_c\gg\tau_\mathrm{spin}\)</span>
       <p>The system behaves more like an ensemble of quasi-static conformations.</p>
     </div>
   </div>
@@ -511,9 +510,9 @@ abla_i^2
     <div class="pipeline-arrow">→</div>
     <div><span>Electrons</span><strong>DFT, TD-DFT &amp; multireference theory</strong></div>
     <div class="pipeline-arrow">→</div>
-    <div><span>Spin model</span><strong>(mathbf g), (mathbf A), (J), (mathbf D), SOC</strong></div>
+    <div><span>Spin model</span><strong>\(\mathbf g\), \(\mathbf A\), \(J\), \(\mathbf D\), SOC</strong></div>
     <div class="pipeline-arrow">→</div>
-    <div><span>Dynamics</span><strong>(ho(t)), relaxation &amp; stochastic propagation</strong></div>
+    <div><span>Dynamics</span><strong>\(\rho(t)\), relaxation &amp; stochastic propagation</strong></div>
     <div class="pipeline-arrow">→</div>
     <div><span>Experiment</span><strong>EPR, NMR, CIDNP, yields &amp; magnetic-field effects</strong></div>
   </div>
@@ -535,7 +534,7 @@ abla_i^2
   <div class="observable-list">
     <div>
       <strong>EPR / ESR</strong>
-      <span>Resonance positions, anisotropy, line shapes and transition intensities probe (g)-tensors, hyperfine interactions, ZFS and relaxation.</span>
+      <span>Resonance positions, anisotropy, line shapes and transition intensities probe \(g\)-tensors, hyperfine interactions, ZFS and relaxation.</span>
     </div>
     <div>
       <strong>Magnetic-field effects</strong>
