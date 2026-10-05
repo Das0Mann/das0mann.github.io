@@ -3,13 +3,14 @@
 <head>
 {% include _head.html %}
 </head>
-<body class="page">
+<body class="page page-{{ page.title | slugify }}">
 
 {% include _browser-upgrade.html %}
 {% include _navigation.html %}
 
 <header class="page-hero">
   <div class="page-hero-inner">
+    <p class="page-kicker">quantum-chemistry.org</p>
     <h1>{{ page.title }}</h1>
     {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}
   </div>
