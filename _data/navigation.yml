@@ -1,14 +1,16 @@
 # Site navigation links
 
-- title: News
-  url: /news/
+- title: About
+  url: /about/
+
+- title: Research
+  url: /research/
 
 - title: Publications
   url: /publications/
-  
-- title: Research
-  url: /research/
 
 - title: Software
   url: /repositories/
 
+- title: News
+  url: /news/
