@@ -51,6 +51,8 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
+  <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 will make that alternative matrix convention explicit.</p>
+
   <p>You rarely need every term at once. A radical pair of two organic \(S=\tfrac12\) radicals may need electron Zeeman, hyperfine, exchange and dipolar interactions. A transition-metal complex with \(S>1/2\) can instead make zero-field splitting central. A nucleus with \(I>1/2\) can add quadrupole structure.</p>
 
   <aside class="teacher-note">
@@ -188,7 +190,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction.</p>
+  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction. When comparing values, check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units; the numerical tensor changes with that convention even though the physics does not.</p>
 
   <details class="lecture-details">
     <summary>Why can a proton far from the formal radical centre still have a hyperfine coupling?</summary>

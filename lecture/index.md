@@ -16,11 +16,15 @@ permalink: /lecture/
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
     <b>→</b>
+    <span>magnetic parameters</span>
+    <b>→</b>
     <span>spin Hamiltonian</span>
     <b>→</b>
-    <span>spin dynamics</span>
+    <span>spin dynamics &amp; motion</span>
     <b>→</b>
-    <span>chemistry &amp; experiment</span>
+    <span>chemistry &amp; spectroscopy</span>
+    <b>→</b>
+    <span>molecular / biological applications</span>
   </div>
 </header>
 
