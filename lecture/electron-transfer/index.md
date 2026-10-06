@@ -319,15 +319,18 @@ permalink: /lecture/electron-transfer/
     <div><p class="section-eyebrow">Distance and tunnelling</p><h2>Electron transfer can be exponentially sensitive to geometry before Marcus energetics even enter</h2></div>
   </div>
 
-  <p>For weakly coupled donor–acceptor states, the electronic coupling often decreases approximately exponentially with separation along a tunnelling pathway,</p>
+  <p>For weakly coupled donor–acceptor states, the electronic coupling often decreases approximately exponentially with displacement from a chosen reference geometry,</p>
 
   <div class="lecture-equation">
-  \[
+  [
   |V(R)|
-  \approx
-  |V_0|\,e^{-\beta R}.
-  \]
+  approx
+  |V(R_0)|,
+  e^{-eta(R-R_0)}.
+  ]
   </div>
+
+  <p>Writing the relation relative to (R_0) avoids assigning physical meaning to an extrapolated coupling at zero separation. In practice (R) is also only a proxy for a tunnelling pathway: orbital orientation and the chemical bridge can matter as much as a single donor–acceptor distance.</p>
 
   <p>The decay constant \(\beta\) is not universal: it depends on the intervening medium, orbital alignment and whether covalent bonds, hydrogen bonds or through-space contacts mediate the coupling. Because the nonadiabatic rate scales as \(|V|^2\), small conformational changes can therefore generate large rate changes even when \(\lambda\) and \(\Delta G^\circ\) barely move.</p>
 
