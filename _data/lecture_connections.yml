@@ -48,7 +48,7 @@
       url: "/lecture/open-systems/"
     - label: "Radical Pairs"
       url: "/lecture/radical-pairs/"
-  note: "Home of trajectory-to-Hamiltonian mapping, correlation functions and spectral densities: R(t) becomes p_k(t), then C(t), then J(omega)."
+  note: "Home of trajectory-to-Hamiltonian mapping, correlation functions and spectral densities: R(t) becomes p_k(t), then C(t), then J(ω)."
 
 "/lecture/open-systems/":
   builds_on:
