@@ -47,6 +47,24 @@ permalink: /lecture/quantum-biology/
     <span class="lecture-index">02</span>
     <div><p class="section-eyebrow">Cryptochrome</p><h2>A radical pair can turn a magnetic field into chemistry</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The field does not supply chemical energy—it changes quantum-state evolution before chemistry reads it out</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin-correlated radical pair</strong>
+        <p><b>What it is:</b> Two radicals created in a chemically defined total-spin state, often singlet or triplet, because they originate from a common precursor.</p>
+        <p><b>What it changes:</b> Their subsequent coherent singlet–triplet evolution can alter which spin-selective reaction channel is accessible.</p>
+        <p><b>What you observe:</b> Field-dependent product yields, transient EPR signals or reaction-yield detected resonance.</p>
+      </article>
+      <article>
+        <strong>Magnetic sensitivity</strong>
+        <p><b>What it is:</b> A change in spin dynamics caused by Zeeman, hyperfine and anisotropic interactions, not by appreciable thermal energy deposition from the magnetic field.</p>
+        <p><b>What it changes:</b> It modifies the time spent in singlet versus triplet character before recombination or escape.</p>
+        <p><b>What you observe:</b> Small but systematic changes in chemical yield as field strength, orientation or RF frequency is varied.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Flavin-containing cryptochromes can form photoinduced radical pairs through electron transfer. A minimal mechanistic chain is</p>
 
@@ -135,6 +153,24 @@ permalink: /lecture/quantum-biology/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Weak RF fields</p><h2>A weak field can matter through resonance, not heating</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A weak oscillating field becomes effective when frequency, lifetime and coherence line up</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>RF resonance</strong>
+        <p><b>What it is:</b> An oscillating magnetic field drives transitions when its frequency matches an energy splitting of the spin system.</p>
+        <p><b>What it changes:</b> Even a small field can accumulate a coherent rotation if the radical pair survives and remains coherent for long enough.</p>
+        <p><b>What you observe:</b> Frequency-selective changes in reaction yield or spin polarization rather than bulk heating.</p>
+      </article>
+      <article>
+        <strong>Field amplitude \(B_1\)</strong>
+        <p><b>What it is:</b> The transverse oscillating magnetic-field strength that sets the driving/Rabi rate.</p>
+        <p><b>What it changes:</b> It determines how quickly the spin state is rotated; if the lifetime is too short, a tiny \(B_1\) has no time to build a significant effect.</p>
+        <p><b>What you observe:</b> Signal amplitude and power dependence of RF-induced perturbations.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>An oscillating magnetic field can perturb a radical pair when its frequency overlaps spin transitions and when the pair remains coherent for long enough to respond. The important comparison is therefore between field-induced transition rates, intrinsic spin interactions, relaxation and reaction times—not simply RF photon energy versus thermal energy.</p>
 
@@ -146,6 +182,24 @@ permalink: /lecture/quantum-biology/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Photo-CIDNP</p><h2>Radical-pair chemistry can create nuclear hyperpolarization</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Photo-CIDNP converts spin-selective radical-pair chemistry into non-thermal nuclear populations</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Nuclear hyperpolarization</strong>
+        <p><b>What it is:</b> A nuclear-spin population difference larger than its thermal Boltzmann value.</p>
+        <p><b>What it changes:</b> It amplifies NMR signals and stores information about spin-selective reaction pathways in the nuclear degrees of freedom.</p>
+        <p><b>What you observe:</b> Enhanced, emissive or otherwise non-Boltzmann NMR resonances.</p>
+      </article>
+      <article>
+        <strong>Spin sorting</strong>
+        <p><b>What it is:</b> Different nuclear-spin states alter radical-pair spin evolution and therefore have different probabilities of recombination or escape.</p>
+        <p><b>What it changes:</b> Chemical selection leaves products enriched in particular nuclear-spin projections.</p>
+        <p><b>What you observe:</b> Nucleus- and site-specific photo-CIDNP enhancements that depend on hyperfine coupling and reaction kinetics.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Photochemically induced dynamic nuclear polarization is another radical-pair readout. Spin-selective reaction pathways correlate electron-spin evolution with nuclear-spin states, creating nuclear populations far from thermal equilibrium.</p>
 
