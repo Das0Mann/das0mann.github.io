@@ -31,6 +31,30 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">The electronic problem</p><h2>Freeze the nuclei for a moment</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Wavefunction and electron density describe the same electrons at different levels of information</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Many-electron wavefunction \(\Psi\)</strong>
+        <p><b>What it is:</b> A complex quantum amplitude defined over the coordinates and spins of all electrons simultaneously.</p>
+        <p><b>What it changes:</b> Its antisymmetry enforces fermionic exchange and, in principle, contains all electronic observables and correlations.</p>
+        <p><b>What you observe:</b> The wavefunction itself is not directly measured; probabilities, densities, energies and response properties are derived from it.</p>
+      </article>
+      <article>
+        <strong>Electron density \(\rho(\mathbf r)\)</strong>
+        <p><b>What it is:</b> The probability density for finding electronic charge around position \(\mathbf r\), obtained after integrating the many-electron information over all other coordinates.</p>
+        <p><b>What it changes:</b> It determines electrostatics, bonding patterns and—within ground-state DFT—the total energy in principle.</p>
+        <p><b>What you observe:</b> Charge distributions, electrostatic potentials and density-derived quantities; experimentally it is related to X-ray/electron scattering rather than to an orbital picture.</p>
+      </article>
+      <article>
+        <strong>Born–Oppenheimer separation</strong>
+        <p><b>What it is:</b> The approximation that electrons adjust much faster than nuclei because nuclei are far heavier.</p>
+        <p><b>What it changes:</b> It lets us solve an electronic problem at each fixed nuclear geometry and interpret the resulting energy as a potential-energy surface for nuclear motion.</p>
+        <p><b>What you observe:</b> Molecular geometries, vibrational surfaces and reaction paths; breakdown appears in strongly nonadiabatic regions such as conical intersections.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Within the Born–Oppenheimer picture we first treat the nuclei as fixed. For that molecular geometry, the electronic Hamiltonian is</p>
 
