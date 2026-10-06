@@ -100,6 +100,13 @@ permalink: /lecture/electronic-structure/
 
   <p>The basis controls how flexibly the electronic wavefunction or density can respond. A minimal basis is cheap but restrictive; polarized and diffuse functions give the electrons more freedom. The important point is that a basis-set name is not just a technical label—it defines the variational space in which the electronic problem is solved.</p>
 
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A basis set is a vocabulary for describing the electron cloud</h3>
+    <p>Imagine trying to describe a complicated shape with a limited vocabulary. A minimal basis gives only a few words, so the calculation can express the rough idea but not every distortion. Polarization functions add new kinds of words for directional deformation; diffuse functions add words for density that extends far from the nuclei. A larger vocabulary lets the same physical theory express a more flexible electronic state.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> basis functions are mathematical functions in a variational space, not pieces of the electron cloud. A larger basis also cannot repair a qualitatively wrong electronic-structure approximation.</span>
+  </aside>
+
   <details class="lecture-details">
     <summary>What do polarization and diffuse functions actually do?</summary>
     <p>Polarization functions add angular flexibility, allowing the density to distort away from isolated-atom shapes. Diffuse functions add slowly decaying radial functions and are important for anions, Rydberg states and spatially extended charge-transfer states.</p>

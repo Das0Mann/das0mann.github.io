@@ -123,6 +123,13 @@ permalink: /lecture/molspin-notebooks/
   </div>
 
   <p>with the important caveat that different MolSpin tasks implement different subsets, approximations and representations of this general structure. Reading the input this way lets you debug the physics before you debug the parser.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A MolSpin input is closer to a circuit diagram than to a settings file</h3>
+    <p>The spins are the degrees of freedom, interactions wire them together into a Hamiltonian, the initial state charges the circuit, transitions and relaxation add non-unitary channels, and the task specifies how the circuit is driven or read out. Changing one object therefore changes the mathematical model, not merely a software preference.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the underlying object is a quantum dynamical equation, not an electrical network. The analogy is useful only for seeing that syntax encodes physical connectivity and operations.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">

@@ -75,96 +75,6 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>
-    <div><p class="section-eyebrow">Many spins</p><h2>Hilbert spaces multiply very quickly</h2></div>
-  </div>
-
-  <p>For several spins the total Hilbert space is a tensor product. Two electron spins already give four basis states; adding nuclear spins multiplies the dimension again. For \(N\) spin-\(\tfrac12\) particles,</p>
-
-  <div class="lecture-equation">
-  \[
-  \dim\mathcal H=2^N.
-  \]
-  </div>
-
-  <p>This exponential growth is the basic scaling problem behind large radical-pair and magnetic-resonance simulations. It is also why stochastic trace sampling, sparse representations and carefully chosen propagators become useful.</p>
-</section>
-
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">M</span>
-    <div><p class="section-eyebrow">From parameters to propagation</p><h2>The numbers from quantum chemistry become coefficients of Kronecker-product spin operators</h2></div>
-  </div>
-
-  <p>Suppose electronic structure has provided \(\mathbf g\), hyperfine tensors \(\mathbf A_k\), exchange \(J\) and any dipolar or ZFS tensors. The spin-dynamics code does not need the electronic orbitals anymore. It constructs</p>
-
-  <div class="lecture-equation">
-  \[
-  \hat H
-  =
-  \sum_k p_k\,\hat O_k
-  \]
-  </div>
-
-  <p>inside the spin Hilbert space. For an electron and one spin-\(\tfrac12\) nucleus, operators acting on different particles are embedded with tensor products,</p>
-
-  <div class="lecture-equation">
-  \[
-  \hat S_\alpha
-  =
-  \frac{\sigma_\alpha}{2}\otimes\mathbf 1,
-  \qquad
-  \hat I_\beta
-  =
-  \mathbf 1\otimes\frac{\sigma_\beta}{2}.
-  \]
-  </div>
-
-  <p>Using dimensionless spin operators, an anisotropic hyperfine term is therefore assembled as</p>
-
-  <div class="lecture-equation">
-  \[
-  \hat H_\mathrm{hf}
-  =
-  \sum_{\alpha,\beta}
-  A_{\alpha\beta}
-  \hat S_\alpha\hat I_\beta.
-  \]
-  </div>
-
-  <p>The same construction applies to all other terms. Once the matrix has been assembled, the electronic-structure problem has been compressed into its coefficients and orientations; dynamics follows from</p>
-
-  <div class="lecture-equation">
-  \[
-  U(t)=e^{-i\hat Ht/\hbar},
-  \qquad
-  \rho(t)=U(t)\rho(0)U^\dagger(t).
-  \]
-  </div>
-
-  <aside class="lecture-note">
-    <strong>Unit conversion happens before propagation.</strong>
-    <span>If the quantum-chemistry output is in MHz, then \(H/h\) is naturally expressed in MHz. If the propagator expects angular frequency, use \(H/\hbar=2\pi(H/h)\). A hidden \(2\pi\) error changes every dynamical timescale.</span>
-  </aside>
-
-  <p>This gives the full chain:</p>
-
-  <div class="lecture-pipeline compact-pipeline" aria-label="Electronic structure to spin dynamics">
-    <div><span>Electronic state</span><strong>\(\Psi\), \(\rho_s(\mathbf r)\), excited states</strong></div>
-    <div class="pipeline-arrow">→</div>
-    <div><span>Response / projection</span><strong>\(\mathbf g,\mathbf A,J,\mathbf D\)</strong></div>
-    <div class="pipeline-arrow">→</div>
-    <div><span>Operator assembly</span><strong>\(\hat H=\sum p_k\hat O_k\)</strong></div>
-    <div class="pipeline-arrow">→</div>
-    <div><span>Propagation</span><strong>\(\rho(t)\)</strong></div>
-    <div class="pipeline-arrow">→</div>
-    <div><span>Observable</span><strong>\(\mathrm{Tr}[\rho(t)\hat O]\)</strong></div>
-  </div>
-</section>
-
-
-<section class="lecture-section">
-  <div class="lecture-section-head">
-    <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Coherent dynamics</p><h2>Start with Larmor precession</h2></div>
   </div>
   <div class="physical-concept-panel">
@@ -258,6 +168,95 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section">
   <div class="lecture-section-head">
+    <span class="lecture-index">03</span>
+    <div><p class="section-eyebrow">Many spins</p><h2>Hilbert spaces multiply very quickly</h2></div>
+  </div>
+
+  <p>For several spins the total Hilbert space is a tensor product. Two electron spins already give four basis states; adding nuclear spins multiplies the dimension again. For \(N\) spin-\(\tfrac12\) particles,</p>
+
+  <div class="lecture-equation">
+  \[
+  \dim\mathcal H=2^N.
+  \]
+  </div>
+
+  <p>This exponential growth is the basic scaling problem behind large radical-pair and magnetic-resonance simulations. It is also why stochastic trace sampling, sparse representations and carefully chosen propagators become useful.</p>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">M</span>
+    <div><p class="section-eyebrow">From parameters to propagation</p><h2>The numbers from quantum chemistry become coefficients of Kronecker-product spin operators</h2></div>
+  </div>
+
+  <p>Suppose electronic structure has provided \(\mathbf g\), hyperfine tensors \(\mathbf A_k\), exchange \(J\) and any dipolar or ZFS tensors. The spin-dynamics code does not need the electronic orbitals anymore. It constructs</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H
+  =
+  \sum_k p_k\,\hat O_k
+  \]
+  </div>
+
+  <p>inside the spin Hilbert space. For an electron and one spin-\(\tfrac12\) nucleus, operators acting on different particles are embedded with tensor products,</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat S_\alpha
+  =
+  \frac{\sigma_\alpha}{2}\otimes\mathbf 1,
+  \qquad
+  \hat I_\beta
+  =
+  \mathbf 1\otimes\frac{\sigma_\beta}{2}.
+  \]
+  </div>
+
+  <p>Using dimensionless spin operators, an anisotropic hyperfine term is therefore assembled as</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_\mathrm{hf}
+  =
+  \sum_{\alpha,\beta}
+  A_{\alpha\beta}
+  \hat S_\alpha\hat I_\beta.
+  \]
+  </div>
+
+  <p>The same construction applies to all other terms. Once the matrix has been assembled, the electronic-structure problem has been compressed into its coefficients and orientations; dynamics follows from</p>
+
+  <div class="lecture-equation">
+  \[
+  U(t)=e^{-i\hat Ht/\hbar},
+  \qquad
+  \rho(t)=U(t)\rho(0)U^\dagger(t).
+  \]
+  </div>
+
+  <aside class="lecture-note">
+    <strong>Unit conversion happens before propagation.</strong>
+    <span>If the quantum-chemistry output is in MHz, then \(H/h\) is naturally expressed in MHz. If the propagator expects angular frequency, use \(H/\hbar=2\pi(H/h)\). A hidden \(2\pi\) error changes every dynamical timescale.</span>
+  </aside>
+
+  <p>This gives the full chain:</p>
+
+  <div class="lecture-pipeline compact-pipeline" aria-label="Electronic structure to spin dynamics">
+    <div><span>Electronic state</span><strong>\(\Psi\), \(\rho_s(\mathbf r)\), excited states</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Response / projection</span><strong>\(\mathbf g,\mathbf A,J,\mathbf D\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Operator assembly</span><strong>\(\hat H=\sum p_k\hat O_k\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Propagation</span><strong>\(\rho(t)\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Observable</span><strong>\(\mathrm{Tr}[\rho(t)\hat O]\)</strong></div>
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Density matrices</p><h2>Populations and coherences in one object</h2></div>
   </div>
@@ -308,6 +307,26 @@ permalink: /lecture/spin-dynamics/
   \dot\rho=-\frac{i}{\hbar}[\hat H,\rho].
   \]
   </div>
+
+  <p>If \(\hat H|a\rangle=E_a|a\rangle\), an off-diagonal density-matrix element evolves as</p>
+
+  <div class="lecture-equation">
+  \[
+  \rho_{ab}(t)
+  =
+  \rho_{ab}(0)
+  e^{-i(E_a-E_b)t/\hbar}.
+  \]
+  </div>
+
+  <p>This is the microscopic meaning of coherent phase evolution: the Hamiltonian turns an energy difference into a continuously accumulating relative phase. Populations need not change for a coherence to rotate rapidly.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Coherence is like keeping two clocks phase-locked</h3>
+    <p>Imagine two precise clocks whose hands rotate at frequencies set by their energies. The density-matrix coherence records their relative phase. If the frequencies differ, that phase winds predictably; if environmental fluctuations make the clocks jitter differently, the ensemble gradually loses a well-defined relative phase even though each clock can still be running.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> quantum coherence is an off-diagonal amplitude that can generate interference, not merely ignorance about two classical clock phases.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -402,7 +421,6 @@ permalink: /lecture/spin-dynamics/
   </div>
 </section>
 
-
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
     <span class="lecture-index concept-index">P</span>
@@ -439,27 +457,24 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
-    <div><p class="section-eyebrow">Open quantum systems</p><h2>Where do relaxation rates come from?</h2></div>
+    <div><p class="section-eyebrow">Where this module stops</p><h2>\(T_1\) and \(T_2\) describe decay; they do not explain its microscopic origin</h2></div>
   </div>
 
-  <p>At the microscopic level, relaxation comes from fluctuating interactions. Molecular rotation, vibrations, conformational motion and solvent dynamics modulate the spin Hamiltonian. Different theories make different assumptions about those fluctuations.</p>
+  <p>Phenomenological relaxation constants are a compressed description of what the spin state does. They do not tell you which molecular coordinate fluctuated, which spin-Hamiltonian term was modulated or why one transition relaxes faster than another.</p>
 
-  <div class="method-ladder">
-    <div><span>Bloch–Redfield–Wangsness</span><p>A perturbative, usually Markovian treatment that connects correlation functions and spectral densities to relaxation.</p></div>
-    <div><span>Nakajima–Zwanzig</span><p>A projection-operator framework that retains memory through a time-nonlocal kernel and is useful when Markovian assumptions become questionable.</p></div>
-    <div><span>Stochastic Schrödinger propagation</span><p>Represents open-system evolution through ensembles of stochastic state-vector trajectories rather than propagating the full density matrix directly.</p></div>
-    <div><span>Explicit time-dependent Hamiltonians</span><p>Use \(H(t)\) obtained from molecular motion when the fluctuating interactions themselves are available along a trajectory.</p></div>
+  <div class="lecture-pipeline compact-pipeline">
+    <div><span>Describe</span><strong>\(T_1,T_2,T_\phi\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Explain motion</span><strong>\(C(t),J(\omega)\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Build rates</span><strong>BRW / open-system generator</strong></div>
   </div>
 
-  <aside class="teacher-note"><strong>The practical question is not “which theory is most advanced?”</strong><span>It is: which assumptions are justified for the correlation times, coupling strengths and observable of the system you actually have?</span></aside>
+  <p>The next conceptual step therefore belongs to two later modules. <a href="{{ site.url }}/lecture/molecular-motion/">Molecular Motion</a> asks how atomistic motion becomes correlation functions and spectral densities; <a href="{{ site.url }}/lecture/open-systems/">Open-System Methods</a> asks how those fluctuations become a reduced dynamical generator.</p>
 
-  <aside class="research-connection">
-    <span class="research-connection-label">Research connection</span>
-    <p>For realistic radical systems the central numerical question is how to retain coherent spin dynamics while incorporating relaxation efficiently. Our MolSpin work developed both relaxation-theory and stochastic state-vector routes for this regime.</p>
-    <div class="research-connection-links">
-      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
-      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
-    </div>
+  <aside class="teacher-note">
+    <strong>One concept, one home.</strong>
+    <span>This module owns coherent propagation and the phenomenology of \(T_1/T_2\). Molecular Motion owns fluctuation statistics. Open Systems owns the microscopic reduction from those statistics to relaxation and memory.</span>
   </aside>
 </section>
 
@@ -474,12 +489,12 @@ permalink: /lecture/spin-dynamics/
 </aside>
 
 <aside class="landmark-study">
-  <span class="landmark-label">Landmark theory</span>
-  <h3>Redfield theory made molecular fluctuations into spin-relaxation rates</h3>
-  <p>Redfield's density-matrix treatment established the central idea that weak, rapidly fluctuating interactions can be reduced to an effective relaxation superoperator. It is the historical bridge between microscopic motion and T₁/T₂-type dynamics.</p>
+  <span class="landmark-label">Landmark phenomenology</span>
+  <h3>The Bloch equations separated coherent precession from longitudinal and transverse relaxation</h3>
+  <p>Bloch's 1946 treatment introduced a compact phenomenological language for magnetic resonance with finite relaxation times. Modern density-matrix theory is more general, but the familiar \(T_1/T_2\) vocabulary still reflects this separation between coherent motion and irreversible recovery/dephasing.</p>
   <div class="landmark-footer">
-    <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">A. G. Redfield · IBM Journal of Research and Development 1, 19–31 (1957) →</a>
-    <span>Molecular Motion later supplies the correlation functions and spectral densities that enter this reduction.</span>
+    <a href="https://doi.org/10.1103/PhysRev.70.460" target="_blank" rel="noopener">F. Bloch · Physical Review 70, 460–474 (1946) →</a>
+    <span>The microscopic origin of those relaxation constants is intentionally deferred to Molecular Motion and Open-System Methods.</span>
   </div>
 </aside>
 

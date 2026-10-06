@@ -11,7 +11,7 @@ permalink: /lecture/
   <p class="library-kicker">Lecture library</p>
   <h2>From electrons to quantum dynamics, spectroscopy and chemistry</h2>
   <p>I am building this as a set of short, connected lectures rather than one very long page. The core route starts with the electronic problem, reduces it to an effective Hamiltonian, propagates the quantum state in time and then connects the dynamics to spectroscopy, chemistry or a biological observable.</p>
-  <p class="library-note">Each module starts with explicit learning goals. Important quantities are explained through short physical-meaning panels—what the quantity is, where it enters the dynamics and what an experiment actually sees because of it. Each lecture then ends with two reading layers: examples from my own work and a short list of foundational or review papers from other groups.</p>
+  <p class="library-note">Each module starts with explicit learning goals. Important quantities are explained through physical-meaning panels, equations and one carefully limited mental model: the analogy is used to build intuition, followed by a note explaining where it stops being exact. Each lecture ends with a compact take-home model plus reading from both my own work and foundational or review papers from other groups.</p>
 
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
@@ -44,15 +44,63 @@ permalink: /lecture/
       <p>Change fields, couplings, rates and timescales, then return to the equations and ask which term caused the observed response.</p>
     </div>
   </div>
+
+  <div class="library-recommended-route">
+    <span>Recommended dependency route</span>
+    <h3>Follow the physics, not just the module numbers</h3>
+    <p>The module numbers are stable identifiers. For a first complete pass, this order follows the actual conceptual dependencies more closely and avoids learning an application before its underlying theory.</p>
+    <div class="library-route-groups">
+      <div class="library-route-row">
+        <strong>Foundations</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/electronic-structure/">01 Electronic structure</a><b>→</b>
+          <a href="{{ site.url }}/lecture/spin-hamiltonians/">02 Spin Hamiltonians</a><b>→</b>
+          <a href="{{ site.url }}/lecture/spin-dynamics/">03 Spin Dynamics</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Environment &amp; irreversibility</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/molecular-motion/">07 Molecular Motion</a><b>→</b>
+          <a href="{{ site.url }}/lecture/open-systems/">09 Open Systems</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Prepare reactive spin states</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/excited-state-photochemistry/">11 Photochemistry</a><b>→</b>
+          <a href="{{ site.url }}/lecture/electron-transfer/">06 Electron Transfer</a><b>→</b>
+          <a href="{{ site.url }}/lecture/radical-pairs/">04 Radical Pairs</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Measure &amp; control</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/magnetic-resonance/">05 Magnetic Resonance</a><b>→</b>
+          <a href="{{ site.url }}/lecture/coherent-control/">12 Coherent Control</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Integrate &amp; implement</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/quantum-biology/">10 Quantum Biology</a>
+          <b>·</b>
+          <a href="{{ site.url }}/lecture/computational-lab/">08 Computational Lab</a><b>→</b>
+          <a href="{{ site.url }}/lecture/molspin-notebooks/">13 MolSpin</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <section class="library-section">
-  <p class="section-eyebrow">Available now</p>
-  <h2>Lecture modules</h2>
+  <p class="section-eyebrow">Module catalogue</p>
+  <h2>All lecture modules</h2>
+  <p class="library-catalogue-note">The cards remain in stable module-number order for reference and linking. For a first full pass, use the dependency-based route above rather than reading the catalogue as a strict sequence.</p>
 
   <div class="library-grid">
     <div class="library-group-label">
-      <span>Path I</span><strong>Foundations</strong>
+      <span>Cluster A</span><strong>Foundations</strong>
       <p>Build the electronic model, reduce it to a spin Hamiltonian and learn how that Hamiltonian generates dynamics.</p>
     </div>
 
@@ -114,7 +162,7 @@ permalink: /lecture/
     </article>
 
     <div class="library-group-label">
-      <span>Path II</span><strong>Spin chemistry &amp; molecular environment</strong>
+      <span>Cluster B</span><strong>Spin chemistry &amp; molecular environment</strong>
       <p>Connect spin dynamics to reactions, spectroscopy, electron transfer and molecular motion.</p>
     </div>
 
@@ -195,7 +243,7 @@ permalink: /lecture/
     </article>
 
     <div class="library-group-label">
-      <span>Path III</span><strong>Numerical &amp; open-system methods</strong>
+      <span>Cluster C</span><strong>Numerical &amp; open-system methods</strong>
       <p>Understand how large spin problems are represented, propagated and coupled to environmental relaxation.</p>
     </div>
 
@@ -238,7 +286,7 @@ permalink: /lecture/
     </article>
 
     <div class="library-group-label">
-      <span>Path IV</span><strong>Applications, photochemistry &amp; control</strong>
+      <span>Cluster D</span><strong>Applications, photochemistry &amp; control</strong>
       <p>Use the framework in biological mechanisms, excited-state chemistry, coherent control and real MolSpin workflows.</p>
     </div>
 

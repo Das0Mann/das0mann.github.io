@@ -44,6 +44,13 @@ permalink: /lecture/quantum-biology/
   </div>
 
   <p>A seventh practical question sits behind all six: <strong>is the signal larger than the relevant biological and experimental noise?</strong> A mechanism can be physically allowed yet functionally irrelevant if the field-induced change is washed out by conformational heterogeneity, chemical background reactions or downstream signalling noise.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A quantum-biological mechanism is a relay race</h3>
+    <p>The photon prepares the first runner, electron transfer passes the baton to a radical pair, spin dynamics modifies the baton before chemistry receives it, and downstream biology must still carry that change to a measurable phenotype. A spectacular quantum effect in one runner is irrelevant if the baton is dropped at the next handoff.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> real biological networks branch, feed back and contain many parallel pathways. The relay picture is only a test of whether every required causal link has been quantitatively closed.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -52,25 +59,29 @@ permalink: /lecture/quantum-biology/
     <div><p class="section-eyebrow">Cryptochrome</p><h2>A radical pair can turn a magnetic field into chemistry</h2></div>
   </div>
   <div class="physical-concept-panel">
-    <div class="physical-concept-head"><span>Physical meaning</span><h3>The field does not supply chemical energy—it changes quantum-state evolution before chemistry reads it out</h3></div>
+    <div class="physical-concept-head"><span>Application-level meaning</span><h3>Quantum biology starts where the isolated spin mechanism ends</h3></div>
     <div class="physical-concept-grid">
       <article>
-        <strong>Spin-correlated radical pair</strong>
-        <p><b>What it is:</b> Two radicals created in a chemically defined total-spin state, often singlet or triplet, because they originate from a common precursor.</p>
-        <p><b>What it changes:</b> Their subsequent coherent singlet–triplet evolution can alter which spin-selective reaction channel is accessible.</p>
-        <p><b>What you observe:</b> Field-dependent product yields, transient EPR signals or reaction-yield detected resonance.</p>
+        <strong>Imported spin engine</strong>
+        <p><b>What it is:</b> The radical-pair Hamiltonian, singlet–triplet mixing and spin-selective reaction formalism developed in Module 04.</p>
+        <p><b>What it changes here:</b> It supplies a field-dependent microscopic branching ratio; this module does not need to re-derive the underlying two-spin theory.</p>
+        <p><b>What you must test:</b> Whether the predicted change survives realistic lifetimes, relaxation, structural disorder and competing chemistry.</p>
       </article>
       <article>
-        <strong>Magnetic sensitivity</strong>
-        <p><b>What it is:</b> A change in spin dynamics caused by Zeeman, hyperfine and anisotropic interactions, not by appreciable thermal energy deposition from the magnetic field.</p>
-        <p><b>What it changes:</b> It modifies the time spent in singlet versus triplet character before recombination or escape.</p>
-        <p><b>What you observe:</b> Small but systematic changes in chemical yield as field strength, orientation or RF frequency is varied.</p>
+        <strong>Chemical transduction</strong>
+        <p><b>What it is:</b> The conversion of a small spin-state difference into different chemical products, populations or signalling states.</p>
+        <p><b>What it changes:</b> It is the first amplification step between quantum spin evolution and a biological observable.</p>
+        <p><b>What you must test:</b> Whether the downstream response is quantitatively large and specific enough to distinguish the mechanism experimentally.</p>
       </article>
     </div>
   </div>
 
-
   <p>Flavin-containing cryptochromes can form photoinduced radical pairs through electron transfer. A minimal mechanistic chain is</p>
+
+  <aside class="lecture-note">
+    <strong>This module uses rather than re-derives radical-pair theory.</strong>
+    <span>The singlet–triplet Hamiltonian and spin-selective reaction formalism live in <a href="{{ site.url }}/lecture/radical-pairs/">Radical-Pair Spin Chemistry</a>; fluctuation-driven decoherence and relaxation live in <a href="{{ site.url }}/lecture/open-systems/">Open-System Methods</a>. Here the question is whether those pieces form a complete biological mechanism.</span>
+  </aside>
 
   <div class="lecture-pipeline compact-pipeline" aria-label="Cryptochrome radical-pair mechanism">
     <div><span>Prepare</span><strong>photoexcitation</strong></div>

@@ -68,6 +68,13 @@ permalink: /lecture/magnetic-resonance/
     <strong>The spectrometer does not “measure \(g\)” directly.</strong>
     <span>It measures a resonance field at a known microwave frequency. The \(g\)-value is inferred from the resonance condition and the spin Hamiltonian.</span>
   </aside>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Resonance is radio tuning, but the transition matrix element is the antenna</h3>
+    <p>The energy gap chooses the station: the microwave frequency must match it. But matching the station is not enough—the oscillating magnetic field must also couple the two states. The transition matrix element plays the role of an antenna orientation, and the population difference supplies the available signal strength.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> an EPR transition is coherent quantum evolution between spin eigenstates, not absorption by a classical radio circuit. The analogy only separates resonance condition from transition intensity.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">

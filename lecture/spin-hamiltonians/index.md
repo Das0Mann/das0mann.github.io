@@ -92,7 +92,6 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
-
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>
@@ -178,28 +177,38 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
-
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
     <span class="lecture-index concept-index">P</span>
-    <div><p class="section-eyebrow">Origin of g-anisotropy</p><h2>The g-tensor remembers nearby excited electronic states</h2></div>
+    <div><p class="section-eyebrow">Reading perturbation theory</p><h2>Nearby electronic states matter because virtual mixing has an energy cost</h2></div>
   </div>
 
-  <p>For a purely spin-only free electron, \(g\) is almost isotropic. In a molecule, spin–orbit coupling admixes orbital character from excited electronic states into the ground spin state. Schematically, the molecular shift can be viewed as a second-order response,</p>
+  <p>Module 01 contains the electronic-structure origin of the \(g\)-tensor. Here the useful lesson is more general: many effective magnetic parameters contain second-order contributions with the schematic structure</p>
 
   <div class="lecture-equation">
   \[
-  \Delta g
+  \Delta p
   \sim
   \sum_n
   \frac{
-  \langle 0|\hat L|n\rangle
-  \langle n|\hat H_\mathrm{SO}|0\rangle
+  \langle 0|\hat V_1|n\rangle
+  \langle n|\hat V_2|0\rangle
   }{E_0-E_n}.
   \]
   </div>
 
-  <p>This is not meant as a universal computational formula; it shows the physics. The size and direction of the \(g\)-shift depend on orbital angular-momentum matrix elements, SOC and energy gaps to excited states. Heavy atoms, low-lying excited states and strongly anisotropic orbital environments can therefore produce much larger \(g\)-anisotropy than typical light-atom organic radicals.</p>
+  <div class="method-ladder">
+    <div><span>Numerator</span><p>Asks whether the ground state and excited state are actually connected by the relevant interactions, such as orbital Zeeman coupling and SOC.</p></div>
+    <div><span>Energy denominator</span><p>Measures how costly the virtual excursion is. Low-lying states can therefore influence an effective ground-state parameter much more strongly than distant states.</p></div>
+    <div><span>Tensor component</span><p>Different Cartesian components probe different matrix elements, which is why the resulting response can be anisotropic.</p></div>
+  </div>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>The ground state can “borrow character” from nearby excited states</h3>
+    <p>Think of the nominal ground spin state as a person whose behaviour is slightly altered by nearby neighbours. Strong coupling makes a neighbour influential; a large energy gap keeps that neighbour distant. SOC and orbital response allow these virtual neighbours to leave a measurable fingerprint in the effective \(g\)-tensor even though the molecule remains in its ground electronic state.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> no real population has to occupy the excited state. “Borrowing” refers to perturbative state mixing and response, not a classical exchange of particles or energy.</span>
+  </aside>
 
   <aside class="research-connection">
     <span class="research-connection-label">Why it matters dynamically</span>
