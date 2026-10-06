@@ -399,6 +399,16 @@ permalink: /lecture/open-systems/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>Choose the bath model from the physics</h3>
+  <ul>
+    <li>Relaxation rates arise from fluctuating operators, their correlation functions and spectral weight at the system transition frequencies.</li>
+    <li>Lindblad, Redfield, stochastic-Hamiltonian and memory-kernel descriptions encode different assumptions about coupling strength, memory and coarse graining.</li>
+    <li>The most elaborate formalism is not automatically the most accurate; the relevant question is whether its timescale assumptions match the system.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark open systems</span>
   <h3>Non-Markovianity is about retained dynamical memory, not simply 'complicated decay'</h3>
