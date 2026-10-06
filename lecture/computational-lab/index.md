@@ -295,6 +295,16 @@ permalink: /lecture/computational-lab/
   <p>For released syntax and examples, use the <a href="{{ site.url }}/repositories/">Software page</a> and the public MolSpin documentation rather than copying teaching pseudocode from this lecture.</p>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>A trustworthy calculation needs two kinds of convergence</h3>
+  <ul>
+    <li>Numerical convergence means the propagator, timestep, trace sampling and orientation grid no longer change the reported observable appreciably.</li>
+    <li>Physical convergence means the Hamiltonian, initial state, units, kinetics and approximations represent the intended experiment or mechanism.</li>
+    <li>A large calculation is not more reliable than a small benchmark unless both kinds of convergence have been demonstrated.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark computation</span>
   <h3>Large spin systems are usually solved by exploiting structure, not by storing every matrix element</h3>
