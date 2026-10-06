@@ -277,12 +277,10 @@ permalink: /lecture/computational-lab/
 
   <p>where \(s_x\) is the sample standard deviation. Reporting \(M\) without the variance can be misleading: twelve exceptionally consistent samples can be more informative than one hundred highly variable ones, while correlated samples reduce the effective sample size.</p>
 
-  
-
 
   <aside class="teacher-note">
     <strong>There is no universal “enough samples” number for a given spin count.</strong>
-    <span>A 14-spin system does not intrinsically require 12, 100 or 1000 trace vectors. The required (M) is set by the variance of the specific observable, the desired confidence interval and whether the samples are independent. Demonstrate convergence of the quantity you publish.</span>
+    <span>A 14-spin system does not intrinsically require 12, 100 or 1000 trace vectors. The required \(M\) is set by the variance of the specific observable, the desired confidence interval and whether the samples are independent. Demonstrate convergence of the quantity you publish.</span>
   </aside>
 </section>
 
