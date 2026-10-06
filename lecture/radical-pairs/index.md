@@ -161,6 +161,33 @@ permalink: /lecture/radical-pairs/
 
   <p>The crucial ingredient is usually a <strong>difference</strong> between the magnetic environments of the two radicals. If both electron spins experienced exactly the same Hamiltonian, there would be much less opportunity to change the total singlet/triplet character. Hyperfine asymmetry, \(g\)-tensor differences and anisotropic interactions provide the required inequivalence.</p>
 
+  <p>A compact mathematical test is to ask whether the Hamiltonian commutes with the singlet projector \(\hat P_S=|S\rangle\langle S|\). Under closed dynamics,</p>
+
+  <div class="lecture-equation">
+  \[
+  \frac{d}{dt}\langle \hat P_S\rangle
+  =
+  \frac{i}{\hbar}
+  \left\langle
+  [\hat H,\hat P_S]
+  \right\rangle.
+  \]
+  </div>
+
+  <p>If \([\hat H,\hat P_S]=0\), that Hamiltonian term cannot by itself change the singlet population. Terms that make the two radicals magnetically inequivalent generate non-zero matrix elements between singlet and triplet sectors and therefore drive S–T interconversion.</p>
+
+  <p>For the simplest isotropic \(\Delta g\) mechanism, the relative electron precession frequency is</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta\omega
+  =
+  \frac{\mu_B B}{\hbar}\,\Delta g.
+  \]
+  </div>
+
+  <p>This shows why \(\Delta g\)-driven mixing strengthens with magnetic field, whereas hyperfine-driven mixing can already be efficient at low field.</p>
+
   <div class="hamiltonian-legend">
     <div><strong>Hyperfine</strong><span>couples each electron to its local nuclei and is often the main source of low-field S–T mixing</span></div>
     <div><strong>\(\Delta g\)</strong><span>different electron Zeeman frequencies can drive relative spin phase evolution, especially at higher fields</span></div>
