@@ -290,6 +290,14 @@ permalink: /lecture/magnetic-resonance/
   </div>
 
   <p>This is magnetic resonance without requiring conventional inductive detection of the spin magnetization.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>Reaction-yield detected magnetic resonance is a direct example of spectroscopy and chemistry becoming the same observable: resonant spin driving changes radical-pair dynamics, and a chemical yield reports the resonance.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1016/j.freeradbiomed.2026.04.015" target="_blank" rel="noopener"><strong>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</strong><span>Free Radic. Biol. Med. (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
