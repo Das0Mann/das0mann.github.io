@@ -119,6 +119,30 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Anisotropy</p><h2>One molecule can resonate at different fields in different orientations</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Anisotropy is a directional fingerprint of the electronic wavefunction</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Principal \(g\)-values</strong>
+        <p><b>What it is:</b> The three values obtained when the symmetric part of the \(g\)-tensor is expressed in its principal-axis frame.</p>
+        <p><b>What it changes:</b> They define the largest and smallest Zeeman responses available as the molecule is rotated.</p>
+        <p><b>What you observe:</b> Characteristic turning points and edges in single-crystal or powder EPR spectra.</p>
+      </article>
+      <article>
+        <strong>Effective \(g(\theta,\phi)\)</strong>
+        <p><b>What it is:</b> The projection of the tensor response onto a particular laboratory-field direction.</p>
+        <p><b>What it changes:</b> It changes the resonance field continuously with molecular orientation even though the molecular tensor itself is fixed.</p>
+        <p><b>What you observe:</b> Angular dependence in single-crystal EPR and orientation-selected features in frozen samples.</p>
+      </article>
+      <article>
+        <strong>\(g\)-strain</strong>
+        <p><b>What it is:</b> A distribution of slightly different \(g\)-tensors caused by structural or electrostatic heterogeneity.</p>
+        <p><b>What it changes:</b> Different molecules resonate at slightly different fields even at the same nominal orientation.</p>
+        <p><b>What you observe:</b> Field-dependent inhomogeneous broadening that often grows toward higher microwave frequency/field.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For an axial \(g\)-tensor with principal values \(g_\perp\) and \(g_\parallel\), the effective \(g\)-value for a field at angle \(\theta\) to the symmetry axis is</p>
 
@@ -205,6 +229,24 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Powder spectra</p><h2>A frozen sample contains all molecular orientations at once</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A powder spectrum is an orientation integral, not a single-molecule trace</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Orientation distribution</strong>
+        <p><b>What it is:</b> An isotropic frozen powder contains molecules whose principal axes sample every direction relative to the magnetic field.</p>
+        <p><b>What it changes:</b> Each orientation contributes at its own resonance field and with an orientation-dependent transition probability.</p>
+        <p><b>What you observe:</b> Broad powder patterns with edges/turning points rather than one narrow resonance line.</p>
+      </article>
+      <article>
+        <strong>Turning point</strong>
+        <p><b>What it is:</b> An orientation where the resonance field is stationary with respect to small angular changes.</p>
+        <p><b>What it changes:</b> Many nearby orientations contribute at nearly the same field, enhancing spectral intensity.</p>
+        <p><b>What you observe:</b> Sharp edges or maxima that often correspond approximately to tensor principal values.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>In a single crystal, you can rotate one known molecular orientation relative to the field. In a frozen solution or powder, every orientation is present. The spectrum therefore accumulates resonance contributions from the entire orientation sphere.</p>
 
