@@ -118,6 +118,7 @@ State Singlet
 PulseSequence seq
 {
     tau1 = 10;
+    tau2 = 15;
     sequence = pulse1, tau1, pulse2, tau2;
 }</code></pre>
 
