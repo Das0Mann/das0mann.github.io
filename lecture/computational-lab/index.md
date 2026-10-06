@@ -25,6 +25,8 @@ permalink: /lecture/computational-lab/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
