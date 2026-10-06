@@ -201,6 +201,14 @@ permalink: /lecture/quantum-biology/
   <p>An oscillating magnetic field can perturb a radical pair when its frequency overlaps spin transitions and when the pair remains coherent for long enough to respond. The important comparison is therefore between field-induced transition rates, intrinsic spin interactions, relaxation and reaction times—not simply RF photon energy versus thermal energy.</p>
 
   <p>Orientation and anisotropy also matter. A field that is resonant for one molecular orientation may be off-resonant for another, and molecular motion can either average or broaden that response.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>Weak RF-field effects are a good stress test for mechanistic reasoning because resonance, coherence, reaction kinetics and relaxation all have to cooperate; field amplitude alone does not determine whether an effect is plausible.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.chemrev.5c00178" target="_blank" rel="noopener"><strong>Weak Radiofrequency Field Effects on Biological Systems Mediated through the Radical Pair Mechanism</strong><span>Chemical Reviews (2025)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
