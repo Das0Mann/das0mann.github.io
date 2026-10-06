@@ -317,6 +317,16 @@ permalink: /lecture/quantum-biology/
   <p>The same modelling discipline applies: identify the radical state, quantify the spin Hamiltonian, include relaxation and reaction kinetics, and calculate the actual observable rather than inferring an effect from one interaction parameter alone.</p>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark experiment</span>
+  <h3>An anisotropic radical-pair model can respond at geomagnetic field strengths</h3>
+  <p>Maeda and co-workers demonstrated an anisotropic magnetic-field effect in a photochemical radical-pair model system at Earth-strength fields. It does not by itself prove a biological compass, but it experimentally establishes that the underlying spin-chemical scale is physically realistic.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1038/nature06834" target="_blank" rel="noopener">K. Maeda et al. · Nature 453, 387–390 (2008) →</a>
+    <span>The biological problem adds orientation, protein dynamics, relaxation and a downstream signalling/readout chain.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
