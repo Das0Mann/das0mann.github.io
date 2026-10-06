@@ -267,6 +267,15 @@ permalink: /lecture/molecular-motion/
   </div>
 
   <p>How densely you need quantum-chemical calculations depends on how rapidly the parameters vary and how transferable the electronic-structure model is. Interpolating a slowly varying dipolar interaction is very different from learning an exchange coupling that changes exponentially with geometry.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>This MD → quantum chemistry → spin-dynamics chain is the central multiscale workflow used in our recent protein and biomolecular spin-chemistry studies.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.5c01187" target="_blank" rel="noopener"><strong>Magnetosensitivity of Model Flavin–Tryptophan Radical Pairs in a Dynamic Protein Environment</strong><span>J. Phys. Chem. B (2025)</span></a>
+      <a href="https://doi.org/10.1080/23746149.2026.2660655" target="_blank" rel="noopener"><strong>Multiscale modeling approaches in biomolecular physics</strong><span>Advances in Physics: X (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
