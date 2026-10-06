@@ -463,6 +463,16 @@ permalink: /lecture/spin-dynamics/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>From coefficients to an observable</h3>
+  <ul>
+    <li>Quantum-chemical parameters become coefficients of spin operators embedded in the many-spin Hilbert space.</li>
+    <li>The Hamiltonian generates coherent evolution; irreversible relaxation requires additional environmental degrees of freedom or an effective open-system description.</li>
+    <li>The final measurable quantity is an expectation value or reaction observable evaluated from the propagated state, not the wavefunction or density matrix by itself.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark theory</span>
   <h3>Redfield theory made molecular fluctuations into spin-relaxation rates</h3>
