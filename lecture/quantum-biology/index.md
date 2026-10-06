@@ -59,23 +59,22 @@ permalink: /lecture/quantum-biology/
     <div><p class="section-eyebrow">Cryptochrome</p><h2>A radical pair can turn a magnetic field into chemistry</h2></div>
   </div>
   <div class="physical-concept-panel">
-    <div class="physical-concept-head"><span>Physical meaning</span><h3>The field does not supply chemical energy—it changes quantum-state evolution before chemistry reads it out</h3></div>
+    <div class="physical-concept-head"><span>Application-level meaning</span><h3>Quantum biology starts where the isolated spin mechanism ends</h3></div>
     <div class="physical-concept-grid">
       <article>
-        <strong>Spin-correlated radical pair</strong>
-        <p><b>What it is:</b> Two radicals created in a chemically defined total-spin state, often singlet or triplet, because they originate from a common precursor.</p>
-        <p><b>What it changes:</b> Their subsequent coherent singlet–triplet evolution can alter which spin-selective reaction channel is accessible.</p>
-        <p><b>What you observe:</b> Field-dependent product yields, transient EPR signals or reaction-yield detected resonance.</p>
+        <strong>Imported spin engine</strong>
+        <p><b>What it is:</b> The radical-pair Hamiltonian, singlet–triplet mixing and spin-selective reaction formalism developed in Module 04.</p>
+        <p><b>What it changes here:</b> It supplies a field-dependent microscopic branching ratio; this module does not need to re-derive the underlying two-spin theory.</p>
+        <p><b>What you must test:</b> Whether the predicted change survives realistic lifetimes, relaxation, structural disorder and competing chemistry.</p>
       </article>
       <article>
-        <strong>Magnetic sensitivity</strong>
-        <p><b>What it is:</b> A change in spin dynamics caused by Zeeman, hyperfine and anisotropic interactions, not by appreciable thermal energy deposition from the magnetic field.</p>
-        <p><b>What it changes:</b> It modifies the time spent in singlet versus triplet character before recombination or escape.</p>
-        <p><b>What you observe:</b> Small but systematic changes in chemical yield as field strength, orientation or RF frequency is varied.</p>
+        <strong>Chemical transduction</strong>
+        <p><b>What it is:</b> The conversion of a small spin-state difference into different chemical products, populations or signalling states.</p>
+        <p><b>What it changes:</b> It is the first amplification step between quantum spin evolution and a biological observable.</p>
+        <p><b>What you must test:</b> Whether the downstream response is quantitatively large and specific enough to distinguish the mechanism experimentally.</p>
       </article>
     </div>
   </div>
-
 
   <p>Flavin-containing cryptochromes can form photoinduced radical pairs through electron transfer. A minimal mechanistic chain is</p>
 
