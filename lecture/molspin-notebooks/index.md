@@ -22,6 +22,8 @@ permalink: /lecture/molspin-notebooks/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <aside class="lecture-note molspin-version-note">
   <strong>Version note — public reference used here</strong>
@@ -188,6 +190,30 @@ PulseSequence seq
     <span class="lecture-index">06</span>
     <div><p class="section-eyebrow">How to debug an input</p><h2>Work from physics outward</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Most simulation mistakes are unit, frame or model-definition mistakes before they are algorithmic mistakes</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Units</strong>
+        <p><b>What it is:</b> Spin parameters may be specified as energy, angular frequency, ordinary frequency, field units or code-specific scaled values.</p>
+        <p><b>What it changes:</b> A missing factor of \(2\pi\), \(\hbar\) or a unit conversion changes the physical timescale even if the input parses correctly.</p>
+        <p><b>What you observe:</b> Resonances, oscillation periods or relaxation times displaced by large systematic factors.</p>
+      </article>
+      <article>
+        <strong>Tensor frame</strong>
+        <p><b>What it is:</b> An anisotropic tensor has principal values and a specific orientation relative to the molecular/laboratory frame.</p>
+        <p><b>What it changes:</b> Using the correct numbers in the wrong frame changes orientation-dependent dynamics and spectra.</p>
+        <p><b>What you observe:</b> Wrong powder patterns, angular dependences and anisotropic radical-pair yields.</p>
+      </article>
+      <article>
+        <strong>Initial-state convention</strong>
+        <p><b>What it is:</b> The same labels such as singlet, triplet or polarized state must correspond to the spin ordering and basis used by the input.</p>
+        <p><b>What it changes:</b> A mismatched state definition changes the entire transient even if the Hamiltonian is correct.</p>
+        <p><b>What you observe:</b> Qualitatively wrong early-time populations, polarization or reaction yields.</p>
+      </article>
+    </div>
+  </div>
+
 
   <div class="method-ladder">
     <div><span>1. Spins</span><p>Check quantum numbers, electron/nuclear identity and tensor definitions before touching the task.</p></div>
@@ -197,6 +223,15 @@ PulseSequence seq
     <div><span>5. Task capability</span><p>Use a task that supports the interactions, decay model and time dependence present in the system.</p></div>
     <div><span>6. Convergence</span><p>Only after the model is correct should you tune timestep, stochastic samples, orientation grids or propagator tolerances.</p></div>
   </div>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The public examples are easier to understand when read alongside the methods papers: the syntax mirrors a progression from a general spin-dynamics engine to explicit relaxation and stochastic propagation.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
+      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">

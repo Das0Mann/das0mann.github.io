@@ -1,16 +1,21 @@
 <nav class="lecture-module-nav" aria-label="Lecture library navigation">
-  <a href="{{ site.url }}/lecture/" class="lecture-module-home">← Library</a>
-  <a href="{{ site.url }}/lecture/electronic-structure/">01 Electronic</a>
-  <a href="{{ site.url }}/lecture/spin-hamiltonians/">02 Hamiltonians</a>
-  <a href="{{ site.url }}/lecture/spin-dynamics/">03 Dynamics</a>
-  <a href="{{ site.url }}/lecture/radical-pairs/">04 Radical pairs</a>
-  <a href="{{ site.url }}/lecture/magnetic-resonance/">05 EPR</a>
-  <a href="{{ site.url }}/lecture/electron-transfer/">06 Electron transfer</a>
-  <a href="{{ site.url }}/lecture/molecular-motion/">07 Motion</a>
-  <a href="{{ site.url }}/lecture/computational-lab/">08 Lab</a>
-  <a href="{{ site.url }}/lecture/open-systems/">09 Open systems</a>
-  <a href="{{ site.url }}/lecture/quantum-biology/">10 Quantum biology</a>
-  <a href="{{ site.url }}/lecture/excited-state-photochemistry/">11 Photochemistry</a>
-  <a href="{{ site.url }}/lecture/coherent-control/">12 Coherent control</a>
-  <a href="{{ site.url }}/lecture/molspin-notebooks/">13 MolSpin</a>
+  <div class="lecture-nav-meta">
+    <a href="{{ site.url }}/lecture/" class="lecture-module-home{% if page.url == '/lecture/' %} is-current{% endif %}">← Library</a>
+    <span>{{ page.title }} · 13 modules</span>
+  </div>
+  <div class="lecture-nav-links">
+    <a{% if page.url == '/lecture/electronic-structure/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/electronic-structure/">01 Electronic</a>
+    <a{% if page.url == '/lecture/spin-hamiltonians/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/spin-hamiltonians/">02 Hamiltonians</a>
+    <a{% if page.url == '/lecture/spin-dynamics/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/spin-dynamics/">03 Dynamics</a>
+    <a{% if page.url == '/lecture/radical-pairs/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/radical-pairs/">04 Radical pairs</a>
+    <a{% if page.url == '/lecture/magnetic-resonance/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/magnetic-resonance/">05 EPR</a>
+    <a{% if page.url == '/lecture/electron-transfer/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/electron-transfer/">06 Electron transfer</a>
+    <a{% if page.url == '/lecture/molecular-motion/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/molecular-motion/">07 Motion</a>
+    <a{% if page.url == '/lecture/computational-lab/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/computational-lab/">08 Lab</a>
+    <a{% if page.url == '/lecture/open-systems/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/open-systems/">09 Open systems</a>
+    <a{% if page.url == '/lecture/quantum-biology/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/quantum-biology/">10 Quantum biology</a>
+    <a{% if page.url == '/lecture/excited-state-photochemistry/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/excited-state-photochemistry/">11 Photochemistry</a>
+    <a{% if page.url == '/lecture/coherent-control/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/coherent-control/">12 Coherent control</a>
+    <a{% if page.url == '/lecture/molspin-notebooks/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/molspin-notebooks/">13 MolSpin</a>
+  </div>
 </nav>

@@ -25,6 +25,8 @@ permalink: /lecture/radical-pairs/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -319,6 +321,14 @@ permalink: /lecture/radical-pairs/
   </div>
 
   <p>This is where molecular dynamics, electronic structure and spin dynamics have to meet. A single optimized structure can be informative, but it may miss the distribution and time correlation of the interactions that actually control the spin evolution.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The radical-pair Hamiltonian is not fixed inside a protein. In model flavin–tryptophan systems we explicitly connected protein motion and fluctuating magnetic interactions to the resulting magnetosensitivity.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.5c01187" target="_blank" rel="noopener"><strong>Magnetosensitivity of Model Flavin–Tryptophan Radical Pairs in a Dynamic Protein Environment</strong><span>J. Phys. Chem. B (2025)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
@@ -354,6 +364,12 @@ permalink: /lecture/radical-pairs/
       <h3>The Radical-Pair Mechanism of Magnetoreception</h3>
       <p>P. J. Hore and H. Mouritsen · Annual Review of Biophysics (2016). A tutorial review connecting radical-pair spin chemistry to biological magnetoreception.</p>
       <a href="https://doi.org/10.1146/annurev-biophys-032116-094545" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+      <article>
+      <span>Spin-selective reaction operator</span>
+      <h3>Density matrix description of spin-selective radical pair reactions</h3>
+      <p>R. Haberkorn · Molecular Physics 32, 1491–1493 (1976). A foundational density-matrix formulation of spin-selective radical-pair reaction kinetics.</p>
+      <a href="https://doi.org/10.1080/00268977600102851" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>

@@ -25,6 +25,8 @@ permalink: /lecture/spin-dynamics/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -329,6 +331,15 @@ permalink: /lecture/spin-dynamics/
   </div>
 
   <aside class="teacher-note"><strong>The practical question is not “which theory is most advanced?”</strong><span>It is: which assumptions are justified for the correlation times, coupling strengths and observable of the system you actually have?</span></aside>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>For realistic radical systems the central numerical question is how to retain coherent spin dynamics while incorporating relaxation efficiently. Our MolSpin work developed both relaxation-theory and stochastic state-vector routes for this regime.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
+      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">

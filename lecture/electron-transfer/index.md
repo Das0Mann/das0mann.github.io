@@ -25,6 +25,8 @@ permalink: /lecture/electron-transfer/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -255,6 +257,30 @@ permalink: /lecture/electron-transfer/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Ensemble energetics</p><h2>How do you obtain \(\lambda\) and \(\Delta G^\circ\) from simulations?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The vertical energy gap turns a molecular ensemble into an electron-transfer coordinate</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Vertical energy gap \(X(\mathbf R)\)</strong>
+        <p><b>What it is:</b> The electronic energy difference between product and reactant charge states evaluated at the same instantaneous nuclear geometry.</p>
+        <p><b>What it changes:</b> Its fluctuations encode how solvent, protein and intramolecular coordinates stabilize one charge state relative to the other.</p>
+        <p><b>What you observe:</b> A distribution over MD/QM snapshots rather than one directly measured scalar; its statistics can be related to free-energy parameters under additional assumptions.</p>
+      </article>
+      <article>
+        <strong>Linear-response assumption</strong>
+        <p><b>What it is:</b> The approximation that reactant and product free-energy surfaces have similar harmonic curvature and Gaussian energy-gap fluctuations.</p>
+        <p><b>What it changes:</b> It allows the means of two gap distributions to be converted into \(\lambda\) and \(\Delta G^\circ\).</p>
+        <p><b>What you observe:</b> Approximately Gaussian gap histograms with similar variances; strong skewness or state-dependent variance warns that simple Marcus linear response may fail.</p>
+      </article>
+      <article>
+        <strong>Sampling both states</strong>
+        <p><b>What it is:</b> Reactant and product ensembles generally relax around different nuclear configurations.</p>
+        <p><b>What it changes:</b> Sampling only one state does not, by itself, provide the two equilibrium averages needed for the standard two-ensemble linear-response expressions.</p>
+        <p><b>What you observe:</b> Different energy-gap distributions when trajectories are equilibrated on reactant versus product surfaces.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>One useful route is vertical energy-gap sampling. Define the instantaneous energy gap</p>
 
@@ -291,6 +317,24 @@ permalink: /lecture/electron-transfer/
     <span class="lecture-index">06</span>
     <div><p class="section-eyebrow">Beyond one number</p><h2>Proteins can gate electron transfer through conformational subensembles</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Conformational gating makes the rate a property of an ensemble, not a single optimized geometry</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Gating coordinate</strong>
+        <p><b>What it is:</b> A slow structural variable—distance, orientation, hydrogen bonding or electrostatic arrangement—that modulates coupling or energetics.</p>
+        <p><b>What it changes:</b> Electron transfer may occur mainly from a subset of conformations even if those conformations are not the most populated.</p>
+        <p><b>What you observe:</b> Multi-exponential kinetics, heterogeneous rates or strong sensitivity to mutation/solvent/protein conformation.</p>
+      </article>
+      <article>
+        <strong>Dynamic disorder</strong>
+        <p><b>What it is:</b> Time-dependent variation of the instantaneous ET rate because the molecule explores different conformations.</p>
+        <p><b>What it changes:</b> The observed kinetics may deviate from a single exponential and can depend on whether conformational exchange is faster or slower than ET.</p>
+        <p><b>What you observe:</b> Rate distributions, kinetic memory and trajectory-dependent reaction propensity.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>In a flexible protein, \(V\), \(\Delta G^\circ\) and even the effective reorganization energy can depend on conformation. Because the rate depends on \(V^2\) and exponentially on the activation barrier, averaging structures first and calculating one rate afterwards can be very misleading.</p>
 
@@ -305,6 +349,14 @@ permalink: /lecture/electron-transfer/
   </div>
 
   <p>A small fraction of strongly coupled or nearly activationless conformations can dominate the ensemble-averaged kinetics. This is why electron-transfer calculations in proteins naturally connect to conformational sampling.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>A protein does not have one immutable electron-transfer geometry. Distinct conformational subensembles can change donor–acceptor energetics and magnetic interactions together, so kinetics and spin dynamics become structurally coupled.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c22947" target="_blank" rel="noopener"><strong>Conformational Switching Controls Biradical Spin Dynamics in Flavin–Tryptophan Dyads</strong><span>JACS (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">

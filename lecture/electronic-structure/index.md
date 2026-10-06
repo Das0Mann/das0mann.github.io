@@ -25,6 +25,8 @@ permalink: /lecture/electronic-structure/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -274,6 +276,14 @@ permalink: /lecture/electronic-structure/
   <aside class="teacher-note">
     <strong>This is the hand-off to spin dynamics:</strong>
     <span>once these quantities are known for a molecular structure, we can stop carrying the full electronic problem and propagate a much smaller effective spin Hamiltonian.</span>
+  </aside>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The abstract response properties on this page become measurable only after they are embedded in a molecular environment. In flavoproteins, for example, environmental polarization can shift excitation energies enough to change the photochemical landscape that feeds later spin chemistry.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.4c02168" target="_blank" rel="noopener"><strong>Importance of Polarizable Embedding for Absorption Spectrum Calculations of Arabidopsis thaliana Cryptochrome 1</strong><span>J. Phys. Chem. B (2024)</span></a>
+    </div>
   </aside>
 </section>
 

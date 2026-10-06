@@ -25,6 +25,8 @@ permalink: /lecture/magnetic-resonance/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -106,6 +108,61 @@ permalink: /lecture/magnetic-resonance/
 
   <p>To first order, the allowed EPR transitions obey \(\Delta m_S=\pm1\) and \(\Delta m_I=0\). One \(I=\tfrac12\) nucleus therefore gives two hyperfine components. Several equivalent nuclei produce the familiar multiplet patterns; inequivalent nuclei create more complicated splittings.</p>
 
+  <div class="interactive-card" id="hyperfine-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Equivalent spin-\(\tfrac12\) hyperfine pattern</h3></div>
+      <span class="interactive-model-note">first-order isotropic limit</span>
+    </div>
+
+    <div class="demo-prompt">
+      <strong>Try this:</strong>
+      <span>increase the number of equivalent nuclei. The line count becomes (n+1), while the relative intensities follow the binomial coefficients.</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="hf-count"><span class="control-name">Equivalent nuclei (n)</span><output id="hf-count-out">2</output></label>
+        <input id="hf-count" type="range" min="1" max="4" step="1" value="2">
+
+        <label for="hf-A"><span class="control-name">Isotropic coupling (A)</span><output id="hf-A-out">30 MHz</output></label>
+        <input id="hf-A" type="range" min="5" max="100" step="1" value="30">
+
+        <div class="demo-presets">
+          <button type="button" data-hf-n="1">one nucleus</button>
+          <button type="button" data-hf-n="2">two nuclei</button>
+          <button type="button" data-hf-n="3">three nuclei</button>
+          <button type="button" data-hf-n="4">four nuclei</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Number of lines <strong id="hf-lines-out">3</strong></span>
+          <span>Adjacent spacing <strong id="hf-spacing-out">30 MHz</strong></span>
+          <span>Relative intensities <strong id="hf-intensity-out">1 : 2 : 1</strong></span>
+          <span>Outer-line span <strong id="hf-span-out">60 MHz</strong></span>
+        </div>
+
+        <p id="hf-explanation" class="demo-explanation">Two equivalent spin-(	frac12) nuclei create three electron-spin transitions with the familiar 1:2:1 intensity ratio.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="hyperfine-svg" class="lecture-svg" viewBox="0 0 560 260" role="img" aria-label="First-order hyperfine stick spectrum for equivalent spin one-half nuclei">
+          <line x1="58" y1="210" x2="530" y2="210" class="plot-axis"/>
+          <text x="205" y="245" class="svg-caption">frequency offset / MHz</text>
+          <text id="hf-axis-left" x="48" y="228" class="svg-tick">−60</text>
+          <text x="291" y="228" class="svg-tick">0</text>
+          <text id="hf-axis-right" x="518" y="228" class="svg-tick">60</text>
+          <g id="hf-stick-group">
+            <line x1="176" y1="210" x2="176" y2="140" class="hyperfine-stick"/>
+            <line x1="294" y1="210" x2="294" y2="70" class="hyperfine-stick"/>
+            <line x1="412" y1="210" x2="412" y2="140" class="hyperfine-stick"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This stick model assumes (n) equivalent (I=	frac12) nuclei, identical isotropic coupling (A), first-order high-field selection rules and no linewidth. Real spectra can be anisotropic, broadened and mixed by additional interactions.</p>
+  </div>
+
   <details class="lecture-details">
     <summary>When does this simple picture fail?</summary>
     <p>At low fields, for strong hyperfine coupling, for large anisotropy or when several interactions have comparable size, \(m_S\) and \(m_I\) may no longer be good quantum numbers. Then the full Hamiltonian has to be diagonalized rather than interpreted as a simple first-order splitting pattern.</p>
@@ -117,6 +174,30 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Anisotropy</p><h2>One molecule can resonate at different fields in different orientations</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Anisotropy is a directional fingerprint of the electronic wavefunction</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Principal \(g\)-values</strong>
+        <p><b>What it is:</b> The three values obtained when the symmetric part of the \(g\)-tensor is expressed in its principal-axis frame.</p>
+        <p><b>What it changes:</b> They define the largest and smallest Zeeman responses available as the molecule is rotated.</p>
+        <p><b>What you observe:</b> Characteristic turning points and edges in single-crystal or powder EPR spectra.</p>
+      </article>
+      <article>
+        <strong>Effective \(g(\theta,\phi)\)</strong>
+        <p><b>What it is:</b> The projection of the tensor response onto a particular laboratory-field direction.</p>
+        <p><b>What it changes:</b> It changes the resonance field continuously with molecular orientation even though the molecular tensor itself is fixed.</p>
+        <p><b>What you observe:</b> Angular dependence in single-crystal EPR and orientation-selected features in frozen samples.</p>
+      </article>
+      <article>
+        <strong>\(g\)-strain</strong>
+        <p><b>What it is:</b> A distribution of slightly different \(g\)-tensors caused by structural or electrostatic heterogeneity.</p>
+        <p><b>What it changes:</b> Different molecules resonate at slightly different fields even at the same nominal orientation.</p>
+        <p><b>What you observe:</b> Field-dependent inhomogeneous broadening that often grows toward higher microwave frequency/field.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For an axial \(g\)-tensor with principal values \(g_\perp\) and \(g_\parallel\), the effective \(g\)-value for a field at angle \(\theta\) to the symmetry axis is</p>
 
@@ -203,6 +284,24 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Powder spectra</p><h2>A frozen sample contains all molecular orientations at once</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A powder spectrum is an orientation integral, not a single-molecule trace</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Orientation distribution</strong>
+        <p><b>What it is:</b> An isotropic frozen powder contains molecules whose principal axes sample every direction relative to the magnetic field.</p>
+        <p><b>What it changes:</b> Each orientation contributes at its own resonance field and with an orientation-dependent transition probability.</p>
+        <p><b>What you observe:</b> Broad powder patterns with edges/turning points rather than one narrow resonance line.</p>
+      </article>
+      <article>
+        <strong>Turning point</strong>
+        <p><b>What it is:</b> An orientation where the resonance field is stationary with respect to small angular changes.</p>
+        <p><b>What it changes:</b> Many nearby orientations contribute at nearly the same field, enhancing spectral intensity.</p>
+        <p><b>What you observe:</b> Sharp edges or maxima that often correspond approximately to tensor principal values.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>In a single crystal, you can rotate one known molecular orientation relative to the field. In a frozen solution or powder, every orientation is present. The spectrum therefore accumulates resonance contributions from the entire orientation sphere.</p>
 
@@ -288,6 +387,14 @@ permalink: /lecture/magnetic-resonance/
   </div>
 
   <p>This is magnetic resonance without requiring conventional inductive detection of the spin magnetization.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>Reaction-yield detected magnetic resonance is a direct example of spectroscopy and chemistry becoming the same observable: resonant spin driving changes radical-pair dynamics, and a chemical yield reports the resonance.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1016/j.freeradbiomed.2026.04.015" target="_blank" rel="noopener"><strong>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</strong><span>Free Radic. Biol. Med. (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
@@ -329,3 +436,4 @@ permalink: /lecture/magnetic-resonance/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-epr.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-hyperfine.js" defer></script>

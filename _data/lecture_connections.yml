@@ -1,0 +1,170 @@
+"/lecture/electronic-structure/":
+  builds_on:
+    - label: "Start here"
+      url: "/lecture/"
+  leads_to:
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+    - label: "Excited-State Photochemistry"
+      url: "/lecture/excited-state-photochemistry/"
+    - label: "Electron Transfer"
+      url: "/lecture/electron-transfer/"
+  note: "Electronic structure supplies the energies, densities and response properties that become the effective parameters used throughout the rest of the library."
+
+"/lecture/spin-hamiltonians/":
+  builds_on:
+    - label: "Electronic Structure"
+      url: "/lecture/electronic-structure/"
+  leads_to:
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+    - label: "Magnetic Resonance"
+      url: "/lecture/magnetic-resonance/"
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+  note: "This is the reduction step: electronic structure is compressed into a small Hamiltonian whose terms can be propagated and measured."
+
+"/lecture/spin-dynamics/":
+  builds_on:
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+  leads_to:
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+    - label: "Open Systems"
+      url: "/lecture/open-systems/"
+    - label: "Coherent Control"
+      url: "/lecture/coherent-control/"
+  note: "Once the Hamiltonian is known, dynamics tells us how populations and coherences change in time—and whether the system remains coherent long enough to matter."
+
+"/lecture/radical-pairs/":
+  builds_on:
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+    - label: "Electron Transfer"
+      url: "/lecture/electron-transfer/"
+  leads_to:
+    - label: "Magnetic Resonance"
+      url: "/lecture/magnetic-resonance/"
+    - label: "Molecular Motion"
+      url: "/lecture/molecular-motion/"
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+  note: "Radical-pair chemistry is where coherent spin evolution becomes chemical kinetics: spin-state populations are converted into product yields."
+
+"/lecture/magnetic-resonance/":
+  builds_on:
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+  leads_to:
+    - label: "Coherent Control"
+      url: "/lecture/coherent-control/"
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+  note: "Magnetic resonance turns energy splittings and coherences into experimental observables—resonance positions, linewidths, echoes and reaction-yield changes."
+
+"/lecture/electron-transfer/":
+  builds_on:
+    - label: "Electronic Structure"
+      url: "/lecture/electronic-structure/"
+  leads_to:
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+    - label: "Excited-State Photochemistry"
+      url: "/lecture/excited-state-photochemistry/"
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+  note: "Electron transfer connects electronic-state energetics to nuclear reorganization and often creates the radical pairs whose spin dynamics we later propagate."
+
+"/lecture/molecular-motion/":
+  builds_on:
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+  leads_to:
+    - label: "Open Systems"
+      url: "/lecture/open-systems/"
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+  note: "Motion makes spin-Hamiltonian parameters fluctuate. Correlation functions and spectral densities are the bridge from atomistic trajectories to relaxation theory."
+
+"/lecture/computational-lab/":
+  builds_on:
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+  leads_to:
+    - label: "Open Systems"
+      url: "/lecture/open-systems/"
+    - label: "MolSpin Examples"
+      url: "/lecture/molspin-notebooks/"
+  note: "The same physical model can become tractable or impossible depending on representation, sparsity, stochastic sampling and convergence strategy."
+
+"/lecture/open-systems/":
+  builds_on:
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+    - label: "Molecular Motion"
+      url: "/lecture/molecular-motion/"
+  leads_to:
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+    - label: "Computational Lab"
+      url: "/lecture/computational-lab/"
+  note: "Open-system methods decide how environmental fluctuations become dephasing, relaxation and memory rather than coherent Hamiltonian motion."
+
+"/lecture/quantum-biology/":
+  builds_on:
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+    - label: "Electron Transfer"
+      url: "/lecture/electron-transfer/"
+    - label: "Open Systems"
+      url: "/lecture/open-systems/"
+  leads_to:
+    - label: "Magnetic Resonance"
+      url: "/lecture/magnetic-resonance/"
+    - label: "Molecular Motion"
+      url: "/lecture/molecular-motion/"
+  note: "The biological question is the full chain: state preparation → quantum dynamics → relaxation → chemical readout → experimentally distinguishable biological response."
+
+"/lecture/excited-state-photochemistry/":
+  builds_on:
+    - label: "Electronic Structure"
+      url: "/lecture/electronic-structure/"
+  leads_to:
+    - label: "Electron Transfer"
+      url: "/lecture/electron-transfer/"
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+  note: "Photochemistry prepares the electronic states from which charge transfer, triplet formation and radical-pair spin chemistry begin."
+
+"/lecture/coherent-control/":
+  builds_on:
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+    - label: "Magnetic Resonance"
+      url: "/lecture/magnetic-resonance/"
+  leads_to:
+    - label: "Quantum Biology"
+      url: "/lecture/quantum-biology/"
+    - label: "MolSpin Examples"
+      url: "/lecture/molspin-notebooks/"
+  note: "Coherent control deliberately drives the same level splittings and coherences that magnetic resonance detects."
+
+"/lecture/molspin-notebooks/":
+  builds_on:
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+    - label: "Spin Dynamics"
+      url: "/lecture/spin-dynamics/"
+    - label: "Computational Lab"
+      url: "/lecture/computational-lab/"
+  leads_to:
+    - label: "Radical Pairs"
+      url: "/lecture/radical-pairs/"
+    - label: "Open Systems"
+      url: "/lecture/open-systems/"
+  note: "The input syntax is simply the executable form of the physics developed in the preceding modules: degrees of freedom, Hamiltonian, initial state, kinetics and propagation."

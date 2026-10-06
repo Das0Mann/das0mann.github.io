@@ -25,6 +25,8 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -367,6 +369,14 @@ permalink: /lecture/spin-hamiltonians/
   <aside class="lecture-note">
     <strong>Unit discipline matters.</strong>
     <span>EPR parameters may appear in MHz, GHz, mT, gauss or cm\(^{-1}\). A Hamiltonian written in angular-frequency units also differs by factors of \(2\pi\) from one written in ordinary frequency units. Always know whether a code is propagating \(H\), \(H/h\) or \(H/\hbar\).</span>
+  </aside>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>A tensor becomes chemically important when its orientation changes an observable. We used precisely this idea to show how g-tensor anisotropy can alter charge-recombination dynamics in donor–acceptor dyads at high magnetic field.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c06173" target="_blank" rel="noopener"><strong>Revealing the Impact of g-Tensor Anisotropy on the Charge Recombination in Donor–Acceptor Dyads Under High Magnetic Fields</strong><span>JACS (2025)</span></a>
+    </div>
   </aside>
 </section>
 

@@ -22,6 +22,8 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -223,6 +225,30 @@ permalink: /lecture/excited-state-photochemistry/
     <div><p class="section-eyebrow">Triplet states</p><h2>Triplet formation changes both lifetime and spin physics</h2></div>
   </div>
   <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Fluorescence and phosphorescence report different electronic spin pathways</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Fluorescence</strong>
+        <p><b>What it is:</b> Radiative emission between electronic states of the same spin multiplicity, commonly \(S_1\rightarrow S_0\).</p>
+        <p><b>What it changes:</b> It competes with internal conversion, intersystem crossing and photochemistry for the excited-state population.</p>
+        <p><b>What you observe:</b> Prompt emission whose lifetime is typically set by the total decay rate out of the singlet excited state.</p>
+      </article>
+      <article>
+        <strong>Phosphorescence</strong>
+        <p><b>What it is:</b> Radiative emission from a triplet state to a singlet ground state, enabled by spin–orbit-induced mixing because the transition is spin-forbidden in the nonrelativistic limit.</p>
+        <p><b>What it changes:</b> Its rate is usually much slower than an allowed fluorescence transition and is strongly influenced by SOC.</p>
+        <p><b>What you observe:</b> Longer-lived emission associated with triplet population.</p>
+      </article>
+      <article>
+        <strong>Quantum yield</strong>
+        <p><b>What it is:</b> The fraction of absorbed photons that produce a chosen outcome such as fluorescence, triplet formation or a chemical product.</p>
+        <p><b>What it changes:</b> It integrates all competing kinetic pathways rather than measuring only one microscopic rate.</p>
+        <p><b>What you observe:</b> A branching ratio that connects excited-state kinetics to measurable photons or products.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>A triplet is a three-sublevel spin manifold, not just a 'long-lived excited state'</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -271,6 +297,15 @@ permalink: /lecture/excited-state-photochemistry/
   <p>Flavin chromophores combine bright singlet excitation, intersystem crossing, electron-transfer chemistry and strong environmental sensitivity. Protein electrostatics and hydrogen bonding can change excitation energies and charge-transfer energetics, while the balance between singlet, triplet and radical-pair pathways controls which spin state is ultimately prepared.</p>
 
   <p>This is why excited-state electronic structure is directly upstream of the radical-pair and spin-dynamics modules in this library.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>For flavoproteins, the protein environment is part of the excited-state Hamiltonian. Electrostatic polarization and local hydrogen-bonding can shift the flavin states that later feed triplet and radical-pair pathways.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.4c02168" target="_blank" rel="noopener"><strong>Importance of Polarizable Embedding for Absorption Spectrum Calculations of Arabidopsis thaliana Cryptochrome 1</strong><span>J. Phys. Chem. B (2024)</span></a>
+      <a href="https://doi.org/10.3390/biology13040262" target="_blank" rel="noopener"><strong>Activation of Cryptochrome 4 from Atlantic Herring</strong><span>Biology (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
