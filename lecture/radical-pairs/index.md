@@ -13,6 +13,18 @@ permalink: /lecture/radical-pairs/
   <h2>Turn spin dynamics into chemistry</h2>
   <p>A radical pair is one of the cleanest places where quantum spin dynamics becomes chemically observable. The spins evolve coherently, but the singlet and triplet parts of the state can react differently. Change the spin evolution and you can change the reaction yield.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Construct the singlet/triplet basis for two electron spins and explain why it is not a classical arrow picture.</p></div>
+    <div><span>02</span><p>Identify the magnetic interactions that generate singlet–triplet interconversion.</p></div>
+    <div><span>03</span><p>Connect spin evolution to spin-selective reaction yields and magnetic-field effects.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -227,6 +239,28 @@ permalink: /lecture/radical-pairs/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Classic review</span>
+      <h3>Magnetic field effects in chemical kinetics and related phenomena</h3>
+      <p>U. E. Steiner and T. Ulrich · Chemical Reviews (1989). A foundational review of spin chemistry and magnetic-field effects in radical reactions.</p>
+      <a href="https://doi.org/10.1021/cr00091a003" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Biological radical pairs</span>
+      <h3>The Radical-Pair Mechanism of Magnetoreception</h3>
+      <p>P. J. Hore and H. Mouritsen · Annual Review of Biophysics (2016). A tutorial review connecting radical-pair spin chemistry to biological magnetoreception.</p>
+      <a href="https://doi.org/10.1146/annurev-biophys-032116-094545" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

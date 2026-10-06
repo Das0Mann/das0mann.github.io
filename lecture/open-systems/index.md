@@ -13,6 +13,18 @@ permalink: /lecture/open-systems/
   <h2>What changes when the spin system remembers its environment?</h2>
   <p>The \(T_1/T_2\) picture is useful, but it hides the microscopic origin of relaxation. Open-system theory asks how a selected spin subsystem evolves when it is coupled to degrees of freedom that we do not explicitly keep.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Distinguish phenomenological Lindblad dynamics from microscopic weak-coupling relaxation theory.</p></div>
+    <div><span>02</span><p>State the physical content of the Born, Markov and secular approximations.</p></div>
+    <div><span>03</span><p>Explain what a memory kernel changes and when a time-nonlocal description becomes relevant.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -246,6 +258,34 @@ permalink: /lecture/open-systems/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Projection operators</span>
+      <h3>On Quantum Theory of Transport Phenomena: Steady Diffusion</h3>
+      <p>S. Nakajima · Progress of Theoretical Physics (1958). One of the foundational projection-operator formulations behind non-Markovian reduced dynamics.</p>
+      <a href="https://doi.org/10.1143/PTP.20.948" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Memory kernels</span>
+      <h3>Ensemble Method in the Theory of Irreversibility</h3>
+      <p>R. Zwanzig · The Journal of Chemical Physics (1960). The complementary projection-operator formulation leading to generalized kinetic equations with memory.</p>
+      <a href="https://doi.org/10.1063/1.1731409" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Markovian generators</span>
+      <h3>On the Generators of Quantum Dynamical Semigroups</h3>
+      <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical characterization of completely positive Markovian quantum generators.</p>
+      <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

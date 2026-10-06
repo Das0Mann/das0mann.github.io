@@ -4034,3 +4034,216 @@ h3 { font-size: 1.25rem; }
     text-align: center;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture enrichment pass: learning goals, literature, navigation
+   --------------------------------------------------------- */
+.lecture-module .module-intro {
+  margin-bottom: 30px;
+}
+
+.module-learning {
+  max-width: 900px;
+  margin: 0 0 56px;
+  padding: 4px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.module-learning-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: "Inter", sans-serif;
+}
+
+.module-learning-head span {
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.module-learning-head strong {
+  color: var(--navy);
+  font-size: .88rem;
+}
+
+.module-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 26px;
+}
+
+.module-learning-grid > div {
+  display: grid;
+  grid-template-columns: 25px minmax(0,1fr);
+  gap: 8px;
+  padding: 12px 0 2px;
+  border-top: 1px solid var(--line);
+}
+
+.module-learning-grid > div > span {
+  color: #7c989f;
+  font: 800 .64rem/1.5 "Inter", sans-serif;
+  letter-spacing: .08em;
+}
+
+.module-learning-grid p {
+  margin: 0 !important;
+  color: #48606c !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .78rem !important;
+  line-height: 1.56 !important;
+}
+
+.external-reading {
+  margin-top: 76px;
+}
+
+.external-reading-intro {
+  max-width: 780px !important;
+  margin-bottom: 18px !important;
+  color: #5b707b !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .84rem !important;
+  line-height: 1.62 !important;
+}
+
+.external-literature-grid article {
+  padding: 17px 0 19px;
+  border-top: 2px solid #c9e3e6;
+  background: transparent;
+}
+
+.external-literature-grid article > span {
+  color: #668087;
+}
+
+.literature-index {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Thirteen module pills no longer fit comfortably as a wrapped block.
+   Keep them as a compact, horizontally scrollable reading rail instead. */
+.lecture-module-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 0 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #c6d7db transparent;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.lecture-module-nav::-webkit-scrollbar {
+  height: 5px;
+}
+
+.lecture-module-nav::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #c6d7db;
+}
+
+.lecture-module-nav a {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.lecture-module-home {
+  margin-right: 4px;
+}
+
+@media (max-width: 760px) {
+  .module-learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-learning-grid > div {
+    padding: 10px 0;
+  }
+
+  .lecture-module-nav {
+    display: flex;
+    grid-template-columns: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .lecture-module-nav a {
+    justify-content: flex-start;
+    min-height: 31px;
+    padding: 0 8px;
+    text-align: left;
+  }
+
+  .lecture-module-home {
+    grid-column: auto;
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 620px) {
+  .module-learning {
+    margin-bottom: 44px;
+  }
+
+  .module-learning-head {
+    display: grid;
+    gap: 3px;
+  }
+
+  .module-learning-grid p {
+    font-size: .77rem !important;
+  }
+
+  .external-reading {
+    margin-top: 60px;
+  }
+
+  .lecture-module-nav {
+    gap: 5px;
+  }
+
+  .lecture-module-nav a {
+    width: auto;
+    min-height: 31px;
+    padding: 0 7px;
+    font-size: .66rem;
+  }
+}
+
+
+.external-literature-grid {
+  max-width: 940px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.external-reading + .lecture-module-nav {
+  margin-top: 42px;
+}
+
+@media (max-width: 620px) {
+  .external-literature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .external-reading + .lecture-module-nav {
+    margin-top: 34px;
+  }
+}
+
+
+.library-note {
+  margin-top: 12px !important;
+  color: #637985 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .85rem !important;
+  line-height: 1.6 !important;
+}

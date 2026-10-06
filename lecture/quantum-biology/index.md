@@ -13,6 +13,18 @@ permalink: /lecture/quantum-biology/
   <h2>Quantum biology is a mechanism question, not a label</h2>
   <p>Every chemical bond is quantum mechanical. That alone does not make a biological process an interesting example of quantum biology. The useful question is whether a specifically quantum degree of freedom—coherence, tunnelling, spin correlation or non-classical state structure—survives long enough and couples strongly enough to change a biological observable.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Separate genuinely mechanism-specific quantum effects from the trivial statement that chemistry is quantum mechanical.</p></div>
+    <div><span>02</span><p>Test a proposed mechanism against preparation, interaction, lifetime, decoherence, readout and experiment.</p></div>
+    <div><span>03</span><p>Connect microscopic radical-pair or coherence dynamics to an actual biological observable without skipping scales.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -182,6 +194,34 @@ permalink: /lecture/quantum-biology/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Field overview</span>
+      <h3>Quantum biology</h3>
+      <p>N. Lambert et al. · Nature Physics (2013). A broad critical review of candidate functional quantum effects in biological systems.</p>
+      <a href="https://doi.org/10.1038/nphys2474" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Coherence in complex systems</span>
+      <h3>Using coherence to enhance function in chemical and biophysical systems</h3>
+      <p>G. D. Scholes et al. · Nature (2017). A careful review of what coherence can mean and do in noisy chemical and biological environments.</p>
+      <a href="https://doi.org/10.1038/nature21425" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Magnetoreception</span>
+      <h3>The Radical-Pair Mechanism of Magnetoreception</h3>
+      <p>P. J. Hore and H. Mouritsen · Annual Review of Biophysics (2016). A key mechanistic reference for cryptochrome-based radical-pair magnetoreception.</p>
+      <a href="https://doi.org/10.1146/annurev-biophys-032116-094545" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

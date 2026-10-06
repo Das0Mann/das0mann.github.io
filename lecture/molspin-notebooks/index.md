@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Worked MolSpin Notebooks
+title: Worked MolSpin Examples
 excerpt: "Read real public MolSpin input files as scientific models"
 permalink: /lecture/molspin-notebooks/
 ---
@@ -10,9 +10,18 @@ permalink: /lecture/molspin-notebooks/
 
 <header class="module-intro">
   <span class="module-index">Module 13</span>
-  <h2>Read the input as a model, not as configuration noise</h2>
+  <h2>Read the input as a scientific model, not as configuration noise</h2>
   <p>A MolSpin input file encodes a physical problem: which spins exist, how they interact, how the state is prepared, which kinetic processes are present and which numerical task turns that model into an observable. This module walks through real examples from the public MolSpin repository.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Map each MolSpin input object onto the physical model it represents.</p></div>
+    <div><span>02</span><p>Choose a task whose numerical capabilities match the Hamiltonian, kinetics and time dependence.</p></div>
+    <div><span>03</span><p>Record software versions, units and convergence settings so that a simulation remains reproducible.</p></div>
+  </div>
+</section>
+
 
 <aside class="lecture-note molspin-version-note">
   <strong>Version note — public reference used here</strong>
@@ -189,5 +198,27 @@ PulseSequence seq
   <p class="lecture-all-pubs"><a href="https://github.com/MolSpin-Group/MolSpin/tree/cc7cc7f3cd8580e074318b7baae960d84a054bb0/Example" target="_blank" rel="noopener">Browse the pinned public Example directory →</a></p>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>EPR software ecosystem</span>
+      <h3>EasySpin, a comprehensive software package for spectral simulation and analysis in EPR</h3>
+      <p>S. Stoll and A. Schweiger · Journal of Magnetic Resonance (2006). A complementary reference for EPR-oriented spin-Hamiltonian simulation and analysis.</p>
+      <a href="https://doi.org/10.1016/j.jmr.2005.08.013" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Large-scale spin dynamics</span>
+      <h3>Spinach – A software library for simulation of spin dynamics in large spin systems</h3>
+      <p>H. J. Hogben et al. · Journal of Magnetic Resonance (2011). A useful comparison for numerical representations and large-system spin-dynamics strategies.</p>
+      <a href="https://doi.org/10.1016/j.jmr.2010.11.008" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>

@@ -13,6 +13,18 @@ permalink: /lecture/electronic-structure/
   <h2>Start with the electrons</h2>
   <p>Before we talk about spin dynamics, we need to know what the electrons are doing. Electronic-structure theory is the layer that gives us energies, densities, excited states and ultimately the magnetic parameters that enter a spin Hamiltonian.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Distinguish the many-electron wavefunction, molecular orbitals and electron density.</p></div>
+    <div><span>02</span><p>Explain what HF, DFT, correlation methods and basis sets approximate differently.</p></div>
+    <div><span>03</span><p>Identify which electronic-structure outputs become parameters of a spin Hamiltonian.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -200,6 +212,28 @@ permalink: /lecture/electronic-structure/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Foundational DFT</span>
+      <h3>Inhomogeneous Electron Gas</h3>
+      <p>P. Hohenberg and W. Kohn · Physical Review (1964). The first Hohenberg–Kohn theorem establishes the density as a sufficient ground-state variable.</p>
+      <a href="https://doi.org/10.1103/PhysRev.136.B864" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Kohn–Sham theory</span>
+      <h3>Self-Consistent Equations Including Exchange and Correlation Effects</h3>
+      <p>W. Kohn and L. J. Sham · Physical Review (1965). The practical construction underlying most modern density-functional calculations.</p>
+      <a href="https://doi.org/10.1103/PhysRev.140.A1133" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

@@ -13,6 +13,15 @@ permalink: /lecture/coherent-control/
   <h2>Instead of watching the spin evolve, drive it deliberately</h2>
   <p>A resonant RF or microwave field can rotate a spin state in a controlled way. The language of pulses—\(\pi/2\), \(\pi\), phase, detuning and echo—comes from solving a driven two-level problem and then using those rotations as building blocks for spectroscopy and quantum control.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Calculate Rabi oscillations and the duration of ideal π/2 and π pulses.</p></div>
+    <div><span>02</span><p>Use the rotating-frame picture to understand resonance, detuning and pulse bandwidth.</p></div>
+    <div><span>03</span><p>Explain what an echo refocuses and what irreversible decoherence it cannot reverse.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -211,6 +220,28 @@ permalink: /lecture/coherent-control/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Driven two-level systems</span>
+      <h3>Space Quantization in a Gyrating Magnetic Field</h3>
+      <p>I. I. Rabi · Physical Review (1937). The classic analysis underlying resonantly driven angular-momentum transitions and Rabi oscillations.</p>
+      <a href="https://doi.org/10.1103/PhysRev.51.652" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Spin echoes</span>
+      <h3>Spin Echoes</h3>
+      <p>E. L. Hahn · Physical Review (1950). The foundational pulse experiment establishing spin echoes and refocusing of static frequency dispersion.</p>
+      <a href="https://doi.org/10.1103/PhysRev.80.580" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

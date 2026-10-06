@@ -13,6 +13,18 @@ permalink: /lecture/electron-transfer/
   <h2>How fast does an electron move from donor to acceptor?</h2>
   <p>Electron transfer sits exactly at the interface between electronic structure, nuclear motion and kinetics. The electronic states tell us where the electron can be; the environment controls how costly it is to reorganize; the coupling determines how efficiently the two states communicate.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Define diabatic donor/acceptor states, electronic coupling, reorganization energy and driving force.</p></div>
+    <div><span>02</span><p>Locate a reaction in the normal, activationless or inverted Marcus regime.</p></div>
+    <div><span>03</span><p>Understand what energy-gap sampling can—and cannot—determine from molecular ensembles.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -262,6 +274,28 @@ permalink: /lecture/electron-transfer/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Foundational theory</span>
+      <h3>On the Theory of Oxidation-Reduction Reactions Involving Electron Transfer. I</h3>
+      <p>R. A. Marcus · The Journal of Chemical Physics (1956). The classic derivation of the electron-transfer free-energy framework that became Marcus theory.</p>
+      <a href="https://doi.org/10.1063/1.1742723" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Tutorial review</span>
+      <h3>Contemporary Issues in Electron Transfer Research</h3>
+      <p>P. F. Barbara, T. J. Meyer and M. A. Ratner · The Journal of Physical Chemistry (1996). A highly useful overview of rates, free-energy surfaces, solvent response and the inverted region.</p>
+      <a href="https://doi.org/10.1021/jp9605663" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 

@@ -13,6 +13,18 @@ permalink: /lecture/computational-lab/
   <h2>From a Hamiltonian to a calculation you can trust</h2>
   <p>Formal spin dynamics is only half the problem. The other half is numerical: how large is the Hilbert space, which representation should we propagate, how do we avoid constructing impossible matrices, and how do we know that a stochastic or time-discretized result is converged?</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Estimate Hilbert-, operator- and Liouville-space scaling before choosing a numerical method.</p></div>
+    <div><span>02</span><p>Understand when sparse/Krylov or state-vector methods avoid impossible dense representations.</p></div>
+    <div><span>03</span><p>Design convergence tests for timestep, stochastic trace samples, orientations and molecular ensembles.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -186,6 +198,34 @@ permalink: /lecture/computational-lab/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Matrix exponentials</span>
+      <h3>EXPOKIT: A Software Package for Computing Matrix Exponentials</h3>
+      <p>R. B. Sidje · ACM Transactions on Mathematical Software (1998). A classic reference for matrix-free Krylov evaluation of exponential propagators.</p>
+      <a href="https://doi.org/10.1145/285861.285868" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Trace estimation</span>
+      <h3>A Stochastic Estimator of the Trace of the Influence Matrix for Laplacian Smoothing Splines</h3>
+      <p>M. F. Hutchinson · Communications in Statistics—Simulation and Computation (1989). The historical source of the random-vector trace estimator now widely known as Hutchinson estimation.</p>
+      <a href="https://doi.org/10.1080/03610918908812806" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Large spin systems</span>
+      <h3>Spinach – A software library for simulation of spin dynamics in large spin systems</h3>
+      <p>H. J. Hogben et al. · Journal of Magnetic Resonance (2011). A useful comparison point for sparse and restricted-state-space strategies in large spin simulations.</p>
+      <a href="https://doi.org/10.1016/j.jmr.2010.11.008" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
