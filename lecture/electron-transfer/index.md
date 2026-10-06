@@ -307,6 +307,14 @@ permalink: /lecture/electron-transfer/
   </div>
 
   <p>A small fraction of strongly coupled or nearly activationless conformations can dominate the ensemble-averaged kinetics. This is why electron-transfer calculations in proteins naturally connect to conformational sampling.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>A protein does not have one immutable electron-transfer geometry. Distinct conformational subensembles can change donor–acceptor energetics and magnetic interactions together, so kinetics and spin dynamics become structurally coupled.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c22947" target="_blank" rel="noopener"><strong>Conformational Switching Controls Biradical Spin Dynamics in Flavin–Tryptophan Dyads</strong><span>JACS (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
