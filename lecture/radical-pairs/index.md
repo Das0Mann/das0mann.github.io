@@ -188,6 +188,13 @@ permalink: /lecture/radical-pairs/
 
   <p>This shows why \(\Delta g\)-driven mixing strengthens with magnetic field, whereas hyperfine-driven mixing can already be efficient at low field.</p>
 
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Think of the two electron spins as two clocks feeding a spin-selective gate</h3>
+    <p>If both clocks tick at exactly the same rate, their relative phase changes little. Hyperfine fields or different \(g\)-values make the clocks drift relative to one another. That changing relative phase moves the radical pair between singlet-like and triplet-like character, while the chemical reaction acts like a gate that removes population differently depending on which spin character is present at that instant.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the singlet is an entangled two-electron state, not two independent classical clock hands. The clock picture is only a way to visualize relative phase accumulation.</span>
+  </aside>
+
   <div class="hamiltonian-legend">
     <div><strong>Hyperfine</strong><span>couples each electron to its local nuclei and is often the main source of low-field S–T mixing</span></div>
     <div><strong>\(\Delta g\)</strong><span>different electron Zeeman frequencies can drive relative spin phase evolution, especially at higher fields</span></div>
