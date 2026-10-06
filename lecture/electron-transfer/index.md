@@ -476,6 +476,16 @@ permalink: /lecture/electron-transfer/
   </div>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>What controls an electron-transfer rate?</h3>
+  <ul>
+    <li>A Marcus rate is determined by driving force, reorganization energy and electronic coupling, each of which has a different microscopic origin.</li>
+    <li>Geometry can influence the rate twice: through the free-energy landscape and through the often exponential distance/orientation dependence of electronic coupling.</li>
+    <li>Protein ensembles therefore require both energetic sampling and a defensible treatment of conformationally varying coupling.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark biological ET</span>
   <h3>Long-range electron transfer in proteins is a structural tunnelling problem as well as a Marcus problem</h3>
