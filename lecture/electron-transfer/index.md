@@ -120,6 +120,30 @@ permalink: /lecture/electron-transfer/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Marcus surfaces</p><h2>Two parabolas are enough to understand the barrier</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The activation barrier is the nuclear configuration the system must reach before electron transfer becomes energetically allowed</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Activation free energy \(\Delta G^\ddagger\)</strong>
+        <p><b>What it is:</b> The free-energy cost of reaching the crossing region where reactant and product electronic states are energetically matched in the diabatic picture.</p>
+        <p><b>What it changes:</b> It enters the rate exponentially, so small barrier changes can change electron-transfer kinetics by orders of magnitude.</p>
+        <p><b>What you observe:</b> Strong temperature and environment dependence of ET rates.</p>
+      </article>
+      <article>
+        <strong>Activationless condition</strong>
+        <p><b>What it is:</b> The special case \(\Delta G^\circ=-\lambda\) in classical Marcus theory where the equilibrium reactant geometry can reach energetic degeneracy without a free-energy barrier.</p>
+        <p><b>What it changes:</b> It maximizes the classical nonadiabatic Marcus rate for fixed coupling and temperature.</p>
+        <p><b>What you observe:</b> A turnover from increasing to decreasing rate as the reaction is made progressively more exergonic.</p>
+      </article>
+      <article>
+        <strong>Marcus inverted region</strong>
+        <p><b>What it is:</b> The regime \(-\Delta G^\circ>\lambda\), where further thermodynamic driving moves the crossing away from the reactant minimum again.</p>
+        <p><b>What it changes:</b> The activation barrier grows even though the reaction becomes more exergonic.</p>
+        <p><b>What you observe:</b> Electron-transfer rates that decrease as the driving force becomes more negative.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Classical Marcus theory approximates the reactant and product free-energy surfaces as harmonic functions of an effective solvent or nuclear reaction coordinate. The activation free energy is</p>
 
