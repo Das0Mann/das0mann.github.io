@@ -193,6 +193,13 @@ permalink: /lecture/excited-state-photochemistry/
     <span>You also need information about how the electronic wavefunctions change with nuclear geometry. Surface hopping, wavepacket dynamics and related methods differ in how they use energies, gradients and nonadiabatic couplings to propagate through these regions.</span>
   </aside>
 
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Adiabatic surfaces are tracks; nonadiabatic coupling creates switching regions</h3>
+    <p>Far from a crossing, nuclear motion can often be pictured as a train following one electronic track. Near an avoided crossing or conical intersection, the electronic character changes so rapidly that the train encounters a switching region where amplitude can move to another track. The derivative coupling measures how strongly nuclear motion opens that switch.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the nuclei are not a single classical train and the surfaces live in a high-dimensional coordinate space. Quantum wavepackets can split, interfere and occupy several electronic states at once.</span>
+  </aside>
+
   <p>Conical intersections are especially important because two adiabatic potential-energy surfaces become degenerate in a multidimensional nuclear-coordinate space. They can act as efficient funnels for ultrafast population transfer.</p>
 
   <aside class="teacher-note">
