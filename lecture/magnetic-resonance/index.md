@@ -298,6 +298,23 @@ permalink: /lecture/magnetic-resonance/
 
   <p>for a transition driven primarily by the transverse microwave field. Hyperfine mixing, ZFS or low-field state mixing can relax this simple picture and redistribute intensity among transitions.</p>
 
+  <p>Resonance position and resonance intensity are therefore different questions. A transition can satisfy the energy condition and still be weak if the microwave operator has a small matrix element or if the two levels have nearly equal populations. Schematically,</p>
+
+  <div class="lecture-equation">
+  \[
+  I_{i\rightarrow j}
+  \propto
+  (p_i-p_j)
+  \left|
+  \langle j|
+  \hat{\boldsymbol\mu}\cdot\mathbf B_1
+  |i\rangle
+  \right|^2.
+  \]
+  </div>
+
+  <p>The first factor supplies the population difference; the second is the transition probability. This is why a simulated spectrum needs eigenstates, populations and transition matrix elements—not only a list of energy gaps.</p>
+
   <p>For \(g\approx2\), the resonance field is roughly 0.34 T at X-band (\(\sim9.5\) GHz) and 3.35 T at W-band (\(\sim94\) GHz). Moving to higher field magnifies \(g\)-anisotropy because a small difference in \(g\) corresponds to a larger absolute difference in Zeeman frequency.</p>
 
   <aside class="lecture-note">
