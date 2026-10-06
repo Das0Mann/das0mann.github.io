@@ -31,6 +31,24 @@ permalink: /lecture/computational-lab/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Representation</p><h2>Count the Hilbert space before choosing an algorithm</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The numerical representation is part of the physical modelling strategy</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Hilbert space</strong>
+        <p><b>What it is:</b> The vector space containing all pure spin states. Its dimension is the product of the dimensions of the individual spins.</p>
+        <p><b>What it changes:</b> It sets the size of state vectors and the fundamental cost of exact propagation.</p>
+        <p><b>What you observe:</b> Not a laboratory observable; it determines whether a proposed simulation is computationally feasible.</p>
+      </article>
+      <article>
+        <strong>Density matrix / Liouville space</strong>
+        <p><b>What it is:</b> The density matrix stores populations and coherences for ensembles or mixed states; vectorizing it creates a Liouville-space object of dimension \(D^2\).</p>
+        <p><b>What it changes:</b> It makes relaxation and ensemble dynamics natural to express but increases memory and propagation cost dramatically.</p>
+        <p><b>What you observe:</b> It is the numerical object from which populations, coherences and expectation values are calculated.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For independent spins \(I_k\), the Hilbert-space dimension is</p>
 
@@ -136,6 +154,24 @@ permalink: /lecture/computational-lab/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Trace sampling</p><h2>Stochastic trace estimation trades memory for variance</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Random sampling here is a numerical approximation, not necessarily physical noise</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Trace sampling</strong>
+        <p><b>What it is:</b> A Monte-Carlo estimator that approximates a high-dimensional trace by averaging expectation values over random vectors.</p>
+        <p><b>What it changes:</b> It replaces an exact sum over a huge basis by a controllable statistical error that decreases roughly as \(M^{-1/2}\).</p>
+        <p><b>What you observe:</b> Run-to-run sampling fluctuations and convergence of the final observable as the number of samples increases.</p>
+      </article>
+      <article>
+        <strong>Physical stochasticity</strong>
+        <p><b>What it is:</b> Random trajectories used to represent environmental noise or a stochastic Schrödinger equation describe actual model dynamics rather than merely estimating a trace.</p>
+        <p><b>What it changes:</b> They change the time evolution being modelled, not just how efficiently a deterministic quantity is evaluated.</p>
+        <p><b>What you observe:</b> Noise-induced relaxation, dephasing or distribution of trajectories after ensemble averaging.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>If random normalized states satisfy \(\mathbb E[\lvert r\rangle\langle r\rvert]=\mathbf 1/D\), then a trace can be estimated as</p>
 

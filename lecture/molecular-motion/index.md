@@ -76,6 +76,24 @@ permalink: /lecture/molecular-motion/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Correlation functions</p><h2>How long does the system remember a fluctuation?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A correlation function measures memory, not merely amplitude</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Variance \(\sigma^2\)</strong>
+        <p><b>What it is:</b> The mean-square size of the fluctuation around its average value.</p>
+        <p><b>What it changes:</b> It sets how strongly a fluctuating Hamiltonian parameter can perturb the spin system.</p>
+        <p><b>What you observe:</b> Broader parameter distributions and, together with timescale, stronger relaxation/dephasing.</p>
+      </article>
+      <article>
+        <strong>Correlation time \(\tau_c\)</strong>
+        <p><b>What it is:</b> A characteristic time over which the sign and magnitude of a fluctuation remain statistically related to their earlier values.</p>
+        <p><b>What it changes:</b> It determines where the fluctuation power sits in frequency space.</p>
+        <p><b>What you observe:</b> Whether motion appears motionally averaged, relaxation-efficient or quasi-static on the spin timescale.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>The autocorrelation function is</p>
 
@@ -107,6 +125,24 @@ permalink: /lecture/molecular-motion/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Spectral density</p><h2>Relaxation cares about frequency content, not just fluctuation size</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The spectral density tells the spin which parts of molecular motion it can 'hear'</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spectral density \(J(\omega)\)</strong>
+        <p><b>What it is:</b> The frequency-domain distribution of fluctuation power obtained from the correlation function.</p>
+        <p><b>What it changes:</b> Relaxation is efficient when the fluctuating interaction contains power near an energy-gap frequency of the spin system.</p>
+        <p><b>What you observe:</b> Frequency- and field-dependent relaxation rates such as \(T_1^{-1}\) and contributions to \(T_2^{-1}\).</p>
+      </article>
+      <article>
+        <strong>Timescale matching</strong>
+        <p><b>What it is:</b> The condition that molecular motion and spin precession occur on comparable timescales, often summarized as \(\omega\tau_c\sim1\) for a simple exponential model.</p>
+        <p><b>What it changes:</b> It maximizes spectral weight at that transition frequency for the single-timescale model.</p>
+        <p><b>What you observe:</b> A relaxation maximum as field/frequency or molecular correlation time is varied.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>The spectral density is the Fourier transform of the correlation function. Using the two-sided convention,</p>
 

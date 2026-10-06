@@ -31,6 +31,24 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Resonance</p><h2>Match the photon energy to the spin splitting</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Resonance occurs when the drive matches an allowed energy difference</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Resonance condition</strong>
+        <p><b>What it is:</b> A transition becomes efficient when the oscillating field frequency matches the energy gap between spin eigenstates.</p>
+        <p><b>What it changes:</b> It allows the weak transverse microwave/RF field to coherently transfer population or create coherence between states.</p>
+        <p><b>What you observe:</b> A peak, derivative line, echo response or reaction-yield change at a particular field/frequency.</p>
+      </article>
+      <article>
+        <strong>Effective \(g\)-value</strong>
+        <p><b>What it is:</b> The orientation-dependent magnetic response that converts field into electron-spin splitting.</p>
+        <p><b>What it changes:</b> Changing \(g_\mathrm{eff}\) shifts the field required to satisfy \(h\nu=g_\mathrm{eff}\mu_BB\).</p>
+        <p><b>What you observe:</b> Different resonance positions for different molecular orientations or electronic structures.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For an isotropic \(S=\tfrac12\) electron spin, the first resonance condition is</p>
 
@@ -55,6 +73,24 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">02</span>
     <div><p class="section-eyebrow">Hyperfine structure</p><h2>Nuclear spins split electron-spin transitions</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Hyperfine lines are a map of which nuclei the electron spin can feel</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Hyperfine splitting</strong>
+        <p><b>What it is:</b> Electron–nuclear coupling makes the electron-spin transition energy depend on the nuclear-spin projection.</p>
+        <p><b>What it changes:</b> One electron resonance is divided into several transitions corresponding to different nuclear configurations.</p>
+        <p><b>What you observe:</b> Multiplets whose spacing and anisotropy encode local spin density and geometry.</p>
+      </article>
+      <article>
+        <strong>Equivalent vs inequivalent nuclei</strong>
+        <p><b>What it is:</b> Symmetry-related nuclei share the same coupling; chemically or geometrically distinct nuclei generally do not.</p>
+        <p><b>What it changes:</b> Equivalent nuclei create regular combinatorial patterns, whereas inequivalent nuclei generate many nonuniform lines.</p>
+        <p><b>What you observe:</b> Characteristic EPR multiplets and resolved nuclear fingerprints.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For one electron coupled isotropically to one nucleus, a simple high-field Hamiltonian is</p>
 
@@ -183,6 +219,24 @@ permalink: /lecture/magnetic-resonance/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Linewidths</p><h2>Relaxation determines how sharp a resonance can be</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A spectral line has a width because phase coherence is finite</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Homogeneous linewidth</strong>
+        <p><b>What it is:</b> Broadening experienced by every member of the ensemble because each spin loses phase coherence in time.</p>
+        <p><b>What it changes:</b> Shorter \(T_2\) broadens the Lorentzian component of the line through the time–frequency uncertainty relation.</p>
+        <p><b>What you observe:</b> A broader resonance even in a perfectly homogeneous sample.</p>
+      </article>
+      <article>
+        <strong>Inhomogeneous broadening / \(T_2^*\)</strong>
+        <p><b>What it is:</b> A distribution of static or slowly varying resonance frequencies caused by field inhomogeneity, \(g\)-strain, unresolved hyperfine or structural heterogeneity.</p>
+        <p><b>What it changes:</b> Different spins dephase relative to each other without necessarily losing their individual microscopic coherence.</p>
+        <p><b>What you observe:</b> Broadened ensemble lines that can often be partly refocused by an echo.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For a simple exponentially decaying transverse coherence, the homogeneous absorption line is Lorentzian. Its frequency-domain full width at half maximum is</p>
 

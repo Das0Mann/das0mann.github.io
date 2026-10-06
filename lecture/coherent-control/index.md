@@ -28,6 +28,24 @@ permalink: /lecture/coherent-control/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Driven spin</p><h2>Add an oscillating transverse field</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The drive has two independent physical knobs: strength and frequency mismatch</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>\(B_1\) / Rabi frequency</strong>
+        <p><b>What it is:</b> The transverse oscillating field couples the two spin states; its amplitude sets the on-resonance Rabi frequency.</p>
+        <p><b>What it changes:</b> It controls how quickly the Bloch vector rotates during a pulse and therefore the pulse area.</p>
+        <p><b>What you observe:</b> The period of Rabi oscillations and the required duration of \(\pi/2\) and \(\pi\) pulses.</p>
+      </article>
+      <article>
+        <strong>Detuning \(\Delta\nu\)</strong>
+        <p><b>What it is:</b> The difference between the applied drive frequency and the spin's resonance frequency.</p>
+        <p><b>What it changes:</b> It tilts the effective field in the rotating frame and reduces the maximum achievable population transfer for a rectangular pulse.</p>
+        <p><b>What you observe:</b> Off-resonance excitation, phase errors and frequency-selective pulse profiles.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For a spin-\(\tfrac12\) in a static field \(B_0\hat z\), add an oscillating field \(B_1(t)\) transverse to \(B_0\). In a rotating frame and under the rotating-wave approximation, a useful frequency-unit Hamiltonian is</p>
 
@@ -129,6 +147,24 @@ permalink: /lecture/coherent-control/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Rotating frame</p><h2>Make the fast Larmor motion disappear</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The rotating frame is a change of viewpoint, not an extra physical force</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Rotating frame</strong>
+        <p><b>What it is:</b> A coordinate frame chosen to rotate near the microwave/RF frequency so the rapid laboratory-frame precession is factored out.</p>
+        <p><b>What it changes:</b> A time-dependent drive becomes approximately a static effective field under the rotating-wave approximation.</p>
+        <p><b>What you observe:</b> Simpler pulse trajectories and the intuitive effective-field picture used throughout magnetic resonance.</p>
+      </article>
+      <article>
+        <strong>Rotating-wave approximation</strong>
+        <p><b>What it is:</b> An approximation that neglects the counter-rotating drive component when the drive is near resonance and weak compared with the carrier frequency.</p>
+        <p><b>What it changes:</b> It reduces the driven problem to slow dynamics around an effective field.</p>
+        <p><b>What you observe:</b> Accurate standard pulse behaviour in its regime; systematic deviations for very strong or ultrabroadband driving.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>In the laboratory frame the spin precesses rapidly around \(B_0\) while the microwave field oscillates. Transforming into a frame rotating near the drive frequency converts that problem into precession around an effective static field.</p>
 
@@ -163,6 +199,24 @@ permalink: /lecture/coherent-control/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Echoes</p><h2>A \(\pi\) pulse can refocus static frequency offsets</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>An echo reverses reversible phase dispersion, not irreversible decoherence</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Inhomogeneous dephasing</strong>
+        <p><b>What it is:</b> Different members of an ensemble precess at slightly different static frequencies.</p>
+        <p><b>What it changes:</b> The ensemble transverse signal cancels even though individual spins can remain coherent.</p>
+        <p><b>What you observe:</b> A short apparent \(T_2^*\) that can be refocused by a pulse sequence.</p>
+      </article>
+      <article>
+        <strong>Hahn echo</strong>
+        <p><b>What it is:</b> A \(\pi/2-\tau-\pi-\tau\) sequence that reverses static phase accumulation caused by frequency offsets.</p>
+        <p><b>What it changes:</b> It rephases spins at the echo time while leaving truly irreversible stochastic decoherence unrecovered.</p>
+        <p><b>What you observe:</b> An echo amplitude whose decay reports homogeneous coherence loss more directly than a free-induction signal.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>In a Hahn echo, an initial \(\pi/2\) pulse creates transverse coherence. Different members of an ensemble then accumulate different phases. A \(\pi\) pulse reverses the effect of static frequency offsets, producing an echo after the same free-evolution delay.</p>
 

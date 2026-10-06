@@ -4247,3 +4247,111 @@ h3 { font-size: 1.25rem; }
   font-size: .85rem !important;
   line-height: 1.6 !important;
 }
+
+
+/* ---------------------------------------------------------
+   Lecture physical-concept refinement
+   --------------------------------------------------------- */
+.physical-concept-panel {
+  max-width: 920px;
+  margin: 20px 0 26px 59px;
+  padding: 17px 18px 18px;
+  border: 1px solid #cfe1e4;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(231,246,247,.68), rgba(255,255,255,.88));
+}
+
+.physical-concept-head {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 13px;
+  font-family: "Inter", sans-serif;
+}
+
+.physical-concept-head > span {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.physical-concept-head h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: .91rem;
+  line-height: 1.4;
+}
+
+.physical-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 9px;
+}
+
+.physical-concept-grid article {
+  min-width: 0;
+  padding: 13px 13px 12px;
+  border-top: 2px solid #b9dadd;
+  background: rgba(255,255,255,.74);
+}
+
+.physical-concept-grid article > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: .82rem;
+  line-height: 1.35;
+}
+
+.physical-concept-grid article p {
+  margin: 5px 0 0 !important;
+  color: #536a75 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .72rem !important;
+  line-height: 1.52 !important;
+}
+
+.physical-concept-grid article p b {
+  color: #294654;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .physical-concept-panel {
+    margin-left: 0;
+  }
+
+  .physical-concept-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .physical-concept-panel {
+    margin-top: 16px;
+    padding: 15px 13px;
+    border-radius: 12px;
+  }
+
+  .physical-concept-head {
+    display: grid;
+    gap: 3px;
+  }
+
+  .physical-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .physical-concept-grid article {
+    padding: 12px 10px 11px;
+  }
+
+  .physical-concept-grid article p {
+    font-size: .71rem !important;
+  }
+}

@@ -31,6 +31,24 @@ permalink: /lecture/open-systems/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">System + environment</p><h2>Start from a larger closed problem</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Open-system language separates what you keep from what you average over</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>System</strong>
+        <p><b>What it is:</b> The degrees of freedom whose quantum state you want to predict explicitly—for example the electron and nuclear spins of a radical pair.</p>
+        <p><b>What it changes:</b> Its Hamiltonian defines the coherent part of the dynamics.</p>
+        <p><b>What you observe:</b> System observables such as spin populations, coherence, magnetization or reaction yield.</p>
+      </article>
+      <article>
+        <strong>Bath / environment</strong>
+        <p><b>What it is:</b> All other degrees of freedom that interact with the system but are not propagated explicitly, such as molecular vibrations, solvent motion or protein fluctuations.</p>
+        <p><b>What it changes:</b> It can exchange energy with the spin system and randomize phases, generating relaxation and memory effects.</p>
+        <p><b>What you observe:</b> Finite \(T_1\), \(T_2\), line broadening, stochastic shifts and non-exponential decay.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Conceptually, divide the full Hamiltonian into system, bath and coupling terms:</p>
 
@@ -58,6 +76,24 @@ permalink: /lecture/open-systems/
     <span class="lecture-index">02</span>
     <div><p class="section-eyebrow">Markovian dynamics</p><h2>Lindblad form gives a controlled time-local generator</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A Lindblad operator names a relaxation channel, while its rate says how strongly it acts</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Jump / Lindblad operator \(L_k\)</strong>
+        <p><b>What it is:</b> An operator specifying which state change or dephasing process the environment induces.</p>
+        <p><b>What it changes:</b> It determines the structure of population transfer or coherence loss while preserving a valid density matrix in the GKSL form.</p>
+        <p><b>What you observe:</b> Specific decay pathways, steady states and characteristic relaxation modes.</p>
+      </article>
+      <article>
+        <strong>Rate \(\gamma_k\)</strong>
+        <p><b>What it is:</b> The timescale assigned to that environmental channel.</p>
+        <p><b>What it changes:</b> It controls how rapidly the corresponding dissipative process competes with coherent Hamiltonian motion.</p>
+        <p><b>What you observe:</b> Exponential or multi-exponential decay constants and linewidth contributions.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>A widely used Markovian master equation has the Gorini–Kossakowski–Sudarshan–Lindblad form</p>
 
@@ -88,6 +124,30 @@ permalink: /lecture/open-systems/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Bloch–Redfield–Wangsness</p><h2>Connect fluctuating interactions to relaxation rates</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The common approximations are physical timescale statements</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Born / weak-coupling approximation</strong>
+        <p><b>What it is:</b> The system–bath interaction is weak enough that the bath is only weakly perturbed by the system and correlations can be treated perturbatively.</p>
+        <p><b>What it changes:</b> It allows relaxation rates to be expressed to low order in the fluctuating interaction.</p>
+        <p><b>What you observe:</b> A regime where relaxation is slow compared with the microscopic bath dynamics.</p>
+      </article>
+      <article>
+        <strong>Markov approximation</strong>
+        <p><b>What it is:</b> The bath loses memory much faster than the system state changes.</p>
+        <p><b>What it changes:</b> The future depends effectively on the current reduced state rather than its detailed history.</p>
+        <p><b>What you observe:</b> Approximately exponential relaxation with no pronounced memory-induced revival.</p>
+      </article>
+      <article>
+        <strong>Secular approximation</strong>
+        <p><b>What it is:</b> Rapidly oscillating couplings between well-separated transition frequencies are neglected.</p>
+        <p><b>What it changes:</b> It decouples many density-matrix components and often yields a simpler, more stable relaxation generator.</p>
+        <p><b>What you observe:</b> Failure can appear near degeneracies where coherences and populations remain dynamically coupled.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>BRW theory starts from a weak system–bath interaction and expresses relaxation through correlation functions or spectral densities of the fluctuating Hamiltonian. In schematic form,</p>
 
@@ -109,6 +169,24 @@ permalink: /lecture/open-systems/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Memory kernels</p><h2>Nakajima–Zwanzig keeps the past explicitly</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Non-Markovianity means the environment can feed information back on the relevant timescale</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Memory kernel \(\mathcal K(t)\)</strong>
+        <p><b>What it is:</b> A function that weights how strongly earlier reduced states influence the present derivative.</p>
+        <p><b>What it changes:</b> It makes the dynamics time-nonlocal and can produce non-exponential decay, oscillations or partial revivals.</p>
+        <p><b>What you observe:</b> History-dependent relaxation and deviations from simple single-rate kinetics.</p>
+      </article>
+      <article>
+        <strong>Initial correlations</strong>
+        <p><b>What it is:</b> Correlations already present between system and environment at the chosen initial time.</p>
+        <p><b>What it changes:</b> They can contribute an inhomogeneous term and invalidate the assumption of a factorized initial state.</p>
+        <p><b>What you observe:</b> Early-time transients that cannot be reproduced by a memoryless model started from the same reduced state.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Projection-operator methods can produce a time-nonlocal equation of the schematic form</p>
 

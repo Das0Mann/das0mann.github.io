@@ -31,6 +31,30 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">The electronic problem</p><h2>Freeze the nuclei for a moment</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Wavefunction and electron density describe the same electrons at different levels of information</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Many-electron wavefunction \(\Psi\)</strong>
+        <p><b>What it is:</b> A complex quantum amplitude defined over the coordinates and spins of all electrons simultaneously.</p>
+        <p><b>What it changes:</b> Its antisymmetry enforces fermionic exchange and, in principle, contains all electronic observables and correlations.</p>
+        <p><b>What you observe:</b> The wavefunction itself is not directly measured; probabilities, densities, energies and response properties are derived from it.</p>
+      </article>
+      <article>
+        <strong>Electron density \(\rho(\mathbf r)\)</strong>
+        <p><b>What it is:</b> The probability density for finding electronic charge around position \(\mathbf r\), obtained after integrating the many-electron information over all other coordinates.</p>
+        <p><b>What it changes:</b> It determines electrostatics, bonding patterns and—within ground-state DFT—the total energy in principle.</p>
+        <p><b>What you observe:</b> Charge distributions, electrostatic potentials and density-derived quantities; experimentally it is related to X-ray/electron scattering rather than to an orbital picture.</p>
+      </article>
+      <article>
+        <strong>Born–Oppenheimer separation</strong>
+        <p><b>What it is:</b> The approximation that electrons adjust much faster than nuclei because nuclei are far heavier.</p>
+        <p><b>What it changes:</b> It lets us solve an electronic problem at each fixed nuclear geometry and interpret the resulting energy as a potential-energy surface for nuclear motion.</p>
+        <p><b>What you observe:</b> Molecular geometries, vibrational surfaces and reaction paths; breakdown appears in strongly nonadiabatic regions such as conical intersections.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Within the Born–Oppenheimer picture we first treat the nuclei as fixed. For that molecular geometry, the electronic Hamiltonian is</p>
 
@@ -83,6 +107,30 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlation answer the same question differently</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Exchange and correlation are distinct consequences of having many electrons</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Exchange</strong>
+        <p><b>What it is:</b> A purely quantum effect arising from antisymmetry of the many-electron wavefunction for identical fermions. Same-spin electrons avoid one another even without invoking classical electrostatic repulsion.</p>
+        <p><b>What it changes:</b> It changes orbital energies, spin-state energetics and magnetic coupling, and is treated exactly within a Hartree–Fock determinant.</p>
+        <p><b>What you observe:</b> Spin-state splittings, bond energetics and the strong dependence of many magnetic properties on the exchange treatment.</p>
+      </article>
+      <article>
+        <strong>Electron correlation</strong>
+        <p><b>What it is:</b> The additional correlated motion of electrons beyond the average-field picture, including dynamical avoidance from Coulomb repulsion and, in multireference cases, near-degenerate configurations.</p>
+        <p><b>What it changes:</b> It corrects energies, charge distributions, bond breaking and magnetic couplings that a single determinant can misrepresent.</p>
+        <p><b>What you observe:</b> Improved reaction energies, excitation energies and spin-state orderings; failures can be dramatic when static correlation is strong.</p>
+      </article>
+      <article>
+        <strong>Exchange–correlation functional</strong>
+        <p><b>What it is:</b> In Kohn–Sham DFT, the approximate energy functional that contains the many-body physics not represented by the non-interacting kinetic energy and classical Coulomb term.</p>
+        <p><b>What it changes:</b> Its form controls self-interaction error, delocalization, spin densities and response properties.</p>
+        <p><b>What you observe:</b> Functional dependence of geometries, charge-transfer energies, hyperfine couplings and magnetic tensors.</p>
+      </article>
+    </div>
+  </div>
+
 
   <div class="method-ladder">
     <div><span>Hartree–Fock</span><p>A single Slater determinant. Exchange is exact within that determinant, but dynamical electron correlation is absent.</p></div>
@@ -181,6 +229,36 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Excited &amp; magnetic states</p><h2>Electronic structure supplies the spin Hamiltonian</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The magnetic parameters are response properties of the electronic state</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>\(\mathbf g\)-tensor</strong>
+        <p><b>What it is:</b> The factor that converts an applied magnetic field into electron-spin Zeeman splitting. A free electron has \(g\approx2.0023\); a molecule deviates from this because orbital motion and excited electronic states admix through spin–orbit coupling.</p>
+        <p><b>What it changes:</b> It sets the spin precession frequency and, when anisotropic, makes that frequency depend on molecular orientation.</p>
+        <p><b>What you observe:</b> EPR resonance positions and their orientation dependence.</p>
+      </article>
+      <article>
+        <strong>Hyperfine tensor \(\mathbf A\)</strong>
+        <p><b>What it is:</b> The magnetic interaction between an electron spin and a nuclear spin. Its contact part probes spin density at the nucleus; its anisotropic part reflects the spatial distribution of the unpaired electron.</p>
+        <p><b>What it changes:</b> It splits spin energy levels and creates different local magnetic fields for different nuclear-spin states.</p>
+        <p><b>What you observe:</b> Hyperfine multiplets in EPR/ENDOR and nuclear-dependent singlet–triplet mixing in radical pairs.</p>
+      </article>
+      <article>
+        <strong>Spin–orbit coupling (SOC)</strong>
+        <p><b>What it is:</b> A relativistic interaction linking the electron's spin angular momentum to its orbital motion in the molecular electrostatic field.</p>
+        <p><b>What it changes:</b> It mixes states of different spin character, shifts the \(g\)-tensor away from the free-electron value and can enable intersystem crossing.</p>
+        <p><b>What you observe:</b> \(g\)-anisotropy, zero-field splitting, spin-forbidden intensity and singlet↔triplet population transfer.</p>
+      </article>
+      <article>
+        <strong>Zero-field splitting (ZFS)</strong>
+        <p><b>What it is:</b> A splitting of sublevels within an \(S>\tfrac12\) spin multiplet even when no external magnetic field is applied.</p>
+        <p><b>What it changes:</b> It sets an intrinsic anisotropic energy scale through spin–spin and spin–orbit contributions.</p>
+        <p><b>What you observe:</b> Field-independent level splittings and characteristic EPR transitions of triplets and higher-spin centres.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For photochemistry, ground-state DFT is only the start. We also need excited-state energies, oscillator strengths, charge-transfer character and sometimes spin–orbit coupling between states. TD-DFT is often the practical workhorse, while multireference methods become important when several configurations matter simultaneously.</p>
 

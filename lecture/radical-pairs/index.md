@@ -31,6 +31,30 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Formation</p><h2>How do we get a spin-correlated radical pair?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A radical pair is both a chemical intermediate and a coupled two-spin quantum system</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Radical</strong>
+        <p><b>What it is:</b> A molecular species with at least one unpaired electron, giving it an electron spin and a magnetic moment.</p>
+        <p><b>What it changes:</b> The unpaired electron makes the species paramagnetic and sensitive to Zeeman, hyperfine and spin–spin interactions.</p>
+        <p><b>What you observe:</b> EPR signals, characteristic reactivity and spin-dependent transient spectroscopy.</p>
+      </article>
+      <article>
+        <strong>Radical pair</strong>
+        <p><b>What it is:</b> Two radicals created or brought together within one reaction sequence, often by photoinduced electron transfer.</p>
+        <p><b>What it changes:</b> Their two electron spins can retain correlation from the precursor state and evolve coherently before the radicals separate or recombine.</p>
+        <p><b>What you observe:</b> Magnetic-field-dependent reaction yields, transient EPR and spin-selective products.</p>
+      </article>
+      <article>
+        <strong>Spin correlation</strong>
+        <p><b>What it is:</b> A non-classical relation between the two electron spins inherited from how the pair was formed, commonly singlet or triplet character.</p>
+        <p><b>What it changes:</b> It determines which spin-selective reaction channels are initially allowed and provides the starting condition for singlet–triplet dynamics.</p>
+        <p><b>What you observe:</b> Initial spin polarization and different recombination behaviour for singlet-born versus triplet-born pairs.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Photoexcitation followed by electron transfer is a common route. If a singlet precursor undergoes spin-conserving electron transfer, the newly formed radical pair starts with strong singlet character. A triplet precursor can instead populate a triplet-born radical pair.</p>
 
@@ -50,6 +74,24 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">02</span>
     <div><p class="section-eyebrow">Two electron spins</p><h2>Singlet and triplet are coupled two-spin states</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The singlet–triplet basis describes correlation between two spins</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Singlet \(S\)</strong>
+        <p><b>What it is:</b> An antisymmetric two-electron spin state with total spin \(S=0\). The individual electrons do not have independent fixed up/down labels.</p>
+        <p><b>What it changes:</b> It can react through singlet-selective chemical channels and can coherently mix with triplet character when the two radicals experience different magnetic interactions.</p>
+        <p><b>What you observe:</b> Singlet-product yield and singlet-selective recombination probability.</p>
+      </article>
+      <article>
+        <strong>Triplet manifold \(T_+,T_0,T_-\)</strong>
+        <p><b>What it is:</b> Three symmetric two-electron spin states with total spin \(S=1\).</p>
+        <p><b>What it changes:</b> Triplet character opens different reaction pathways and responds differently to Zeeman, exchange and dipolar interactions.</p>
+        <p><b>What you observe:</b> Triplet products, triplet EPR signatures and field-dependent reaction yields.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For two spin-\(\tfrac12\) electrons there are four coupled states:</p>
 
@@ -74,6 +116,36 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Hamiltonian</p><h2>What drives singlet–triplet interconversion?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Singlet–triplet mixing requires the two radicals to become magnetically distinguishable</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Hyperfine asymmetry</strong>
+        <p><b>What it is:</b> Different nuclei and spin-density patterns create different local magnetic fields on the two electron spins.</p>
+        <p><b>What it changes:</b> The electrons accumulate different phases, converting singlet character into triplet character and back.</p>
+        <p><b>What you observe:</b> Nuclear-spin-dependent oscillations and magnetic-field effects in reaction yield.</p>
+      </article>
+      <article>
+        <strong>\(\Delta g\) mechanism</strong>
+        <p><b>What it is:</b> If the two radicals have different effective \(g\)-values, their Zeeman precession frequencies differ in an external field.</p>
+        <p><b>What it changes:</b> The relative electron-spin phase grows at a field-dependent rate, especially important at higher fields.</p>
+        <p><b>What you observe:</b> Field-strength-dependent singlet–triplet mixing and high-field magnetic effects.</p>
+      </article>
+      <article>
+        <strong>Exchange</strong>
+        <p><b>What it is:</b> A short-range electronic interaction that directly changes the singlet–triplet energy gap.</p>
+        <p><b>What it changes:</b> Large \(|J|\) can energetically isolate singlet and triplet states and suppress weak hyperfine-driven mixing.</p>
+        <p><b>What you observe:</b> Distance/conformation-sensitive reaction kinetics and shifted spin-transition conditions.</p>
+      </article>
+      <article>
+        <strong>Dipolar coupling</strong>
+        <p><b>What it is:</b> A through-space magnetic interaction between the two electron spins.</p>
+        <p><b>What it changes:</b> It introduces orientation-dependent splittings and can mix or separate triplet sublevels depending on geometry.</p>
+        <p><b>What you observe:</b> Directional magnetic response and geometry-sensitive radical-pair dynamics.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>A useful schematic radical-pair Hamiltonian is</p>
 
@@ -182,6 +254,30 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Spin-selective reaction</p><h2>The observable is usually not the spin state itself</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Chemical kinetics acts as the detector of the quantum spin state</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin-selective recombination</strong>
+        <p><b>What it is:</b> A chemical reaction whose rate depends on whether the radical pair has singlet or triplet spin character because orbital symmetry and spin conservation favour different product channels.</p>
+        <p><b>What it changes:</b> It continuously converts spin populations into chemical loss, so reaction kinetics and spin dynamics compete on the same timescale.</p>
+        <p><b>What you observe:</b> Different singlet/triplet product yields and field-dependent recombination kinetics.</p>
+      </article>
+      <article>
+        <strong>Reaction rate \(k\)</strong>
+        <p><b>What it is:</b> The probability per unit time for a particular chemical channel to remove or transform the radical pair.</p>
+        <p><b>What it changes:</b> A very fast rate can terminate the pair before substantial spin mixing; a very slow rate allows more coherent evolution but also more time for relaxation.</p>
+        <p><b>What you observe:</b> Radical-pair lifetime, transient decay and integrated reaction yield.</p>
+      </article>
+      <article>
+        <strong>Reaction yield \(\Phi\)</strong>
+        <p><b>What it is:</b> The time-integrated amount of product formed through a chosen spin-selective channel.</p>
+        <p><b>What it changes:</b> It compresses the entire history of spin evolution and reaction into an experimentally accessible scalar observable.</p>
+        <p><b>What you observe:</b> Magnetic-field effects reported as changes in fluorescence, absorption, product concentration or related chemical signals.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>If singlet and triplet radical pairs react through different channels, the time-dependent spin character controls product formation. Schematically,</p>
 
