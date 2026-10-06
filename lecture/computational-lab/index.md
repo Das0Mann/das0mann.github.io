@@ -202,6 +202,14 @@ permalink: /lecture/computational-lab/
     <strong>Numerical stability is not the same as physical correctness.</strong>
     <span>A calculation can converge perfectly to the wrong answer if the Hamiltonian, units, initial state or reaction model is wrong.</span>
   </aside>
+
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Do not print the entire road atlas when you only need the next turn</h3>
+    <p>A dense Hamiltonian stores every matrix element, even if a Krylov propagator only needs repeated products (hat H|psiangle). Matrix-free methods act like a route planner: they evaluate the local action needed to advance the state without materializing the complete map of every possible connection.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the operator is still mathematically the same Hamiltonian. Matrix-free propagation changes the representation and numerical algorithm, not the underlying physics, and its approximation error still has to be converged.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
