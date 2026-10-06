@@ -9,8 +9,8 @@ permalink: /lecture/
 
 <header class="library-intro">
   <p class="library-kicker">Lecture library</p>
-  <h2>From electrons to spin-dependent chemistry</h2>
-  <p>I am building this as a set of short, connected lectures rather than one very long page. The idea is to start with the electronic problem, reduce it to an effective spin Hamiltonian, propagate the spin state in time and finally connect the dynamics to an experiment or chemical yield.</p>
+  <h2>From electrons to quantum dynamics, spectroscopy and chemistry</h2>
+  <p>I am building this as a set of short, connected lectures rather than one very long page. The core route starts with the electronic problem, reduces it to an effective Hamiltonian, propagates the quantum state in time and then connects the dynamics to spectroscopy, chemistry or a biological observable.</p>
 
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
@@ -186,7 +186,7 @@ permalink: /lecture/
         <span class="library-tag">Interactive</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
-      <p>Go beyond phenomenological (T_1/T_2): Lindblad structure, BRW theory, memory kernels, Nakajima–Zwanzig and stochastic unravelings.</p>
+      <p>Go beyond phenomenological \(T_1/T_2\): Lindblad structure, BRW theory, memory kernels, Nakajima–Zwanzig and stochastic unravelings.</p>
       <ul>
         <li>Markovian master equations</li>
         <li>BRW assumptions</li>
@@ -217,6 +217,63 @@ permalink: /lecture/
         <a href="{{ site.url }}/lecture/quantum-biology/">Open lecture →</a>
       </div>
     </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">11</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Excited-State Photochemistry</h3>
+      <p>Move from vertical excitation to relaxed excited states, internal conversion, conical intersections, intersystem crossing and triplet formation.</p>
+      <ul>
+        <li>Franck–Condon picture</li>
+        <li>excited-state potential surfaces</li>
+        <li>internal conversion &amp; conical intersections</li>
+        <li>SOC, ISC &amp; triplet formation</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Photophysics / electronic structure</span>
+        <a href="{{ site.url }}/lecture/excited-state-photochemistry/">Open lecture →</a>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">12</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Pulse &amp; Coherent Control</h3>
+      <p>Understand driven two-level systems, rotating frames, Rabi oscillations, (pi/2) and (pi) pulses, detuning and echo concepts.</p>
+      <ul>
+        <li>rotating-frame picture</li>
+        <li>Rabi frequency &amp; pulse area</li>
+        <li>detuning and excitation bandwidth</li>
+        <li>echoes, phase and coherent control</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Magnetic resonance / control</span>
+        <a href="{{ site.url }}/lecture/coherent-control/">Open lecture →</a>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">13</span>
+        <span class="library-tag">Verified examples</span>
+      </div>
+      <h3>Worked MolSpin Notebooks</h3>
+      <p>Read real public MolSpin inputs as scientific models: spins, interactions, states, transitions, tasks, time dependence and spectroscopy.</p>
+      <ul>
+        <li>input-file anatomy</li>
+        <li>static radical-pair examples</li>
+        <li>time-dependent interactions</li>
+        <li>pulse and spectroscopy examples</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Tracks public MolSpin main</span>
+        <a href="{{ site.url }}/lecture/molspin-notebooks/">Open lecture →</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -224,16 +281,16 @@ permalink: /lecture/
   <p class="section-eyebrow">Where the library can grow next</p>
   <h2>Future directions</h2>
   <div class="roadmap-list">
-    <div><strong>Excited-State Photochemistry</strong><span>Conical intersections, intersystem crossing, triplet formation and vibronic effects.</span></div>
-    <div><strong>Pulse &amp; Coherent Control</strong><span>Pulse sequences, rotating frames, Rabi oscillations, echoes and optimal control.</span></div>
-    <div><strong>Worked MolSpin Notebooks</strong><span>Versioned examples tied directly to released MolSpin syntax and benchmark data.</span></div>
+    <div><strong>Vibronic &amp; Nonadiabatic Dynamics</strong><span>Normal modes, vibronic coupling, surface hopping and beyond-Born–Oppenheimer dynamics.</span></div>
+    <div><strong>Advanced Pulse EPR</strong><span>Echo modulation, shaped pulses, orientation selection and optimal-control examples.</span></div>
+    <div><strong>Exercises &amp; Benchmarks</strong><span>Short problems, reference outputs and reproducible convergence exercises across the library.</span></div>
   </div>
 </section>
 
 <section class="library-section">
   <p class="section-eyebrow">How to use it</p>
   <h2>Read it linearly—or jump in where you need it</h2>
-  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance. Electron Transfer and Molecular Motion extend the library toward quantitative photochemistry and multiscale dynamics; the Computational Laboratory and Open-System modules then focus on how those models are solved numerically, while the Quantum Biology section pulls the pieces together in concrete biological examples.</p>
+  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance. Electron Transfer and Molecular Motion extend the library toward quantitative photochemistry and multiscale dynamics; the Computational Laboratory and Open-System modules then focus on how those models are solved numerically, while the Quantum Biology section pulls the pieces together in concrete biological examples. The final three modules then extend the library into excited-state photochemistry, coherent control and verified MolSpin workflows.</p>
 </section>
 
 </div>
