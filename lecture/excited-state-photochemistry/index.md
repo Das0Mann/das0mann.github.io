@@ -76,12 +76,12 @@ permalink: /lecture/excited-state-photochemistry/
         <input id="photo-k" type="range" min="0.2" max="3.0" step="0.02" value="1.00">
 
         <label for="photo-d"><span class="control-name">Displacement \(d\)</span><output id="photo-d-out">0.50</output></label>
-        <input id="photo-d" type="range" min="0" max="1.50" step="0.01" value="0.50">
+        <input id="photo-d" type="range" min="0" max="0.80" step="0.01" value="0.50">
 
         <div class="demo-presets">
           <button type="button" data-photo-d="0">no displacement</button>
           <button type="button" data-photo-d="0.50">moderate</button>
-          <button type="button" data-photo-d="1.00">large</button>
+          <button type="button" data-photo-d="0.80">large</button>
         </div>
 
         <div class="interactive-readout">
@@ -200,7 +200,7 @@ permalink: /lecture/excited-state-photochemistry/
 
   <div class="lecture-reading-grid">
     <article><span>Environment &amp; excitation</span><h3>Importance of Polarizable Embedding for Absorption Spectrum Calculations of Arabidopsis thaliana Cryptochrome 1</h3><p>How the protein environment shifts flavin excitation energies.</p><a href="https://doi.org/10.1021/acs.jpcb.4c02168" target="_blank" rel="noopener">J. Phys. Chem. B (2024) →</a></article>
-    <article><span>Flavin photochemistry</span><h3>Activation of Cryptochrome 4 from Atlantic Herring</h3><p>A multiscale view of structural and electronic changes associated with cryptochrome photoactivation.</p><a href="https://doi.org/10.3390/biology13040262" target="_blank" rel="noopener">Biology (2024) →</a></article>
+    <article><span>Flavin photochemistry</span><h3>Activation of Cryptochrome 4 from Atlantic Herring</h3><p>A study of cryptochrome-4 activation with direct relevance to flavin photochemistry.</p><a href="https://doi.org/10.3390/biology13040262" target="_blank" rel="noopener">Biology (2024) →</a></article>
     <article><span>Excited-state reactivity</span><h3>Theoretical investigation of CH-bond activation by photocatalytic excited SO₂ and the effects of C-, N-, S-, and Se-doped TiO₂</h3><p>Excited-state electronic structure applied to a photocatalytic reaction mechanism.</p><a href="https://doi.org/10.1039/D1CP04335H" target="_blank" rel="noopener">PCCP (2022) →</a></article>
   </div>
 </section>
