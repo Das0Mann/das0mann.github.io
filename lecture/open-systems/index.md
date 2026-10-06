@@ -323,6 +323,15 @@ permalink: /lecture/open-systems/
     <strong>The most sophisticated formalism is not automatically the best one.</strong>
     <span>A method is useful when its assumptions match the actual separation—or lack of separation—between spin and environmental timescales.</span>
   </aside>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>Our MolSpin developments use complementary open-system strategies rather than assuming one relaxation model is universally appropriate: BRW-type relaxation for weak fluctuating interactions and stochastic state-vector propagation when trajectory-based dynamics is advantageous.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
+      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
