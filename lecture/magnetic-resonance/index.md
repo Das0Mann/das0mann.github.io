@@ -364,17 +364,22 @@ permalink: /lecture/magnetic-resonance/
   </div>
 
 
-  <p>For a simple exponentially decaying transverse coherence, the homogeneous absorption line is Lorentzian. Its frequency-domain full width at half maximum is</p>
+  <p>For a simple exponentially decaying transverse coherence, the homogeneous <em>absorption</em> line is Lorentzian. Its frequency-domain full width at half maximum is</p>
 
   <div class="lecture-equation">
-  \[
-  \Delta\nu_{1/2}
+  [
+  Delta
+u_mathrm{FWHM}
   =
-  \frac{1}{\pi T_2}.
-  \]
+  rac{1}{pi T_2}.
+  ]
   </div>
 
-  <p>Real EPR lines can also contain unresolved hyperfine structure, \(g\)-strain, conformational distributions and other inhomogeneous broadening. Those contributions are often summarized through an effective \(T_2^\ast\), but \(T_2^\ast\) is not the same microscopic quantity as the true homogeneous \(T_2\).</p>
+  <p>That width is not the same quantity as the peak-to-peak separation of the first-derivative line commonly plotted in field-modulated CW EPR. For an ideal derivative Lorentzian, (Delta
+u_mathrm{pp}=Delta
+u_mathrm{FWHM}/sqrt3).</p>
+
+  <p>Real EPR lines can also contain unresolved hyperfine structure, (g)-strain, conformational distributions and other inhomogeneous broadening. Those contributions are often summarized through an effective (T_2^ast), but (T_2^ast) is not the same microscopic quantity as the true homogeneous (T_2), and mixed Lorentzian/Gaussian lines do not obey the simple derivative-width relation exactly.</p>
 </section>
 
 <section class="lecture-section">
