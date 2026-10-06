@@ -33,6 +33,30 @@ permalink: /lecture/molecular-motion/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Time-dependent Hamiltonians</p><h2>Replace one structure by a trajectory</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Motion can either average an interaction or modulate it strongly enough to drive relaxation</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Static disorder</strong>
+        <p><b>What it is:</b> Different molecules or conformations have different Hamiltonian parameters, but each parameter is effectively constant during the experiment.</p>
+        <p><b>What it changes:</b> It broadens an ensemble distribution without providing time-dependent transitions for an individual member.</p>
+        <p><b>What you observe:</b> Inhomogeneous linewidth, \(T_2^*\) shortening and orientation/conformation distributions.</p>
+      </article>
+      <article>
+        <strong>Dynamic modulation</strong>
+        <p><b>What it is:</b> A Hamiltonian parameter changes during the spin evolution because molecular coordinates move in time.</p>
+        <p><b>What it changes:</b> Fluctuations can randomize phase or induce transitions when they contain spectral weight at relevant spin frequencies.</p>
+        <p><b>What you observe:</b> Homogeneous relaxation, motional narrowing and frequency-dependent \(T_1/T_2\).</p>
+      </article>
+      <article>
+        <strong>Internal vs global motion</strong>
+        <p><b>What it is:</b> Side chains, local chromophore motion and protein tumbling occur on different length and time scales.</p>
+        <p><b>What it changes:</b> Different modes modulate different tensor components and therefore need not share one universal correlation time.</p>
+        <p><b>What you observe:</b> Multi-timescale correlation functions and distinct field/temperature dependence of relaxation channels.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>If the molecular coordinates evolve as \(\mathbf R(t)\), then the spin Hamiltonian can inherit that motion:</p>
 
