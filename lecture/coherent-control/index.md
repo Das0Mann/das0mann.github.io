@@ -262,6 +262,14 @@ permalink: /lecture/coherent-control/
   <p>In conventional EPR the pulse sequence is detected through magnetization or an echo. In a radical-pair experiment, the same resonant driving can instead change singlet–triplet dynamics and therefore a chemical reaction yield.</p>
 
   <p>This is the connection to reaction-yield detected magnetic resonance: coherent control acts on the spin system, while chemistry provides the detector.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>In reaction-yield detected magnetic resonance the pulse/control problem and the radical-pair chemistry are inseparable: the field drives a spin transition, and spin-selective chemistry converts that coherent perturbation into a yield.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1016/j.freeradbiomed.2026.04.015" target="_blank" rel="noopener"><strong>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</strong><span>Free Radic. Biol. Med. (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
