@@ -489,12 +489,12 @@ permalink: /lecture/spin-dynamics/
 </aside>
 
 <aside class="landmark-study">
-  <span class="landmark-label">Landmark theory</span>
-  <h3>Redfield theory made molecular fluctuations into spin-relaxation rates</h3>
-  <p>Redfield's density-matrix treatment established the central idea that weak, rapidly fluctuating interactions can be reduced to an effective relaxation superoperator. It is the historical bridge between microscopic motion and T₁/T₂-type dynamics.</p>
+  <span class="landmark-label">Landmark phenomenology</span>
+  <h3>The Bloch equations separated coherent precession from longitudinal and transverse relaxation</h3>
+  <p>Bloch's 1946 treatment introduced a compact phenomenological language for magnetic resonance with finite relaxation times. Modern density-matrix theory is more general, but the familiar (T_1/T_2) vocabulary still reflects this separation between coherent motion and irreversible recovery/dephasing.</p>
   <div class="landmark-footer">
-    <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">A. G. Redfield · IBM Journal of Research and Development 1, 19–31 (1957) →</a>
-    <span>Molecular Motion later supplies the correlation functions and spectral densities that enter this reduction.</span>
+    <a href="https://doi.org/10.1103/PhysRev.70.460" target="_blank" rel="noopener">F. Bloch · Physical Review 70, 460–474 (1946) →</a>
+    <span>The microscopic origin of those relaxation constants is intentionally deferred to Molecular Motion and Open-System Methods.</span>
   </div>
 </aside>
 
