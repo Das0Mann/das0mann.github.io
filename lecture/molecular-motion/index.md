@@ -275,7 +275,7 @@ permalink: /lecture/molecular-motion/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">05b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Global versus internal motion</p><h2>A protein does not have one correlation time</h2></div>
   </div>
 
