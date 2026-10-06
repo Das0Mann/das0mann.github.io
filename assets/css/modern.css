@@ -4253,13 +4253,13 @@ h3 { font-size: 1.25rem; }
    Lecture physical-concept refinement
    --------------------------------------------------------- */
 .physical-concept-panel {
-  max-width: 920px;
-  margin: 20px 0 26px 59px;
-  padding: 17px 18px 18px;
+  max-width: 940px;
+  margin: 24px 0 32px 59px;
+  padding: 20px 20px 21px;
   border: 1px solid #cfe1e4;
   border-radius: 14px;
   background:
-    linear-gradient(135deg, rgba(231,246,247,.68), rgba(255,255,255,.88));
+    linear-gradient(135deg, rgba(231,246,247,.58), rgba(255,255,255,.9));
 }
 
 .physical-concept-head {
@@ -4282,21 +4282,21 @@ h3 { font-size: 1.25rem; }
 .physical-concept-head h3 {
   margin: 0;
   color: var(--navy);
-  font-size: .91rem;
-  line-height: 1.4;
+  font-size: .98rem;
+  line-height: 1.42;
 }
 
 .physical-concept-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
-  gap: 9px;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 12px 18px;
 }
 
 .physical-concept-grid article {
   min-width: 0;
-  padding: 13px 13px 12px;
+  padding: 14px 4px 12px;
   border-top: 2px solid #b9dadd;
-  background: rgba(255,255,255,.74);
+  background: transparent;
 }
 
 .physical-concept-grid article > strong {
@@ -4304,16 +4304,16 @@ h3 { font-size: 1.25rem; }
   margin-bottom: 8px;
   color: var(--navy);
   font-family: "Inter", sans-serif;
-  font-size: .82rem;
-  line-height: 1.35;
+  font-size: .87rem;
+  line-height: 1.38;
 }
 
 .physical-concept-grid article p {
-  margin: 5px 0 0 !important;
+  margin: 6px 0 0 !important;
   color: #536a75 !important;
   font-family: "Inter", sans-serif !important;
-  font-size: .72rem !important;
-  line-height: 1.52 !important;
+  font-size: .78rem !important;
+  line-height: 1.58 !important;
 }
 
 .physical-concept-grid article p b {
