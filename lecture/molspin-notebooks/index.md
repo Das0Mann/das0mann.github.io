@@ -199,6 +199,15 @@ PulseSequence seq
     <div><span>5. Task capability</span><p>Use a task that supports the interactions, decay model and time dependence present in the system.</p></div>
     <div><span>6. Convergence</span><p>Only after the model is correct should you tune timestep, stochastic samples, orientation grids or propagator tolerances.</p></div>
   </div>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The public examples are easier to understand when read alongside the methods papers: the syntax mirrors a progression from a general spin-dynamics engine to explicit relaxation and stochastic propagation.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
+      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
