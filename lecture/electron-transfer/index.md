@@ -401,6 +401,16 @@ permalink: /lecture/electron-transfer/
   </div>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark biological ET</span>
+  <h3>Long-range electron transfer in proteins is a structural tunnelling problem as well as a Marcus problem</h3>
+  <p>Gray and Winkler emphasized that biological electron transfer depends strongly on donor–acceptor separation and the intervening tunnelling pathway. Energetics alone is therefore not enough: molecular structure controls the electronic coupling that multiplies the Marcus rate.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1073/pnas.0408029102" target="_blank" rel="noopener">H. B. Gray & J. R. Winkler · PNAS 102, 3534–3539 (2005) →</a>
+    <span>This is why Electron Transfer connects naturally to Molecular Motion and to radical-pair formation in proteins.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
