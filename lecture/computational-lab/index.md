@@ -171,7 +171,7 @@ permalink: /lecture/computational-lab/
 
   <p><a href="https://molspin.eu" target="_blank" rel="noopener">MolSpin</a> is designed around general spin systems and multiple propagation strategies. The important skill is not memorizing an input file; it is understanding which Hamiltonian, state, relaxation model, numerical method and observable the input represents.</p>
 
-  <p>For released syntax and examples, use the <a href="{{ site.url }}/software/">Software page</a> and the public MolSpin documentation rather than copying teaching pseudocode from this lecture.</p>
+  <p>For released syntax and examples, use the <a href="{{ site.url }}/repositories/">Software page</a> and the public MolSpin documentation rather than copying teaching pseudocode from this lecture.</p>
 </section>
 
 <section class="lecture-section module-reading">
