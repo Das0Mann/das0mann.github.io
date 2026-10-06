@@ -115,6 +115,11 @@ permalink: /lecture/open-systems/
 
   <p>The dissipator is constructed so that the dynamics remains trace preserving and completely positive. The operators \(L_k\) encode specific channels such as relaxation or dephasing.</p>
 
+  <details class="lecture-details">
+    <summary>Why does “complete positivity” matter?</summary>
+    <p>A reduced density matrix must remain a valid quantum state: probabilities cannot become negative. Complete positivity is the stronger requirement that the map remains physical even when the system is entangled with an untouched auxiliary system. The Lindblad/GKSL structure guarantees this for a Markovian semigroup; an approximate Redfield generator does not automatically have the same guarantee outside its regime of validity.</p>
+  </details>
+
   <aside class="teacher-note">
     <strong>But “Lindblad” is not a microscopic explanation.</strong>
     <span>It tells you a mathematically safe form of a Markovian generator. You still need physics to determine which operators and rates are appropriate.</span>
