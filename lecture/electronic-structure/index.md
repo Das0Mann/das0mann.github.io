@@ -21,7 +21,7 @@ permalink: /lecture/electronic-structure/
   <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish the many-electron wavefunction, molecular orbitals and electron density.</p></div>
     <div><span>02</span><p>Explain what HF, DFT, correlation methods and basis sets approximate differently.</p></div>
-    <div><span>03</span><p>Explain how electronic energies, spin densities and response derivatives are reduced to (g), hyperfine, exchange, dipolar and ZFS parameters.</p></div>
+    <div><span>03</span><p>Explain how electronic energies, spin densities and response derivatives are reduced to \(g\), hyperfine, exchange, dipolar and ZFS parameters.</p></div>
   </div>
 </section>
 
