@@ -62,6 +62,24 @@ permalink: /lecture/spin-hamiltonians/
     <span class="lecture-index">02</span>
     <div><p class="section-eyebrow">Zeeman interaction</p><h2>The external field defines the basic energy scale</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the \(g\)-factor is more than a fitting number</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Magnetic moment</strong>
+        <p><b>What it is:</b> Electron spin carries a magnetic moment, so an external field lifts the degeneracy of spin projections.</p>
+        <p><b>What it changes:</b> The energy separation grows approximately linearly with field: this is the Zeeman splitting that sets the Larmor frequency.</p>
+        <p><b>What you observe:</b> The field/frequency position of magnetic-resonance transitions.</p>
+      </article>
+      <article>
+        <strong>\(g\)-factor / \(\mathbf g\)-tensor</strong>
+        <p><b>What it is:</b> The proportionality between magnetic field and electron-spin magnetic energy. Molecular orbital character and SOC make it molecule-specific and often anisotropic.</p>
+        <p><b>What it changes:</b> Different principal \(g\)-values give different precession frequencies for different molecular orientations.</p>
+        <p><b>What you observe:</b> Orientation-dependent EPR resonance fields and \(g\)-strain when conformations have slightly different tensors.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For an electron spin, the Zeeman term is usually written</p>
 
@@ -96,6 +114,24 @@ permalink: /lecture/spin-hamiltonians/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Hyperfine coupling</p><h2>Nuclei tell you where the unpaired electron lives</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Hyperfine coupling turns electronic spin density into a nuclear fingerprint</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Fermi contact term</strong>
+        <p><b>What it is:</b> An isotropic interaction proportional, in the simplest picture, to the unpaired spin density at the nucleus.</p>
+        <p><b>What it changes:</b> It shifts electron-spin energies according to the nuclear-spin projection but does not depend on molecular orientation.</p>
+        <p><b>What you observe:</b> Isotropic hyperfine splittings in solution EPR and NMR-related spin-polarization effects.</p>
+      </article>
+      <article>
+        <strong>Dipolar hyperfine term</strong>
+        <p><b>What it is:</b> The anisotropic magnetic interaction between the distributed electron spin density and the nuclear magnetic moment.</p>
+        <p><b>What it changes:</b> It makes the coupling depend on the orientation of the electron–nucleus geometry relative to the field.</p>
+        <p><b>What you observe:</b> Anisotropic EPR/ENDOR patterns and orientation-dependent radical-pair dynamics.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>The hyperfine interaction between an electron spin and a nucleus is</p>
 
@@ -131,6 +167,24 @@ permalink: /lecture/spin-hamiltonians/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Two electron spins</p><h2>Exchange and dipolar coupling are physically different</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Two mechanisms couple electron spins—and they scale very differently with geometry</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Exchange \(J\)</strong>
+        <p><b>What it is:</b> A quantum-mechanical interaction arising from antisymmetry of the many-electron wavefunction together with orbital overlap and electron correlation.</p>
+        <p><b>What it changes:</b> It changes the singlet–triplet energy separation and can suppress or enhance singlet–triplet mixing.</p>
+        <p><b>What you observe:</b> Singlet–triplet gaps, magnetic coupling constants and strong geometry sensitivity, often approaching exponential distance dependence.</p>
+      </article>
+      <article>
+        <strong>Dipolar coupling \(\mathbf D\)</strong>
+        <p><b>What it is:</b> The direct magnetic interaction between two spatially separated electron magnetic moments.</p>
+        <p><b>What it changes:</b> It depends on distance as roughly \(r^{-3}\) and on the orientation of the inter-spin vector.</p>
+        <p><b>What you observe:</b> Orientation-dependent splittings, distance information in EPR and radical-pair anisotropy.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For this lecture I will use the exchange convention</p>
 
@@ -223,6 +277,24 @@ permalink: /lecture/spin-hamiltonians/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Higher spins &amp; nuclei</p><h2>Quadrupole and zero-field splitting add new structure</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Higher spin quantum numbers introduce interactions that do not exist for spin-1/2</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Nuclear quadrupole interaction</strong>
+        <p><b>What it is:</b> Nuclei with \(I>\tfrac12\) possess a non-spherical electric quadrupole moment that interacts with the local electric-field gradient.</p>
+        <p><b>What it changes:</b> It splits nuclear-spin sublevels even without changing the electron-spin state and can mix nuclear projections.</p>
+        <p><b>What you observe:</b> Additional EPR/ENDOR/ESEEM structure and nuclear-frequency shifts.</p>
+      </article>
+      <article>
+        <strong>ZFS parameters \(D,E\)</strong>
+        <p><b>What it is:</b> A compact description of anisotropic splitting inside an electron-spin multiplet with \(S>\tfrac12\).</p>
+        <p><b>What it changes:</b> \(D\) sets the dominant axial splitting and \(E\) measures rhombicity in the principal-axis convention.</p>
+        <p><b>What you observe:</b> Zero-field and low-field level separations and characteristic triplet/high-spin EPR patterns.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Nuclei with \(I>1/2\) have an electric quadrupole moment that can interact with the electric-field gradient:</p>
 
