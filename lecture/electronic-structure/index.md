@@ -355,6 +355,12 @@ permalink: /lecture/electronic-structure/
       <p>W. Kohn and L. J. Sham · Physical Review (1965). The practical construction underlying most modern density-functional calculations.</p>
       <a href="https://doi.org/10.1103/PhysRev.140.A1133" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Practical DFT</span>
+      <h3>Generalized Gradient Approximation Made Simple</h3>
+      <p>J. P. Perdew, K. Burke and M. Ernzerhof · Physical Review Letters (1996). The foundational PBE paper and a useful reference point for how practical semilocal density functionals are constructed.</p>
+      <a href="https://doi.org/10.1103/PhysRevLett.77.3865" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
