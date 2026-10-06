@@ -331,6 +331,66 @@ permalink: /lecture/electron-transfer/
 
   <p>The decay constant \(\beta\) is not universal: it depends on the intervening medium, orbital alignment and whether covalent bonds, hydrogen bonds or through-space contacts mediate the coupling. Because the nonadiabatic rate scales as \(|V|^2\), small conformational changes can therefore generate large rate changes even when \(\lambda\) and \(\Delta G^\circ\) barely move.</p>
 
+  <div class="interactive-card" id="tunnelling-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Distance sensitivity of electronic coupling</h3></div>
+      <span class="interactive-model-note">relative tunnelling model</span>
+    </div>
+
+    <div class="lecture-equation compact">
+    \[
+    \frac{V(R)}{V_0}=e^{-\beta\Delta R},
+    \qquad
+    \frac{k(R)}{k_0}\approx e^{-2\beta\Delta R}.
+    \]
+    </div>
+
+    <div class="demo-prompt">
+      <strong>Try this:</strong>
+      <span>increase the donor–acceptor separation by only a few ångström. The coupling falls exponentially, and the nonadiabatic rate falls twice as fast on a logarithmic scale because \(k\propto V^2\).</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="tunnel-dr"><span class="control-name">Additional separation \(\Delta R\)</span><output id="tunnel-dr-out">2.0 Å</output></label>
+        <input id="tunnel-dr" type="range" min="0" max="8" step="0.1" value="2">
+
+        <label for="tunnel-beta"><span class="control-name">Decay constant \(\beta\)</span><output id="tunnel-beta-out">1.0 Å⁻¹</output></label>
+        <input id="tunnel-beta" type="range" min="0.3" max="2.0" step="0.05" value="1">
+
+        <div class="demo-presets">
+          <button type="button" data-tunnel-beta="0.5">weak decay</button>
+          <button type="button" data-tunnel-beta="1.0">typical scale</button>
+          <button type="button" data-tunnel-beta="1.6">strong decay</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Coupling ratio \(V/V_0\) <strong id="tunnel-v-out">0.135</strong></span>
+          <span>Rate ratio \(k/k_0\) <strong id="tunnel-k-out">0.0183</strong></span>
+          <span>Rate suppression <strong id="tunnel-suppression-out">54.6×</strong></span>
+        </div>
+
+        <p id="tunnel-explanation" class="demo-explanation">A 2 Å increase already suppresses the nonadiabatic rate by more than one order of magnitude at this decay constant.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="tunnel-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Relative electron-transfer rate versus additional donor acceptor separation">
+          <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
+          <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
+          <line x1="58" y1="141.5" x2="530" y2="141.5" class="plot-grid"/>
+          <text x="445" y="278" class="svg-caption">additional separation / Å</text>
+          <text x="12" y="38" class="svg-caption">log₁₀(k/k₀)</text>
+          <path id="tunnel-rate-path" class="population-line lower-line" fill="none" d=""/>
+          <line id="tunnel-marker-line" x1="176" y1="35" x2="176" y2="248" class="plot-marker"/>
+          <circle id="tunnel-marker" cx="176" cy="96" r="5" class="plot-point upper-point"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This is a relative tunnelling model, not a full Marcus calculation. It isolates the structural sensitivity of \(V\). Real pathways can show interference, through-bond effects and non-exponential behaviour.</p>
+  </div>
+
+
   <aside class="research-connection">
     <span class="research-connection-label">Conformational gating</span>
     <p>This is one reason an ensemble cannot always be replaced by its average geometry. Different conformers can occupy qualitatively different coupling and reaction regimes.</p>
