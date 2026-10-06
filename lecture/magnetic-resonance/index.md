@@ -110,7 +110,7 @@ permalink: /lecture/magnetic-resonance/
 
   <div class="interactive-card" id="hyperfine-demo">
     <div class="interactive-head">
-      <div><span class="interactive-kicker">Interactive model</span><h3>Equivalent spin-\(\tfrac12\) hyperfine pattern</h3></div>
+      <div><span class="interactive-kicker">Interactive model</span><h3>Equivalent spin-½ hyperfine pattern</h3></div>
       <span class="interactive-model-note">first-order isotropic limit</span>
     </div>
 
@@ -217,7 +217,7 @@ permalink: /lecture/magnetic-resonance/
 
   <div class="interactive-card" id="epr-demo">
     <div class="interactive-head">
-      <div><span class="interactive-kicker">Interactive model</span><h3>Axial \(g\)-tensor resonance</h3></div>
+      <div><span class="interactive-kicker">Interactive model</span><h3>Axial g-tensor resonance</h3></div>
       <span class="interactive-model-note">rigid \(S=\tfrac12\)</span>
     </div>
 
