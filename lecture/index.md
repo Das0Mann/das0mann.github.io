@@ -106,7 +106,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Radical-Pair Spin Chemistry</h3>
-      <p>Here quantum spin dynamics becomes chemistry. We introduce singlet–triplet states, spin-selective reactions, magnetic-field effects and radical pairs in proteins.</p>
+      <p>Here quantum spin dynamics becomes chemistry. We derive when a Hamiltonian can change singlet character, then connect that mixing to spin-selective reactions and magnetic-field effects.</p>
       <ul>
         <li>singlet &amp; triplet basis</li>
         <li>S–T mixing and reaction yields</li>
@@ -249,7 +249,7 @@ permalink: /lecture/
         <span class="library-tag">2 interactives</span>
       </div>
       <h3>Excited-State Photochemistry</h3>
-      <p>Move from vertical excitation to relaxed excited states, internal conversion, conical intersections, intersystem crossing and triplet formation.</p>
+      <p>Move from vertical excitation to derivative coupling, conical intersections, internal conversion, SOC-driven intersystem crossing and triplet formation.</p>
       <ul>
         <li>Franck–Condon picture</li>
         <li>excited-state potential surfaces</li>
@@ -287,7 +287,7 @@ permalink: /lecture/
         <span class="library-tag">Verified examples</span>
       </div>
       <h3>Worked MolSpin Examples</h3>
-      <p>Read real public MolSpin inputs as scientific models: spins, interactions, states, transitions, tasks, time dependence and spectroscopy.</p>
+      <p>Read real public MolSpin inputs as equations: interactions build (hat H), states define (ho(0)), transitions add kinetics and tasks choose the propagator and observable.</p>
       <ul>
         <li>input-file anatomy</li>
         <li>static radical-pair examples</li>
