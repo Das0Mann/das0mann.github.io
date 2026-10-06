@@ -383,6 +383,11 @@ permalink: /lecture/magnetic-resonance/
     <div><p class="section-eyebrow">Experimental modes</p><h2>“EPR” is not one experiment</h2></div>
   </div>
 
+  <aside class="lecture-note">
+    <strong>What is saturation?</strong>
+    <span>If the microwave drive transfers population faster than longitudinal relaxation restores the thermal population difference, the transition partially saturates and the CW signal no longer increases linearly with microwave power. Saturation therefore depends on \(B_1\), \(T_1\) and \(T_2\), not just on how many spins are present.</span>
+  </aside>
+
   <div class="method-ladder">
     <div><span>CW EPR</span><p>Continuously irradiate while sweeping field or frequency. Excellent for resonance positions, hyperfine patterns and steady-state lineshapes.</p></div>
     <div><span>Time-resolved EPR</span><p>Observe transient spin polarization after a photochemical or kinetic trigger. Particularly useful for radical pairs and triplet states.</p></div>
