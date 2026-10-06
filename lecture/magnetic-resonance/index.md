@@ -448,6 +448,16 @@ permalink: /lecture/magnetic-resonance/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>How a spectrum is generated</h3>
+  <ul>
+    <li>The Hamiltonian determines energy levels, but a spectral line appears only when the microwave operator connects two populated states with a non-zero transition matrix element.</li>
+    <li>Tensor anisotropy maps molecular orientation onto resonance position and intensity; motion and disorder determine how that information is averaged.</li>
+    <li>Linewidths and transient signals contain dynamical information and cannot be interpreted solely from static energy levels.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark practice</span>
   <h3>Modern EPR simulation is already a direct test of the spin Hamiltonian</h3>
