@@ -365,6 +365,12 @@ permalink: /lecture/radical-pairs/
       <p>P. J. Hore and H. Mouritsen · Annual Review of Biophysics (2016). A tutorial review connecting radical-pair spin chemistry to biological magnetoreception.</p>
       <a href="https://doi.org/10.1146/annurev-biophys-032116-094545" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Spin-selective reaction operator</span>
+      <h3>Density matrix description of spin-selective radical pair reactions</h3>
+      <p>R. Haberkorn · Molecular Physics 32, 1491–1493 (1976). A foundational density-matrix formulation of spin-selective radical-pair reaction kinetics.</p>
+      <a href="https://doi.org/10.1080/00268977600102851" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
