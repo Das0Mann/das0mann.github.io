@@ -3698,3 +3698,71 @@ h3 { font-size: 1.25rem; }
     font-size: 1rem;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture modules: Electron Transfer + Molecular Motion
+   --------------------------------------------------------- */
+.page-electron-transfer-marcus-theory .site-main,
+.page-molecular-motion-spin-dynamics .site-main {
+  width: min(calc(100% - 44px), 1080px);
+  padding-top: 48px;
+}
+
+.page-electron-transfer-marcus-theory .page-content,
+.page-molecular-motion-spin-dynamics .page-content {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-electron-transfer-marcus-theory .page-hero-inner,
+.page-molecular-motion-spin-dynamics .page-hero-inner {
+  width: min(calc(100% - 44px), 1040px);
+  padding-top: 54px;
+  padding-bottom: 48px;
+}
+
+#marcus-demo .lower-line,
+#motion-demo .lower-line {
+  stroke: var(--navy-2);
+}
+
+#marcus-demo .upper-point,
+#motion-demo .upper-point {
+  fill: var(--accent);
+}
+
+#marcus-demo .plot-wrap,
+#motion-demo .plot-wrap {
+  align-self: center;
+}
+
+@media (max-width: 620px) {
+  .page-electron-transfer-marcus-theory .site-main,
+  .page-molecular-motion-spin-dynamics .site-main,
+  .page-electron-transfer-marcus-theory .page-hero-inner,
+  .page-molecular-motion-spin-dynamics .page-hero-inner {
+    width: min(calc(100% - 24px), 1080px);
+  }
+
+  .page-electron-transfer-marcus-theory .page-hero-inner,
+  .page-molecular-motion-spin-dynamics .page-hero-inner {
+    padding-top: 42px;
+    padding-bottom: 38px;
+  }
+
+  .page-electron-transfer-marcus-theory .page-content p,
+  .page-molecular-motion-spin-dynamics .page-content p {
+    font-size: 1rem;
+  }
+
+  #marcus-demo .interactive-readout strong,
+  #motion-demo .interactive-readout strong {
+    white-space: normal;
+    text-align: right;
+  }
+}
