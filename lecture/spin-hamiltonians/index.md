@@ -12,6 +12,7 @@ permalink: /lecture/spin-hamiltonians/
   <span class="module-index">Module 02</span>
   <h2>The spin Hamiltonian is the bridge</h2>
   <p>Electronic-structure theory gives us molecular magnetic parameters. Spin dynamics needs those parameters arranged into an effective Hamiltonian. This module is about understanding what each term means physically, what assumptions hide inside it, and which conventions you must state before a number becomes meaningful.</p>
+  <p class="module-context"><strong>Course thread:</strong> Module 01 solved—or approximated—the electronic problem. Here we integrate out those fast electronic details and retain a compact low-energy model whose parameters can be compared directly with magnetic-resonance experiments and propagated in time.</p>
 </header>
 <section class="module-learning" aria-label="Learning goals">
   <div class="module-learning-head">
@@ -48,6 +49,8 @@ permalink: /lecture/spin-hamiltonians/
   +\cdots .
   \]
   </div>
+
+  <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 will make that alternative matrix convention explicit.</p>
 
   <p>You rarely need every term at once. A radical pair of two organic \(S=\tfrac12\) radicals may need electron Zeeman, hyperfine, exchange and dipolar interactions. A transition-metal complex with \(S>1/2\) can instead make zero-field splitting central. A nucleus with \(I>1/2\) can add quadrupole structure.</p>
 
@@ -154,7 +157,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction.</p>
+  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction. When comparing values, check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units; the numerical tensor changes with that convention even though the physics does not.</p>
 
   <details class="lecture-details">
     <summary>Why can a proton far from the formal radical centre still have a hyperfine coupling?</summary>
