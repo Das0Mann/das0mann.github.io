@@ -26,6 +26,24 @@ permalink: /lecture/
     <b>→</b>
     <span>molecular / biological applications</span>
   </div>
+
+  <div class="library-use-grid" aria-label="Ways to use the lecture library">
+    <div>
+      <span>01 · Learn linearly</span>
+      <strong>Follow the derivation</strong>
+      <p>Start with Modules 01–03 and move from electronic structure to an effective spin Hamiltonian and finally to time evolution.</p>
+    </div>
+    <div>
+      <span>02 · Enter by question</span>
+      <strong>Jump to the physics you need</strong>
+      <p>Use the module map and local contents to move directly to EPR, electron transfer, relaxation, photochemistry or biological mechanisms.</p>
+    </div>
+    <div>
+      <span>03 · Learn by changing parameters</span>
+      <strong>Use the interactives</strong>
+      <p>Change fields, couplings, rates and timescales, then return to the equations and ask which term caused the observed response.</p>
+    </div>
+  </div>
 </header>
 
 <section class="library-section">
