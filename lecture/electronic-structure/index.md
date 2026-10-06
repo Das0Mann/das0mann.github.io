@@ -181,6 +181,36 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Excited &amp; magnetic states</p><h2>Electronic structure supplies the spin Hamiltonian</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The magnetic parameters are response properties of the electronic state</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>\(\mathbf g\)-tensor</strong>
+        <p><b>What it is:</b> The factor that converts an applied magnetic field into electron-spin Zeeman splitting. A free electron has \(g\approx2.0023\); a molecule deviates from this because orbital motion and excited electronic states admix through spin–orbit coupling.</p>
+        <p><b>What it changes:</b> It sets the spin precession frequency and, when anisotropic, makes that frequency depend on molecular orientation.</p>
+        <p><b>What you observe:</b> EPR resonance positions and their orientation dependence.</p>
+      </article>
+      <article>
+        <strong>Hyperfine tensor \(\mathbf A\)</strong>
+        <p><b>What it is:</b> The magnetic interaction between an electron spin and a nuclear spin. Its contact part probes spin density at the nucleus; its anisotropic part reflects the spatial distribution of the unpaired electron.</p>
+        <p><b>What it changes:</b> It splits spin energy levels and creates different local magnetic fields for different nuclear-spin states.</p>
+        <p><b>What you observe:</b> Hyperfine multiplets in EPR/ENDOR and nuclear-dependent singlet–triplet mixing in radical pairs.</p>
+      </article>
+      <article>
+        <strong>Spin–orbit coupling (SOC)</strong>
+        <p><b>What it is:</b> A relativistic interaction linking the electron's spin angular momentum to its orbital motion in the molecular electrostatic field.</p>
+        <p><b>What it changes:</b> It mixes states of different spin character, shifts the \(g\)-tensor away from the free-electron value and can enable intersystem crossing.</p>
+        <p><b>What you observe:</b> \(g\)-anisotropy, zero-field splitting, spin-forbidden intensity and singlet↔triplet population transfer.</p>
+      </article>
+      <article>
+        <strong>Zero-field splitting (ZFS)</strong>
+        <p><b>What it is:</b> A splitting of sublevels within an \(S>\tfrac12\) spin multiplet even when no external magnetic field is applied.</p>
+        <p><b>What it changes:</b> It sets an intrinsic anisotropic energy scale through spin–spin and spin–orbit contributions.</p>
+        <p><b>What you observe:</b> Field-independent level splittings and characteristic EPR transitions of triplets and higher-spin centres.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>For photochemistry, ground-state DFT is only the start. We also need excited-state energies, oscillator strengths, charge-transfer character and sometimes spin–orbit coupling between states. TD-DFT is often the practical workhorse, while multireference methods become important when several configurations matter simultaneously.</p>
 
