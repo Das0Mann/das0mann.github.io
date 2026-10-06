@@ -67,7 +67,9 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
-  <p>These are not three independent classical components. They are non-commuting operators. That non-commutativity is what gives spin dynamics its genuinely quantum character.</p>
+  <p>These are not three independent classical components. They are non-commuting operators. In this module the matrices carry explicit factors of \(\hbar\), unlike the dimensionless-spin convention used for the compact spin Hamiltonians in Module 02.</p>
+
+  <p>The Hamiltonian is the generator of motion: \(U(t)=\exp(-i\hat Ht/\hbar)\). If an observable commutes with \(\hat H\), its expectation value is conserved under closed-system evolution. If it does not commute, relative phases accumulate between energy components and the observable can oscillate. This is the precise reason that adding a transverse field, a hyperfine term or another non-commuting interaction can create new dynamics rather than merely shifting all energies together.</p>
 </section>
 
 <section class="lecture-section">
@@ -97,7 +99,7 @@ permalink: /lecture/spin-dynamics/
     <div class="physical-concept-grid">
       <article>
         <strong>Larmor frequency</strong>
-        <p><b>What it is:</b> The angular frequency at which a spin phase advances in a static magnetic field; for a simple electron it is set by \(g\mu_BB/\hbar\).</p>
+        <p><b>What it is:</b> The Larmor angular frequency is \(\omega_\mathrm L=g\mu_BB/\hbar\) for the simple isotropic case. The ordinary frequency is \(f_\mathrm L=\omega_\mathrm L/(2\pi)=g\mu_BB/h\).</p>
         <p><b>What it changes:</b> It determines how quickly transverse spin components rotate in the plane perpendicular to the field.</p>
         <p><b>What you observe:</b> The resonance frequency and oscillation period of transverse magnetization or spin populations in driven experiments.</p>
       </article>
@@ -111,7 +113,7 @@ permalink: /lecture/spin-dynamics/
   </div>
 
 
-  <p>For one approximately isotropic electron spin in a static field, the Zeeman Hamiltonian is enough to generate precession. The frequency is</p>
+  <p>For one approximately isotropic electron spin in a static field, the Zeeman Hamiltonian is enough to generate precession. Using ordinary frequency rather than angular frequency,</p>
 
   <div class="lecture-equation">
   \[
@@ -273,7 +275,7 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
-  <p>\(T_\phi\) is the pure-dephasing time. So \(T_2\) is not simply “the same relaxation as \(T_1\)”. Even if pure dephasing vanished completely, the largest possible value would be \(T_2=2T_1\).</p>
+  <p>\(T_\phi\) is the pure-dephasing time. So \(T_2\) is not simply “the same relaxation as \(T_1\)”. Within this simple Bloch-type decomposition into independent exponential longitudinal relaxation and pure dephasing, eliminating pure dephasing gives the bound \(T_2=2T_1\). More general non-Markovian, multilevel or strongly coupled dynamics need not be captured by a single pair of \(T_1\) and \(T_2\) constants.</p>
 
   <div class="interactive-card" id="relaxation-demo">
     <div class="interactive-head">
