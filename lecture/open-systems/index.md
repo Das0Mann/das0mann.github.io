@@ -398,6 +398,12 @@ permalink: /lecture/open-systems/
       <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical characterization of completely positive Markovian quantum generators.</p>
       <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Non-Markovian dynamics</span>
+      <h3>Colloquium: Non-Markovian dynamics in open quantum systems</h3>
+      <p>H.-P. Breuer, E.-M. Laine, J. Piilo and B. Vacchini · Reviews of Modern Physics (2016). A modern review of memory, information backflow and ways to characterize departures from Markovian dynamics.</p>
+      <a href="https://doi.org/10.1103/RevModPhys.88.021002" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
