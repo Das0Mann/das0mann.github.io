@@ -234,6 +234,23 @@ PulseSequence seq
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Reproducibility contract</p><h2>An input file is incomplete without units, conventions and software version</h2></div>
+  </div>
+
+  <div class="observable-list">
+    <div><strong>Units</strong><span>Record whether magnetic interactions are entered as field, ordinary frequency, angular frequency or energy; factors of \(2\pi\), \(h\) and \(\hbar\) are not cosmetic.</span></div>
+    <div><strong>Sign conventions</strong><span>State the exchange convention, gyromagnetic-ratio signs and tensor-axis conventions needed to interpret parameters.</span></div>
+    <div><strong>Reference frames</strong><span>Record how molecular tensors are oriented relative to one another and to the laboratory frame.</span></div>
+    <div><strong>Software state</strong><span>Keep the exact MolSpin commit/release, random seeds where relevant, and convergence settings with the scientific input.</span></div>
+  </div>
+
+  <p>A reproducible calculation should make it possible for another researcher to reconstruct the same Hamiltonian before they ever inspect the numerical output.</p>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
