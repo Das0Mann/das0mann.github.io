@@ -272,6 +272,68 @@ permalink: /lecture/excited-state-photochemistry/
   <p>For spin chemistry, a triplet precursor also matters because electron transfer from a triplet can prepare a radical pair with different initial spin character than electron transfer from a singlet precursor.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Competing excited-state channels</p><h2>Quantum yield is a branching problem between rates</h2></div>
+  </div>
+
+  <p>After a molecule is excited, fluorescence, internal conversion, intersystem crossing and chemical reaction can all compete. In a simple kinetic picture with first-order channels,</p>
+
+  <div class="lecture-equation">
+  \[
+  k_\mathrm{tot}
+  =
+  k_f+k_\mathrm{IC}+k_\mathrm{ISC}+k_\mathrm{rxn}+\cdots,
+  \qquad
+  \Phi_i
+  =
+  \frac{k_i}{k_\mathrm{tot}}.
+  \]
+  </div>
+
+  <p>This is why a large SOC matrix element does not automatically imply a high triplet yield: the ISC channel must still compete successfully with fluorescence, internal conversion and any ultrafast photochemistry. Likewise, a bright state can fluoresce weakly if a faster nonradiative pathway drains its population first.</p>
+
+  <div class="interactive-card" id="photo-branch-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive kinetics</span><h3>Excited-state branching ratios</h3></div>
+      <span class="interactive-model-note">first-order channels</span>
+    </div>
+
+    <div class="demo-prompt">
+      <strong>Try this:</strong>
+      <span>increase the ISC rate while leaving fluorescence fixed. The triplet yield rises only when ISC becomes competitive with the other decay channels.</span>
+    </div>
+
+    <div class="branching-controls">
+      <label for="branch-kf"><span>Fluorescence \(k_f\)</span><output id="branch-kf-out">1.0 × 10⁸ s⁻¹</output></label>
+      <input id="branch-kf" type="range" min="5" max="10" step="0.05" value="8">
+
+      <label for="branch-kic"><span>Internal conversion \(k_\mathrm{IC}\)</span><output id="branch-kic-out">3.2 × 10⁷ s⁻¹</output></label>
+      <input id="branch-kic" type="range" min="5" max="10" step="0.05" value="7.5">
+
+      <label for="branch-kisc"><span>Intersystem crossing \(k_\mathrm{ISC}\)</span><output id="branch-kisc-out">1.0 × 10⁷ s⁻¹</output></label>
+      <input id="branch-kisc" type="range" min="5" max="10" step="0.05" value="7">
+    </div>
+
+    <div class="branching-bar" aria-label="Excited-state branching fractions">
+      <span id="branch-fluor-bar" class="branch-fluor"></span>
+      <span id="branch-ic-bar" class="branch-ic"></span>
+      <span id="branch-isc-bar" class="branch-isc"></span>
+    </div>
+
+    <div class="interactive-readout branching-readout">
+      <span>Fluorescence yield <strong id="branch-fluor-out">70.6%</strong></span>
+      <span>Internal-conversion yield <strong id="branch-ic-out">22.3%</strong></span>
+      <span>Triplet / ISC yield <strong id="branch-isc-out">7.1%</strong></span>
+      <span>Excited-state lifetime <strong id="branch-life-out">7.06 ns</strong></span>
+    </div>
+
+    <p class="interactive-footnote">The channels are treated as independent first-order processes from one excited state. Real photochemistry can involve multiple states, reversible transfer, vibronic relaxation and geometry-dependent rates.</p>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
@@ -340,6 +402,12 @@ permalink: /lecture/excited-state-photochemistry/
       <h3>Spin–orbit coupling and intersystem crossing in molecules</h3>
       <p>C. M. Marian · WIREs Computational Molecular Science (2012). A focused review of SOC, ISC mechanisms and practical quantum-chemical treatments.</p>
       <a href="https://doi.org/10.1002/wcms.83" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+      <article>
+      <span>Spin-vibronic ISC</span>
+      <h3>Spin-Vibronic Mechanism for Intersystem Crossing</h3>
+      <p>T. J. Penfold, E. Gindensperger, C. Daniel and C. M. Marian · Chemical Reviews (2018). A key review explaining why intersystem crossing depends on vibronic coupling and state energetics in addition to SOC.</p>
+      <a href="https://doi.org/10.1021/acs.chemrev.7b00617" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>

@@ -118,9 +118,76 @@
     update();
   }
 
+
+  function initBranchingDemo() {
+    const kfInput = $("branch-kf");
+    const kicInput = $("branch-kic");
+    const kiscInput = $("branch-kisc");
+    if (!kfInput || !kicInput || !kiscInput) return;
+
+    const kfOut = $("branch-kf-out");
+    const kicOut = $("branch-kic-out");
+    const kiscOut = $("branch-kisc-out");
+    const fluorOut = $("branch-fluor-out");
+    const icOut = $("branch-ic-out");
+    const iscOut = $("branch-isc-out");
+    const lifeOut = $("branch-life-out");
+    const fluorBar = $("branch-fluor-bar");
+    const icBar = $("branch-ic-bar");
+    const iscBar = $("branch-isc-bar");
+
+    function rate(log10k) {
+      return Math.pow(10, parseFloat(log10k));
+    }
+
+
+    function scientific(k) {
+      const e = Math.floor(Math.log10(k));
+      const m = k / Math.pow(10, e);
+      return m.toFixed(1) + " × 10^" + e + " s⁻¹";
+    }
+
+    function formatLifetime(seconds) {
+      if (seconds < 1e-9) return (seconds * 1e12).toFixed(1) + " ps";
+      if (seconds < 1e-6) return (seconds * 1e9).toFixed(2) + " ns";
+      return (seconds * 1e6).toFixed(2) + " μs";
+    }
+
+    function update() {
+      const kf = rate(kfInput.value);
+      const kic = rate(kicInput.value);
+      const kisc = rate(kiscInput.value);
+      const total = kf + kic + kisc;
+
+      const pf = kf / total;
+      const pic = kic / total;
+      const pisc = kisc / total;
+      const lifetime = 1 / total;
+
+      kfOut.textContent = scientific(kf);
+      kicOut.textContent = scientific(kic);
+      kiscOut.textContent = scientific(kisc);
+      fluorOut.textContent = (100 * pf).toFixed(1) + "%";
+      icOut.textContent = (100 * pic).toFixed(1) + "%";
+      iscOut.textContent = (100 * pisc).toFixed(1) + "%";
+      lifeOut.textContent = formatLifetime(lifetime);
+
+      fluorBar.style.width = (100 * pf).toFixed(3) + "%";
+      icBar.style.width = (100 * pic).toFixed(3) + "%";
+      iscBar.style.width = (100 * pisc).toFixed(3) + "%";
+    }
+
+    [kfInput, kicInput, kiscInput].forEach((input) =>
+      input.addEventListener("input", update)
+    );
+
+    update();
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPhotoDemo);
+    document.addEventListener("DOMContentLoaded", () => { initPhotoDemo(); initBranchingDemo(); });
   } else {
     initPhotoDemo();
+    initBranchingDemo();
   }
 })();

@@ -65,7 +65,7 @@ permalink: /lecture/spin-hamiltonians/
     <div><p class="section-eyebrow">Zeeman interaction</p><h2>The external field defines the basic energy scale</h2></div>
   </div>
   <div class="physical-concept-panel">
-    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the \(g\)-factor is more than a fitting number</h3></div>
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the g-factor is more than a fitting number</h3></div>
     <div class="physical-concept-grid">
       <article>
         <strong>Magnetic moment</strong>
@@ -108,6 +108,38 @@ permalink: /lecture/spin-hamiltonians/
   <aside class="teacher-note">
     <strong>A sign convention is hiding here.</strong>
     <span>Different communities absorb signs into gyromagnetic ratios or Hamiltonian definitions. Always check the convention used by a code or paper before comparing fitted parameters.</span>
+  </aside>
+</section>
+
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Origin of g-anisotropy</p><h2>The g-tensor remembers nearby excited electronic states</h2></div>
+  </div>
+
+  <p>For a purely spin-only free electron, \(g\) is almost isotropic. In a molecule, spin–orbit coupling admixes orbital character from excited electronic states into the ground spin state. Schematically, the molecular shift can be viewed as a second-order response,</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta g
+  \sim
+  \sum_n
+  \frac{
+  \langle 0|\hat L|n\rangle
+  \langle n|\hat H_\mathrm{SO}|0\rangle
+  }{E_0-E_n}.
+  \]
+  </div>
+
+  <p>This is not meant as a universal computational formula; it shows the physics. The size and direction of the \(g\)-shift depend on orbital angular-momentum matrix elements, SOC and energy gaps to excited states. Heavy atoms, low-lying excited states and strongly anisotropic orbital environments can therefore produce much larger \(g\)-anisotropy than typical light-atom organic radicals.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Why it matters dynamically</span>
+    <p>Once two radicals have different or anisotropic \(g\)-tensors, an external field can make their precession frequencies diverge. At high field this \(\Delta g\) mechanism can compete directly with hyperfine-driven singlet–triplet mixing.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c06173" target="_blank" rel="noopener"><strong>Revealing the Impact of g-Tensor Anisotropy on the Charge Recombination in Donor–Acceptor Dyads Under High Magnetic Fields</strong><span>JACS (2025)</span></a>
+    </div>
   </aside>
 </section>
 

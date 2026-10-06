@@ -70,18 +70,16 @@ permalink: /lecture/quantum-biology/
 
   <p>Flavin-containing cryptochromes can form photoinduced radical pairs through electron transfer. A minimal mechanistic chain is</p>
 
-  <div class="lecture-equation">
-  \[
-  \text{photoexcitation}
-  \rightarrow
-  \text{electron transfer}
-  \rightarrow
-  \text{spin-correlated radical pair}
-  \rightarrow
-  \text{S--T dynamics}
-  \rightarrow
-  \text{spin-selective chemistry}.
-  \]
+  <div class="lecture-pipeline compact-pipeline" aria-label="Cryptochrome radical-pair mechanism">
+    <div><span>Prepare</span><strong>photoexcitation</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Transfer</span><strong>electron transfer</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Create</span><strong>spin-correlated radical pair</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Evolve</span><strong>singlet–triplet dynamics</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Read out</span><strong>spin-selective chemistry</strong></div>
   </div>
 
   <p>The magnetic field does not need to compete energetically with \(k_BT\). It changes spin precession and state mixing in a non-equilibrium reaction intermediate; the chemical reaction then provides the readout.</p>
@@ -275,6 +273,36 @@ permalink: /lecture/quantum-biology/
   <aside class="teacher-note">
     <strong>The design question is therefore not just “can I create polarization?”</strong>
     <span>You need sufficient yield, transfer efficiency and lifetime while suppressing the relaxation channels that erase the polarization before detection.</span>
+  </aside>
+</section>
+
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">From molecule to biological signal</p><h2>A directional compass needs anisotropy and a route to amplify chemistry</h2></div>
+  </div>
+
+  <p>An isotropic radical-pair reaction can depend on field magnitude, but it cannot by itself encode field direction. Directional magnetoreception requires an interaction tied to the molecular frame—typically anisotropic hyperfine or \(g\)-tensor terms—and some degree of molecular orientation in the organism.</p>
+
+  <div class="lecture-pipeline compact-pipeline" aria-label="Directional magnetoreception signal chain">
+    <div><span>Encode direction</span><strong>molecular anisotropy</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Chemical response</span><strong>orientation-dependent yield Φ(θ,φ)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Amplify</span><strong>biochemical signalling</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Detect</span><strong>biological response</strong></div>
+  </div>
+
+  <p>The last arrow is as important as the first. A calculated one-percent change in radical-pair yield is not yet a sensory mechanism unless the downstream biochemical network preserves or amplifies that change into something a cell can distinguish.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Orientation requirement</span>
+    <p>For avian cryptochrome, membrane association and molecular ordering are therefore not peripheral structural details; they are part of the physical requirement for a directional response.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acschembio.4c00576" target="_blank" rel="noopener"><strong>European Robin Cryptochrome-4a Associates with Lipid Bilayers in an Ordered Manner, Fulfilling a Molecular-Level Condition for Magnetoreception</strong><span>ACS Chem. Biol. (2025)</span></a>
+    </div>
   </aside>
 </section>
 

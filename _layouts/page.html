@@ -24,5 +24,8 @@
 
 {% include _footer.html %}
 {% include _scripts.html %}
+{% if page.url contains '/lecture/' %}
+<script src="{{ site.url }}/assets/js/lecture-toc.js" defer></script>
+{% endif %}
 </body>
 </html>

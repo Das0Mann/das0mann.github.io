@@ -255,7 +255,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Ensemble energetics</p><h2>How do you obtain \(\lambda\) and \(\Delta G^\circ\) from simulations?</h2></div>
+    <div><p class="section-eyebrow">Ensemble energetics</p><h2>How do you obtain λ and ΔG° from simulations?</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>The vertical energy gap turns a molecular ensemble into an electron-transfer coordinate</h3></div>
@@ -310,6 +310,34 @@ permalink: /lecture/electron-transfer/
   </aside>
 
   <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction.</p>
+</section>
+
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Distance and tunnelling</p><h2>Electron transfer can be exponentially sensitive to geometry before Marcus energetics even enter</h2></div>
+  </div>
+
+  <p>For weakly coupled donor–acceptor states, the electronic coupling often decreases approximately exponentially with separation along a tunnelling pathway,</p>
+
+  <div class="lecture-equation">
+  \[
+  |V(R)|
+  \approx
+  |V_0|\,e^{-\beta R}.
+  \]
+  </div>
+
+  <p>The decay constant \(\beta\) is not universal: it depends on the intervening medium, orbital alignment and whether covalent bonds, hydrogen bonds or through-space contacts mediate the coupling. Because the nonadiabatic rate scales as \(|V|^2\), small conformational changes can therefore generate large rate changes even when \(\lambda\) and \(\Delta G^\circ\) barely move.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Conformational gating</span>
+    <p>This is one reason an ensemble cannot always be replaced by its average geometry. Different conformers can occupy qualitatively different coupling and reaction regimes.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c22947" target="_blank" rel="noopener"><strong>Conformational Switching Controls Biradical Spin Dynamics in Flavin–Tryptophan Dyads</strong><span>JACS (2026)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -405,6 +433,12 @@ permalink: /lecture/electron-transfer/
       <h3>Contemporary Issues in Electron Transfer Research</h3>
       <p>P. F. Barbara, T. J. Meyer and M. A. Ratner · The Journal of Physical Chemistry (1996). A highly useful overview of rates, free-energy surfaces, solvent response and the inverted region.</p>
       <a href="https://doi.org/10.1021/jp9605663" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+      <article>
+      <span>Protein electron tunnelling</span>
+      <h3>Long-range electron transfer</h3>
+      <p>H. B. Gray and J. R. Winkler · PNAS (2005). A compact perspective on how distance, tunnelling pathways and protein structure control biological electron-transfer rates.</p>
+      <a href="https://doi.org/10.1073/pnas.0408029102" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>

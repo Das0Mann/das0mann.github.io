@@ -306,6 +306,31 @@ permalink: /lecture/open-systems/
   <p>This can be computationally attractive because each trajectory contains \(D\) amplitudes instead of \(D^2\) density-matrix elements. The tradeoff is stochastic sampling error.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Thermal directionality</p><h2>A thermal bath does more than broaden lines—it biases upward and downward transitions differently</h2></div>
+  </div>
+
+  <p>For a bath in thermal equilibrium, microscopic transition rates are constrained by detailed balance. For two levels separated by \(\hbar\omega\), one commonly encounters the relation</p>
+
+  <div class="lecture-equation">
+  \[
+  \frac{k_\uparrow}{k_\downarrow}
+  =
+  e^{-\hbar\omega/(k_BT)}.
+  \]
+  </div>
+
+  <p>At high temperature or very small splittings, upward and downward rates can be nearly equal. At low temperature or large splitting, downward relaxation dominates. A phenomenological dephasing model that only damps coherences cannot reproduce this population thermalization by itself.</p>
+
+  <aside class="teacher-note">
+    <strong>Dephasing and thermal relaxation are different pieces of bath physics.</strong>
+    <span>One randomizes relative phase; the other exchanges energy and sets the long-time population distribution.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
@@ -372,6 +397,12 @@ permalink: /lecture/open-systems/
       <h3>On the Generators of Quantum Dynamical Semigroups</h3>
       <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical characterization of completely positive Markovian quantum generators.</p>
       <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+      <article>
+      <span>Non-Markovian dynamics</span>
+      <h3>Colloquium: Non-Markovian dynamics in open quantum systems</h3>
+      <p>H.-P. Breuer, E.-M. Laine, J. Piilo and B. Vacchini · Reviews of Modern Physics (2016). A modern review of memory, information backflow and ways to characterize departures from Markovian dynamics.</p>
+      <a href="https://doi.org/10.1103/RevModPhys.88.021002" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>
