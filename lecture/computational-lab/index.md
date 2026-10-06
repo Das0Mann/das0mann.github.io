@@ -149,6 +149,14 @@ permalink: /lecture/computational-lab/
     <div><span>State-vector trajectories</span><p>Propagate \(D\)-component vectors rather than \(D^2\)-component density matrices when an appropriate stochastic or pure-state formulation exists.</p></div>
     <div><span>Operator-space propagation</span><p>Useful when the density matrix or superoperator structure is essential, but it requires more aggressive sparsity or symmetry exploitation.</p></div>
   </div>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The motivation for state-vector and stochastic formulations is not aesthetic: for realistic radical pairs the density-matrix representation can become the bottleneck before the underlying physics does.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener"><strong>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</strong><span>J. Chem. Theory Comput. (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section">
