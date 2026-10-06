@@ -21,7 +21,7 @@ permalink: /lecture/electronic-structure/
   <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish the many-electron wavefunction, molecular orbitals and electron density.</p></div>
     <div><span>02</span><p>Explain what HF, DFT, correlation methods and basis sets approximate differently.</p></div>
-    <div><span>03</span><p>Identify which electronic-structure outputs become parameters of a spin Hamiltonian.</p></div>
+    <div><span>03</span><p>Explain how electronic energies, spin densities and response derivatives are reduced to (g), hyperfine, exchange, dipolar and ZFS parameters.</p></div>
   </div>
 </section>
 
@@ -322,7 +322,83 @@ permalink: /lecture/electronic-structure/
     <div><strong>SOC &amp; ZFS</strong><span>spin–orbit-driven state mixing and zero-field splitting in higher-spin systems</span></div>
   </div>
 
-  <aside class="teacher-note">
+  
+  <section class="parameter-derivation">
+    <p class="section-eyebrow">Mathematical reduction</p>
+    <h3>From the electronic Hamiltonian to an effective spin Hamiltonian</h3>
+
+    <p>The spin Hamiltonian is not a second, unrelated theory. It is a low-energy effective representation of the electronic problem. If \(P\) projects onto the magnetic states we want to keep and \(Q=1-P\) onto all other electronic states, perturbative downfolding gives schematically</p>
+
+    <div class="lecture-equation">
+    \[
+    \hat H_\mathrm{eff}
+    =
+    P\hat H P
+    +
+    P\hat VQ
+    \frac{1}{E_0-Q\hat H_0Q}
+    Q\hat VP
+    +\cdots .
+    \]
+    </div>
+
+    <p>The first term contains interactions acting directly inside the chosen spin manifold. The second term shows how virtual coupling to electronically excited states feeds back into the low-energy spin physics. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
+
+    <p>After this projection, the effective operator is expanded in a small set of spin operators,</p>
+
+    <div class="lecture-equation">
+    \[
+    \hat H_\mathrm{eff}
+    =
+    \sum_k p_k\,\hat O_k
+    =
+    \mu_B\mathbf B\cdot\mathbf g\cdot\hat{\mathbf S}
+    +
+    \sum_N
+    \hat{\mathbf S}\cdot\mathbf A_N\cdot\hat{\mathbf I}_N
+    +
+    J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2
+    +
+    \hat{\mathbf S}\cdot\mathbf D\cdot\hat{\mathbf S}
+    +\cdots .
+    \]
+    </div>
+
+    <p>The quantum-chemistry problem is therefore to determine the coefficients \(p_k\). Depending on the parameter, this is done from expectation values, derivatives of the electronic energy with respect to external perturbations, response equations, differences between spin-state energies, or an effective-Hamiltonian fit to low-energy ab initio states.</p>
+  </section>
+
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>How the parameters are obtained</span><h3>Different spin parameters probe different pieces of the electronic state</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>\(\mathbf g\): magnetic response + SOC</strong>
+        <p>At the electronic-structure level the molecular \(g\)-tensor is a magnetic response property. A useful decomposition is \(\mathbf g=g_e\mathbf 1+\mathbf g^\mathrm{RMC}+\mathbf g^\mathrm{DSO}+\mathbf g^\mathrm{PSO}\).</p>
+        <p>The dominant molecular anisotropy often comes from orbital-Zeeman/SOC response. In a sum-over-states picture, \(\Delta g\) contains terms proportional to \(\langle0|\hat L|n\rangle\langle n|\hat H_\mathrm{SO}|0\rangle/(E_0-E_n)\).</p>
+      </article>
+      <article>
+        <strong>\(\mathbf A\): spin density at and around a nucleus</strong>
+        <p>The contact part is proportional to the spin density at nucleus \(N\), \(A_N^\mathrm{FC}\propto\rho_s(\mathbf R_N)\).</p>
+        <p>The anisotropic spin-dipolar part is a real-space integral over the spin density, schematically \(A_{N,\alpha\beta}^\mathrm{dip}\propto\int \rho_s(\mathbf r)[3r_\alpha r_\beta-r^2\delta_{\alpha\beta}]r^{-5}d\mathbf r\).</p>
+      </article>
+      <article>
+        <strong>\(J\): map electronic spin-state energies onto a spin model</strong>
+        <p>For two \(S=\tfrac12\) centres and the convention \(\hat H_\mathrm{ex}=J\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2\), exact pure singlet/triplet energies obey \(E_T-E_S=J\).</p>
+        <p>Broken-symmetry DFT instead gives a spin-contaminated determinant, so an explicit projection/mapping prescription such as a Noodleman- or Yamaguchi-type scheme is required before comparing \(J\) values.</p>
+      </article>
+      <article>
+        <strong>\(\mathbf D\) and ZFS: direct spin–spin + SOC</strong>
+        <p>For two localized spins the direct magnetic dipolar tensor follows from the spatial spin distribution and reduces in the point-dipole limit to the familiar \(r^{-3}\) tensor.</p>
+        <p>For an \(S>\tfrac12\) multiplet, the ZFS tensor also contains SOC-mediated second-order contributions obtained by projecting coupled electronic states into the spin manifold.</p>
+      </article>
+    </div>
+  </div>
+
+  <aside class="lecture-note">
+    <strong>Response property does not mean “read it from one orbital”.</strong>
+    <span>Most magnetic tensors depend on the relaxation of the entire electronic state under a perturbation. In SCF-based methods this commonly leads to coupled-perturbed SCF/Kohn–Sham equations rather than a simple orbital-energy formula.</span>
+  </aside>
+
+<aside class="teacher-note">
     <strong>This is the hand-off to spin dynamics:</strong>
     <span>once these quantities are known for a molecular structure, we can stop carrying the full electronic problem and propagate a much smaller effective spin Hamiltonian.</span>
   </aside>
@@ -396,6 +472,12 @@ permalink: /lecture/electronic-structure/
       <h3>Coupled-cluster theory in quantum chemistry</h3>
       <p>R. J. Bartlett and M. Musiał · Reviews of Modern Physics (2007). A comprehensive review of coupled-cluster theory and its role as a high-accuracy single-reference framework.</p>
       <a href="https://doi.org/10.1103/RevModPhys.79.291" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Effective spin Hamiltonians</span>
+      <h3>Quantum Chemistry and EPR Parameters</h3>
+      <p>F. Neese · eMagRes (2017). A compact derivation of how magnetic response and relativistic interactions are reduced from the electronic Hamiltonian to effective EPR spin-Hamiltonian parameters.</p>
+      <a href="https://doi.org/10.1002/9780470034590.emrstm1505" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>
