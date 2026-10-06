@@ -412,6 +412,16 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>What should remain after this module?</h3>
+  <ul>
+    <li>Electronic structure determines the states, densities and response functions from which magnetic observables are constructed.</li>
+    <li>Spin-Hamiltonian parameters are effective coefficients obtained from expectation values, response derivatives, energy mappings or low-energy projection—not arbitrary fitted constants.</li>
+    <li>The quality of a spin-dynamics model is therefore limited by both the electronic-structure approximation and the conventions used to reduce it.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark theory</span>
   <h3>Kohn–Sham DFT turned the density theorem into a practical electronic-structure method</h3>
