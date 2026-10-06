@@ -29,6 +29,11 @@ permalink: /lecture/
   <h2>Lecture modules</h2>
 
   <div class="library-grid">
+    <div class="library-group-label">
+      <span>Path I</span><strong>Foundations</strong>
+      <p>Build the electronic model, reduce it to a spin Hamiltonian and learn how that Hamiltonian generates dynamics.</p>
+    </div>
+
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">01</span>
@@ -85,6 +90,11 @@ permalink: /lecture/
         <a href="{{ site.url }}/lecture/spin-dynamics/">Open lecture →</a>
       </div>
     </article>
+
+    <div class="library-group-label">
+      <span>Path II</span><strong>Spin chemistry &amp; molecular environment</strong>
+      <p>Connect spin dynamics to reactions, spectroscopy, electron transfer and molecular motion.</p>
+    </div>
 
     <article class="library-card">
       <div class="library-card-top">
@@ -162,6 +172,11 @@ permalink: /lecture/
       </div>
     </article>
 
+    <div class="library-group-label">
+      <span>Path III</span><strong>Numerical &amp; open-system methods</strong>
+      <p>Understand how large spin problems are represented, propagated and coupled to environmental relaxation.</p>
+    </div>
+
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">08</span>
@@ -199,6 +214,11 @@ permalink: /lecture/
         <a href="{{ site.url }}/lecture/open-systems/">Open lecture →</a>
       </div>
     </article>
+
+    <div class="library-group-label">
+      <span>Path IV</span><strong>Applications, photochemistry &amp; control</strong>
+      <p>Use the framework in biological mechanisms, excited-state chemistry, coherent control and real MolSpin workflows.</p>
+    </div>
 
     <article class="library-card">
       <div class="library-card-top">
@@ -244,7 +264,7 @@ permalink: /lecture/
         <span class="library-tag">Interactive</span>
       </div>
       <h3>Pulse &amp; Coherent Control</h3>
-      <p>Understand driven two-level systems, rotating frames, Rabi oscillations, (pi/2) and (pi) pulses, detuning and echo concepts.</p>
+      <p>Understand driven two-level systems, rotating frames, Rabi oscillations, \(\pi/2\) and \(\pi\) pulses, detuning and echo concepts.</p>
       <ul>
         <li>rotating-frame picture</li>
         <li>Rabi frequency &amp; pulse area</li>
