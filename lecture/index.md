@@ -167,7 +167,9 @@ permalink: /lecture/
   <p class="section-eyebrow">Next modules</p>
   <h2>Planned extensions</h2>
   <div class="roadmap-list">
-    <div><strong>Computational Laboratory</strong><span>Worked MolSpin examples and practical numerical spin dynamics.</span></div>
+    <div><strong>Computational Laboratory</strong><span>Worked MolSpin examples, numerical propagation and practical convergence checks.</span></div>
+    <div><strong>Advanced Open-System Methods</strong><span>Memory kernels, stochastic unravelings and when Markovian approximations break down.</span></div>
+    <div><strong>Quantum Biology Case Studies</strong><span>Cryptochromes, flavoproteins, magnetic-field effects and hyperpolarization as worked examples.</span></div>
   </div>
 </section>
 
