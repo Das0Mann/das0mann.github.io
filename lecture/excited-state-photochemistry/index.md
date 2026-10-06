@@ -403,6 +403,12 @@ permalink: /lecture/excited-state-photochemistry/
       <p>C. M. Marian · WIREs Computational Molecular Science (2012). A focused review of SOC, ISC mechanisms and practical quantum-chemical treatments.</p>
       <a href="https://doi.org/10.1002/wcms.83" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Spin-vibronic ISC</span>
+      <h3>Spin-Vibronic Mechanism for Intersystem Crossing</h3>
+      <p>T. J. Penfold, E. Gindensperger, C. Daniel and C. M. Marian · Chemical Reviews (2018). A key review explaining why intersystem crossing depends on vibronic coupling and state energetics in addition to SOC.</p>
+      <a href="https://doi.org/10.1021/acs.chemrev.7b00617" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
