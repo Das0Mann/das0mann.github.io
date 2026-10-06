@@ -293,6 +293,35 @@ permalink: /lecture/radical-pairs/
   <p>with the reaction kinetics included consistently in the propagation of \(\rho(t)\). This is the important conceptual bridge: a quantum spin state evolves on nanosecond or microsecond timescales, but we may observe only a final chemical yield.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05b</span>
+    <div><p class="section-eyebrow">From spin state to product yield</p><h2>Reaction kinetics continuously measures the evolving singlet and triplet character</h2></div>
+  </div>
+
+  <p>A useful way to connect the density matrix to chemistry is through singlet and triplet projectors, \(\hat P_S\) and \(\hat P_T\). For a simple first-order singlet channel, the integrated singlet yield can be written</p>
+
+  <div class="lecture-equation">
+  \[
+  \Phi_S
+  =
+  k_S
+  \int_0^\infty
+  \mathrm{Tr}\!\left[
+  \hat P_S\,\rho(t)
+  \right]dt.
+  \]
+  </div>
+
+  <p>The important point is conceptual: the reaction does not wait until spin evolution is finished. Recombination and spin dynamics occur simultaneously. Increasing \(k_S\) can therefore increase the instantaneous probability of singlet reaction while shortening the time available for further singlet–triplet mixing.</p>
+
+  <aside class="teacher-note">
+    <strong>The yield is a time integral, not a snapshot.</strong>
+    <span>Two radical pairs can have the same singlet probability at one instant and still produce different final yields if their lifetimes, relaxation or earlier spin history differ.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
