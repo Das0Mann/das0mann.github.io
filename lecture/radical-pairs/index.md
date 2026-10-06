@@ -230,6 +230,30 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Spin-selective reaction</p><h2>The observable is usually not the spin state itself</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Chemical kinetics acts as the detector of the quantum spin state</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin-selective recombination</strong>
+        <p><b>What it is:</b> A chemical reaction whose rate depends on whether the radical pair has singlet or triplet spin character because orbital symmetry and spin conservation favour different product channels.</p>
+        <p><b>What it changes:</b> It continuously converts spin populations into chemical loss, so reaction kinetics and spin dynamics compete on the same timescale.</p>
+        <p><b>What you observe:</b> Different singlet/triplet product yields and field-dependent recombination kinetics.</p>
+      </article>
+      <article>
+        <strong>Reaction rate \(k\)</strong>
+        <p><b>What it is:</b> The probability per unit time for a particular chemical channel to remove or transform the radical pair.</p>
+        <p><b>What it changes:</b> A very fast rate can terminate the pair before substantial spin mixing; a very slow rate allows more coherent evolution but also more time for relaxation.</p>
+        <p><b>What you observe:</b> Radical-pair lifetime, transient decay and integrated reaction yield.</p>
+      </article>
+      <article>
+        <strong>Reaction yield \(\Phi\)</strong>
+        <p><b>What it is:</b> The time-integrated amount of product formed through a chosen spin-selective channel.</p>
+        <p><b>What it changes:</b> It compresses the entire history of spin evolution and reaction into an experimentally accessible scalar observable.</p>
+        <p><b>What you observe:</b> Magnetic-field effects reported as changes in fluorescence, absorption, product concentration or related chemical signals.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>If singlet and triplet radical pairs react through different channels, the time-dependent spin character controls product formation. Schematically,</p>
 
