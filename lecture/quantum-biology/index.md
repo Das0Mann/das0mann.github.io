@@ -202,6 +202,25 @@ permalink: /lecture/quantum-biology/
 
   <p>This resonance argument applies specifically to time-dependent RF or microwave perturbations. A static geomagnetic field acts differently: it changes Zeeman splittings and the spin-Hamiltonian eigenstates continuously, so static-field sensitivity does not require resonant photon absorption.</p>
 
+  <aside class="lecture-note">
+    <strong>\(\mu_BB\ll k_BT\) does not by itself rule out a spin-chemical magnetic-field effect.</strong>
+    <span>A radical pair is created as a non-equilibrium, spin-correlated state rather than by thermal polarization of an electron-spin ensemble. The field matters by changing coherent level splittings and mixing during the finite radical-pair lifetime. The relevant competition is therefore between magnetic frequencies, hyperfine/exchange/dipolar interactions, relaxation and reaction rates.</span>
+  </aside>
+
+  <p>For an electron with \(g\approx2\), a geomagnetic-scale field of \(50~\mu\mathrm T\) corresponds to an ordinary Zeeman frequency of roughly</p>
+
+  <div class="lecture-equation">
+  \[
+  f_e
+  =
+  \frac{g\mu_BB}{h}
+  \approx
+  1.4~\mathrm{MHz}.
+  \]
+  </div>
+
+  <p>The important question is not whether this energy exceeds thermal energy, but whether a MHz-scale change in spin precession can act before recombination and relaxation erase the spin correlation.</p>
+
   <p>Orientation and anisotropy also matter. A field that is resonant for one molecular orientation may be off-resonant for another, and molecular motion can either average or broaden that response.</p>
 
   <aside class="research-connection">

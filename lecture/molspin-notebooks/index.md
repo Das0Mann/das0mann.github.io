@@ -77,6 +77,52 @@ permalink: /lecture/molspin-notebooks/
   </div>
 
   <p>The syntax is therefore easier to understand if you read it in the order <strong>physical system → Hamiltonian → state preparation → kinetics → numerical task</strong>.</p>
+
+  <div class="lecture-equation">
+  \[
+  \texttt{Interaction}_q
+  \longrightarrow
+  \hat H_q,
+  \qquad
+  \hat H
+  =
+  \sum_q \hat H_q.
+  \]
+  </div>
+
+  <p>The remaining objects can be read in the same mathematical way:</p>
+
+  <div class="lecture-equation">
+  \[
+  \texttt{State}
+  \longrightarrow
+  \rho(0),
+  \qquad
+  \texttt{Transition/Relaxation}
+  \longrightarrow
+  \mathcal K[\rho]\ \text{or}\ \mathcal R[\rho],
+  \qquad
+  \texttt{Task}
+  \longrightarrow
+  \text{propagator + requested observable}.
+  \]
+  </div>
+
+  <p>A useful conceptual master equation is therefore</p>
+
+  <div class="lecture-equation">
+  \[
+  \dot\rho
+  =
+  -\frac{i}{\hbar}[\hat H,\rho]
+  +
+  \mathcal R[\rho]
+  +
+  \mathcal K[\rho],
+  \]
+  </div>
+
+  <p>with the important caveat that different MolSpin tasks implement different subsets, approximations and representations of this general structure. Reading the input this way lets you debug the physics before you debug the parser.</p>
 </section>
 
 <section class="lecture-section">

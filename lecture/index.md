@@ -106,7 +106,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Radical-Pair Spin Chemistry</h3>
-      <p>Here quantum spin dynamics becomes chemistry. We introduce singlet–triplet states, spin-selective reactions, magnetic-field effects and radical pairs in proteins.</p>
+      <p>Here quantum spin dynamics becomes chemistry. We derive when a Hamiltonian can change singlet character, then connect that mixing to spin-selective reactions and magnetic-field effects.</p>
       <ul>
         <li>singlet &amp; triplet basis</li>
         <li>S–T mixing and reaction yields</li>
@@ -163,7 +163,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Molecular Motion → Spin Dynamics</h3>
-      <p>Learn how molecular fluctuations turn a static spin Hamiltonian into \(H(t)\), and how correlation functions and spectral densities connect motion to relaxation.</p>
+      <p>Follow the multiscale chain \(\mathbf R(t)\rightarrow p_k(t)\rightarrow H(t)\): molecular motion modulates spin parameters, correlation functions encode memory and spectral densities control relaxation.</p>
       <ul>
         <li>parameter trajectories &amp; fluctuations</li>
         <li>correlation functions</li>
@@ -206,7 +206,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
-      <p>Go beyond phenomenological \(T_1/T_2\): Lindblad structure, BRW theory, memory kernels, Nakajima–Zwanzig and stochastic unravelings.</p>
+      <p>Go beyond phenomenological \(T_1/T_2\): derive how fluctuating operator channels and \(J_{\alpha\beta}(\omega)\) generate BRW relaxation, then compare Lindblad, memory-kernel and stochastic descriptions.</p>
       <ul>
         <li>Markovian master equations</li>
         <li>BRW assumptions</li>
@@ -249,7 +249,7 @@ permalink: /lecture/
         <span class="library-tag">2 interactives</span>
       </div>
       <h3>Excited-State Photochemistry</h3>
-      <p>Move from vertical excitation to relaxed excited states, internal conversion, conical intersections, intersystem crossing and triplet formation.</p>
+      <p>Move from vertical excitation to derivative coupling, conical intersections, internal conversion, SOC-driven intersystem crossing and triplet formation.</p>
       <ul>
         <li>Franck–Condon picture</li>
         <li>excited-state potential surfaces</li>
@@ -287,7 +287,7 @@ permalink: /lecture/
         <span class="library-tag">Verified examples</span>
       </div>
       <h3>Worked MolSpin Examples</h3>
-      <p>Read real public MolSpin inputs as scientific models: spins, interactions, states, transitions, tasks, time dependence and spectroscopy.</p>
+      <p>Read real public MolSpin inputs as equations: interactions build \(\hat H\), states define \(\rho(0)\), transitions add kinetics and tasks choose the propagator and observable.</p>
       <ul>
         <li>input-file anatomy</li>
         <li>static radical-pair examples</li>
