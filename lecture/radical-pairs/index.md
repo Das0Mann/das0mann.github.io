@@ -321,6 +321,14 @@ permalink: /lecture/radical-pairs/
   </div>
 
   <p>This is where molecular dynamics, electronic structure and spin dynamics have to meet. A single optimized structure can be informative, but it may miss the distribution and time correlation of the interactions that actually control the spin evolution.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>The radical-pair Hamiltonian is not fixed inside a protein. In model flavin–tryptophan systems we explicitly connected protein motion and fluctuating magnetic interactions to the resulting magnetosensitivity.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.5c01187" target="_blank" rel="noopener"><strong>Magnetosensitivity of Model Flavin–Tryptophan Radical Pairs in a Dynamic Protein Environment</strong><span>J. Phys. Chem. B (2025)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
