@@ -22,6 +22,8 @@ permalink: /lecture/molspin-notebooks/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <aside class="lecture-note molspin-version-note">
   <strong>Version note — public reference used here</strong>
