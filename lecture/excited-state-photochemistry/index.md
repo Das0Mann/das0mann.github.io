@@ -28,6 +28,24 @@ permalink: /lecture/excited-state-photochemistry/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Franck–Condon picture</p><h2>Electronic excitation is fast compared with nuclear motion</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Absorption strength and nuclear geometry are separate parts of an optical transition</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Vertical excitation</strong>
+        <p><b>What it is:</b> An electronic transition evaluated at essentially fixed nuclear coordinates because electrons respond much faster than nuclei move.</p>
+        <p><b>What it changes:</b> It places the excited wavepacket away from the relaxed excited-state minimum whenever the two surfaces prefer different geometries.</p>
+        <p><b>What you observe:</b> The absorption energy rather than the fully relaxed excited-state energy.</p>
+      </article>
+      <article>
+        <strong>Oscillator strength</strong>
+        <p><b>What it is:</b> A dimensionless measure of electric-dipole transition intensity derived from the transition dipole moment.</p>
+        <p><b>What it changes:</b> It determines whether an electronic transition is optically bright or nearly dark for electric-dipole absorption.</p>
+        <p><b>What you observe:</b> Integrated absorption intensity, not simply the excitation energy.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>During an optical transition the nuclei are approximately frozen. On a potential-energy diagram this gives a nearly vertical transition from the ground-state nuclear geometry onto an excited-state surface.</p>
 
@@ -128,6 +146,24 @@ permalink: /lecture/excited-state-photochemistry/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Internal conversion</p><h2>Population can change electronic state without emitting a photon</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Nonadiabatic coupling lets nuclear motion change electronic identity</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Internal conversion (IC)</strong>
+        <p><b>What it is:</b> Radiationless transfer between electronic states of the same spin multiplicity.</p>
+        <p><b>What it changes:</b> Electronic excitation energy is converted into nuclear/vibrational motion instead of emitted as a photon.</p>
+        <p><b>What you observe:</b> Shorter excited-state lifetimes, reduced fluorescence yield and ultrafast population transfer.</p>
+      </article>
+      <article>
+        <strong>Conical intersection</strong>
+        <p><b>What it is:</b> A multidimensional nuclear geometry where two adiabatic electronic states become degenerate and their electronic character changes rapidly.</p>
+        <p><b>What it changes:</b> It creates an efficient funnel for nonadiabatic population transfer because the Born–Oppenheimer separation breaks down locally.</p>
+        <p><b>What you observe:</b> Ultrafast internal conversion, branching between photochemical products and strong geometry dependence.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Nonradiative internal conversion transfers population between electronic states of the same spin multiplicity while nuclear motion accepts the energy difference. The Born–Oppenheimer separation becomes least useful where electronic states approach closely and nonadiabatic coupling becomes large.</p>
 
@@ -144,6 +180,24 @@ permalink: /lecture/excited-state-photochemistry/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Intersystem crossing</p><h2>Spin–orbit coupling can connect different spin manifolds</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>SOC makes spin multiplicity an approximate rather than exact label</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin–orbit coupling</strong>
+        <p><b>What it is:</b> A relativistic coupling between spin angular momentum and orbital motion/electronic angular momentum in the molecular field.</p>
+        <p><b>What it changes:</b> It mixes singlet and triplet character, allowing nominally spin-forbidden population transfer and modifying magnetic tensors.</p>
+        <p><b>What you observe:</b> Intersystem crossing, phosphorescence intensity, \(g\)-shifts and ZFS.</p>
+      </article>
+      <article>
+        <strong>Intersystem crossing (ISC)</strong>
+        <p><b>What it is:</b> Nonradiative population transfer between electronic states of different spin multiplicity.</p>
+        <p><b>What it changes:</b> It can populate long-lived triplet states that access different chemistry and spin dynamics from the initially excited singlet.</p>
+        <p><b>What you observe:</b> Triplet yields, delayed emission, transient absorption and time-resolved EPR.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Intersystem crossing transfers population between states of different spin multiplicity, for example from a singlet excited state to a triplet state. Spin–orbit coupling supplies the interaction that mixes nominally different spin states.</p>
 
@@ -168,6 +222,24 @@ permalink: /lecture/excited-state-photochemistry/
     <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Triplet states</p><h2>Triplet formation changes both lifetime and spin physics</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A triplet is a three-sublevel spin manifold, not just a 'long-lived excited state'</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Triplet multiplicity</strong>
+        <p><b>What it is:</b> An \(S=1\) electronic state with three spin projections in the absence of additional mixing.</p>
+        <p><b>What it changes:</b> The sublevels can be split by ZFS and populated non-equally by spin-selective ISC.</p>
+        <p><b>What you observe:</b> Characteristic polarized triplet EPR spectra and often longer excited-state lifetimes.</p>
+      </article>
+      <article>
+        <strong>Triplet precursor chemistry</strong>
+        <p><b>What it is:</b> Electron transfer or bond chemistry initiated from a triplet excited state inherits different spin correlation from a singlet precursor.</p>
+        <p><b>What it changes:</b> It changes the initial spin state of subsequent radical pairs and therefore their allowed reaction pathways.</p>
+        <p><b>What you observe:</b> Different transient kinetics, spin polarization and magnetic-field response.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Triplet states are often longer lived than bright singlet excited states because direct radiative return to a singlet ground state is spin-forbidden in the nonrelativistic limit. That longer lifetime can open reaction pathways that are inaccessible from a rapidly decaying singlet state.</p>
 
