@@ -318,7 +318,7 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">05b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Competing timescales</p><h2>Coherence matters only if it survives long enough to affect an observable</h2></div>
   </div>
 
