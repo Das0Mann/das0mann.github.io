@@ -1,0 +1,255 @@
+---
+layout: page
+title: Spin Dynamics
+excerpt: "From spin-1/2 and Larmor precession to relaxation and open quantum systems"
+permalink: /lecture/spin-dynamics/
+---
+
+<div class="lecture-module">
+{% include lecture-library-nav.html %}
+
+<header class="module-intro">
+  <span class="module-index">Module 02</span>
+  <h2>What does a spin Hamiltonian do in time?</h2>
+  <p>Once the electronic structure has been reduced to a spin Hamiltonian, the problem changes. We are no longer solving for the electrons in real space; we are propagating amplitudes, populations and coherences in spin space.</p>
+</header>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">01</span>
+    <div><p class="section-eyebrow">Spin-\(\tfrac12\)</p><h2>The smallest non-trivial spin</h2></div>
+  </div>
+
+  <p>A spin-\(\tfrac12\) system has a two-dimensional Hilbert space. Choosing the \(z\)-axis as quantization axis gives the basis states \(\lvert\alpha\rangle\) and \(\lvert\beta\rangle\). The corresponding spin operators are</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat S_x=\frac{\hbar}{2}
+  \begin{pmatrix}0&1\\1&0\end{pmatrix},
+  \quad
+  \hat S_y=\frac{\hbar}{2}
+  \begin{pmatrix}0&-i\\i&0\end{pmatrix},
+  \quad
+  \hat S_z=\frac{\hbar}{2}
+  \begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+  \]
+  </div>
+
+  <p>These are not three independent classical components. They are non-commuting operators. That non-commutativity is what gives spin dynamics its genuinely quantum character.</p>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">02</span>
+    <div><p class="section-eyebrow">Many spins</p><h2>Hilbert spaces multiply very quickly</h2></div>
+  </div>
+
+  <p>For several spins the total Hilbert space is a tensor product. Two electron spins already give four basis states; adding nuclear spins multiplies the dimension again. For \(N\) spin-\(\tfrac12\) particles,</p>
+
+  <div class="lecture-equation">
+  \[
+  \dim\mathcal H=2^N.
+  \]
+  </div>
+
+  <p>This exponential growth is the basic scaling problem behind large radical-pair and magnetic-resonance simulations. It is also why stochastic trace sampling, sparse representations and carefully chosen propagators become useful.</p>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">03</span>
+    <div><p class="section-eyebrow">Coherent dynamics</p><h2>Start with Larmor precession</h2></div>
+  </div>
+
+  <p>For one approximately isotropic electron spin in a static field, the Zeeman Hamiltonian is enough to generate precession. The frequency is</p>
+
+  <div class="lecture-equation">
+  \[
+  f_\mathrm L=\frac{g\mu_B B_0}{h}.
+  \]
+  </div>
+
+  <div class="interactive-card" id="larmor-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Electron-spin Larmor precession</h3></div>
+      <button id="larmor-toggle" class="demo-toggle" type="button">Pause</button>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>compare \(50~\mu\mathrm T\), \(1~\mathrm{mT}\) and \(10~\mathrm{mT}\). The physical frequency scales linearly with the field.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="larmor-b"><span class="control-name">Magnetic field \(B_0\)</span><output id="larmor-b-out">1.00 mT</output></label>
+        <input id="larmor-b" type="range" min="0.05" max="10" step="0.05" value="1">
+        <label for="larmor-g"><span class="control-name"><em>g</em>-factor</span><output id="larmor-g-out">2.0023</output></label>
+        <input id="larmor-g" type="range" min="1.8" max="2.2" step="0.0001" value="2.0023">
+
+        <div class="demo-presets">
+          <button type="button" data-larmor-b="0.05">50 μT</button>
+          <button type="button" data-larmor-b="1">1 mT</button>
+          <button type="button" data-larmor-b="10">10 mT</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Larmor frequency <strong id="larmor-frequency">28.02 MHz</strong></span>
+          <span>Precession period <strong id="larmor-period">35.69 ns</strong></span>
+        </div>
+        <p id="larmor-explanation" class="demo-explanation">At 1 mT an electron with \(g\approx2\) precesses at roughly 28 MHz.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="larmor-svg" class="lecture-svg" viewBox="0 0 520 300" role="img" aria-label="Schematic Larmor precession">
+          <line x1="260" y1="246" x2="260" y2="39" class="field-axis"/>
+          <path d="M260 25 L251 45 L269 45 Z" class="field-arrow"/>
+          <text x="276" y="46" class="svg-label">B₀</text>
+          <ellipse cx="260" cy="92" rx="82" ry="24" class="precession-orbit" fill="none"/>
+          <line x1="260" y1="230" x2="178" y2="92" class="cone-edge"/>
+          <line x1="260" y1="230" x2="342" y2="92" class="cone-edge"/>
+          <line id="spin-projection" x1="260" y1="92" x2="342" y2="92" class="spin-projection"/>
+          <circle id="spin-tip" cx="342" cy="92" r="5.5" class="spin-tip"/>
+          <line id="spin-vector" x1="260" y1="230" x2="342" y2="92" class="spin-vector-demo"/>
+          <path id="spin-arrowhead" d="M342 92 L327 99 L336 108 Z" class="spin-arrow-demo"/>
+          <circle cx="260" cy="230" r="7" class="spin-origin"/>
+          <text x="260" y="278" text-anchor="middle" class="svg-caption">schematic precession cone</text>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">The numerical frequency is physical; the visual rotation rate is slowed down enormously so that you can see it.</p>
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">04</span>
+    <div><p class="section-eyebrow">Density matrices</p><h2>Populations and coherences in one object</h2></div>
+  </div>
+
+  <p>A state vector is enough for a pure closed state. For ensembles and open systems, the density operator is more convenient:</p>
+
+  <div class="lecture-equation-grid">
+    <div class="lecture-equation compact">
+    \[
+    \rho=\lvert\psi\rangle\langle\psi\rvert
+    \]
+    </div>
+    <div class="lecture-equation compact">
+    \[
+    \langle O\rangle=\mathrm{Tr}(\rho\hat O).
+    \]
+    </div>
+  </div>
+
+  <p>Diagonal elements of \(\rho\) encode populations in the chosen basis; off-diagonal elements encode coherences. The closed-system equation of motion is the Liouville–von Neumann equation</p>
+
+  <div class="lecture-equation">
+  \[
+  \dot\rho=-\frac{i}{\hbar}[\hat H,\rho].
+  \]
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05</span>
+    <div><p class="section-eyebrow">Relaxation</p><h2>\(T_1\), \(T_2\) and pure dephasing</h2></div>
+  </div>
+
+  <p>Real spin systems are not isolated. Longitudinal relaxation changes populations, while transverse relaxation destroys phase coherence. A useful relation is</p>
+
+  <div class="lecture-equation">
+  \[
+  \frac{1}{T_2}=\frac{1}{2T_1}+\frac{1}{T_\phi}.
+  \]
+  </div>
+
+  <p>\(T_\phi\) is the pure-dephasing time. So \(T_2\) is not simply “the same relaxation as \(T_1\)”. Even if pure dephasing vanished completely, the largest possible value would be \(T_2=2T_1\).</p>
+
+  <div class="interactive-card" id="relaxation-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Bloch-type relaxation explorer</h3></div>
+      <span class="interactive-model-note">\(T_1\), \(T_\phi\) → \(T_2\)</span>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>make \(T_\phi\) very long first. Then shorten it: \(T_1\) hardly changes, while transverse coherence disappears much faster.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="relax-t1"><span class="control-name">Longitudinal time \(T_1\)</span><output id="relax-t1-out">2.00 μs</output></label>
+        <input id="relax-t1" type="range" min="0.2" max="8" step="0.1" value="2">
+
+        <label for="relax-tphi"><span class="control-name">Pure dephasing \(T_\phi\)</span><output id="relax-tphi-out">3.00 μs</output></label>
+        <input id="relax-tphi" type="range" min="0.2" max="20" step="0.1" value="3">
+
+        <div class="demo-presets">
+          <button type="button" data-relax-t1="2" data-relax-tphi="20">little pure dephasing</button>
+          <button type="button" data-relax-t1="2" data-relax-tphi="3">moderate</button>
+          <button type="button" data-relax-t1="2" data-relax-tphi="0.5">strong dephasing</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Derived \(T_2\) <strong id="relax-t2-out">1.71 μs</strong></span>
+          <span>Displayed time <strong id="relax-window-out">8.00 μs</strong></span>
+        </div>
+        <p id="relax-explanation" class="demo-explanation">Population recovery and coherence decay occur on different timescales.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="relaxation-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Longitudinal recovery and transverse coherence decay">
+          <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
+          <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
+          <line x1="58" y1="141.5" x2="530" y2="141.5" class="plot-grid"/>
+          <text x="480" y="278" class="svg-caption">time / μs</text>
+          <text x="12" y="38" class="svg-caption">normalized signal</text>
+          <path id="relax-mz-path" class="population-line lower-line" fill="none" d="M58.00 248.00 L59.48 245.35 L60.95 242.74 L62.42 240.16 L63.90 237.61 L65.38 235.09 L66.85 232.61 L68.33 230.15 L69.80 227.73 L71.28 225.34 L72.75 222.97 L74.22 220.64 L75.70 218.33 L77.17 216.05 L78.65 213.80 L80.13 211.58 L81.60 209.39 L83.08 207.22 L84.55 205.08 L86.03 202.97 L87.50 200.88 L88.97 198.82 L90.45 196.79 L91.92 194.78 L93.40 192.79 L94.88 190.83 L96.35 188.90 L97.83 186.99 L99.30 185.10 L100.78 183.23 L102.25 181.39 L103.72 179.57 L105.20 177.78 L106.67 176.00 L108.15 174.25 L109.63 172.52 L111.10 170.81 L112.58 169.13 L114.05 167.46 L115.53 165.82 L117.00 164.19 L118.47 162.59 L119.95 161.00 L121.42 159.44 L122.90 157.89 L124.38 156.36 L125.85 154.86 L127.33 153.37 L128.80 151.90 L130.28 150.44 L131.75 149.01 L133.22 147.59 L134.70 146.20 L136.18 144.81 L137.65 143.45 L139.13 142.10 L140.60 140.77 L142.07 139.46 L143.55 138.16 L145.03 136.88 L146.50 135.61 L147.97 134.36 L149.45 133.13 L150.93 131.91 L152.40 130.71 L153.88 129.52 L155.35 128.34 L156.82 127.18 L158.30 126.04 L159.78 124.91 L161.25 123.79 L162.72 122.69 L164.20 121.60 L165.68 120.52 L167.15 119.46 L168.63 118.41 L170.10 117.38 L171.57 116.35 L173.05 115.34 L174.53 114.34 L176.00 113.36 L177.47 112.38 L178.95 111.42 L180.43 110.47 L181.90 109.54 L183.38 108.61 L184.85 107.70 L186.32 106.79 L187.80 105.90 L189.28 105.02 L190.75 104.15 L192.22 103.29 L193.70 102.44 L195.18 101.61 L196.65 100.78 L198.13 99.96 L199.60 99.15 L201.07 98.36 L202.55 97.57 L204.03 96.79 L205.50 96.03 L206.97 95.27 L208.45 94.52 L209.93 93.78 L211.40 93.05 L212.88 92.33 L214.35 91.62 L215.82 90.91 L217.30 90.22 L218.78 89.53 L220.25 88.85 L221.72 88.19 L223.20 87.53 L224.68 86.87 L226.15 86.23 L227.63 85.59 L229.10 84.96 L230.57 84.34 L232.05 83.73 L233.53 83.12 L235.00 82.53 L236.47 81.94 L237.95 81.35 L239.43 80.78 L240.90 80.21 L242.38 79.65 L243.85 79.09 L245.32 78.54 L246.80 78.00 L248.28 77.47 L249.75 76.94 L251.22 76.42 L252.70 75.91 L254.18 75.40 L255.65 74.90 L257.13 74.40 L258.60 73.91 L260.07 73.43 L261.55 72.95 L263.02 72.48 L264.50 72.01 L265.98 71.55 L267.45 71.10 L268.93 70.65 L270.40 70.21 L271.88 69.77 L273.35 69.34 L274.82 68.91 L276.30 68.49 L277.77 68.08 L279.25 67.66 L280.73 67.26 L282.20 66.86 L283.68 66.46 L285.15 66.07 L286.63 65.69 L288.10 65.30 L289.57 64.93 L291.05 64.56 L292.52 64.19 L294.00 63.83 L295.48 63.47 L296.95 63.11 L298.43 62.77 L299.90 62.42 L301.38 62.08 L302.85 61.74 L304.32 61.41 L305.80 61.08 L307.27 60.76 L308.75 60.44 L310.23 60.12 L311.70 59.81 L313.18 59.50 L314.65 59.20 L316.13 58.90 L317.60 58.60 L319.07 58.31 L320.55 58.02 L322.02 57.73 L323.50 57.45 L324.98 57.17 L326.45 56.90 L327.93 56.62 L329.40 56.36 L330.88 56.09 L332.35 55.83 L333.82 55.57 L335.30 55.31 L336.77 55.06 L338.25 54.81 L339.73 54.57 L341.20 54.32 L342.68 54.08 L344.15 53.85 L345.63 53.61 L347.10 53.38 L348.57 53.15 L350.05 52.93 L351.52 52.70 L353.00 52.48 L354.48 52.27 L355.95 52.05 L357.43 51.84 L358.90 51.63 L360.38 51.42 L361.85 51.22 L363.32 51.02 L364.80 50.82 L366.27 50.62 L367.75 50.43 L369.23 50.24 L370.70 50.05 L372.18 49.86 L373.65 49.68 L375.13 49.49 L376.60 49.31 L378.07 49.14 L379.55 48.96 L381.02 48.79 L382.50 48.62 L383.98 48.45 L385.45 48.28 L386.93 48.12 L388.40 47.95 L389.88 47.79 L391.35 47.63 L392.82 47.48 L394.30 47.32 L395.77 47.17 L397.25 47.02 L398.73 46.87 L400.20 46.72 L401.68 46.57 L403.15 46.43 L404.63 46.29 L406.10 46.15 L407.57 46.01 L409.05 45.87 L410.52 45.74 L412.00 45.60 L413.48 45.47 L414.95 45.34 L416.43 45.21 L417.90 45.09 L419.38 44.96 L420.85 44.84 L422.32 44.72 L423.80 44.60 L425.27 44.48 L426.75 44.36 L428.23 44.24 L429.70 44.13 L431.18 44.01 L432.65 43.90 L434.13 43.79 L435.60 43.68 L437.07 43.57 L438.55 43.47 L440.02 43.36 L441.50 43.26 L442.98 43.16 L444.45 43.05 L445.93 42.95 L447.40 42.86 L448.88 42.76 L450.35 42.66 L451.82 42.57 L453.30 42.47 L454.77 42.38 L456.25 42.29 L457.73 42.20 L459.20 42.11 L460.68 42.02 L462.15 41.93 L463.63 41.85 L465.10 41.76 L466.57 41.68 L468.05 41.59 L469.52 41.51 L471.00 41.43 L472.48 41.35 L473.95 41.27 L475.43 41.20 L476.90 41.12 L478.38 41.04 L479.85 40.97 L481.32 40.89 L482.80 40.82 L484.27 40.75 L485.75 40.68 L487.23 40.61 L488.70 40.54 L490.18 40.47 L491.65 40.40 L493.13 40.33 L494.60 40.27 L496.07 40.20 L497.55 40.14 L499.02 40.07 L500.50 40.01 L501.98 39.95 L503.45 39.89 L504.93 39.82 L506.40 39.76 L507.88 39.71 L509.35 39.65 L510.82 39.59 L512.30 39.53 L513.77 39.48 L515.25 39.42 L516.73 39.37 L518.20 39.31 L519.67 39.26 L521.15 39.21 L522.63 39.15 L524.10 39.10 L525.58 39.05 L527.05 39.00 L528.52 38.95 L530.00 38.90"/>
+          <path id="relax-mxy-path" class="population-line triplet-line" fill="none" d="M58.00 35.00 L59.48 38.08 L60.95 41.12 L62.42 44.12 L63.90 47.07 L65.38 49.98 L66.85 52.85 L68.33 55.67 L69.80 58.46 L71.28 61.20 L72.75 63.90 L74.22 66.57 L75.70 69.20 L77.17 71.78 L78.65 74.34 L80.13 76.85 L81.60 79.33 L83.08 81.77 L84.55 84.18 L86.03 86.55 L87.50 88.89 L88.97 91.19 L90.45 93.46 L91.92 95.70 L93.40 97.90 L94.88 100.07 L96.35 102.22 L97.83 104.33 L99.30 106.41 L100.78 108.46 L102.25 110.48 L103.72 112.47 L105.20 114.43 L106.67 116.36 L108.15 118.27 L109.63 120.15 L111.10 122.00 L112.58 123.82 L114.05 125.62 L115.53 127.39 L117.00 129.14 L118.47 130.86 L119.95 132.56 L121.42 134.23 L122.90 135.87 L124.38 137.50 L125.85 139.10 L127.33 140.67 L128.80 142.23 L130.28 143.76 L131.75 145.27 L133.22 146.76 L134.70 148.22 L136.18 149.67 L137.65 151.09 L139.13 152.49 L140.60 153.87 L142.07 155.24 L143.55 156.58 L145.03 157.90 L146.50 159.21 L147.97 160.49 L149.45 161.76 L150.93 163.01 L152.40 164.24 L153.88 165.45 L155.35 166.65 L156.82 167.83 L158.30 168.99 L159.78 170.13 L161.25 171.26 L162.72 172.37 L164.20 173.46 L165.68 174.54 L167.15 175.61 L168.63 176.65 L170.10 177.69 L171.57 178.70 L173.05 179.71 L174.53 180.70 L176.00 181.67 L177.47 182.63 L178.95 183.58 L180.43 184.51 L181.90 185.43 L183.38 186.34 L184.85 187.23 L186.32 188.11 L187.80 188.98 L189.28 189.83 L190.75 190.67 L192.22 191.50 L193.70 192.32 L195.18 193.13 L196.65 193.92 L198.13 194.70 L199.60 195.47 L201.07 196.24 L202.55 196.98 L204.03 197.72 L205.50 198.45 L206.97 199.17 L208.45 199.88 L209.93 200.57 L211.40 201.26 L212.88 201.94 L214.35 202.60 L215.82 203.26 L217.30 203.91 L218.78 204.55 L220.25 205.17 L221.72 205.79 L223.20 206.41 L224.68 207.01 L226.15 207.60 L227.63 208.19 L229.10 208.76 L230.57 209.33 L232.05 209.89 L233.53 210.44 L235.00 210.99 L236.47 211.52 L237.95 212.05 L239.43 212.57 L240.90 213.08 L242.38 213.59 L243.85 214.09 L245.32 214.58 L246.80 215.06 L248.28 215.54 L249.75 216.01 L251.22 216.47 L252.70 216.93 L254.18 217.38 L255.65 217.82 L257.13 218.26 L258.60 218.69 L260.07 219.11 L261.55 219.53 L263.02 219.94 L264.50 220.35 L265.98 220.75 L267.45 221.14 L268.93 221.53 L270.40 221.92 L271.88 222.29 L273.35 222.67 L274.82 223.03 L276.30 223.39 L277.77 223.75 L279.25 224.10 L280.73 224.45 L282.20 224.79 L283.68 225.13 L285.15 225.46 L286.63 225.78 L288.10 226.10 L289.57 226.42 L291.05 226.73 L292.52 227.04 L294.00 227.34 L295.48 227.64 L296.95 227.94 L298.43 228.23 L299.90 228.52 L301.38 228.80 L302.85 229.08 L304.32 229.35 L305.80 229.62 L307.27 229.89 L308.75 230.15 L310.23 230.41 L311.70 230.66 L313.18 230.91 L314.65 231.16 L316.13 231.40 L317.60 231.64 L319.07 231.88 L320.55 232.11 L322.02 232.34 L323.50 232.57 L324.98 232.79 L326.45 233.01 L327.93 233.23 L329.40 233.44 L330.88 233.66 L332.35 233.86 L333.82 234.07 L335.30 234.27 L336.77 234.47 L338.25 234.66 L339.73 234.86 L341.20 235.05 L342.68 235.23 L344.15 235.42 L345.63 235.60 L347.10 235.78 L348.57 235.96 L350.05 236.13 L351.52 236.30 L353.00 236.47 L354.48 236.64 L355.95 236.81 L357.43 236.97 L358.90 237.13 L360.38 237.28 L361.85 237.44 L363.32 237.59 L364.80 237.74 L366.27 237.89 L367.75 238.04 L369.23 238.18 L370.70 238.32 L372.18 238.46 L373.65 238.60 L375.13 238.74 L376.60 238.87 L378.07 239.00 L379.55 239.13 L381.02 239.26 L382.50 239.39 L383.98 239.51 L385.45 239.64 L386.93 239.76 L388.40 239.88 L389.88 240.00 L391.35 240.11 L392.82 240.23 L394.30 240.34 L395.77 240.45 L397.25 240.56 L398.73 240.67 L400.20 240.77 L401.68 240.88 L403.15 240.98 L404.63 241.08 L406.10 241.18 L407.57 241.28 L409.05 241.38 L410.52 241.47 L412.00 241.57 L413.48 241.66 L414.95 241.75 L416.43 241.84 L417.90 241.93 L419.38 242.02 L420.85 242.11 L422.32 242.19 L423.80 242.28 L425.27 242.36 L426.75 242.44 L428.23 242.52 L429.70 242.60 L431.18 242.68 L432.65 242.76 L434.13 242.83 L435.60 242.91 L437.07 242.98 L438.55 243.05 L440.02 243.12 L441.50 243.20 L442.98 243.26 L444.45 243.33 L445.93 243.40 L447.40 243.47 L448.88 243.53 L450.35 243.60 L451.82 243.66 L453.30 243.72 L454.77 243.79 L456.25 243.85 L457.73 243.91 L459.20 243.97 L460.68 244.02 L462.15 244.08 L463.63 244.14 L465.10 244.20 L466.57 244.25 L468.05 244.30 L469.52 244.36 L471.00 244.41 L472.48 244.46 L473.95 244.51 L475.43 244.56 L476.90 244.61 L478.38 244.66 L479.85 244.71 L481.32 244.76 L482.80 244.81 L484.27 244.85 L485.75 244.90 L487.23 244.94 L488.70 244.99 L490.18 245.03 L491.65 245.07 L493.13 245.12 L494.60 245.16 L496.07 245.20 L497.55 245.24 L499.02 245.28 L500.50 245.32 L501.98 245.36 L503.45 245.40 L504.93 245.43 L506.40 245.47 L507.88 245.51 L509.35 245.54 L510.82 245.58 L512.30 245.61 L513.77 245.65 L515.25 245.68 L516.73 245.72 L518.20 245.75 L519.67 245.78 L521.15 245.81 L522.63 245.85 L524.10 245.88 L525.58 245.91 L527.05 245.94 L528.52 245.97 L530.00 246.00"/>
+          <g class="plot-legend">
+            <line x1="337" y1="52" x2="365" y2="52" class="population-line lower-line"/>
+            <text x="373" y="56" class="svg-label">M<tspan baseline-shift="sub" font-size="8">z</tspan></text>
+            <line x1="430" y1="52" x2="458" y2="52" class="population-line triplet-line"/>
+            <text x="466" y="56" class="svg-label">|M<tspan baseline-shift="sub" font-size="8">xy</tspan>|</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This is the phenomenological Bloch picture: \(M_z(t)=1-e^{-t/T_1}\) after saturation and \(|M_{xy}(t)|=e^{-t/T_2}\). Microscopic relaxation theory asks where those rates come from.</p>
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">06</span>
+    <div><p class="section-eyebrow">Open quantum systems</p><h2>Where do relaxation rates come from?</h2></div>
+  </div>
+
+  <p>At the microscopic level, relaxation comes from fluctuating interactions. Molecular rotation, vibrations, conformational motion and solvent dynamics modulate the spin Hamiltonian. Different theories make different assumptions about those fluctuations.</p>
+
+  <div class="method-ladder">
+    <div><span>Bloch–Redfield–Wangsness</span><p>A perturbative, usually Markovian treatment that connects correlation functions and spectral densities to relaxation.</p></div>
+    <div><span>Nakajima–Zwanzig</span><p>A projection-operator framework that retains memory through a time-nonlocal kernel and is useful when Markovian assumptions become questionable.</p></div>
+    <div><span>Stochastic Schrödinger propagation</span><p>Represents open-system evolution through ensembles of stochastic state-vector trajectories rather than propagating the full density matrix directly.</p></div>
+    <div><span>Explicit time-dependent Hamiltonians</span><p>Use \(H(t)\) obtained from molecular motion when the fluctuating interactions themselves are available along a trajectory.</p></div>
+  </div>
+
+  <aside class="teacher-note"><strong>The practical question is not “which theory is most advanced?”</strong><span>It is: which assumptions are justified for the correlation times, coupling strengths and observable of the system you actually have?</span></aside>
+</section>
+
+<section class="lecture-section module-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index">07</span>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+  </div>
+
+  <div class="lecture-reading-grid">
+    <article><span>Relaxation theory</span><h3>Modeling spin relaxation in complex radical systems using MolSpin</h3><p>Open-system density-matrix dynamics for complex radical systems.</p><a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener">J. Comput. Chem. (2023) →</a></article>
+    <article><span>Stochastic propagation</span><h3>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</h3><p>Stochastic state-vector propagation for large radical-pair spin systems.</p><a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener">J. Chem. Theory Comput. (2024) →</a></article>
+    <article><span>Multiscale dynamics</span><h3>Multiscale modeling approaches in biomolecular physics</h3><p>Connecting atomistic motion, electronic structure and quantum observables.</p><a href="https://doi.org/10.1080/23746149.2026.2660655" target="_blank" rel="noopener">Advances in Physics: X (2026) →</a></article>
+  </div>
+</section>
+
+{% include lecture-library-nav.html %}
+</div>
+
+<script src="{{ site.url }}/assets/js/lecture-interactive.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-relaxation.js" defer></script>
