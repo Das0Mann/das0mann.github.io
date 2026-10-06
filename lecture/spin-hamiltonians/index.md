@@ -13,6 +13,18 @@ permalink: /lecture/spin-hamiltonians/
   <h2>The spin Hamiltonian is the bridge</h2>
   <p>Electronic-structure theory gives us molecular magnetic parameters. Spin dynamics needs those parameters arranged into an effective Hamiltonian. This module is about understanding what each term means physically, what assumptions hide inside it, and which conventions you must state before a number becomes meaningful.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Read a spin Hamiltonian term by term and state the associated units and sign convention.</p></div>
+    <div><span>02</span><p>Distinguish Zeeman, hyperfine, exchange, dipolar, quadrupole and zero-field-splitting physics.</p></div>
+    <div><span>03</span><p>Recognize when tensor orientation and the molecular-to-laboratory frame are essential.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -275,6 +287,28 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Spectroscopic parameters</span>
+      <h3>Quantum chemical calculations of spectroscopic properties of metalloproteins and model compounds: EPR and Mössbauer properties</h3>
+      <p>F. Neese · Current Opinion in Chemical Biology (2003). A concise bridge between electronic structure and experimentally fitted spin-Hamiltonian parameters.</p>
+      <a href="https://doi.org/10.1016/S1367-5931(02)00006-6" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>DFT & magnetic properties</span>
+      <h3>Prediction of molecular properties and molecular spectroscopy with density functional theory: From fundamental theory to exchange-coupling</h3>
+      <p>F. Neese · Coordination Chemistry Reviews (2009). A broader review of magnetic response, spectroscopy and exchange coupling from DFT.</p>
+      <a href="https://doi.org/10.1016/j.ccr.2008.05.014" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
