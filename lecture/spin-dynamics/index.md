@@ -119,6 +119,18 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
+  <p>For a closed spin system this evolution is <em>unitary</em>: probability is conserved and the Hamiltonian changes relative phases rather than irreversibly destroying information. In density-matrix form,</p>
+
+  <div class="lecture-equation">
+  \[
+  \dot\rho
+  =
+  -\frac{i}{\hbar}[\hat H,\rho].
+  \]
+  </div>
+
+  <p>The commutator converts energy splittings into phase evolution. A closed Hamiltonian can rotate or redistribute quantum amplitudes, but it cannot by itself generate irreversible \(T_1\) or \(T_2\) relaxation; that requires coupling to additional degrees of freedom.</p>
+
   <div class="interactive-card" id="larmor-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Electron-spin Larmor precession</h3></div>
@@ -375,6 +387,16 @@ permalink: /lecture/spin-dynamics/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark theory</span>
+  <h3>Redfield theory made molecular fluctuations into spin-relaxation rates</h3>
+  <p>Redfield's density-matrix treatment established the central idea that weak, rapidly fluctuating interactions can be reduced to an effective relaxation superoperator. It is the historical bridge between microscopic motion and T₁/T₂-type dynamics.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">A. G. Redfield · IBM Journal of Research and Development 1, 19–31 (1957) →</a>
+    <span>Molecular Motion later supplies the correlation functions and spectral densities that enter this reduction.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

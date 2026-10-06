@@ -115,6 +115,11 @@ permalink: /lecture/open-systems/
 
   <p>The dissipator is constructed so that the dynamics remains trace preserving and completely positive. The operators \(L_k\) encode specific channels such as relaxation or dephasing.</p>
 
+  <details class="lecture-details">
+    <summary>Why does “complete positivity” matter?</summary>
+    <p>A reduced density matrix must remain a valid quantum state: probabilities cannot become negative. Complete positivity is the stronger requirement that the map remains physical even when the system is entangled with an untouched auxiliary system. The Lindblad/GKSL structure guarantees this for a Markovian semigroup; an approximate Redfield generator does not automatically have the same guarantee outside its regime of validity.</p>
+  </details>
+
   <aside class="teacher-note">
     <strong>But “Lindblad” is not a microscopic explanation.</strong>
     <span>It tells you a mathematically safe form of a Markovian generator. You still need physics to determine which operators and rates are appropriate.</span>
@@ -358,6 +363,16 @@ permalink: /lecture/open-systems/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark open systems</span>
+  <h3>Non-Markovianity is about retained dynamical memory, not simply 'complicated decay'</h3>
+  <p>The Breuer–Laine–Piilo–Vacchini colloquium surveys modern ways of characterizing memory and information backflow in open quantum systems. It provides a useful conceptual complement to the Nakajima–Zwanzig kernel used here.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1103/RevModPhys.88.021002" target="_blank" rel="noopener">H.-P. Breuer et al. · Reviews of Modern Physics 88, 021002 (2016) →</a>
+    <span>The practical question is whether the environmental memory time is short relative to the spin dynamics you want to predict.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

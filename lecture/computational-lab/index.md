@@ -264,6 +264,30 @@ permalink: /lecture/computational-lab/
   </div>
 
   <p>Plotting a result as a function of \(M\), \(\Delta t\), orientation count or trajectory number is much more informative than reporting one calculation and assuming it is converged.</p>
+
+  <p>For stochastic sampling, convergence should also carry an uncertainty estimate whenever possible. If independent samples give values \(x_m\), a practical standard error is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathrm{SE}(\bar x)
+  =
+  \frac{s_x}{\sqrt{M}},
+  \]
+  </div>
+
+  <p>where \(s_x\) is the sample standard deviation. Reporting \(M\) without the variance can be misleading: twelve exceptionally consistent samples can be more informative than one hundred highly variable ones, while correlated samples reduce the effective sample size.</p>
+
+  <p>For stochastic sampling, convergence should also carry an uncertainty estimate whenever possible. If independent samples give values \(x_m\), a practical standard error is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathrm{SE}(\bar x)
+  =
+  \frac{s_x}{\sqrt{M}},
+  \]
+  </div>
+
+  <p>where \(s_x\) is the sample standard deviation. Reporting \(M\) without the variance can be misleading: twelve exceptionally consistent samples can be more informative than one hundred highly variable ones, while correlated samples reduce the effective sample size.</p>
 </section>
 
 <section class="lecture-section">
@@ -276,6 +300,16 @@ permalink: /lecture/computational-lab/
 
   <p>For released syntax and examples, use the <a href="{{ site.url }}/repositories/">Software page</a> and the public MolSpin documentation rather than copying teaching pseudocode from this lecture.</p>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark computation</span>
+  <h3>Large spin systems are usually solved by exploiting structure, not by storing every matrix element</h3>
+  <p>Spinach is a useful complementary example of large-scale spin simulation based on sparse/restricted representations. It illustrates the general principle behind this module: the tractable object is often a compressed state space or an operator action rather than a dense Liouvillian.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1016/j.jmr.2010.11.008" target="_blank" rel="noopener">H. J. Hogben et al. · Journal of Magnetic Resonance 208, 179–194 (2011) →</a>
+    <span>The same scaling logic motivates state-vector and stochastic strategies in MolSpin.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

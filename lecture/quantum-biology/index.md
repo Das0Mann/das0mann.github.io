@@ -42,6 +42,8 @@ permalink: /lecture/quantum-biology/
     <div><strong>5. Readout</strong><span>How is the quantum state converted into a chemical, spectroscopic or physiological observable?</span></div>
     <div><strong>6. Discriminating experiment</strong><span>What measurement would distinguish this mechanism from a classical alternative?</span></div>
   </div>
+
+  <p>A seventh practical question sits behind all six: <strong>is the signal larger than the relevant biological and experimental noise?</strong> A mechanism can be physically allowed yet functionally irrelevant if the field-induced change is washed out by conformational heterogeneity, chemical background reactions or downstream signalling noise.</p>
 </section>
 
 <section class="lecture-section">
@@ -316,6 +318,16 @@ permalink: /lecture/quantum-biology/
 
   <p>The same modelling discipline applies: identify the radical state, quantify the spin Hamiltonian, include relaxation and reaction kinetics, and calculate the actual observable rather than inferring an effect from one interaction parameter alone.</p>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark experiment</span>
+  <h3>An anisotropic radical-pair model can respond at geomagnetic field strengths</h3>
+  <p>Maeda and co-workers demonstrated an anisotropic magnetic-field effect in a photochemical radical-pair model system at Earth-strength fields. It does not by itself prove a biological compass, but it experimentally establishes that the underlying spin-chemical scale is physically realistic.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1038/nature06834" target="_blank" rel="noopener">K. Maeda et al. · Nature 453, 387–390 (2008) →</a>
+    <span>The biological problem adds orientation, protein dynamics, relaxation and a downstream signalling/readout chain.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

@@ -5231,3 +5231,146 @@ h3 { font-size: 1.25rem; }
     min-height: 0;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture contextual landmark studies + tunnelling explorer
+   --------------------------------------------------------- */
+.landmark-study {
+  max-width: 900px;
+  margin: 64px 0 12px 59px;
+  padding: 20px 22px 18px;
+  border-top: 1px solid #cbdfe3;
+  border-bottom: 1px solid #cbdfe3;
+  background: linear-gradient(90deg, rgba(245,250,251,.92), rgba(255,255,255,.96));
+}
+
+.landmark-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.landmark-study h3 {
+  max-width: 760px;
+  margin: 0 0 9px;
+  color: var(--navy);
+  font-size: 1.04rem;
+  line-height: 1.42;
+}
+
+.landmark-study > p {
+  max-width: 820px;
+  margin: 0 0 14px !important;
+  color: #536a75 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .83rem !important;
+  line-height: 1.64 !important;
+}
+
+.landmark-footer {
+  display: grid;
+  grid-template-columns: minmax(220px,.9fr) minmax(0,1.1fr);
+  gap: 10px 22px;
+  align-items: start;
+  padding-top: 12px;
+  border-top: 1px solid #dce8ea;
+}
+
+.landmark-footer a {
+  border: 0 !important;
+  color: var(--navy) !important;
+  font-family: "Inter", sans-serif;
+  font-size: .75rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.landmark-footer > span {
+  color: #71858e;
+  font-family: "Inter", sans-serif;
+  font-size: .72rem;
+  line-height: 1.52;
+}
+
+#tunnelling-demo .lower-line {
+  stroke: var(--navy-2);
+}
+
+#tunnelling-demo .upper-point {
+  fill: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .landmark-study {
+    margin-left: 0;
+  }
+
+  .landmark-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .landmark-study {
+    margin-top: 52px;
+    padding: 17px 14px 15px;
+  }
+
+  .landmark-study h3 {
+    font-size: .98rem;
+  }
+
+  .landmark-study > p {
+    font-size: .79rem !important;
+  }
+}
+
+
+/* Final lecture readability pass */
+.lecture-module .lecture-section-head {
+  max-width: 900px;
+}
+
+.lecture-module .lecture-section > p {
+  max-width: 820px;
+}
+
+.lecture-module .lecture-equation {
+  width: auto;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+.lecture-module .interactive-card {
+  width: auto;
+  max-width: 940px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 620px) {
+  .lecture-module .interactive-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lecture-module .interactive-model-note,
+  .lecture-module .demo-toggle {
+    align-self: flex-start;
+  }
+
+  .lecture-module .interactive-readout span {
+    align-items: flex-start;
+  }
+
+  .lecture-module .interactive-readout strong {
+    max-width: 48%;
+    white-space: normal;
+    text-align: right;
+  }
+}

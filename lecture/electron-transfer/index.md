@@ -331,6 +331,66 @@ permalink: /lecture/electron-transfer/
 
   <p>The decay constant \(\beta\) is not universal: it depends on the intervening medium, orbital alignment and whether covalent bonds, hydrogen bonds or through-space contacts mediate the coupling. Because the nonadiabatic rate scales as \(|V|^2\), small conformational changes can therefore generate large rate changes even when \(\lambda\) and \(\Delta G^\circ\) barely move.</p>
 
+  <div class="interactive-card" id="tunnelling-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Distance sensitivity of electronic coupling</h3></div>
+      <span class="interactive-model-note">relative tunnelling model</span>
+    </div>
+
+    <div class="lecture-equation compact">
+    \[
+    \frac{V(R)}{V_0}=e^{-\beta\Delta R},
+    \qquad
+    \frac{k(R)}{k_0}\approx e^{-2\beta\Delta R}.
+    \]
+    </div>
+
+    <div class="demo-prompt">
+      <strong>Try this:</strong>
+      <span>increase the donor–acceptor separation by only a few ångström. The coupling falls exponentially, and the nonadiabatic rate falls twice as fast on a logarithmic scale because \(k\propto V^2\).</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="tunnel-dr"><span class="control-name">Additional separation \(\Delta R\)</span><output id="tunnel-dr-out">2.0 Å</output></label>
+        <input id="tunnel-dr" type="range" min="0" max="8" step="0.1" value="2">
+
+        <label for="tunnel-beta"><span class="control-name">Decay constant \(\beta\)</span><output id="tunnel-beta-out">1.0 Å⁻¹</output></label>
+        <input id="tunnel-beta" type="range" min="0.3" max="2.0" step="0.05" value="1">
+
+        <div class="demo-presets">
+          <button type="button" data-tunnel-beta="0.5">weak decay</button>
+          <button type="button" data-tunnel-beta="1.0">typical scale</button>
+          <button type="button" data-tunnel-beta="1.6">strong decay</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Coupling ratio \(V/V_0\) <strong id="tunnel-v-out">0.135</strong></span>
+          <span>Rate ratio \(k/k_0\) <strong id="tunnel-k-out">0.0183</strong></span>
+          <span>Rate suppression <strong id="tunnel-suppression-out">54.6×</strong></span>
+        </div>
+
+        <p id="tunnel-explanation" class="demo-explanation">A 2 Å increase already suppresses the nonadiabatic rate by more than one order of magnitude at this decay constant.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="tunnel-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Relative electron-transfer rate versus additional donor acceptor separation">
+          <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
+          <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
+          <line x1="58" y1="141.5" x2="530" y2="141.5" class="plot-grid"/>
+          <text x="445" y="278" class="svg-caption">additional separation / Å</text>
+          <text x="12" y="38" class="svg-caption">log₁₀(k/k₀)</text>
+          <path id="tunnel-rate-path" class="population-line lower-line" fill="none" d="M58.00 35.00 L59.97 35.44 L61.93 35.88 L63.90 36.32 L65.87 36.76 L67.83 37.20 L69.80 37.64 L71.77 38.08 L73.73 38.52 L75.70 38.96 L77.67 39.40 L79.63 39.85 L81.60 40.29 L83.57 40.73 L85.53 41.17 L87.50 41.61 L89.47 42.05 L91.43 42.49 L93.40 42.93 L95.37 43.37 L97.33 43.81 L99.30 44.25 L101.27 44.69 L103.23 45.13 L105.20 45.57 L107.17 46.01 L109.13 46.45 L111.10 46.89 L113.07 47.33 L115.03 47.77 L117.00 48.21 L118.97 48.66 L120.93 49.10 L122.90 49.54 L124.87 49.98 L126.83 50.42 L128.80 50.86 L130.77 51.30 L132.73 51.74 L134.70 52.18 L136.67 52.62 L138.63 53.06 L140.60 53.50 L142.57 53.94 L144.53 54.38 L146.50 54.82 L148.47 55.26 L150.43 55.70 L152.40 56.14 L154.37 56.58 L156.33 57.02 L158.30 57.47 L160.27 57.91 L162.23 58.35 L164.20 58.79 L166.17 59.23 L168.13 59.67 L170.10 60.11 L172.07 60.55 L174.03 60.99 L176.00 61.43 L177.97 61.87 L179.93 62.31 L181.90 62.75 L183.87 63.19 L185.83 63.63 L187.80 64.07 L189.77 64.51 L191.73 64.95 L193.70 65.39 L195.67 65.83 L197.63 66.28 L199.60 66.72 L201.57 67.16 L203.53 67.60 L205.50 68.04 L207.47 68.48 L209.43 68.92 L211.40 69.36 L213.37 69.80 L215.33 70.24 L217.30 70.68 L219.27 71.12 L221.23 71.56 L223.20 72.00 L225.17 72.44 L227.13 72.88 L229.10 73.32 L231.07 73.76 L233.03 74.20 L235.00 74.64 L236.97 75.09 L238.93 75.53 L240.90 75.97 L242.87 76.41 L244.83 76.85 L246.80 77.29 L248.77 77.73 L250.73 78.17 L252.70 78.61 L254.67 79.05 L256.63 79.49 L258.60 79.93 L260.57 80.37 L262.53 80.81 L264.50 81.25 L266.47 81.69 L268.43 82.13 L270.40 82.57 L272.37 83.01 L274.33 83.45 L276.30 83.90 L278.27 84.34 L280.23 84.78 L282.20 85.22 L284.17 85.66 L286.13 86.10 L288.10 86.54 L290.07 86.98 L292.03 87.42 L294.00 87.86 L295.97 88.30 L297.93 88.74 L299.90 89.18 L301.87 89.62 L303.83 90.06 L305.80 90.50 L307.77 90.94 L309.73 91.38 L311.70 91.82 L313.67 92.26 L315.63 92.71 L317.60 93.15 L319.57 93.59 L321.53 94.03 L323.50 94.47 L325.47 94.91 L327.43 95.35 L329.40 95.79 L331.37 96.23 L333.33 96.67 L335.30 97.11 L337.27 97.55 L339.23 97.99 L341.20 98.43 L343.17 98.87 L345.13 99.31 L347.10 99.75 L349.07 100.19 L351.03 100.63 L353.00 101.07 L354.97 101.52 L356.93 101.96 L358.90 102.40 L360.87 102.84 L362.83 103.28 L364.80 103.72 L366.77 104.16 L368.73 104.60 L370.70 105.04 L372.67 105.48 L374.63 105.92 L376.60 106.36 L378.57 106.80 L380.53 107.24 L382.50 107.68 L384.47 108.12 L386.43 108.56 L388.40 109.00 L390.37 109.44 L392.33 109.88 L394.30 110.33 L396.27 110.77 L398.23 111.21 L400.20 111.65 L402.17 112.09 L404.13 112.53 L406.10 112.97 L408.07 113.41 L410.03 113.85 L412.00 114.29 L413.97 114.73 L415.93 115.17 L417.90 115.61 L419.87 116.05 L421.83 116.49 L423.80 116.93 L425.77 117.37 L427.73 117.81 L429.70 118.25 L431.67 118.69 L433.63 119.14 L435.60 119.58 L437.57 120.02 L439.53 120.46 L441.50 120.90 L443.47 121.34 L445.43 121.78 L447.40 122.22 L449.37 122.66 L451.33 123.10 L453.30 123.54 L455.27 123.98 L457.23 124.42 L459.20 124.86 L461.17 125.30 L463.13 125.74 L465.10 126.18 L467.07 126.62 L469.03 127.06 L471.00 127.50 L472.97 127.95 L474.93 128.39 L476.90 128.83 L478.87 129.27 L480.83 129.71 L482.80 130.15 L484.77 130.59 L486.73 131.03 L488.70 131.47 L490.67 131.91 L492.63 132.35 L494.60 132.79 L496.57 133.23 L498.53 133.67 L500.50 134.11 L502.47 134.55 L504.43 134.99 L506.40 135.43 L508.37 135.87 L510.33 136.31 L512.30 136.76 L514.27 137.20 L516.23 137.64 L518.20 138.08 L520.17 138.52 L522.13 138.96 L524.10 139.40 L526.07 139.84 L528.03 140.28 L530.00 140.72"/>
+          <line id="tunnel-marker-line" x1="176.00" y1="35" x2="176.00" y2="248" class="plot-marker"/>
+          <circle id="tunnel-marker" cx="176.00" cy="61.43" r="5" class="plot-point upper-point"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This is a relative tunnelling model, not a full Marcus calculation. It isolates the structural sensitivity of \(V\). Real pathways can show interference, through-bond effects and non-exponential behaviour.</p>
+  </div>
+
+
   <aside class="research-connection">
     <span class="research-connection-label">Conformational gating</span>
     <p>This is one reason an ensemble cannot always be replaced by its average geometry. Different conformers can occupy qualitatively different coupling and reaction regimes.</p>
@@ -401,6 +461,16 @@ permalink: /lecture/electron-transfer/
   </div>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark biological ET</span>
+  <h3>Long-range electron transfer in proteins is a structural tunnelling problem as well as a Marcus problem</h3>
+  <p>Gray and Winkler emphasized that biological electron transfer depends strongly on donor–acceptor separation and the intervening tunnelling pathway. Energetics alone is therefore not enough: molecular structure controls the electronic coupling that multiplies the Marcus rate.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1073/pnas.0408029102" target="_blank" rel="noopener">H. B. Gray & J. R. Winkler · PNAS 102, 3534–3539 (2005) →</a>
+    <span>This is why Electron Transfer connects naturally to Molecular Motion and to radical-pair formation in proteins.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
@@ -446,3 +516,4 @@ permalink: /lecture/electron-transfer/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-marcus.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-tunnelling.js" defer></script>

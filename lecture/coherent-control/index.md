@@ -64,6 +64,8 @@ permalink: /lecture/coherent-control/
   </div>
 
   <p>where \(\Delta\nu\) is the detuning from resonance and \(\nu_1\) is the on-resonance Rabi frequency in cycles per second.</p>
+
+  <p>For a two-level spin this dynamics can be visualized on the <strong>Bloch sphere</strong>. The north and south poles represent the two basis populations; points around the equator represent coherent superpositions with different phases. A resonant pulse rotates the Bloch vector around a transverse axis, while detuning adds a \(z\)-component to the effective rotation axis.</p>
 </section>
 
 <section class="lecture-section">
@@ -322,6 +324,16 @@ permalink: /lecture/coherent-control/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark experiment</span>
+  <h3>The spin echo separates reversible dephasing from irreversible coherence loss</h3>
+  <p>Hahn's 1950 experiment showed that a π pulse can refocus static frequency dispersion and recover a macroscopic signal. That distinction remains fundamental when interpreting T₂, T₂* and modern pulse-EPR measurements.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1103/PhysRev.80.580" target="_blank" rel="noopener">E. L. Hahn · Physical Review 80, 580–594 (1950) →</a>
+    <span>The pulse language here is the active counterpart of the resonance and linewidth physics developed in Magnetic Resonance.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

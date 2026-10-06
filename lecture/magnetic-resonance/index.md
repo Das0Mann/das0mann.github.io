@@ -383,6 +383,11 @@ permalink: /lecture/magnetic-resonance/
     <div><p class="section-eyebrow">Experimental modes</p><h2>“EPR” is not one experiment</h2></div>
   </div>
 
+  <aside class="lecture-note">
+    <strong>What is saturation?</strong>
+    <span>If the microwave drive transfers population faster than longitudinal relaxation restores the thermal population difference, the transition partially saturates and the CW signal no longer increases linearly with microwave power. Saturation therefore depends on \(B_1\), \(T_1\) and \(T_2\), not just on how many spins are present.</span>
+  </aside>
+
   <div class="method-ladder">
     <div><span>CW EPR</span><p>Continuously irradiate while sweeping field or frequency. Excellent for resonance positions, hyperfine patterns and steady-state lineshapes.</p></div>
     <div><span>Time-resolved EPR</span><p>Observe transient spin polarization after a photochemical or kinetic trigger. Particularly useful for radical pairs and triplet states.</p></div>
@@ -423,6 +428,16 @@ permalink: /lecture/magnetic-resonance/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark practice</span>
+  <h3>Modern EPR simulation is already a direct test of the spin Hamiltonian</h3>
+  <p>EasySpin made it routine to calculate realistic EPR and ENDOR spectra from spin-Hamiltonian parameters. It is a useful reminder that g, A, D and linewidth are not abstract fitting symbols: together they predict a complete experimental lineshape.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1016/j.jmr.2005.08.013" target="_blank" rel="noopener">S. Stoll & A. Schweiger · Journal of Magnetic Resonance 178, 42–55 (2006) →</a>
+    <span>Coherent Control extends the same resonance physics from passive detection to deliberate state manipulation.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

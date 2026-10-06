@@ -360,6 +360,16 @@ permalink: /lecture/radical-pairs/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark spin chemistry</span>
+  <h3>Spin-selective chemistry can make weak magnetic interactions chemically visible</h3>
+  <p>The Steiner–Ulrich review consolidated the physical basis of magnetic-field effects in radical reactions: coherent spin evolution changes the probability of entering spin-selective chemical channels, so tiny magnetic energy scales can be amplified into a reaction yield.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1021/cr00091a003" target="_blank" rel="noopener">U. E. Steiner & T. Ulrich · Chemical Reviews 89, 51–147 (1989) →</a>
+    <span>Magnetic Resonance deliberately drives the same spin transitions; Quantum Biology asks whether such chemistry can remain functionally relevant in proteins.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>

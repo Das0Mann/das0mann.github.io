@@ -217,6 +217,11 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 
   <p>where the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate.</p>
+
+  <details class="lecture-details">
+    <summary>Where does El-Sayed's rule fit into this picture?</summary>
+    <p>El-Sayed's rule is a qualitative guideline: ISC tends to be more efficient when the transition changes orbital character, for example between \(^{1}\pi\pi^\ast\) and \(^{3}n\pi^\ast\) states, because SOC can connect the states more strongly. It is not a universal selection rule—state energetics, vibronic coupling and molecular symmetry can overturn the simple expectation.</p>
+  </details>
 </section>
 
 <section class="lecture-section">
@@ -369,6 +374,16 @@ permalink: /lecture/excited-state-photochemistry/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark photophysics</span>
+  <h3>Intersystem crossing is often spin-vibronic—not just a single SOC matrix element</h3>
+  <p>Penfold and co-workers review how spin–orbit coupling, vibronic coupling and state energetics cooperate to control ISC. This is the key reason a large SOC value alone is not a reliable predictor of triplet yield.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1021/acs.chemrev.7b00617" target="_blank" rel="noopener">T. J. Penfold et al. · Chemical Reviews 118, 6975–7025 (2018) →</a>
+    <span>Triplet formation then feeds directly into Radical-Pair Spin Chemistry and Magnetic Resonance.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">

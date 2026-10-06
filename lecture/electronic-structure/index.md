@@ -142,6 +142,11 @@ permalink: /lecture/electronic-structure/
   </div>
 
   <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+
+  <details class="lecture-details">
+    <summary>What does “self-consistent” actually mean in HF or Kohn–Sham DFT?</summary>
+    <p>The orbitals determine an electron density, but that density also determines the effective one-electron potential in which the orbitals are solved. An SCF calculation therefore iterates <strong>orbitals → density → effective potential → new orbitals</strong> until the input and output densities agree within a chosen threshold. Failure to converge is not just a software nuisance: it can signal near-degeneracy, competing electronic states or an unstable reference solution.</p>
+  </details>
 </section>
 
 <section class="lecture-section">
@@ -321,6 +326,16 @@ permalink: /lecture/electronic-structure/
     </div>
   </aside>
 </section>
+
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark theory</span>
+  <h3>Kohn–Sham DFT turned the density theorem into a practical electronic-structure method</h3>
+  <p>Kohn and Sham introduced a non-interacting reference system that reproduces the interacting ground-state density. That construction is why molecular DFT can use orbital-like equations while the formal target remains the electron density.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1103/PhysRev.140.A1133" target="_blank" rel="noopener">W. Kohn & L. J. Sham · Physical Review 140, A1133 (1965) →</a>
+    <span>This is the computational layer from which the magnetic response parameters in Spin Hamiltonians are normally obtained.</span>
+  </div>
+</aside>
 
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
