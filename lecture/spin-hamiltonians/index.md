@@ -63,6 +63,122 @@ permalink: /lecture/spin-hamiltonians/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
+    <span class="lecture-index concept-index">M</span>
+    <div><p class="section-eyebrow">Parameter extraction</p><h2>Every spin parameter is a coefficient obtained by matching electronic physics to a spin operator</h2></div>
+  </div>
+
+  <p>The common structure is</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_\mathrm{eff}
+  =
+  \sum_k p_k\,\hat O_k.
+  \]
+  </div>
+
+  <p>The operator \(\hat O_k\) is chosen from the spin model; the coefficient \(p_k\) is supplied by electronic structure. The parameter can be obtained by a response derivative, an expectation value, an energy difference or an effective-Hamiltonian projection. This distinction matters: \(A^\mathrm{FC}\) is tied directly to spin density at a nucleus, \(g\) is primarily a response/SOC property, and \(J\) is usually inferred from the relative energies of different spin arrangements.</p>
+
+  <div class="method-ladder">
+    <div><span>\(g\)-tensor</span><p>Magnetic-field response of the electronic state, including relativistic/SOC contributions. At SCF level this normally requires coupled-perturbed response equations.</p></div>
+    <div><span>Hyperfine \(\mathbf A_N\)</span><p>Contact spin density plus anisotropic electron–nuclear spin-dipolar and smaller orbital/relativistic terms.</p></div>
+    <div><span>Exchange \(J\)</span><p>Map electronic high-spin/low-spin energies—or projected broken-symmetry energies—onto a chosen Heisenberg convention.</p></div>
+    <div><span>Dipolar / ZFS \(\mathbf D\)</span><p>Project direct spin–spin and SOC-mediated interactions into the selected spin manifold.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>The operator convention is part of the parameter definition.</strong>
+    <span>The same electronic energy splitting can correspond to different numerical \(J\) values if one paper uses \(J\mathbf S_1\!\cdot\!\mathbf S_2\) and another uses \(-2J\mathbf S_1\!\cdot\!\mathbf S_2\). Never copy a number without copying its Hamiltonian convention.</span>
+  </aside>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">02</span>
+    <div><p class="section-eyebrow">Zeeman interaction</p><h2>The external field defines the basic energy scale</h2></div>
+  </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the g-factor is more than a fitting number</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Magnetic moment</strong>
+        <p><b>What it is:</b> Electron spin carries a magnetic moment, so an external field lifts the degeneracy of spin projections.</p>
+        <p><b>What it changes:</b> The energy separation grows approximately linearly with field: this is the Zeeman splitting that sets the Larmor frequency.</p>
+        <p><b>What you observe:</b> The field/frequency position of magnetic-resonance transitions.</p>
+      </article>
+      <article>
+        <strong>\(g\)-factor / \(\mathbf g\)-tensor</strong>
+        <p><b>What it is:</b> The proportionality between magnetic field and electron-spin magnetic energy. Molecular orbital character and SOC make it molecule-specific and often anisotropic.</p>
+        <p><b>What it changes:</b> Different principal \(g\)-values give different precession frequencies for different molecular orientations.</p>
+        <p><b>What you observe:</b> Orientation-dependent EPR resonance fields and \(g\)-strain when conformations have slightly different tensors.</p>
+      </article>
+    </div>
+  </div>
+
+
+  <p>For an electron spin, the Zeeman term is usually written</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_Z^\mathrm e
+  =
+  \mu_B\,\mathbf B\cdot\mathbf g\cdot\hat{\mathbf S}.
+  \]
+  </div>
+
+  <p>If \(\mathbf g=g\mathbf 1\), the interaction is isotropic. In a molecule, spin–orbit coupling and the local electronic structure generally make \(\mathbf g\) a tensor. The resonance therefore depends on how the molecule is oriented relative to the magnetic field.</p>
+
+  <p>At the quantum-chemistry level, \(\mathbf g\) is a response property rather than an orbital label. A widely used decomposition is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathbf g
+  =
+  g_e\mathbf 1
+  +
+  \mathbf g^\mathrm{RMC}
+  +
+  \mathbf g^\mathrm{DSO}
+  +
+  \mathbf g^\mathrm{PSO}.
+  \]
+  </div>
+
+  <p>The paramagnetic spin–orbit term is usually the dominant chemically variable contribution. In a sum-over-states picture its structure is schematically</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta g_{\alpha\beta}^{\mathrm{PSO}}
+  \sim
+  \sum_{n\ne0}
+  \frac{
+  \langle0|\hat L_\alpha|n\rangle
+  \langle n|\hat H_{\mathrm{SO},\beta}|0\rangle
+  }{E_0-E_n}
+  +\mathrm{c.c.}
+  \]
+  </div>
+
+  <p>This makes the origin of \(g\)-anisotropy explicit: orbital angular momentum, SOC and low-lying excited states all enter the effective ground-state Zeeman interaction.</p>
+
+  <p>The nuclear Zeeman interaction is much smaller because the nuclear magneton is much smaller than the Bohr magneton:</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_Z^\mathrm n
+  =
+  -\sum_k g_{n,k}\mu_N\,\mathbf B\cdot\hat{\mathbf I}_k.
+  \]
+  </div>
+
+  <aside class="teacher-note">
+    <strong>A sign convention is hiding here.</strong>
+    <span>Different communities absorb signs into gyromagnetic ratios or Hamiltonian definitions. Always check the convention used by a code or paper before comparing fitted parameters.</span>
+  </aside>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
     <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Reading perturbation theory</p><h2>Nearby electronic states matter because virtual mixing has an energy cost</h2></div>
   </div>
