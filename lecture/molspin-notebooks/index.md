@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Worked MolSpin Notebooks
+title: Worked MolSpin Examples
 excerpt: "Read real public MolSpin input files as scientific models"
 permalink: /lecture/molspin-notebooks/
 ---
@@ -10,7 +10,7 @@ permalink: /lecture/molspin-notebooks/
 
 <header class="module-intro">
   <span class="module-index">Module 13</span>
-  <h2>Read the input as a model, not as configuration noise</h2>
+  <h2>Read the input as a scientific model, not as configuration noise</h2>
   <p>A MolSpin input file encodes a physical problem: which spins exist, how they interact, how the state is prepared, which kinetic processes are present and which numerical task turns that model into an observable. This module walks through real examples from the public MolSpin repository.</p>
 </header>
 <section class="module-learning" aria-label="Learning goals">
