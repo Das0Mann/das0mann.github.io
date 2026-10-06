@@ -424,6 +424,16 @@ permalink: /lecture/magnetic-resonance/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark practice</span>
+  <h3>Modern EPR simulation is already a direct test of the spin Hamiltonian</h3>
+  <p>EasySpin made it routine to calculate realistic EPR and ENDOR spectra from spin-Hamiltonian parameters. It is a useful reminder that g, A, D and linewidth are not abstract fitting symbols: together they predict a complete experimental lineshape.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1016/j.jmr.2005.08.013" target="_blank" rel="noopener">S. Stoll & A. Schweiger · Journal of Magnetic Resonance 178, 42–55 (2006) →</a>
+    <span>Coherent Control extends the same resonance physics from passive detection to deliberate state manipulation.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
