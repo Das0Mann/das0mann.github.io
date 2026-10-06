@@ -158,6 +158,34 @@ permalink: /lecture/open-systems/
 
   <p>BRW theory starts from a weak system–bath interaction and expresses relaxation through correlation functions or spectral densities of the fluctuating Hamiltonian. In schematic form,</p>
 
+  <p>Write the fluctuating part of the spin Hamiltonian as operator channels,</p>
+
+  <div class="lecture-equation">
+  \[
+  \delta\hat H(t)
+  =
+  \sum_\alpha
+  \delta F_\alpha(t)\,\hat A_\alpha.
+  \]
+  </div>
+
+  <p>The bath dynamics enters through correlation functions \(C_{\alpha\beta}(t)=\langle\delta F_\alpha(0)\delta F_\beta(t)\rangle\) and their spectral densities \(J_{\alpha\beta}(\omega)\). In the eigenbasis of \(\hat H_S\), a transition-rate contribution has the schematic structure</p>
+
+  <div class="lecture-equation">
+  \[
+  k_{a\leftarrow b}
+  \sim
+  \sum_{\alpha\beta}
+  \langle a|\hat A_\alpha|b\rangle
+  \langle b|\hat A_\beta|a\rangle
+  J_{\alpha\beta}(\omega_{ba}),
+  \qquad
+  \omega_{ba}=\frac{E_b-E_a}{\hbar}.
+  \]
+  </div>
+
+  <p>This is the mathematical bridge from the Molecular Motion module to relaxation theory: electronic structure determines which Hamiltonian parameters fluctuate, molecular dynamics determines their correlation functions, and the spin eigenstates determine which spectral-density components can actually drive a transition.</p>
+
   <div class="lecture-equation">
   \[
   \dot\rho
