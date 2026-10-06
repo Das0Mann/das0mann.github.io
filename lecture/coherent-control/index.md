@@ -185,6 +185,11 @@ permalink: /lecture/coherent-control/
   </div>
 
   <p>On resonance the effective field lies in the transverse plane. Off resonance it tilts toward \(z\), which is why a pulse of the same duration no longer performs the intended rotation.</p>
+
+  <aside class="lecture-note">
+    <strong>The rotating-wave approximation has a measurable breakdown.</strong>
+    <span>When the drive is no longer weak compared with the carrier frequency, the counter-rotating component cannot be discarded. It can shift the apparent resonance—the Bloch–Siegert shift—and distort the simple Rabi picture. This matters for very strong, low-field or ultrabroadband driving.</span>
+  </aside>
 </section>
 
 
@@ -366,6 +371,18 @@ permalink: /lecture/coherent-control/
       <h3>Spin Echoes</h3>
       <p>E. L. Hahn · Physical Review (1950). The foundational pulse experiment establishing spin echoes and refocusing of static frequency dispersion.</p>
       <a href="https://doi.org/10.1103/PhysRev.80.580" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Beyond the rotating-wave approximation</span>
+      <h3>Magnetic Resonance for Nonrotating Fields</h3>
+      <p>F. Bloch and A. Siegert · Physical Review (1940). The classic analysis of the counter-rotating field contribution and the resonance shift now known as the Bloch–Siegert shift.</p>
+      <a href="https://doi.org/10.1103/PhysRev.57.522" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Composite pulses</span>
+      <h3>Broadband, Narrowband, and Passband Composite Pulses for Use in Advanced NMR Experiments</h3>
+      <p>S. Wimperis · Journal of Magnetic Resonance, Series A (1994). A practical landmark for composite rotations designed to be robust or selective against RF-amplitude and offset errors.</p>
+      <a href="https://doi.org/10.1006/jmra.1994.1159" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>
