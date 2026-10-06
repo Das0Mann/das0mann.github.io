@@ -329,6 +329,7 @@ permalink: /lecture/radical-pairs/
   </aside>
 
   
+  <aside class="teacher-note">
     <strong>The yield is a time integral, not a snapshot.</strong>
     <span>Two radical pairs can have the same singlet probability at one instant and still produce different final yields if their lifetimes, relaxation or earlier spin history differ.</span>
   </aside>
