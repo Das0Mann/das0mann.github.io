@@ -41,7 +41,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">01</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Electronic Structure</h3>
       <p>Start with the many-electron problem. We build from orbitals and basis sets through HF, DFT and correlation to excited states and magnetic parameters.</p>
@@ -60,7 +60,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">02</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Spin Hamiltonians</h3>
       <p>Build the effective magnetic model term by term: Zeeman, hyperfine, exchange, dipolar coupling, quadrupole interactions and zero-field splitting.</p>
@@ -103,7 +103,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">04</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Radical-Pair Spin Chemistry</h3>
       <p>Here quantum spin dynamics becomes chemistry. We introduce singlet–triplet states, spin-selective reactions, magnetic-field effects and radical pairs in proteins.</p>
@@ -122,7 +122,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">05</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Magnetic Resonance</h3>
       <p>Connect spin-energy levels to experiment: EPR resonance, hyperfine structure, anisotropic g-tensors, powder patterns, linewidths and RYDMR.</p>
@@ -141,7 +141,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">06</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Electron Transfer &amp; Marcus Theory</h3>
       <p>Connect free-energy landscapes, reorganization and electronic coupling to a quantitative nonadiabatic electron-transfer rate.</p>
@@ -160,7 +160,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">07</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Molecular Motion → Spin Dynamics</h3>
       <p>Learn how molecular fluctuations turn a static spin Hamiltonian into \(H(t)\), and how correlation functions and spectral densities connect motion to relaxation.</p>
@@ -184,7 +184,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">08</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Computational Laboratory</h3>
       <p>Turn formal spin dynamics into a numerical calculation: Hilbert-space scaling, propagation strategies, trace sampling and convergence.</p>
@@ -203,7 +203,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">09</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
       <p>Go beyond phenomenological \(T_1/T_2\): Lindblad structure, BRW theory, memory kernels, Nakajima–Zwanzig and stochastic unravelings.</p>
@@ -246,7 +246,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">11</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Excited-State Photochemistry</h3>
       <p>Move from vertical excitation to relaxed excited states, internal conversion, conical intersections, intersystem crossing and triplet formation.</p>
@@ -265,7 +265,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">12</span>
-        <span class="library-tag">Interactive</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Pulse &amp; Coherent Control</h3>
       <p>Understand driven two-level systems, rotating frames, Rabi oscillations, \(\pi/2\) and \(\pi\) pulses, detuning and echo concepts.</p>
@@ -295,7 +295,7 @@ permalink: /lecture/
         <li>pulse and spectroscopy examples</li>
       </ul>
       <div class="library-card-footer">
-        <span>Tracks public MolSpin main</span>
+        <span>Pinned public snapshot</span>
         <a href="{{ site.url }}/lecture/molspin-notebooks/">Open lecture →</a>
       </div>
     </article>
