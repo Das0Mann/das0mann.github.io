@@ -44,7 +44,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Electronic Structure</h3>
-      <p>Start with the many-electron problem. We build from orbitals and basis sets through HF, DFT and correlation to excited states and magnetic parameters.</p>
+      <p>Start with the many-electron problem, then derive how energies, spin densities and response properties become (g), hyperfine, exchange, dipolar and ZFS parameters.</p>
       <ul>
         <li>Born–Oppenheimer picture</li>
         <li>HF, DFT &amp; correlation</li>
@@ -63,11 +63,11 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Spin Hamiltonians</h3>
-      <p>Build the effective magnetic model term by term: Zeeman, hyperfine, exchange, dipolar coupling, quadrupole interactions and zero-field splitting.</p>
+      <p>Map ab initio magnetic properties onto an effective spin Hamiltonian and then interpret Zeeman, hyperfine, exchange, dipolar, quadrupole and ZFS terms.</p>
       <ul>
         <li>electron &amp; nuclear Zeeman terms</li>
-        <li>hyperfine tensors &amp; spin density</li>
-        <li>exchange and dipolar coupling</li>
+        <li>response tensors &amp; spin-density integrals</li>
+        <li>energy-to-(J) and dipolar mapping</li>
         <li>quadrupole, ZFS &amp; conventions</li>
       </ul>
       <div class="library-card-footer">
@@ -84,7 +84,7 @@ permalink: /lecture/
       <h3>Spin Dynamics</h3>
       <p>What does a spin Hamiltonian actually do? We move from spin-\(\tfrac12\) and Larmor precession to density matrices, relaxation and open quantum systems.</p>
       <ul>
-        <li>spin operators &amp; Hilbert space</li>
+        <li>parameter-to-operator matrix construction</li>
         <li>density matrices &amp; observables</li>
         <li>\(T_1\), \(T_2\) and dephasing</li>
         <li>BRW, stochastic propagation &amp; memory effects</li>
