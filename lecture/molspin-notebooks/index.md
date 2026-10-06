@@ -265,6 +265,16 @@ PulseSequence seq
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Simulation ecosystem</span>
+  <h3>MolSpin sits in a broader ecosystem of spin-dynamics software</h3>
+  <p>EasySpin and Spinach illustrate two complementary traditions: detailed EPR spectral simulation and large-scale spin-dynamics propagation. MolSpin's emphasis on general radical-pair/open-system workflows is easier to understand when viewed alongside both.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1016/j.jmr.2005.08.013" target="_blank" rel="noopener">S. Stoll & A. Schweiger (2006); H. J. Hogben et al. (2011) →</a>
+    <span>The important transferable skill is therefore the model decomposition—spins, interactions, states, kinetics and propagation—not memorizing one program's syntax.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
