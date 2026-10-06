@@ -4216,3 +4216,23 @@ h3 { font-size: 1.25rem; }
     font-size: .66rem;
   }
 }
+
+
+.external-literature-grid {
+  max-width: 940px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.external-reading + .lecture-module-nav {
+  margin-top: 42px;
+}
+
+@media (max-width: 620px) {
+  .external-literature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .external-reading + .lecture-module-nav {
+    margin-top: 34px;
+  }
+}
