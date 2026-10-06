@@ -4113,7 +4113,9 @@ h3 { font-size: 1.25rem; }
 }
 
 .external-literature-grid article {
-  background: rgba(248,252,252,.76);
+  padding: 17px 0 19px;
+  border-top: 2px solid #c9e3e6;
+  background: transparent;
 }
 
 .external-literature-grid article > span {
