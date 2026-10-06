@@ -322,6 +322,16 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark theory</span>
+  <h3>Kohn–Sham DFT turned the density theorem into a practical electronic-structure method</h3>
+  <p>Kohn and Sham introduced a non-interacting reference system that reproduces the interacting ground-state density. That construction is why molecular DFT can use orbital-like equations while the formal target remains the electron density.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1103/PhysRev.140.A1133" target="_blank" rel="noopener">W. Kohn & L. J. Sham · Physical Review 140, A1133 (1965) →</a>
+    <span>This is the computational layer from which the magnetic response parameters in Spin Hamiltonians are normally obtained.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
