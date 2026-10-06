@@ -3766,3 +3766,113 @@ h3 { font-size: 1.25rem; }
     text-align: right;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture modules: Computational Lab + Open Systems + Quantum Biology
+   --------------------------------------------------------- */
+.page-computational-laboratory .site-main,
+.page-advanced-open-system-methods .site-main,
+.page-quantum-biology-case-studies .site-main {
+  width: min(calc(100% - 44px), 1080px);
+  padding-top: 48px;
+}
+
+.page-computational-laboratory .page-content,
+.page-advanced-open-system-methods .page-content,
+.page-quantum-biology-case-studies .page-content {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-computational-laboratory .page-hero-inner,
+.page-advanced-open-system-methods .page-hero-inner,
+.page-quantum-biology-case-studies .page-hero-inner {
+  width: min(calc(100% - 44px), 1040px);
+  padding-top: 54px;
+  padding-bottom: 48px;
+}
+
+#scaling-demo .triplet-line,
+#memory-demo .triplet-line {
+  stroke: var(--accent);
+}
+
+#scaling-demo .lower-line,
+#memory-demo .lower-line,
+#qbio-demo .lower-line {
+  stroke: var(--navy-2);
+}
+
+#scaling-demo .scale-liouville-line {
+  stroke: #9caeb7;
+}
+
+#scaling-demo .plot-wrap,
+#memory-demo .plot-wrap,
+#qbio-demo .plot-wrap {
+  align-self: center;
+}
+
+@media (max-width: 760px) {
+  .lecture-module-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lecture-module-nav a {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .lecture-module-home {
+    grid-column: 1 / -1;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-computational-laboratory .site-main,
+  .page-advanced-open-system-methods .site-main,
+  .page-quantum-biology-case-studies .site-main,
+  .page-computational-laboratory .page-hero-inner,
+  .page-advanced-open-system-methods .page-hero-inner,
+  .page-quantum-biology-case-studies .page-hero-inner {
+    width: min(calc(100% - 24px), 1080px);
+  }
+
+  .page-computational-laboratory .page-hero-inner,
+  .page-advanced-open-system-methods .page-hero-inner,
+  .page-quantum-biology-case-studies .page-hero-inner {
+    padding-top: 42px;
+    padding-bottom: 38px;
+  }
+
+  .page-computational-laboratory .page-content p,
+  .page-advanced-open-system-methods .page-content p,
+  .page-quantum-biology-case-studies .page-content p {
+    font-size: 1rem;
+  }
+
+  .lecture-module-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .lecture-module-nav a {
+    min-height: 32px;
+    padding: 0 5px;
+    font-size: .66rem;
+  }
+
+  #scaling-demo .interactive-readout strong,
+  #memory-demo .interactive-readout strong,
+  #qbio-demo .interactive-readout strong {
+    white-space: normal;
+    text-align: right;
+  }
+}
