@@ -229,7 +229,7 @@ permalink: /lecture/electronic-structure/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">04b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
   </div>
 
