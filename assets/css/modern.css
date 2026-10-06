@@ -5117,3 +5117,105 @@ h3 { font-size: 1.25rem; }
     padding-right: 2px;
   }
 }
+
+
+/* Physics deep-dives and photochemical branching explorer. */
+.concept-index {
+  border-color: #b7dadd;
+  background: #f0f8f9;
+  color: #5a8790;
+  font-size: .68rem;
+}
+
+.concept-extension {
+  border-top-style: dashed;
+}
+
+.branching-controls {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: 3px;
+  max-width: 620px;
+  margin: 18px 0 16px;
+}
+
+.branching-controls label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.branching-controls output {
+  color: var(--accent);
+  font-size: .73rem;
+  white-space: nowrap;
+}
+
+.branching-controls input[type="range"] {
+  width: 100%;
+  margin: 0 0 10px;
+  accent-color: var(--accent);
+}
+
+.branching-bar {
+  display: flex;
+  width: 100%;
+  max-width: 620px;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid #cedfe3;
+  border-radius: 999px;
+  background: #eef3f4;
+}
+
+.branching-bar span {
+  display: block;
+  height: 100%;
+  transition: width .15s ease;
+}
+
+.branch-fluor {
+  width: 70.6%;
+  background: #2f8f9b;
+}
+
+.branch-ic {
+  width: 22.3%;
+  background: #9db6bc;
+}
+
+.branch-isc {
+  width: 7.1%;
+  background: #173f5f;
+}
+
+.branching-readout {
+  max-width: 620px;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 8px 20px;
+  margin-top: 14px;
+}
+
+.branching-readout span {
+  min-width: 0;
+}
+
+@media (max-width: 620px) {
+  .branching-controls label {
+    align-items: flex-start;
+    font-size: .75rem;
+  }
+
+  .branching-controls output {
+    font-size: .7rem;
+  }
+
+  .branching-readout {
+    grid-template-columns: 1fr;
+  }
+}
