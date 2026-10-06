@@ -5219,3 +5219,15 @@ h3 { font-size: 1.25rem; }
     grid-template-columns: 1fr;
   }
 }
+
+
+.compact-pipeline > div:not(.pipeline-arrow) {
+  min-height: 72px;
+  padding: 11px 12px;
+}
+
+@media (max-width: 900px) {
+  .compact-pipeline > div:not(.pipeline-arrow) {
+    min-height: 0;
+  }
+}
