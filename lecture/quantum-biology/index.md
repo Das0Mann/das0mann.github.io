@@ -25,6 +25,8 @@ permalink: /lecture/quantum-biology/
   </div>
 </section>
 
+{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
