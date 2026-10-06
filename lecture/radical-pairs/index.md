@@ -31,6 +31,30 @@ permalink: /lecture/radical-pairs/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Formation</p><h2>How do we get a spin-correlated radical pair?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>A radical pair is both a chemical intermediate and a coupled two-spin quantum system</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Radical</strong>
+        <p><b>What it is:</b> A molecular species with at least one unpaired electron, giving it an electron spin and a magnetic moment.</p>
+        <p><b>What it changes:</b> The unpaired electron makes the species paramagnetic and sensitive to Zeeman, hyperfine and spin–spin interactions.</p>
+        <p><b>What you observe:</b> EPR signals, characteristic reactivity and spin-dependent transient spectroscopy.</p>
+      </article>
+      <article>
+        <strong>Radical pair</strong>
+        <p><b>What it is:</b> Two radicals created or brought together within one reaction sequence, often by photoinduced electron transfer.</p>
+        <p><b>What it changes:</b> Their two electron spins can retain correlation from the precursor state and evolve coherently before the radicals separate or recombine.</p>
+        <p><b>What you observe:</b> Magnetic-field-dependent reaction yields, transient EPR and spin-selective products.</p>
+      </article>
+      <article>
+        <strong>Spin correlation</strong>
+        <p><b>What it is:</b> A non-classical relation between the two electron spins inherited from how the pair was formed, commonly singlet or triplet character.</p>
+        <p><b>What it changes:</b> It determines which spin-selective reaction channels are initially allowed and provides the starting condition for singlet–triplet dynamics.</p>
+        <p><b>What you observe:</b> Initial spin polarization and different recombination behaviour for singlet-born versus triplet-born pairs.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Photoexcitation followed by electron transfer is a common route. If a singlet precursor undergoes spin-conserving electron transfer, the newly formed radical pair starts with strong singlet character. A triplet precursor can instead populate a triplet-born radical pair.</p>
 
