@@ -42,6 +42,8 @@ permalink: /lecture/quantum-biology/
     <div><strong>5. Readout</strong><span>How is the quantum state converted into a chemical, spectroscopic or physiological observable?</span></div>
     <div><strong>6. Discriminating experiment</strong><span>What measurement would distinguish this mechanism from a classical alternative?</span></div>
   </div>
+
+  <p>A seventh practical question sits behind all six: <strong>is the signal larger than the relevant biological and experimental noise?</strong> A mechanism can be physically allowed yet functionally irrelevant if the field-induced change is washed out by conformational heterogeneity, chemical background reactions or downstream signalling noise.</p>
 </section>
 
 <section class="lecture-section">
