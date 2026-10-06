@@ -33,6 +33,36 @@ permalink: /lecture/molspin-notebooks/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Input anatomy</p><h2>Seven object types carry most of the scientific meaning</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Every input object should answer a physical question</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin & interaction objects</strong>
+        <p><b>What it is:</b> They define the degrees of freedom and the Hamiltonian terms acting between them.</p>
+        <p><b>What it changes:</b> They determine the energy levels and coherent quantum dynamics before any reaction or relaxation model is added.</p>
+        <p><b>What you observe:</b> All subsequent simulated spectra, populations and yields inherit these choices.</p>
+      </article>
+      <article>
+        <strong>State object</strong>
+        <p><b>What it is:</b> It defines how the spin system is prepared at the start of the calculation or reaction step.</p>
+        <p><b>What it changes:</b> Changing the initial singlet/triplet/coherent state can qualitatively change the dynamics even with the same Hamiltonian.</p>
+        <p><b>What you observe:</b> Different transient populations, spin polarization and reaction yields.</p>
+      </article>
+      <article>
+        <strong>Transition object</strong>
+        <p><b>What it is:</b> It represents kinetic loss, recombination or transfer between states/systems rather than a Hamiltonian interaction.</p>
+        <p><b>What it changes:</b> It competes with coherent spin evolution and sets how long the system has to explore spin-state space.</p>
+        <p><b>What you observe:</b> Lifetimes, product yields and kinetic branching.</p>
+      </article>
+      <article>
+        <strong>Task</strong>
+        <p><b>What it is:</b> It selects the numerical interpretation of the model: static yield, time evolution, eigenvalues, spectroscopy and so on.</p>
+        <p><b>What it changes:</b> It determines what equations are solved and which approximation/propagator is used.</p>
+        <p><b>What you observe:</b> The form and meaning of the output; the same physical input can produce very different observables under different tasks.</p>
+      </article>
+    </div>
+  </div>
+
 
   <div class="observable-list">
     <div><strong>SpinSystem</strong><span>Defines one spin system and contains its spins, interactions, states, transitions and properties.</span></div>
