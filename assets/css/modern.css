@@ -4355,3 +4355,482 @@ h3 { font-size: 1.25rem; }
     font-size: .71rem !important;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture rendered-page refinement — October 2026
+   --------------------------------------------------------- */
+
+/* Module navigation: visible hierarchy on desktop, scrollable only when space is tight. */
+.lecture-module-nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px 18px;
+  align-items: start;
+  max-width: 100%;
+  overflow: visible;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lecture-nav-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 31px;
+}
+
+.lecture-nav-meta > span {
+  color: #748992;
+  font-family: "Inter", sans-serif;
+  font-size: .66rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.lecture-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lecture-module-nav a {
+  flex: 0 0 auto;
+}
+
+.lecture-module-nav a.is-current {
+  border-color: var(--navy) !important;
+  background: var(--navy);
+  color: #fff !important;
+  box-shadow: 0 5px 16px rgba(7,29,49,.10);
+}
+
+.lecture-module-home {
+  margin-right: 0;
+}
+
+/* Cross-module conceptual map. */
+.lecture-connections {
+  max-width: 900px;
+  margin: -28px 0 58px;
+  padding: 15px 17px 14px;
+  border-top: 1px solid #d8e6e9;
+  border-bottom: 1px solid #d8e6e9;
+  background: rgba(248,252,252,.72);
+}
+
+.connection-groups {
+  display: grid;
+  grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
+  gap: 14px 28px;
+}
+
+.connection-group {
+  min-width: 0;
+}
+
+.connection-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #70858e;
+  font-family: "Inter", sans-serif;
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.connection-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.connection-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 0 9px;
+  border: 1px solid #cfe1e4 !important;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy) !important;
+  font-family: "Inter", sans-serif;
+  font-size: .72rem;
+  font-weight: 750;
+}
+
+.connection-links a:hover {
+  border-color: #afd4d8 !important;
+  background: var(--accent-soft);
+}
+
+.lecture-connections > p {
+  max-width: 820px;
+  margin: 12px 0 0 !important;
+  color: #586f79 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .79rem !important;
+  line-height: 1.58 !important;
+}
+
+/* Physical-meaning panels: fewer columns, larger type, more breathing room. */
+.physical-concept-panel {
+  max-width: 900px;
+  margin-top: 22px;
+  padding: 19px 20px 20px;
+  border-color: #cbdfe3;
+  background: linear-gradient(135deg, rgba(238,248,249,.82), rgba(255,255,255,.96));
+}
+
+.physical-concept-head {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 15px;
+}
+
+.physical-concept-head > span {
+  font-size: .65rem;
+}
+
+.physical-concept-head h3 {
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.42;
+}
+
+.physical-concept-grid {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.physical-concept-grid article {
+  padding: 15px 15px 14px;
+  border: 1px solid #dbe8eb;
+  border-top: 2px solid #b7dadd;
+  background: rgba(255,255,255,.86);
+}
+
+.physical-concept-grid article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.physical-concept-grid article > strong {
+  margin-bottom: 9px;
+  font-size: .89rem;
+  line-height: 1.4;
+}
+
+.physical-concept-grid article p {
+  margin-top: 6px !important;
+  font-size: .80rem !important;
+  line-height: 1.58 !important;
+}
+
+.physical-concept-grid article p b {
+  display: inline;
+  color: #294654;
+}
+
+/* Inline research links should feel like context, not another citation dump. */
+.research-connection {
+  max-width: 860px;
+  margin: 24px 0 0 59px;
+  padding: 16px 18px 17px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: rgba(231,246,247,.42);
+}
+
+.research-connection-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.research-connection > p {
+  margin: 0 0 12px !important;
+  color: #405965 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .84rem !important;
+  line-height: 1.62 !important;
+}
+
+.research-connection-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 8px;
+}
+
+.research-connection-links a {
+  display: grid;
+  gap: 3px;
+  padding: 10px 11px;
+  border: 1px solid #cfe1e4 !important;
+  border-radius: 10px;
+  background: rgba(255,255,255,.84);
+  color: var(--navy) !important;
+  font-family: "Inter", sans-serif;
+}
+
+.research-connection-links strong {
+  font-size: .78rem;
+  line-height: 1.42;
+}
+
+.research-connection-links span {
+  color: #6b818a;
+  font-size: .68rem;
+  font-weight: 650;
+}
+
+/* Reading sections: citations remain compact, but no longer require tiny type. */
+.lecture-reading-grid {
+  gap: 0 34px;
+}
+
+.lecture-reading-grid article {
+  padding: 20px 0 21px;
+}
+
+.lecture-reading-grid article > span {
+  font-size: .67rem;
+}
+
+.lecture-reading-grid h3 {
+  font-size: .99rem;
+  line-height: 1.43;
+}
+
+.lecture-reading-grid p {
+  font-size: .82rem !important;
+  line-height: 1.58 !important;
+}
+
+.lecture-reading-grid a {
+  font-size: .78rem;
+}
+
+.external-literature-grid {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+}
+
+/* Interactive cards: controls and plot annotations were too small in rendered QA. */
+.interactive-controls label {
+  font-size: .82rem;
+}
+
+.interactive-controls output {
+  font-size: .79rem;
+}
+
+.interactive-readout span {
+  font-size: .78rem;
+  line-height: 1.42;
+}
+
+.interactive-readout strong {
+  font-size: .81rem;
+}
+
+.demo-explanation,
+.interactive-footnote,
+.demo-prompt {
+  font-size: .78rem;
+  line-height: 1.58;
+}
+
+.svg-caption {
+  font-size: 11px;
+}
+
+.svg-label {
+  font-size: 10px;
+}
+
+.svg-tick {
+  font-size: 9px;
+}
+
+.hyperfine-stick {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+/* The library landing page reads better as four learning paths than one 13-card wall. */
+.library-grid {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 17px;
+}
+
+.library-group-label {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 70px minmax(180px,260px) minmax(0,1fr);
+  gap: 10px 18px;
+  align-items: baseline;
+  margin: 28px 0 2px;
+  padding: 14px 0 11px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.library-group-label:first-child {
+  margin-top: 0;
+}
+
+.library-group-label > span {
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.library-group-label > strong {
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: .94rem;
+}
+
+.library-group-label > p {
+  margin: 0 !important;
+  color: #687d87 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .78rem !important;
+  line-height: 1.5 !important;
+}
+
+.library-card h3 {
+  font-size: 1.12rem;
+}
+
+.library-card > p {
+  font-size: .88rem !important;
+}
+
+.library-card li {
+  font-size: .80rem;
+}
+
+@media (max-width: 900px) {
+  .lecture-module-nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .lecture-nav-meta {
+    justify-content: space-between;
+  }
+
+  .lecture-nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .lecture-nav-links a {
+    scroll-snap-align: start;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .library-group-label {
+    grid-template-columns: 62px minmax(0,1fr);
+  }
+
+  .library-group-label > p {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .lecture-connections {
+    margin-top: -22px;
+  }
+
+  .connection-groups {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .physical-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .physical-concept-grid article:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .lecture-module-nav {
+    gap: 7px;
+  }
+
+  .lecture-nav-meta > span {
+    max-width: 48vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .lecture-nav-links {
+    margin-right: -4px;
+  }
+
+  .lecture-connections {
+    margin-bottom: 46px;
+    padding: 13px 12px;
+  }
+
+  .lecture-connections > p {
+    font-size: .77rem !important;
+  }
+
+  .physical-concept-panel,
+  .research-connection {
+    margin-left: 0;
+  }
+
+  .physical-concept-panel {
+    padding: 16px 13px 15px;
+  }
+
+  .physical-concept-grid article p {
+    font-size: .78rem !important;
+  }
+
+  .research-connection {
+    padding: 14px 14px 15px;
+  }
+
+  .research-connection-links {
+    grid-template-columns: 1fr;
+  }
+
+  .library-group-label {
+    display: block;
+    padding: 13px 0 11px;
+  }
+
+  .library-group-label > span,
+  .library-group-label > strong {
+    display: block;
+  }
+
+  .library-group-label > strong {
+    margin: 4px 0 6px;
+  }
+}
