@@ -12,6 +12,7 @@ permalink: /lecture/electronic-structure/
   <span class="module-index">Module 01</span>
   <h2>Start with the electrons</h2>
   <p>Before we talk about spin dynamics, we need to know what the electrons are doing. Electronic-structure theory is the layer that gives us energies, densities, excited states and ultimately the magnetic parameters that enter a spin Hamiltonian.</p>
+  <p class="module-context"><strong>Course thread:</strong> this is the microscopic starting point. The next module will discard most electronic degrees of freedom and keep only the low-energy magnetic parameters needed for an effective spin Hamiltonian.</p>
 </header>
 <section class="module-learning" aria-label="Learning goals">
   <div class="module-learning-head">
@@ -42,7 +43,7 @@ permalink: /lecture/electronic-structure/
       </article>
       <article>
         <strong>Electron density \(\rho(\mathbf r)\)</strong>
-        <p><b>What it is:</b> The probability density for finding electronic charge around position \(\mathbf r\), obtained after integrating the many-electron information over all other coordinates.</p>
+        <p><b>What it is:</b> The electron number density around position \(\mathbf r\), obtained by integrating the many-electron probability density over all other electronic coordinates. It integrates to the number of electrons; the corresponding charge density is \(-e\rho(\mathbf r)\).</p>
         <p><b>What it changes:</b> It determines electrostatics, bonding patterns and—within ground-state DFT—the total energy in principle.</p>
         <p><b>What you observe:</b> Charge distributions, electrostatic potentials and density-derived quantities; experimentally it is related to X-ray/electron scattering rather than to an orbital picture.</p>
       </article>
@@ -73,6 +74,8 @@ permalink: /lecture/electronic-structure/
   </div>
 
   <p>The difficult term is the electron–electron repulsion. It couples the motion of all electrons, which is why the exact many-electron problem grows so quickly with system size.</p>
+
+  <p>This is why independent-particle pictures are so useful. They replace one function of all electronic coordinates by a tractable set of one-electron objects, then recover the missing many-body physics approximately through exchange, correlation or configuration mixing. Orbitals are therefore computational degrees of freedom—not literal trajectories followed by individual electrons.</p>
 
   <aside class="teacher-note">
     <strong>A useful way to think about it:</strong>
@@ -259,6 +262,8 @@ permalink: /lecture/electronic-structure/
     </div>
   </div>
 
+
+  <p>Magnetic observables are unusually demanding tests of this electronic description because they depend on small pieces of the wavefunction or density: spin density at a nucleus, weak spin–orbit-induced state mixing, near-degenerate excited states or subtle changes in orbital overlap. Two methods can predict similar total energies while giving meaningfully different hyperfine couplings, \(g\)-shifts or exchange interactions.</p>
 
   <p>For photochemistry, ground-state DFT is only the start. We also need excited-state energies, oscillator strengths, charge-transfer character and sometimes spin–orbit coupling between states. TD-DFT is often the practical workhorse, while multireference methods become important when several configurations matter simultaneously.</p>
 
