@@ -142,6 +142,11 @@ permalink: /lecture/electronic-structure/
   </div>
 
   <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+
+  <details class="lecture-details">
+    <summary>What does “self-consistent” actually mean in HF or Kohn–Sham DFT?</summary>
+    <p>The orbitals determine an electron density, but that density also determines the effective one-electron potential in which the orbitals are solved. An SCF calculation therefore iterates <strong>orbitals → density → effective potential → new orbitals</strong> until the input and output densities agree within a chosen threshold. Failure to converge is not just a software nuisance: it can signal near-degeneracy, competing electronic states or an unstable reference solution.</p>
+  </details>
 </section>
 
 <section class="lecture-section">
