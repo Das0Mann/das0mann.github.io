@@ -190,6 +190,30 @@ permalink: /lecture/coherent-control/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Pulse bandwidth</p><h2>Short pulses are spectrally broad</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Time resolution and frequency selectivity are Fourier partners</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Pulse duration \(t_p\)</strong>
+        <p><b>What it is:</b> The time over which the coherent drive is applied.</p>
+        <p><b>What it changes:</b> Shortening the pulse broadens its frequency spectrum, while lengthening it makes excitation more selective.</p>
+        <p><b>What you observe:</b> How much of an inhomogeneously broadened spectrum is rotated by the pulse.</p>
+      </article>
+      <article>
+        <strong>Excitation bandwidth</strong>
+        <p><b>What it is:</b> The range of resonance offsets for which the pulse produces substantial rotation.</p>
+        <p><b>What it changes:</b> It determines whether spins with different \(g\)-values, hyperfine shifts or orientations are excited uniformly.</p>
+        <p><b>What you observe:</b> Frequency/field-selective pulse profiles and orientation selection in anisotropic EPR.</p>
+      </article>
+      <article>
+        <strong>Pulse shape</strong>
+        <p><b>What it is:</b> The time dependence of amplitude, phase and sometimes carrier frequency during the pulse.</p>
+        <p><b>What it changes:</b> Shaping redistributes spectral power and can make rotations more robust to detuning or \(B_1\) inhomogeneity.</p>
+        <p><b>What you observe:</b> Broader or more selective excitation, reduced pulse errors and improved echo/control fidelity.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>A rectangular pulse of finite duration cannot be perfectly frequency selective. Its Fourier spectrum has a sinc-like envelope with characteristic width of order \(1/t_p\). Short, strong pulses therefore excite a broader range of resonance offsets; long, weak pulses are more selective.</p>
 
