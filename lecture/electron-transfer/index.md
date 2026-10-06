@@ -255,7 +255,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Ensemble energetics</p><h2>How do you obtain \(\lambda\) and \(\Delta G^\circ\) from simulations?</h2></div>
+    <div><p class="section-eyebrow">Ensemble energetics</p><h2>How do you obtain λ and ΔG° from simulations?</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>The vertical energy gap turns a molecular ensemble into an electron-transfer coordinate</h3></div>
