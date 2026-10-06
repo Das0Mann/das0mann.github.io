@@ -239,6 +239,13 @@ permalink: /lecture/molecular-motion/
 
   <p>This tells us something important: large fluctuations are not automatically efficient at relaxing a particular spin transition. The motion must also contain spectral weight near the relevant transition frequency.</p>
 
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A spin transition is a narrow-band listener</h3>
+    <p>Molecular motion produces a broad spectrum of fluctuation frequencies, like a noisy radio broadcast. A particular spin transition is most sensitive to the part of that spectrum near its own transition frequency. The variance tells you how loud the overall noise is; (J(omega)) tells you how much of that noise is actually being broadcast on the frequency the spin can hear.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> real relaxation involves operator-specific matrix elements, multiple transition frequencies and cross-correlations between fluctuating interactions. A single scalar (J(omega)) is only the simplest channel.</span>
+  </aside>
+
   <div class="interactive-card" id="motion-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Timescale matching and spectral weight</h3></div>
