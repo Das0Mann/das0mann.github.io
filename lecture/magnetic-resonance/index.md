@@ -13,6 +13,18 @@ permalink: /lecture/magnetic-resonance/
   <h2>Turn spin-energy levels into a spectrum</h2>
   <p>Magnetic resonance asks a very practical question: at what field and frequency can an oscillating magnetic field drive a transition between spin states? From that simple starting point we get EPR spectra, hyperfine patterns, anisotropic powder lineshapes and reaction-yield detected resonance.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Use the resonance condition to connect microwave frequency, magnetic field and effective g-value.</p></div>
+    <div><span>02</span><p>Predict qualitatively how hyperfine coupling, anisotropy and linewidth shape an EPR spectrum.</p></div>
+    <div><span>03</span><p>Distinguish CW, time-resolved, pulsed and reaction-yield detected magnetic resonance.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -237,6 +249,28 @@ permalink: /lecture/magnetic-resonance/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Foundational resonance</span>
+      <h3>Nuclear Induction</h3>
+      <p>F. Bloch · Physical Review (1946). A foundational treatment of driven spin precession, resonance and relaxation in magnetic resonance.</p>
+      <a href="https://doi.org/10.1103/PhysRev.70.460" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>EPR simulation</span>
+      <h3>EasySpin, a comprehensive software package for spectral simulation and analysis in EPR</h3>
+      <p>S. Stoll and A. Schweiger · Journal of Magnetic Resonance (2006). A widely used practical and theoretical reference for modern EPR spectral simulation.</p>
+      <a href="https://doi.org/10.1016/j.jmr.2005.08.013" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
