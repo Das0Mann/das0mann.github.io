@@ -399,6 +399,16 @@ permalink: /lecture/excited-state-photochemistry/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>Photochemistry is a branching problem on coupled surfaces</h3>
+  <ul>
+    <li>Vertical excitation prepares a non-equilibrium nuclear wavepacket; subsequent relaxation explores excited-state potential-energy surfaces rather than one fixed geometry.</li>
+    <li>Internal conversion depends on nonadiabatic coupling, while intersystem crossing additionally requires spin–orbit-mediated mixing between spin manifolds.</li>
+    <li>Fluorescence, triplet formation, electron transfer and photochemistry compete through rates whose magnitudes depend on both electronic structure and nuclear motion.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark photophysics</span>
   <h3>Intersystem crossing is often spin-vibronic—not just a single SOC matrix element</h3>
