@@ -129,6 +129,39 @@ permalink: /lecture/spin-hamiltonians/
 
   <p>If \(\mathbf g=g\mathbf 1\), the interaction is isotropic. In a molecule, spin–orbit coupling and the local electronic structure generally make \(\mathbf g\) a tensor. The resonance therefore depends on how the molecule is oriented relative to the magnetic field.</p>
 
+  <p>At the quantum-chemistry level, \(\mathbf g\) is a response property rather than an orbital label. A widely used decomposition is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathbf g
+  =
+  g_e\mathbf 1
+  +
+  \mathbf g^\mathrm{RMC}
+  +
+  \mathbf g^\mathrm{DSO}
+  +
+  \mathbf g^\mathrm{PSO}.
+  \]
+  </div>
+
+  <p>The paramagnetic spin–orbit term is usually the dominant chemically variable contribution. In a sum-over-states picture its structure is schematically</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta g_{\alpha\beta}^{\mathrm{PSO}}
+  \sim
+  \sum_{n\ne0}
+  \frac{
+  \langle0|\hat L_\alpha|n\rangle
+  \langle n|\hat H_{\mathrm{SO},\beta}|0\rangle
+  }{E_0-E_n}
+  +\mathrm{c.c.}
+  \]
+  </div>
+
+  <p>This makes the origin of \(g\)-anisotropy explicit: orbital angular momentum, SOC and low-lying excited states all enter the effective ground-state Zeeman interaction.</p>
+
   <p>The nuclear Zeeman interaction is much smaller because the nuclear magneton is much smaller than the Bohr magneton:</p>
 
   <div class="lecture-equation">
@@ -222,7 +255,32 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction. When comparing values, check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units; the numerical tensor changes with that convention even though the physics does not.</p>
+  <p>The isotropic Fermi-contact contribution is controlled by the spin density at the nucleus,</p>
+
+  <div class="lecture-equation">
+  \[
+  A_N^\mathrm{FC}
+  \propto
+  \rho_s(\mathbf R_N).
+  \]
+  </div>
+
+  <p>The anisotropic spin-dipolar term samples the surrounding spin density,</p>
+
+  <div class="lecture-equation">
+  \[
+  A_{N,\alpha\beta}^\mathrm{dip}
+  \propto
+  \int
+  \rho_s(\mathbf r)
+  \frac{
+  3r_\alpha r_\beta-r^2\delta_{\alpha\beta}
+  }{r^5}
+  \,d\mathbf r.
+  \]
+  </div>
+
+  <p>The contact term is therefore very sensitive to core-region spin polarization, while the anisotropic tensor contains spatial information about the unpaired spin distribution. In practical relativistic calculations additional orbital and gauge-related contributions can enter. When comparing values, also check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units.</p>
 
   <details class="lecture-details">
     <summary>Why can a proton far from the formal radical centre still have a hyperfine coupling?</summary>
@@ -265,6 +323,20 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 
   <p>Exchange originates from the antisymmetry of the electronic wavefunction and orbital overlap. It can change extremely rapidly with geometry. Other communities use \(-2J\,\mathbf S_1\cdot\mathbf S_2\), so the sign and factor of two are not universal.</p>
+
+  <p>For two \(S=\tfrac12\) centres under the convention used here,</p>
+
+  <div class="lecture-equation">
+  \[
+  E_S=-\frac{3J}{4},
+  \qquad
+  E_T=\frac{J}{4},
+  \qquad
+  J=E_T-E_S.
+  \]
+  </div>
+
+  <p>If both states are available as proper spin eigenstates, this is the direct electronic-energy mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection is then used to infer the pure-state splitting before converting it to the \(J\) convention above.</p>
 
   <p>The through-space magnetic dipolar interaction has a completely different origin. Using dimensionless spin operators and the point-dipole approximation,</p>
 
@@ -391,6 +463,18 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 
   <p>\(D\) measures the axial part and \(E\) the rhombic part in this convention. The tensor form is more general, and—as always—the sign convention and units need to be stated explicitly.</p>
+
+  <p>If the symmetric traceless ZFS tensor is diagonalized to \(D_{xx},D_{yy},D_{zz}\), the usual principal-axis parameterization gives</p>
+
+  <div class="lecture-equation">
+  \[
+  D=\frac{3}{2}D_{zz},
+  \qquad
+  E=\frac{D_{xx}-D_{yy}}{2},
+  \]
+  </div>
+
+  <p>for the standard ordering convention. Quantum chemistry first determines the tensor contributions—direct spin–spin and SOC-mediated—and only then converts the tensor into the compact \(D,E\) pair used by spectroscopy and spin dynamics.</p>
 </section>
 
 <section class="lecture-section">
