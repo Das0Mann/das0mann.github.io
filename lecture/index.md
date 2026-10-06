@@ -43,7 +43,54 @@ permalink: /lecture/
       <strong>Use the interactives</strong>
       <p>Change fields, couplings, rates and timescales, then return to the equations and ask which term caused the observed response.</p>
     </div>
-  </div>
+  
+
+  <div class="library-recommended-route">
+    <span>Recommended dependency route</span>
+    <h3>Follow the physics, not just the module numbers</h3>
+    <p>The module numbers are stable identifiers. For a first complete pass, this order follows the actual conceptual dependencies more closely and avoids learning an application before its underlying theory.</p>
+    <div class="library-route-groups">
+      <div class="library-route-row">
+        <strong>Foundations</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/electronic-structure/">01 Electronic structure</a><b>→</b>
+          <a href="{{ site.url }}/lecture/spin-hamiltonians/">02 Spin Hamiltonians</a><b>→</b>
+          <a href="{{ site.url }}/lecture/spin-dynamics/">03 Spin Dynamics</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Environment &amp; irreversibility</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/molecular-motion/">07 Molecular Motion</a><b>→</b>
+          <a href="{{ site.url }}/lecture/open-systems/">09 Open Systems</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Prepare reactive spin states</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/excited-state-photochemistry/">11 Photochemistry</a><b>→</b>
+          <a href="{{ site.url }}/lecture/electron-transfer/">06 Electron Transfer</a><b>→</b>
+          <a href="{{ site.url }}/lecture/radical-pairs/">04 Radical Pairs</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Measure &amp; control</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/magnetic-resonance/">05 Magnetic Resonance</a><b>→</b>
+          <a href="{{ site.url }}/lecture/coherent-control/">12 Coherent Control</a>
+        </div>
+      </div>
+      <div class="library-route-row">
+        <strong>Integrate &amp; implement</strong>
+        <div class="library-route-links">
+          <a href="{{ site.url }}/lecture/quantum-biology/">10 Quantum Biology</a>
+          <b>·</b>
+          <a href="{{ site.url }}/lecture/computational-lab/">08 Computational Lab</a><b>→</b>
+          <a href="{{ site.url }}/lecture/molspin-notebooks/">13 MolSpin</a>
+        </div>
+      </div>
+    </div>
+  </div></div>
 </header>
 
 <section class="library-section">
