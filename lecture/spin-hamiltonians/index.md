@@ -566,6 +566,16 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>The modelling contract in one view</h3>
+  <ul>
+    <li>Every term in a spin Hamiltonian must have a physical origin, a unit convention and—when anisotropic—a defined reference frame.</li>
+    <li>The same electronic calculation can map to different numerical parameters if the operator convention changes, especially for exchange and ZFS.</li>
+    <li>Once the coefficients and frames are fixed, the spin Hamiltonian is the compact object passed to dynamics, spectroscopy and reaction models.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark connection</span>
   <h3>Electronic structure becomes spectroscopy through effective magnetic parameters</h3>
