@@ -309,7 +309,7 @@ permalink: /lecture/open-systems/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">06b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Thermal directionality</p><h2>A thermal bath does more than broaden lines—it biases upward and downward transitions differently</h2></div>
   </div>
 
