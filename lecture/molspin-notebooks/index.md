@@ -262,7 +262,7 @@ PulseSequence seq
     <div><p class="section-eyebrow">Public main versus development branches</p><h2>Do not mix syntax from different generations of MolSpin</h2></div>
   </div>
 
-  <p>The public examples above describe the repository state pinned at commit <code>cc7cc7f3cd8580e074318b7baae960d84a054bb0</code>. Active development can introduce unified task classes, new stochastic methods or changed property names before those interfaces become the public reference.</p>
+  <p>The examples above are intentionally pinned to commit <code>cc7cc7f3cd8580e074318b7baae960d84a054bb0</code>, so the lecture remains reproducible even if the repository evolves later. Active development can introduce unified task classes, new stochastic methods or changed property names before those interfaces become the public reference.</p>
 
   <aside class="lecture-note">
     <strong>For reproducibility:</strong>
