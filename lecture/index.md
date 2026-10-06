@@ -16,11 +16,15 @@ permalink: /lecture/
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
     <b>→</b>
+    <span>magnetic parameters</span>
+    <b>→</b>
     <span>spin Hamiltonian</span>
     <b>→</b>
-    <span>spin dynamics</span>
+    <span>spin dynamics &amp; motion</span>
     <b>→</b>
-    <span>chemistry &amp; experiment</span>
+    <span>chemistry &amp; spectroscopy</span>
+    <b>→</b>
+    <span>molecular / biological applications</span>
   </div>
 </header>
 
@@ -244,7 +248,7 @@ permalink: /lecture/
         <span class="library-tag">Interactive</span>
       </div>
       <h3>Pulse &amp; Coherent Control</h3>
-      <p>Understand driven two-level systems, rotating frames, Rabi oscillations, (pi/2) and (pi) pulses, detuning and echo concepts.</p>
+      <p>Understand driven two-level systems, rotating frames, Rabi oscillations, \(\pi/2\) and \(\pi\) pulses, detuning and echo concepts.</p>
       <ul>
         <li>rotating-frame picture</li>
         <li>Rabi frequency &amp; pulse area</li>
