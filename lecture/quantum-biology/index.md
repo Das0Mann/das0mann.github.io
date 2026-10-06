@@ -245,6 +245,30 @@ permalink: /lecture/quantum-biology/
     <span class="lecture-index">06</span>
     <div><p class="section-eyebrow">Hyperpolarization</p><h2>The useful observable may be an amplified spin population</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Hyperpolarization is a population imbalance; keeping it is a race against relaxation</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Polarization</strong>
+        <p><b>What it is:</b> A difference in population between magnetic sublevels. At thermal equilibrium this imbalance is usually small for nuclear spins.</p>
+        <p><b>What it changes:</b> A larger imbalance increases the net magnetic moment available for NMR/EPR detection.</p>
+        <p><b>What you observe:</b> Signal enhancements that can exceed the thermal signal by orders of magnitude depending on the mechanism and system.</p>
+      </article>
+      <article>
+        <strong>Observer spin</strong>
+        <p><b>What it is:</b> A nuclear or electron spin chosen to receive and retain polarization generated elsewhere in the photochemical spin network.</p>
+        <p><b>What it changes:</b> Its couplings determine how efficiently polarization can be transferred, while its own relaxation determines how long the gain survives.</p>
+        <p><b>What you observe:</b> Enhanced resonances whose lifetime and magnitude depend on transfer and relaxation pathways.</p>
+      </article>
+      <article>
+        <strong>Relaxation bottleneck</strong>
+        <p><b>What it is:</b> The competition between polarization-generation/transfer rates and the rates that return the observer spin toward equilibrium.</p>
+        <p><b>What it changes:</b> A mechanism can generate polarization efficiently yet produce little detectable signal if relaxation is faster than accumulation or readout.</p>
+        <p><b>What you observe:</b> Strong dependence of enhancement on field, temperature, molecular mobility and observer-spin identity.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>Hyperpolarization is attractive because it converts spin-selective photochemistry into a large magnetic-resonance signal. The theoretical problem becomes multiscale: prepare the electronic state, model electron transfer and radical-pair dynamics, determine how polarization is transferred, and include relaxation of the observer spin.</p>
 
