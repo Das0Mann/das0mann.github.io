@@ -44,6 +44,13 @@ permalink: /lecture/quantum-biology/
   </div>
 
   <p>A seventh practical question sits behind all six: <strong>is the signal larger than the relevant biological and experimental noise?</strong> A mechanism can be physically allowed yet functionally irrelevant if the field-induced change is washed out by conformational heterogeneity, chemical background reactions or downstream signalling noise.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A quantum-biological mechanism is a relay race</h3>
+    <p>The photon prepares the first runner, electron transfer passes the baton to a radical pair, spin dynamics modifies the baton before chemistry receives it, and downstream biology must still carry that change to a measurable phenotype. A spectacular quantum effect in one runner is irrelevant if the baton is dropped at the next handoff.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> real biological networks branch, feed back and contain many parallel pathways. The relay picture is only a test of whether every required causal link has been quantitatively closed.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -71,6 +78,11 @@ permalink: /lecture/quantum-biology/
 
 
   <p>Flavin-containing cryptochromes can form photoinduced radical pairs through electron transfer. A minimal mechanistic chain is</p>
+
+  <aside class="lecture-note">
+    <strong>This module uses rather than re-derives radical-pair theory.</strong>
+    <span>The singlet–triplet Hamiltonian and spin-selective reaction formalism live in <a href="{{ site.url }}/lecture/radical-pairs/">Radical-Pair Spin Chemistry</a>; fluctuation-driven decoherence and relaxation live in <a href="{{ site.url }}/lecture/open-systems/">Open-System Methods</a>. Here the question is whether those pieces form a complete biological mechanism.</span>
+  </aside>
 
   <div class="lecture-pipeline compact-pipeline" aria-label="Cryptochrome radical-pair mechanism">
     <div><span>Prepare</span><strong>photoexcitation</strong></div>
