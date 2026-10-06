@@ -252,7 +252,7 @@ PulseSequence seq
 
   <aside class="teacher-note">
     <strong>Benchmark before complexity.</strong>
-    <span>Before running a large radical-pair model, reduce the input to a limit with a known answer: one uncoupled spin, zero coupling, identical (g)-values, vanishing relaxation or a tiny system that can be solved by direct matrix exponentiation. Agreement in these limits tests the model definition and the numerical task separately from the complexity of the full calculation.</span>
+    <span>Before running a large radical-pair model, reduce the input to a limit with a known answer: one uncoupled spin, zero coupling, identical \(g\)-values, vanishing relaxation or a tiny system that can be solved by direct matrix exponentiation. Agreement in these limits tests the model definition and the numerical task separately from the complexity of the full calculation.</span>
   </aside>
 </section>
 
