@@ -122,6 +122,44 @@ permalink: /lecture/
         <a href="{{ site.url }}/lecture/magnetic-resonance/">Open lecture →</a>
       </div>
     </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">06</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Electron Transfer &amp; Marcus Theory</h3>
+      <p>Connect free-energy landscapes, reorganization and electronic coupling to a quantitative nonadiabatic electron-transfer rate.</p>
+      <ul>
+        <li>diabatic states &amp; electronic coupling</li>
+        <li>reorganization energy and driving force</li>
+        <li>normal, activationless &amp; inverted regimes</li>
+        <li>energy-gap sampling from molecular ensembles</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Graduate / quantitative kinetics</span>
+        <a href="{{ site.url }}/lecture/electron-transfer/">Open lecture →</a>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">07</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Molecular Motion → Spin Dynamics</h3>
+      <p>Learn how molecular fluctuations turn a static spin Hamiltonian into (H(t)), and how correlation functions and spectral densities connect motion to relaxation.</p>
+      <ul>
+        <li>parameter trajectories &amp; fluctuations</li>
+        <li>correlation functions</li>
+        <li>spectral densities &amp; timescale matching</li>
+        <li>motional narrowing and dynamic disorder</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Graduate / multiscale dynamics</span>
+        <a href="{{ site.url }}/lecture/molecular-motion/">Open lecture →</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -129,8 +167,6 @@ permalink: /lecture/
   <p class="section-eyebrow">Next modules</p>
   <h2>Planned extensions</h2>
   <div class="roadmap-list">
-    <div><strong>Electron Transfer</strong><span>Diabatic states, electronic coupling, Marcus theory and the inverted region.</span></div>
-    <div><strong>Molecular Motion → Spin Dynamics</strong><span>Correlation functions, spectral densities, dynamic disorder and MD-derived Hamiltonians.</span></div>
     <div><strong>Computational Laboratory</strong><span>Worked MolSpin examples and practical numerical spin dynamics.</span></div>
   </div>
 </section>
@@ -138,7 +174,7 @@ permalink: /lecture/
 <section class="library-section">
   <p class="section-eyebrow">How to use it</p>
   <h2>Read it linearly—or jump in where you need it</h2>
-  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance.</p>
+  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance. Electron Transfer and Molecular Motion then extend the library toward quantitative photochemistry and multiscale dynamics.</p>
 </section>
 
 </div>
