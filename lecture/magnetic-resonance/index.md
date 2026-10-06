@@ -279,6 +279,33 @@ permalink: /lecture/magnetic-resonance/
   </div>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">03b</span>
+    <div><p class="section-eyebrow">Selection rules &amp; field scale</p><h2>A resonance line also tells you which transition the microwave field can drive</h2></div>
+  </div>
+
+  <p>For an approximately isolated electron spin in the high-field limit, the dominant magnetic-dipole selection rule is</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta m_S=\pm1,
+  \qquad
+  \Delta m_I=0
+  \]
+  </div>
+
+  <p>for a transition driven primarily by the transverse microwave field. Hyperfine mixing, ZFS or low-field state mixing can relax this simple picture and redistribute intensity among transitions.</p>
+
+  <p>For \(g\approx2\), the resonance field is roughly 0.34 T at X-band (\(\sim9.5\) GHz) and 3.35 T at W-band (\(\sim94\) GHz). Moving to higher field magnifies \(g\)-anisotropy because a small difference in \(g\) corresponds to a larger absolute difference in Zeeman frequency.</p>
+
+  <aside class="lecture-note">
+    <strong>Why CW EPR often looks like a derivative:</strong>
+    <span>conventional field-modulated CW EPR detects the response to a small modulation of the magnetic field, so the recorded signal is commonly the first derivative of the underlying absorption line.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
