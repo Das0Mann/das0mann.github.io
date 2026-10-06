@@ -114,6 +114,18 @@ permalink: /lecture/electron-transfer/
     <div><span>Outer-sphere reorganization</span><p>Reorientation and polarization of the surrounding solvent, protein or dielectric environment.</p></div>
   </div>
 
+  <div class="lecture-equation">
+  \[
+  \lambda
+  =
+  \lambda_\mathrm{in}
+  +
+  \lambda_\mathrm{out}.
+  \]
+  </div>
+
+  <p>This decomposition is conceptually useful but not always numerically unique in a protein: intramolecular coordinates, local side chains, solvent polarization and collective protein motion can be coupled. What matters for the rate is the total free-energy cost associated with reorganizing all degrees of freedom that respond on the electron-transfer timescale.</p>
+
   <p>The reaction driving force is the standard free-energy change \(\Delta G^\circ\). With the usual sign convention, a negative \(\Delta G^\circ\) means the electron-transfer reaction is thermodynamically downhill.</p>
 </section>
 
