@@ -201,6 +201,40 @@ permalink: /lecture/electron-transfer/
 
   <p>The rate depends quadratically on the electronic coupling \(V\), exponentially on the activation free energy, and only more gently on temperature through the prefactor and Boltzmann factor.</p>
 
+  <p>The formula becomes easier to understand if it is split into two pieces. Fermi's golden rule supplies the electronic part, while nuclear motion supplies the probability density for donor and acceptor states to become energetically resonant,</p>
+
+  <div class="lecture-equation">
+  \[
+  k_\mathrm{ET}
+  =
+  \frac{2\pi}{\hbar}|V|^2
+  \underbrace{\mathrm{FCWD}}_{\text{nuclear energy matching}}.
+  \]
+  </div>
+
+  <p>In classical Marcus theory the Franck–Condon-weighted density of states becomes a Gaussian energy-gap distribution,</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathrm{FCWD}
+  =
+  \frac{1}{\sqrt{4\pi\lambda k_BT}}
+  \exp\!\left[
+  -\frac{(\Delta G^\circ+\lambda)^2}
+  {4\lambda k_BT}
+  \right].
+  \]
+  </div>
+
+  <p>So the rate asks two distinct questions: <strong>can the electronic states talk to each other?</strong> through \(V\), and <strong>how often does nuclear motion bring them into energetic alignment?</strong> through the FCWD.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Two valleys and a bridge</h3>
+    <p>The donor and acceptor free-energy surfaces are two valleys. Reorganization energy measures how much the landscape must reshape before the valleys become energetically aligned; \(\Delta G^\circ\) sets their relative altitude. The electronic coupling \(V\) is the width of the bridge connecting them. A perfect crossing with a vanishingly narrow bridge can still give slow transfer, while a wide bridge is useless if the nuclear landscape almost never reaches the crossing region.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the reaction coordinate is a collective statistical coordinate, not a literal path through real space, and nonadiabatic transfer is a quantum transition rather than a particle mechanically crossing a bridge.</span>
+  </aside>
+
   <div class="interactive-card" id="marcus-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Marcus-rate explorer</h3></div>
