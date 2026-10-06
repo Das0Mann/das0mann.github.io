@@ -13,6 +13,18 @@ permalink: /lecture/molecular-motion/
   <h2>The spin Hamiltonian is rarely truly static</h2>
   <p>In a protein, liquid or flexible molecular system, distances, orientations and electronic structure fluctuate continuously. That turns fixed spin parameters into time series and makes molecular motion part of the spin-dynamics problem rather than a separate background effect.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Turn a trajectory of molecular structures into fluctuations of spin-Hamiltonian parameters.</p></div>
+    <div><span>02</span><p>Interpret autocorrelation functions and spectral densities in terms of dynamical timescales.</p></div>
+    <div><span>03</span><p>Decide whether motion is fast, resonant with a spin transition, or effectively quasi-static.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -252,6 +264,28 @@ permalink: /lecture/molecular-motion/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Molecular timescales</span>
+      <h3>Model-free approach to the interpretation of nuclear magnetic resonance relaxation in macromolecules. 1. Theory and range of validity</h3>
+      <p>G. Lipari and A. Szabo · JACS (1982). A classic connection between molecular correlation times, spectral densities and relaxation observables.</p>
+      <a href="https://doi.org/10.1021/ja00381a009" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Relaxation from fluctuations</span>
+      <h3>On the Theory of Relaxation Processes</h3>
+      <p>A. G. Redfield · IBM Journal of Research and Development (1957). The foundational route from fluctuating interactions to reduced spin relaxation dynamics.</p>
+      <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
