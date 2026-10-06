@@ -306,6 +306,31 @@ permalink: /lecture/open-systems/
   <p>This can be computationally attractive because each trajectory contains \(D\) amplitudes instead of \(D^2\) density-matrix elements. The tradeoff is stochastic sampling error.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">06b</span>
+    <div><p class="section-eyebrow">Thermal directionality</p><h2>A thermal bath does more than broaden lines—it biases upward and downward transitions differently</h2></div>
+  </div>
+
+  <p>For a bath in thermal equilibrium, microscopic transition rates are constrained by detailed balance. For two levels separated by \(\hbar\omega\), one commonly encounters the relation</p>
+
+  <div class="lecture-equation">
+  \[
+  \frac{k_\uparrow}{k_\downarrow}
+  =
+  e^{-\hbar\omega/(k_BT)}.
+  \]
+  </div>
+
+  <p>At high temperature or very small splittings, upward and downward rates can be nearly equal. At low temperature or large splitting, downward relaxation dominates. A phenomenological dephasing model that only damps coherences cannot reproduce this population thermalization by itself.</p>
+
+  <aside class="teacher-note">
+    <strong>Dephasing and thermal relaxation are different pieces of bath physics.</strong>
+    <span>One randomizes relative phase; the other exchanges energy and sets the long-time population distribution.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
