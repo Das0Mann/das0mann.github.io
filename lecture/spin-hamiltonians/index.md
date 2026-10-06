@@ -114,7 +114,7 @@ permalink: /lecture/spin-hamiltonians/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">02b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Origin of g-anisotropy</p><h2>The g-tensor remembers nearby excited electronic states</h2></div>
   </div>
 
