@@ -412,6 +412,16 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark connection</span>
+  <h3>Electronic structure becomes spectroscopy through effective magnetic parameters</h3>
+  <p>Neese's review is a useful example of the full reduction step used throughout this library: an electronic wavefunction or density is converted into g-tensors, hyperfine couplings and related parameters that can be compared directly with EPR observables.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1016/S1367-5931(02)00006-6" target="_blank" rel="noopener">F. Neese · Current Opinion in Chemical Biology 7, 125–135 (2003) →</a>
+    <span>The next step is Spin Dynamics: once the Hamiltonian is defined, these parameters generate time evolution.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
