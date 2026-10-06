@@ -83,6 +83,30 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlation answer the same question differently</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Exchange and correlation are distinct consequences of having many electrons</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Exchange</strong>
+        <p><b>What it is:</b> A purely quantum effect arising from antisymmetry of the many-electron wavefunction for identical fermions. Same-spin electrons avoid one another even without invoking classical electrostatic repulsion.</p>
+        <p><b>What it changes:</b> It changes orbital energies, spin-state energetics and magnetic coupling, and is treated exactly within a Hartree–Fock determinant.</p>
+        <p><b>What you observe:</b> Spin-state splittings, bond energetics and the strong dependence of many magnetic properties on the exchange treatment.</p>
+      </article>
+      <article>
+        <strong>Electron correlation</strong>
+        <p><b>What it is:</b> The additional correlated motion of electrons beyond the average-field picture, including dynamical avoidance from Coulomb repulsion and, in multireference cases, near-degenerate configurations.</p>
+        <p><b>What it changes:</b> It corrects energies, charge distributions, bond breaking and magnetic couplings that a single determinant can misrepresent.</p>
+        <p><b>What you observe:</b> Improved reaction energies, excitation energies and spin-state orderings; failures can be dramatic when static correlation is strong.</p>
+      </article>
+      <article>
+        <strong>Exchange–correlation functional</strong>
+        <p><b>What it is:</b> In Kohn–Sham DFT, the approximate energy functional that contains the many-body physics not represented by the non-interacting kinetic energy and classical Coulomb term.</p>
+        <p><b>What it changes:</b> Its form controls self-interaction error, delocalization, spin densities and response properties.</p>
+        <p><b>What you observe:</b> Functional dependence of geometries, charge-transfer energies, hyperfine couplings and magnetic tensors.</p>
+      </article>
+    </div>
+  </div>
+
 
   <div class="method-ladder">
     <div><span>Hartree–Fock</span><p>A single Slater determinant. Exchange is exact within that determinant, but dynamical electron correlation is absent.</p></div>
