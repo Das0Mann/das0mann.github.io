@@ -272,6 +272,34 @@ permalink: /lecture/molecular-motion/
   <p>There is no single universal correlation time for a protein. Side-chain motion, global tumbling, loop rearrangements and conformational exchange can all live on different timescales and couple to different spin-Hamiltonian terms.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05b</span>
+    <div><p class="section-eyebrow">Global versus internal motion</p><h2>A protein does not have one correlation time</h2></div>
+  </div>
+
+  <p>For a bond vector or tensor axis in a macromolecule, overall tumbling and internal flexibility can contribute separately. A simple model-free correlation function can be written schematically as</p>
+
+  <div class="lecture-equation">
+  \[
+  C(t)
+  =
+  S^2e^{-t/\tau_m}
+  +
+  (1-S^2)
+  e^{-t(1/\tau_m+1/\tau_e)}.
+  \]
+  </div>
+
+  <p>Here \(S^2\) is an order parameter between 0 and 1, \(\tau_m\) describes global molecular reorientation and \(\tau_e\) an effective internal-motion timescale. \(S^2\approx1\) means the local vector is relatively rigid in the molecular frame; smaller \(S^2\) means larger-amplitude internal motion.</p>
+
+  <aside class="lecture-note">
+    <strong>Why this matters for spin dynamics:</strong>
+    <span>two motions with the same RMS amplitude can relax spins very differently if their spectral weight falls at different frequencies. Separating amplitudes from timescales is therefore essential.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
