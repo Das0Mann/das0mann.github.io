@@ -135,6 +135,19 @@ permalink: /lecture/molecular-motion/
 
   <p>A rapidly decaying \(C_A(t)\) means the fluctuations lose memory quickly. A slowly decaying or multi-exponential correlation function indicates persistent structural memory or several dynamical processes.</p>
 
+  <p>For a general stationary process, a useful integral correlation time is</p>
+
+  <div class="lecture-equation">
+  \[
+  \tau_\mathrm{int}
+  =
+  \frac{1}{C(0)}
+  \int_0^\infty C(t)\,dt,
+  \]
+  </div>
+
+  <p>provided the integral is well behaved. For a single exponential this reduces exactly to the parameter \(\tau_c\), but a multi-timescale protein trajectory need not be representable by one unique decay constant.</p>
+
   <p>A common teaching model is a single exponential,</p>
 
   <div class="lecture-equation">
@@ -181,7 +194,7 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>For the single-exponential correlation model,</p>
+  <p>For the single-exponential correlation model and this two-sided Fourier convention,</p>
 
   <div class="lecture-equation">
   \[
@@ -191,6 +204,11 @@ permalink: /lecture/molecular-motion/
   {1+\omega^2\tau_c^2}.
   \]
   </div>
+
+  <aside class="lecture-note">
+    <strong>Check the spectral-density convention before comparing formulas.</strong>
+    <span>One-sided transforms and alternative normalization choices are also common and can differ by factors of two. The physical relaxation rate is unchanged when the transform convention and its prefactors are used consistently.</span>
+  </aside>
 
   <p>This tells us something important: large fluctuations are not automatically efficient at relaxing a particular spin transition. The motion must also contain spectral weight near the relevant transition frequency.</p>
 

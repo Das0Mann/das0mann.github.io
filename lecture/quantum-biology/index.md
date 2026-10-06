@@ -177,7 +177,7 @@ permalink: /lecture/quantum-biology/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
-    <div><p class="section-eyebrow">Weak RF fields</p><h2>A weak field can matter through resonance, not heating</h2></div>
+    <div><p class="section-eyebrow">Weak RF fields</p><h2>A weak oscillating field can matter through resonance, not heating</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>A weak oscillating field becomes effective when frequency, lifetime and coherence line up</h3></div>
@@ -199,6 +199,8 @@ permalink: /lecture/quantum-biology/
 
 
   <p>An oscillating magnetic field can perturb a radical pair when its frequency overlaps spin transitions and when the pair remains coherent for long enough to respond. The important comparison is therefore between field-induced transition rates, intrinsic spin interactions, relaxation and reaction times—not simply RF photon energy versus thermal energy.</p>
+
+  <p>This resonance argument applies specifically to time-dependent RF or microwave perturbations. A static geomagnetic field acts differently: it changes Zeeman splittings and the spin-Hamiltonian eigenstates continuously, so static-field sensitivity does not require resonant photon absorption.</p>
 
   <p>Orientation and anisotropy also matter. A field that is resonant for one molecular orientation may be off-resonant for another, and molecular motion can either average or broaden that response.</p>
 

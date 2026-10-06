@@ -169,6 +169,11 @@ permalink: /lecture/open-systems/
   </div>
 
   <p>The standard derivation uses weak coupling and a Born–Markov approximation. A secular approximation is often added, but it is a separate approximation and should not be silently assumed when near-degenerate levels make non-secular terms important.</p>
+
+  <aside class="lecture-note">
+    <strong>Redfield form is not automatically GKSL form.</strong>
+    <span>A non-secular Redfield generator need not be completely positive for arbitrary states and times. Within its perturbative regime it can still be highly useful, but unphysical negative populations are a warning that the approximation, timestep or parameter regime should be examined rather than interpreted as chemistry.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -211,6 +216,8 @@ permalink: /lecture/open-systems/
   </div>
 
   <p>The memory kernel \(\mathcal K\) says that the derivative at the current time can depend on the state at earlier times. The inhomogeneous term \(I(t)\) contains effects of initial system–bath correlations in the general formulation.</p>
+
+  <p>A time-nonlocal kernel is a natural language for memory, but “non-Markovian” is not synonymous with “contains an integral over the past.” Exact time-local master equations can also encode non-Markovian behaviour through time-dependent rates, while some kernels reduce effectively to Markovian dynamics on the timescale of interest. Operational definitions therefore depend on what property—divisibility, information backflow or correlation structure—is being tested.</p>
 </section>
 
 <section class="lecture-section">
@@ -412,6 +419,12 @@ permalink: /lecture/open-systems/
       <h3>On the Generators of Quantum Dynamical Semigroups</h3>
       <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical characterization of completely positive Markovian quantum generators.</p>
       <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Redfield positivity</span>
+      <h3>Open-quantum-system dynamics: Recovering positivity of the Redfield equation via the partial secular approximation</h3>
+      <p>D. Farina and V. Giovannetti · Physical Review A (2019). A focused analysis of why Redfield dynamics is not generically completely positive and how controlled coarse graining can restore positivity.</p>
+      <a href="https://doi.org/10.1103/PhysRevA.100.012107" target="_blank" rel="noopener">Open DOI →</a>
     </article>
       <article>
       <span>Non-Markovian dynamics</span>

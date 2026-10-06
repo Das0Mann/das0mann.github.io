@@ -281,16 +281,9 @@ permalink: /lecture/radical-pairs/
   </div>
 
 
-  <p>If singlet and triplet radical pairs react through different channels, the time-dependent spin character controls product formation. Schematically,</p>
+  <p>If singlet and triplet radical pairs react through different channels, the time-dependent spin character controls product formation. The key modelling point is that chemistry must act <em>during</em> the spin propagation rather than being attached only after a closed-system trajectory has finished.</p>
 
-  <div class="lecture-equation">
-  \[
-  \Phi_S=k_S\int_0^\infty
-  \mathrm{Tr}\!\left[\hat P_S\rho(t)\right]\,dt,
-  \]
-  </div>
-
-  <p>with the reaction kinetics included consistently in the propagation of \(\rho(t)\). This is the important conceptual bridge: a quantum spin state evolves on nanosecond or microsecond timescales, but we may observe only a final chemical yield.</p>
+  <p>This is the important conceptual bridge: a quantum spin state evolves on nanosecond or microsecond timescales, while the experiment may report only a final chemical yield. The next section makes that simultaneous spin–reaction dynamics explicit.</p>
 </section>
 
 
@@ -300,7 +293,21 @@ permalink: /lecture/radical-pairs/
     <div><p class="section-eyebrow">From spin state to product yield</p><h2>Reaction kinetics continuously measures the evolving singlet and triplet character</h2></div>
   </div>
 
-  <p>A useful way to connect the density matrix to chemistry is through singlet and triplet projectors, \(\hat P_S\) and \(\hat P_T\). For a simple first-order singlet channel, the integrated singlet yield can be written</p>
+  <p>A useful way to connect the density matrix to chemistry is through singlet and triplet projectors, \(\hat P_S\) and \(\hat P_T\). In the standard Haberkorn description of first-order spin-selective loss, the reaction operator enters the equation of motion itself:</p>
+
+  <div class="lecture-equation">
+  \[
+  \dot\rho
+  =
+  -\frac{i}{\hbar}[\hat H,\rho]
+  -\frac12
+  \left\{
+  k_S\hat P_S+k_T\hat P_T,\rho
+  \right\}.
+  \]
+  </div>
+
+  <p>The corresponding integrated singlet yield is then</p>
 
   <div class="lecture-equation">
   \[
@@ -314,8 +321,14 @@ permalink: /lecture/radical-pairs/
   \]
   </div>
 
-  <p>The important point is conceptual: the reaction does not wait until spin evolution is finished. Recombination and spin dynamics occur simultaneously. Increasing \(k_S\) can therefore increase the instantaneous probability of singlet reaction while shortening the time available for further singlet–triplet mixing.</p>
+  <p>The reaction therefore does not wait until spin evolution is finished. Increasing \(k_S\) can increase the instantaneous probability of singlet reaction while simultaneously shortening the time available for further singlet–triplet mixing. This competition is why a reaction rate cannot be interpreted independently of the Hamiltonian and relaxation timescales.</p>
 
+  <aside class="lecture-note">
+    <strong>Reaction models are part of the physics.</strong>
+    <span>The Haberkorn equation is a widely used effective description, not a universal microscopic law. Alternative radical-pair reaction operators make different assumptions about measurement, coherence and reaction products, so the chosen kinetic model should be stated when it can influence the observable.</span>
+  </aside>
+
+  
   <aside class="teacher-note">
     <strong>The yield is a time integral, not a snapshot.</strong>
     <span>Two radical pairs can have the same singlet probability at one instant and still produce different final yields if their lifetimes, relaxation or earlier spin history differ.</span>
