@@ -64,6 +64,8 @@ permalink: /lecture/coherent-control/
   </div>
 
   <p>where \(\Delta\nu\) is the detuning from resonance and \(\nu_1\) is the on-resonance Rabi frequency in cycles per second.</p>
+
+  <p>For a two-level spin this dynamics can be visualized on the <strong>Bloch sphere</strong>. The north and south poles represent the two basis populations; points around the equator represent coherent superpositions with different phases. A resonant pulse rotates the Bloch vector around a transverse axis, while detuning adds a \(z\)-component to the effective rotation axis.</p>
 </section>
 
 <section class="lecture-section">
