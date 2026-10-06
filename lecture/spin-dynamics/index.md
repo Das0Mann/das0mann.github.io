@@ -19,7 +19,7 @@ permalink: /lecture/spin-dynamics/
     <strong>You should be able to…</strong>
   </div>
   <div class="module-learning-grid">
-    <div><span>01</span><p>Propagate pure states and density operators and connect them to measurable expectation values.</p></div>
+    <div><span>01</span><p>Turn electronic-structure-derived spin parameters into a matrix Hamiltonian and propagate pure states or density operators.</p></div>
     <div><span>02</span><p>Separate coherent evolution from population relaxation and dephasing.</p></div>
     <div><span>03</span><p>Recognize when an effective open-system description is required instead of closed Schrödinger dynamics.</p></div>
   </div>
@@ -88,6 +88,79 @@ permalink: /lecture/spin-dynamics/
 
   <p>This exponential growth is the basic scaling problem behind large radical-pair and magnetic-resonance simulations. It is also why stochastic trace sampling, sparse representations and carefully chosen propagators become useful.</p>
 </section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">M</span>
+    <div><p class="section-eyebrow">From parameters to propagation</p><h2>The numbers from quantum chemistry become coefficients of Kronecker-product spin operators</h2></div>
+  </div>
+
+  <p>Suppose electronic structure has provided \(\mathbf g\), hyperfine tensors \(\mathbf A_k\), exchange \(J\) and any dipolar or ZFS tensors. The spin-dynamics code does not need the electronic orbitals anymore. It constructs</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H
+  =
+  \sum_k p_k\,\hat O_k
+  \]
+  </div>
+
+  <p>inside the spin Hilbert space. For an electron and one spin-\(\tfrac12\) nucleus, operators acting on different particles are embedded with tensor products,</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat S_\alpha
+  =
+  \frac{\sigma_\alpha}{2}\otimes\mathbf 1,
+  \qquad
+  \hat I_\beta
+  =
+  \mathbf 1\otimes\frac{\sigma_\beta}{2}.
+  \]
+  </div>
+
+  <p>Using dimensionless spin operators, an anisotropic hyperfine term is therefore assembled as</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_\mathrm{hf}
+  =
+  \sum_{\alpha,\beta}
+  A_{\alpha\beta}
+  \hat S_\alpha\hat I_\beta.
+  \]
+  </div>
+
+  <p>The same construction applies to all other terms. Once the matrix has been assembled, the electronic-structure problem has been compressed into its coefficients and orientations; dynamics follows from</p>
+
+  <div class="lecture-equation">
+  \[
+  U(t)=e^{-i\hat Ht/\hbar},
+  \qquad
+  \rho(t)=U(t)\rho(0)U^\dagger(t).
+  \]
+  </div>
+
+  <aside class="lecture-note">
+    <strong>Unit conversion happens before propagation.</strong>
+    <span>If the quantum-chemistry output is in MHz, then \(H/h\) is naturally expressed in MHz. If the propagator expects angular frequency, use \(H/\hbar=2\pi(H/h)\). A hidden \(2\pi\) error changes every dynamical timescale.</span>
+  </aside>
+
+  <p>This gives the full chain:</p>
+
+  <div class="lecture-pipeline compact-pipeline" aria-label="Electronic structure to spin dynamics">
+    <div><span>Electronic state</span><strong>\(\Psi\), \(\rho_s(\mathbf r)\), excited states</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Response / projection</span><strong>\(\mathbf g,\mathbf A,J,\mathbf D\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Operator assembly</span><strong>\(\hat H=\sum p_k\hat O_k\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Propagation</span><strong>\(\rho(t)\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Observable</span><strong>\(\mathrm{Tr}[\rho(t)\hat O]\)</strong></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">

@@ -21,7 +21,7 @@ permalink: /lecture/spin-hamiltonians/
   <div class="module-learning-grid">
     <div><span>01</span><p>Read a spin Hamiltonian term by term and state the associated units and sign convention.</p></div>
     <div><span>02</span><p>Distinguish Zeeman, hyperfine, exchange, dipolar, quadrupole and zero-field-splitting physics.</p></div>
-    <div><span>03</span><p>Recognize when tensor orientation and the molecular-to-laboratory frame are essential.</p></div>
+    <div><span>03</span><p>Map ab initio energies and response tensors onto the operator coefficients used in a spin Hamiltonian.</p></div>
   </div>
 </section>
 
@@ -61,6 +61,38 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">M</span>
+    <div><p class="section-eyebrow">Parameter extraction</p><h2>Every spin parameter is a coefficient obtained by matching electronic physics to a spin operator</h2></div>
+  </div>
+
+  <p>The common structure is</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_\mathrm{eff}
+  =
+  \sum_k p_k\,\hat O_k.
+  \]
+  </div>
+
+  <p>The operator \(\hat O_k\) is chosen from the spin model; the coefficient \(p_k\) is supplied by electronic structure. The parameter can be obtained by a response derivative, an expectation value, an energy difference or an effective-Hamiltonian projection. This distinction matters: \(A^\mathrm{FC}\) is tied directly to spin density at a nucleus, \(g\) is primarily a response/SOC property, and \(J\) is usually inferred from the relative energies of different spin arrangements.</p>
+
+  <div class="method-ladder">
+    <div><span>\(g\)-tensor</span><p>Magnetic-field response of the electronic state, including relativistic/SOC contributions. At SCF level this normally requires coupled-perturbed response equations.</p></div>
+    <div><span>Hyperfine \(\mathbf A_N\)</span><p>Contact spin density plus anisotropic electron–nuclear spin-dipolar and smaller orbital/relativistic terms.</p></div>
+    <div><span>Exchange \(J\)</span><p>Map electronic high-spin/low-spin energies—or projected broken-symmetry energies—onto a chosen Heisenberg convention.</p></div>
+    <div><span>Dipolar / ZFS \(\mathbf D\)</span><p>Project direct spin–spin and SOC-mediated interactions into the selected spin manifold.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>The operator convention is part of the parameter definition.</strong>
+    <span>The same electronic energy splitting can correspond to different numerical \(J\) values if one paper uses \(J\mathbf S_1\!\cdot\!\mathbf S_2\) and another uses \(-2J\mathbf S_1\!\cdot\!\mathbf S_2\). Never copy a number without copying its Hamiltonian convention.</span>
+  </aside>
+</section>
+
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>
@@ -96,6 +128,39 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 
   <p>If \(\mathbf g=g\mathbf 1\), the interaction is isotropic. In a molecule, spin–orbit coupling and the local electronic structure generally make \(\mathbf g\) a tensor. The resonance therefore depends on how the molecule is oriented relative to the magnetic field.</p>
+
+  <p>At the quantum-chemistry level, \(\mathbf g\) is a response property rather than an orbital label. A widely used decomposition is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathbf g
+  =
+  g_e\mathbf 1
+  +
+  \mathbf g^\mathrm{RMC}
+  +
+  \mathbf g^\mathrm{DSO}
+  +
+  \mathbf g^\mathrm{PSO}.
+  \]
+  </div>
+
+  <p>The paramagnetic spin–orbit term is usually the dominant chemically variable contribution. In a sum-over-states picture its structure is schematically</p>
+
+  <div class="lecture-equation">
+  \[
+  \Delta g_{\alpha\beta}^{\mathrm{PSO}}
+  \sim
+  \sum_{n\ne0}
+  \frac{
+  \langle0|\hat L_\alpha|n\rangle
+  \langle n|\hat H_{\mathrm{SO},\beta}|0\rangle
+  }{E_0-E_n}
+  +\mathrm{c.c.}
+  \]
+  </div>
+
+  <p>This makes the origin of \(g\)-anisotropy explicit: orbital angular momentum, SOC and low-lying excited states all enter the effective ground-state Zeeman interaction.</p>
 
   <p>The nuclear Zeeman interaction is much smaller because the nuclear magneton is much smaller than the Bohr magneton:</p>
 
@@ -190,7 +255,32 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>The isotropic Fermi-contact contribution is closely related to the spin density at the nucleus. The anisotropic contribution reflects the spatial distribution of the unpaired spin and behaves like an electron–nuclear dipolar interaction. When comparing values, check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units; the numerical tensor changes with that convention even though the physics does not.</p>
+  <p>The isotropic Fermi-contact contribution is controlled by the spin density at the nucleus,</p>
+
+  <div class="lecture-equation">
+  \[
+  A_N^\mathrm{FC}
+  \propto
+  \rho_s(\mathbf R_N).
+  \]
+  </div>
+
+  <p>The anisotropic spin-dipolar term samples the surrounding spin density,</p>
+
+  <div class="lecture-equation">
+  \[
+  A_{N,\alpha\beta}^\mathrm{dip}
+  \propto
+  \int
+  \rho_s(\mathbf r)
+  \frac{
+  3r_\alpha r_\beta-r^2\delta_{\alpha\beta}
+  }{r^5}
+  \,d\mathbf r.
+  \]
+  </div>
+
+  <p>The contact term is therefore very sensitive to core-region spin polarization, while the anisotropic tensor contains spatial information about the unpaired spin distribution. In practical relativistic calculations additional orbital and gauge-related contributions can enter. When comparing values, also check whether \(\mathbf A\) is reported in energy, ordinary-frequency, angular-frequency or magnetic-field units.</p>
 
   <details class="lecture-details">
     <summary>Why can a proton far from the formal radical centre still have a hyperfine coupling?</summary>
@@ -233,6 +323,20 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 
   <p>Exchange originates from the antisymmetry of the electronic wavefunction and orbital overlap. It can change extremely rapidly with geometry. Other communities use \(-2J\,\mathbf S_1\cdot\mathbf S_2\), so the sign and factor of two are not universal.</p>
+
+  <p>For two \(S=\tfrac12\) centres under the convention used here,</p>
+
+  <div class="lecture-equation">
+  \[
+  E_S=-\frac{3J}{4},
+  \qquad
+  E_T=\frac{J}{4},
+  \qquad
+  J=E_T-E_S.
+  \]
+  </div>
+
+  <p>If both states are available as proper spin eigenstates, this is the direct electronic-energy mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection is then used to infer the pure-state splitting before converting it to the \(J\) convention above.</p>
 
   <p>The through-space magnetic dipolar interaction has a completely different origin. Using dimensionless spin operators and the point-dipole approximation,</p>
 
@@ -339,6 +443,21 @@ permalink: /lecture/spin-hamiltonians/
 
   <p>Nuclei with \(I>1/2\) have an electric quadrupole moment that can interact with the electric-field gradient:</p>
 
+  <p>The electronic-structure quantity behind \(\mathbf Q\) is the electric-field-gradient tensor at the nucleus,</p>
+
+  <div class="lecture-equation">
+  \[
+  V_{\alpha\beta}(\mathbf R_N)
+  =
+  \left.
+  \frac{\partial^2\Phi(\mathbf r)}
+  {\partial r_\alpha\,\partial r_\beta}
+  \right|_{\mathbf R_N},
+  \]
+  </div>
+
+  <p>where \(\Phi\) is the electrostatic potential generated by electrons and the other nuclei. Combining this EFG tensor with the nuclear quadrupole moment produces the spectroscopic quadrupole tensor. Thus quadrupole coupling probes the local anisotropy of the electric field rather than spin density.</p>
+
   <div class="lecture-equation">
   \[
   \hat H_Q
@@ -359,6 +478,18 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 
   <p>\(D\) measures the axial part and \(E\) the rhombic part in this convention. The tensor form is more general, and—as always—the sign convention and units need to be stated explicitly.</p>
+
+  <p>If the symmetric traceless ZFS tensor is diagonalized to \(D_{xx},D_{yy},D_{zz}\), the usual principal-axis parameterization gives</p>
+
+  <div class="lecture-equation">
+  \[
+  D=\frac{3}{2}D_{zz},
+  \qquad
+  E=\frac{D_{xx}-D_{yy}}{2},
+  \]
+  </div>
+
+  <p>for the standard ordering convention. Quantum chemistry first determines the tensor contributions—direct spin–spin and SOC-mediated—and only then converts the tensor into the compact \(D,E\) pair used by spectroscopy and spin dynamics.</p>
 </section>
 
 <section class="lecture-section">
@@ -477,6 +608,12 @@ permalink: /lecture/spin-hamiltonians/
       <h3>Prediction of molecular properties and molecular spectroscopy with density functional theory: From fundamental theory to exchange-coupling</h3>
       <p>F. Neese · Coordination Chemistry Reviews (2009). A broader review of magnetic response, spectroscopy and exchange coupling from DFT.</p>
       <a href="https://doi.org/10.1016/j.ccr.2008.05.014" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Exchange mapping</span>
+      <h3>Ab initio molecular orbital calculations of effective exchange integrals between transition metal ions</h3>
+      <p>K. Yamaguchi, T. Tsunekawa, Y. Toyoda and T. Fueno · Chemical Physics Letters (1988). A foundational spin-projection route for mapping broken-symmetry electronic calculations onto effective exchange parameters.</p>
+      <a href="https://doi.org/10.1016/0009-2614(88)87049-0" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>
