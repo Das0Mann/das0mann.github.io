@@ -225,6 +225,30 @@ permalink: /lecture/excited-state-photochemistry/
     <div><p class="section-eyebrow">Triplet states</p><h2>Triplet formation changes both lifetime and spin physics</h2></div>
   </div>
   <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Fluorescence and phosphorescence report different electronic spin pathways</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Fluorescence</strong>
+        <p><b>What it is:</b> Radiative emission between electronic states of the same spin multiplicity, commonly \(S_1\rightarrow S_0\).</p>
+        <p><b>What it changes:</b> It competes with internal conversion, intersystem crossing and photochemistry for the excited-state population.</p>
+        <p><b>What you observe:</b> Prompt emission whose lifetime is typically set by the total decay rate out of the singlet excited state.</p>
+      </article>
+      <article>
+        <strong>Phosphorescence</strong>
+        <p><b>What it is:</b> Radiative emission from a triplet state to a singlet ground state, enabled by spin–orbit-induced mixing because the transition is spin-forbidden in the nonrelativistic limit.</p>
+        <p><b>What it changes:</b> Its rate is usually much slower than an allowed fluorescence transition and is strongly influenced by SOC.</p>
+        <p><b>What you observe:</b> Longer-lived emission associated with triplet population.</p>
+      </article>
+      <article>
+        <strong>Quantum yield</strong>
+        <p><b>What it is:</b> The fraction of absorbed photons that produce a chosen outcome such as fluorescence, triplet formation or a chemical product.</p>
+        <p><b>What it changes:</b> It integrates all competing kinetic pathways rather than measuring only one microscopic rate.</p>
+        <p><b>What you observe:</b> A branching ratio that connects excited-state kinetics to measurable photons or products.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>A triplet is a three-sublevel spin manifold, not just a 'long-lived excited state'</h3></div>
     <div class="physical-concept-grid">
       <article>
