@@ -119,6 +119,18 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
+  <p>For a closed spin system this evolution is <em>unitary</em>: probability is conserved and the Hamiltonian changes relative phases rather than irreversibly destroying information. In density-matrix form,</p>
+
+  <div class="lecture-equation">
+  \[
+  \dot\rho
+  =
+  -\frac{i}{\hbar}[\hat H,\rho].
+  \]
+  </div>
+
+  <p>The commutator converts energy splittings into phase evolution. A closed Hamiltonian can rotate or redistribute quantum amplitudes, but it cannot by itself generate irreversible \(T_1\) or \(T_2\) relaxation; that requires coupling to additional degrees of freedom.</p>
+
   <div class="interactive-card" id="larmor-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Electron-spin Larmor precession</h3></div>
