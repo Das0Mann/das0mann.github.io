@@ -376,6 +376,16 @@ permalink: /lecture/spin-dynamics/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark theory</span>
+  <h3>Redfield theory made molecular fluctuations into spin-relaxation rates</h3>
+  <p>Redfield's density-matrix treatment established the central idea that weak, rapidly fluctuating interactions can be reduced to an effective relaxation superoperator. It is the historical bridge between microscopic motion and T₁/T₂-type dynamics.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">A. G. Redfield · IBM Journal of Research and Development 1, 19–31 (1957) →</a>
+    <span>Molecular Motion later supplies the correlation functions and spectral densities that enter this reduction.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
