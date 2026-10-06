@@ -330,6 +330,16 @@ permalink: /lecture/coherent-control/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>Control means engineering the Hamiltonian in time</h3>
+  <ul>
+    <li>An oscillating field adds a time-dependent interaction whose amplitude, phase, frequency and duration determine the implemented spin rotation.</li>
+    <li>Rotating-frame and RWA descriptions simplify the dynamics only within a defined drive-strength and detuning regime.</li>
+    <li>Echoes, composite pulses and shaped pulses are different strategies for making an observable less sensitive—or deliberately more sensitive—to selected Hamiltonian terms.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark experiment</span>
   <h3>The spin echo separates reversible dephasing from irreversible coherence loss</h3>
