@@ -183,6 +183,27 @@ permalink: /lecture/computational-lab/
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">03b</span>
+    <div><p class="section-eyebrow">Matrix-free thinking</p><h2>You often need the action of an operator, not the operator itself</h2></div>
+  </div>
+
+  <p>Krylov and related propagation methods exploit a simple numerical fact: to approximate \(e^{-iHt}|\psi\rangle\), it can be enough to evaluate repeated products \(H|\psi\rangle\) without ever constructing or storing the full matrix exponential. If \(H\) itself is sparse or can be applied as a sum of local spin operators, the memory saving can be enormous.</p>
+
+  <div class="observable-list">
+    <div><strong>Closed-system check</strong><span>Verify norm conservation and, when appropriate, energy conservation or reversibility.</span></div>
+    <div><strong>Density-matrix check</strong><span>Verify trace preservation and monitor Hermiticity; physical generators should not create obviously negative populations.</span></div>
+    <div><strong>Observable check</strong><span>Converge the quantity you report, not only an internal solver tolerance.</span></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>Numerical stability is not the same as physical correctness.</strong>
+    <span>A calculation can converge perfectly to the wrong answer if the Hamiltonian, units, initial state or reaction model is wrong.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
