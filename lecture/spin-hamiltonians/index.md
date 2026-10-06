@@ -252,6 +252,11 @@ permalink: /lecture/spin-hamiltonians/
 
   <p>The key signatures are the \(r^{-3}\) distance dependence and the strong orientation dependence.</p>
 
+  <aside class="lecture-note">
+    <strong>The point-dipole picture has a spatial-resolution limit.</strong>
+    <span>At long range, treating each unpaired electron as a localized magnetic point moment is often excellent. At short range or for strongly delocalized spin density, the full electron–electron dipolar tensor depends on the spatial spin-density distributions; a single centre-to-centre distance can then be misleading.</span>
+  </aside>
+
   <div class="interactive-card" id="dipolar-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Electron–electron dipolar geometry</h3></div>
@@ -387,6 +392,22 @@ permalink: /lecture/spin-hamiltonians/
 
 
   <p>An anisotropic \(g\)-tensor or hyperfine tensor is not just three numbers. It has principal values <em>and principal axes</em>. Rotating the molecule relative to the field rotates the tensor into the laboratory frame and changes the observed interaction.</p>
+
+  <p>The principal values themselves are rotational invariants: changing coordinate axes changes the matrix elements but not its eigenvalues. For a symmetric hyperfine tensor, for example,</p>
+
+  <div class="lecture-equation">
+  \[
+  A_\mathrm{iso}
+  =
+  \frac{\mathrm{Tr}(\mathbf A)}{3},
+  \qquad
+  \mathbf T
+  =
+  \mathbf A-A_\mathrm{iso}\mathbf 1.
+  \]
+  </div>
+
+  <p>This separation is useful because \(A_\mathrm{iso}\) survives rapid isotropic tumbling, whereas the traceless anisotropic part averages to zero in the extreme fast-motion limit but can still drive relaxation while it fluctuates.</p>
 
   <div class="lecture-equation">
   \[

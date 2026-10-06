@@ -240,6 +240,11 @@ permalink: /lecture/quantum-biology/
   <p>Photochemically induced dynamic nuclear polarization is another radical-pair readout. Spin-selective reaction pathways correlate electron-spin evolution with nuclear-spin states, creating nuclear populations far from thermal equilibrium.</p>
 
   <p>The resulting NMR enhancement can therefore report on electron transfer, radical-pair dynamics and molecular geometry. In biomimetic flavin–tryptophan systems, distance and conformational dynamics become directly relevant because they change both electron-transfer kinetics and spin interactions.</p>
+
+  <aside class="lecture-note">
+    <strong>Photo-CIDNP is not one universal polarization mechanism.</strong>
+    <span>In liquid-state radical-pair CIDNP, polarization sign and magnitude depend on precursor multiplicity, recombination versus escape, \(\Delta g\), hyperfine signs and reaction kinetics. In solids, mechanisms such as three-spin mixing, differential decay and differential relaxation can dominate instead. The observed enhancement therefore contains mechanistic information, but it should not be interpreted from “spin sorting” alone.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">

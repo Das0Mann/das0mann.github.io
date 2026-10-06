@@ -411,6 +411,12 @@ permalink: /lecture/molecular-motion/
       <p>A. G. Redfield · IBM Journal of Research and Development (1957). The foundational route from fluctuating interactions to reduced spin relaxation dynamics.</p>
       <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+    <article>
+      <span>Stochastic line shapes</span>
+      <h3>Note on the Stochastic Theory of Resonance Absorption</h3>
+      <p>R. Kubo · Journal of the Physical Society of Japan (1954). A classic treatment of how random frequency modulation produces resonance line-shape changes and motional narrowing.</p>
+      <a href="https://doi.org/10.1143/JPSJ.9.935" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}

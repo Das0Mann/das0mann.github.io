@@ -104,6 +104,11 @@ permalink: /lecture/electronic-structure/
     <summary>What do polarization and diffuse functions actually do?</summary>
     <p>Polarization functions add angular flexibility, allowing the density to distort away from isolated-atom shapes. Diffuse functions add slowly decaying radial functions and are important for anions, Rydberg states and spatially extended charge-transfer states.</p>
   </details>
+
+  <aside class="teacher-note">
+    <strong>Converge the property, not just the SCF energy.</strong>
+    <span>A basis set can give a seemingly stable total energy while a magnetic response, spin density, excitation energy or diffuse charge-transfer state is still changing appreciably. Basis-set convergence is therefore observable-specific; polarization, diffuse and sometimes core-correlating functions should be tested against the quantity you actually intend to report.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
@@ -379,6 +384,18 @@ permalink: /lecture/electronic-structure/
       <h3>Generalized Gradient Approximation Made Simple</h3>
       <p>J. P. Perdew, K. Burke and M. Ernzerhof · Physical Review Letters (1996). The foundational PBE paper and a useful reference point for how practical semilocal density functionals are constructed.</p>
       <a href="https://doi.org/10.1103/PhysRevLett.77.3865" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Basis-set design</span>
+      <h3>Gaussian basis sets for use in correlated molecular calculations. I. The atoms boron through neon and hydrogen</h3>
+      <p>T. H. Dunning Jr. · The Journal of Chemical Physics (1989). The foundational correlation-consistent basis-set paper and a useful entry point for systematic basis convergence.</p>
+      <a href="https://doi.org/10.1063/1.456153" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Wavefunction correlation</span>
+      <h3>Coupled-cluster theory in quantum chemistry</h3>
+      <p>R. J. Bartlett and M. Musiał · Reviews of Modern Physics (2007). A comprehensive review of coupled-cluster theory and its role as a high-accuracy single-reference framework.</p>
+      <a href="https://doi.org/10.1103/RevModPhys.79.291" target="_blank" rel="noopener">Open DOI →</a>
     </article>
   </div>
 </section>
