@@ -316,6 +316,16 @@ PulseSequence seq
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>Read every input file as an equation</h3>
+  <ul>
+    <li>Spin and Interaction objects define the Hilbert space and Hamiltonian; State defines the preparation; transitions and relaxation define non-unitary dynamics.</li>
+    <li>The Task selects which mathematical problem is solved and which observable is reported, so syntax and numerical method cannot be separated from the physical model.</li>
+    <li>A reproducible MolSpin calculation records units, tensor frames, sign conventions, stochastic settings and the exact software version together with the input.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Simulation ecosystem</span>
   <h3>MolSpin sits in a broader ecosystem of spin-dynamics software</h3>

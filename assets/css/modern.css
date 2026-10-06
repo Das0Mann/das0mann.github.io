@@ -5374,3 +5374,345 @@ h3 { font-size: 1.25rem; }
     text-align: right;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture visual pedagogy refinement — October 2026
+   --------------------------------------------------------- */
+
+/* Give every module a clear visual entry point without turning it into a hero card. */
+.lecture-module .module-intro {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 28px 24px;
+  border: 1px solid #d7e5e8;
+  border-left: 4px solid var(--accent);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(242,249,250,.96), rgba(255,255,255,.96));
+  box-shadow: 0 12px 34px rgba(7,29,49,.045);
+}
+
+.lecture-module .module-intro::after {
+  content: "";
+  position: absolute;
+  right: -54px;
+  top: -70px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47,143,155,.08), rgba(47,143,155,0) 68%);
+  pointer-events: none;
+}
+
+.lecture-module .module-intro h2,
+.lecture-module .module-intro > p,
+.lecture-module .module-intro .module-index {
+  position: relative;
+  z-index: 1;
+}
+
+/* Learning goals should read as a compact orientation block rather than another dense section. */
+.module-learning {
+  padding: 17px 18px 15px;
+  border: 1px solid #e0e9eb;
+  border-radius: 14px;
+  background: rgba(250,252,252,.88);
+}
+
+.module-learning-grid > div {
+  border-top-color: #dfeaec;
+}
+
+.module-learning-grid > div > span {
+  color: var(--accent);
+}
+
+/* Section hierarchy: number first, then eyebrow/title. */
+.lecture-module .lecture-section-head {
+  display: grid;
+  grid-template-columns: 44px minmax(0,1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.lecture-module .lecture-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  margin-top: 1px;
+  border: 1px solid #cfe1e4;
+  border-radius: 11px;
+  background: rgba(245,250,251,.95);
+  color: #66858d;
+  font-family: "Inter", sans-serif;
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .05em;
+}
+
+/* Equations are primary reasoning objects, not generic grey boxes. */
+.lecture-module .lecture-equation {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border: 1px solid #d6e4e7;
+  border-left: 3px solid #9fcfd4;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(244,250,251,.94), rgba(255,255,255,.98));
+  box-shadow: 0 6px 20px rgba(7,29,49,.025);
+}
+
+.lecture-module .lecture-equation.compact {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.lecture-module .lecture-equation mjx-container[display="true"] {
+  margin: .2em 0 !important;
+}
+
+/* Notes now have distinct jobs: caution/context versus teaching emphasis. */
+.lecture-note,
+.teacher-note {
+  border-radius: 12px;
+}
+
+.lecture-note {
+  border-left: 3px solid #8ebfc5;
+  background: rgba(242,249,250,.78);
+}
+
+.teacher-note {
+  border-left: 3px solid #173f5f;
+  background: rgba(247,249,251,.9);
+}
+
+.lecture-note strong,
+.teacher-note strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Compact end-of-module synthesis. */
+.lecture-takeaway {
+  max-width: 900px;
+  margin: 64px 0 18px 59px;
+  padding: 20px 22px 18px;
+  border: 1px solid #bfdde1;
+  border-radius: 15px;
+  background:
+    linear-gradient(135deg, rgba(231,246,247,.72), rgba(255,255,255,.96));
+  box-shadow: 0 8px 26px rgba(7,29,49,.035);
+}
+
+.lecture-takeaway-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: .64rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.lecture-takeaway h3 {
+  margin: 0 0 11px;
+  color: var(--navy);
+  font-size: 1.04rem;
+  line-height: 1.38;
+}
+
+.lecture-takeaway ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lecture-takeaway li {
+  position: relative;
+  margin: 0;
+  padding: 7px 0 7px 20px;
+  color: #435d69;
+  font-family: "Inter", sans-serif;
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+.lecture-takeaway li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.lecture-takeaway li + li {
+  border-top: 1px solid rgba(191,221,225,.58);
+}
+
+/* Library cards: clearer path identity and more deliberate interaction. */
+.library-card {
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.library-card:hover {
+  transform: translateY(-2px);
+  border-color: #c1dce0;
+  box-shadow: 0 14px 32px rgba(7,29,49,.07);
+}
+
+.library-group-label {
+  padding-top: 17px;
+  padding-bottom: 15px;
+  border-top: 2px solid #d9e8ea;
+}
+
+.library-flow span {
+  box-shadow: 0 3px 10px rgba(7,29,49,.025);
+}
+
+/* Dense derivations need a little more breathing room than ordinary prose. */
+.parameter-derivation {
+  max-width: 900px;
+  margin: 28px 0 32px;
+  padding: 18px 20px 20px;
+  border-top: 1px solid #cae0e3;
+  border-bottom: 1px solid #cae0e3;
+  background: rgba(248,252,252,.66);
+}
+
+.parameter-derivation h3 {
+  max-width: 760px;
+  margin: 4px 0 12px;
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+
+.parameter-derivation > p {
+  max-width: 820px;
+}
+
+/* Keep visual rhythm intact on tablets and phones. */
+@media (max-width: 900px) {
+  .lecture-takeaway {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .lecture-module .module-intro {
+    padding: 20px 17px 18px;
+    border-radius: 14px;
+  }
+
+  .module-learning {
+    padding: 14px 13px 12px;
+  }
+
+  .lecture-module .lecture-section-head {
+    grid-template-columns: 34px minmax(0,1fr);
+    gap: 10px;
+  }
+
+  .lecture-module .lecture-index {
+    width: 31px;
+    min-width: 31px;
+    height: 31px;
+    border-radius: 9px;
+    font-size: .61rem;
+  }
+
+  .lecture-module .lecture-equation {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .lecture-takeaway {
+    margin-top: 50px;
+    padding: 17px 14px 15px;
+  }
+
+  .lecture-takeaway li {
+    padding-left: 18px;
+    font-size: .79rem;
+  }
+
+  .parameter-derivation {
+    padding: 15px 12px 16px;
+  }
+}
+
+
+.library-use-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.library-use-grid > div {
+  min-width: 0;
+  padding: 14px 15px 13px;
+  border-top: 2px solid #c7e0e3;
+  background: rgba(249,252,252,.76);
+}
+
+.library-use-grid span,
+.library-use-grid strong {
+  display: block;
+  font-family: "Inter", sans-serif;
+}
+
+.library-use-grid span {
+  margin-bottom: 5px;
+  color: #7b9098;
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.library-use-grid strong {
+  margin-bottom: 5px;
+  color: var(--navy);
+  font-size: .84rem;
+}
+
+.library-use-grid p {
+  margin: 0 !important;
+  color: #60757f !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .76rem !important;
+  line-height: 1.55 !important;
+}
+
+.lecture-reading-grid article {
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.lecture-reading-grid article:hover {
+  transform: translateY(-1px);
+  border-color: #c9dde1;
+  box-shadow: 0 9px 24px rgba(7,29,49,.045);
+}
+
+@media (max-width: 760px) {
+  .library-use-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .library-use-grid > div {
+    padding: 12px 2px 12px 12px;
+    border-left: 2px solid #c7e0e3;
+    border-top: 0;
+    background: transparent;
+  }
+}

@@ -400,6 +400,16 @@ permalink: /lecture/radical-pairs/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>What actually creates a magnetic-field effect?</h3>
+  <ul>
+    <li>Singlet–triplet conversion requires Hamiltonian terms that do not commute with the singlet projector; magnetic inequivalence between the two radicals is central.</li>
+    <li>Reaction kinetics competes continuously with coherent spin evolution, so lifetime and recombination rates are part of the magnetic-response mechanism.</li>
+    <li>Hyperfine, Δg, exchange, dipolar coupling, relaxation and molecular motion all act on different field and time scales.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark spin chemistry</span>
   <h3>Spin-selective chemistry can make weak magnetic interactions chemically visible</h3>

@@ -345,6 +345,16 @@ permalink: /lecture/quantum-biology/
   <p>The same modelling discipline applies: identify the radical state, quantify the spin Hamiltonian, include relaxation and reaction kinetics, and calculate the actual observable rather than inferring an effect from one interaction parameter alone.</p>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>A useful quantum-biology claim must close the whole mechanism</h3>
+  <ul>
+    <li>A quantum state or spin effect is biologically relevant only if it survives long enough, couples to chemistry and reaches an observable biological output.</li>
+    <li>Weak magnetic fields need not compete with kBT directly in a non-equilibrium radical-pair mechanism; they compete with spin-interaction, reaction and relaxation rates.</li>
+    <li>Mechanistic plausibility requires quantitative predictions that can distinguish the proposed spin pathway from conventional alternatives.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark experiment</span>
   <h3>An anisotropic radical-pair model can respond at geomagnetic field strengths</h3>

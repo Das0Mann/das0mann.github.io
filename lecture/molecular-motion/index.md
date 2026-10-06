@@ -403,6 +403,16 @@ permalink: /lecture/molecular-motion/
   </aside>
 </section>
 
+<aside class="lecture-takeaway">
+  <span class="lecture-takeaway-label">Take-home model</span>
+  <h3>From molecular dynamics to spin relaxation</h3>
+  <ul>
+    <li>A molecular trajectory matters only through the Hamiltonian parameters it modulates: R(t) must be mapped to A(t), g(t), J(t), D(t) or other coefficients.</li>
+    <li>Correlation functions quantify memory; spectral densities determine how much fluctuation power exists at the spin-transition frequencies that matter.</li>
+    <li>Static ensemble averaging and explicit time-dependent propagation describe different physical limits and should not be interchanged silently.</li>
+  </ul>
+</aside>
+
 <aside class="landmark-study">
   <span class="landmark-label">Landmark dynamics</span>
   <h3>Relaxation can report molecular motion only through a dynamical model</h3>
