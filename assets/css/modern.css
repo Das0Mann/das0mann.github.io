@@ -3628,3 +3628,73 @@ h3 { font-size: 1.25rem; }
     font-size: .68rem;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture modules: Spin Hamiltonians + Magnetic Resonance
+   --------------------------------------------------------- */
+.page-spin-hamiltonians .site-main,
+.page-magnetic-resonance .site-main {
+  width: min(calc(100% - 44px), 1080px);
+  padding-top: 48px;
+}
+
+.page-spin-hamiltonians .page-content,
+.page-magnetic-resonance .page-content {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-spin-hamiltonians .page-hero-inner,
+.page-magnetic-resonance .page-hero-inner {
+  width: min(calc(100% - 44px), 1040px);
+  padding-top: 54px;
+  padding-bottom: 48px;
+}
+
+.library-grid {
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.roadmap-list {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+#dipolar-demo .lower-line,
+#epr-demo .lower-line {
+  stroke: var(--navy-2);
+}
+
+#dipolar-demo .upper-point,
+#epr-demo .upper-point {
+  fill: var(--accent);
+}
+
+#dipolar-demo .plot-wrap,
+#epr-demo .plot-wrap {
+  align-self: center;
+}
+
+@media (max-width: 620px) {
+  .page-spin-hamiltonians .site-main,
+  .page-magnetic-resonance .site-main,
+  .page-spin-hamiltonians .page-hero-inner,
+  .page-magnetic-resonance .page-hero-inner {
+    width: min(calc(100% - 24px), 1080px);
+  }
+
+  .page-spin-hamiltonians .page-hero-inner,
+  .page-magnetic-resonance .page-hero-inner {
+    padding-top: 42px;
+    padding-bottom: 38px;
+  }
+
+  .page-spin-hamiltonians .page-content p,
+  .page-magnetic-resonance .page-content p {
+    font-size: 1rem;
+  }
+}

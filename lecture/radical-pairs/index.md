@@ -9,7 +9,7 @@ permalink: /lecture/radical-pairs/
 {% include lecture-library-nav.html %}
 
 <header class="module-intro">
-  <span class="module-index">Module 03</span>
+  <span class="module-index">Module 04</span>
   <h2>Turn spin dynamics into chemistry</h2>
   <p>A radical pair is one of the cleanest places where quantum spin dynamics becomes chemically observable. The spins evolve coherently, but the singlet and triplet parts of the state can react differently. Change the spin evolution and you can change the reaction yield.</p>
 </header>

@@ -50,6 +50,25 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">02</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Spin Hamiltonians</h3>
+      <p>Build the effective magnetic model term by term: Zeeman, hyperfine, exchange, dipolar coupling, quadrupole interactions and zero-field splitting.</p>
+      <ul>
+        <li>electron &amp; nuclear Zeeman terms</li>
+        <li>hyperfine tensors &amp; spin density</li>
+        <li>exchange and dipolar coupling</li>
+        <li>quadrupole, ZFS &amp; conventions</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Graduate foundation</span>
+        <a href="{{ site.url }}/lecture/spin-hamiltonians/">Open lecture →</a>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">03</span>
         <span class="library-tag">2 interactives</span>
       </div>
       <h3>Spin Dynamics</h3>
@@ -68,7 +87,7 @@ permalink: /lecture/
 
     <article class="library-card">
       <div class="library-card-top">
-        <span class="library-number">03</span>
+        <span class="library-number">04</span>
         <span class="library-tag">Interactive</span>
       </div>
       <h3>Radical-Pair Spin Chemistry</h3>
@@ -84,6 +103,25 @@ permalink: /lecture/
         <a href="{{ site.url }}/lecture/radical-pairs/">Open lecture →</a>
       </div>
     </article>
+
+    <article class="library-card">
+      <div class="library-card-top">
+        <span class="library-number">05</span>
+        <span class="library-tag">Interactive</span>
+      </div>
+      <h3>Magnetic Resonance</h3>
+      <p>Connect spin-energy levels to experiment: EPR resonance, hyperfine structure, anisotropic g-tensors, powder patterns, linewidths and RYDMR.</p>
+      <ul>
+        <li>resonance condition &amp; EPR bands</li>
+        <li>hyperfine splitting</li>
+        <li>g-anisotropy &amp; powder spectra</li>
+        <li>CW, trEPR, pulse concepts &amp; RYDMR</li>
+      </ul>
+      <div class="library-card-footer">
+        <span>Graduate / experimental connection</span>
+        <a href="{{ site.url }}/lecture/magnetic-resonance/">Open lecture →</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -91,8 +129,6 @@ permalink: /lecture/
   <p class="section-eyebrow">Next modules</p>
   <h2>Planned extensions</h2>
   <div class="roadmap-list">
-    <div><strong>Spin Hamiltonians</strong><span>Zeeman, hyperfine, exchange, dipolar coupling, quadrupole and ZFS in more detail.</span></div>
-    <div><strong>Magnetic Resonance</strong><span>EPR, resonance conditions, anisotropy, powder spectra, line shapes, pulses and RYDMR.</span></div>
     <div><strong>Electron Transfer</strong><span>Diabatic states, electronic coupling, Marcus theory and the inverted region.</span></div>
     <div><strong>Molecular Motion → Spin Dynamics</strong><span>Correlation functions, spectral densities, dynamic disorder and MD-derived Hamiltonians.</span></div>
     <div><strong>Computational Laboratory</strong><span>Worked MolSpin examples and practical numerical spin dynamics.</span></div>
@@ -102,7 +138,7 @@ permalink: /lecture/
 <section class="library-section">
   <p class="section-eyebrow">How to use it</p>
   <h2>Read it linearly—or jump in where you need it</h2>
-  <p class="library-closing">If you are new to the subject, I would read the three available modules in order. If you already know quantum chemistry, start directly with Spin Dynamics. If your main interest is cryptochromes, magnetoreception or magnetic-field effects, Radical-Pair Spin Chemistry is the quickest entry point.</p>
+  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance.</p>
 </section>
 
 </div>
