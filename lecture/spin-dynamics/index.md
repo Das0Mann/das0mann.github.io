@@ -315,6 +315,40 @@ permalink: /lecture/spin-dynamics/
   </div>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05b</span>
+    <div><p class="section-eyebrow">Competing timescales</p><h2>Coherence matters only if it survives long enough to affect an observable</h2></div>
+  </div>
+
+  <p>A Hamiltonian energy difference \(\Delta E\) defines a natural coherent timescale of order</p>
+
+  <div class="lecture-equation">
+  \[
+  \tau_H
+  \sim
+  \frac{\hbar}{|\Delta E|}.
+  \]
+  </div>
+
+  <p>That timescale has to be compared with \(T_2\), reaction lifetimes, molecular correlation times and the duration of an experiment. If \(T_2\ll\tau_H\), the environment destroys the relevant phase before one substantial coherent oscillation develops. If a reaction removes the state first, the chemistry truncates the quantum evolution even when \(T_2\) itself is long.</p>
+
+  <div class="timescale-strip">
+    <div><strong>Hamiltonian</strong><span>\(\tau_H\)</span><p>How quickly coherent phase or population transfer can develop.</p></div>
+    <div><strong>Environment</strong><span>\(T_1,T_2,\tau_c\)</span><p>How quickly energy relaxation, dephasing or stochastic modulation acts.</p></div>
+    <div><strong>Chemistry</strong><span>\(\tau_\mathrm{rxn}\)</span><p>How long the spin state remains available before a reaction removes it.</p></div>
+  </div>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Simulation consequence</span>
+    <p>This competition is why realistic radical-pair simulations need both coherent propagation and relaxation rather than adding a linewidth only after the dynamics has been calculated.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener"><strong>Modeling spin relaxation in complex radical systems using MolSpin</strong><span>J. Comput. Chem. (2023)</span></a>
+    </div>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
