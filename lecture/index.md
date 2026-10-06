@@ -43,7 +43,7 @@ permalink: /lecture/
       <strong>Use the interactives</strong>
       <p>Change fields, couplings, rates and timescales, then return to the equations and ask which term caused the observed response.</p>
     </div>
-  
+  </div>
 
   <div class="library-recommended-route">
     <span>Recommended dependency route</span>
@@ -90,7 +90,7 @@ permalink: /lecture/
         </div>
       </div>
     </div>
-  </div></div>
+  </div>
 </header>
 
 <section class="library-section">
