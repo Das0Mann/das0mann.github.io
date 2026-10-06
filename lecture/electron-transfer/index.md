@@ -434,6 +434,12 @@ permalink: /lecture/electron-transfer/
       <p>P. F. Barbara, T. J. Meyer and M. A. Ratner · The Journal of Physical Chemistry (1996). A highly useful overview of rates, free-energy surfaces, solvent response and the inverted region.</p>
       <a href="https://doi.org/10.1021/jp9605663" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Protein electron tunnelling</span>
+      <h3>Long-range electron transfer</h3>
+      <p>H. B. Gray and J. R. Winkler · PNAS (2005). A compact perspective on how distance, tunnelling pathways and protein structure control biological electron-transfer rates.</p>
+      <a href="https://doi.org/10.1073/pnas.0408029102" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
