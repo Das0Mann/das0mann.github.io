@@ -72,7 +72,7 @@ permalink: /lecture/computational-lab/
           <span>Hilbert dimension \(D\) <strong id="scale-d-out">16,384</strong></span>
           <span>State vector <strong id="scale-state-out">256 KiB</strong></span>
           <span>Dense \(D\times D\) operator <strong id="scale-operator-out">4.00 GiB</strong></span>
-          <span>Dense \(D^2\times D^2\) Liouvillian <strong id="scale-liouville-out">—</strong></span>
+          <span>Dense \(D^2\times D^2\) Liouvillian <strong id="scale-liouville-out">1.00 EiB</strong></span>
           <span>Sampling standard-error factor <strong id="scale-se-out">0.289 σ</strong></span>
         </div>
 
@@ -85,10 +85,10 @@ permalink: /lecture/computational-lab/
           <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
           <text x="475" y="278" class="svg-caption">number of spins</text>
           <text x="11" y="38" class="svg-caption">log₁₀ bytes</text>
-          <path id="scale-state-path" class="population-line triplet-line" fill="none" d=""/>
-          <path id="scale-operator-path" class="population-line lower-line" fill="none" d=""/>
-          <path id="scale-liouville-path" class="diabatic-line scale-liouville-line" fill="none" d=""/>
-          <line id="scale-marker-line" x1="315" y1="35" x2="315" y2="248" class="plot-marker"/>
+          <path id="scale-state-path" class="population-line triplet-line" fill="none" d="M58.00 242.46 L79.45 240.39 L100.91 238.32 L122.36 236.26 L143.82 234.19 L165.27 232.12 L186.73 230.05 L208.18 227.98 L229.64 225.91 L251.09 223.85 L272.55 221.78 L294.00 219.71 L315.45 217.64 L336.91 215.57 L358.36 213.50 L379.82 211.44 L401.27 209.37 L422.73 207.30 L444.18 205.23 L465.64 203.16 L487.09 201.09 L508.55 199.03 L530.00 196.96"/>
+          <path id="scale-operator-path" class="population-line lower-line" fill="none" d="M58.00 238.32 L79.45 234.19 L100.91 230.05 L122.36 225.91 L143.82 221.78 L165.27 217.64 L186.73 213.50 L208.18 209.37 L229.64 205.23 L251.09 201.09 L272.55 196.96 L294.00 192.82 L315.45 188.68 L336.91 184.55 L358.36 180.41 L379.82 176.27 L401.27 172.14 L422.73 168.00 L444.18 163.86 L465.64 159.73 L487.09 155.59 L508.55 151.45 L530.00 147.32"/>
+          <path id="scale-liouville-path" class="diabatic-line scale-liouville-line" fill="none" d="M58.00 230.05 L79.45 221.78 L100.91 213.50 L122.36 205.23 L143.82 196.96 L165.27 188.68 L186.73 180.41 L208.18 172.14 L229.64 163.86 L251.09 155.59 L272.55 147.32 L294.00 139.04 L315.45 130.77 L336.91 122.50 L358.36 114.22 L379.82 105.95 L401.27 97.68 L422.73 89.40 L444.18 81.13 L465.64 72.85 L487.09 64.58 L508.55 56.31 L530.00 48.03"/>
+          <line id="scale-marker-line" x1="315.45" y1="35" x2="315.45" y2="248" class="plot-marker"/>
           <g class="plot-legend">
             <line x1="292" y1="51" x2="320" y2="51" class="population-line triplet-line"/>
             <text x="328" y="55" class="svg-label">state</text>
