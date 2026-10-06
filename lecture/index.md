@@ -262,7 +262,7 @@ permalink: /lecture/
         <span class="library-number">13</span>
         <span class="library-tag">Verified examples</span>
       </div>
-      <h3>Worked MolSpin Notebooks</h3>
+      <h3>Worked MolSpin Examples</h3>
       <p>Read real public MolSpin inputs as scientific models: spins, interactions, states, transitions, tasks, time dependence and spectroscopy.</p>
       <ul>
         <li>input-file anatomy</li>
