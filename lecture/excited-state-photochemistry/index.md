@@ -273,6 +273,15 @@ permalink: /lecture/excited-state-photochemistry/
   <p>Flavin chromophores combine bright singlet excitation, intersystem crossing, electron-transfer chemistry and strong environmental sensitivity. Protein electrostatics and hydrogen bonding can change excitation energies and charge-transfer energetics, while the balance between singlet, triplet and radical-pair pathways controls which spin state is ultimately prepared.</p>
 
   <p>This is why excited-state electronic structure is directly upstream of the radical-pair and spin-dynamics modules in this library.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Research connection</span>
+    <p>For flavoproteins, the protein environment is part of the excited-state Hamiltonian. Electrostatic polarization and local hydrogen-bonding can shift the flavin states that later feed triplet and radical-pair pathways.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.jpcb.4c02168" target="_blank" rel="noopener"><strong>Importance of Polarizable Embedding for Absorption Spectrum Calculations of Arabidopsis thaliana Cryptochrome 1</strong><span>J. Phys. Chem. B (2024)</span></a>
+      <a href="https://doi.org/10.3390/biology13040262" target="_blank" rel="noopener"><strong>Activation of Cryptochrome 4 from Atlantic Herring</strong><span>Biology (2024)</span></a>
+    </div>
+  </aside>
 </section>
 
 <section class="lecture-section module-reading">
