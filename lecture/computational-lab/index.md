@@ -186,7 +186,7 @@ permalink: /lecture/computational-lab/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index">03b</span>
+    <span class="lecture-index concept-index">P</span>
     <div><p class="section-eyebrow">Matrix-free thinking</p><h2>You often need the action of an operator, not the operator itself</h2></div>
   </div>
 
