@@ -420,6 +420,12 @@ permalink: /lecture/open-systems/
       <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical characterization of completely positive Markovian quantum generators.</p>
       <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+    <article>
+      <span>Redfield positivity</span>
+      <h3>Open-quantum-system dynamics: Recovering positivity of the Redfield equation via the partial secular approximation</h3>
+      <p>D. Farina and V. Giovannetti · Physical Review A (2019). A focused analysis of why Redfield dynamics is not generically completely positive and how controlled coarse graining can restore positivity.</p>
+      <a href="https://doi.org/10.1103/PhysRevA.100.012107" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
       <article>
       <span>Non-Markovian dynamics</span>
       <h3>Colloquium: Non-Markovian dynamics in open quantum systems</h3>
