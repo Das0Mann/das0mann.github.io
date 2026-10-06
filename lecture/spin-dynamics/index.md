@@ -491,7 +491,7 @@ permalink: /lecture/spin-dynamics/
 <aside class="landmark-study">
   <span class="landmark-label">Landmark phenomenology</span>
   <h3>The Bloch equations separated coherent precession from longitudinal and transverse relaxation</h3>
-  <p>Bloch's 1946 treatment introduced a compact phenomenological language for magnetic resonance with finite relaxation times. Modern density-matrix theory is more general, but the familiar (T_1/T_2) vocabulary still reflects this separation between coherent motion and irreversible recovery/dephasing.</p>
+  <p>Bloch's 1946 treatment introduced a compact phenomenological language for magnetic resonance with finite relaxation times. Modern density-matrix theory is more general, but the familiar \(T_1/T_2\) vocabulary still reflects this separation between coherent motion and irreversible recovery/dephasing.</p>
   <div class="landmark-footer">
     <a href="https://doi.org/10.1103/PhysRev.70.460" target="_blank" rel="noopener">F. Bloch · Physical Review 70, 460–474 (1946) →</a>
     <span>The microscopic origin of those relaxation constants is intentionally deferred to Molecular Motion and Open-System Methods.</span>
