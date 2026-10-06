@@ -4834,3 +4834,286 @@ h3 { font-size: 1.25rem; }
     margin: 4px 0 6px;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Lecture pixel-level refinement v2 — October 2026
+   --------------------------------------------------------- */
+
+/* Long modules need local orientation without another heavy navigation block. */
+.lecture-local-toc {
+  max-width: 900px;
+  margin: -34px 0 58px 59px;
+  padding: 12px 0 14px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lecture-local-toc-title {
+  display: block;
+  margin-bottom: 9px;
+  color: #718690;
+  font-family: "Inter", sans-serif;
+  font-size: .64rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.lecture-local-toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lecture-local-toc-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid #d6e4e7 !important;
+  border-radius: 999px;
+  background: rgba(255,255,255,.78);
+  color: #526973 !important;
+  font-family: "Inter", sans-serif;
+  font-size: .69rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lecture-local-toc-links a > span {
+  color: #8aa0a8;
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .06em;
+}
+
+.lecture-local-toc-links a > strong {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.lecture-local-toc-links a:hover,
+.lecture-local-toc-links a.is-active {
+  border-color: #afd5d9 !important;
+  background: var(--accent-soft);
+  color: var(--navy) !important;
+}
+
+.lecture-local-toc-links a.is-active > span {
+  color: var(--accent);
+}
+
+/* Reduce the repetitive "cards inside a card" effect in concept primers. */
+.physical-concept-panel {
+  padding: 17px 0 18px;
+  border: 0;
+  border-top: 1px solid #d5e5e8;
+  border-bottom: 1px solid #d5e5e8;
+  border-radius: 0;
+  background: transparent;
+}
+
+.physical-concept-head {
+  margin: 0 0 15px;
+}
+
+.physical-concept-grid {
+  gap: 14px 24px;
+}
+
+.physical-concept-grid article,
+.physical-concept-grid article:last-child:nth-child(odd) {
+  grid-column: auto;
+  padding: 3px 0 4px 14px;
+  border: 0;
+  border-left: 2px solid #b8dade;
+  background: transparent;
+}
+
+.physical-concept-grid article > strong {
+  font-size: .9rem;
+}
+
+.physical-concept-grid article p {
+  font-size: .81rem !important;
+  line-height: 1.61 !important;
+}
+
+/* Body text remains readable while reducing unnecessary vertical inflation. */
+.lecture-module .lecture-section {
+  margin-top: 66px;
+  padding-top: 40px;
+}
+
+.lecture-module .lecture-section > p {
+  max-width: 880px;
+  line-height: 1.74;
+}
+
+.lecture-module .lecture-section-head h2 {
+  max-width: 830px;
+  font-size: clamp(1.62rem, 2.55vw, 2.2rem);
+  line-height: 1.11;
+}
+
+.teacher-note,
+.lecture-note {
+  max-width: 850px;
+}
+
+/* Equation containers should never enlarge the page canvas on narrow screens. */
+.lecture-equation,
+.lecture-equation-grid,
+.interactive-card,
+.plot-wrap {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.lecture-equation mjx-container,
+.interactive-card mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+}
+
+/* MolSpin code should scroll internally rather than widening the whole page. */
+.molspin-code {
+  width: 100%;
+  max-width: 860px;
+  box-sizing: border-box;
+}
+
+.molspin-code code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+}
+
+.page-worked-molspin-examples .page-content,
+.page-worked-molspin-notebooks .page-content {
+  overflow-x: hidden;
+}
+
+/* Research links become a true case-study interruption, not another bibliography. */
+.research-connection {
+  padding: 17px 19px 18px;
+  background: linear-gradient(90deg, rgba(231,246,247,.54), rgba(255,255,255,.72));
+}
+
+.research-connection-label::after {
+  content: " · real system";
+  color: #83989f;
+  font-weight: 750;
+}
+
+.research-connection > p {
+  max-width: 810px;
+  font-size: .86rem !important;
+}
+
+/* Reading blocks: clear separation between guided papers and the core lecture. */
+.module-reading,
+.external-reading {
+  background: rgba(248,251,252,.48);
+  padding-bottom: 28px;
+}
+
+.module-reading .lecture-section-head,
+.external-reading .lecture-section-head,
+.module-reading .lecture-reading-grid,
+.external-reading .lecture-reading-grid,
+.external-reading > p,
+.module-reading .lecture-all-pubs {
+  margin-right: 22px;
+}
+
+/* Prevent long inline code / URLs from forcing mobile overflow. */
+.lecture-module code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .lecture-local-toc {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .lecture-local-toc {
+    margin-top: -30px;
+    margin-bottom: 48px;
+  }
+
+  .lecture-local-toc-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .lecture-local-toc-links a {
+    flex: 0 0 auto;
+    max-width: 260px;
+    scroll-snap-align: start;
+  }
+
+  .physical-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .physical-concept-grid article {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 620px) {
+  .lecture-module .lecture-section {
+    margin-top: 54px;
+    padding-top: 32px;
+  }
+
+  .lecture-module .lecture-section-head h2 {
+    font-size: 1.55rem;
+    line-height: 1.12;
+  }
+
+  .lecture-local-toc {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+
+  .physical-concept-panel {
+    margin-left: 0;
+    padding: 14px 0 15px;
+  }
+
+  .physical-concept-grid article p {
+    font-size: .79rem !important;
+  }
+
+  .lecture-equation {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .molspin-code {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .module-reading,
+  .external-reading {
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
