@@ -44,7 +44,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Electronic Structure</h3>
-      <p>Start with the many-electron problem, then derive how energies, spin densities and response properties become (g), hyperfine, exchange, dipolar and ZFS parameters.</p>
+      <p>Start with the many-electron problem, then derive how energies, spin densities and response properties become \(g\), hyperfine, exchange, dipolar and ZFS parameters.</p>
       <ul>
         <li>Born–Oppenheimer picture</li>
         <li>HF, DFT &amp; correlation</li>
@@ -67,7 +67,7 @@ permalink: /lecture/
       <ul>
         <li>electron &amp; nuclear Zeeman terms</li>
         <li>response tensors &amp; spin-density integrals</li>
-        <li>energy-to-(J) and dipolar mapping</li>
+        <li>energy-to-\(J\) and dipolar mapping</li>
         <li>quadrupole, ZFS &amp; conventions</li>
       </ul>
       <div class="library-card-footer">
