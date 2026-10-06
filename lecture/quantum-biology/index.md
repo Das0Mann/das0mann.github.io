@@ -332,6 +332,18 @@ permalink: /lecture/quantum-biology/
       <p>P. J. Hore and H. Mouritsen · Annual Review of Biophysics (2016). A key mechanistic reference for cryptochrome-based radical-pair magnetoreception.</p>
       <a href="https://doi.org/10.1146/annurev-biophys-032116-094545" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+      <article>
+      <span>Compass mechanism model</span>
+      <h3>A Model for Photoreceptor-Based Magnetoreception in Birds</h3>
+      <p>T. Ritz, S. Adem and K. Schulten · Biophysical Journal 78, 707–718 (2000). The influential proposal linking anisotropic radical-pair chemistry, cryptochrome and a directional magnetic compass.</p>
+      <a href="https://doi.org/10.1016/S0006-3495(00)76629-X" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Landmark chemical-compass experiment</span>
+      <h3>Chemical compass model of avian magnetoreception</h3>
+      <p>K. Maeda et al. · Nature 453, 387–390 (2008). Experimental demonstration that a photochemical radical-pair model system can respond anisotropically to magnetic fields at geomagnetic strength.</p>
+      <a href="https://doi.org/10.1038/nature06834" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
