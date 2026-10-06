@@ -65,7 +65,7 @@ permalink: /lecture/spin-hamiltonians/
     <div><p class="section-eyebrow">Zeeman interaction</p><h2>The external field defines the basic energy scale</h2></div>
   </div>
   <div class="physical-concept-panel">
-    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the \(g\)-factor is more than a fitting number</h3></div>
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Why the g-factor is more than a fitting number</h3></div>
     <div class="physical-concept-grid">
       <article>
         <strong>Magnetic moment</strong>
@@ -115,7 +115,7 @@ permalink: /lecture/spin-hamiltonians/
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
     <span class="lecture-index">02b</span>
-    <div><p class="section-eyebrow">Origin of \(g\)-anisotropy</p><h2>The \(g\)-tensor remembers nearby excited electronic states</h2></div>
+    <div><p class="section-eyebrow">Origin of g-anisotropy</p><h2>The g-tensor remembers nearby excited electronic states</h2></div>
   </div>
 
   <p>For a purely spin-only free electron, \(g\) is almost isotropic. In a molecule, spin–orbit coupling admixes orbital character from excited electronic states into the ground spin state. Schematically, the molecular shift can be viewed as a second-order response,</p>
