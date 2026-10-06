@@ -278,6 +278,38 @@ permalink: /lecture/quantum-biology/
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">06b</span>
+    <div><p class="section-eyebrow">From molecule to biological signal</p><h2>A directional compass needs anisotropy and a route to amplify chemistry</h2></div>
+  </div>
+
+  <p>An isotropic radical-pair reaction can depend on field magnitude, but it cannot by itself encode field direction. Directional magnetoreception requires an interaction tied to the molecular frame—typically anisotropic hyperfine or \(g\)-tensor terms—and some degree of molecular orientation in the organism.</p>
+
+  <div class="lecture-equation">
+  \[
+  \text{molecular anisotropy}
+  \rightarrow
+  \Phi(\theta,\phi)
+  \rightarrow
+  \text{chemical signalling}
+  \rightarrow
+  \text{biological response}.
+  \]
+  </div>
+
+  <p>The last arrow is as important as the first. A calculated one-percent change in radical-pair yield is not yet a sensory mechanism unless the downstream biochemical network preserves or amplifies that change into something a cell can distinguish.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Orientation requirement</span>
+    <p>For avian cryptochrome, membrane association and molecular ordering are therefore not peripheral structural details; they are part of the physical requirement for a directional response.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acschembio.4c00576" target="_blank" rel="noopener"><strong>European Robin Cryptochrome-4a Associates with Lipid Bilayers in an Ordered Manner, Fulfilling a Molecular-Level Condition for Magnetoreception</strong><span>ACS Chem. Biol. (2025)</span></a>
+    </div>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
