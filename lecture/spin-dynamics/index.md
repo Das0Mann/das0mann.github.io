@@ -13,6 +13,18 @@ permalink: /lecture/spin-dynamics/
   <h2>What does a spin Hamiltonian do in time?</h2>
   <p>Once the electronic structure has been reduced to a spin Hamiltonian, the problem changes. We are no longer solving for the electrons in real space; we are propagating amplitudes, populations and coherences in spin space.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head">
+    <span>After this module</span>
+    <strong>You should be able to…</strong>
+  </div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Propagate pure states and density operators and connect them to measurable expectation values.</p></div>
+    <div><span>02</span><p>Separate coherent evolution from population relaxation and dephasing.</p></div>
+    <div><span>03</span><p>Recognize when an effective open-system description is required instead of closed Schrödinger dynamics.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -248,6 +260,28 @@ permalink: /lecture/spin-dynamics/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Relaxation theory</span>
+      <h3>On the Theory of Relaxation Processes</h3>
+      <p>A. G. Redfield · IBM Journal of Research and Development (1957). The foundational density-matrix treatment behind Redfield relaxation theory.</p>
+      <a href="https://doi.org/10.1147/rd.11.0019" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Markovian open systems</span>
+      <h3>On the Generators of Quantum Dynamical Semigroups</h3>
+      <p>G. Lindblad · Communications in Mathematical Physics (1976). The canonical structure of completely positive Markovian quantum dynamics.</p>
+      <a href="https://doi.org/10.1007/BF01608499" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
