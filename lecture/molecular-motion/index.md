@@ -138,15 +138,15 @@ permalink: /lecture/molecular-motion/
   <p>For a general stationary process, a useful integral correlation time is</p>
 
   <div class="lecture-equation">
-  [
-  	au_mathrm{int}
+  \[
+  \tau_\mathrm{int}
   =
-  rac{1}{C(0)}
-  int_0^infty C(t),dt,
-  ]
+  \frac{1}{C(0)}
+  \int_0^\infty C(t)\,dt,
+  \]
   </div>
 
-  <p>provided the integral is well behaved. For a single exponential this reduces exactly to the parameter (	au_c), but a multi-timescale protein trajectory need not be representable by one unique decay constant.</p>
+  <p>provided the integral is well behaved. For a single exponential this reduces exactly to the parameter \(\tau_c\), but a multi-timescale protein trajectory need not be representable by one unique decay constant.</p>
 
   <p>A common teaching model is a single exponential,</p>
 
@@ -197,12 +197,12 @@ permalink: /lecture/molecular-motion/
   <p>For the single-exponential correlation model and this two-sided Fourier convention,</p>
 
   <div class="lecture-equation">
-  [
-  J(omega)
+  \[
+  J(\omega)
   =
-  rac{2sigma^2	au_c}
-  {1+omega^2	au_c^2}.
-  ]
+  \frac{2\sigma^2\tau_c}
+  {1+\omega^2\tau_c^2}.
+  \]
   </div>
 
   <aside class="lecture-note">
