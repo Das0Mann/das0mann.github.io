@@ -246,6 +246,13 @@ permalink: /lecture/open-systems/
   <p>The memory kernel \(\mathcal K\) says that the derivative at the current time can depend on the state at earlier times. The inhomogeneous term \(I(t)\) contains effects of initial system–bath correlations in the general formulation.</p>
 
   <p>A time-nonlocal kernel is a natural language for memory, but “non-Markovian” is not synonymous with “contains an integral over the past.” Exact time-local master equations can also encode non-Markovian behaviour through time-dependent rates, while some kernels reduce effectively to Markovian dynamics on the timescale of interest. Operational definitions therefore depend on what property—divisibility, information backflow or correlation structure—is being tested.</p>
+
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>A Markovian bath is an anechoic room; a non-Markovian bath can echo</h3>
+    <p>Imagine the spin system sending a sound into its environment. In an idealized Markovian limit the room absorbs the sound almost immediately, so the next moment depends only on the present state. If the room has long-lived echoes, information about earlier motion can return later and influence the present. The memory kernel is the mathematical weighting of those delayed echoes.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> open-system memory is encoded in system–environment correlations and reduced dynamical maps, not literal signals travelling through space. Non-Markovianity also has several inequivalent formal definitions.</span>
+  </aside>
 </section>
 
 <section class="lecture-section">
