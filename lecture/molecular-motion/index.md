@@ -133,7 +133,7 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>A rapidly decaying (C_A(t)) means the fluctuations lose memory quickly. A slowly decaying or multi-exponential correlation function indicates persistent structural memory or several dynamical processes.</p>
+  <p>A rapidly decaying \(C_A(t)\) means the fluctuations lose memory quickly. A slowly decaying or multi-exponential correlation function indicates persistent structural memory or several dynamical processes.</p>
 
   <p>For a general stationary process, a useful integral correlation time is</p>
 
