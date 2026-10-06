@@ -276,6 +276,18 @@ permalink: /lecture/computational-lab/
   </div>
 
   <p>where \(s_x\) is the sample standard deviation. Reporting \(M\) without the variance can be misleading: twelve exceptionally consistent samples can be more informative than one hundred highly variable ones, while correlated samples reduce the effective sample size.</p>
+
+  <p>For stochastic sampling, convergence should also carry an uncertainty estimate whenever possible. If independent samples give values \(x_m\), a practical standard error is</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathrm{SE}(\bar x)
+  =
+  \frac{s_x}{\sqrt{M}},
+  \]
+  </div>
+
+  <p>where \(s_x\) is the sample standard deviation. Reporting \(M\) without the variance can be misleading: twelve exceptionally consistent samples can be more informative than one hundred highly variable ones, while correlated samples reduce the effective sample size.</p>
 </section>
 
 <section class="lecture-section">
