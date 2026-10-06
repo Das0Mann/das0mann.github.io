@@ -31,6 +31,24 @@ permalink: /lecture/spin-dynamics/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">Spin-\(\tfrac12\)</p><h2>The smallest non-trivial spin</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Spin is intrinsic angular momentum—not a tiny classical ball rotating in space</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Spin</strong>
+        <p><b>What it is:</b> An intrinsic quantum-mechanical angular momentum carried by particles such as electrons and many nuclei.</p>
+        <p><b>What it changes:</b> It produces discrete angular-momentum states and, through the particle's magnetic moment, couples to magnetic fields and other spins.</p>
+        <p><b>What you observe:</b> Stern–Gerlach-type quantization, EPR/NMR transitions and magnetic moments.</p>
+      </article>
+      <article>
+        <strong>Spin-\(\tfrac12\)</strong>
+        <p><b>What it is:</b> A two-level angular-momentum representation with two possible projections along any chosen measurement axis.</p>
+        <p><b>What it changes:</b> Its state can be a coherent superposition of the two basis projections rather than a classical vector pointing in one fixed direction.</p>
+        <p><b>What you observe:</b> Two-level Zeeman splitting, Rabi oscillations and interference of spin amplitudes.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>A spin-\(\tfrac12\) system has a two-dimensional Hilbert space. Choosing the \(z\)-axis as quantization axis gives the basis states \(\lvert\alpha\rangle\) and \(\lvert\beta\rangle\). The corresponding spin operators are</p>
 
@@ -154,6 +172,30 @@ permalink: /lecture/spin-dynamics/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Density matrices</p><h2>Populations and coherences in one object</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>The density matrix separates 'how much is in each state' from 'how the states interfere'</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Population</strong>
+        <p><b>What it is:</b> A diagonal density-matrix element giving the probability weight of a basis state.</p>
+        <p><b>What it changes:</b> Population transfer changes occupation of spin levels or singlet/triplet manifolds.</p>
+        <p><b>What you observe:</b> State-selective reaction yields, magnetization components and level populations.</p>
+      </article>
+      <article>
+        <strong>Coherence</strong>
+        <p><b>What it is:</b> An off-diagonal density-matrix element carrying the relative amplitude and phase between two basis states.</p>
+        <p><b>What it changes:</b> It enables interference and oscillatory transfer; environmental phase noise suppresses it without necessarily changing populations immediately.</p>
+        <p><b>What you observe:</b> Quantum beats, Rabi oscillations, free-induction signals and spin echoes.</p>
+      </article>
+      <article>
+        <strong>Mixed state</strong>
+        <p><b>What it is:</b> A statistical ensemble that cannot be represented by one pure state vector because different members occupy different quantum states.</p>
+        <p><b>What it changes:</b> It requires density-matrix language and naturally describes thermal ensembles or partially decohered systems.</p>
+        <p><b>What you observe:</b> Reduced polarization and ensemble-averaged signals rather than one deterministic wavefunction trajectory.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>A state vector is enough for a pure closed state. For ensembles and open systems, the density operator is more convenient:</p>
 
