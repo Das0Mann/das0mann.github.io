@@ -217,6 +217,11 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 
   <p>where the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate.</p>
+
+  <details class="lecture-details">
+    <summary>Where does El-Sayed's rule fit into this picture?</summary>
+    <p>El-Sayed's rule is a qualitative guideline: ISC tends to be more efficient when the transition changes orbital character, for example between \(^{1}\pi\pi^\ast\) and \(^{3}n\pi^\ast\) states, because SOC can connect the states more strongly. It is not a universal selection rule—state energetics, vibronic coupling and molecular symmetry can overturn the simple expectation.</p>
+  </details>
 </section>
 
 <section class="lecture-section">
