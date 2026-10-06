@@ -4236,3 +4236,12 @@ h3 { font-size: 1.25rem; }
     margin-top: 34px;
   }
 }
+
+
+.library-note {
+  margin-top: 12px !important;
+  color: #637985 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .85rem !important;
+  line-height: 1.6 !important;
+}
