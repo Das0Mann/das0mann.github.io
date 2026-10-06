@@ -1,0 +1,192 @@
+---
+layout: page
+title: Computational Laboratory
+excerpt: "Numerical scaling, propagation, trace sampling and convergence"
+permalink: /lecture/computational-lab/
+---
+
+<div class="lecture-module">
+{% include lecture-library-nav.html %}
+
+<header class="module-intro">
+  <span class="module-index">Module 08</span>
+  <h2>From a Hamiltonian to a calculation you can trust</h2>
+  <p>Formal spin dynamics is only half the problem. The other half is numerical: how large is the Hilbert space, which representation should we propagate, how do we avoid constructing impossible matrices, and how do we know that a stochastic or time-discretized result is converged?</p>
+</header>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">01</span>
+    <div><p class="section-eyebrow">Representation</p><h2>Count the Hilbert space before choosing an algorithm</h2></div>
+  </div>
+
+  <p>For independent spins \(I_k\), the Hilbert-space dimension is</p>
+
+  <div class="lecture-equation">
+  \[
+  D=\prod_k(2I_k+1).
+  \]
+  </div>
+
+  <p>For \(N\) spin-\(\tfrac12\) particles this becomes \(D=2^N\). A state vector contains \(D\) complex amplitudes. A dense operator or density matrix contains \(D^2\) complex numbers. A dense Liouville-space superoperator would contain \(D^4\).</p>
+
+  <aside class="teacher-note">
+    <strong>The scaling lesson:</strong>
+    <span>the density matrix is not “twice as large” as a state vector. Its storage grows quadratically with Hilbert-space dimension, while an explicitly stored Liouvillian grows quadratically again.</span>
+  </aside>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">02</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>See when dense representations become impossible</h2></div>
+  </div>
+
+  <div class="interactive-card" id="scaling-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Interactive model</span><h3>Spin-space scaling explorer</h3></div>
+      <span class="interactive-model-note">spin-\(\tfrac12\) model</span>
+    </div>
+
+    <div class="demo-prompt">
+      <strong>Try this:</strong>
+      <span>increase the number of spins one at a time. Then compare a state vector, a dense operator and an explicitly stored Liouvillian. The difference is not subtle.</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="scale-spins"><span class="control-name">Number of spin-\(\tfrac12\) particles \(N\)</span><output id="scale-spins-out">14</output></label>
+        <input id="scale-spins" type="range" min="2" max="24" step="1" value="14">
+
+        <label for="scale-samples"><span class="control-name">Trace samples \(M\)</span><output id="scale-samples-out">12</output></label>
+        <input id="scale-samples" type="range" min="1" max="500" step="1" value="12">
+
+        <div class="demo-presets">
+          <button type="button" data-scale-n="8">8 spins</button>
+          <button type="button" data-scale-n="14">14 spins</button>
+          <button type="button" data-scale-n="20">20 spins</button>
+          <button type="button" data-scale-m="100">100 samples</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Hilbert dimension \(D\) <strong id="scale-d-out">16,384</strong></span>
+          <span>State vector <strong id="scale-state-out">256 KiB</strong></span>
+          <span>Dense \(D\times D\) operator <strong id="scale-operator-out">4.00 GiB</strong></span>
+          <span>Dense \(D^2\times D^2\) Liouvillian <strong id="scale-liouville-out">—</strong></span>
+          <span>Sampling standard-error factor <strong id="scale-se-out">0.289 σ</strong></span>
+        </div>
+
+        <p id="scale-explanation" class="demo-explanation">At this size a state-vector method is still modest, while a dense operator is already expensive and a dense Liouvillian is completely impractical.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="scaling-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Memory scaling with number of spin one-half particles">
+          <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
+          <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
+          <text x="475" y="278" class="svg-caption">number of spins</text>
+          <text x="11" y="38" class="svg-caption">log₁₀ bytes</text>
+          <path id="scale-state-path" class="population-line triplet-line" fill="none" d=""/>
+          <path id="scale-operator-path" class="population-line lower-line" fill="none" d=""/>
+          <path id="scale-liouville-path" class="diabatic-line scale-liouville-line" fill="none" d=""/>
+          <line id="scale-marker-line" x1="315" y1="35" x2="315" y2="248" class="plot-marker"/>
+          <g class="plot-legend">
+            <line x1="292" y1="51" x2="320" y2="51" class="population-line triplet-line"/>
+            <text x="328" y="55" class="svg-label">state</text>
+            <line x1="383" y1="51" x2="411" y2="51" class="population-line lower-line"/>
+            <text x="419" y="55" class="svg-label">operator</text>
+            <line x1="476" y1="51" x2="504" y2="51" class="diabatic-line scale-liouville-line"/>
+            <text x="510" y="55" class="svg-label">L</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">Memory estimates assume 16 bytes per complex double. The Monte-Carlo number is \(\sigma/\sqrt M\): the standard error relative to the single-sample standard deviation, not a guaranteed relative error in the final observable.</p>
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">03</span>
+    <div><p class="section-eyebrow">Propagation strategies</p><h2>Do not build a matrix just because the equation contains one</h2></div>
+  </div>
+
+  <div class="method-ladder">
+    <div><span>Dense diagonalization / exponentiation</span><p>Simple and accurate for small systems. Becomes memory- and compute-limited quickly as \(D\) grows.</p></div>
+    <div><span>Sparse / Krylov propagation</span><p>Exploit the action of \(H\) or a sparse generator on a vector without constructing a full matrix exponential.</p></div>
+    <div><span>State-vector trajectories</span><p>Propagate \(D\)-component vectors rather than \(D^2\)-component density matrices when an appropriate stochastic or pure-state formulation exists.</p></div>
+    <div><span>Operator-space propagation</span><p>Useful when the density matrix or superoperator structure is essential, but it requires more aggressive sparsity or symmetry exploitation.</p></div>
+  </div>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">04</span>
+    <div><p class="section-eyebrow">Trace sampling</p><h2>Stochastic trace estimation trades memory for variance</h2></div>
+  </div>
+
+  <p>If random normalized states satisfy \(\mathbb E[\lvert r\rangle\langle r\rvert]=\mathbf 1/D\), then a trace can be estimated as</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathrm{Tr}(A)
+  \approx
+  \frac{D}{M}
+  \sum_{m=1}^{M}
+  \langle r_m|A|r_m\rangle.
+  \]
+  </div>
+
+  <p>The standard error decreases asymptotically as \(M^{-1/2}\), but the prefactor is observable-dependent. Twelve samples do not mean “12-fold accuracy”, and they do not guarantee a specific percentage error.</p>
+
+  <aside class="lecture-note">
+    <strong>Important distinction:</strong>
+    <span>Monte-Carlo trace sampling is a numerical estimator of a trace. A stochastic Schrödinger equation represents physical open-system dynamics. Both use random trajectories, but the randomness has a different meaning.</span>
+  </aside>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05</span>
+    <div><p class="section-eyebrow">Convergence</p><h2>Converge the observable, not just the propagator</h2></div>
+  </div>
+
+  <p>A reliable numerical result should be tested against the knobs that can change it:</p>
+
+  <div class="observable-list">
+    <div><strong>Timestep / integrator tolerance</strong><span>halve \(\Delta t\) or tighten the tolerance and verify that the observable no longer changes appreciably.</span></div>
+    <div><strong>Trace samples</strong><span>repeat with larger \(M\) and, ideally, independent random seeds to estimate sampling uncertainty.</span></div>
+    <div><strong>Orientation grid</strong><span>powder and anisotropic observables need converged angular averaging.</span></div>
+    <div><strong>Trajectory ensemble</strong><span>for dynamic Hamiltonians, convergence can be limited by molecular sampling rather than quantum propagation.</span></div>
+  </div>
+
+  <p>Plotting a result as a function of \(M\), \(\Delta t\), orientation count or trajectory number is much more informative than reporting one calculation and assuming it is converged.</p>
+</section>
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">06</span>
+    <div><p class="section-eyebrow">MolSpin</p><h2>Use the software as a laboratory, not a black box</h2></div>
+  </div>
+
+  <p><a href="https://molspin.eu" target="_blank" rel="noopener">MolSpin</a> is designed around general spin systems and multiple propagation strategies. The important skill is not memorizing an input file; it is understanding which Hamiltonian, state, relaxation model, numerical method and observable the input represents.</p>
+
+  <p>For released syntax and examples, use the <a href="{{ site.url }}/software/">Software page</a> and the public MolSpin documentation rather than copying teaching pseudocode from this lecture.</p>
+</section>
+
+<section class="lecture-section module-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index">07</span>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Methods behind the calculations</h2></div>
+  </div>
+
+  <div class="lecture-reading-grid">
+    <article><span>Stochastic state vectors</span><h3>Spin Dynamics of Radical Pairs Using the Stochastic Schrödinger Equation in MolSpin</h3><p>State-vector propagation and stochastic methods for large radical-pair spin systems.</p><a href="https://doi.org/10.1021/acs.jctc.4c00361" target="_blank" rel="noopener">J. Chem. Theory Comput. (2024) →</a></article>
+    <article><span>Open-system propagation</span><h3>Modeling spin relaxation in complex radical systems using MolSpin</h3><p>Relaxation theory and practical density-matrix spin dynamics.</p><a href="https://doi.org/10.1002/jcc.27120" target="_blank" rel="noopener">J. Comput. Chem. (2023) →</a></article>
+  </div>
+</section>
+
+{% include lecture-library-nav.html %}
+</div>
+
+<script src="{{ site.url }}/assets/js/lecture-scaling.js" defer></script>
