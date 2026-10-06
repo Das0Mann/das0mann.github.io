@@ -148,7 +148,7 @@ permalink: /lecture/
         <span class="library-tag">Interactive</span>
       </div>
       <h3>Molecular Motion → Spin Dynamics</h3>
-      <p>Learn how molecular fluctuations turn a static spin Hamiltonian into (H(t)), and how correlation functions and spectral densities connect motion to relaxation.</p>
+      <p>Learn how molecular fluctuations turn a static spin Hamiltonian into \(H(t)\), and how correlation functions and spectral densities connect motion to relaxation.</p>
       <ul>
         <li>parameter trajectories &amp; fluctuations</li>
         <li>correlation functions</li>
