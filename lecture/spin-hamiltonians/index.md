@@ -510,6 +510,12 @@ permalink: /lecture/spin-hamiltonians/
       <p>F. Neese · Coordination Chemistry Reviews (2009). A broader review of magnetic response, spectroscopy and exchange coupling from DFT.</p>
       <a href="https://doi.org/10.1016/j.ccr.2008.05.014" target="_blank" rel="noopener">Open DOI →</a>
     </article>
+    <article>
+      <span>Exchange mapping</span>
+      <h3>Ab initio molecular orbital calculations of effective exchange integrals between transition metal ions</h3>
+      <p>K. Yamaguchi, T. Tsunekawa, Y. Toyoda and T. Fueno · Chemical Physics Letters (1988). A foundational spin-projection route for mapping broken-symmetry electronic calculations onto effective exchange parameters.</p>
+      <a href="https://doi.org/10.1016/0009-2614(88)87049-0" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
   </div>
 </section>
 {% include lecture-library-nav.html %}
