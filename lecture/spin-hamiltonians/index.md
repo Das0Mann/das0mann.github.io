@@ -21,7 +21,7 @@ permalink: /lecture/spin-hamiltonians/
   <div class="module-learning-grid">
     <div><span>01</span><p>Read a spin Hamiltonian term by term and state the associated units and sign convention.</p></div>
     <div><span>02</span><p>Distinguish Zeeman, hyperfine, exchange, dipolar, quadrupole and zero-field-splitting physics.</p></div>
-    <div><span>03</span><p>Recognize when tensor orientation and the molecular-to-laboratory frame are essential.</p></div>
+    <div><span>03</span><p>Map ab initio energies and response tensors onto the operator coefficients used in a spin Hamiltonian.</p></div>
   </div>
 </section>
 
@@ -60,6 +60,38 @@ permalink: /lecture/spin-hamiltonians/
     <span>A spin Hamiltonian is useful because it is an effective model. Add a term when the physics or the experiment needs it—not because the equation looks more complete.</span>
   </aside>
 </section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">M</span>
+    <div><p class="section-eyebrow">Parameter extraction</p><h2>Every spin parameter is a coefficient obtained by matching electronic physics to a spin operator</h2></div>
+  </div>
+
+  <p>The common structure is</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H_\mathrm{eff}
+  =
+  \sum_k p_k\,\hat O_k.
+  \]
+  </div>
+
+  <p>The operator \(\hat O_k\) is chosen from the spin model; the coefficient \(p_k\) is supplied by electronic structure. The parameter can be obtained by a response derivative, an expectation value, an energy difference or an effective-Hamiltonian projection. This distinction matters: \(A^\mathrm{FC}\) is tied directly to spin density at a nucleus, \(g\) is primarily a response/SOC property, and \(J\) is usually inferred from the relative energies of different spin arrangements.</p>
+
+  <div class="method-ladder">
+    <div><span>\(g\)-tensor</span><p>Magnetic-field response of the electronic state, including relativistic/SOC contributions. At SCF level this normally requires coupled-perturbed response equations.</p></div>
+    <div><span>Hyperfine \(\mathbf A_N\)</span><p>Contact spin density plus anisotropic electron–nuclear spin-dipolar and smaller orbital/relativistic terms.</p></div>
+    <div><span>Exchange \(J\)</span><p>Map electronic high-spin/low-spin energies—or projected broken-symmetry energies—onto a chosen Heisenberg convention.</p></div>
+    <div><span>Dipolar / ZFS \(\mathbf D\)</span><p>Project direct spin–spin and SOC-mediated interactions into the selected spin manifold.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>The operator convention is part of the parameter definition.</strong>
+    <span>The same electronic energy splitting can correspond to different numerical \(J\) values if one paper uses \(J\mathbf S_1\!\cdot\!\mathbf S_2\) and another uses \(-2J\mathbf S_1\!\cdot\!\mathbf S_2\). Never copy a number without copying its Hamiltonian convention.</span>
+  </aside>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
