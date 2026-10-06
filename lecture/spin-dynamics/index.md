@@ -31,7 +31,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">01</span>
-    <div><p class="section-eyebrow">Spin-\(\tfrac12\)</p><h2>The smallest non-trivial spin</h2></div>
+    <div><p class="section-eyebrow">Spin-½</p><h2>The smallest non-trivial spin</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Spin is intrinsic angular momentum—not a tiny classical ball rotating in space</h3></div>
@@ -226,7 +226,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Relaxation</p><h2>\(T_1\), \(T_2\) and pure dephasing</h2></div>
+    <div><p class="section-eyebrow">Relaxation</p><h2>T1, T2 and pure dephasing</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Population relaxation and phase randomization are different physical processes</h3></div>
