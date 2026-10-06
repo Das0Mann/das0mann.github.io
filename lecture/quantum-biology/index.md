@@ -92,6 +92,30 @@ permalink: /lecture/quantum-biology/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Timescales</p><h2>Does the radical pair live long enough for spin dynamics to matter?</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Lifetime and coherence answer different questions</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Radical-pair lifetime \(\tau_\mathrm{RP}\)</strong>
+        <p><b>What it is:</b> The characteristic time before recombination, escape or another chemical step removes the radical pair.</p>
+        <p><b>What it changes:</b> It sets the total window available for spin evolution and magnetic-field sensitivity.</p>
+        <p><b>What you observe:</b> Transient decay kinetics and the time over which radical-pair signals remain detectable.</p>
+      </article>
+      <article>
+        <strong>Coherence time \(T_2\)</strong>
+        <p><b>What it is:</b> The timescale over which a well-defined relative phase between relevant spin states survives.</p>
+        <p><b>What it changes:</b> It limits how long interference-based singlet–triplet evolution can remain coherent even if the radicals themselves still exist.</p>
+        <p><b>What you observe:</b> Decay of coherent oscillations or echo-like spin observables.</p>
+      </article>
+      <article>
+        <strong>Mixing timescale</strong>
+        <p><b>What it is:</b> The characteristic period set by differences in hyperfine, Zeeman or other spin-Hamiltonian energies that convert one spin character into another.</p>
+        <p><b>What it changes:</b> Magnetosensitivity requires enough time for appreciable mixing before chemistry or dephasing terminates it.</p>
+        <p><b>What you observe:</b> Oscillation periods in calculated singlet/triplet populations and characteristic field-response times.</p>
+      </article>
+    </div>
+  </div>
+
 
   <div class="interactive-card" id="qbio-demo">
     <div class="interactive-head">
