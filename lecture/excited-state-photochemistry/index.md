@@ -13,6 +13,15 @@ permalink: /lecture/excited-state-photochemistry/
   <h2>Absorbing a photon is only the beginning</h2>
   <p>Photochemistry starts with an electronic excitation, but the molecule does not remain at the geometry at which the photon was absorbed. Nuclei move, electronic states approach one another, population can change electronic character, and spin–orbit coupling can transfer population between different spin manifolds.</p>
 </header>
+<section class="module-learning" aria-label="Learning goals">
+  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
+  <div class="module-learning-grid">
+    <div><span>01</span><p>Distinguish vertical excitation, excited-state relaxation and emission energies.</p></div>
+    <div><span>02</span><p>Explain why conical intersections and nonadiabatic coupling enable efficient internal conversion.</p></div>
+    <div><span>03</span><p>Relate spin–orbit coupling and vibronic overlap to intersystem crossing and triplet formation.</p></div>
+  </div>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -205,6 +214,28 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 </section>
 
+
+<section class="lecture-section external-reading">
+  <div class="lecture-section-head">
+    <span class="lecture-index literature-index">L</span>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+  </div>
+  <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
+  <div class="lecture-reading-grid external-literature-grid">
+    <article>
+      <span>Conical intersections</span>
+      <h3>Isomerization Through Conical Intersections</h3>
+      <p>B. G. Levine and T. J. Martínez · Annual Review of Physical Chemistry (2007). An accessible review of why conical intersections require a multidimensional picture of photochemistry.</p>
+      <a href="https://doi.org/10.1146/annurev.physchem.57.032905.104612" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Intersystem crossing</span>
+      <h3>Spin–orbit coupling and intersystem crossing in molecules</h3>
+      <p>C. M. Marian · WIREs Computational Molecular Science (2012). A focused review of SOC, ISC mechanisms and practical quantum-chemical treatments.</p>
+      <a href="https://doi.org/10.1002/wcms.83" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+  </div>
+</section>
 {% include lecture-library-nav.html %}
 </div>
 
