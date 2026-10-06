@@ -53,6 +53,8 @@ permalink: /lecture/excited-state-photochemistry/
 
   <p>The vertical excitation energy and the relaxed excited-state energy are therefore different quantities. Geometry relaxation after excitation is one reason absorption and emission generally occur at different photon energies.</p>
 
+  <p>An oscillator strength belongs to an electronic transition, not to a complete experimental band shape. The measured absorption spectrum also reflects vibronic Franck–Condon structure, thermal populations, solvent/protein broadening and conformational inhomogeneity. A method can therefore reproduce a vertical excitation energy while still giving an incomplete spectrum.</p>
+
   <aside class="teacher-note">
     <strong>Vertical does not mean “the molecule moves vertically”.</strong>
     <span>The vertical line is drawn in an energy-versus-nuclear-coordinate diagram because the nuclear coordinate is assumed not to change during the electronic transition.</span>
