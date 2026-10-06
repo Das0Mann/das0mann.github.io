@@ -72,6 +72,33 @@ permalink: /lecture/molecular-motion/
 
   <p>Hyperfine tensors can change as spin density redistributes, exchange can change dramatically with donor–acceptor geometry, dipolar tensors rotate and change with distance, and anisotropic \(g\)-tensors move with the molecular frame.</p>
 
+  <p>More explicitly, write the Hamiltonian as a sum of operator channels whose coefficients depend on geometry,</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat H[\mathbf R(t)]
+  =
+  \sum_k
+  p_k[\mathbf R(t)]\,\hat O_k.
+  \]
+  </div>
+
+  <p>Near a reference structure \(\mathbf R_0\), a useful first approximation is a linear response of each spin parameter to nuclear displacement,</p>
+
+  <div class="lecture-equation">
+  \[
+  \delta p_k(t)
+  \approx
+  \sum_a
+  \left.
+  \frac{\partial p_k}{\partial R_a}
+  \right|_{\mathbf R_0}
+  \delta R_a(t).
+  \]
+  </div>
+
+  <p>This makes the multiscale connection explicit: molecular motion supplies \(\delta R_a(t)\), electronic structure supplies the derivatives or snapshot values of \(p_k\), and spin dynamics propagates the resulting time-dependent operator.</p>
+
   <aside class="teacher-note">
     <strong>This is the multiscale step:</strong>
     <span>MD supplies \(\mathbf R(t)\); electronic-structure calculations map selected structures onto magnetic parameters; spin dynamics then propagates the resulting \(H(t)\) or an effective stochastic model derived from it.</span>
@@ -337,6 +364,15 @@ permalink: /lecture/molecular-motion/
   </div>
 
   <p>How densely you need quantum-chemical calculations depends on how rapidly the parameters vary and how transferable the electronic-structure model is. Interpolating a slowly varying dipolar interaction is very different from learning an exchange coupling that changes exponentially with geometry.</p>
+
+  <aside class="lecture-note">
+    <strong>An ensemble of static Hamiltonians is not the same as one fluctuating Hamiltonian.</strong>
+    <span>In general,
+    \(\left\langle e^{-i\hat H(\xi)t/\hbar}\right\rangle
+    \neq
+    e^{-i\langle\hat H\rangle t/\hbar}\).
+    Averaging final observables over frozen conformations describes static disorder; propagating a single \(\hat H(t)\) describes dynamical modulation. They coincide only in special limits.</span>
+  </aside>
 
   <aside class="research-connection">
     <span class="research-connection-label">Research connection</span>
