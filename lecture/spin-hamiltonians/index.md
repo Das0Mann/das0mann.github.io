@@ -325,6 +325,30 @@ permalink: /lecture/spin-hamiltonians/
     <span class="lecture-index">06</span>
     <div><p class="section-eyebrow">Orientation &amp; motion</p><h2>A tensor is only meaningful together with its molecular frame</h2></div>
   </div>
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Physical meaning</span><h3>Anisotropy means that the interaction depends on direction</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Tensor</strong>
+        <p><b>What it is:</b> A direction-dependent generalization of a scalar coupling. Its principal values describe the interaction along three mutually orthogonal principal axes.</p>
+        <p><b>What it changes:</b> Rotating the molecule changes the component of the interaction projected onto the laboratory magnetic-field direction.</p>
+        <p><b>What you observe:</b> Orientation-dependent resonance fields, splittings and relaxation rates in crystals, powders and partially ordered samples.</p>
+      </article>
+      <article>
+        <strong>Principal axes</strong>
+        <p><b>What it is:</b> The molecular directions in which a symmetric interaction tensor is diagonal and can be described by its principal values.</p>
+        <p><b>What it changes:</b> They determine how electronic structure is geometrically tied to the measured anisotropy.</p>
+        <p><b>What you observe:</b> Angular patterns in single-crystal EPR and characteristic turning points in powder spectra.</p>
+      </article>
+      <article>
+        <strong>Molecular tumbling</strong>
+        <p><b>What it is:</b> Time-dependent rotation of the molecular frame relative to the laboratory field.</p>
+        <p><b>What it changes:</b> Fast tumbling averages anisotropic interactions; intermediate motion modulates them and contributes to relaxation.</p>
+        <p><b>What you observe:</b> Motional narrowing in solution and temperature/viscosity-dependent linewidths.</p>
+      </article>
+    </div>
+  </div>
+
 
   <p>An anisotropic \(g\)-tensor or hyperfine tensor is not just three numbers. It has principal values <em>and principal axes</em>. Rotating the molecule relative to the field rotates the tensor into the laboratory frame and changes the observed interaction.</p>
 
