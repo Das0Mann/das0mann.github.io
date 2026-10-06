@@ -11,6 +11,7 @@ permalink: /lecture/
   <p class="library-kicker">Lecture library</p>
   <h2>From electrons to quantum dynamics, spectroscopy and chemistry</h2>
   <p>I am building this as a set of short, connected lectures rather than one very long page. The core route starts with the electronic problem, reduces it to an effective Hamiltonian, propagates the quantum state in time and then connects the dynamics to spectroscopy, chemistry or a biological observable.</p>
+  <p class="library-note">Each module now starts with explicit learning goals and ends with two reading layers: examples from my own work and a short list of foundational or review papers from other groups.</p>
 
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
@@ -25,7 +26,7 @@ permalink: /lecture/
 
 <section class="library-section">
   <p class="section-eyebrow">Available now</p>
-  <h2>Core modules</h2>
+  <h2>Lecture modules</h2>
 
   <div class="library-grid">
     <article class="library-card">
