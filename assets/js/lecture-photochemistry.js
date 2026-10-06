@@ -140,11 +140,6 @@
       return Math.pow(10, parseFloat(log10k));
     }
 
-    function formatRate(k) {
-      const e = Math.floor(Math.log10(k));
-      const m = k / Math.pow(10, e);
-      return m.toFixed(1) + " × 10" + String.fromCharCode(0x2070 + 0);
-    }
 
     function scientific(k) {
       const e = Math.floor(Math.log10(k));
