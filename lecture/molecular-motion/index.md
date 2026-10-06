@@ -349,6 +349,16 @@ permalink: /lecture/molecular-motion/
   </aside>
 </section>
 
+<aside class="landmark-study">
+  <span class="landmark-label">Landmark dynamics</span>
+  <h3>Relaxation can report molecular motion only through a dynamical model</h3>
+  <p>The Lipari–Szabo model-free framework became influential because it separated overall tumbling from internal motion while connecting both to spectral densities. The broader lesson applies here too: relaxation is sensitive to amplitudes and timescales, not merely to structural fluctuations.</p>
+  <div class="landmark-footer">
+    <a href="https://doi.org/10.1021/ja00381a009" target="_blank" rel="noopener">G. Lipari & A. Szabo · JACS 104, 4546–4559 (1982) →</a>
+    <span>Open-System Methods then turns these fluctuation statistics into reduced quantum dynamics.</span>
+  </div>
+</aside>
+
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
