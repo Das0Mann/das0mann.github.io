@@ -185,6 +185,33 @@ permalink: /lecture/coherent-control/
   <p>On resonance the effective field lies in the transverse plane. Off resonance it tilts toward \(z\), which is why a pulse of the same duration no longer performs the intended rotation.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Pulse area</p><h2>A pulse is a controlled rotation whose angle is the time-integrated drive</h2></div>
+  </div>
+
+  <p>On resonance, an ideal rectangular pulse rotates the Bloch vector by an angle</p>
+
+  <div class="lecture-equation">
+  \[
+  \theta
+  =
+  \gamma B_1 t_p
+  =
+  2\pi\nu_1 t_p.
+  \]
+  </div>
+
+  <p>This makes pulse errors intuitive. A \(B_1\) calibration error changes the rotation angle; a frequency offset tilts the rotation axis; and a finite pulse length limits the excitation bandwidth. For a rectangular pulse the characteristic spectral width scales roughly as \(1/t_p\), so very short pulses are broad in frequency space.</p>
+
+  <aside class="lecture-note">
+    <strong>Control is geometry in Hilbert space.</strong>
+    <span>The purpose of a pulse sequence is to steer the state along a chosen path while unwanted Hamiltonian terms and relaxation keep acting in the background.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
