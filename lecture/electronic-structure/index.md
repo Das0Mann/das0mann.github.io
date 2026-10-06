@@ -226,6 +226,41 @@ permalink: /lecture/electronic-structure/
   </div>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">04b</span>
+    <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
+  </div>
+
+  <p>The ordinary electron density tells us where electronic charge is located. Magnetic interactions need one more piece of information: how the spin-up and spin-down densities differ. A common real-space quantity is the spin density</p>
+
+  <div class="lecture-equation">
+  \[
+  m(\mathbf r)
+  =
+  \rho_\alpha(\mathbf r)
+  -
+  \rho_\beta(\mathbf r).
+  \]
+  </div>
+
+  <p>A radical can therefore have a rather delocalized spin distribution even when a Lewis structure draws the unpaired electron on one atom. That distinction matters because the Fermi-contact hyperfine interaction probes spin density at a nucleus, whereas anisotropic hyperfine coupling and the \(g\)-tensor depend on the broader spatial and orbital character of the electronic state.</p>
+
+  <aside class="lecture-note">
+    <strong>Charge density and spin density are not interchangeable.</strong>
+    <span>Two methods can produce similar total densities while differing noticeably in spin polarization around the nuclei; magnetic response properties can expose that difference.</span>
+  </aside>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Magnetic electronic structure</span>
+    <p>This sensitivity is one reason magnetic parameters are demanding electronic-structure benchmarks: they test the local spin density and response of the wavefunction, not only a total energy.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/acs.inorgchem.3c02949" target="_blank" rel="noopener"><strong>Peculiar Differences between Two Copper Complexes Containing Similar Redox-Active Ligands</strong><span>Inorg. Chem. (2024)</span></a>
+    </div>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
