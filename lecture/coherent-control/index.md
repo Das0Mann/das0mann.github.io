@@ -90,6 +90,13 @@ permalink: /lecture/coherent-control/
 
   <p>On resonance, a \(\pi\) pulse requires \(t_\pi=1/(2\nu_1)\), while a \(\pi/2\) pulse requires \(t_{\pi/2}=1/(4\nu_1)\).</p>
 
+  <aside class="lecture-analogy">
+    <span class="lecture-analogy-label">Mental model</span>
+    <h3>Driving a spin is like pushing a swing with the right timing</h3>
+    <p>On resonance, every cycle of the RF or microwave field arrives with the right phase to build the rotation coherently, just as repeated pushes can increase a swing's motion. Detuning means the pushes slowly arrive at the wrong phase, so their effects no longer add optimally. Pulse phase chooses the direction of the push; pulse area determines how far the state is rotated.</p>
+    <span class="analogy-limit"><strong>Where the analogy breaks:</strong> a driven spin is a coherent quantum two-level system, and strong driving, additional levels, relaxation or breakdown of the rotating-wave approximation go beyond the simple swing picture.</span>
+  </aside>
+
   <div class="interactive-card" id="rabi-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Pulse area and detuning</h3></div>
