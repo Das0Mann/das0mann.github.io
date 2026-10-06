@@ -250,7 +250,7 @@ permalink: /lecture/coherent-control/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Echoes</p><h2>A \(\pi\) pulse can refocus static frequency offsets</h2></div>
+    <div><p class="section-eyebrow">Echoes</p><h2>A π pulse can refocus static frequency offsets</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>An echo reverses reversible phase dispersion, not irreversible decoherence</h3></div>
