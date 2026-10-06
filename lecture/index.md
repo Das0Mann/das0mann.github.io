@@ -163,7 +163,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Molecular Motion → Spin Dynamics</h3>
-      <p>Learn how molecular fluctuations turn a static spin Hamiltonian into \(H(t)\), and how correlation functions and spectral densities connect motion to relaxation.</p>
+      <p>Follow the multiscale chain \(\mathbf R(t)\rightarrow p_k(t)\rightarrow H(t)\): molecular motion modulates spin parameters, correlation functions encode memory and spectral densities control relaxation.</p>
       <ul>
         <li>parameter trajectories &amp; fluctuations</li>
         <li>correlation functions</li>
@@ -206,7 +206,7 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
-      <p>Go beyond phenomenological \(T_1/T_2\): Lindblad structure, BRW theory, memory kernels, Nakajima–Zwanzig and stochastic unravelings.</p>
+      <p>Go beyond phenomenological \(T_1/T_2\): derive how fluctuating operator channels and \(J_{\alpha\beta}(\omega)\) generate BRW relaxation, then compare Lindblad, memory-kernel and stochastic descriptions.</p>
       <ul>
         <li>Markovian master equations</li>
         <li>BRW assumptions</li>
@@ -287,7 +287,7 @@ permalink: /lecture/
         <span class="library-tag">Verified examples</span>
       </div>
       <h3>Worked MolSpin Examples</h3>
-      <p>Read real public MolSpin inputs as equations: interactions build (hat H), states define (ho(0)), transitions add kinetics and tasks choose the propagator and observable.</p>
+      <p>Read real public MolSpin inputs as equations: interactions build \(\hat H\), states define \(\rho(0)\), transitions add kinetics and tasks choose the propagator and observable.</p>
       <ul>
         <li>input-file anatomy</li>
         <li>static radical-pair examples</li>
