@@ -312,6 +312,34 @@ permalink: /lecture/electron-transfer/
   <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction.</p>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index">05b</span>
+    <div><p class="section-eyebrow">Distance and tunnelling</p><h2>Electron transfer can be exponentially sensitive to geometry before Marcus energetics even enter</h2></div>
+  </div>
+
+  <p>For weakly coupled donor–acceptor states, the electronic coupling often decreases approximately exponentially with separation along a tunnelling pathway,</p>
+
+  <div class="lecture-equation">
+  \[
+  |V(R)|
+  \approx
+  |V_0|\,e^{-\beta R}.
+  \]
+  </div>
+
+  <p>The decay constant \(\beta\) is not universal: it depends on the intervening medium, orbital alignment and whether covalent bonds, hydrogen bonds or through-space contacts mediate the coupling. Because the nonadiabatic rate scales as \(|V|^2\), small conformational changes can therefore generate large rate changes even when \(\lambda\) and \(\Delta G^\circ\) barely move.</p>
+
+  <aside class="research-connection">
+    <span class="research-connection-label">Conformational gating</span>
+    <p>This is one reason an ensemble cannot always be replaced by its average geometry. Different conformers can occupy qualitatively different coupling and reaction regimes.</p>
+    <div class="research-connection-links">
+      <a href="https://doi.org/10.1021/jacs.5c22947" target="_blank" rel="noopener"><strong>Conformational Switching Controls Biradical Spin Dynamics in Flavin–Tryptophan Dyads</strong><span>JACS (2026)</span></a>
+    </div>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
