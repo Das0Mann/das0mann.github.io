@@ -337,7 +337,7 @@ permalink: /lecture/molecular-motion/
 
   <div class="lecture-equation">
   \[
-  C(t)
+  \frac{C(t)}{C(0)}
   =
   S^2e^{-t/\tau_m}
   +
