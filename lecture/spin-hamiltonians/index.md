@@ -162,7 +162,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>If \(\mathbf g=g\mathbf 1\), the interaction is isotropic. In a molecule, spin–orbit coupling and the local electronic structure generally make \(\mathbf g\) a tensor. The resonance therefore depends on how the molecule is oriented relative to the magnetic field.</p>
+  <p>If \(\mathbf g=g\mathbb I_3\), the interaction is isotropic. In a molecule, spin–orbit coupling and the local electronic structure generally make \(\mathbf g\) a tensor. The resonance therefore depends on how the molecule is oriented relative to the magnetic field.</p>
 
   <p>At the quantum-chemistry level, \(\mathbf g\) is a response property rather than an orbital label. A widely used decomposition is</p>
 
@@ -170,7 +170,7 @@ permalink: /lecture/spin-hamiltonians/
   \[
   \mathbf g
   =
-  g_e\mathbf 1
+  g_e\mathbb I_3
   +
   \mathbf g^\mathrm{RMC}
   +
@@ -303,7 +303,7 @@ permalink: /lecture/spin-hamiltonians/
   \[
   \mathbf A
   =
-  A_\mathrm{iso}\mathbf 1+\mathbf T.
+  A_\mathrm{iso}\mathbb I_3+\mathbf T.
   \]
   </div>
 
@@ -586,7 +586,7 @@ permalink: /lecture/spin-hamiltonians/
   \qquad
   \mathbf T
   =
-  \mathbf A-A_\mathrm{iso}\mathbf 1.
+  \mathbf A-A_\mathrm{iso}\mathbb I_3.
   \]
   </div>
 
