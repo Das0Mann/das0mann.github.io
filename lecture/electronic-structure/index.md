@@ -177,7 +177,7 @@ permalink: /lecture/electronic-structure/
   =
   \frac{1}{\sqrt{N!}}
   \det[
-  \chi_i(x_j)
+  \psi_i(x_j)
   ].
   \]
   </div>
@@ -186,9 +186,9 @@ permalink: /lecture/electronic-structure/
 
   <div class="lecture-equation">
   \[
-  \hat F\,\chi_i
+  \hat F\,\psi_i
   =
-  \varepsilon_i\chi_i,
+  \varepsilon_i\psi_i,
   \qquad
   \hat F
   =
@@ -221,20 +221,19 @@ permalink: /lecture/electronic-structure/
   \[
   E_\mathrm{HF}
   =
-  \sum_i
-  \langle i|\hat h|i\rangle
+  \sum_i^\mathrm{occ} h_{ii}
   +
   \frac12
-  \sum_{ij}
+  \sum_{i,j}^\mathrm{occ}
   \left[
-  \langle ij|ij\rangle
-  -
-  \langle ij|ji\rangle
+  (ii|jj)-(ij|ji)
   \right]
   +
   V_\mathrm{NN}.
   \]
   </div>
+
+  <p>Here \(h_{ii}=\langle i|\hat h|i\rangle\). In chemists’ notation, \((ii|jj)\) is the Coulomb two-electron integral and \((ij|ji)\) is the exchange integral. The indices \(i,j\) run over occupied spin orbitals \(\psi_i\); the earlier symbols \(\chi_\mu\) denote the atom-centred basis functions used to expand the molecular orbitals.</p>
 
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>What HF assumes</span><h3>The approximation is not “electrons do not interact”—it is that one optimized determinant is enough</h3></div>
@@ -847,7 +846,7 @@ permalink: /lecture/electronic-structure/
       <article>
         <strong>\(\mathbf A\): spin density at and around a nucleus</strong>
         <p>The contact part is proportional to the spin density at nucleus \(N\), \(A_N^\mathrm{FC}\propto\rho_s(\mathbf R_N)\).</p>
-        <p>The anisotropic spin-dipolar part is a real-space integral over the spin density, schematically \(A_{N,\alpha\beta}^\mathrm{dip}\propto\int \rho_s(\mathbf r)[3r_\alpha r_\beta-r^2\delta_{\alpha\beta}]r^{-5}d\mathbf r\).</p>
+        <p>The anisotropic spin-dipolar part is a real-space integral over the spin density. Writing \(\mathbf r_N=\mathbf r-\mathbf R_N\) for the electron coordinate relative to nucleus \(N\), schematically \(A_{N,\alpha\beta}^\mathrm{dip}\propto\int \rho_s(\mathbf r)[3r_{N,\alpha}r_{N,\beta}-r_N^2\delta_{\alpha\beta}]r_N^{-5}d\mathbf r\).</p>
       </article>
       <article>
         <strong>\(J\): map electronic spin-state energies onto a spin model</strong>

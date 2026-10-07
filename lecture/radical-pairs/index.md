@@ -328,11 +328,11 @@ permalink: /lecture/radical-pairs/
   \qquad
   v(B)
   =
-  v_0+\frac{\Delta\nu_g(B)}{2}.
+  v_\mathrm{hf}+\frac{\Delta\nu_g(B)}{2}.
   \]
   </div>
 
-  <p>\(v_0\) represents a field-independent effective mixing channel, for example a reduced hyperfine-asymmetry contribution. The \(\Delta g\) term grows linearly with field because the two electrons acquire different Zeeman frequencies. The eigenvalue gap, also in ordinary-frequency units, is</p>
+  <p>Here \(v_\mathrm{hf}\) is a <em>signed projected matrix element</em> of a field-independent interaction in this chosen \(S/T_0\) subspace; hyperfine asymmetry is one possible source. The differential Zeeman term contributes \(\Delta\nu_g/2\) to the same off-diagonal matrix element and grows linearly with field. The scalar sum is therefore specific to this reduced real two-state representation—not a general rule for adding full hyperfine and Zeeman Hamiltonians. The eigenvalue gap, also in ordinary-frequency units, is</p>
 
   <div class="lecture-equation">
   \[
