@@ -5939,3 +5939,19 @@ h3 { font-size: 1.25rem; }
     grid-template-columns: 1fr;
   }
 }
+
+
+#tensor-path {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+#tensor-marker-line {
+  stroke: #8da7af;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
