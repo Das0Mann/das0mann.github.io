@@ -217,11 +217,22 @@ permalink: /lecture/spin-dynamics/
 
   <div class="lecture-equation">
   \[
+  \begin{aligned}
   \hat H_\mathrm{hf}
-  =
+  &=
   \sum_{\alpha,\beta}
   A_{\alpha\beta}
-  \hat S_\alpha\hat I_\beta.
+  \hat S_\alpha\hat I_\beta,\\
+  \hat{\mathcal H}_\mathrm{hf}
+  \equiv
+  \frac{\hat H_\mathrm{hf}}{h}
+  &=
+  \sum_{\alpha,\beta}
+  a_{\alpha\beta}
+  \hat S_\alpha\hat I_\beta,
+  \qquad
+  a_{\alpha\beta}\equiv\frac{A_{\alpha\beta}}{h}.
+  \end{aligned}
   \]
   </div>
 
