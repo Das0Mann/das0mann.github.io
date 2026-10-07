@@ -201,7 +201,21 @@ permalink: /lecture/electronic-structure/
   \]
   </div>
 
-  <p>where \(\hat h\) contains the one-electron kinetic and electron–nuclear terms, \(\hat J_j\) is the Coulomb operator and \(\hat K_j\) is the non-local exchange operator. For occupied spin orbitals, the HF energy can be written schematically as</p>
+  <p>where \(\hat h\) contains the one-electron kinetic and electron–nuclear terms, \(\hat J_j\) is the Coulomb operator and \(\hat K_j\) is the non-local exchange operator.</p>
+
+  <p>In an atom-centred non-orthogonal basis, the same equations become the generalized matrix eigenvalue problem</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathbf F\mathbf C
+  =
+  \mathbf S\mathbf C\boldsymbol\varepsilon,
+  \]
+  </div>
+
+  <p>where \(\mathbf S\) is the basis-function overlap matrix. Because \(\mathbf F\) depends on the occupied orbitals that we are solving for, the equations must be iterated to self-consistency.</p>
+
+  <p>For occupied spin orbitals, the HF energy can be written schematically as</p>
 
   <div class="lecture-equation">
   \[
@@ -260,7 +274,18 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Kohn–Sham density-functional theory</p><h2>Replace the many-electron wavefunction problem by an exact-in-principle density problem</h2></div>
   </div>
 
-  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density. Kohn and Sham make this practical by introducing non-interacting orbitals that reproduce that density:</p>
+  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density.</p>
+
+  <div class="lecture-equation">
+  \[
+  E_0
+  =
+  \min_{n\rightarrow N}
+  E[n].
+  \]
+  </div>
+
+  <p>Kohn and Sham make this variational statement practical by introducing non-interacting orbitals that reproduce the interacting ground-state density:</p>
 
   <div class="lecture-equation">
   \[
@@ -369,6 +394,25 @@ permalink: /lecture/electronic-structure/
 
   <p>MP2 is inexpensive by correlated-wavefunction standards and often useful for ordinary closed-shell single-reference chemistry. But the denominator exposes its weakness: if occupied and virtual orbitals become nearly degenerate, the perturbative correction can become unphysically large. Strong correlation, bond breaking and many transition-metal situations are therefore poor MP2 territory.</p>
 
+
+  <details class="lecture-details">
+    <summary>Where does configuration interaction fit?</summary>
+    <p>Configuration interaction (CI) expands the wavefunction linearly in excited determinants relative to a reference,</p>
+    <div class="lecture-equation">
+    \[
+    |\Psi_\mathrm{CI}\rangle
+    =
+    c_0|\Phi_0\rangle
+    +
+    \sum_{ia}c_i^a|\Phi_i^a\rangle
+    +
+    \frac14\sum_{ijab}c_{ij}^{ab}|\Phi_{ij}^{ab}\rangle
+    +\cdots .
+    \]
+    </div>
+    <p>CIS retains only single substitutions and is mainly an excited-state model rather than a correlated ground-state method. CISD includes singles and doubles and is variational, but truncated CI is not size extensive: two non-interacting copies of a system do not acquire exactly twice the correlation energy. Full CI includes every determinant in the chosen orbital basis and is exact <em>within that finite basis</em>, but the determinant count grows combinatorially, so FCI is restricted to very small problems or small active spaces.</p>
+  </details>
+
   <h3 class="lecture-subhead">Coupled cluster: exponentiate excitations from one dominant reference</h3>
 
   <div class="lecture-equation">
@@ -414,6 +458,24 @@ permalink: /lecture/electronic-structure/
   \sum_I
   C_I
   |\Phi_I(\boldsymbol\kappa)\rangle.
+  \]
+  </div>
+
+  <p>Both the configuration coefficients and the orbital rotations are optimized variationally,</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{CASSCF}
+  =
+  \min_{\mathbf C,\boldsymbol\kappa}
+  \frac{
+  \langle\Psi(\mathbf C,\boldsymbol\kappa)|
+  \hat H
+  |\Psi(\mathbf C,\boldsymbol\kappa)\rangle
+  }{
+  \langle\Psi(\mathbf C,\boldsymbol\kappa)|
+  \Psi(\mathbf C,\boldsymbol\kappa)\rangle
+  }.
   \]
   </div>
 
