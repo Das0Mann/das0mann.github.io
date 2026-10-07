@@ -51,7 +51,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 will make that alternative matrix convention explicit.</p>
+  <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 keeps the dimensionless convention and shows how these operators are embedded as matrices in a many-spin Hilbert space.</p>
 
   <div class="lecture-equation-grid">
     <div class="lecture-equation compact">
@@ -286,7 +286,14 @@ permalink: /lecture/spin-hamiltonians/
   \hat H_\mathrm{hf}
   =
   \sum_k
-  \hat{\mathbf S}\cdot\mathbf A_k\cdot\hat{\mathbf I}_k.
+  \hat{\mathbf S}\cdot\mathbf A_k\cdot\hat{\mathbf I}_k,
+  \qquad
+  \frac{\hat H_\mathrm{hf}}{h}
+  =
+  \sum_k
+  \hat{\mathbf S}\cdot\mathbf a_k\cdot\hat{\mathbf I}_k,
+  \quad
+  \mathbf a_k\equiv\frac{\mathbf A_k}{h}.
   \]
   </div>
 
