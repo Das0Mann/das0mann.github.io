@@ -226,7 +226,12 @@ permalink: /lecture/quantum-biology/
   =
   \frac{g\mu_BB}{h}
   \approx
-  1.4~\mathrm{MHz}.
+  1.4~\mathrm{MHz}
+  \qquad
+  \left(
+  g\approx2,\;
+  B=50~\mu\mathrm T
+  \right).
   \]
   </div>
 
