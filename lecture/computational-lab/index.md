@@ -236,15 +236,15 @@ permalink: /lecture/computational-lab/
   </div>
 
 
-  <p>If random normalized states satisfy \(\mathbb E[\lvert r\rangle\langle r\rvert]=\mathbf 1/D\), then a trace can be estimated as</p>
+  <p>If random normalized states satisfy \(\mathbb E[\lvert r\rangle\langle r\rvert]=\mathbb I_D/D\), then the trace of an operator \(\hat A\) can be estimated as</p>
 
   <div class="lecture-equation">
   \[
-  \mathrm{Tr}(A)
+  \operatorname{Tr}(\hat A)
   \approx
   \frac{D}{M}
   \sum_{m=1}^{M}
-  \langle r_m|A|r_m\rangle.
+  \langle r_m|\hat A|r_m\rangle.
   \]
   </div>
 
