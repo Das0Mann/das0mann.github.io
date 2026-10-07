@@ -177,7 +177,7 @@ permalink: /lecture/electronic-structure/
   =
   \frac{1}{\sqrt{N!}}
   \det[
-  \chi_i(x_j)
+  \psi_i(x_j)
   ].
   \]
   </div>
@@ -186,9 +186,9 @@ permalink: /lecture/electronic-structure/
 
   <div class="lecture-equation">
   \[
-  \hat F\,\chi_i
+  \hat F\,\psi_i
   =
-  \varepsilon_i\chi_i,
+  \varepsilon_i\psi_i,
   \qquad
   \hat F
   =
@@ -229,9 +229,11 @@ permalink: /lecture/electronic-structure/
   (ii|jj)-(ij|ji)
   \right]
   +
-  V_\mathrm{NN},
+  V_\mathrm{NN}.
   \]
   </div>
+
+  <p>Here \(h_{ii}=\langle i|\hat h|i\rangle\). In chemists’ notation, \((ii|jj)\) is the Coulomb two-electron integral and \((ij|ji)\) is the corresponding exchange integral. The indices \(i,j\) run over occupied spin orbitals \(\psi_i\), while the earlier symbols \(\chi_\mu\) denote the atom-centred one-particle basis functions used to expand the molecular orbitals.</p>
 
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>What HF assumes</span><h3>The approximation is not “electrons do not interact”—it is that one optimized determinant is enough</h3></div>
