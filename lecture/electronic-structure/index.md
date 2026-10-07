@@ -581,7 +581,7 @@ permalink: /lecture/electronic-structure/
           <span>Active space <strong id="cas-label">CAS(6,6)</strong></span>
           <span>Lowest-\(|M_S|\) determinants <strong id="cas-ms-count">400</strong></span>
           <span>All spin-orbital determinants <strong id="cas-all-count">924</strong></span>
-          <span>Approx. CI-vector storage <strong id="cas-memory">6.25 KiB</strong></span>
+          <span>One real CI vector <strong id="cas-memory">3.13 KiB</strong></span>
         </div>
 
         <p id="cas-explanation" class="demo-explanation">This is a modest complete active space. Orbital optimization and integral transformations still add substantial cost beyond storing the CI coefficients.</p>
