@@ -807,9 +807,9 @@ permalink: /lecture/electronic-structure/
   <span class="lecture-takeaway-label">Take-home model</span>
   <h3>What should remain after this module?</h3>
   <ul>
-    <li>Electronic structure determines the states, densities and response functions from which magnetic observables are constructed.</li>
-    <li>Spin-Hamiltonian parameters are effective coefficients obtained from expectation values, response derivatives, energy mappings or low-energy projection—not arbitrary fitted constants.</li>
-    <li>The quality of a spin-dynamics model is therefore limited by both the electronic-structure approximation and the conventions used to reduce it.</li>
+    <li>HF optimizes one determinant; Kohn–Sham DFT moves the unknown many-body physics into (E_mathrm{xc}[n]); post-HF methods correlate a usually single-reference wavefunction; multiconfigurational methods change the reference itself when several configurations are essential.</li>
+    <li>Choose the method from the electronic structure and the property: DFT is the practical workhorse, CCSD(T) is a high-accuracy single-reference benchmark, and CASSCF plus dynamic correlation is the natural route when near-degeneracy or state mixing is intrinsic.</li>
+    <li>Magnetic parameters are response or effective-Hamiltonian quantities, so errors in spin density, excited-state gaps, SOC or electronic-state character propagate directly into the later spin-dynamics model.</li>
   </ul>
 </aside>
 
