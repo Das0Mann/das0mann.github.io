@@ -189,7 +189,11 @@ permalink: /lecture/coherent-control/
   \Omega_1,\,
   0,\,
   \Delta\omega
-  \right).
+  \right),
+  \qquad
+  \Omega_1=2\pi\nu_1,
+  \qquad
+  \Delta\omega=2\pi\Delta\nu.
   \]
   </div>
 
