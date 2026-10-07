@@ -132,6 +132,62 @@ permalink: /lecture/molspin-notebooks/
   </aside>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive model builder</p><h2>Build the equation before you build the input file</h2></div>
+  </div>
+
+  <p>This simplified builder assumes spin-\(\tfrac12\) particles and translates modelling choices into the structure of the dynamical equation. It is deliberately not a MolSpin input generator: its purpose is to check the physics first.</p>
+
+  <div class="interactive-card" id="molspin-builder">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Input-to-equation mapper</span><h3>Which choices belong in \(H\), and which do not?</h3></div>
+      <span class="interactive-model-note">model anatomy</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="builder-electrons"><span class="control-name">Electron spins</span><output id="builder-electrons-out">2</output></label>
+        <input id="builder-electrons" type="range" min="1" max="4" step="1" value="2">
+
+        <label for="builder-nuclei"><span class="control-name">Nuclear spins</span><output id="builder-nuclei-out">2</output></label>
+        <input id="builder-nuclei" type="range" min="0" max="8" step="1" value="2">
+
+        <div class="builder-checks">
+          <label><input id="builder-zeeman" type="checkbox" checked> Zeeman interaction</label>
+          <label><input id="builder-hyperfine" type="checkbox" checked> Hyperfine interaction</label>
+          <label><input id="builder-exchange" type="checkbox" checked> Electron exchange</label>
+          <label><input id="builder-drive" type="checkbox"> Time-dependent RF / microwave drive</label>
+          <label><input id="builder-relax" type="checkbox"> Relaxation / dephasing</label>
+          <label><input id="builder-reaction" type="checkbox" checked> Spin-selective reaction</label>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Hilbert dimension \(D\) <strong id="builder-dim">16</strong></span>
+          <span>Density-matrix elements \(D^2\) <strong id="builder-rho-dim">256</strong></span>
+          <span>Dynamical class <strong id="builder-class">reactive spin dynamics</strong></span>
+        </div>
+
+        <p id="builder-explanation" class="demo-explanation">The Hamiltonian contains Zeeman, hyperfine and exchange terms; the reaction is a kinetic term and does not belong inside \(H\).</p>
+      </div>
+
+      <div>
+        <pre class="molspin-code builder-equation"><code id="builder-equation">H = H_Z + H_hf + H_ex
+dρ/dt = -(i/ħ)[H,ρ] + K_reaction[ρ]</code></pre>
+        <div class="physical-concept-panel compact-panel">
+          <div class="physical-concept-head"><span>Model check</span><h3 id="builder-check-title">The ingredients are physically consistent</h3></div>
+          <div class="physical-concept-grid">
+            <article><strong>Hamiltonian objects</strong><p id="builder-hamiltonian-note">Zeeman, hyperfine and exchange change coherent spin evolution and therefore belong in \(\hat H\).</p></article>
+            <article><strong>Non-unitary objects</strong><p id="builder-nonunitary-note">The reaction changes population irreversibly and is represented outside the Hamiltonian.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>
@@ -381,4 +437,5 @@ PulseSequence seq
   </div>
 </section>
 {% include lecture-library-nav.html %}
+<script src="{{ site.url }}/assets/js/lecture-molspin-builder.js" defer></script>
 </div>

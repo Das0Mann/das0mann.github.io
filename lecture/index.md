@@ -107,7 +107,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">01</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Electronic Structure</h3>
       <p>Start with the many-electron problem, compare HF, Kohn–Sham DFT, post-HF ab initio and multiconfigurational methods, then connect the electronic state to magnetic parameters.</p>
@@ -126,7 +126,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">02</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Spin Hamiltonians</h3>
       <p>Map ab initio magnetic properties onto an effective spin Hamiltonian and then interpret Zeeman, hyperfine, exchange, dipolar, quadrupole and ZFS terms.</p>
@@ -350,7 +350,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">13</span>
-        <span class="library-tag">Verified examples</span>
+        <span class="library-tag">1 interactive</span>
       </div>
       <h3>Worked MolSpin Examples</h3>
       <p>Read real public MolSpin inputs as equations: interactions build \(\hat H\), states define \(\rho(0)\), transitions add kinetics and tasks choose the propagator and observable.</p>

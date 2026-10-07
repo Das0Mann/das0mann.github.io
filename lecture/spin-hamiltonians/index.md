@@ -575,6 +575,87 @@ permalink: /lecture/spin-hamiltonians/
   </aside>
 </section>
 
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>Rotate a tensor relative to the magnetic field</h2></div>
+  </div>
+
+  <p>For a diagonal tensor in its principal-axis frame, the scalar projection along a unit vector \(\mathbf n\) is</p>
+
+  <div class="lecture-equation">
+  \[
+  T_\mathrm{eff}
+  =
+  \mathbf n^\mathrm T\mathbf T\mathbf n
+  =
+  T_x\sin^2\theta\cos^2\phi
+  +
+  T_y\sin^2\theta\sin^2\phi
+  +
+  T_z\cos^2\theta.
+  \]
+  </div>
+
+  <p>This high-field projection is the simplest way to see why an anisotropic \(g\)- or hyperfine tensor produces orientation-dependent resonance positions. The full spin Hamiltonian can contain additional non-secular mixing, but the geometry is already visible here.</p>
+
+  <div class="interactive-card" id="tensor-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Tensor rotation explorer</span><h3>Orientation turns principal values into an effective interaction</h3></div>
+      <span class="interactive-model-note">\(T_\mathrm{eff}=\mathbf n^\mathrm T T\mathbf n\)</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="tensor-tx"><span class="control-name">\(T_x\)</span><output id="tensor-tx-out">20 MHz</output></label>
+        <input id="tensor-tx" type="range" min="-100" max="150" step="1" value="20">
+
+        <label for="tensor-ty"><span class="control-name">\(T_y\)</span><output id="tensor-ty-out">50 MHz</output></label>
+        <input id="tensor-ty" type="range" min="-100" max="150" step="1" value="50">
+
+        <label for="tensor-tz"><span class="control-name">\(T_z\)</span><output id="tensor-tz-out">100 MHz</output></label>
+        <input id="tensor-tz" type="range" min="-100" max="150" step="1" value="100">
+
+        <label for="tensor-theta"><span class="control-name">Polar angle \(\theta\)</span><output id="tensor-theta-out">45°</output></label>
+        <input id="tensor-theta" type="range" min="0" max="180" step="1" value="45">
+
+        <label for="tensor-phi"><span class="control-name">Azimuth \(\phi\)</span><output id="tensor-phi-out">0°</output></label>
+        <input id="tensor-phi" type="range" min="0" max="360" step="1" value="0">
+
+        <div class="demo-presets">
+          <button type="button" data-tensor-preset="isotropic">isotropic</button>
+          <button type="button" data-tensor-preset="axial">axial</button>
+          <button type="button" data-tensor-preset="rhombic">rhombic</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Effective projection <strong id="tensor-effective">60.0 MHz</strong></span>
+          <span>Isotropic part <strong id="tensor-isotropic">56.7 MHz</strong></span>
+          <span>Principal-value span <strong id="tensor-span">80 MHz</strong></span>
+        </div>
+        <p id="tensor-explanation" class="demo-explanation">The field samples a mixture of the \(x\) and \(z\) principal values at this orientation.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="tensor-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Effective tensor projection as a function of polar angle">
+          <line x1="58" y1="252" x2="528" y2="252" class="plot-axis"/>
+          <line x1="58" y1="30" x2="58" y2="252" class="plot-axis"/>
+          <line x1="58" y1="141" x2="528" y2="141" class="plot-grid"/>
+          <text x="490" y="278" class="svg-caption">θ / degree</text>
+          <text x="14" y="34" class="svg-caption">T_eff</text>
+          <text x="54" y="270" class="svg-tick">0</text>
+          <text x="286" y="270" class="svg-tick">90</text>
+          <text x="514" y="270" class="svg-tick">180</text>
+          <path id="tensor-path" class="curve-primary" fill="none" d=""/>
+          <line id="tensor-marker-line" x1="0" y1="30" x2="0" y2="252" class="plot-marker-line"/>
+          <circle id="tensor-marker" r="5" class="plot-marker" cx="0" cy="0"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <aside class="lecture-takeaway">
   <span class="lecture-takeaway-label">Take-home model</span>
   <h3>The modelling contract in one view</h3>
@@ -640,3 +721,4 @@ permalink: /lecture/spin-hamiltonians/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-dipolar.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-tensor.js" defer></script>
