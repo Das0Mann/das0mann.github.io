@@ -525,6 +525,79 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>How quickly does a complete active space grow?</h2></div>
+  </div>
+
+  <p>A label such as CAS(10,10) looks compact, but it represents many electronic occupations. For \(m\) spatial active orbitals there are \(2m\) active spin orbitals. The total number of \(N\)-electron Slater determinants is</p>
+
+  <div class="lecture-equation">
+  \[
+  N_\mathrm{det}^{\mathrm{all}}
+  =
+  \binom{2m}{n}.
+  \]
+  </div>
+
+  <p>If one works in the smallest-\(|M_S|\) sector, a useful determinant count is</p>
+
+  <div class="lecture-equation">
+  \[
+  N_\mathrm{det}^{M_S}
+  =
+  \binom{m}{n_\alpha}
+  \binom{m}{n_\beta},
+  \qquad
+  n_\alpha+n_\beta=n.
+  \]
+  </div>
+
+  <div class="interactive-card" id="cas-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Active-space explorer</span><h3>CAS size is combinatorial</h3></div>
+      <span class="interactive-model-note">determinant counting</span>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>compare CAS(6,6), CAS(10,10) and CAS(12,12). The orbital count only doubles from 6 to 12, but the determinant space grows by orders of magnitude.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="cas-orbitals"><span class="control-name">Active spatial orbitals \(m\)</span><output id="cas-orbitals-out">6</output></label>
+        <input id="cas-orbitals" type="range" min="2" max="14" step="1" value="6">
+
+        <label for="cas-electrons"><span class="control-name">Active electrons \(n\)</span><output id="cas-electrons-out">6</output></label>
+        <input id="cas-electrons" type="range" min="1" max="12" step="1" value="6">
+
+        <div class="demo-presets">
+          <button type="button" data-cas-n="6" data-cas-m="6">CAS(6,6)</button>
+          <button type="button" data-cas-n="10" data-cas-m="10">CAS(10,10)</button>
+          <button type="button" data-cas-n="12" data-cas-m="12">CAS(12,12)</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Active space <strong id="cas-label">CAS(6,6)</strong></span>
+          <span>Lowest-\(|M_S|\) determinants <strong id="cas-ms-count">400</strong></span>
+          <span>All spin-orbital determinants <strong id="cas-all-count">924</strong></span>
+          <span>Approx. CI-vector storage <strong id="cas-memory">6.25 KiB</strong></span>
+        </div>
+
+        <p id="cas-explanation" class="demo-explanation">This is a modest complete active space. Orbital optimization and integral transformations still add substantial cost beyond storing the CI coefficients.</p>
+      </div>
+
+      <div class="physical-concept-panel compact-panel">
+        <div class="physical-concept-head"><span>Interpretation</span><h3>What this count does—and does not—mean</h3></div>
+        <div class="physical-concept-grid">
+          <article><strong>Why it grows</strong><p>Every added active orbital creates new ways to distribute the active electrons. CASSCF treats all allowed occupations inside the active space rather than selecting only a few excitations.</p></article>
+          <article><strong>Why real implementations differ</strong><p>Spin-adapted configuration state functions, symmetry and modern solvers can reduce the working dimension. The determinant count is therefore a transparent upper-level measure, not a universal timing estimate.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
     <span class="lecture-index concept-index">?</span>
@@ -905,3 +978,4 @@ permalink: /lecture/electronic-structure/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-interactive.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-active-space.js" defer></script>
