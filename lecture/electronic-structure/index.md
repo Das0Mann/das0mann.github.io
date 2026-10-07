@@ -841,7 +841,7 @@ permalink: /lecture/electronic-structure/
     <div class="physical-concept-grid">
       <article>
         <strong>\(\mathbf g\): magnetic response + SOC</strong>
-        <p>At the electronic-structure level the molecular \(g\)-tensor is a magnetic response property. A useful decomposition is \(\mathbf g=g_e\mathbf 1+\mathbf g^\mathrm{RMC}+\mathbf g^\mathrm{DSO}+\mathbf g^\mathrm{PSO}\).</p>
+        <p>At the electronic-structure level the molecular \(g\)-tensor is a magnetic response property. A useful decomposition is \(\mathbf g=g_e\mathbb I_3+\mathbf g^\mathrm{RMC}+\mathbf g^\mathrm{DSO}+\mathbf g^\mathrm{PSO}\).</p>
         <p>The dominant molecular anisotropy often comes from orbital-Zeeman/SOC response. In a sum-over-states picture, \(\Delta g\) contains terms proportional to \(\langle0|\hat L|n\rangle\langle n|\hat H_\mathrm{SO}|0\rangle/(E_0-E_n)\).</p>
       </article>
       <article>
