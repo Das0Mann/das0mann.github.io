@@ -5887,3 +5887,55 @@ h3 { font-size: 1.25rem; }
   font-size: .79rem !important;
   line-height: 1.56 !important;
 }
+
+
+/* ---------------------------------------------------------
+   Meaningful lecture interactives — October 2026
+   --------------------------------------------------------- */
+
+.builder-checks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 7px 14px;
+  margin: 15px 0 17px;
+}
+
+.builder-checks label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  min-height: 30px !important;
+  color: #526a76 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .76rem !important;
+  font-weight: 650 !important;
+}
+
+.builder-checks input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.builder-equation {
+  margin-top: 0;
+  min-height: 112px;
+}
+
+.compact-panel {
+  margin-left: 0;
+  margin-top: 18px;
+}
+
+.interactive-card .compact-panel .physical-concept-grid {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+
+@media (max-width: 760px) {
+  .builder-checks,
+  .interactive-card .compact-panel .physical-concept-grid {
+    grid-template-columns: 1fr;
+  }
+}
