@@ -807,7 +807,7 @@ permalink: /lecture/electronic-structure/
   <span class="lecture-takeaway-label">Take-home model</span>
   <h3>What should remain after this module?</h3>
   <ul>
-    <li>HF optimizes one determinant; Kohn–Sham DFT moves the unknown many-body physics into (E_mathrm{xc}[n]); post-HF methods correlate a usually single-reference wavefunction; multiconfigurational methods change the reference itself when several configurations are essential.</li>
+    <li>HF optimizes one determinant; Kohn–Sham DFT moves the unknown many-body physics into \(E_\mathrm{xc}[n]\); post-HF methods correlate a usually single-reference wavefunction; multiconfigurational methods change the reference itself when several configurations are essential.</li>
     <li>Choose the method from the electronic structure and the property: DFT is the practical workhorse, CCSD(T) is a high-accuracy single-reference benchmark, and CASSCF plus dynamic correlation is the natural route when near-degeneracy or state mixing is intrinsic.</li>
     <li>Magnetic parameters are response or effective-Hamiltonian quantities, so errors in spin density, excited-state gaps, SOC or electronic-state character propagate directly into the later spin-dynamics model.</li>
   </ul>
