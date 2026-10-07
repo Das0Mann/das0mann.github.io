@@ -274,15 +274,16 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Kohn–Sham density-functional theory</p><h2>Replace the many-electron wavefunction problem by an exact-in-principle density problem</h2></div>
   </div>
 
-  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density.</p>
+  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density. Here (mathcal D_N) denotes the physically admissible densities for (N) electrons.</p>
 
   <div class="lecture-equation">
   \[
   E_0
   =
-  \min_{\substack{n(\mathbf r)\ge 0\\
-  \int n(\mathbf r)\,d\mathbf r=N}}
-  E[n].
+  \min_{n\in\mathcal D_N}
+  E[n],
+  \qquad
+  \int n(\mathbf r)\,d\mathbf r=N,
   \]
   </div>
 
