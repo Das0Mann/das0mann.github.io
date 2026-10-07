@@ -26,10 +26,10 @@
     const jOut = $("rp-level-j-out");
     const dgOut = $("rp-level-dg-out");
     const vOut = $("rp-level-v-out");
-    const detuningOut = $("rp-level-detuning");
+    const dgSplitOut = $("rp-level-dg-split");
+    const mixingOut = $("rp-level-mixing");
     const gapOut = $("rp-level-gap");
-    const sCharOut = $("rp-level-schar");
-    const crossingOut = $("rp-level-crossing");
+    const mixFracOut = $("rp-level-mixfrac");
     const explanation = $("rp-level-explanation");
 
     const dSPath = $("rp-diabatic-s");
@@ -44,50 +44,48 @@
     const bMax = 1000;
     const xMap = (b) => x0 + (x1 - x0) * b / bMax;
 
-    function deltaAt(b, j, dg) {
-      return j + muBOverH_MHzPerMt * dg * b;
+    function valuesAt(b, j, dg, v0) {
+      const dgSplit = muBOverH_MHzPerMt * dg * b;
+      const mixing = v0 + 0.5 * dgSplit;
+      const gap = Math.sqrt(j*j + 4*mixing*mixing);
+      return {dgSplit, mixing, gap};
     }
 
     function update() {
       const b = parseFloat(bInput.value);
       const j = parseFloat(jInput.value);
       const dg = parseFloat(dgInput.value);
-      const v = parseFloat(vInput.value);
+      const v0 = parseFloat(vInput.value);
 
-      const delta = deltaAt(b, j, dg);
-      const gap = Math.sqrt(delta*delta + 4*v*v);
-      const sChar = gap < 1e-12 ? 0.5 : 0.5 * (1 + delta / gap);
-      const crossing = dg > 1e-12 ? -j / (muBOverH_MHzPerMt * dg) : NaN;
+      const current = valuesAt(b, j, dg, v0);
+      const mixFrac = current.gap < 1e-12 ? 0 : 4*current.mixing*current.mixing/(current.gap*current.gap);
 
       bOut.textContent = b.toFixed(0) + " mT";
       jOut.textContent = signed(j, 1) + " MHz";
       dgOut.textContent = dg.toFixed(4);
-      vOut.textContent = v.toFixed(1) + " MHz";
-      detuningOut.textContent = signed(delta, 1) + " MHz";
-      gapOut.textContent = gap.toFixed(1) + " MHz";
-      sCharOut.textContent = (100 * sChar).toFixed(1) + "%";
-      crossingOut.textContent =
-        Number.isFinite(crossing) && crossing >= 0 && crossing <= bMax
-          ? crossing.toFixed(0) + " mT"
-          : "outside range";
+      vOut.textContent = v0.toFixed(1) + " MHz";
+      dgSplitOut.textContent = current.dgSplit.toFixed(1) + " MHz";
+      mixingOut.textContent = current.mixing.toFixed(1) + " MHz";
+      gapOut.textContent = current.gap.toFixed(1) + " MHz";
+      mixFracOut.textContent = (100 * mixFrac).toFixed(1) + "%";
 
       const curves = {ds:[], dt:[], lo:[], hi:[]};
-      let maxAbs = Math.max(5, Math.abs(v));
+      let maxAbs = Math.max(5, Math.abs(j)/2, Math.abs(v0));
       const n = 320;
       for (let i=0; i<=n; i++) {
         const bb = bMax * i / n;
-        const d = deltaAt(bb, j, dg);
-        const g = Math.sqrt(d*d + 4*v*v);
-        const ds = -d/2;
-        const dt = d/2;
-        const lo = -g/2;
-        const hi = g/2;
-        maxAbs = Math.max(maxAbs, Math.abs(ds), Math.abs(dt), Math.abs(lo), Math.abs(hi));
+        const vals = valuesAt(bb, j, dg, v0);
+        const ds = -j/2;
+        const dt = j/2;
+        const lo = -vals.gap/2;
+        const hi = vals.gap/2;
+        maxAbs = Math.max(maxAbs, Math.abs(lo), Math.abs(hi));
         curves.ds.push([bb,ds]);
         curves.dt.push([bb,dt]);
         curves.lo.push([bb,lo]);
         curves.hi.push([bb,hi]);
       }
+
       maxAbs *= 1.08;
       const yMap = (e) => yBottom - (yBottom-yTop) * (e + maxAbs) / (2*maxAbs);
       const convert = (arr) => arr.map(([bb,e]) => [xMap(bb), yMap(e)]);
@@ -101,19 +99,19 @@
       markerLine.setAttribute("x1", currentX.toFixed(2));
       markerLine.setAttribute("x2", currentX.toFixed(2));
       markerLow.setAttribute("cx", currentX.toFixed(2));
-      markerLow.setAttribute("cy", yMap(-gap/2).toFixed(2));
+      markerLow.setAttribute("cy", yMap(-current.gap/2).toFixed(2));
       markerHigh.setAttribute("cx", currentX.toFixed(2));
-      markerHigh.setAttribute("cy", yMap(gap/2).toFixed(2));
+      markerHigh.setAttribute("cy", yMap(current.gap/2).toFixed(2));
 
       if (explanation) {
-        if (Math.abs(delta) <= Math.max(1, 2*v)) {
-          explanation.textContent = "Exchange and the field-dependent Δg contribution nearly cancel. The diabatic S/T characters approach resonance, so the mixing matrix element produces strong avoided-crossing hybridization.";
-        } else if (Math.abs(j) > Math.abs(muBOverH_MHzPerMt * dg * b) * 2) {
-          explanation.textContent = "Exchange dominates the S–T detuning at this field. The eigenstates retain mostly unmixed singlet or triplet character.";
-        } else if (dg > 0.008 && b > 300) {
-          explanation.textContent = "The Δg Zeeman difference dominates the detuning here. Increasing field now separates the diabatic S/T energies rather than improving mixing.";
+        if (mixFrac > 0.75) {
+          explanation.textContent = "Magnetic inequivalence is strong compared with the exchange gap, so the adiabatic eigenstates are strongly hybridized mixtures of singlet and T0 character.";
+        } else if (Math.abs(j) > 4*Math.abs(current.mixing)) {
+          explanation.textContent = "Exchange dominates the S–T energy gap. The off-diagonal mixing channel is too weak to hybridize the states strongly.";
+        } else if (current.dgSplit > 2*v0) {
+          explanation.textContent = "The field-dependent Δg contribution now dominates the off-diagonal mixing. Increasing field strengthens S–T0 hybridization in this reduced model.";
         } else {
-          explanation.textContent = "The current detuning is larger than the mixing matrix element, so the adiabatic eigenstates are only weakly hybridized.";
+          explanation.textContent = "Field-independent and Δg-driven mixing are comparable to the exchange gap, so the eigenstates acquire appreciable mixed character.";
         }
       }
     }
@@ -123,12 +121,12 @@
     document.querySelectorAll("[data-rp-level]").forEach((button)=>{
       button.addEventListener("click",()=>{
         const mode=button.dataset.rpLevel;
-        if(mode==="resonant"){
-          bInput.value="100"; jInput.value="-14"; dgInput.value="0.0100"; vInput.value="3";
+        if(mode==="hyperfine"){
+          bInput.value="10"; jInput.value="6"; dgInput.value="0.0010"; vInput.value="3";
         }else if(mode==="exchange"){
-          bInput.value="100"; jInput.value="40"; dgInput.value="0.0010"; vInput.value="3";
+          bInput.value="100"; jInput.value="40"; dgInput.value="0.0010"; vInput.value="2";
         }else{
-          bInput.value="500"; jInput.value="0"; dgInput.value="0.0150"; vInput.value="3";
+          bInput.value="700"; jInput.value="10"; dgInput.value="0.0150"; vInput.value="0.5";
         }
         update();
       });
