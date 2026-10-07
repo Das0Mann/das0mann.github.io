@@ -145,15 +145,15 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">03</span>
-        <span class="library-tag">2 interactives</span>
+        <span class="library-tag">3 interactives</span>
       </div>
       <h3>Spin Dynamics</h3>
-      <p>What does a spin Hamiltonian actually do? We move from spin-\(\tfrac12\) and Larmor precession to density matrices, relaxation and open quantum systems.</p>
+      <p>Start from one spin, build Larmor precession and many-spin operators, then connect density matrices, Bloch vectors, coherence and phenomenological relaxation.</p>
       <ul>
-        <li>parameter-to-operator matrix construction</li>
-        <li>density matrices &amp; observables</li>
-        <li>\(T_1\), \(T_2\) and dephasing</li>
-        <li>BRW, stochastic propagation &amp; memory effects</li>
+        <li>Larmor precession &amp; coherent phase</li>
+        <li>operator construction &amp; density matrices</li>
+        <li>Bloch vectors, coherence &amp; purity</li>
+        <li>\(T_1\), \(T_2\) and pure dephasing</li>
       </ul>
       <div class="library-card-footer">
         <span>Fundamentals → graduate</span>
@@ -169,7 +169,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">04</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Radical-Pair Spin Chemistry</h3>
       <p>Here quantum spin dynamics becomes chemistry. We derive when a Hamiltonian can change singlet character, then connect that mixing to spin-selective reactions and magnetic-field effects.</p>
@@ -188,7 +188,7 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">05</span>
-        <span class="library-tag">2 interactives</span>
+        <span class="library-tag">3 interactives</span>
       </div>
       <h3>Magnetic Resonance</h3>
       <p>Connect spin-energy levels to experiment: EPR resonance, hyperfine structure, anisotropic g-tensors, powder patterns, linewidths and RYDMR.</p>

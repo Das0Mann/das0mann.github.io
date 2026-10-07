@@ -329,6 +329,102 @@ permalink: /lecture/spin-dynamics/
   </aside>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>See a density matrix as a Bloch vector</h2></div>
+  </div>
+
+  <p>For a two-level spin-\(\tfrac12\) system, every physical density matrix can be written as</p>
+
+  <div class="lecture-equation">
+  \[
+  \rho
+  =
+  \frac12
+  \left(
+  \mathbf 1+\mathbf r\cdot\boldsymbol\sigma
+  \right)
+  =
+  \frac12
+  \begin{pmatrix}
+  1+r_z&r_x-ir_y\\
+  r_x+ir_y&1-r_z
+  \end{pmatrix}.
+  \]
+  </div>
+
+  <p>The diagonal entries are populations, while \(r_x\) and \(r_y\) encode coherence. A pure state lies on the Bloch-sphere surface \((|\mathbf r|=1)\); a mixed state lies inside it. Pure dephasing contracts only the transverse components,</p>
+
+  <div class="lecture-equation">
+  \[
+  (r_x,r_y,r_z)
+  \longrightarrow
+  (\eta r_x,\eta r_y,r_z),
+  \qquad 0\le\eta\le1.
+  \]
+  </div>
+
+  <div class="interactive-card" id="bloch-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Density-matrix explorer</span><h3>Population, phase, coherence and purity in one picture</h3></div>
+      <span class="interactive-model-note">\(\rho=(\mathbf1+\mathbf r\cdot\boldsymbol\sigma)/2\)</span>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>prepare an equatorial state with \(\theta=90^\circ\), then reduce \(\eta\). The populations stay at 50:50 while the off-diagonal coherence and Bloch-vector length collapse.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="bloch-theta"><span class="control-name">Polar angle \(\theta\)</span><output id="bloch-theta-out">90°</output></label>
+        <input id="bloch-theta" type="range" min="0" max="180" step="1" value="90">
+
+        <label for="bloch-phi"><span class="control-name">Phase angle \(\phi\)</span><output id="bloch-phi-out">0°</output></label>
+        <input id="bloch-phi" type="range" min="0" max="360" step="1" value="0">
+
+        <label for="bloch-eta"><span class="control-name">Transverse coherence factor \(\eta\)</span><output id="bloch-eta-out">1.00</output></label>
+        <input id="bloch-eta" type="range" min="0" max="1" step="0.01" value="1">
+
+        <div class="demo-presets">
+          <button type="button" data-bloch="up">|↑⟩</button>
+          <button type="button" data-bloch="plus">|+x⟩</button>
+          <button type="button" data-bloch="phase">phase +90°</button>
+          <button type="button" data-bloch="dephased">dephased</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Population \(P_\uparrow\) <strong id="bloch-pop-up">50.0%</strong></span>
+          <span>Coherence \(|\rho_{\uparrow\downarrow}|\) <strong id="bloch-coherence">0.500</strong></span>
+          <span>Bloch-vector length \(|\mathbf r|\) <strong id="bloch-length">1.000</strong></span>
+          <span>Purity \(\mathrm{Tr}(\rho^2)\) <strong id="bloch-purity">1.000</strong></span>
+        </div>
+
+        <p id="bloch-explanation" class="demo-explanation">This is a pure coherent superposition: the vector lies on the Bloch-sphere surface.</p>
+      </div>
+
+      <div>
+        <div class="plot-wrap">
+          <svg id="bloch-svg" class="lecture-svg" viewBox="0 0 520 320" role="img" aria-label="Bloch-sphere projection and state vector">
+            <circle cx="260" cy="160" r="112" class="bloch-sphere"/>
+            <ellipse cx="260" cy="160" rx="112" ry="34" class="bloch-equator"/>
+            <line x1="148" y1="160" x2="372" y2="160" class="plot-axis"/>
+            <line x1="260" y1="48" x2="260" y2="272" class="plot-axis"/>
+            <text x="382" y="164" class="svg-label">x</text>
+            <text x="266" y="44" class="svg-label">z</text>
+            <line id="bloch-vector" x1="260" y1="160" x2="372" y2="160" class="bloch-vector"/>
+            <circle id="bloch-tip" cx="372" cy="160" r="6" class="bloch-tip"/>
+            <line id="bloch-pure-reference" x1="260" y1="160" x2="372" y2="160" class="bloch-reference"/>
+          </svg>
+        </div>
+        <pre class="molspin-code density-matrix-readout"><code id="bloch-matrix">ρ = [[0.500, 0.500],
+     [0.500, 0.500]]</code></pre>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">The sphere is a two-dimensional projection of the three-dimensional Bloch vector. The dephasing slider applies the map \((r_x,r_y,r_z)\to(\eta r_x,\eta r_y,r_z)\); it is not a general relaxation channel.</p>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
@@ -538,3 +634,4 @@ permalink: /lecture/spin-dynamics/
 
 <script src="{{ site.url }}/assets/js/lecture-interactive.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-relaxation.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-bloch.js" defer></script>

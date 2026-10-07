@@ -364,6 +364,99 @@ permalink: /lecture/magnetic-resonance/
   </aside>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>Turn orientation-dependent resonance fields into a powder spectrum</h2></div>
+  </div>
+
+  <p>For an isotropic frozen powder, orientations are uniformly distributed on the sphere, so the polar-angle measure is not \(d\theta\) but</p>
+
+  <div class="lecture-equation">
+  \[
+  dP
+  \propto
+  \sin\theta\,d\theta\,d\phi.
+  \]
+  </div>
+
+  <p>For an axial \(g\)-tensor,</p>
+
+  <div class="lecture-equation">
+  \[
+  g_\mathrm{eff}(\theta)
+  =
+  \sqrt{
+  g_\perp^2\sin^2\theta+
+  g_\parallel^2\cos^2\theta
+  },
+  \qquad
+  B_\mathrm{res}(\theta)
+  =
+  \frac{h\nu}{\mu_Bg_\mathrm{eff}(\theta)}.
+  \]
+  </div>
+
+  <div class="interactive-card" id="powder-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Powder-spectrum builder</span><h3>Orientation distribution + resonance condition + linewidth</h3></div>
+      <span class="interactive-model-note">axial \(S=\tfrac12\), no hyperfine</span>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>compare X-band and W-band with the same \(g\)-anisotropy. Then increase the linewidth until the principal-value structure is washed out.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="powder-frequency"><span class="control-name">Microwave frequency</span><output id="powder-frequency-out">9.50 GHz</output></label>
+        <input id="powder-frequency" type="range" min="5" max="100" step="0.5" value="9.5">
+
+        <label for="powder-gperp"><span class="control-name">\(g_\perp\)</span><output id="powder-gperp-out">2.0050</output></label>
+        <input id="powder-gperp" type="range" min="1.90" max="2.20" step="0.0005" value="2.005">
+
+        <label for="powder-gpar"><span class="control-name">\(g_\parallel\)</span><output id="powder-gpar-out">1.9800</output></label>
+        <input id="powder-gpar" type="range" min="1.90" max="2.20" step="0.0005" value="1.98">
+
+        <label for="powder-width"><span class="control-name">Gaussian FWHM</span><output id="powder-width-out">1.5 mT</output></label>
+        <input id="powder-width" type="range" min="0.2" max="20" step="0.1" value="1.5">
+
+        <div class="demo-presets">
+          <button type="button" data-powder-frequency="9.5">X-band</button>
+          <button type="button" data-powder-frequency="34">Q-band</button>
+          <button type="button" data-powder-frequency="94">W-band</button>
+          <button type="button" data-powder-isotropic="1">isotropic g</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>\(B_\parallel\) <strong id="powder-bpar">343 mT</strong></span>
+          <span>\(B_\perp\) <strong id="powder-bperp">339 mT</strong></span>
+          <span>Principal-field span <strong id="powder-span">4.3 mT</strong></span>
+          <span>Powder maximum <strong id="powder-peak">340 mT</strong></span>
+        </div>
+
+        <p id="powder-explanation" class="demo-explanation">The axial anisotropy produces a powder envelope whose intensity is concentrated near turning-point orientations.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="powder-svg" class="lecture-svg" viewBox="0 0 560 320" role="img" aria-label="Simulated axial g-tensor EPR powder absorption">
+          <line x1="58" y1="270" x2="530" y2="270" class="plot-axis"/>
+          <line x1="58" y1="34" x2="58" y2="270" class="plot-axis"/>
+          <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
+          <text x="470" y="300" class="svg-caption">B / mT</text>
+          <text x="15" y="38" class="svg-caption">abs.</text>
+          <path id="powder-path" class="powder-spectrum-line" fill="none" d=""/>
+          <line id="powder-par-line" x1="0" y1="34" x2="0" y2="270" class="powder-principal-line"/>
+          <line id="powder-perp-line" x1="0" y1="34" x2="0" y2="270" class="powder-principal-line"/>
+          <text id="powder-x-min" x="54" y="290" class="svg-tick">330</text>
+          <text id="powder-x-max" x="510" y="290" class="svg-tick">350</text>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This pedagogical spectrum assumes an axial \(g\)-tensor, orientation-independent transition probability and Gaussian field broadening. Real powder simulations may also require hyperfine/ZFS tensors, transition-moment anisotropy, strain, multiple species and full Hamiltonian diagonalization.</p>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
@@ -515,3 +608,4 @@ permalink: /lecture/magnetic-resonance/
 
 <script src="{{ site.url }}/assets/js/lecture-epr.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-hyperfine.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-powder.js" defer></script>
