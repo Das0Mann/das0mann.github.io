@@ -169,12 +169,32 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
-  <p>The bath dynamics enters through correlation functions \(C_{\alpha\beta}(t)=\langle\delta F_\alpha(0)\delta F_\beta(t)\rangle\) and their spectral densities \(J_{\alpha\beta}(\omega)\). In the eigenbasis of \(\hat H_S\), a transition-rate contribution has the schematic structure</p>
+  <p>If \(\delta F_\alpha\) carries energy units and \(\hat A_\alpha\) is dimensionless, define</p>
+
+  <div class="lecture-equation">
+  \[
+  \begin{aligned}
+  C_{\alpha\beta}(t)
+  &=
+  \left\langle
+  \delta F_\alpha(0)\,
+  \delta F_\beta(t)
+  \right\rangle,\\
+  J_{\alpha\beta}(\omega)
+  &=
+  \int_{-\infty}^{\infty}
+  C_{\alpha\beta}(t)e^{i\omega t}\,dt.
+  \end{aligned}
+  \]
+  </div>
+
+  <p>In the eigenbasis of \(\hat H_S\), a transition-rate contribution then has the schematic dimensional structure</p>
 
   <div class="lecture-equation">
   \[
   k_{a\leftarrow b}
   \sim
+  \frac{1}{\hbar^2}
   \sum_{\alpha\beta}
   \langle a|\hat A_\alpha|b\rangle
   \langle b|\hat A_\beta|a\rangle
@@ -185,6 +205,11 @@ permalink: /lecture/open-systems/
   </div>
 
   <p>This is the mathematical bridge from the Molecular Motion module to relaxation theory: electronic structure determines which Hamiltonian parameters fluctuate, molecular dynamics determines their correlation functions, and the spin eigenstates determine which spectral-density components can actually drive a transition.</p>
+
+  <aside class="lecture-note">
+    <strong>The prefactor follows the unit convention.</strong>
+    <span>The \(1/\hbar^2\) factor appears here because \(\delta F_\alpha\) is written in energy units. If the fluctuating coefficients are written directly as angular frequencies, that conversion has already been absorbed into the spectral density.</span>
+  </aside>
 
   <div class="lecture-equation">
   \[

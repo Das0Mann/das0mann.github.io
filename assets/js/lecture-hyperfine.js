@@ -63,7 +63,7 @@
       if (explanation) {
         const words = ["","one","two","three","four"];
         explanation.textContent =
-          `${words[n]} equivalent spin-1/2 ${n===1?"nucleus creates":"nuclei create"} ${n+1} first-order EPR lines. Their spacing is A and their relative intensities are ${intensities.join(":")}.`;
+          `${words[n]} equivalent spin-1/2 ${n===1?"nucleus creates":"nuclei create"} ${n+1} first-order EPR lines. Their spacing is a = A/h and their relative intensities are ${intensities.join(":")}.`;
       }
     }
 

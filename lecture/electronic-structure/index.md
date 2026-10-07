@@ -274,14 +274,16 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Kohn–Sham density-functional theory</p><h2>Replace the many-electron wavefunction problem by an exact-in-principle density problem</h2></div>
   </div>
 
-  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density.</p>
+  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density. Here \(\mathcal D_N\) denotes the physically admissible densities for \(N\) electrons.</p>
 
   <div class="lecture-equation">
   \[
   E_0
   =
-  \min_{n\rightarrow N}
-  E[n].
+  \min_{n\in\mathcal D_N}
+  E[n],
+  \qquad
+  \int n(\mathbf r)\,d\mathbf r=N,
   \]
   </div>
 
@@ -304,7 +306,7 @@ permalink: /lecture/electronic-structure/
   \]
   </div>
 
-  <p>The density is reconstructed from the occupied Kohn–Sham orbitals, \(n(\mathbf r)=\sum_i^\mathrm{occ}|\phi_i(\mathbf r)|^2\), while the total energy is decomposed as</p>
+  <p>The density is reconstructed from the Kohn–Sham orbitals as \(n(\mathbf r)=\sum_i f_i|\phi_i(\mathbf r)|^2\), where \(f_i\) is the occupation number, while the total energy is decomposed as</p>
 
   <div class="lecture-equation">
   \[
@@ -492,15 +494,15 @@ permalink: /lecture/electronic-structure/
 
   <div class="lecture-equation">
   \[
-  E_\mathrm{quantitative}
-  \approx
+  E_\mathrm{MRPT2}
+  =
   E_\mathrm{CASSCF}
   +
-  E_\mathrm{dynamic\ correlation},
+  E_\mathrm{corr}^{(2)}.
   \]
   </div>
 
-  <p>The second term is commonly added with multireference perturbation or configuration-interaction methods:</p>
+  <p>For second-order multireference perturbation theories such as CASPT2 or NEVPT2, \(E_\mathrm{corr}^{(2)}\) is the dynamical-correlation correction added to the CASSCF reference. MRCI uses a different, explicit correlated wavefunction construction rather than this simple additive second-order formula:</p>
 
   <div class="method-ladder">
     <div><span>CASPT2</span><p>Adds second-order dynamical correlation to a CASSCF reference. Powerful and widely used, but the zeroth-order Hamiltonian and possible intruder states require care.</p></div>
@@ -795,18 +797,21 @@ permalink: /lecture/electronic-structure/
 
     <div class="lecture-equation">
     \[
-    \hat H_\mathrm{eff}
+    \hat H_\mathrm{eff}^{(2)}
     =
-    P\hat H P
+    P\hat H_0P
+    +
+    P\hat V P
     +
     P\hat VQ
-    \frac{1}{E_0-Q\hat H_0Q}
-    Q\hat VP
-    +\cdots .
+    \left(
+    E_0-Q\hat H_0Q
+    \right)^{-1}
+    Q\hat VP.
     \]
     </div>
 
-    <p>The first term contains interactions acting directly inside the chosen spin manifold. The second term shows how virtual coupling to electronically excited states feeds back into the low-energy spin physics. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
+    <p>Writing \(\hat H=\hat H_0+\hat V\), the first two terms describe the zeroth-order manifold and perturbations acting directly inside it. The last term is the second-order virtual excursion into the eliminated \(Q\) space and back. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
 
     <p>After this projection, the effective operator is expanded in a small set of spin operators,</p>
 
@@ -836,7 +841,7 @@ permalink: /lecture/electronic-structure/
     <div class="physical-concept-grid">
       <article>
         <strong>\(\mathbf g\): magnetic response + SOC</strong>
-        <p>At the electronic-structure level the molecular \(g\)-tensor is a magnetic response property. A useful decomposition is \(\mathbf g=g_e\mathbf 1+\mathbf g^\mathrm{RMC}+\mathbf g^\mathrm{DSO}+\mathbf g^\mathrm{PSO}\).</p>
+        <p>At the electronic-structure level the molecular \(g\)-tensor is a magnetic response property. A useful decomposition is \(\mathbf g=g_e\mathbb I_3+\mathbf g^\mathrm{RMC}+\mathbf g^\mathrm{DSO}+\mathbf g^\mathrm{PSO}\).</p>
         <p>The dominant molecular anisotropy often comes from orbital-Zeeman/SOC response. In a sum-over-states picture, \(\Delta g\) contains terms proportional to \(\langle0|\hat L|n\rangle\langle n|\hat H_\mathrm{SO}|0\rangle/(E_0-E_n)\).</p>
       </article>
       <article>

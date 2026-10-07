@@ -180,9 +180,15 @@ permalink: /lecture/radical-pairs/
 
   <div class="lecture-equation">
   \[
-  \Delta\omega
+  \Delta\omega_g
   =
-  \frac{\mu_B B}{\hbar}\,\Delta g.
+  \frac{\mu_B}{\hbar}\,\Delta g\,B,
+  \qquad
+  \Delta\nu_g
+  =
+  \frac{\Delta\omega_g}{2\pi}
+  =
+  \frac{\mu_B}{h}\,\Delta g\,B.
   \]
   </div>
 
@@ -209,7 +215,7 @@ permalink: /lecture/radical-pairs/
     <div><p class="section-eyebrow">Interactive</p><h2>A minimal S–T mixing model</h2></div>
   </div>
 
-  <p>This model deliberately throws away most of the real radical-pair complexity. It keeps only one effective singlet state, one effective triplet state, a coupling \(V\) and a detuning \(\Delta\). That is enough to see resonance and off-resonance behaviour.</p>
+  <p>This model deliberately throws away most of the real radical-pair complexity. It keeps only one effective singlet state, one effective triplet state, an ordinary-frequency coupling \(v\) and detuning \(\delta\), both expressed in Hz or MHz. That is enough to see resonance and off-resonance behaviour.</p>
 
   <div class="interactive-card" id="st-demo">
     <div class="interactive-head">
@@ -220,31 +226,34 @@ permalink: /lecture/radical-pairs/
     <div class="lecture-equation-grid">
       <div class="lecture-equation compact">
       \[
-      \frac{H}{h}=
+      \hat{\mathcal H}_{2\mathrm{lvl}}
+      \equiv
+      \frac{\hat H}{h}
+      =
       \begin{pmatrix}
-      0&V\\
-      V&\Delta
-      \end{pmatrix}
+      0&v\\
+      v&\delta
+      \end{pmatrix},
       \]
       </div>
       <div class="lecture-equation compact">
       \[
       \begin{aligned}
       P_T(t)&=A\sin^2(\pi\Omega t),\\
-      A&=\frac{4V^2}{\Delta^2+4V^2},\\
-      \Omega&=\sqrt{\Delta^2+4V^2}.
+      A&=\frac{4v^2}{\delta^2+4v^2},\\
+      \Omega&=\sqrt{\delta^2+4v^2}.
       \end{aligned}
       \]
       </div>
     </div>
 
-    <div class="demo-prompt"><strong>Try this:</strong><span>put the states on resonance with \(\Delta=0\), then increase detuning. The oscillation can remain fast while the maximum transfer amplitude collapses.</span></div>
+    <div class="demo-prompt"><strong>Try this:</strong><span>put the states on resonance with \(\delta=0\), then increase detuning. The oscillation can remain fast while the maximum transfer amplitude collapses.</span></div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="st-coupling"><span class="control-name">Effective coupling \(V\)</span><output id="st-coupling-out">3.00 MHz</output></label>
+        <label for="st-coupling"><span class="control-name">Effective coupling \(v\)</span><output id="st-coupling-out">3.00 MHz</output></label>
         <input id="st-coupling" type="range" min="0.1" max="10" step="0.1" value="3">
-        <label for="st-detuning"><span class="control-name">Detuning \(\Delta\)</span><output id="st-detuning-out">2.00 MHz</output></label>
+        <label for="st-detuning"><span class="control-name">Detuning \(\delta\)</span><output id="st-detuning-out">2.00 MHz</output></label>
         <input id="st-detuning" type="range" min="0" max="20" step="0.1" value="2">
 
         <div class="demo-presets">
@@ -298,31 +307,39 @@ permalink: /lecture/radical-pairs/
 
   <div class="lecture-equation">
   \[
-  \frac{\hat H_\mathrm{ST}}{h}
+  \hat{\mathcal H}_\mathrm{ST}(B)
+  \equiv
+  \frac{\hat H_\mathrm{ST}(B)}{h}
   =
   \begin{pmatrix}
-  -J/(2h)&V(B)\\
-  V(B)&+J/(2h)
+  -j/2&v(B)\\
+  v(B)&+j/2
   \end{pmatrix},
-  \qquad
-  V(B)
-  =
-  V_0
-  +
-  \frac{\mu_B}{2h}\,\Delta g\,B.
   \]
   </div>
 
-  <p>\(V_0\) represents a field-independent effective mixing channel, for example a reduced hyperfine-asymmetry contribution. The \(\Delta g\) term grows linearly with field because the two electrons acquire different Zeeman frequencies. The eigenvalue gap is</p>
+  <div class="lecture-equation">
+  \[
+  j\equiv\frac{J}{h},
+  \qquad
+  \Delta\nu_g(B)
+  =
+  \frac{\mu_B}{h}\,\Delta g\,B,
+  \qquad
+  v(B)
+  =
+  v_0+\frac{\Delta\nu_g(B)}{2}.
+  \]
+  </div>
+
+  <p>\(v_0\) represents a field-independent effective mixing channel, for example a reduced hyperfine-asymmetry contribution. The \(\Delta g\) term grows linearly with field because the two electrons acquire different Zeeman frequencies. The eigenvalue gap, also in ordinary-frequency units, is</p>
 
   <div class="lecture-equation">
   \[
   \Omega(B)
   =
   \sqrt{
-  \left(J/h\right)^2
-  +
-  4V(B)^2
+  j^2+4v(B)^2
   }.
   \]
   </div>
@@ -344,7 +361,7 @@ permalink: /lecture/radical-pairs/
         <label for="rp-level-dg"><span class="control-name">\(\Delta g\)</span><output id="rp-level-dg-out">0.0050</output></label>
         <input id="rp-level-dg" type="range" min="0" max="0.02" step="0.0001" value="0.005">
 
-        <label for="rp-level-v"><span class="control-name">Field-independent mixing \(V_0\)</span><output id="rp-level-v-out">1.0 MHz</output></label>
+        <label for="rp-level-v"><span class="control-name">Field-independent mixing \(v_0\)</span><output id="rp-level-v-out">1.0 MHz</output></label>
         <input id="rp-level-v" type="range" min="0" max="20" step="0.2" value="1">
 
         <div class="demo-presets">
@@ -355,7 +372,7 @@ permalink: /lecture/radical-pairs/
 
         <div class="interactive-readout">
           <span>Differential Zeeman \(\Delta\nu_g\) <strong id="rp-level-dg-split">7.0 MHz</strong></span>
-          <span>Total mixing \(V(B)\) <strong id="rp-level-mixing">4.5 MHz</strong></span>
+          <span>Total mixing \(v(B)\) <strong id="rp-level-mixing">4.5 MHz</strong></span>
           <span>Adiabatic gap \(\Omega\) <strong id="rp-level-gap">13.5 MHz</strong></span>
           <span>Hybridization measure <strong id="rp-level-mixfrac">44.7%</strong></span>
         </div>

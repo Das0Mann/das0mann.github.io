@@ -53,13 +53,15 @@ permalink: /lecture/coherent-control/
 
   <div class="lecture-equation">
   \[
-  \frac{H_\mathrm{rot}}{h}
+  \hat{\mathcal H}_\mathrm{rot}
+  \equiv
+  \frac{\hat H_\mathrm{rot}}{h}
   =
   \frac12
   \begin{pmatrix}
   -\Delta\nu & \nu_1\\
   \nu_1 & +\Delta\nu
-  \end{pmatrix},
+  \end{pmatrix}.
   \]
   </div>
 
@@ -187,7 +189,11 @@ permalink: /lecture/coherent-control/
   \Omega_1,\,
   0,\,
   \Delta\omega
-  \right).
+  \right),
+  \qquad
+  \Omega_1=2\pi\nu_1,
+  \qquad
+  \Delta\omega=2\pi\Delta\nu.
   \]
   </div>
 

@@ -56,18 +56,18 @@ permalink: /lecture/spin-dynamics/
 
   <div class="lecture-equation">
   \[
-  \hat S_x=\frac{\hbar}{2}
+  \hat S_x=\frac12
   \begin{pmatrix}0&1\\1&0\end{pmatrix},
-  \quad
-  \hat S_y=\frac{\hbar}{2}
+  \qquad
+  \hat S_y=\frac12
   \begin{pmatrix}0&-i\\i&0\end{pmatrix},
-  \quad
-  \hat S_z=\frac{\hbar}{2}
+  \qquad
+  \hat S_z=\frac12
   \begin{pmatrix}1&0\\0&-1\end{pmatrix}.
   \]
   </div>
 
-  <p>These are not three independent classical components. They are non-commuting operators. In this module the matrices carry explicit factors of \(\hbar\), unlike the dimensionless-spin convention used for the compact spin Hamiltonians in Module 02.</p>
+  <p>These are dimensionless spin operators, consistent with Module 02. Their eigenvalues are \(m_s=\pm\tfrac12\). The corresponding physical angular-momentum operator is \(\hbar\hat{\mathbf S}\). Keeping \(\hat{\mathbf S}\) dimensionless avoids hidden powers of \(\hbar\) in magnetic-interaction prefactors.</p>
 
   <p>The Hamiltonian is the generator of motion: \(U(t)=\exp(-i\hat Ht/\hbar)\). If an observable commutes with \(\hat H\), its expectation value is conserved under closed-system evolution. If it does not commute, relative phases accumulate between energy components and the observable can oscillate. This is the precise reason that adding a transverse field, a hyperfine term or another non-commuting interaction can create new dynamics rather than merely shifting all energies together.</p>
 </section>
@@ -205,11 +205,11 @@ permalink: /lecture/spin-dynamics/
   \[
   \hat S_\alpha
   =
-  \frac{\sigma_\alpha}{2}\otimes\mathbf 1,
+  \frac{\sigma_\alpha}{2}\otimes\mathbb I_2,
   \qquad
   \hat I_\beta
   =
-  \mathbf 1\otimes\frac{\sigma_\beta}{2}.
+  \mathbb I_2\otimes\frac{\sigma_\beta}{2}.
   \]
   </div>
 
@@ -217,11 +217,22 @@ permalink: /lecture/spin-dynamics/
 
   <div class="lecture-equation">
   \[
+  \begin{aligned}
   \hat H_\mathrm{hf}
-  =
+  &=
   \sum_{\alpha,\beta}
   A_{\alpha\beta}
-  \hat S_\alpha\hat I_\beta.
+  \hat S_\alpha\hat I_\beta,\\
+  \hat{\mathcal H}_\mathrm{hf}
+  \equiv
+  \frac{\hat H_\mathrm{hf}}{h}
+  &=
+  \sum_{\alpha,\beta}
+  a_{\alpha\beta}
+  \hat S_\alpha\hat I_\beta,
+  \qquad
+  a_{\alpha\beta}\equiv\frac{A_{\alpha\beta}}{h}.
+  \end{aligned}
   \]
   </div>
 
@@ -229,7 +240,13 @@ permalink: /lecture/spin-dynamics/
 
   <div class="lecture-equation">
   \[
-  U(t)=e^{-i\hat Ht/\hbar},
+  \hat{\mathcal H}\equiv\frac{\hat H}{h},
+  \qquad
+  U(t)
+  =
+  e^{-i\hat Ht/\hbar}
+  =
+  e^{-i\,2\pi\hat{\mathcal H}t},
   \qquad
   \rho(t)=U(t)\rho(0)U^\dagger(t).
   \]
@@ -295,7 +312,7 @@ permalink: /lecture/spin-dynamics/
     </div>
     <div class="lecture-equation compact">
     \[
-    \langle O\rangle=\mathrm{Tr}(\rho\hat O).
+    \langle \hat O\rangle=\mathrm{Tr}(\rho\hat O).
     \]
     </div>
   </div>
@@ -344,7 +361,7 @@ permalink: /lecture/spin-dynamics/
   =
   \frac12
   \left(
-  \mathbf 1+\mathbf r\cdot\boldsymbol\sigma
+  \mathbb I_2+\mathbf r\cdot\boldsymbol\sigma
   \right)
   =
   \frac12

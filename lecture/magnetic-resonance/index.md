@@ -101,15 +101,26 @@ permalink: /lecture/magnetic-resonance/
   </div>
 
 
-  <p>For one electron coupled isotropically to one nucleus, a simple high-field Hamiltonian is</p>
+  <p>For one electron coupled isotropically to one nucleus, it is often clearest to write the high-field secular Hamiltonian directly in ordinary-frequency units:</p>
 
   <div class="lecture-equation">
   \[
-  \hat H
+  \hat{\mathcal H}_\mathrm{sec}
+  \equiv
+  \frac{\hat H_\mathrm{sec}}{h}
   \approx
-  g\mu_B B_0\hat S_z
-  -g_n\mu_NB_0\hat I_z
-  +A\hat S_z\hat I_z.
+  \nu_e\hat S_z
+  -
+  \nu_n\hat I_z
+  +
+  a\,\hat S_z\hat I_z,
+  \]
+  \[
+  \nu_e=\frac{g\mu_BB_0}{h},
+  \qquad
+  \nu_n=\frac{g_n\mu_NB_0}{h},
+  \qquad
+  a=\frac{A}{h}.
   \]
   </div>
 
@@ -131,7 +142,7 @@ permalink: /lecture/magnetic-resonance/
         <label for="hf-count"><span class="control-name">Equivalent nuclei (n)</span><output id="hf-count-out">2</output></label>
         <input id="hf-count" type="range" min="1" max="4" step="1" value="2">
 
-        <label for="hf-A"><span class="control-name">Isotropic coupling (A)</span><output id="hf-A-out">30 MHz</output></label>
+        <label for="hf-A"><span class="control-name">Isotropic coupling \(a=A/h\)</span><output id="hf-A-out">30 MHz</output></label>
         <input id="hf-A" type="range" min="5" max="100" step="1" value="30">
 
         <div class="demo-presets">
@@ -148,7 +159,7 @@ permalink: /lecture/magnetic-resonance/
           <span>Outer-line span <strong id="hf-span-out">60 MHz</strong></span>
         </div>
 
-        <p id="hf-explanation" class="demo-explanation">Two equivalent spin-(	frac12) nuclei create three electron-spin transitions with the familiar 1:2:1 intensity ratio.</p>
+        <p id="hf-explanation" class="demo-explanation">Two equivalent spin-\(\tfrac12\) nuclei create three electron-spin transitions with the familiar 1:2:1 intensity ratio.</p>
       </div>
 
       <div class="plot-wrap">
@@ -167,7 +178,7 @@ permalink: /lecture/magnetic-resonance/
       </div>
     </div>
 
-    <p class="interactive-footnote">This stick model assumes (n) equivalent (I=	frac12) nuclei, identical isotropic coupling (A), first-order high-field selection rules and no linewidth. Real spectra can be anisotropic, broadened and mixed by additional interactions.</p>
+    <p class="interactive-footnote">This stick model assumes \(n\) equivalent \(I=\tfrac12\) nuclei, identical isotropic coupling \(a=A/h\), first-order high-field selection rules and no linewidth. Real spectra can be anisotropic, broadened and mixed by additional interactions.</p>
   </div>
 
   <details class="lecture-details">
