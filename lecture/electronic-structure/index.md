@@ -20,7 +20,7 @@ permalink: /lecture/electronic-structure/
   </div>
   <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish the many-electron wavefunction, molecular orbitals and electron density.</p></div>
-    <div><span>02</span><p>Explain what HF, DFT, correlation methods and basis sets approximate differently.</p></div>
+    <div><span>02</span><p>Explain the defining approximations of HF, Kohn–Sham DFT, post-HF ab initio and multiconfigurational methods, and choose an appropriate level for a given electronic-structure problem.</p></div>
     <div><span>03</span><p>Explain how electronic energies, spin densities and response derivatives are reduced to \(g\), hyperfine, exchange, dipolar and ZFS parameters.</p></div>
   </div>
 </section>
@@ -121,7 +121,7 @@ permalink: /lecture/electronic-structure/
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">03</span>
-    <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlation answer the same question differently</h2></div>
+    <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlated wavefunctions approximate the same many-electron problem differently</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Exchange and correlation are distinct consequences of having many electrons</h3></div>
@@ -149,10 +149,10 @@ permalink: /lecture/electronic-structure/
 
 
   <div class="method-ladder">
-    <div><span>Hartree–Fock</span><p>A single Slater determinant. Exchange is exact within that determinant, but dynamical electron correlation is absent.</p></div>
-    <div><span>Density-functional theory</span><p>Uses the density and a Kohn–Sham reference system. The practical approximation is the exchange–correlation functional.</p></div>
-    <div><span>Post-HF methods</span><p>MP2, coupled cluster and related methods recover correlation beyond a single determinant, at increasing computational cost.</p></div>
-    <div><span>Multireference methods</span><p>Necessary when several electronic configurations are genuinely important and a single determinant is qualitatively insufficient.</p></div>
+    <div><span>Hartree–Fock · one determinant</span><p>Optimizes the best mean-field Slater determinant. Exchange is treated exactly inside that determinant; Coulomb correlation beyond the mean field is missing.</p></div>
+    <div><span>Kohn–Sham DFT · one density</span><p>Replaces the interacting problem by non-interacting Kohn–Sham orbitals reproducing the density. In practice the unknown exchange–correlation functional is approximated.</p></div>
+    <div><span>Post-HF ab initio · correlate the reference</span><p>MP2, coupled cluster and configuration-interaction methods start from a wavefunction reference and recover electron correlation systematically or hierarchically.</p></div>
+    <div><span>Multiconfigurational · several references</span><p>CASSCF and related methods optimize several important configurations together when no single determinant represents the electronic state adequately.</p></div>
   </div>
 
   <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
@@ -162,6 +162,390 @@ permalink: /lecture/electronic-structure/
     <p>The orbitals determine an electron density, but that density also determines the effective one-electron potential in which the orbitals are solved. An SCF calculation therefore iterates <strong>orbitals → density → effective potential → new orbitals</strong> until the input and output densities agree within a chosen threshold. Failure to converge is not just a software nuisance: it can signal near-degeneracy, competing electronic states or an unstable reference solution.</p>
   </details>
 </section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">HF</span>
+    <div><p class="section-eyebrow">Hartree–Fock theory</p><h2>Find the best single Slater determinant</h2></div>
+  </div>
+
+  <p>Hartree–Fock (HF) starts by approximating the \(N\)-electron wavefunction with one antisymmetrized product of spin orbitals,</p>
+
+  <div class="lecture-equation">
+  \[
+  \Psi_\mathrm{HF}
+  =
+  \frac{1}{\sqrt{N!}}
+  \det[
+  \chi_i(x_j)
+  ].
+  \]
+  </div>
+
+  <p>The orbitals are chosen variationally: among all determinants allowed by the chosen one-particle basis, HF finds the determinant with the lowest energy. This leads to the self-consistent one-electron equations</p>
+
+  <div class="lecture-equation">
+  \[
+  \hat F\,\chi_i
+  =
+  \varepsilon_i\chi_i,
+  \qquad
+  \hat F
+  =
+  \hat h
+  +
+  \sum_j^\mathrm{occ}
+  \left(
+  \hat J_j-\hat K_j
+  \right),
+  \]
+  </div>
+
+  <p>where \(\hat h\) contains the one-electron kinetic and electron–nuclear terms, \(\hat J_j\) is the Coulomb operator and \(\hat K_j\) is the non-local exchange operator.</p>
+
+  <p>In an atom-centred non-orthogonal basis, the same equations become the generalized matrix eigenvalue problem</p>
+
+  <div class="lecture-equation">
+  \[
+  \mathbf F\mathbf C
+  =
+  \mathbf S\mathbf C\boldsymbol\varepsilon,
+  \]
+  </div>
+
+  <p>where \(\mathbf S\) is the basis-function overlap matrix. Because \(\mathbf F\) depends on the occupied orbitals that we are solving for, the equations must be iterated to self-consistency.</p>
+
+  <p>For occupied spin orbitals, the HF energy can be written schematically as</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{HF}
+  =
+  \sum_i
+  \langle i|\hat h|i\rangle
+  +
+  \frac12
+  \sum_{ij}
+  \left[
+  \langle ij|ij\rangle
+  -
+  \langle ij|ji\rangle
+  \right]
+  +
+  V_\mathrm{NN}.
+  \]
+  </div>
+
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>What HF assumes</span><h3>The approximation is not “electrons do not interact”—it is that one optimized determinant is enough</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Mean field</strong>
+        <p><b>Captured:</b> every electron feels the average Coulomb field of the others.</p>
+        <p><b>Missing:</b> instantaneous correlated avoidance beyond what antisymmetry already imposes.</p>
+      </article>
+      <article>
+        <strong>Exact exchange within the determinant</strong>
+        <p><b>Captured:</b> the exchange effect required by fermionic antisymmetry is treated exactly for the chosen determinant.</p>
+        <p><b>Missing:</b> correlation cannot be repaired merely by calling exchange “exact”.</p>
+      </article>
+      <article>
+        <strong>Single-reference character</strong>
+        <p><b>Captured:</b> systems dominated by one electronic configuration can have a qualitatively good reference state.</p>
+        <p><b>Missing:</b> bond breaking, diradicals and near-degenerate states can require several determinants with comparable weight.</p>
+      </article>
+    </div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>When is HF useful?</strong>
+    <span>HF is an excellent conceptual reference, supplies orbitals for MP2 and coupled-cluster theory, and can be qualitatively useful for strongly single-reference states. It is rarely the final quantitative method for thermochemistry or magnetic response because its correlation energy is missing.</span>
+  </aside>
+
+  <aside class="lecture-note">
+    <strong>Restricted versus unrestricted HF:</strong>
+    <span>RHF pairs \(\alpha\) and \(\beta\) electrons in the same spatial orbitals and is natural for many closed shells. UHF allows different \(\alpha\) and \(\beta\) orbitals and is useful for open shells or bond breaking, but the determinant need not be an eigenfunction of \(\hat S^2\); spin contamination is therefore a diagnostic to inspect rather than ignore.</span>
+  </aside>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">DFT</span>
+    <div><p class="section-eyebrow">Kohn–Sham density-functional theory</p><h2>Replace the many-electron wavefunction problem by an exact-in-principle density problem</h2></div>
+  </div>
+
+  <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density.</p>
+
+  <div class="lecture-equation">
+  \[
+  E_0
+  =
+  \min_{n\rightarrow N}
+  E[n].
+  \]
+  </div>
+
+  <p>Kohn and Sham make this variational statement practical by introducing non-interacting orbitals that reproduce the interacting ground-state density:</p>
+
+  <div class="lecture-equation">
+  \[
+  \left[
+  -\frac12\nabla^2
+  +
+  v_\mathrm{ext}(\mathbf r)
+  +
+  v_\mathrm H(\mathbf r)
+  +
+  v_\mathrm{xc}(\mathbf r)
+  \right]
+  \phi_i
+  =
+  \varepsilon_i\phi_i.
+  \]
+  </div>
+
+  <p>The density is reconstructed from the occupied Kohn–Sham orbitals, \(n(\mathbf r)=\sum_i^\mathrm{occ}|\phi_i(\mathbf r)|^2\), while the total energy is decomposed as</p>
+
+  <div class="lecture-equation">
+  \[
+  E[n]
+  =
+  T_s[n]
+  +
+  \int
+  v_\mathrm{ext}(\mathbf r)n(\mathbf r)\,d\mathbf r
+  +
+  E_\mathrm H[n]
+  +
+  E_\mathrm{xc}[n]
+  +
+  V_\mathrm{NN}.
+  \]
+  </div>
+
+  <p>Everything difficult is concentrated into the exchange–correlation functional \(E_\mathrm{xc}[n]\). With the exact functional, Kohn–Sham DFT would give the exact ground-state density and ground-state energy within the non-relativistic Born–Oppenheimer problem. In real calculations the functional is approximate, so practical DFT is a family of models rather than one unique method.</p>
+
+  <div class="method-ladder">
+    <div><span>GGA / meta-GGA</span><p>Semilocal functionals use the density, its gradients and sometimes kinetic-energy-density information. They are efficient but can suffer from delocalization, self-interaction and spin-state errors.</p></div>
+    <div><span>Hybrid functionals</span><p>Mix a fraction of exact HF exchange with DFT exchange–correlation. They often improve localized spin densities and reaction barriers, but the optimal exchange fraction is property- and system-dependent.</p></div>
+    <div><span>Range-separated hybrids</span><p>Treat short- and long-range exchange differently and can improve long-range charge transfer when appropriately chosen.</p></div>
+    <div><span>Double hybrids</span><p>Add a perturbative correlation contribution on top of a hybrid functional. They can be accurate for single-reference energetics but are more expensive and still inherit reference-state limitations.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>DFT is exact in principle, approximate in practice.</strong>
+    <span>The approximation is not the use of Kohn–Sham orbitals itself; it is primarily the unknown \(E_\mathrm{xc}[n]\) that must be approximated. Also, individual Kohn–Sham orbital energies are not generally physical electron-removal or excitation energies.</span>
+  </aside>
+
+  <aside class="lecture-note">
+    <strong>Important limitations to recognize:</strong>
+    <span>Common functionals can show self-interaction/delocalization error, incorrect spin-state ordering, poor strong/static correlation and problematic long-range charge-transfer or double-excitation states in ordinary TD-DFT. Dispersion must also be present in the functional or added through a physically consistent correction.</span>
+  </aside>
+
+  <details class="lecture-details">
+    <summary>Where does TD-DFT fit?</summary>
+    <p>Ground-state Kohn–Sham DFT does not directly provide excited-state energies. Linear-response time-dependent DFT (TD-DFT) obtains excitation energies from the response of the density to a time-dependent perturbation. It is often the practical first choice for many valence excitations in medium and large molecules, but the quality depends strongly on the functional and the state character. Long-range charge transfer, Rydberg states and states with strong double-excitation or multireference character require particular caution.</p>
+  </details>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">WF</span>
+    <div><p class="section-eyebrow">Ab initio wavefunction methods</p><h2>Recover electron correlation systematically from a wavefunction reference</h2></div>
+  </div>
+
+  <aside class="lecture-note">
+    <strong>“Ab initio” does not mean “exact”.</strong>
+    <span>In conventional quantum-chemistry language, HF and post-HF wavefunction methods are often called ab initio because they start from the electronic Hamiltonian without molecule-specific fitted parameters. They still make approximations: finite basis sets, truncated excitation spaces, frozen cores, approximate relativistic Hamiltonians and sometimes a single-reference assumption.</span>
+  </aside>
+
+  <p>Correlation energy is conventionally defined relative to the Hartree–Fock limit,</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{corr}
+  =
+  E_\mathrm{exact}
+  -
+  E_\mathrm{HF},
+  \]
+  </div>
+
+  <p>where “exact” here means the exact non-relativistic electronic energy for the same Born–Oppenheimer Hamiltonian in the complete-basis limit. Post-HF methods differ mainly in how they reconstruct this missing correlation.</p>
+
+  <h3 class="lecture-subhead">MP2: second-order correlation around the HF reference</h3>
+
+  <p>For canonical HF spin orbitals, the second-order Møller–Plesset correlation energy is</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{MP2}^{(2)}
+  =
+  \frac14
+  \sum_{ij}^{\mathrm{occ}}
+  \sum_{ab}^{\mathrm{virt}}
+  \frac{
+  |\langle ij||ab\rangle|^2
+  }{
+  \varepsilon_i+\varepsilon_j-\varepsilon_a-\varepsilon_b
+  }.
+  \]
+  </div>
+
+  <p>MP2 is inexpensive by correlated-wavefunction standards and often useful for ordinary closed-shell single-reference chemistry. But the denominator exposes its weakness: if occupied and virtual orbitals become nearly degenerate, the perturbative correction can become unphysically large. Strong correlation, bond breaking and many transition-metal situations are therefore poor MP2 territory.</p>
+
+
+  <details class="lecture-details">
+    <summary>Where does configuration interaction fit?</summary>
+    <p>Configuration interaction (CI) expands the wavefunction linearly in excited determinants relative to a reference,</p>
+    <div class="lecture-equation">
+    \[
+    |\Psi_\mathrm{CI}\rangle
+    =
+    c_0|\Phi_0\rangle
+    +
+    \sum_{ia}c_i^a|\Phi_i^a\rangle
+    +
+    \frac14\sum_{ijab}c_{ij}^{ab}|\Phi_{ij}^{ab}\rangle
+    +\cdots .
+    \]
+    </div>
+    <p>CIS retains only single substitutions and is mainly an excited-state model rather than a correlated ground-state method. CISD includes singles and doubles and is variational, but truncated CI is not size extensive: two non-interacting copies of a system do not acquire exactly twice the correlation energy. Full CI includes every determinant in the chosen orbital basis and is exact <em>within that finite basis</em>, but the determinant count grows combinatorially, so FCI is restricted to very small problems or small active spaces.</p>
+  </details>
+
+  <h3 class="lecture-subhead">Coupled cluster: exponentiate excitations from one dominant reference</h3>
+
+  <div class="lecture-equation">
+  \[
+  |\Psi_\mathrm{CC}\rangle
+  =
+  e^{\hat T}
+  |\Phi_0\rangle,
+  \qquad
+  \hat T
+  =
+  \hat T_1+\hat T_2+\hat T_3+\cdots .
+  \]
+  </div>
+
+  <p>CCSD retains single and double excitation operators; CCSD(T) adds the leading effect of triple excitations perturbatively. For well-behaved single-reference molecules, CCSD(T) is a standard high-accuracy benchmark method because the exponential ansatz is size extensive and captures dynamical correlation very efficiently.</p>
+
+  <div class="method-ladder">
+    <div><span>MP2 · roughly \(N^5\)</span><p>Cheap correlated baseline. Useful when the HF reference is qualitatively good and near-degeneracy is weak.</p></div>
+    <div><span>CCSD · roughly \(N^6\)</span><p>Robust dynamical correlation for single-reference states; significantly more expensive in memory and integral transformations.</p></div>
+    <div><span>CCSD(T) · roughly \(N^7\)</span><p>Often the benchmark choice for small-to-medium single-reference molecules, but not a cure for genuine multireference character.</p></div>
+    <div><span>Full CI · combinatorial/exponential</span><p>Exact diagonalization within a finite orbital basis. It is a definition of the basis-set limit, not a generally scalable molecular method.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>When should you distrust a single-reference post-HF result?</strong>
+    <span>Warning signs include bond dissociation, near-degenerate frontier orbitals, several configurations with comparable weights, strongly fractional natural-orbital occupations, large spin contamination in an unrestricted reference, or unusually large coupled-cluster diagnostics. No single diagnostic is universal; the electronic structure should be inspected physically.</span>
+  </aside>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">MR</span>
+    <div><p class="section-eyebrow">Multiconfigurational and multireference methods</p><h2>Use several configurations when one determinant cannot represent the state</h2></div>
+  </div>
+
+  <p>A multiconfigurational self-consistent-field wavefunction is expanded in several configuration state functions or determinants while the orbitals are optimized at the same time,</p>
+
+  <div class="lecture-equation">
+  \[
+  |\Psi_\mathrm{MCSCF}\rangle
+  =
+  \sum_I
+  C_I
+  |\Phi_I(\boldsymbol\kappa)\rangle.
+  \]
+  </div>
+
+  <p>Both the configuration coefficients and the orbital rotations are optimized variationally,</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{CASSCF}
+  =
+  \min_{\mathbf C,\boldsymbol\kappa}
+  \frac{
+  \langle\Psi(\mathbf C,\boldsymbol\kappa)|
+  \hat H
+  |\Psi(\mathbf C,\boldsymbol\kappa)\rangle
+  }{
+  \langle\Psi(\mathbf C,\boldsymbol\kappa)|
+  \Psi(\mathbf C,\boldsymbol\kappa)\rangle
+  }.
+  \]
+  </div>
+
+  <p>Complete Active Space SCF (CASSCF) makes this tractable by dividing the orbitals into three groups:</p>
+
+  <div class="method-ladder">
+    <div><span>Inactive orbitals</span><p>Kept doubly occupied in every active-space configuration.</p></div>
+    <div><span>Active orbitals</span><p>All allowed occupations are included for the chosen active electrons. A CAS(\(n,m\)) contains \(n\) active electrons distributed among \(m\) active orbitals.</p></div>
+    <div><span>External / virtual orbitals</span><p>Unoccupied in the CASSCF reference but available later when dynamical correlation is added.</p></div>
+    <div><span>Orbital optimization</span><p>The CI coefficients and orbital rotations are optimized together, so the orbitals can adapt to several competing electronic configurations.</p></div>
+  </div>
+
+  <p>CASSCF is designed primarily to capture <strong>static or nondynamical correlation</strong>: the correlation associated with several nearly degenerate configurations that must all be present already in the zeroth-order description. It does not normally recover enough dynamical correlation for quantitatively accurate reaction or excitation energies by itself.</p>
+
+  <div class="lecture-equation">
+  \[
+  E_\mathrm{quantitative}
+  \approx
+  E_\mathrm{CASSCF}
+  +
+  E_\mathrm{dynamic\ correlation},
+  \]
+  </div>
+
+  <p>The second term is commonly added with multireference perturbation or configuration-interaction methods:</p>
+
+  <div class="method-ladder">
+    <div><span>CASPT2</span><p>Adds second-order dynamical correlation to a CASSCF reference. Powerful and widely used, but the zeroth-order Hamiltonian and possible intruder states require care.</p></div>
+    <div><span>NEVPT2</span><p>A second-order multireference perturbation theory based on the Dyall Hamiltonian. Standard formulations avoid the conventional intruder-state divergence and are often numerically robust.</p></div>
+    <div><span>MRCI</span><p>Builds an explicit correlated CI expansion from multiple reference configurations. Accurate for small systems, but expensive; truncated MRCI is not strictly size extensive.</p></div>
+    <div><span>DMRG-SCF / RAS / GAS</span><p>Alternative active-space strategies that extend the reachable orbital space when a full CAS becomes combinatorially impossible.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>The active space is part of the model.</strong>
+    <span>Include the orbitals needed to represent the physical near-degeneracy: breaking/forming bonds, radical orbitals, relevant metal \(d\) shells, ligand orbitals, or the orbitals participating in low-lying excited states. A large but physically wrong active space is not automatically safer than a smaller well-motivated one.</span>
+  </aside>
+
+  <details class="lecture-details">
+    <summary>Why use state-averaged CASSCF?</summary>
+    <p>Near avoided crossings, conical intersections, intersystem-crossing regions or dense transition-metal manifolds, optimizing orbitals for only one root can bias the description and cause root switching. State-averaged CASSCF minimizes a weighted average \(E_\mathrm{SA}=\sum_K w_KE_K\) so several electronic states share one orbital set. This gives a more balanced common representation, although the chosen states and weights become additional modelling decisions.</p>
+  </details>
+
+  <aside class="lecture-note">
+    <strong>When is multireference theory genuinely needed?</strong>
+    <span>Typical cases are bond breaking, diradicals, strongly coupled transition-metal centres, low-lying states of different electronic character, conical intersections, important double excitations and spin-state manifolds in which several configurations are energetically competitive. The presence of a metal atom alone is not a sufficient reason.</span>
+  </aside>
+</section>
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">?</span>
+    <div><p class="section-eyebrow">Method selection</p><h2>Choose the method from the electronic structure and the property—not from a hierarchy of prestige</h2></div>
+  </div>
+
+  <div class="method-ladder">
+    <div><span>Large ground-state molecule / routine geometry</span><p><strong>Start:</strong> a well-tested DFT functional. <strong>Escalate:</strong> if spin states, charge localization or reaction energetics depend strongly on the functional.</p></div>
+    <div><span>Small or medium, single-reference benchmark</span><p><strong>Start:</strong> CCSD(T) with a converged basis or a validated local-correlation approximation. <strong>Avoid:</strong> treating CCSD(T) as automatically reliable when the reference becomes multiconfigurational.</p></div>
+    <div><span>Cheap correlation for a closed-shell single-reference system</span><p><strong>Use:</strong> MP2 as a screening or baseline method. <strong>Avoid:</strong> small-gap systems, bond breaking and strong static correlation.</p></div>
+    <div><span>Bond breaking, diradical, conical intersection, near-degeneracy</span><p><strong>Use:</strong> CASSCF or another multiconfigurational reference, normally followed by CASPT2, NEVPT2, MRCI or another dynamic-correlation treatment.</p></div>
+    <div><span>Excited states dominated by single excitations</span><p><strong>Use:</strong> TD-DFT for larger systems or EOM-CC-type methods when single-reference accuracy is affordable. <strong>Escalate:</strong> to multireference theory for double excitations, crossings or strongly changing state character.</p></div>
+    <div><span>Magnetic parameters \(A\), \(g\), \(J\), SOC, ZFS</span><p><strong>Use:</strong> property-specific benchmarking. DFT is often the practical starting point; coupled-cluster or multireference theory becomes important when spin density, state mixing or near-degeneracy is not described robustly. Basis-set and relativistic effects must be converged for the actual property.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>A practical workflow:</strong>
+    <span>Use the cheapest method that captures the correct qualitative electronic structure, then benchmark the property of interest with a higher-level method on a smaller model or representative geometries. Method agreement for total energies does not guarantee agreement for spin density, SOC, \(g\)-shifts or hyperfine couplings.</span>
+  </aside>
+</section>
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -423,9 +807,9 @@ permalink: /lecture/electronic-structure/
   <span class="lecture-takeaway-label">Take-home model</span>
   <h3>What should remain after this module?</h3>
   <ul>
-    <li>Electronic structure determines the states, densities and response functions from which magnetic observables are constructed.</li>
-    <li>Spin-Hamiltonian parameters are effective coefficients obtained from expectation values, response derivatives, energy mappings or low-energy projection—not arbitrary fitted constants.</li>
-    <li>The quality of a spin-dynamics model is therefore limited by both the electronic-structure approximation and the conventions used to reduce it.</li>
+    <li>HF optimizes one determinant; Kohn–Sham DFT moves the unknown many-body physics into \(E_\mathrm{xc}[n]\); post-HF methods correlate a usually single-reference wavefunction; multiconfigurational methods change the reference itself when several configurations are essential.</li>
+    <li>Choose the method from the electronic structure and the property: DFT is the practical workhorse, CCSD(T) is a high-accuracy single-reference benchmark, and CASSCF plus dynamic correlation is the natural route when near-degeneracy or state mixing is intrinsic.</li>
+    <li>Magnetic parameters are response or effective-Hamiltonian quantities, so errors in spin density, excited-state gaps, SOC or electronic-state character propagate directly into the later spin-dynamics model.</li>
   </ul>
 </aside>
 
@@ -496,7 +880,26 @@ permalink: /lecture/electronic-structure/
       <p>F. Neese · eMagRes (2017). A compact derivation of how magnetic response and relativistic interactions are reduced from the electronic Hamiltonian to effective EPR spin-Hamiltonian parameters.</p>
       <a href="https://doi.org/10.1002/9780470034590.emrstm1505" target="_blank" rel="noopener">Open DOI →</a>
     </article>
-  </div>
+  
+    <article>
+      <span>Multiconfigurational reference</span>
+      <h3>A complete active space SCF method using a density-matrix formulated super-CI approach</h3>
+      <p>B. O. Roos, P. R. Taylor and P. E. M. Siegbahn · Chemical Physics (1980). A foundational CASSCF formulation: all configurations within a chosen active orbital space are treated together while the orbitals are optimized.</p>
+      <a href="https://doi.org/10.1016/0301-0104(80)80045-0" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Dynamic correlation after CASSCF</span>
+      <h3>Second-order perturbation theory with a complete active space self-consistent field reference function</h3>
+      <p>K. Andersson, P.-Å. Malmqvist and B. O. Roos · The Journal of Chemical Physics (1992). The foundational CASPT2 development for adding dynamical correlation to a multiconfigurational reference.</p>
+      <a href="https://doi.org/10.1063/1.462209" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+    <article>
+      <span>Multireference perturbation theory</span>
+      <h3>N-electron valence state perturbation theory: a fast implementation of the strongly contracted variant</h3>
+      <p>C. Angeli, R. Cimiraglia and J.-P. Malrieu · Chemical Physics Letters (2001). A foundational strongly contracted NEVPT2 implementation based on a multireference zeroth-order space.</p>
+      <a href="https://doi.org/10.1016/S0009-2614(01)01303-3" target="_blank" rel="noopener">Open DOI →</a>
+    </article>
+</div>
 </section>
 {% include lecture-library-nav.html %}
 </div>

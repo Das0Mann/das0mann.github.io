@@ -110,12 +110,12 @@ permalink: /lecture/
         <span class="library-tag">1 interactive</span>
       </div>
       <h3>Electronic Structure</h3>
-      <p>Start with the many-electron problem, then derive how energies, spin densities and response properties become \(g\), hyperfine, exchange, dipolar and ZFS parameters.</p>
+      <p>Start with the many-electron problem, compare HF, Kohn–Sham DFT, post-HF ab initio and multiconfigurational methods, then connect the electronic state to magnetic parameters.</p>
       <ul>
-        <li>Born–Oppenheimer picture</li>
-        <li>HF, DFT &amp; correlation</li>
-        <li>Basis sets &amp; excited states</li>
-        <li>\(g\), hyperfine, \(J\), \(D\), SOC and ZFS</li>
+        <li>Born–Oppenheimer picture &amp; basis sets</li>
+        <li>Hartree–Fock &amp; Kohn–Sham DFT</li>
+        <li>MP2, coupled cluster &amp; CI</li>
+        <li>CASSCF, CASPT2 &amp; NEVPT2</li>
       </ul>
       <div class="library-card-footer">
         <span>Fundamentals → advanced</span>
