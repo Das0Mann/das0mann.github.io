@@ -381,37 +381,99 @@ permalink: /lecture/radical-pairs/
 
 <section class="lecture-section">
   <div class="lecture-section-head">
-    <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Spin-selective reaction</p><h2>The observable is usually not the spin state itself</h2></div>
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>See how exchange competes with field-driven \(\Delta g\) mixing</h2></div>
   </div>
-  <div class="physical-concept-panel">
-    <div class="physical-concept-head"><span>Physical meaning</span><h3>Chemical kinetics acts as the detector of the quantum spin state</h3></div>
-    <div class="physical-concept-grid">
-      <article>
-        <strong>Spin-selective recombination</strong>
-        <p><b>What it is:</b> A chemical reaction whose rate depends on whether the radical pair has singlet or triplet spin character because orbital symmetry and spin conservation favour different product channels.</p>
-        <p><b>What it changes:</b> It continuously converts spin populations into chemical loss, so reaction kinetics and spin dynamics compete on the same timescale.</p>
-        <p><b>What you observe:</b> Different singlet/triplet product yields and field-dependent recombination kinetics.</p>
-      </article>
-      <article>
-        <strong>Reaction rate \(k\)</strong>
-        <p><b>What it is:</b> The probability per unit time for a particular chemical channel to remove or transform the radical pair.</p>
-        <p><b>What it changes:</b> A very fast rate can terminate the pair before substantial spin mixing; a very slow rate allows more coherent evolution but also more time for relaxation.</p>
-        <p><b>What you observe:</b> Radical-pair lifetime, transient decay and integrated reaction yield.</p>
-      </article>
-      <article>
-        <strong>Reaction yield \(\Phi\)</strong>
-        <p><b>What it is:</b> The time-integrated amount of product formed through a chosen spin-selective channel.</p>
-        <p><b>What it changes:</b> It compresses the entire history of spin evolution and reaction into an experimentally accessible scalar observable.</p>
-        <p><b>What you observe:</b> Magnetic-field effects reported as changes in fluorescence, absorption, product concentration or related chemical signals.</p>
-      </article>
+
+  <p>The previous widget treats coupling and detuning abstractly. A more physical reduced \(\{|S\rangle,|T_0\rangle\}\) model separates two roles: exchange produces an S–T energy gap, while magnetic inequivalence produces an off-diagonal coupling. For the simplest isotropic \(\Delta g\) contribution,</p>
+
+  <div class="lecture-equation">
+  \[
+  \frac{\hat H_\mathrm{ST}}{h}
+  =
+  \begin{pmatrix}
+  -J/(2h)&V(B)\\
+  V(B)&+J/(2h)
+  \end{pmatrix},
+  \qquad
+  V(B)
+  =
+  V_0
+  +
+  \frac{\mu_B}{2h}\,\Delta g\,B.
+  \]
+  </div>
+
+  <p>\(V_0\) represents a field-independent effective mixing channel, for example a reduced hyperfine-asymmetry contribution. The \(\Delta g\) term grows linearly with field because the two electrons acquire different Zeeman frequencies. The eigenvalue gap is</p>
+
+  <div class="lecture-equation">
+  \[
+  \Omega(B)
+  =
+  \sqrt{
+  \left(J/h\right)^2
+  +
+  4V(B)^2
+  }.
+  \]
+  </div>
+
+  <div class="interactive-card" id="rp-level-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Radical-pair level explorer</span><h3>Exchange separates S and T; magnetic inequivalence mixes them</h3></div>
+      <span class="interactive-model-note">reduced \(S/T_0\) model</span>
     </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="rp-level-field"><span class="control-name">Magnetic field \(B\)</span><output id="rp-level-field-out">100 mT</output></label>
+        <input id="rp-level-field" type="range" min="0" max="1000" step="5" value="100">
+
+        <label for="rp-level-j"><span class="control-name">Exchange gap \(J/h\)</span><output id="rp-level-j-out">10.0 MHz</output></label>
+        <input id="rp-level-j" type="range" min="-60" max="60" step="0.5" value="10">
+
+        <label for="rp-level-dg"><span class="control-name">\(\Delta g\)</span><output id="rp-level-dg-out">0.0050</output></label>
+        <input id="rp-level-dg" type="range" min="0" max="0.02" step="0.0001" value="0.005">
+
+        <label for="rp-level-v"><span class="control-name">Field-independent mixing \(V_0\)</span><output id="rp-level-v-out">1.0 MHz</output></label>
+        <input id="rp-level-v" type="range" min="0" max="20" step="0.2" value="1">
+
+        <div class="demo-presets">
+          <button type="button" data-rp-level="hyperfine">low-field mixing</button>
+          <button type="button" data-rp-level="exchange">exchange dominated</button>
+          <button type="button" data-rp-level="dg">high-field Δg mixing</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Differential Zeeman \(\Delta\nu_g\) <strong id="rp-level-dg-split">7.0 MHz</strong></span>
+          <span>Total mixing \(V(B)\) <strong id="rp-level-mixing">4.5 MHz</strong></span>
+          <span>Adiabatic gap \(\Omega\) <strong id="rp-level-gap">13.5 MHz</strong></span>
+          <span>Hybridization measure <strong id="rp-level-mixfrac">44.7%</strong></span>
+        </div>
+
+        <p id="rp-level-explanation" class="demo-explanation">Exchange still defines a substantial S–T energy gap, but field-dependent \(\Delta g\) mixing is no longer negligible.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="rp-level-svg" class="lecture-svg" viewBox="0 0 560 320" role="img" aria-label="Singlet-triplet levels versus magnetic field with field-dependent mixing">
+          <line x1="58" y1="270" x2="530" y2="270" class="plot-axis"/>
+          <line x1="58" y1="34" x2="58" y2="270" class="plot-axis"/>
+          <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
+          <text x="480" y="300" class="svg-caption">B / mT</text>
+          <text x="10" y="38" class="svg-caption">E / h</text>
+          <path id="rp-diabatic-s" class="rp-diabatic-line" fill="none" d=""/>
+          <path id="rp-diabatic-t" class="rp-diabatic-line" fill="none" d=""/>
+          <path id="rp-adiabatic-low" class="rp-adiabatic-line" fill="none" d=""/>
+          <path id="rp-adiabatic-high" class="rp-adiabatic-line" fill="none" d=""/>
+          <line id="rp-level-marker-line" x1="0" y1="34" x2="0" y2="270" class="rp-level-marker-line"/>
+          <circle id="rp-level-marker-low" r="5" class="plot-marker" cx="0" cy="0"/>
+          <circle id="rp-level-marker-high" r="5" class="plot-marker" cx="0" cy="0"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">The differential Zeeman contribution is represented in the \(S/T_0\) basis as an off-diagonal coupling. Real radical pairs additionally contain \(T_\pm\), nuclear-spin manifolds, anisotropic tensors, electron–electron dipolar coupling and often time-dependent \(J\) and \(D\).</p>
   </div>
-
-
-  <p>If singlet and triplet radical pairs react through different channels, the time-dependent spin character controls product formation. The key modelling point is that chemistry must act <em>during</em> the spin propagation rather than being attached only after a closed-system trajectory has finished.</p>
-
-  <p>This is the important conceptual bridge: a quantum spin state evolves on nanosecond or microsecond timescales, while the experiment may report only a final chemical yield. The next section makes that simultaneous spin–reaction dynamics explicit.</p>
 </section>
 
 
