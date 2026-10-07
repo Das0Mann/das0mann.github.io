@@ -810,7 +810,7 @@ permalink: /lecture/electronic-structure/
     \]
     </div>
 
-    <p>Writing (hat H=hat H_0+hat V), the first two terms describe the zeroth-order manifold and perturbations acting directly inside it. The last term is the second-order virtual excursion into the eliminated (Q) space and back. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
+    <p>Writing \(\hat H=\hat H_0+\hat V\), the first two terms describe the zeroth-order manifold and perturbations acting directly inside it. The last term is the second-order virtual excursion into the eliminated (Q) space and back. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
 
     <p>After this projection, the effective operator is expanded in a small set of spin operators,</p>
 
