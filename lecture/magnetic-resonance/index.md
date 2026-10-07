@@ -178,7 +178,7 @@ permalink: /lecture/magnetic-resonance/
       </div>
     </div>
 
-    <p class="interactive-footnote">This stick model assumes \(n\) equivalent \(I=\tfrac12\) nuclei, identical isotropic coupling \(A\), first-order high-field selection rules and no linewidth. Real spectra can be anisotropic, broadened and mixed by additional interactions.</p>
+    <p class="interactive-footnote">This stick model assumes \(n\) equivalent \(I=\tfrac12\) nuclei, identical isotropic coupling \(a=A/h\), first-order high-field selection rules and no linewidth. Real spectra can be anisotropic, broadened and mixed by additional interactions.</p>
   </div>
 
   <details class="lecture-details">
