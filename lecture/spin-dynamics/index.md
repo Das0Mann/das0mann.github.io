@@ -205,11 +205,11 @@ permalink: /lecture/spin-dynamics/
   \[
   \hat S_\alpha
   =
-  \frac{\sigma_\alpha}{2}\otimes\mathbf 1,
+  \frac{\sigma_\alpha}{2}\otimes\mathbb I_2,
   \qquad
   \hat I_\beta
   =
-  \mathbf 1\otimes\frac{\sigma_\beta}{2}.
+  \mathbb I_2\otimes\frac{\sigma_\beta}{2}.
   \]
   </div>
 
@@ -240,11 +240,13 @@ permalink: /lecture/spin-dynamics/
 
   <div class="lecture-equation">
   \[
+  \hat{\mathcal H}\equiv\frac{\hat H}{h},
+  \qquad
   U(t)
   =
   e^{-i\hat Ht/\hbar}
   =
-  e^{-i\,2\pi(\hat H/h)t},
+  e^{-i\,2\pi\hat{\mathcal H}t},
   \qquad
   \rho(t)=U(t)\rho(0)U^\dagger(t).
   \]
