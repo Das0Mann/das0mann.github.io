@@ -142,7 +142,7 @@ permalink: /lecture/magnetic-resonance/
         <label for="hf-count"><span class="control-name">Equivalent nuclei (n)</span><output id="hf-count-out">2</output></label>
         <input id="hf-count" type="range" min="1" max="4" step="1" value="2">
 
-        <label for="hf-A"><span class="control-name">Isotropic coupling (A)</span><output id="hf-A-out">30 MHz</output></label>
+        <label for="hf-A"><span class="control-name">Isotropic coupling \(a=A/h\)</span><output id="hf-A-out">30 MHz</output></label>
         <input id="hf-A" type="range" min="5" max="100" step="1" value="30">
 
         <div class="demo-presets">
