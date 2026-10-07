@@ -221,18 +221,15 @@ permalink: /lecture/electronic-structure/
   \[
   E_\mathrm{HF}
   =
-  \sum_i
-  \langle i|\hat h|i\rangle
+  \sum_i^\mathrm{occ} h_{ii}
   +
   \frac12
-  \sum_{ij}
+  \sum_{i,j}^\mathrm{occ}
   \left[
-  \langle ij|ij\rangle
-  -
-  \langle ij|ji\rangle
+  (ii|jj)-(ij|ji)
   \right]
   +
-  V_\mathrm{NN}.
+  V_\mathrm{NN},
   \]
   </div>
 
@@ -842,7 +839,7 @@ permalink: /lecture/electronic-structure/
       <article>
         <strong>\(\mathbf A\): spin density at and around a nucleus</strong>
         <p>The contact part is proportional to the spin density at nucleus \(N\), \(A_N^\mathrm{FC}\propto\rho_s(\mathbf R_N)\).</p>
-        <p>The anisotropic spin-dipolar part is a real-space integral over the spin density, schematically \(A_{N,\alpha\beta}^\mathrm{dip}\propto\int \rho_s(\mathbf r)[3r_\alpha r_\beta-r^2\delta_{\alpha\beta}]r^{-5}d\mathbf r\).</p>
+        <p>The anisotropic spin-dipolar part is a real-space integral over the spin density. Writing \(\mathbf r_N=\mathbf r-\mathbf R_N\) for the electron coordinate relative to nucleus \(N\), schematically \(A_{N,\alpha\beta}^\mathrm{dip}\propto\int \rho_s(\mathbf r)[3r_{N,\alpha}r_{N,\beta}-r_N^2\delta_{\alpha\beta}]r_N^{-5}d\mathbf r\).</p>
       </article>
       <article>
         <strong>\(J\): map electronic spin-state energies onto a spin model</strong>
