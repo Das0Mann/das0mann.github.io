@@ -57,7 +57,7 @@
       labelOut.textContent = "CAS(" + n + "," + m + ")";
       msOut.textContent = formatInteger(msCount);
       allOut.textContent = formatInteger(allCount);
-      memOut.textContent = formatBytes(msCount * 16);
+      memOut.textContent = formatBytes(msCount * 8);
 
       if (explanation) {
         if (msCount < 5000) {
