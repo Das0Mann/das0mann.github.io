@@ -66,7 +66,9 @@ permalink: /lecture/molecular-motion/
   =
   \hat H[\mathbf R(t)]
   =
-  \overline H+\delta\hat H(t).
+  \overline{\hat H}
+  +
+  \delta\hat H(t).
   \]
   </div>
 
