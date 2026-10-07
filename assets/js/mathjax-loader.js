@@ -38,7 +38,6 @@
     const script = document.createElement("script");
     script.src = SOURCES[index];
     script.async = true;
-    script.crossOrigin = "anonymous";
     script.dataset.mathjaxFallback = String(index + 1);
 
     script.onload = () => {
@@ -57,7 +56,14 @@
     document.head.appendChild(script);
   }
 
+  function pageContainsTeX() {
+    const text = document.body ? document.body.textContent : "";
+    return /\\\(|\\\[/.test(text);
+  }
+
   function start() {
+    if (!pageContainsTeX()) return;
+
     if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
       typesetPage().catch(() => loadSource(0));
       return;
