@@ -313,7 +313,7 @@ permalink: /lecture/radical-pairs/
   \]
   </div>
 
-  <p>\(V_0\) represents a field-independent effective mixing channel, for example a reduced hyperfine-asymmetry contribution. The \(\Delta g\) term grows linearly with field because the two electrons acquire different Zeeman frequencies. The eigenvalue gap is</p>
+  <p>Here \(v_\mathrm{hf}\) is a <em>signed matrix element</em> of whatever field-independent interaction has been projected onto this particular \(S/T_0\) subspace; hyperfine asymmetry is one possible source. The \(\Delta g\) term contributes the matrix element \(\Delta\nu_g/2\) in this basis and grows linearly with field. Writing the two terms as a scalar sum is therefore a property of this reduced, real two-state model—not a general rule for adding full hyperfine and Zeeman Hamiltonians. The eigenvalue gap is</p>
 
   <div class="lecture-equation">
   \[
@@ -355,7 +355,7 @@ permalink: /lecture/radical-pairs/
 
         <div class="interactive-readout">
           <span>Differential Zeeman \(\Delta\nu_g\) <strong id="rp-level-dg-split">7.0 MHz</strong></span>
-          <span>Total mixing \(V(B)\) <strong id="rp-level-mixing">4.5 MHz</strong></span>
+          <span>Total projected mixing \(v(B)\) <strong id="rp-level-mixing">4.5 MHz</strong></span>
           <span>Adiabatic gap \(\Omega\) <strong id="rp-level-gap">13.5 MHz</strong></span>
           <span>Hybridization measure <strong id="rp-level-mixfrac">44.7%</strong></span>
         </div>
@@ -381,7 +381,7 @@ permalink: /lecture/radical-pairs/
       </div>
     </div>
 
-    <p class="interactive-footnote">The differential Zeeman contribution is represented in the \(S/T_0\) basis as an off-diagonal coupling. Real radical pairs additionally contain \(T_\pm\), nuclear-spin manifolds, anisotropic tensors, electron–electron dipolar coupling and often time-dependent \(J\) and \(D\).</p>
+    <p class="interactive-footnote">The differential Zeeman contribution is represented in the \(S/T_0\) basis as an off-diagonal coupling. The field-independent slider is only an effective projected matrix element in the same two-state basis. Real radical pairs additionally contain \(T_\pm\), nuclear-spin manifolds, anisotropic tensors, electron–electron dipolar coupling and often time-dependent \(J\) and \(D\).</p>
   </div>
 </section>
 
