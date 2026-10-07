@@ -53,6 +53,42 @@ permalink: /lecture/spin-hamiltonians/
 
   <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 will make that alternative matrix convention explicit.</p>
 
+  <div class="lecture-equation-grid">
+    <div class="lecture-equation compact">
+    \[
+    \hat{\mathcal H}
+    \equiv
+    \frac{\hat H}{h},
+    \qquad
+    [\hat{\mathcal H}]=\mathrm{Hz}
+    \]
+    </div>
+    <div class="lecture-equation compact">
+    \[
+    \frac{\hat H}{\hbar}
+    =
+    2\pi\hat{\mathcal H},
+    \qquad
+    [\hat H/\hbar]=\mathrm{rad\,s^{-1}}
+    \]
+    </div>
+  </div>
+
+  <div class="lecture-equation">
+  \[
+  U(t)
+  =
+  e^{-i\hat Ht/\hbar}
+  =
+  e^{-i\,2\pi\hat{\mathcal H}t}.
+  \]
+  </div>
+
+  <aside class="lecture-note">
+    <strong>One interaction, three unit languages.</strong>
+    <span>If a hyperfine coupling is quoted as \(a=20~\mathrm{MHz}\), then \(a=A/h\). Insert \(A\) into the energy Hamiltonian \(\hat H\), or insert \(a\) into the frequency-form Hamiltonian \(\hat{\mathcal H}=\hat H/h\). Do not put a number in MHz directly into an energy-form equation without the factor \(h\).</span>
+  </aside>
+
   <p>You rarely need every term at once. A radical pair of two organic \(S=\tfrac12\) radicals may need electron Zeeman, hyperfine, exchange and dipolar interactions. A transition-metal complex with \(S>1/2\) can instead make zero-field splitting central. A nucleus with \(I>1/2\) can add quadrupole structure.</p>
 
   <aside class="teacher-note">
