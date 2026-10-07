@@ -226,7 +226,7 @@ permalink: /lecture/radical-pairs/
     <div class="lecture-equation-grid">
       <div class="lecture-equation compact">
       \[
-      \hat{\mathcal H}_{2\mathrm L}
+      \hat{\mathcal H}_{2\mathrm{lvl}}
       \equiv
       \frac{\hat H}{h}
       =
