@@ -87,7 +87,7 @@
       if (explanation) {
         if (span < 1e-9) {
           explanation.textContent = "The tensor is isotropic, so rotating the molecule does not change the effective projection.";
-        } else if (Math.abs(theta) < 5 || false) {
+        } else if (Math.abs(theta) < 5) {
           explanation.textContent = "The field is almost aligned with the z principal axis, so the effective value approaches T_z.";
         } else if (Math.abs(theta - 90) < 5) {
           explanation.textContent = "The field lies almost in the xy plane. The azimuthal angle phi determines how strongly T_x and T_y contribute.";
