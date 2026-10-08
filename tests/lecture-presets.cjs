@@ -37,6 +37,7 @@ for(const page of pages) {
     const el={value:attr.value??"0",min:attr.min??"",max:attr.max??"",step:attr.step??"",
       checked:!!attr.checked,textContent:"",dataset:{},style:{},listeners,
       addEventListener(event,fn){listeners[event]=fn;},
+      appendChild(child){return child;},
       setAttribute(k,v){const text=String(v);assert(!/NaN|Infinity/.test(text),"invalid SVG "+id);this[k]=text;}
     };
     elements.set(id,el);return el;
