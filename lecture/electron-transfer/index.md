@@ -296,7 +296,7 @@ permalink: /lecture/electron-transfer/
       </div>
     </div>
 
-    <p class="interactive-footnote">This is the classical nonadiabatic Marcus expression. It does not automatically cover strong electronic coupling, quantum vibrational effects, non-equilibrium solvent response or conformational gating.</p>
+    <p class="interactive-footnote">The dashed reference uses \(V=10\,\mathrm{meV}\); the solid curve uses the selected coupling. This makes the \(k\propto V^2\) vertical shift visible instead of letting automatic y-axis scaling hide it. The model is still the classical nonadiabatic Marcus expression and does not automatically cover strong coupling, quantum vibrational effects, non-equilibrium solvent response or conformational gating.</p>
   </div>
 </section>
 
