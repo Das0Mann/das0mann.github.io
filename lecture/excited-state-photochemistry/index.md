@@ -364,11 +364,11 @@ permalink: /lecture/excited-state-photochemistry/
     </div>
 
     <div class="interactive-readout branching-readout">
-      <span>Fluorescence yield <strong id="branch-fluor-out">70.6%</strong></span>
-      <span>Internal-conversion yield <strong id="branch-ic-out">22.3%</strong></span>
+      <span>Fluorescence yield <strong id="branch-fluor-out">69.1%</strong></span>
+      <span>Internal-conversion yield <strong id="branch-ic-out">21.8%</strong></span>
       <span>Triplet / ISC yield <strong id="branch-isc-out">6.9%</strong></span>
       <span>Reactive yield <strong id="branch-rxn-out">2.2%</strong></span>
-      <span>Excited-state lifetime <strong id="branch-life-out">6.90 ns</strong></span>
+      <span>Excited-state lifetime <strong id="branch-life-out">6.91 ns</strong></span>
     </div>
 
     <p class="interactive-footnote">The channels are treated as independent first-order processes from one excited state. Real photochemistry can involve multiple states, reversible transfer, vibronic relaxation and geometry-dependent rates.</p>
