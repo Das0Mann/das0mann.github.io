@@ -109,6 +109,10 @@ permalink: /lecture/computational-lab/
         </div>
 
         <p id="scale-explanation" class="demo-explanation">At this size a state-vector method is still modest, while a dense operator is already expensive and a dense Liouvillian is completely impractical.</p>
+        <div class="sensitivity-meter">
+          <div class="sensitivity-meter-head"><span>Sampling noise \(\propto1/\sqrt M\)</span><strong id="scale-sampling-gain">1.0× baseline</strong></div>
+          <div class="sensitivity-meter-track"><span id="scale-sampling-meter" class="sensitivity-meter-fill"></span></div>
+        </div>
       </div>
 
       <div class="plot-wrap">

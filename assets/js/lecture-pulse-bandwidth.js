@@ -33,7 +33,7 @@
       const firstZero=1000/tp; // MHz
       const powerFwhm=885.9/tp; // MHz
       const piNu1=500/tp; // MHz
-      const range=2.5*firstZero;
+      const range=100; // MHz, fixed so narrowing/broadening remains visually apparent
 
       const xMap=(f)=>x0+(x1-x0)*(f+range)/(2*range);
       const yMap=(p)=>yBottom-(yBottom-yTop)*p;

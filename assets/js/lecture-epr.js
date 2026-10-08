@@ -30,6 +30,8 @@
     const markerLine = $("epr-marker-line");
     const yMinLabel = $("epr-y-min");
     const yMaxLabel = $("epr-y-max");
+    const spanOut = $("epr-span-out");
+    const spanMeter = $("epr-span-meter");
 
     const muBOverH_GHzPerT = 13.99624555;
     const x0 = 58, x1 = 530;
@@ -87,6 +89,14 @@
       bResOut.textContent = currentB.toFixed(3) + " T";
       bParOut.textContent = bParallel.toFixed(3) + " T";
       bPerpOut.textContent = bPerp.toFixed(3) + " T";
+
+      if (spanOut && spanMeter) {
+        const spanMt = 1000 * span;
+        spanOut.textContent = spanMt.toFixed(spanMt < 10 ? 2 : 1) + " mT";
+        // Log scale keeps both X-band and high-field changes visible.
+        const meter = 100 * Math.log10(1 + Math.max(0, spanMt)) / Math.log10(1 + 600);
+        spanMeter.style.width = Math.max(0, Math.min(100, meter)).toFixed(1) + "%";
+      }
 
       if (yMinLabel) yMinLabel.textContent = yMin.toFixed(3);
       if (yMaxLabel) yMaxLabel.textContent = yMax.toFixed(3);

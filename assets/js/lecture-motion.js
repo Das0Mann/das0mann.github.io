@@ -25,6 +25,7 @@
     const jAbsOut = $("motion-jabs-out");
     const explanation = $("motion-explanation");
     const path = $("motion-weight-path");
+    const referencePath = $("motion-reference-path");
     const marker = $("motion-marker");
     const markerLine = $("motion-marker-line");
     const matchLine = $("motion-match-line");
@@ -87,18 +88,22 @@
       }
 
       const pts = [];
+      const refPts = [];
+      const amplitudeScale = Math.pow(sigmaMHz / 10, 2);
       const n = 320;
       for (let i = 0; i <= n; i++) {
         const logTau = logTauMin + (logTauMax - logTauMin) * i / n;
         const tau = Math.pow(10, logTau);
         const u = omega * tau;
         const normalizedWeight = 2 * u / (1 + u * u);
-        pts.push([xMap(logTau), yMap(normalizedWeight)]);
+        refPts.push([xMap(logTau), yMap(normalizedWeight)]);
+        pts.push([xMap(logTau), yMap(normalizedWeight * amplitudeScale)]);
       }
+      if (referencePath) referencePath.setAttribute("d", makePath(refPts));
       path.setAttribute("d", makePath(pts));
 
       const markerX = xMap(parseFloat(logTauInput.value));
-      const markerY = yMap(2 * x / (1 + x * x));
+      const markerY = yMap((2 * x / (1 + x * x)) * amplitudeScale);
       marker.setAttribute("cx", markerX.toFixed(2));
       marker.setAttribute("cy", markerY.toFixed(2));
       markerLine.setAttribute("x1", markerX.toFixed(2));

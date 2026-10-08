@@ -36,15 +36,27 @@
     const explanation = $("qbio-explanation");
     const envelopePath = $("qbio-envelope-path");
     const lifeLine = $("qbio-life-line");
+    const t2Line = $("qbio-t2-line");
+    const mixLine = $("qbio-mix-line");
     const lifeMarker = $("qbio-life-marker");
 
     const x0 = 58, x1 = 530, yTop = 35, yBottom = 248;
-    const yMap = (value) => yBottom - (yBottom - yTop) * value;
+    const logMin = -2, logMax = 2;
+    const xMapLog = (logt) => x0 + (x1 - x0) * (logt - logMin) / (logMax - logMin);
+    const xMapTime = (t) => xMapLog(Math.max(logMin, Math.min(logMax, Math.log10(t))));
+    const yMap = (value) => yBottom - (yBottom - yTop) * Math.max(0, Math.min(1, value));
+
+    function setVertical(line, x) {
+      if (!line) return;
+      line.setAttribute("x1", x.toFixed(2));
+      line.setAttribute("x2", x.toFixed(2));
+    }
 
     function update() {
       const life = Math.pow(10, parseFloat(lifeInput.value));
       const t2 = Math.pow(10, parseFloat(t2Input.value));
       const f = Math.pow(10, parseFloat(fInput.value));
+      const mixPeriod = 1 / f; // MHz × μs = cycles
 
       const cycles = f * life;
       const coherence = Math.exp(-life / t2);
@@ -59,34 +71,34 @@
 
       if (explanation) {
         if (cycles < 0.5) {
-          explanation.textContent = "The radical pair disappears before even half of a characteristic mixing cycle is completed. This timescale alone would strongly limit coherent spin conversion.";
+          explanation.textContent = "The lifetime marker lies before even half of a mixing period. Coherent spin conversion has very little time to develop.";
         } else if (coherence < 0.1) {
-          explanation.textContent = "The lifetime permits spin evolution, but the coherence envelope is largely gone before the reaction time.";
+          explanation.textContent = "The lifetime is long enough for mixing, but the T₂ marker lies far to the left: most coherence is gone before reaction.";
         } else if (coherentCycles >= 1) {
-          explanation.textContent = "The lifetime and coherence time overlap with at least one characteristic mixing cycle. The basic timescale window is open, although this does not guarantee magnetosensitivity.";
+          explanation.textContent = "Lifetime, coherence time and mixing period overlap in a useful window. This passes the timescale sanity check, although it does not prove magnetosensitivity.";
         } else {
-          explanation.textContent = "Some coherent evolution is possible, but the available window is narrow and the full Hamiltonian and reaction kinetics will decide the outcome.";
+          explanation.textContent = "Some coherent evolution is possible, but the three timescales only marginally overlap.";
         }
       }
 
-      const tMax = 2 * life;
       const pts = [];
-      const n = 300;
+      const n = 360;
       for (let i = 0; i <= n; i++) {
-        const t = tMax * i / n;
-        pts.push([
-          x0 + (x1 - x0) * t / tMax,
-          yMap(Math.exp(-t / t2))
-        ]);
+        const logt = logMin + (logMax - logMin) * i / n;
+        const t = Math.pow(10, logt);
+        pts.push([xMapLog(logt), yMap(Math.exp(-t / t2))]);
       }
       envelopePath.setAttribute("d", makePath(pts));
 
-      const lifeX = x0 + (x1 - x0) * 0.5;
-      const lifeY = yMap(coherence);
-      lifeLine.setAttribute("x1", lifeX.toFixed(2));
-      lifeLine.setAttribute("x2", lifeX.toFixed(2));
-      lifeMarker.setAttribute("cx", lifeX.toFixed(2));
-      lifeMarker.setAttribute("cy", lifeY.toFixed(2));
+      const xLife = xMapTime(life);
+      const xT2 = xMapTime(t2);
+      const xMix = xMapTime(mixPeriod);
+      setVertical(lifeLine, xLife);
+      setVertical(t2Line, xT2);
+      setVertical(mixLine, xMix);
+
+      lifeMarker.setAttribute("cx", xLife.toFixed(2));
+      lifeMarker.setAttribute("cy", yMap(coherence).toFixed(2));
     }
 
     [lifeInput, t2Input, fInput].forEach((input) =>

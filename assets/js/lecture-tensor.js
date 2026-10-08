@@ -59,7 +59,7 @@
       const yMin = minV - pad;
       const yMax = maxV + pad;
 
-      const xMap = (th) => x0 + (x1 - x0) * th / 180;
+      const xMap = (th) => x0 + (x1 - x0) * th / 90;
       const yMap = (value) => yBottom - (yBottom - yTop) * (value - yMin) / (yMax - yMin);
 
       txOut.textContent = tx.toFixed(0) + " MHz";
@@ -72,7 +72,7 @@
       spanOut.textContent = span.toFixed(0) + " MHz";
 
       const pts = [];
-      for (let i = 0; i <= 180; i++) {
+      for (let i = 0; i <= 90; i++) {
         pts.push([xMap(i), yMap(projection(tx, ty, tz, i, phi))]);
       }
       path.setAttribute("d", makePath(pts));
@@ -87,7 +87,7 @@
       if (explanation) {
         if (span < 1e-9) {
           explanation.textContent = "The tensor is isotropic, so rotating the molecule does not change the effective projection.";
-        } else if (Math.abs(theta) < 5 || Math.abs(theta - 180) < 5) {
+        } else if (Math.abs(theta) < 5) {
           explanation.textContent = "The field is almost aligned with the z principal axis, so the effective value approaches T_z.";
         } else if (Math.abs(theta - 90) < 5) {
           explanation.textContent = "The field lies almost in the xy plane. The azimuthal angle phi determines how strongly T_x and T_y contribute.";
