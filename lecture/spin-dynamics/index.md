@@ -537,8 +537,10 @@ permalink: /lecture/spin-dynamics/
         <div class="interactive-readout">
           <span>Derived \(T_2\) <strong id="relax-t2-out">1.71 μs</strong></span>
           <span>Displayed time <strong id="relax-window-out">8.00 μs</strong></span>
+          <span>Population recovered at 1 μs <strong id="relax-mz-1us">39.3%</strong></span>
+          <span>Coherence remaining at 1 μs <strong id="relax-mxy-1us">55.8%</strong></span>
         </div>
-        <p id="relax-explanation" class="demo-explanation">Population recovery and coherence decay occur on different timescales.</p>
+        <p id="relax-explanation" class="demo-explanation">Population recovery and coherence decay occur on different timescales. The plot adjusts its time window for clarity; the two 1 μs readouts retain an absolute timescale for comparison.</p>
       </div>
 
       <div class="plot-wrap">
