@@ -699,8 +699,8 @@ permalink: /lecture/spin-hamiltonians/
           <text x="490" y="278" class="svg-caption">θ / degree</text>
           <text x="14" y="34" class="svg-caption">T_eff</text>
           <text x="54" y="270" class="svg-tick">0</text>
-          <text x="286" y="270" class="svg-tick">90</text>
-          <text x="514" y="270" class="svg-tick">180</text>
+          <text x="286" y="270" class="svg-tick">45</text>
+          <text x="514" y="270" class="svg-tick">90</text>
           <path id="tensor-path" class="curve-primary" fill="none" d=""/>
           <line id="tensor-marker-line" x1="0" y1="30" x2="0" y2="252" class="plot-marker-line"/>
           <circle id="tensor-marker" r="5" class="plot-marker" cx="0" cy="0"/>
