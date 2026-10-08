@@ -30,26 +30,37 @@
       return yBottom - (yBottom - yTop) * (c - yMin) / (yMax - yMin);
     };
 
-    function integrate(gamma, tau, tMax) {
+    function finiteMemoryCurve(gamma, tau, tMax) {
       const n = 420;
-      const dt = tMax / n;
-      let y = 1;
-      let v = 0;
-      const out = [[0, y]];
+      const out = [];
+      const disc = 1 - 4 * gamma * tau;
 
-      function deriv(stateY, stateV) {
-        return [stateV, (-stateV - gamma * stateY) / tau];
+      function yAt(t) {
+        if (Math.abs(disc) < 1e-10) {
+          const r = -1 / (2 * tau);
+          return (1 - r * t) * Math.exp(r * t);
+        }
+
+        if (disc > 0) {
+          const root = Math.sqrt(disc);
+          const r1 = (-1 + root) / (2 * tau);
+          const r2 = (-1 - root) / (2 * tau);
+          const c1 = -r2 / (r1 - r2);
+          const c2 = r1 / (r1 - r2);
+          return c1 * Math.exp(r1 * t) + c2 * Math.exp(r2 * t);
+        }
+
+        const omega = Math.sqrt(-disc) / (2 * tau);
+        const decay = Math.exp(-t / (2 * tau));
+        return decay * (
+          Math.cos(omega * t) +
+          Math.sin(omega * t) / (2 * tau * omega)
+        );
       }
 
-      for (let i = 1; i <= n; i++) {
-        const [k1y, k1v] = deriv(y, v);
-        const [k2y, k2v] = deriv(y + 0.5 * dt * k1y, v + 0.5 * dt * k1v);
-        const [k3y, k3v] = deriv(y + 0.5 * dt * k2y, v + 0.5 * dt * k2v);
-        const [k4y, k4v] = deriv(y + dt * k3y, v + dt * k3v);
-
-        y += dt * (k1y + 2*k2y + 2*k3y + k4y) / 6;
-        v += dt * (k1v + 2*k2v + 2*k3v + k4v) / 6;
-        out.push([i * dt, y]);
+      for (let i = 0; i <= n; i++) {
+        const t = tMax * i / n;
+        out.push([t, yAt(t)]);
       }
       return out;
     }
@@ -81,7 +92,7 @@
         }
       }
 
-      const finite = integrate(gamma, tau, tMax);
+      const finite = finiteMemoryCurve(gamma, tau, tMax);
       const markov = finite.map(([t]) => [t, Math.exp(-gamma * t)]);
       const xMap = (t) => x0 + (x1 - x0) * t / tMax;
 
