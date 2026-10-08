@@ -197,7 +197,7 @@ for(const config of fixtures) {
   }
   console.log("PASS",config.script,config.checks.length,"controls");
 }
-console.log("PASS",controls,"controls sampled at 17 positions each;",samples,"evaluations");
+console.log("PASS",controls,"numeric controls (17 samples for continuous, legal integers for discrete);",samples,"evaluations");
 let plotComparisons=0;
 for(const check of plotChecks) {
   const get=load(check);
@@ -259,3 +259,23 @@ assert.equal(listed.size,73,"inventory size changed");
 assert.deepEqual([...listed].filter(id=>!tested.has(id)),[],"untested controls");
 assert.deepEqual([...tested].filter(id=>!listed.has(id)),[],"undocumented tests");
 console.log("INVENTORY PASS",listed.size,"of",tested.size,"controls; evaluations",samples);
+
+// Independently check the controls actually declared in lecture page source.
+// Literal inputs in lecture/*/index.md are the user-facing source of truth.
+const htmlIds=[];
+for(const entry of fs.readdirSync("lecture",{withFileTypes:true})) {
+  if(!entry.isDirectory())continue;
+  const page="lecture/"+entry.name+"/index.md";
+  if(!fs.existsSync(page))continue;
+  const source=fs.readFileSync(page,"utf8");
+  for(const match of source.matchAll(/<input\b[^>]*\bid="([^"]+)"[^>]*>/g)) {
+    htmlIds.push(match[1]);
+  }
+}
+const htmlSet=new Set(htmlIds);
+assert.equal(htmlSet.size,htmlIds.length,"duplicate lecture input IDs");
+assert.deepEqual([...htmlSet].filter(id=>!listed.has(id)),[],"lecture controls not listed in inventory");
+assert.deepEqual([...listed].filter(id=>!htmlSet.has(id)),[],"inventory IDs not present in lecture HTML");
+assert.equal(htmlSet.size,73,"lecture HTML range/checkbox count changed");
+console.log("HTML SOURCE PASS",htmlSet.size,"declared controls match the inventory and test fixtures");
+
