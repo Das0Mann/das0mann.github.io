@@ -69,7 +69,7 @@
 
     function update() {
       const n = parseInt(nInput.value, 10);
-      const m = parseInt(mInput.value, 10);
+      const m = Math.max(1, Math.round(Math.pow(2, parseFloat(mInput.value))));
       const D = Math.pow(2, n);
       const stateBytes = 16 * D;
       const opBytes = 16 * D * D;
@@ -116,7 +116,7 @@
 
     document.querySelectorAll("[data-scale-m]").forEach((button) => {
       button.addEventListener("click", () => {
-        mInput.value = button.dataset.scaleM;
+        mInput.value = Math.log2(parseFloat(button.dataset.scaleM)).toFixed(4);
         update();
       });
     });

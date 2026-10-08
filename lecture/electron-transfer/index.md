@@ -254,8 +254,8 @@ permalink: /lecture/electron-transfer/
         <label for="marcus-dg"><span class="control-name">Driving force \(\Delta G^\circ\)</span><output id="marcus-dg-out">−0.50 eV</output></label>
         <input id="marcus-dg" type="range" min="-3.00" max="1.00" step="0.01" value="-0.50">
 
-        <label for="marcus-v"><span class="control-name">Electronic coupling \(V\)</span><output id="marcus-v-out">10.0 meV</output></label>
-        <input id="marcus-v" type="range" min="0.1" max="100" step="0.1" value="10">
+        <label for="marcus-v"><span class="control-name">Electronic coupling \(V\) · log-spaced</span><output id="marcus-v-out">10.0 meV</output></label>
+        <input id="marcus-v" type="range" min="-1" max="2" step="0.01" value="1">
 
         <label for="marcus-temp"><span class="control-name">Temperature \(T\)</span><output id="marcus-temp-out">300 K</output></label>
         <input id="marcus-temp" type="range" min="200" max="400" step="1" value="300">
@@ -404,7 +404,7 @@ permalink: /lecture/electron-transfer/
     <div class="interactive-layout">
       <div class="interactive-controls">
         <label for="tunnel-dr"><span class="control-name">Additional separation \(\Delta R\)</span><output id="tunnel-dr-out">2.0 Å</output></label>
-        <input id="tunnel-dr" type="range" min="0" max="8" step="0.1" value="2">
+        <input id="tunnel-dr" type="range" min="0" max="5" step="0.05" value="2">
 
         <label for="tunnel-beta"><span class="control-name">Decay constant \(\beta\)</span><output id="tunnel-beta-out">1.0 Å⁻¹</output></label>
         <input id="tunnel-beta" type="range" min="0.3" max="2.0" step="0.05" value="1">

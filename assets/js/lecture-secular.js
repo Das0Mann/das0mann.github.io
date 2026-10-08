@@ -30,7 +30,7 @@
     const markerLine=$("secular-marker-line");
     const marker=$("secular-marker");
 
-    const x0=58,x1=530,yTop=34,yBottom=270,dnuMax=3;
+    const x0=58,x1=530,yTop=34,yBottom=270,dnuMax=1.5;
     const xMap=(x)=>x0+(x1-x0)*x/dnuMax;
     const yMap=(y)=>yBottom-(yBottom-yTop)*y;
 
@@ -77,7 +77,7 @@
         const mode=button.dataset.secular;
         if(mode==="degenerate"){dnuInput.value="0.05";timeInput.value="1";}
         else if(mode==="border"){dnuInput.value="0.30";timeInput.value="1";}
-        else{dnuInput.value="2.5";timeInput.value="1";}
+        else{dnuInput.value="1.2";timeInput.value="1";}
         update();
       });
     });

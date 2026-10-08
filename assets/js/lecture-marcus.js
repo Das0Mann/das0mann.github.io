@@ -75,7 +75,7 @@
     function update() {
       const lambda = parseFloat(lambdaInput.value);
       const dg = parseFloat(dgInput.value);
-      const vMeV = parseFloat(vInput.value);
+      const vMeV = Math.pow(10, parseFloat(vInput.value));
       const temp = parseFloat(tempInput.value);
 
       lambdaOut.textContent = lambda.toFixed(2) + " eV";

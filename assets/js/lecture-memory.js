@@ -67,7 +67,7 @@
 
     function update() {
       const gamma = parseFloat(gammaInput.value);
-      const tau = parseFloat(tauInput.value);
+      const tau = Math.pow(10, parseFloat(tauInput.value));
       const product = gamma * tau;
       const tMax = Math.min(50, Math.max(6 / gamma, 8 * tau));
 
@@ -105,7 +105,7 @@
 
     document.querySelectorAll("[data-memory-tau]").forEach((button) => {
       button.addEventListener("click", () => {
-        tauInput.value = button.dataset.memoryTau;
+        tauInput.value = Math.log10(parseFloat(button.dataset.memoryTau)).toFixed(4);
         update();
       });
     });

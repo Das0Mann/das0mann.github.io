@@ -28,7 +28,7 @@
 
     function update() {
       const t1 = parseFloat(t1Input.value);
-      const tphi = parseFloat(tphiInput.value);
+      const tphi = Math.pow(10, parseFloat(tphiInput.value));
       const t2 = 1 / (1 / (2 * t1) + 1 / tphi);
       const tMax = clamp(4 * Math.max(t1, t2), 1.0, 32.0);
 
@@ -71,7 +71,7 @@
     document.querySelectorAll("[data-relax-t1]").forEach((button) => {
       button.addEventListener("click", () => {
         t1Input.value = button.dataset.relaxT1;
-        tphiInput.value = button.dataset.relaxTphi;
+        tphiInput.value = Math.log10(parseFloat(button.dataset.relaxTphi)).toFixed(4);
         update();
       });
     });

@@ -276,7 +276,7 @@ permalink: /lecture/coherent-control/
     <div class="interactive-layout">
       <div class="interactive-controls">
         <label for="pulse-duration"><span class="control-name">Pulse duration \(t_p\)</span><output id="pulse-duration-out">40 ns</output></label>
-        <input id="pulse-duration" type="range" min="10" max="500" step="5" value="40">
+        <input id="pulse-duration" type="range" min="10" max="250" step="5" value="40">
 
         <div class="demo-presets">
           <button type="button" data-pulse-duration="10">10 ns · broad</button>

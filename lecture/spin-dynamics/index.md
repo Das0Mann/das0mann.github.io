@@ -126,8 +126,8 @@ permalink: /lecture/spin-dynamics/
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="larmor-b"><span class="control-name">Magnetic field \(B_0\)</span><output id="larmor-b-out">1.00 mT</output></label>
-        <input id="larmor-b" type="range" min="0.05" max="10" step="0.05" value="1">
+        <label for="larmor-b"><span class="control-name">Magnetic field \(B_0\) · log-spaced</span><output id="larmor-b-out">1.00 mT</output></label>
+        <input id="larmor-b" type="range" min="-1.3010" max="1" step="0.01" value="0">
         <label for="larmor-g"><span class="control-name"><em>g</em>-factor</span><output id="larmor-g-out">2.0023</output></label>
         <input id="larmor-g" type="range" min="1.8" max="2.2" step="0.0001" value="2.0023">
 
@@ -143,7 +143,7 @@ permalink: /lecture/spin-dynamics/
         </div>
         <p id="larmor-explanation" class="demo-explanation">At 1 mT an electron with \(g\approx2\) precesses at roughly 28 MHz.</p>
         <div class="sensitivity-meter">
-          <div class="sensitivity-meter-head"><span>Relative Larmor frequency</span><strong id="larmor-frequency-scale">10.0% of slider maximum</strong></div>
+          <div class="sensitivity-meter-head"><span>Magnetic-field range</span><strong id="larmor-frequency-scale">10.0% of slider maximum</strong></div>
           <div class="sensitivity-meter-track"><span id="larmor-frequency-meter" class="sensitivity-meter-fill"></span></div>
         </div>
       </div>
@@ -525,8 +525,8 @@ permalink: /lecture/spin-dynamics/
         <label for="relax-t1"><span class="control-name">Longitudinal time \(T_1\)</span><output id="relax-t1-out">2.00 μs</output></label>
         <input id="relax-t1" type="range" min="0.2" max="8" step="0.1" value="2">
 
-        <label for="relax-tphi"><span class="control-name">Pure dephasing \(T_\phi\)</span><output id="relax-tphi-out">3.00 μs</output></label>
-        <input id="relax-tphi" type="range" min="0.2" max="20" step="0.1" value="3">
+        <label for="relax-tphi"><span class="control-name">Pure dephasing \(T_\phi\) · log-spaced</span><output id="relax-tphi-out">3.00 μs</output></label>
+        <input id="relax-tphi" type="range" min="-0.6990" max="1.3010" step="0.01" value="0.4771">
 
         <div class="demo-presets">
           <button type="button" data-relax-t1="2" data-relax-tphi="20">little pure dephasing</button>
