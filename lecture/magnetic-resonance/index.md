@@ -284,7 +284,7 @@ permalink: /lecture/magnetic-resonance/
           <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
           <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
           <text x="478" y="278" class="svg-caption">θ / degree</text>
-          <text x="14" y="38" class="svg-caption">Bres / T</text>
+          <text x="10" y="38" class="svg-caption">ΔB / mT</text>
           <text id="epr-y-max" x="31" y="39" class="svg-tick">0.344</text>
           <text id="epr-y-min" x="31" y="249" class="svg-tick">0.337</text>
           <text x="54" y="267" class="svg-tick">0</text>
@@ -299,7 +299,7 @@ permalink: /lecture/magnetic-resonance/
       </div>
     </div>
 
-    <p class="interactive-footnote">This plots the resonance condition for an axial \(g\)-tensor, not a simulated powder spectrum. A real powder spectrum also requires orientation weighting, transition probabilities, linewidths and any hyperfine or ZFS interactions.</p>
+    <p class="interactive-footnote">The plot shows the orientation-dependent resonance-field offset around the centre of the axial pattern; the dashed curve is the same tensor at 9.5 GHz. This is not a simulated powder spectrum. A real powder spectrum also requires orientation weighting, transition probabilities, linewidths and any hyperfine or ZFS interactions.</p>
   </div>
 </section>
 
