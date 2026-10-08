@@ -38,6 +38,8 @@
     const liouvilleOut = $("scale-liouville-out");
     const seOut = $("scale-se-out");
     const explanation = $("scale-explanation");
+    const samplingMeter = $("scale-sampling-meter");
+    const samplingGain = $("scale-sampling-gain");
 
     const statePath = $("scale-state-path");
     const opPath = $("scale-operator-path");
@@ -81,6 +83,11 @@
       opOut.textContent = formatBytes(opBytes);
       liouvilleOut.textContent = formatBytes(liouvilleBytes);
       seOut.textContent = seFactor.toFixed(3) + " σ";
+      if (samplingMeter && samplingGain) {
+        // Bar shrinks as uncertainty falls; M=1 is the full-width baseline.
+        samplingMeter.style.width = (100 * seFactor).toFixed(1) + "%";
+        samplingGain.textContent = (1 / seFactor).toFixed(1) + "× more precise than M=1";
+      }
 
       const x = xMap(n);
       markerLine.setAttribute("x1", x.toFixed(2));
