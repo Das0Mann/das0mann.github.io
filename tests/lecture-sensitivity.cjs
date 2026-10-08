@@ -252,7 +252,7 @@ assert(warnings.includes("singlet/triplet-selective"),"reaction guard");
 console.log("BUILDER PASS",builderChecks,"controls");
 
 const inventory=fs.readFileSync("lecture/INTERACTIVE_CONTROL_INVENTORY_20261008.md","utf8");
-const listed=new Set([...inventory.matchAll(/^\|\s*.([a-z][a-z0-9-]+).\s*\|\s*(?:range|checkbox)\s*\|/gm)].map(x=>x[1]));
+const listed=new Set([...inventory.matchAll(/^\|\s*.([a-z][A-Za-z0-9-]+).\s*\|\s*(?:range|checkbox)\s*\|/gm)].map(x=>x[1]));
 const tested=new Set(fixtures.flatMap(f=>f.checks.map(c=>c[0])));
 for(const id of ["builder-electrons","builder-nuclei","builder-zeeman","builder-hyperfine","builder-exchange","builder-drive","builder-relax","builder-reaction"])tested.add(id);
 assert.equal(listed.size,73,"inventory size changed");
