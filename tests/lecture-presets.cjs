@@ -52,9 +52,9 @@ for(const page of pages) {
     readyState:"complete",
     getElementById(id){return elements.get(id)??make(id);},
     querySelectorAll(selector){
-      const m=selector.match(/^\[data-([a-z-]+)\]$/);
-      if(!m)return [];
-      return buttonNodes.filter(x=>x.dataAttributes.includes("data-"+m[1]));
+      const required=[...selector.matchAll(/\[data-([a-z-]+)\]/g)].map(m=>"data-"+m[1]);
+      if(!required.length)return [];
+      return buttonNodes.filter(x=>required.every(k=>x.dataAttributes.includes(k)));
     }
   };
   for(const filename of files[page.name]||[]) {
