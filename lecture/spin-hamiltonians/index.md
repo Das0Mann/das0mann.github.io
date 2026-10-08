@@ -459,7 +459,7 @@ permalink: /lecture/spin-hamiltonians/
         <svg id="dipolar-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Dipolar coupling versus angle with a one-nanometre reference">
           <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
           <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
-          <line x1="58" y1="110.18" x2="530" y2="110.18" class="plot-grid"/>
+          <line x1="58" y1="107.42" x2="530" y2="107.42" class="plot-grid"/>
           <text x="478" y="278" class="svg-caption">θ / degree</text>
           <text x="12" y="38" class="svg-caption">relative coupling</text>
           <text x="54" y="267" class="svg-tick">0</text>
