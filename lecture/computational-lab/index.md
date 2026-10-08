@@ -91,7 +91,7 @@ permalink: /lecture/computational-lab/
         <input id="scale-spins" type="range" min="2" max="24" step="1" value="14">
 
         <label for="scale-samples"><span class="control-name">Trace samples \(M\)</span><output id="scale-samples-out">12</output></label>
-        <input id="scale-samples" type="range" min="1" max="500" step="1" value="12">
+        <input id="scale-samples" type="range" min="0" max="9" step="0.05" value="3.585">
 
         <div class="demo-presets">
           <button type="button" data-scale-n="8">8 spins</button>
