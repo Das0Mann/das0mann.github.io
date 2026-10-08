@@ -188,10 +188,10 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">05</span>
-        <span class="library-tag">3 interactives</span>
+        <span class="library-tag">4 interactives</span>
       </div>
       <h3>Magnetic Resonance</h3>
-      <p>Connect spin-energy levels to experiment: EPR resonance, hyperfine structure, anisotropic g-tensors, powder patterns, linewidths and RYDMR.</p>
+      <p>Connect spin-energy levels to what an EPR instrument actually records: resonance, hyperfine structure, tensor anisotropy, powder patterns, derivative detection, linewidths and RYDMR.</p>
       <ul>
         <li>resonance condition &amp; EPR bands</li>
         <li>hyperfine splitting</li>
@@ -269,13 +269,13 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">09</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
       <p>Go beyond phenomenological \(T_1/T_2\): derive how fluctuating operator channels and \(J_{\alpha\beta}(\omega)\) generate BRW relaxation, then compare Lindblad, memory-kernel and stochastic descriptions.</p>
       <ul>
         <li>Markovian master equations</li>
-        <li>BRW assumptions</li>
+        <li>BRW &amp; secular-approximation assumptions</li>
         <li>memory kernels &amp; non-Markovianity</li>
         <li>stochastic state-vector methods</li>
       </ul>
@@ -331,14 +331,14 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">12</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Pulse &amp; Coherent Control</h3>
       <p>Understand driven two-level systems, rotating frames, Rabi oscillations, \(\pi/2\) and \(\pi\) pulses, detuning and echo concepts.</p>
       <ul>
         <li>rotating-frame picture</li>
         <li>Rabi frequency &amp; pulse area</li>
-        <li>detuning and excitation bandwidth</li>
+        <li>detuning, pulse bandwidth &amp; selectivity</li>
         <li>echoes, phase and coherent control</li>
       </ul>
       <div class="library-card-footer">
