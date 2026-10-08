@@ -421,7 +421,7 @@ permalink: /lecture/magnetic-resonance/
       <span class="interactive-model-note">axial \(S=\tfrac12\), no hyperfine</span>
     </div>
 
-    <div class="demo-prompt"><strong>Try this:</strong><span>compare X-band and W-band with the same \(g\)-anisotropy. Then increase the linewidth until the principal-value structure is washed out.</span></div>
+    <div class="demo-prompt"><strong>Try this:</strong><span>compare X-band and W-band with the same \(g\)-anisotropy. The lower field locator shows the absolute shift that is hidden by zooming the spectrum. Then increase the linewidth until the principal-value structure is washed out.</span></div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
@@ -467,6 +467,17 @@ permalink: /lecture/magnetic-resonance/
           <text id="powder-x-min" x="54" y="290" class="svg-tick">330</text>
           <text id="powder-x-max" x="510" y="290" class="svg-tick">350</text>
         </svg>
+        <svg id="powder-field-overview" class="lecture-svg" viewBox="0 0 560 86" role="img" aria-label="Absolute magnetic-field position of the powder principal resonances from zero to four tesla">
+          <text x="58" y="15" class="svg-caption">Absolute resonance field (fixed 0–4 T)</text>
+          <line x1="58" y1="48" x2="530" y2="48" class="plot-axis"/>
+          <rect id="powder-overview-band" x="98" y="34" width="1" height="26" fill="currentColor" opacity="0.15"/>
+          <line id="powder-overview-par" x1="98" x2="98" y1="31" y2="65" class="powder-principal-line"/>
+          <line id="powder-overview-perp" x1="98" x2="98" y1="31" y2="65" class="powder-principal-line"/>
+          <text x="58" y="80" class="svg-tick">0 T</text>
+          <text x="286" y="80" class="svg-tick">2 T</text>
+          <text x="507" y="80" class="svg-tick">4 T</text>
+        </svg>
+        <p class="interactive-footnote">Top: automatically zoomed powder line shape, normalized to its peak. Bottom: fixed absolute magnetic-field scale; closely spaced principal-field markers may overlap.</p>
       </div>
     </div>
 

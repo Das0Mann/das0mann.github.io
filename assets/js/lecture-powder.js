@@ -30,6 +30,9 @@
     const path = $("powder-path");
     const parLine = $("powder-par-line");
     const perpLine = $("powder-perp-line");
+    const overviewPar = $("powder-overview-par");
+    const overviewPerp = $("powder-overview-perp");
+    const overviewBand = $("powder-overview-band");
     const xMinLabel = $("powder-x-min");
     const xMaxLabel = $("powder-x-max");
 
@@ -56,6 +59,18 @@
       const rawMin=Math.min(bPar,bPerp);
       const rawMax=Math.max(bPar,bPerp);
       const span=rawMax-rawMin;
+      // Fixed 0–4 T locator complements the automatically zoomed line shape.
+      // 4 T covers the declared 5–100 GHz and g = 1.90–2.20 domain.
+      if (overviewPar && overviewPerp && overviewBand) {
+        const locate = (bMt) => 58 + 472 * Math.max(0, Math.min(1, bMt / 4000));
+        const xp = locate(bPar), xt = locate(bPerp);
+        overviewPar.setAttribute("x1", xp.toFixed(2));
+        overviewPar.setAttribute("x2", xp.toFixed(2));
+        overviewPerp.setAttribute("x1", xt.toFixed(2));
+        overviewPerp.setAttribute("x2", xt.toFixed(2));
+        overviewBand.setAttribute("x", Math.min(xp, xt).toFixed(2));
+        overviewBand.setAttribute("width", Math.max(0.7, Math.abs(xp-xt)).toFixed(2));
+      }
       const pad=Math.max(5*sigma, 0.12*Math.max(span,1), 1.0);
       const bMin=rawMin-pad;
       const bMax=rawMax+pad;
