@@ -30,7 +30,7 @@
     const markerLine=$("secular-marker-line");
     const marker=$("secular-marker");
 
-    const x0=58,x1=530,yTop=34,yBottom=270,dnuMax=10;
+    const x0=58,x1=530,yTop=34,yBottom=270,dnuMax=3;
     const xMap=(x)=>x0+(x1-x0)*x/dnuMax;
     const yMap=(y)=>yBottom-(yBottom-yTop)*y;
 
