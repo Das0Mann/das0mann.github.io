@@ -266,8 +266,8 @@ permalink: /lecture/open-systems/
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="secular-dnu"><span class="control-name">Transition separation \(\Delta\nu\)</span><output id="secular-dnu-out">1.00 MHz</output></label>
-        <input id="secular-dnu" type="range" min="0" max="10" step="0.02" value="1">
+        <label for="secular-dnu"><span class="control-name">Transition separation \(\Delta\nu\)</span><output id="secular-dnu-out">0.35 MHz</output></label>
+        <input id="secular-dnu" type="range" min="0" max="10" step="0.01" value="0.35">
 
         <label for="secular-time"><span class="control-name">Coarse-graining window \(T\)</span><output id="secular-time-out">2.00 μs</output></label>
         <input id="secular-time" type="range" min="0.05" max="5" step="0.05" value="2">
@@ -279,12 +279,12 @@ permalink: /lecture/open-systems/
         </div>
 
         <div class="interactive-readout">
-          <span>Relative phase cycles \(\Delta\nu T\) <strong id="secular-cycles">2.00</strong></span>
-          <span>Residual phase average \(R(T)\) <strong id="secular-residual">0.000</strong></span>
-          <span>Secular intuition <strong id="secular-regime">strong averaging</strong></span>
+          <span>Relative phase cycles \(\Delta\nu T\) <strong id="secular-cycles">0.70</strong></span>
+          <span>Residual phase average \(R(T)\) <strong id="secular-residual">0.368</strong></span>
+          <span>Secular intuition <strong id="secular-regime">partial averaging</strong></span>
         </div>
 
-        <p id="secular-explanation" class="demo-explanation">The cross term completes multiple phase cycles over the averaging window and contributes little to the coarse-grained dynamics.</p>
+        <p id="secular-explanation" class="demo-explanation">The relative phase evolves substantially but has not averaged away. This is exactly the kind of regime where secularization should be checked rather than assumed.</p>
       </div>
 
       <div class="plot-wrap">
