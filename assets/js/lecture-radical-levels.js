@@ -104,7 +104,7 @@
       markerHigh.setAttribute("cy", yMap(current.gap/2).toFixed(2));
 
       if (explanation) {
-        if (Math.abs(current.mixing) < 0.05 && Math.abs(j) > 0.5) {
+        if (Math.abs(current.mixing) < 0.05 && Math.abs(j) > 0.5 && v0 > 0.1 && dg < 0 && b > 0) {
           explanation.textContent = "The signed field-dependent contribution almost cancels the projected field-independent mixing. The off-diagonal channel approaches zero, so the eigenstates approach unmixed S and T0 states in this reduced model.";
         } else if (mixFrac > 0.75) {
           explanation.textContent = "Magnetic inequivalence is strong compared with the exchange gap, so the adiabatic eigenstates are strongly hybridized mixtures of singlet and T0 character.";
