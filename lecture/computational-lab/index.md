@@ -90,7 +90,7 @@ permalink: /lecture/computational-lab/
         <label for="scale-spins"><span class="control-name">Number of spin-\(\tfrac12\) particles \(N\)</span><output id="scale-spins-out">14</output></label>
         <input id="scale-spins" type="range" min="2" max="24" step="1" value="14">
 
-        <label for="scale-samples"><span class="control-name">Trace samples \(M\)</span><output id="scale-samples-out">12</output></label>
+        <label for="scale-samples"><span class="control-name">Trace samples \(M\) · log-spaced</span><output id="scale-samples-out">12</output></label>
         <input id="scale-samples" type="range" min="0" max="9" step="0.05" value="3.585">
 
         <div class="demo-presets">
