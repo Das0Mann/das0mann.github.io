@@ -19,6 +19,8 @@
     const tphiOut = $("relax-tphi-out");
     const t2Out = $("relax-t2-out");
     const windowOut = $("relax-window-out");
+    const mzAtOne = $("relax-mz-1us");
+    const xyAtOne = $("relax-mxy-1us");
     const explanation = $("relax-explanation");
     const mzPath = $("relax-mz-path");
     const mxyPath = $("relax-mxy-path");
@@ -36,6 +38,8 @@
       tphiOut.textContent = tphi.toFixed(2) + " μs";
       t2Out.textContent = t2.toFixed(2) + " μs";
       windowOut.textContent = tMax.toFixed(2) + " μs";
+      if (mzAtOne) mzAtOne.textContent = (100 * (1-Math.exp(-1/t1))).toFixed(1) + "%";
+      if (xyAtOne) xyAtOne.textContent = (100 * Math.exp(-1/t2)).toFixed(1) + "%";
 
       if (explanation) {
         const ratio = t2 / (2 * t1);
