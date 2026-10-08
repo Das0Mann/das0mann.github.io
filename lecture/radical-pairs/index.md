@@ -359,7 +359,7 @@ permalink: /lecture/radical-pairs/
         <input id="rp-level-j" type="range" min="-60" max="60" step="0.5" value="10">
 
         <label for="rp-level-dg"><span class="control-name">\(\Delta g\)</span><output id="rp-level-dg-out">0.0050</output></label>
-        <input id="rp-level-dg" type="range" min="0" max="0.02" step="0.0001" value="0.005">
+        <input id="rp-level-dg" type="range" min="-0.02" max="0.02" step="0.0001" value="0.005">
 
         <label for="rp-level-v"><span class="control-name">Field-independent mixing \(v_0\)</span><output id="rp-level-v-out">1.0 MHz</output></label>
         <input id="rp-level-v" type="range" min="0" max="20" step="0.2" value="1">
@@ -368,6 +368,7 @@ permalink: /lecture/radical-pairs/
           <button type="button" data-rp-level="hyperfine">low-field mixing</button>
           <button type="button" data-rp-level="exchange">exchange dominated</button>
           <button type="button" data-rp-level="dg">high-field Δg mixing</button>
+          <button type="button" data-rp-level="cancellation">signed cancellation</button>
         </div>
 
         <div class="interactive-readout">
