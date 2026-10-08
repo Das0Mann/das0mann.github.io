@@ -308,7 +308,7 @@ permalink: /lecture/molecular-motion/
       </div>
     </div>
 
-    <p class="interactive-footnote">The plotted quantity is the spectral density at one chosen angular frequency, normalized to its maximum as a function of \(\tau_c\). Real relaxation rates generally combine several spectral-density values with operator-specific prefactors.</p>
+    <p class="interactive-footnote">The dashed curve isolates the normalized timescale factor \(2\omega\tau_c/(1+\omega^2\tau_c^2)\). The solid curve multiplies that shape by \((\sigma/10\,\mathrm{MHz})^2\), so changing \(\sigma\) changes amplitude but not the matching condition \(\omega\tau_c\approx1\). Real relaxation rates combine several spectral-density values with operator-specific prefactors.</p>
   </div>
 </section>
 
