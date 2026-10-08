@@ -5179,19 +5179,24 @@ h3 { font-size: 1.25rem; }
   transition: width .15s ease;
 }
 
-.branch-fluor {
-  width: 70.6%;
+ .branch-fluor {
+  width: 69.1%;
   background: #2f8f9b;
 }
 
 .branch-ic {
-  width: 22.3%;
+  width: 21.8%;
   background: #9db6bc;
 }
 
 .branch-isc {
-  width: 7.1%;
+  width: 6.9%;
   background: #173f5f;
+}
+
+.branch-rxn {
+  width: 2.2%;
+  background: #c28d3d;
 }
 
 .branching-readout {
