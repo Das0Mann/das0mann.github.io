@@ -254,7 +254,7 @@ permalink: /lecture/electron-transfer/
         <label for="marcus-dg"><span class="control-name">Driving force \(\Delta G^\circ\)</span><output id="marcus-dg-out">−0.50 eV</output></label>
         <input id="marcus-dg" type="range" min="-3.00" max="1.00" step="0.01" value="-0.50">
 
-        <label for="marcus-v"><span class="control-name">Electronic coupling \(V\)</span><output id="marcus-v-out">10.0 meV</output></label>
+        <label for="marcus-v"><span class="control-name">Electronic coupling \(V\) · log-spaced</span><output id="marcus-v-out">10.0 meV</output></label>
         <input id="marcus-v" type="range" min="-1" max="2" step="0.01" value="1">
 
         <label for="marcus-temp"><span class="control-name">Temperature \(T\)</span><output id="marcus-temp-out">300 K</output></label>
