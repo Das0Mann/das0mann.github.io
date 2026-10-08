@@ -142,6 +142,10 @@ permalink: /lecture/spin-dynamics/
           <span>Precession period <strong id="larmor-period">35.69 ns</strong></span>
         </div>
         <p id="larmor-explanation" class="demo-explanation">At 1 mT an electron with \(g\approx2\) precesses at roughly 28 MHz.</p>
+        <div class="sensitivity-meter">
+          <div class="sensitivity-meter-head"><span>Relative Larmor frequency</span><strong id="larmor-frequency-scale">10.0% of slider maximum</strong></div>
+          <div class="sensitivity-meter-track"><span id="larmor-frequency-meter" class="sensitivity-meter-fill"></span></div>
+        </div>
       </div>
 
       <div class="plot-wrap">
