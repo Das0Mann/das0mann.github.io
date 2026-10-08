@@ -9,7 +9,7 @@
     const drOut=$("tunnel-dr-out"), betaOut=$("tunnel-beta-out");
     const vOut=$("tunnel-v-out"), kOut=$("tunnel-k-out"), suppressionOut=$("tunnel-suppression-out");
     const explanation=$("tunnel-explanation"), path=$("tunnel-rate-path"), line=$("tunnel-marker-line"), marker=$("tunnel-marker");
-    const x0=58,x1=530,yTop=35,yBottom=248,drMax=8,logMin=-14.0,logMax=0;
+    const x0=58,x1=530,yTop=35,yBottom=248,drMax=5,logMin=-9.5,logMax=0;
     const xMap=(dr)=>x0+(x1-x0)*dr/drMax;
     const yMap=(logv)=>yBottom-(yBottom-yTop)*(Math.max(logMin,Math.min(logMax,logv))-logMin)/(logMax-logMin);
 
