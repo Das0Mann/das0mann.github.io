@@ -276,7 +276,7 @@ permalink: /lecture/coherent-control/
     <div class="interactive-layout">
       <div class="interactive-controls">
         <label for="pulse-duration"><span class="control-name">Pulse duration \(t_p\)</span><output id="pulse-duration-out">40 ns</output></label>
-        <input id="pulse-duration" type="range" min="5" max="500" step="5" value="40">
+        <input id="pulse-duration" type="range" min="10" max="500" step="5" value="40">
 
         <div class="demo-presets">
           <button type="button" data-pulse-duration="10">10 ns · broad</button>
@@ -300,6 +300,9 @@ permalink: /lecture/coherent-control/
           <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
           <text x="420" y="300" class="svg-caption">frequency offset / MHz</text>
           <text x="16" y="38" class="svg-caption">power</text>
+          <text x="52" y="290" class="svg-tick">−100</text>
+          <text x="288" y="290" class="svg-tick">0</text>
+          <text x="510" y="290" class="svg-tick">100</text>
           <path id="pulse-bandwidth-path" class="pulse-bandwidth-line" fill="none" d=""/>
           <line id="pulse-zero-left" x1="0" y1="34" x2="0" y2="270" class="pulse-zero-line"/>
           <line id="pulse-zero-right" x1="0" y1="34" x2="0" y2="270" class="pulse-zero-line"/>
