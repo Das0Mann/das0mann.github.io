@@ -129,7 +129,7 @@ function load(config) {
       const listeners = {};
       elements.set(id,{
         value: String(Object.prototype.hasOwnProperty.call(config.defaults,id)?config.defaults[id]:0),
-        textContent:"",style:{},dataset:{},listeners,
+        textContent:"",style:{},dataset:{},checked:false,listeners,
         setAttribute(name,value) {
           const string=String(value);
           assert(!/NaN|Infinity/.test(string),config.script+" invalid SVG "+id+"."+name);
@@ -213,3 +213,49 @@ for(const check of plotChecks) {
   plotComparisons++;
 }
 console.log("PASS",plotComparisons,"plot-aware sensitivity comparisons");
+
+const builder=load({script:"lecture-molspin-builder.js",defaults:{"builder-electrons":2,"builder-nuclei":2}});
+for(const id of ["builder-zeeman","builder-hyperfine","builder-exchange","builder-reaction"])builder(id).checked=true;
+builder("builder-electrons").listeners.input();
+let builderChecks=0;
+for(const [id,min,max] of [["builder-electrons",1,4],["builder-nuclei",0,8]]) {
+  const input=builder(id), distinct=new Set();
+  for(let v=min;v<=max;v++) {
+    input.value=String(v);input.listeners.input();
+    const actual=Number(builder("builder-dim").textContent.replace(/,/g,""));
+    const ne=Number(builder("builder-electrons").value),nn=Number(builder("builder-nuclei").value);
+    assert.equal(actual,2**(ne+nn),"builder dimension mismatch");
+    distinct.add(actual);samples++;
+  }
+  assert(distinct.size>=3,"builder range unresponsive");
+  input.value="2";input.listeners.input();builderChecks++;
+}
+for(const [id,term] of [
+  ["builder-zeeman","H_Z"],["builder-hyperfine","H_hf"],
+  ["builder-exchange","H_ex"],["builder-drive","H_drive(t)"],
+  ["builder-relax","R_relax"],["builder-reaction","K_reaction"]
+]) {
+  const element=builder(id);
+  assert.equal(typeof element.listeners.change,"function",id+" missing change handler");
+  element.checked=false;element.listeners.change();
+  assert(!builder("builder-equation").textContent.includes(term),id+" disabled term persisted");
+  element.checked=true;element.listeners.change();
+  assert(builder("builder-equation").textContent.includes(term),id+" enabled term missing");
+  builderChecks++;
+}
+builder("builder-electrons").value="1";builder("builder-nuclei").value="0";
+builder("builder-electrons").listeners.input();
+const warnings=builder("builder-explanation").textContent;
+assert(warnings.includes("Hyperfine coupling needs at least one nuclear spin."),"hyperfine guard");
+assert(warnings.includes("Electron exchange needs at least two electron spins."),"exchange guard");
+assert(warnings.includes("singlet/triplet-selective"),"reaction guard");
+console.log("BUILDER PASS",builderChecks,"controls");
+
+const inventory=fs.readFileSync("lecture/INTERACTIVE_CONTROL_INVENTORY_20261008.md","utf8");
+const listed=new Set([...inventory.matchAll(/^\|\s*.([a-z][a-z0-9-]+).\s*\|\s*(?:range|checkbox)\s*\|/gm)].map(x=>x[1]));
+const tested=new Set(fixtures.flatMap(f=>f.checks.map(c=>c[0])));
+for(const id of ["builder-electrons","builder-nuclei","builder-zeeman","builder-hyperfine","builder-exchange","builder-drive","builder-relax","builder-reaction"])tested.add(id);
+assert.equal(listed.size,73,"inventory size changed");
+assert.deepEqual([...listed].filter(id=>!tested.has(id)),[],"untested controls");
+assert.deepEqual([...tested].filter(id=>!listed.has(id)),[],"undocumented tests");
+console.log("INVENTORY PASS",listed.size,"of",tested.size,"controls; evaluations",samples);
