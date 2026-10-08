@@ -51,6 +51,7 @@ for(const page of pages) {
   const doc={
     readyState:"complete",
     getElementById(id){return elements.get(id)??make(id);},
+    createElementNS(_ns,tag){return make("svg-"+tag+"-"+elements.size);},
     querySelectorAll(selector){
       const required=[...selector.matchAll(/\[data-([a-z-]+)\]/g)].map(m=>"data-"+m[1]);
       if(!required.length)return [];
