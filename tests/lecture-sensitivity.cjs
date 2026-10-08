@@ -76,6 +76,30 @@ const fixtures = [
   ]}
 ];
 
+// Numeric path displacement checks use matching SVG points, not string equality.
+const plotChecks = [
+  {script:"lecture-tensor.js", input:"tensor-ty", values:[20,50,100], path:"tensor-path", defaults:{"tensor-tx":20,"tensor-ty":50,"tensor-tz":100,"tensor-theta":45,"tensor-phi":45}},
+  {script:"lecture-rabi.js", input:"rabi-nu1", values:[2,10,35], path:"rabi-path", defaults:{"rabi-nu1":10,"rabi-detuning":0,"rabi-time":50}},
+  {script:"lecture-dipolar.js", input:"dipolar-r", values:[0.5,1,2], path:"dipolar-factor-path", defaults:{"dipolar-r":1,"dipolar-theta":45}},
+  {script:"lecture-secular.js", input:"secular-time", values:[0.2,1,3], path:"secular-path", defaults:{"secular-dnu":0.35,"secular-time":2}},
+  {script:"lecture-tunnelling.js", input:"tunnel-beta", values:[0.3,1,2], path:"tunnel-rate-path", defaults:{"tunnel-dr":2,"tunnel-beta":1}}
+];
+function svgPoints(d) {
+  assert(typeof d==="string" && /^[ML]/.test(d),"missing SVG path");
+  const numbers=[...d.matchAll(/[ML](-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)/g)]
+    .map(match=>[Number(match[1]),Number(match[2])]);
+  assert(numbers.length>=25,"insufficient SVG points");
+  return numbers;
+}
+function maxSvgDisplacement(a,b) {
+  assert.equal(a.length,b.length,"SVG sample count changed");
+  let max=0;
+  for(let i=0;i<a.length;i++) {
+    max=Math.max(max,Math.hypot(a[i][0]-b[i][0],a[i][1]-b[i][1]));
+  }
+  return max;
+}
+
 function parseObservable(raw, output) {
   const text=String(raw).trim().replace(/−/g,"-");
   // Marcus rates use mantissa × 10^exponent; parseFloat alone extracts
@@ -165,3 +189,18 @@ for(const config of fixtures) {
   console.log("PASS",config.script,config.checks.length,"controls");
 }
 console.log("PASS",controls,"controls sampled at 17 positions each;",samples,"evaluations");
+let plotComparisons=0;
+for(const check of plotChecks) {
+  const get=load(check);
+  const input=get(check.input),points=[];
+  assert(typeof input.listeners.input==="function","missing plot input "+check.input);
+  for(const value of check.values) {
+    input.value=String(value);input.listeners.input();
+    points.push(svgPoints(get(check.path).d));
+  }
+  const firstLast=maxSvgDisplacement(points[0],points[points.length-1]);
+  assert(firstLast>=5,check.script+" "+check.input+" plot barely changes: "+firstLast.toFixed(2)+" px");
+  console.log("PLOT PASS",check.script,check.input,firstLast.toFixed(2),"SVG units");
+  plotComparisons++;
+}
+console.log("PASS",plotComparisons,"plot-aware sensitivity comparisons");
