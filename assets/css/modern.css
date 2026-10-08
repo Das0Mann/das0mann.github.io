@@ -6137,3 +6137,31 @@ h3 { font-size: 1.25rem; }
     gap: 4px;
   }
 }
+
+
+/* Round 11 interactive plots */
+
+.cw-absorption-line {
+  stroke: #8faab3;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cw-lockin-line,
+.secular-curve,
+.pulse-bandwidth-line {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.pulse-zero-line {
+  stroke: #91a7af;
+  stroke-width: 1.4;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
