@@ -675,8 +675,8 @@ permalink: /lecture/spin-hamiltonians/
         <label for="tensor-theta"><span class="control-name">Polar angle \(\theta\)</span><output id="tensor-theta-out">45°</output></label>
         <input id="tensor-theta" type="range" min="0" max="90" step="1" value="45">
 
-        <label for="tensor-phi"><span class="control-name">Azimuth \(\phi\)</span><output id="tensor-phi-out">0°</output></label>
-        <input id="tensor-phi" type="range" min="0" max="90" step="1" value="0">
+        <label for="tensor-phi"><span class="control-name">Azimuth \(\phi\)</span><output id="tensor-phi-out">45°</output></label>
+        <input id="tensor-phi" type="range" min="0" max="90" step="1" value="45">
 
         <div class="demo-presets">
           <button type="button" data-tensor-preset="isotropic">isotropic</button>
@@ -685,7 +685,7 @@ permalink: /lecture/spin-hamiltonians/
         </div>
 
         <div class="interactive-readout">
-          <span>Effective projection <strong id="tensor-effective">60.0 MHz</strong></span>
+          <span>Effective projection <strong id="tensor-effective">67.5 MHz</strong></span>
           <span>Isotropic part <strong id="tensor-isotropic">56.7 MHz</strong></span>
           <span>Principal-value span <strong id="tensor-span">80 MHz</strong></span>
           <span>Azimuthal variation at this θ <strong id="tensor-azimuth-span">15.0 MHz</strong></span>

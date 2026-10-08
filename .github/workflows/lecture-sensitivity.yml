@@ -1,0 +1,28 @@
+name: Lecture sensitivity regression
+on:
+  pull_request:
+    paths:
+      - 'assets/js/lecture-*.js'
+      - 'tests/lecture-sensitivity.cjs'
+      - '.github/workflows/lecture-sensitivity.yml'
+      - 'lecture/spin-hamiltonians/index.md'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/js/lecture-*.js'
+      - 'tests/lecture-sensitivity.cjs'
+      - '.github/workflows/lecture-sensitivity.yml'
+      - 'lecture/spin-hamiltonians/index.md'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exercise lecture widgets over parameter sweeps
+        run: node tests/lecture-sensitivity.cjs
