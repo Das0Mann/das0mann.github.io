@@ -496,6 +496,30 @@ permalink: /lecture/electron-transfer/
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Beyond the simplest Marcus limit</p><h2>Weak coupling gives hopping; strong coupling starts to look adiabatic</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>The standard Marcus expression on this page is the <strong>nonadiabatic</strong> limit. That just means the electronic coupling is weak enough that reaching the crossing region does not guarantee transfer. Nuclear motion brings the states into resonance; the electronic coupling then decides how efficiently the electron actually changes state.</p>
+  </div>
+
+  <div class="method-ladder">
+    <div><span>Nonadiabatic / weak \(V\)</span><p>Electron transfer is well described as a transition between donor and acceptor diabatic states. The rate scales approximately as \(|V|^2\).</p></div>
+    <div><span>Increasing \(V\)</span><p>The crossing becomes more strongly avoided. Once electronic mixing is strong, the simple golden-rule picture is no longer the natural limit.</p></div>
+    <div><span>Adiabatic limit</span><p>The electron follows the lower adiabatic electronic surface as the nuclei move through the crossing region; nuclear barrier crossing becomes the dominant kinetic bottleneck.</p></div>
+    <div><span>High-frequency vibrations</span><p>When important nuclear modes are quantum mechanical rather than classical, Marcus–Levich–Jortner-type descriptions can be more appropriate than one classical reorganization coordinate.</p></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>Do not ask “Is Marcus theory valid?” as one yes/no question.</strong>
+    <span>Ask which Marcus assumptions are valid: weak electronic coupling, approximately harmonic free-energy surfaces, classical nuclear reorganization, near-equilibrium nuclear sampling, and a meaningful donor/acceptor state definition.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>

@@ -547,6 +547,11 @@ permalink: /lecture/spin-hamiltonians/
   <p>for the standard ordering convention. Quantum chemistry first determines the tensor contributions—direct spin–spin and SOC-mediated—and only then converts the tensor into the compact \(D,E\) pair used by spectroscopy and spin dynamics.</p>
 </section>
 
+
+<div class="lecture-flow-bridge">
+  <p><strong>Up to here we have mostly asked “how large is the interaction?”</strong> The next question is geometric: <em>large along which molecular direction?</em> For an anisotropic tensor, the three principal values without the three principal axes are only half the information.</p>
+</div>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>

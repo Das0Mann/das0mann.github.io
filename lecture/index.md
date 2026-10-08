@@ -10,8 +10,8 @@ permalink: /lecture/
 <header class="library-intro">
   <p class="library-kicker">Lecture library</p>
   <h2>From electrons to quantum dynamics, spectroscopy and chemistry</h2>
-  <p>I am building this as a set of short, connected lectures rather than one very long page. The core route starts with the electronic problem, reduces it to an effective Hamiltonian, propagates the quantum state in time and then connects the dynamics to spectroscopy, chemistry or a biological observable.</p>
-  <p class="library-note">Each module starts with explicit learning goals. Important quantities are explained through physical-meaning panels, equations and one carefully limited mental model: the analogy is used to build intuition, followed by a note explaining where it stops being exact. Each lecture ends with a compact take-home model plus reading from both my own work and foundational or review papers from other groups.</p>
+  <p>I am building this because I genuinely like these topics, but I also know how quickly they can become unreadable when every derivation arrives before the physical picture. My rule here is simple: first ask what the object physically is, then write the smallest useful equation, change something you can visualize, and only then add the harder theory. The full route still runs from electronic structure to effective Hamiltonians, quantum dynamics, spectroscopy, chemistry and biology—but it should feel like one story rather than thirteen separate subjects.</p>
+  <p class="library-note">The pages are intentionally written in layers. If an equation is unfamiliar, the text around it should still tell you what changes physically and what an experiment would notice. The analogies are there to get a picture into your head, the interactives let you stress-test that picture, and the deeper derivations are there when you want to push past intuition.</p>
 
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
@@ -188,10 +188,10 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">05</span>
-        <span class="library-tag">3 interactives</span>
+        <span class="library-tag">4 interactives</span>
       </div>
       <h3>Magnetic Resonance</h3>
-      <p>Connect spin-energy levels to experiment: EPR resonance, hyperfine structure, anisotropic g-tensors, powder patterns, linewidths and RYDMR.</p>
+      <p>Connect spin-energy levels to what an EPR instrument actually records: resonance, hyperfine structure, tensor anisotropy, powder patterns, derivative detection, linewidths and RYDMR.</p>
       <ul>
         <li>resonance condition &amp; EPR bands</li>
         <li>hyperfine splitting</li>
@@ -269,13 +269,13 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">09</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Advanced Open-System Methods</h3>
       <p>Go beyond phenomenological \(T_1/T_2\): derive how fluctuating operator channels and \(J_{\alpha\beta}(\omega)\) generate BRW relaxation, then compare Lindblad, memory-kernel and stochastic descriptions.</p>
       <ul>
         <li>Markovian master equations</li>
-        <li>BRW assumptions</li>
+        <li>BRW &amp; secular-approximation assumptions</li>
         <li>memory kernels &amp; non-Markovianity</li>
         <li>stochastic state-vector methods</li>
       </ul>
@@ -331,14 +331,14 @@ permalink: /lecture/
     <article class="library-card">
       <div class="library-card-top">
         <span class="library-number">12</span>
-        <span class="library-tag">1 interactive</span>
+        <span class="library-tag">2 interactives</span>
       </div>
       <h3>Pulse &amp; Coherent Control</h3>
       <p>Understand driven two-level systems, rotating frames, Rabi oscillations, \(\pi/2\) and \(\pi\) pulses, detuning and echo concepts.</p>
       <ul>
         <li>rotating-frame picture</li>
         <li>Rabi frequency &amp; pulse area</li>
-        <li>detuning and excitation bandwidth</li>
+        <li>detuning, pulse bandwidth &amp; selectivity</li>
         <li>echoes, phase and coherent control</li>
       </ul>
       <div class="library-card-footer">

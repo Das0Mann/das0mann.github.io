@@ -123,18 +123,22 @@
     const kfInput = $("branch-kf");
     const kicInput = $("branch-kic");
     const kiscInput = $("branch-kisc");
-    if (!kfInput || !kicInput || !kiscInput) return;
+    const krxnInput = $("branch-krxn");
+    if (!kfInput || !kicInput || !kiscInput || !krxnInput) return;
 
     const kfOut = $("branch-kf-out");
     const kicOut = $("branch-kic-out");
     const kiscOut = $("branch-kisc-out");
+    const krxnOut = $("branch-krxn-out");
     const fluorOut = $("branch-fluor-out");
     const icOut = $("branch-ic-out");
     const iscOut = $("branch-isc-out");
+    const rxnOut = $("branch-rxn-out");
     const lifeOut = $("branch-life-out");
     const fluorBar = $("branch-fluor-bar");
     const icBar = $("branch-ic-bar");
     const iscBar = $("branch-isc-bar");
+    const rxnBar = $("branch-rxn-bar");
 
     function rate(log10k) {
       return Math.pow(10, parseFloat(log10k));
@@ -157,27 +161,32 @@
       const kf = rate(kfInput.value);
       const kic = rate(kicInput.value);
       const kisc = rate(kiscInput.value);
-      const total = kf + kic + kisc;
+      const krxn = rate(krxnInput.value);
+      const total = kf + kic + kisc + krxn;
 
       const pf = kf / total;
       const pic = kic / total;
       const pisc = kisc / total;
+      const prxn = krxn / total;
       const lifetime = 1 / total;
 
       kfOut.textContent = scientific(kf);
       kicOut.textContent = scientific(kic);
       kiscOut.textContent = scientific(kisc);
+      krxnOut.textContent = scientific(krxn);
       fluorOut.textContent = (100 * pf).toFixed(1) + "%";
       icOut.textContent = (100 * pic).toFixed(1) + "%";
       iscOut.textContent = (100 * pisc).toFixed(1) + "%";
+      rxnOut.textContent = (100 * prxn).toFixed(1) + "%";
       lifeOut.textContent = formatLifetime(lifetime);
 
       fluorBar.style.width = (100 * pf).toFixed(3) + "%";
       icBar.style.width = (100 * pic).toFixed(3) + "%";
       iscBar.style.width = (100 * pisc).toFixed(3) + "%";
+      rxnBar.style.width = (100 * prxn).toFixed(3) + "%";
     }
 
-    [kfInput, kicInput, kiscInput].forEach((input) =>
+    [kfInput, kicInput, kiscInput, krxnInput].forEach((input) =>
       input.addEventListener("input", update)
     );
 

@@ -256,6 +256,30 @@ permalink: /lecture/computational-lab/
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">A habit worth keeping</p><h2>Solve a tiny version exactly before trusting the large one</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>This is probably the least glamorous and most useful numerical trick in the whole library: <strong>make the model small enough that you know the answer</strong>. Then compare the clever method against that reference before scaling up.</p>
+  </div>
+
+  <div class="lecture-checklist">
+    <div><strong>Reduce the Hilbert space</strong><span>Remove nuclei or interactions until direct diagonalization or dense propagation is easy.</span></div>
+    <div><strong>Take a known limit</strong><span>Set \(J=0\), make two \(g\)-values identical, remove relaxation, or choose a single uncoupled spin whose motion is analytic.</span></div>
+    <div><strong>Compare observables</strong><span>Check the quantity you actually care about—population, yield, spectrum, polarization—not only an internal solver residual.</span></div>
+    <div><strong>Add complexity back</strong><span>Turn on one ingredient at a time. When the answer changes, you know which piece caused it.</span></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>Numerical error and model error are different.</strong>
+    <span>A perfectly converged calculation can still solve the wrong Hamiltonian. A physically correct Hamiltonian can also be propagated badly. Good validation keeps those two failure modes separate.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>

@@ -294,6 +294,11 @@ PulseSequence seq
   </div>
 </section>
 
+
+<div class="lecture-flow-bridge">
+  <p>The examples above are intentionally more complicated than the equations they encode. When an input does something unexpected, I would not start by staring at parser syntax. I would walk backward through the physics: <strong>spins → Hamiltonian → state → kinetics → task → convergence</strong>. That usually localizes the problem much faster.</p>
+</div>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>

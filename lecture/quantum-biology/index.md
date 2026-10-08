@@ -53,6 +53,30 @@ permalink: /lecture/quantum-biology/
   </aside>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Evidence ladder</p><h2>A quantum effect, a mechanism and a biological function are three different claims</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>I find this distinction extremely useful because it stops the discussion from becoming mystical. Seeing a magnetic-field effect is interesting. Showing that a radical pair causes it is a stronger statement. Showing that an organism actually uses that mechanism is stronger again.</p>
+  </div>
+
+  <div class="lecture-checklist">
+    <div><strong>1 · Physical effect</strong><span>Can you reproducibly measure a field-, isotope-, coherence- or tunnelling-dependent change?</span></div>
+    <div><strong>2 · Molecular mechanism</strong><span>Can one microscopic model reproduce the sign, magnitude, field scale, timescale and perturbation dependence?</span></div>
+    <div><strong>3 · Causal intervention</strong><span>Does changing the proposed spin carrier, radical pathway or interaction change the effect in the predicted way?</span></div>
+    <div><strong>4 · Biological role</strong><span>Does the mechanism survive the real cellular environment and alter a biologically relevant output?</span></div>
+  </div>
+
+  <aside class="teacher-note">
+    <strong>The bar gets higher as the claim gets bigger.</strong>
+    <span>A beautiful spin-chemistry experiment can establish molecular quantum physics without proving that evolution exploits the same effect in vivo. Keeping those statements separate makes the science stronger, not weaker.</span>
+  </aside>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>

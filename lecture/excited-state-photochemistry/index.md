@@ -351,19 +351,24 @@ permalink: /lecture/excited-state-photochemistry/
 
       <label for="branch-kisc"><span>Intersystem crossing \(k_\mathrm{ISC}\)</span><output id="branch-kisc-out">1.0 × 10⁷ s⁻¹</output></label>
       <input id="branch-kisc" type="range" min="5" max="10" step="0.05" value="7">
+
+      <label for="branch-krxn"><span>Photochemical reaction \(k_\mathrm{rxn}\)</span><output id="branch-krxn-out">3.2 × 10⁶ s⁻¹</output></label>
+      <input id="branch-krxn" type="range" min="5" max="10" step="0.05" value="6.5">
     </div>
 
     <div class="branching-bar" aria-label="Excited-state branching fractions">
       <span id="branch-fluor-bar" class="branch-fluor"></span>
       <span id="branch-ic-bar" class="branch-ic"></span>
       <span id="branch-isc-bar" class="branch-isc"></span>
+      <span id="branch-rxn-bar" class="branch-rxn"></span>
     </div>
 
     <div class="interactive-readout branching-readout">
       <span>Fluorescence yield <strong id="branch-fluor-out">70.6%</strong></span>
       <span>Internal-conversion yield <strong id="branch-ic-out">22.3%</strong></span>
-      <span>Triplet / ISC yield <strong id="branch-isc-out">7.1%</strong></span>
-      <span>Excited-state lifetime <strong id="branch-life-out">7.06 ns</strong></span>
+      <span>Triplet / ISC yield <strong id="branch-isc-out">6.9%</strong></span>
+      <span>Reactive yield <strong id="branch-rxn-out">2.2%</strong></span>
+      <span>Excited-state lifetime <strong id="branch-life-out">6.90 ns</strong></span>
     </div>
 
     <p class="interactive-footnote">The channels are treated as independent first-order processes from one excited state. Real photochemistry can involve multiple states, reversible transfer, vibronic relaxation and geometry-dependent rates.</p>
