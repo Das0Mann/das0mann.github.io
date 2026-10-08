@@ -54,7 +54,7 @@ for(const page of pages) {
     getElementById(id){return elements.get(id)??make(id);},
     createElementNS(_ns,tag){return make("svg-"+tag+"-"+elements.size);},
     querySelectorAll(selector){
-      const required=[...selector.matchAll(/\[data-([a-z-]+)\]/g)].map(m=>"data-"+m[1]);
+      const required=[...selector.matchAll(/\[data-([a-z0-9-]+)\]/g)].map(m=>"data-"+m[1]);
       if(!required.length)return [];
       return buttonNodes.filter(x=>required.every(k=>x.dataAttributes.includes(k)));
     }
