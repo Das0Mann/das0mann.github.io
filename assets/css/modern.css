@@ -6033,3 +6033,107 @@ h3 { font-size: 1.25rem; }
   stroke-dasharray: 5 5;
   vector-effect: non-scaling-stroke;
 }
+
+
+/* ---------------------------------------------------------
+   Lecture flow and object polish — October 2026
+   --------------------------------------------------------- */
+
+.lecture-flow-bridge {
+  max-width: 880px;
+  margin: 24px 0 28px 59px;
+  padding: 13px 16px 13px 18px;
+  border-left: 3px solid #a8cfd2;
+  background: linear-gradient(90deg, rgba(245,251,251,.96), rgba(255,255,255,.72));
+  color: #536c76;
+  font-family: "Inter", sans-serif;
+  font-size: .81rem;
+  line-height: 1.62;
+}
+
+.lecture-flow-bridge strong {
+  color: var(--navy);
+}
+
+.lecture-flow-bridge p {
+  margin: 0 !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.lecture-flow-bridge p + p {
+  margin-top: 7px !important;
+}
+
+.lecture-checklist {
+  display: grid;
+  gap: 8px;
+  max-width: 900px;
+  margin: 20px 0 28px 59px;
+}
+
+.lecture-checklist > div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 14px;
+  padding: 11px 13px;
+  border: 1px solid #dce9eb;
+  border-radius: 10px;
+  background: #fbfdfd;
+}
+
+.lecture-checklist strong {
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: .75rem;
+}
+
+.lecture-checklist span {
+  color: #617680;
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  line-height: 1.52;
+}
+
+.lecture-module .method-ladder,
+.lecture-module .lecture-output-strip,
+.lecture-module .hamiltonian-legend,
+.lecture-module .observable-list,
+.lecture-module .timescale-strip {
+  align-items: stretch;
+}
+
+.lecture-module .method-ladder > div,
+.lecture-module .lecture-output-strip > div,
+.lecture-module .hamiltonian-legend > div,
+.lecture-module .observable-list > div,
+.lecture-module .timescale-strip > div {
+  min-width: 0;
+}
+
+.lecture-module .lecture-equation-grid {
+  align-items: stretch;
+}
+
+.lecture-module .lecture-equation-grid .lecture-equation {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.interactive-card .interactive-readout strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .lecture-flow-bridge,
+  .lecture-checklist {
+    margin-left: 0;
+  }
+
+  .lecture-checklist > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
