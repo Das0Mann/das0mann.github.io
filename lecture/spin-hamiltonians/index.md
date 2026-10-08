@@ -675,7 +675,7 @@ permalink: /lecture/spin-hamiltonians/
         <input id="tensor-theta" type="range" min="0" max="90" step="1" value="45">
 
         <label for="tensor-phi"><span class="control-name">Azimuth \(\phi\)</span><output id="tensor-phi-out">0°</output></label>
-        <input id="tensor-phi" type="range" min="0" max="180" step="1" value="0">
+        <input id="tensor-phi" type="range" min="0" max="90" step="1" value="0">
 
         <div class="demo-presets">
           <button type="button" data-tensor-preset="isotropic">isotropic</button>
