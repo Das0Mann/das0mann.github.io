@@ -560,7 +560,7 @@ permalink: /lecture/magnetic-resonance/
         <div class="interactive-readout">
           <span>\(B_\mathrm{mod}/\Delta B_\mathrm{FWHM}\) <strong id="cw-ratio">0.10</strong></span>
           <span>Derivative peak-to-peak <strong id="cw-pp">1.7 mT</strong></span>
-          <span>First-harmonic amplitude <strong id="cw-amplitude">0.1400 (relative)</strong></span>
+          <span>First-harmonic amplitude <strong id="cw-amplitude">0.1408 (relative)</strong></span>
           <span>Detection regime <strong id="cw-regime">near derivative limit</strong></span>
         </div>
 
