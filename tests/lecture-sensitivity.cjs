@@ -76,6 +76,19 @@ const fixtures = [
   ]}
 ];
 
+function parseObservable(raw, output) {
+  const text=String(raw).trim().replace(/−/g,"-");
+  // Marcus rates use mantissa × 10^exponent; parseFloat alone extracts
+  // only the mantissa and falsely reports long flat intervals.
+  if(output==="marcus-rate-out") {
+    const sci=text.match(/^([+-]?\\d+(?:\\.\\d+)?)\\s*×\\s*10\\^([+-]?\\d+)/);
+    if(sci) return Math.log10(Number(sci[1]))+Number(sci[2]);
+    const ordinary=Number.parseFloat(text);
+    return ordinary>0?Math.log10(ordinary):Number.NaN;
+  }
+  return Number.parseFloat(text);
+}
+
 function load(config) {
   const elements = new Map();
   function get(id) {
@@ -114,12 +127,14 @@ for(const config of fixtures) {
   for(const [id,min,max,output] of config.checks) {
     const input=get(id),values=[];
     assert(typeof input.listeners.input==="function",config.script+" missing input event: "+id);
-    for(let i=0;i<17;i++) {
-      const v=min+(max-min)*i/16;
+    const discrete = id==="hf-count";
+    const nSamples=discrete?Math.round(max-min)+1:17;
+    for(let i=0;i<nSamples;i++) {
+      const v=min+(max-min)*i/(nSamples-1);
       input.value=String(v);
       input.listeners.input();
       const raw=get(output).textContent;
-      const result=Number.parseFloat(String(raw).replace("−","-"));
+      const result=parseObservable(raw,output);
       assert(Number.isFinite(result),config.script+" non-finite "+output+" at "+id+"="+v+" ("+raw+")");
       values.push(result);
       samples++;
