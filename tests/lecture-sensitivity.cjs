@@ -81,7 +81,7 @@ function parseObservable(raw, output) {
   // Marcus rates use mantissa × 10^exponent; parseFloat alone extracts
   // only the mantissa and falsely reports long flat intervals.
   if(output==="marcus-rate-out") {
-    const sci=text.match(/^([+-]?\\d+(?:\\.\\d+)?)\\s*×\\s*10\\^([+-]?\\d+)/);
+    const sci=text.match(/^([+-]?\d+(?:\.\d+)?)\s*×\s*10\^([+-]?\d+)/);
     if(sci) return Math.log10(Number(sci[1]))+Number(sci[2]);
     const ordinary=Number.parseFloat(text);
     return ordinary>0?Math.log10(ordinary):Number.NaN;
