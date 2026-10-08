@@ -4,6 +4,7 @@ on:
     paths:
       - 'assets/js/lecture-*.js'
       - 'tests/lecture-sensitivity.cjs'
+      - 'tests/lecture-presets.cjs'
       - '.github/workflows/lecture-sensitivity.yml'
       - 'lecture/spin-hamiltonians/index.md'
   push:
@@ -11,6 +12,7 @@ on:
     paths:
       - 'assets/js/lecture-*.js'
       - 'tests/lecture-sensitivity.cjs'
+      - 'tests/lecture-presets.cjs'
       - '.github/workflows/lecture-sensitivity.yml'
       - 'lecture/spin-hamiltonians/index.md'
   workflow_dispatch:
@@ -25,4 +27,6 @@ jobs:
         with:
           node-version: '22'
       - name: Exercise lecture widgets over parameter sweeps
-        run: node tests/lecture-sensitivity.cjs
+        run: |
+          node tests/lecture-sensitivity.cjs
+          node tests/lecture-presets.cjs
