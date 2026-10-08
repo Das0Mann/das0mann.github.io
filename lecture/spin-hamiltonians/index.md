@@ -449,6 +449,10 @@ permalink: /lecture/spin-hamiltonians/
         </div>
 
         <p id="dipolar-explanation" class="demo-explanation">At \(90^\circ\), the secular orientation factor is positive and equal to one.</p>
+        <div class="sensitivity-meter">
+          <div class="sensitivity-meter-head"><span>Dipolar strength from distance</span><strong id="dipolar-distance-ratio">1.0× at 1 nm</strong></div>
+          <div class="sensitivity-meter-track"><span id="dipolar-distance-meter" class="sensitivity-meter-fill"></span></div>
+        </div>
       </div>
 
       <div class="plot-wrap">
