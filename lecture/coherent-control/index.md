@@ -267,6 +267,11 @@ permalink: /lecture/coherent-control/
   <p>This time–frequency tradeoff is central in magnetic resonance: pulse length, \(B_1\), spectral bandwidth and relaxation cannot be optimized independently.</p>
 </section>
 
+
+<div class="lecture-flow-bridge">
+  <p><strong>There is no universally “better” pulse.</strong> Short and strong is fast but broad; long and weak is selective but gives relaxation more time to act. Pulse design is therefore a compromise between bandwidth, selectivity, robustness and decoherence. The echo is the first place where we use that control deliberately to undo a specific kind of phase dispersion.</p>
+</div>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
