@@ -107,7 +107,7 @@ permalink: /lecture/coherent-control/
 
     <div class="demo-prompt">
       <strong>Try this:</strong>
-      <span>choose the \(\pi\)-pulse preset on resonance. Then add detuning without changing the pulse duration: the maximum transfer drops and the effective rotation axis tilts.</span>
+      <span>choose the \(\pi\)-pulse preset on resonance. Then add detuning without changing the pulse duration: the maximum transfer drops and the effective rotation axis tilts. The plot keeps a fixed 0–500 ns time axis so changing the drive frequency visibly changes the number of rotations.</span>
     </div>
 
     <div class="interactive-layout">

@@ -69,12 +69,14 @@
         }
       }
 
-      const periodNs = 1000 / generalized;
-      const tMax = Math.max(500, 2 * periodNs, timeNs * 1.25);
+      // Keep one absolute time axis while varying drive and detuning.
+      // Autoscaling by the oscillation period made distinct frequencies
+      // appear almost identical, and hid slow driving at small nu1.
+      const tMax = 500; // ns; matches the pulse-duration slider
       const xMap = (t) => x0 + (x1 - x0) * t / tMax;
 
       const pts = [];
-      const n = 360;
+      const n = 1200; // sample up to sqrt(50²+50²) MHz without aliasing
       for (let i = 0; i <= n; i++) {
         const t = tMax * i / n;
         pts.push([xMap(t), yMap(transitionProbability(nu1, detuning, t))]);
