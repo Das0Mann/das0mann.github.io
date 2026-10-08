@@ -18,6 +18,7 @@
     const modOut = $("cw-mod-out");
     const ratioOut = $("cw-ratio");
     const ppOut = $("cw-pp");
+    const amplitudeOut = $("cw-amplitude");
     const regimeOut = $("cw-regime");
     const explanation = $("cw-explanation");
     const absorptionPath = $("cw-absorption-path");
@@ -56,6 +57,8 @@
 
       let lockMax=0;
       for(const v of lock) lockMax=Math.max(lockMax,Math.abs(v));
+      // Keep the genuine first-harmonic amplitude before normalizing its shape.
+      const rawAmplitude = lockMax;
       if(lockMax<1e-12) lockMax=1;
 
       let imax=0, imin=0;
@@ -81,6 +84,7 @@
       modOut.textContent=bmod.toFixed(2)+" mT";
       ratioOut.textContent=ratio.toFixed(2);
       ppOut.textContent=pp.toFixed(2)+" mT";
+      if(amplitudeOut) amplitudeOut.textContent=rawAmplitude.toFixed(4)+" (relative)";
 
       if(ratio<0.15){
         regimeOut.textContent="near derivative limit";
