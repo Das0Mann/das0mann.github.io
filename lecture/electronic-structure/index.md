@@ -704,6 +704,42 @@ permalink: /lecture/electronic-structure/
 </section>
 
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">R</span>
+    <div><p class="section-eyebrow">Relativity</p><h2>For magnetic properties, relativity is not only a “heavy-atom correction”</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p><strong>This is one of those topics that sounds more intimidating than it needs to.</strong> The useful split is simple: scalar-relativistic effects change the orbital energies and radial shapes; spin–orbit coupling connects spin and orbital motion. Both can feed directly into the magnetic parameters we use later.</p>
+  </div>
+
+  <div class="physical-concept-panel">
+    <div class="physical-concept-head"><span>Two pieces to keep separate</span><h3>Relativity changes both the electronic structure and the spin response</h3></div>
+    <div class="physical-concept-grid">
+      <article>
+        <strong>Scalar relativity</strong>
+        <p><b>What it is:</b> Relativistic corrections that do not explicitly couple spin and orbital angular momentum.</p>
+        <p><b>What it changes:</b> Orbital contraction/expansion, orbital energies, bonding and spin density—especially near heavier nuclei.</p>
+        <p><b>Why you care:</b> Hyperfine couplings and even “ordinary” energetics can shift because the underlying orbitals changed before SOC was considered.</p>
+      </article>
+      <article>
+        <strong>Spin–orbit coupling</strong>
+        <p><b>What it is:</b> The relativistic coupling between spin and orbital motion.</p>
+        <p><b>What it changes:</b> \(g\)-shifts, ZFS, intersystem crossing and mixing between electronic states of different spin character.</p>
+        <p><b>Why you care:</b> Magnetic response often depends on small SOC-mediated admixtures of excited states, so a small wavefunction component can produce a large spectroscopic effect.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="lecture-checklist">
+    <div><strong>Light organic radicals</strong><span>Scalar-relativistic effects may be modest, but SOC still controls quantities such as \(g\)-shifts and singlet–triplet mixing.</span></div>
+    <div><strong>Transition metals</strong><span>Scalar relativity and SOC both become much more important; spin-state ordering and ZFS can be very method-sensitive.</span></div>
+    <div><strong>Practical methods</strong><span>Common choices include ZORA, DKH and X2C-type Hamiltonians. The important point for this lecture is not memorizing the acronyms, but checking that the relativistic model is appropriate for the property being calculated.</span></div>
+  </div>
+</section>
+
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
     <span class="lecture-index concept-index">P</span>
