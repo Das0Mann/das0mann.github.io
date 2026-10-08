@@ -62,10 +62,10 @@
 
       bOut.textContent = b.toFixed(0) + " mT";
       jOut.textContent = signed(j, 1) + " MHz";
-      dgOut.textContent = dg.toFixed(4);
+      dgOut.textContent = signed(dg, 4);
       vOut.textContent = v0.toFixed(1) + " MHz";
-      dgSplitOut.textContent = current.dgSplit.toFixed(1) + " MHz";
-      mixingOut.textContent = current.mixing.toFixed(1) + " MHz";
+      dgSplitOut.textContent = signed(current.dgSplit, 1) + " MHz";
+      mixingOut.textContent = signed(current.mixing, 1) + " MHz";
       gapOut.textContent = current.gap.toFixed(1) + " MHz";
       mixFracOut.textContent = (100 * mixFrac).toFixed(1) + "%";
 
@@ -104,12 +104,14 @@
       markerHigh.setAttribute("cy", yMap(current.gap/2).toFixed(2));
 
       if (explanation) {
-        if (mixFrac > 0.75) {
+        if (Math.abs(current.mixing) < 0.05 && Math.abs(j) > 0.5) {
+          explanation.textContent = "The signed field-dependent contribution almost cancels the projected field-independent mixing. The off-diagonal channel approaches zero, so the eigenstates approach unmixed S and T0 states in this reduced model.";
+        } else if (mixFrac > 0.75) {
           explanation.textContent = "Magnetic inequivalence is strong compared with the exchange gap, so the adiabatic eigenstates are strongly hybridized mixtures of singlet and T0 character.";
         } else if (Math.abs(j) > 4*Math.abs(current.mixing)) {
           explanation.textContent = "Exchange dominates the S–T energy gap. The off-diagonal mixing channel is too weak to hybridize the states strongly.";
-        } else if (current.dgSplit > 2*v0) {
-          explanation.textContent = "The field-dependent Δg contribution now dominates the off-diagonal mixing. Increasing field strengthens S–T0 hybridization in this reduced model.";
+        } else if (Math.abs(0.5*current.dgSplit) > 2*Math.abs(v0)) {
+          explanation.textContent = "The field-dependent Δg contribution dominates the projected off-diagonal element. Depending on its sign it can enhance or cancel the field-independent contribution; a stronger field does not universally imply stronger mixing.";
         } else {
           explanation.textContent = "Field-independent and Δg-driven mixing are comparable to the exchange gap, so the eigenstates acquire appreciable mixed character.";
         }
@@ -125,6 +127,8 @@
           bInput.value="10"; jInput.value="6"; dgInput.value="0.0010"; vInput.value="3";
         }else if(mode==="exchange"){
           bInput.value="100"; jInput.value="40"; dgInput.value="0.0010"; vInput.value="2";
+        }else if(mode==="cancellation"){
+          bInput.value="100"; jInput.value="10"; dgInput.value="-0.0050"; vInput.value="3.5";
         }else{
           bInput.value="700"; jInput.value="10"; dgInput.value="0.0150"; vInput.value="0.5";
         }
