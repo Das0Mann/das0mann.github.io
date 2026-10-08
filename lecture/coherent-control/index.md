@@ -310,7 +310,7 @@ permalink: /lecture/coherent-control/
       </div>
     </div>
 
-    <p class="interactive-footnote">The curve is the normalized Fourier power \(\mathrm{sinc}^2(\pi\Delta\nu t_p)\) of an ideal rectangular pulse. Actual spin-flip probability also depends on \(B_1\), detuning, pulse area, relaxation and multilevel structure.</p>
+    <p class="interactive-footnote">The frequency axis is intentionally fixed at \(\pm100\,\mathrm{MHz}\). That prevents the graph from rescaling with \(1/t_p\) and makes the time–bandwidth tradeoff visible. The curve is the normalized Fourier power \(\mathrm{sinc}^2(\pi\Delta\nu t_p)\) of an ideal rectangular pulse; actual spin-flip probability also depends on \(B_1\), detuning, pulse area, relaxation and multilevel structure.</p>
   </div>
 </section>
 
