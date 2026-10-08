@@ -72,7 +72,16 @@ const fixtures = [
     ["marcus-temp",200,400,"marcus-rate-out"]
   ]},
   {script:"lecture-bloch.js",defaults:{"bloch-theta":90,"bloch-phi":0,"bloch-eta":1},checks:[
-    ["bloch-theta",0,180,"bloch-pop-up"],["bloch-eta",0,1,"bloch-coherence"]
+    ["bloch-theta",0,180,"bloch-pop-up"],["bloch-eta",0,1,"bloch-coherence"],
+    ["bloch-phi",0,360,"bloch-tip","cx"]
+  ]},
+  {script:"lecture-interactive.js",defaults:{"orbital-delta":1,"orbital-coupling":0.5,"larmor-b":0,"larmor-g":2.0023,"st-coupling":3,"st-detuning":2},checks:[
+    ["orbital-delta",-4,4,"orbital-weight"],["orbital-coupling",0,1.2,"orbital-min-gap"],
+    ["larmor-b",-1.301,1,"larmor-frequency"],["larmor-g",1.8,2.2,"larmor-frequency"],
+    ["st-coupling",0.1,10,"st-frequency"],["st-detuning",0,20,"st-amplitude"]
+  ]},
+  {script:"lecture-scaling.js",defaults:{"scale-spins":14,"scale-samples":3.585},checks:[
+    ["scale-spins",2,24,"scale-d-out"],["scale-samples",0,9,"scale-m-out"]
   ]}
 ];
 
@@ -141,23 +150,23 @@ function load(config) {
     createElementNS:()=>({setAttribute(){}})
   };
   const source=fs.readFileSync("assets/js/"+config.script,"utf8");
-  vm.runInNewContext(source,{document,console,Math},{filename:config.script,timeout:2500});
+  vm.runInNewContext(source,{document,console,Math,window:{matchMedia:()=>({matches:true})},requestAnimationFrame:()=>0},{filename:config.script,timeout:2500});
   return get;
 }
 
 let controls=0,samples=0;
 for(const config of fixtures) {
   const get=load(config);
-  for(const [id,min,max,output] of config.checks) {
+  for(const [id,min,max,output,attribute] of config.checks) {
     const input=get(id),values=[];
     assert(typeof input.listeners.input==="function",config.script+" missing input event: "+id);
-    const discrete = id==="hf-count";
+    const discrete = ["hf-count","scale-spins"].includes(id);
     const nSamples=discrete?Math.round(max-min)+1:17;
     for(let i=0;i<nSamples;i++) {
       const v=min+(max-min)*i/(nSamples-1);
       input.value=String(v);
       input.listeners.input();
-      const raw=get(output).textContent;
+      const raw=attribute?get(output)[attribute]:get(output).textContent;
       const result=parseObservable(raw,output);
       assert(Number.isFinite(result),config.script+" non-finite "+output+" at "+id+"="+v+" ("+raw+")");
       values.push(result);
