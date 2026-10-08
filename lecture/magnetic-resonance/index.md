@@ -560,6 +560,7 @@ permalink: /lecture/magnetic-resonance/
         <div class="interactive-readout">
           <span>\(B_\mathrm{mod}/\Delta B_\mathrm{FWHM}\) <strong id="cw-ratio">0.10</strong></span>
           <span>Derivative peak-to-peak <strong id="cw-pp">1.7 mT</strong></span>
+          <span>First-harmonic amplitude <strong id="cw-amplitude">0.1408 (relative)</strong></span>
           <span>Detection regime <strong id="cw-regime">near derivative limit</strong></span>
         </div>
 
@@ -581,7 +582,7 @@ permalink: /lecture/magnetic-resonance/
       </div>
     </div>
 
-    <p class="interactive-footnote">The lock-in signal is computed as the first harmonic of a sinusoidally field-modulated Gaussian absorption line. Real CW EPR may contain Lorentzian/Voigt components, saturation, phase mixing, unresolved hyperfine structure and instrumental response.</p>
+    <p class="interactive-footnote">The absorption peak is fixed to unity; the displayed lock-in trace is independently normalized to its maximum, while the first-harmonic amplitude readout retains its original relative magnitude. The lock-in signal is computed as the first harmonic of a sinusoidally field-modulated Gaussian absorption line. Real CW EPR may contain Lorentzian/Voigt components, saturation, phase mixing, unresolved hyperfine structure and instrumental response.</p>
   </div>
 </section>
 
