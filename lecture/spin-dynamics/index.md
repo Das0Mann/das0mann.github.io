@@ -347,6 +347,32 @@ permalink: /lecture/spin-dynamics/
 </section>
 
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">A complete dynamical question</p><h2>A Hamiltonian alone does not define an experiment</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>The easiest way I know to keep spin dynamics straight is to ask three questions in order: <strong>what state did I prepare, what Hamiltonian acts on it, and what do I measure?</strong> If one of those is vague, the simulation is not yet a physical experiment.</p>
+  </div>
+
+  <div class="lecture-pipeline compact-pipeline">
+    <div><span>Prepare</span><strong>\(\rho(0)\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Evolve</span><strong>\(\hat H,\ \mathcal R,\ \mathcal K\)</strong></div>
+    <div class="pipeline-arrow">→</div>
+    <div><span>Read out</span><strong>\(\langle O\rangle=\mathrm{Tr}[\rho O]\)</strong></div>
+  </div>
+
+  <div class="lecture-checklist">
+    <div><strong>Preparation</strong><span>Thermal equilibrium, photogenerated singlet radical pair, triplet state, polarized spin, or a pulse-prepared coherence are physically different initial conditions.</span></div>
+    <div><strong>Evolution</strong><span>The same initial state can behave very differently when exchange, hyperfine, relaxation or reaction kinetics are changed.</span></div>
+    <div><strong>Observable</strong><span>EPR intensity, magnetization, singlet yield and fluorescence are different projections of the same underlying density operator.</span></div>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">I</span>
