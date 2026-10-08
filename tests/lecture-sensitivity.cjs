@@ -81,7 +81,7 @@ const fixtures = [
     ["st-coupling",0.1,10,"st-frequency"],["st-detuning",0,20,"st-amplitude"]
   ]},
   {script:"lecture-scaling.js",defaults:{"scale-spins":14,"scale-samples":3.585},checks:[
-    ["scale-spins",2,24,"scale-d-out"],["scale-samples",0,9,"scale-m-out"]
+    ["scale-spins",2,24,"scale-d-out"],["scale-samples",0,9,"scale-samples-out"]
   ]}
 ];
 
