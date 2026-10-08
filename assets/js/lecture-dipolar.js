@@ -23,6 +23,8 @@
     const path = $("dipolar-factor-path");
     const marker = $("dipolar-marker");
     const markerLine = $("dipolar-marker-line");
+    const distanceMeter = $("dipolar-distance-meter");
+    const distanceRatio = $("dipolar-distance-ratio");
 
     const muB = 9.2740100783e-24;
     const h = 6.62607015e-34;
@@ -64,6 +66,17 @@
       prefactorOut.textContent = prefactorMHz.toFixed(prefactorMHz >= 10 ? 1 : 2) + " MHz";
       factorOut.textContent = f.toFixed(3);
       secularOut.textContent = secularMHz.toFixed(Math.abs(secularMHz) >= 10 ? 1 : 2) + " MHz";
+
+      if (distanceMeter && distanceRatio) {
+        const relTo1nm = 1 / Math.pow(rNm, 3);
+        const logMin = Math.log10(1 / Math.pow(4, 3));
+        const logMax = Math.log10(1 / Math.pow(0.5, 3));
+        const meter = 100 * (Math.log10(relTo1nm) - logMin) / (logMax - logMin);
+        distanceMeter.style.width = Math.max(0, Math.min(100, meter)).toFixed(1) + "%";
+        distanceRatio.textContent = relTo1nm >= 0.1
+          ? relTo1nm.toFixed(relTo1nm >= 10 ? 0 : 2) + "× at 1 nm"
+          : relTo1nm.toExponential(1) + "× at 1 nm";
+      }
 
       const x = xMap(theta);
       const y = yMap(f);
