@@ -126,6 +126,23 @@ for(const config of fixtures) {
     }
     const distinct=new Set(values.map(v=>v.toPrecision(5))).size;
     assert(distinct>=3,config.script+" INACTIVE control "+id+" -> "+output+" ("+distinct+" distinct readouts)");
+    // Detect long intervals where the measured observable does not respond.
+    // Resolution uses the displayed result, intentionally catching rounded-to-zero plateaus.
+    const amplitude=Math.max(...values)-Math.min(...values);
+    const tolerance=Math.max(1e-9,0.002*amplitude);
+    let longestFlat=0,runFlat=0,flatIntervals=0;
+    for(let k=1;k<values.length;k++) {
+      const flat=Math.abs(values[k]-values[k-1])<=tolerance;
+      runFlat=flat?runFlat+1:0;
+      if(flat) flatIntervals++;
+      longestFlat=Math.max(longestFlat,runFlat);
+    }
+    const flatFraction=flatIntervals/(values.length-1);
+    if(flatFraction>0.5 || longestFlat>=7) {
+      console.warn("SENSITIVITY WARNING",config.script,id,"observable",output,
+        "flat_fraction",flatFraction.toFixed(2),"longest_flat_run",longestFlat,
+        "amplitude",amplitude.toPrecision(4));
+    }
     input.value=String(config.defaults[id]);
     input.listeners.input();
     controls++;
