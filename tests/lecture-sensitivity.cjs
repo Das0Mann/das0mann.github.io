@@ -41,6 +41,38 @@ const fixtures = [
   {script:"lecture-qbio.js",defaults:{"qbio-loglife":0,"qbio-logt2":0.301,"qbio-logf":0.301},checks:[
     ["qbio-loglife",-2,2,"qbio-cycles-out"],["qbio-logt2",-2,2,"qbio-coherence-out"],
     ["qbio-logf",-2,2,"qbio-cycles-out"]
+  ]},
+  {script:"lecture-epr.js",defaults:{"epr-frequency":9.5,"epr-gperp":2.003,"epr-gparallel":1.98,"epr-theta":45},checks:[
+    ["epr-frequency",1,100,"epr-bres-out"],["epr-gperp",1.85,2.2,"epr-bperp-out"],
+    ["epr-gparallel",1.85,2.2,"epr-bparallel-out"],["epr-theta",0,90,"epr-geff-out"]
+  ]},
+  {script:"lecture-hyperfine.js",defaults:{"hf-count":2,"hf-A":30},checks:[
+    ["hf-count",1,4,"hf-lines-out"],["hf-A",5,100,"hf-span-out"]
+  ]},
+  {script:"lecture-powder.js",defaults:{"powder-frequency":9.5,"powder-gperp":2.005,"powder-gpar":1.98,"powder-width":1.5},checks:[
+    ["powder-frequency",5,100,"powder-bpar"],["powder-gperp",1.9,2.2,"powder-bperp"],
+    ["powder-gpar",1.9,2.2,"powder-bpar"],["powder-width",0.2,20,"powder-peak"]
+  ]},
+  {script:"lecture-dipolar.js",defaults:{"dipolar-r":1,"dipolar-theta":90},checks:[
+    ["dipolar-r",0.5,4,"dipolar-prefactor-out"],["dipolar-theta",0,90,"dipolar-secular-out"]
+  ]},
+  {script:"lecture-active-space.js",defaults:{"cas-orbitals":6,"cas-electrons":6},checks:[
+    ["cas-orbitals",2,14,"cas-all-count"],["cas-electrons",1,12,"cas-all-count"]
+  ]},
+  {script:"lecture-photochemistry.js",defaults:{"photo-e00":2.3,"photo-k":1,"photo-d":0.5,"branch-kf":8,"branch-kic":7.5,"branch-kisc":7,"branch-krxn":6.5},checks:[
+    ["photo-e00",1.2,4,"photo-abs-out"],["photo-k",0.2,3,"photo-stokes-out"],
+    ["photo-d",0,0.8,"photo-stokes-out"],["branch-kf",5,10,"branch-fluor-out"],
+    ["branch-kic",5,10,"branch-ic-out"],["branch-kisc",5,10,"branch-isc-out"],
+    ["branch-krxn",5,10,"branch-rxn-out"]
+  ]},
+  {script:"lecture-marcus.js",defaults:{"marcus-lambda":0.7,"marcus-dg":-0.5,"marcus-v":1,"marcus-temp":300},checks:[
+    ["marcus-lambda",0.1,2.5,"marcus-barrier-out"],
+    ["marcus-dg",-3,1,"marcus-barrier-out"],
+    ["marcus-v",-1,2,"marcus-v-out"],
+    ["marcus-temp",200,400,"marcus-rate-out"]
+  ]},
+  {script:"lecture-bloch.js",defaults:{"bloch-theta":90,"bloch-phi":0,"bloch-eta":1},checks:[
+    ["bloch-theta",0,180,"bloch-pop-up"],["bloch-eta",0,1,"bloch-coherence"]
   ]}
 ];
 
