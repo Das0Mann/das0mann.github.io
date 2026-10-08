@@ -111,6 +111,8 @@
     const fOut = $("larmor-frequency");
     const periodOut = $("larmor-period");
     const explanation = $("larmor-explanation");
+    const frequencyMeter = $("larmor-frequency-meter");
+    const frequencyScale = $("larmor-frequency-scale");
     const vector = $("spin-vector");
     const projection = $("spin-projection");
     const tip = $("spin-tip");
@@ -133,6 +135,12 @@
       gOut.textContent = gVal.toFixed(4);
       fOut.textContent = freqMHz.toFixed(2) + " MHz";
       periodOut.textContent = periodNs.toFixed(2) + " ns";
+      if (frequencyMeter && frequencyScale) {
+        const maxFreqMHz = 13.99624555 * 2.2 * 10;
+        const fraction = Math.max(0, Math.min(1, freqMHz / maxFreqMHz));
+        frequencyMeter.style.width = (100 * fraction).toFixed(1) + "%";
+        frequencyScale.textContent = (100 * fraction).toFixed(1) + "% of slider maximum";
+      }
 
       if (explanation) {
         if (bMt <= 0.075) {
