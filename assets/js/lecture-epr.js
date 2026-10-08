@@ -26,6 +26,7 @@
     const bPerpOut = $("epr-bperp-out");
     const explanation = $("epr-explanation");
     const fieldPath = $("epr-field-path");
+    const referencePath = $("epr-reference-path");
     const marker = $("epr-marker");
     const markerLine = $("epr-marker-line");
     const yMinLabel = $("epr-y-min");
@@ -34,6 +35,7 @@
     const spanMeter = $("epr-span-meter");
 
     const muBOverH_GHzPerT = 13.99624555;
+    const referenceFrequency = 9.5;
     const x0 = 58, x1 = 530;
     const yTop = 35, yBottom = 248;
 
@@ -46,35 +48,49 @@
     const bRes = (freqGHz, g) => freqGHz / (muBOverH_GHzPerT * g);
     const xMap = (theta) => x0 + (x1 - x0) * theta / 90;
 
+    function offsetCurve(freq, gPerp, gPar) {
+      const bp = bRes(freq, gPar);
+      const bt = bRes(freq, gPerp);
+      const centre = 0.5 * (bp + bt);
+      const pts = [];
+      for (let i = 0; i <= 240; i++) {
+        const angle = 90 * i / 240;
+        const offsetMt = 1000 * (bRes(freq, gEff(angle, gPerp, gPar)) - centre);
+        pts.push([angle, offsetMt]);
+      }
+      return {pts, centre, bp, bt};
+    }
+
     function update() {
       const freq = parseFloat(freqInput.value);
       const gPerp = parseFloat(gPerpInput.value);
       const gPar = parseFloat(gParInput.value);
       const theta = parseFloat(thetaInput.value);
 
-      const bParallel = bRes(freq, gPar);
-      const bPerp = bRes(freq, gPerp);
-      const rawMin = Math.min(bParallel, bPerp);
-      const rawMax = Math.max(bParallel, bPerp);
-      const span = rawMax - rawMin;
-      const pad = Math.max(span * 0.18, Math.max(rawMax * 0.004, 0.001));
-      const yMin = rawMin - pad;
-      const yMax = rawMax + pad;
+      const current = offsetCurve(freq, gPerp, gPar);
+      const reference = offsetCurve(referenceFrequency, gPerp, gPar);
+      const bParallel = current.bp;
+      const bPerp = current.bt;
+      const span = Math.abs(bParallel - bPerp);
 
-      const yMap = (field) =>
-        yBottom - (yBottom - yTop) * (field - yMin) / (yMax - yMin);
+      let maxAbs = 0.25;
+      for (const [,v] of current.pts) maxAbs = Math.max(maxAbs, Math.abs(v));
+      for (const [,v] of reference.pts) maxAbs = Math.max(maxAbs, Math.abs(v));
+      maxAbs *= 1.18;
 
-      const pts = [];
-      for (let i = 0; i <= 240; i++) {
-        const angle = 90 * i / 240;
-        pts.push([xMap(angle), yMap(bRes(freq, gEff(angle, gPerp, gPar)))]);
+      const yMap = (offsetMt) =>
+        yBottom - (yBottom - yTop) * (offsetMt + maxAbs) / (2 * maxAbs);
+
+      fieldPath.setAttribute("d", makePath(current.pts.map(([a,v]) => [xMap(a), yMap(v)])));
+      if (referencePath) {
+        referencePath.setAttribute("d", makePath(reference.pts.map(([a,v]) => [xMap(a), yMap(v)])));
       }
-      fieldPath.setAttribute("d", makePath(pts));
 
       const currentG = gEff(theta, gPerp, gPar);
       const currentB = bRes(freq, currentG);
+      const currentOffset = 1000 * (currentB - current.centre);
       const x = xMap(theta);
-      const y = yMap(currentB);
+      const y = yMap(currentOffset);
 
       marker.setAttribute("cx", x.toFixed(2));
       marker.setAttribute("cy", y.toFixed(2));
@@ -93,24 +109,23 @@
       if (spanOut && spanMeter) {
         const spanMt = 1000 * span;
         spanOut.textContent = spanMt.toFixed(spanMt < 10 ? 2 : 1) + " mT";
-        // Log scale keeps both X-band and high-field changes visible.
         const meter = 100 * Math.log10(1 + Math.max(0, spanMt)) / Math.log10(1 + 600);
         spanMeter.style.width = Math.max(0, Math.min(100, meter)).toFixed(1) + "%";
       }
 
-      if (yMinLabel) yMinLabel.textContent = yMin.toFixed(3);
-      if (yMaxLabel) yMaxLabel.textContent = yMax.toFixed(3);
+      if (yMinLabel) yMinLabel.textContent = (-maxAbs).toFixed(1);
+      if (yMaxLabel) yMaxLabel.textContent = maxAbs.toFixed(1);
 
       if (explanation) {
         const dg = Math.abs(gPerp - gPar);
         if (dg < 0.001) {
-          explanation.textContent = "The tensor is nearly isotropic, so rotating the molecule barely changes the resonance field.";
-        } else if (freq < 15) {
-          explanation.textContent = "At X-band the anisotropy is visible as an orientation-dependent resonance field, but the absolute field spread is still modest.";
-        } else if (freq < 60) {
-          explanation.textContent = "At this frequency the same g-anisotropy maps onto a substantially larger separation in magnetic field.";
+          explanation.textContent = "The tensor is nearly isotropic, so both the current and 9.5 GHz reference curves collapse toward zero offset.";
+        } else if (Math.abs(freq-referenceFrequency) < 0.6) {
+          explanation.textContent = "At X-band the solid curve nearly overlaps the dashed 9.5 GHz reference.";
+        } else if (freq > referenceFrequency) {
+          explanation.textContent = "The solid curve expands away from the dashed X-band reference: the same g-anisotropy produces a larger absolute field spread at higher frequency.";
         } else {
-          explanation.textContent = "At W-band-like frequencies even modest g-anisotropy produces a large absolute field separation, which helps resolve tensor components.";
+          explanation.textContent = "Below X-band the solid curve contracts inside the dashed reference because the same g-anisotropy maps onto a smaller field spread.";
         }
       }
     }
