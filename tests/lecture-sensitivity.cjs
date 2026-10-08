@@ -72,7 +72,16 @@ const fixtures = [
     ["marcus-temp",200,400,"marcus-rate-out"]
   ]},
   {script:"lecture-bloch.js",defaults:{"bloch-theta":90,"bloch-phi":0,"bloch-eta":1},checks:[
-    ["bloch-theta",0,180,"bloch-pop-up"],["bloch-eta",0,1,"bloch-coherence"]
+    ["bloch-theta",0,180,"bloch-pop-up"],["bloch-eta",0,1,"bloch-coherence"],
+    ["bloch-phi",0,360,"bloch-tip","cx"]
+  ]},
+  {script:"lecture-interactive.js",defaults:{"orbital-delta":1,"orbital-coupling":0.5,"larmor-b":0,"larmor-g":2.0023,"st-coupling":3,"st-detuning":2},checks:[
+    ["orbital-delta",-4,4,"orbital-weight"],["orbital-coupling",0,1.2,"orbital-min-gap"],
+    ["larmor-b",-1.301,1,"larmor-frequency"],["larmor-g",1.8,2.2,"larmor-frequency"],
+    ["st-coupling",0.1,10,"st-frequency"],["st-detuning",0,20,"st-amplitude"]
+  ]},
+  {script:"lecture-scaling.js",defaults:{"scale-spins":14,"scale-samples":3.585},checks:[
+    ["scale-spins",2,24,"scale-d-out"],["scale-samples",0,9,"scale-samples-out"]
   ]}
 ];
 
@@ -120,7 +129,7 @@ function load(config) {
       const listeners = {};
       elements.set(id,{
         value: String(Object.prototype.hasOwnProperty.call(config.defaults,id)?config.defaults[id]:0),
-        textContent:"",style:{},dataset:{},listeners,
+        textContent:"",style:{},dataset:{},checked:false,listeners,
         setAttribute(name,value) {
           const string=String(value);
           assert(!/NaN|Infinity/.test(string),config.script+" invalid SVG "+id+"."+name);
@@ -141,23 +150,23 @@ function load(config) {
     createElementNS:()=>({setAttribute(){}})
   };
   const source=fs.readFileSync("assets/js/"+config.script,"utf8");
-  vm.runInNewContext(source,{document,console,Math},{filename:config.script,timeout:2500});
+  vm.runInNewContext(source,{document,console,Math,window:{matchMedia:()=>({matches:true})},requestAnimationFrame:()=>0},{filename:config.script,timeout:2500});
   return get;
 }
 
 let controls=0,samples=0;
 for(const config of fixtures) {
   const get=load(config);
-  for(const [id,min,max,output] of config.checks) {
+  for(const [id,min,max,output,attribute] of config.checks) {
     const input=get(id),values=[];
     assert(typeof input.listeners.input==="function",config.script+" missing input event: "+id);
-    const discrete = id==="hf-count";
+    const discrete = ["hf-count","scale-spins"].includes(id);
     const nSamples=discrete?Math.round(max-min)+1:17;
     for(let i=0;i<nSamples;i++) {
       const v=min+(max-min)*i/(nSamples-1);
       input.value=String(v);
       input.listeners.input();
-      const raw=get(output).textContent;
+      const raw=attribute?get(output)[attribute]:get(output).textContent;
       const result=parseObservable(raw,output);
       assert(Number.isFinite(result),config.script+" non-finite "+output+" at "+id+"="+v+" ("+raw+")");
       values.push(result);
@@ -188,7 +197,7 @@ for(const config of fixtures) {
   }
   console.log("PASS",config.script,config.checks.length,"controls");
 }
-console.log("PASS",controls,"controls sampled at 17 positions each;",samples,"evaluations");
+console.log("PASS",controls,"numeric controls (17 samples for continuous, legal integers for discrete);",samples,"evaluations");
 let plotComparisons=0;
 for(const check of plotChecks) {
   const get=load(check);
@@ -204,3 +213,69 @@ for(const check of plotChecks) {
   plotComparisons++;
 }
 console.log("PASS",plotComparisons,"plot-aware sensitivity comparisons");
+
+const builder=load({script:"lecture-molspin-builder.js",defaults:{"builder-electrons":2,"builder-nuclei":2}});
+for(const id of ["builder-zeeman","builder-hyperfine","builder-exchange","builder-reaction"])builder(id).checked=true;
+builder("builder-electrons").listeners.input();
+let builderChecks=0;
+for(const [id,min,max] of [["builder-electrons",1,4],["builder-nuclei",0,8]]) {
+  const input=builder(id), distinct=new Set();
+  for(let v=min;v<=max;v++) {
+    input.value=String(v);input.listeners.input();
+    const actual=Number(builder("builder-dim").textContent.replace(/,/g,""));
+    const ne=Number(builder("builder-electrons").value),nn=Number(builder("builder-nuclei").value);
+    assert.equal(actual,2**(ne+nn),"builder dimension mismatch");
+    distinct.add(actual);samples++;
+  }
+  assert(distinct.size>=3,"builder range unresponsive");
+  input.value="2";input.listeners.input();builderChecks++;
+}
+for(const [id,term] of [
+  ["builder-zeeman","H_Z"],["builder-hyperfine","H_hf"],
+  ["builder-exchange","H_ex"],["builder-drive","H_drive(t)"],
+  ["builder-relax","R_relax"],["builder-reaction","K_reaction"]
+]) {
+  const element=builder(id);
+  assert.equal(typeof element.listeners.change,"function",id+" missing change handler");
+  element.checked=false;element.listeners.change();
+  assert(!builder("builder-equation").textContent.includes(term),id+" disabled term persisted");
+  element.checked=true;element.listeners.change();
+  assert(builder("builder-equation").textContent.includes(term),id+" enabled term missing");
+  builderChecks++;
+}
+builder("builder-electrons").value="1";builder("builder-nuclei").value="0";
+builder("builder-electrons").listeners.input();
+const warnings=builder("builder-explanation").textContent;
+assert(warnings.includes("Hyperfine coupling needs at least one nuclear spin."),"hyperfine guard");
+assert(warnings.includes("Electron exchange needs at least two electron spins."),"exchange guard");
+assert(warnings.includes("singlet/triplet-selective"),"reaction guard");
+console.log("BUILDER PASS",builderChecks,"controls");
+
+const inventory=fs.readFileSync("lecture/INTERACTIVE_CONTROL_INVENTORY_20261008.md","utf8");
+const listed=new Set([...inventory.matchAll(/^\|\s*.([a-z][A-Za-z0-9-]+).\s*\|\s*(?:range|checkbox)\s*\|/gm)].map(x=>x[1]));
+const tested=new Set(fixtures.flatMap(f=>f.checks.map(c=>c[0])));
+for(const id of ["builder-electrons","builder-nuclei","builder-zeeman","builder-hyperfine","builder-exchange","builder-drive","builder-relax","builder-reaction"])tested.add(id);
+assert.equal(listed.size,73,"inventory size changed");
+assert.deepEqual([...listed].filter(id=>!tested.has(id)),[],"untested controls");
+assert.deepEqual([...tested].filter(id=>!listed.has(id)),[],"undocumented tests");
+console.log("INVENTORY PASS",listed.size,"of",tested.size,"controls; evaluations",samples);
+
+// Independently check the controls actually declared in lecture page source.
+// Literal inputs in lecture/*/index.md are the user-facing source of truth.
+const htmlIds=[];
+for(const entry of fs.readdirSync("lecture",{withFileTypes:true})) {
+  if(!entry.isDirectory())continue;
+  const page="lecture/"+entry.name+"/index.md";
+  if(!fs.existsSync(page))continue;
+  const source=fs.readFileSync(page,"utf8");
+  for(const match of source.matchAll(/<input\b[^>]*\bid="([^"]+)"[^>]*>/g)) {
+    htmlIds.push(match[1]);
+  }
+}
+const htmlSet=new Set(htmlIds);
+assert.equal(htmlSet.size,htmlIds.length,"duplicate lecture input IDs");
+assert.deepEqual([...htmlSet].filter(id=>!listed.has(id)),[],"lecture controls not listed in inventory");
+assert.deepEqual([...listed].filter(id=>!htmlSet.has(id)),[],"inventory IDs not present in lecture HTML");
+assert.equal(htmlSet.size,73,"lecture HTML range/checkbox count changed");
+console.log("HTML SOURCE PASS",htmlSet.size,"declared controls match the inventory and test fixtures");
+
