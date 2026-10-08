@@ -267,10 +267,10 @@ permalink: /lecture/open-systems/
     <div class="interactive-layout">
       <div class="interactive-controls">
         <label for="secular-dnu"><span class="control-name">Transition separation \(\Delta\nu\)</span><output id="secular-dnu-out">0.35 MHz</output></label>
-        <input id="secular-dnu" type="range" min="0" max="3" step="0.01" value="0.35">
+        <input id="secular-dnu" type="range" min="0" max="1.5" step="0.01" value="0.35">
 
         <label for="secular-time"><span class="control-name">Coarse-graining window \(T\)</span><output id="secular-time-out">2.00 μs</output></label>
-        <input id="secular-time" type="range" min="0.05" max="5" step="0.05" value="2">
+        <input id="secular-time" type="range" min="0.05" max="3" step="0.05" value="2">
 
         <div class="demo-presets">
           <button type="button" data-secular="degenerate">near-degenerate</button>
@@ -392,7 +392,7 @@ permalink: /lecture/open-systems/
         <input id="memory-gamma" type="range" min="0.1" max="5" step="0.05" value="1">
 
         <label for="memory-tau"><span class="control-name">Memory time \(\tau_m\)</span><output id="memory-tau-out">0.20 μs</output></label>
-        <input id="memory-tau" type="range" min="0.01" max="2" step="0.01" value="0.20">
+        <input id="memory-tau" type="range" min="-2" max="0.3010" step="0.01" value="-0.6990">
 
         <div class="demo-presets">
           <button type="button" data-memory-tau="0.02">Markov-like</button>
