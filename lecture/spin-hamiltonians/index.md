@@ -688,7 +688,9 @@ permalink: /lecture/spin-hamiltonians/
           <span>Effective projection <strong id="tensor-effective">60.0 MHz</strong></span>
           <span>Isotropic part <strong id="tensor-isotropic">56.7 MHz</strong></span>
           <span>Principal-value span <strong id="tensor-span">80 MHz</strong></span>
+          <span>Azimuthal variation at this θ <strong id="tensor-azimuth-span">15.0 MHz</strong></span>
         </div>
+        <p class="interactive-footnote">The vertical axis is fixed from −120 to +170 MHz so changing the tensor offset cannot be hidden by plot rescaling. For an axial tensor (Tₓ = Tᵧ), rotating φ has no physical effect; at θ = 0° it has no effect for any diagonal tensor.</p>
         <p id="tensor-explanation" class="demo-explanation">The field samples a mixture of the \(x\) and \(z\) principal values at this orientation.</p>
       </div>
 

@@ -25,6 +25,7 @@
     const effOut = $("tensor-effective");
     const isoOut = $("tensor-isotropic");
     const spanOut = $("tensor-span");
+    const azimuthOut = $("tensor-azimuth-span");
     const explanation = $("tensor-explanation");
     const path = $("tensor-path");
     const marker = $("tensor-marker");
@@ -55,9 +56,10 @@
       const minV = Math.min(tx, ty, tz);
       const maxV = Math.max(tx, ty, tz);
       const span = maxV - minV;
-      const pad = Math.max(10, 0.12 * Math.max(1, span));
-      const yMin = minV - pad;
-      const yMax = maxV + pad;
+      // Fixed absolute MHz axis across the full input eigenvalue domain.
+      // Autoscaling concealed differences in isotropic offsets and span.
+      const yMin = -120;
+      const yMax = 170;
 
       const xMap = (th) => x0 + (x1 - x0) * th / 90;
       const yMap = (value) => yBottom - (yBottom - yTop) * (value - yMin) / (yMax - yMin);
@@ -70,6 +72,8 @@
       effOut.textContent = eff.toFixed(1) + " MHz";
       isoOut.textContent = iso.toFixed(1) + " MHz";
       spanOut.textContent = span.toFixed(0) + " MHz";
+      const azimuthSpan = Math.pow(Math.sin(theta * deg), 2) * Math.abs(tx - ty);
+      if (azimuthOut) azimuthOut.textContent = azimuthSpan.toFixed(1) + " MHz";
 
       const pts = [];
       for (let i = 0; i <= 90; i++) {
@@ -87,6 +91,8 @@
       if (explanation) {
         if (span < 1e-9) {
           explanation.textContent = "The tensor is isotropic, so rotating the molecule does not change the effective projection.";
+        } else if (Math.abs(tx - ty) < 0.5) {
+          explanation.textContent = "The tensor is axially symmetric in the xy plane: changing phi cannot affect the projection. Theta still changes the relative weights of the parallel and perpendicular principal values.";
         } else if (Math.abs(theta) < 5) {
           explanation.textContent = "The field is almost aligned with the z principal axis, so the effective value approaches T_z.";
         } else if (Math.abs(theta - 90) < 5) {
