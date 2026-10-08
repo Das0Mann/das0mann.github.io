@@ -229,6 +229,82 @@ permalink: /lecture/open-systems/
   </aside>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>When do non-secular terms actually average away?</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>The secular approximation sounds abstract until you watch the phase. Two relaxation pathways carrying transition frequencies \(\omega\) and \(\omega'\) produce cross terms oscillating as \(e^{i(\omega-\omega')t}\). If that phase winds many times during the coarse-graining window, the term averages toward zero. Near degeneracy, it does not.</p>
+  </div>
+
+  <div class="lecture-equation">
+  \[
+  R(T)
+  =
+  \left|
+  \frac{1}{T}
+  \int_0^T e^{i\Delta\omega t}\,dt
+  \right|
+  =
+  \left|
+  \frac{\sin(\Delta\omega T/2)}
+       {\Delta\omega T/2}
+  \right|,
+  \qquad
+  \Delta\omega=\omega-\omega'.
+  \]
+  </div>
+
+  <div class="interactive-card" id="secular-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Secular-averaging explorer</span><h3>Frequency separation versus coarse-graining time</h3></div>
+      <span class="interactive-model-note">phase-averaging toy model</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="secular-dnu"><span class="control-name">Transition separation \(\Delta\nu\)</span><output id="secular-dnu-out">1.00 MHz</output></label>
+        <input id="secular-dnu" type="range" min="0" max="10" step="0.02" value="1">
+
+        <label for="secular-time"><span class="control-name">Coarse-graining window \(T\)</span><output id="secular-time-out">2.00 μs</output></label>
+        <input id="secular-time" type="range" min="0.05" max="5" step="0.05" value="2">
+
+        <div class="demo-presets">
+          <button type="button" data-secular="degenerate">near-degenerate</button>
+          <button type="button" data-secular="border">borderline</button>
+          <button type="button" data-secular="safe">well separated</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>Relative phase cycles \(\Delta\nu T\) <strong id="secular-cycles">2.00</strong></span>
+          <span>Residual phase average \(R(T)\) <strong id="secular-residual">0.000</strong></span>
+          <span>Secular intuition <strong id="secular-regime">strong averaging</strong></span>
+        </div>
+
+        <p id="secular-explanation" class="demo-explanation">The cross term completes multiple phase cycles over the averaging window and contributes little to the coarse-grained dynamics.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="secular-svg" class="lecture-svg" viewBox="0 0 560 320" role="img" aria-label="Residual secular cross-term versus transition-frequency separation">
+          <line x1="58" y1="270" x2="530" y2="270" class="plot-axis"/>
+          <line x1="58" y1="34" x2="58" y2="270" class="plot-axis"/>
+          <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
+          <text x="455" y="300" class="svg-caption">Δν / MHz</text>
+          <text x="15" y="38" class="svg-caption">|R|</text>
+          <path id="secular-path" class="secular-curve" fill="none" d=""/>
+          <line id="secular-marker-line" x1="0" y1="34" x2="0" y2="270" class="plot-marker-line"/>
+          <circle id="secular-marker" r="5" class="plot-marker" cx="0" cy="0"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">This sinc factor only illustrates phase averaging. It is not a complete validity test for Redfield theory or complete positivity; coupling strengths, bath correlation times and the structure of the relaxation tensor still matter.</p>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
@@ -508,3 +584,4 @@ permalink: /lecture/open-systems/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-memory.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-secular.js" defer></script>
