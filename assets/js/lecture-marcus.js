@@ -26,6 +26,7 @@
     const regimeOut = $("marcus-regime-out");
     const explanation = $("marcus-explanation");
     const path = $("marcus-rate-path");
+    const referencePath = $("marcus-reference-path");
     const marker = $("marcus-marker");
     const markerLine = $("marcus-marker-line");
     const optimalLine = $("marcus-optimal-line");
@@ -106,15 +107,18 @@
       }
 
       const curve = [];
+      const referenceCurve = [];
       let maxLog = -Infinity;
       let minLog = Infinity;
       const n = 320;
       for (let i = 0; i <= n; i++) {
         const x = dgMin + (dgMax - dgMin) * i / n;
         const y = log10Rate(lambda, x, vMeV, temp);
+        const yRef = log10Rate(lambda, x, 10, temp);
         curve.push([x, y]);
-        maxLog = Math.max(maxLog, y);
-        minLog = Math.min(minLog, y);
+        referenceCurve.push([x, yRef]);
+        maxLog = Math.max(maxLog, y, yRef);
+        minLog = Math.min(minLog, y, yRef);
       }
 
       const plotMax = Math.ceil(maxLog + 0.5);
@@ -125,6 +129,9 @@
       };
 
       path.setAttribute("d", makePath(curve.map(([x, y]) => [xMap(x), yMap(y)])));
+      if (referencePath) {
+        referencePath.setAttribute("d", makePath(referenceCurve.map(([x, y]) => [xMap(x), yMap(y)])));
+      }
       yMaxLabel.textContent = plotMax.toFixed(0);
       yMinLabel.textContent = plotMin.toFixed(0);
 
