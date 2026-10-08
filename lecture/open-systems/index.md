@@ -267,7 +267,7 @@ permalink: /lecture/open-systems/
     <div class="interactive-layout">
       <div class="interactive-controls">
         <label for="secular-dnu"><span class="control-name">Transition separation \(\Delta\nu\)</span><output id="secular-dnu-out">0.35 MHz</output></label>
-        <input id="secular-dnu" type="range" min="0" max="10" step="0.01" value="0.35">
+        <input id="secular-dnu" type="range" min="0" max="3" step="0.01" value="0.35">
 
         <label for="secular-time"><span class="control-name">Coarse-graining window \(T\)</span><output id="secular-time-out">2.00 μs</output></label>
         <input id="secular-time" type="range" min="0.05" max="5" step="0.05" value="2">
