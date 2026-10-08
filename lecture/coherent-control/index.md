@@ -265,6 +265,50 @@ permalink: /lecture/coherent-control/
   <p>A rectangular pulse of finite duration cannot be perfectly frequency selective. Its Fourier spectrum has a sinc-like envelope with characteristic width of order \(1/t_p\). Short, strong pulses therefore excite a broader range of resonance offsets; long, weak pulses are more selective.</p>
 
   <p>This time–frequency tradeoff is central in magnetic resonance: pulse length, \(B_1\), spectral bandwidth and relaxation cannot be optimized independently.</p>
+
+
+  <div class="interactive-card" id="pulse-bandwidth-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Fourier bandwidth explorer</span><h3>Short in time means broad in frequency</h3></div>
+      <span class="interactive-model-note">rectangular pulse</span>
+    </div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="pulse-duration"><span class="control-name">Pulse duration \(t_p\)</span><output id="pulse-duration-out">40 ns</output></label>
+        <input id="pulse-duration" type="range" min="5" max="500" step="5" value="40">
+
+        <div class="demo-presets">
+          <button type="button" data-pulse-duration="10">10 ns · broad</button>
+          <button type="button" data-pulse-duration="40">40 ns</button>
+          <button type="button" data-pulse-duration="200">200 ns · selective</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>First spectral zero \(1/t_p\) <strong id="pulse-zero">25.0 MHz</strong></span>
+          <span>Power-spectrum FWHM <strong id="pulse-fwhm">22.2 MHz</strong></span>
+          <span>\(\pi\)-pulse nutation frequency <strong id="pulse-nu1">12.5 MHz</strong></span>
+        </div>
+
+        <p id="pulse-bandwidth-explanation" class="demo-explanation">A 40 ns rectangular pulse spreads appreciable spectral amplitude over tens of MHz. It is fast, but not very selective.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="pulse-bandwidth-svg" class="lecture-svg" viewBox="0 0 560 320" role="img" aria-label="Rectangular pulse Fourier power spectrum versus frequency offset">
+          <line x1="58" y1="270" x2="530" y2="270" class="plot-axis"/>
+          <line x1="58" y1="34" x2="58" y2="270" class="plot-axis"/>
+          <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
+          <text x="420" y="300" class="svg-caption">frequency offset / MHz</text>
+          <text x="16" y="38" class="svg-caption">power</text>
+          <path id="pulse-bandwidth-path" class="pulse-bandwidth-line" fill="none" d=""/>
+          <line id="pulse-zero-left" x1="0" y1="34" x2="0" y2="270" class="pulse-zero-line"/>
+          <line id="pulse-zero-right" x1="0" y1="34" x2="0" y2="270" class="pulse-zero-line"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">The curve is the normalized Fourier power \(\mathrm{sinc}^2(\pi\Delta\nu t_p)\) of an ideal rectangular pulse. Actual spin-flip probability also depends on \(B_1\), detuning, pulse area, relaxation and multilevel structure.</p>
+  </div>
 </section>
 
 
@@ -418,3 +462,4 @@ permalink: /lecture/coherent-control/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-rabi.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-pulse-bandwidth.js" defer></script>
