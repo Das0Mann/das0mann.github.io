@@ -311,6 +311,34 @@ permalink: /lecture/molecular-motion/
   </div>
 </section>
 
+
+<section class="lecture-section concept-extension">
+  <div class="lecture-section-head">
+    <span class="lecture-index concept-index">P</span>
+    <div><p class="section-eyebrow">Rotational motion</p><h2>Anisotropic spin interactions usually care about second-rank rotation</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>A small but important detail: for \(g\), hyperfine, dipolar and ZFS tensors, it is usually not enough to track whether a molecular axis “points the same way.” These interactions transform as tensors, so their rotational relaxation naturally involves second-rank angular correlations.</p>
+  </div>
+
+  <div class="lecture-equation">
+  \[
+  C_2(t)
+  =
+  \left\langle
+  P_2\!\left[
+  \mathbf u(0)\!\cdot\!\mathbf u(t)
+  \right]
+  \right\rangle,
+  \qquad
+  P_2(x)=\frac12(3x^2-1).
+  \]
+  </div>
+
+  <p>This is why rotational correlation times quoted for dielectric relaxation, translational diffusion or a simple vector autocorrelation are not automatically the correlation times needed for spin relaxation. The rank and the fluctuating interaction have to match.</p>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
