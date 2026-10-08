@@ -273,6 +273,10 @@ permalink: /lecture/magnetic-resonance/
         </div>
 
         <p id="epr-explanation" class="demo-explanation">The anisotropy is modest at X-band, but the same \(g\)-difference maps onto a larger absolute field separation at higher microwave frequency.</p>
+        <div class="sensitivity-meter">
+          <div class="sensitivity-meter-head"><span>Absolute anisotropy span</span><strong id="epr-span-out">4.0 mT</strong></div>
+          <div class="sensitivity-meter-track"><span id="epr-span-meter" class="sensitivity-meter-fill"></span></div>
+        </div>
       </div>
 
       <div class="plot-wrap">
