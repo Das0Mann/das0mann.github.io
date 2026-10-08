@@ -507,6 +507,67 @@ permalink: /lecture/magnetic-resonance/
   <p>Real EPR lines can also contain unresolved hyperfine structure, \(g\)-strain, conformational distributions and other inhomogeneous broadening. Those contributions are often summarized through an effective \(T_2^\ast\), but \(T_2^\ast\) is not the same microscopic quantity as the true homogeneous \(T_2\), and mixed Lorentzian/Gaussian lines do not obey the simple derivative-width relation exactly.</p>
 </section>
 
+
+<section class="lecture-section">
+  <div class="lecture-section-head">
+    <span class="lecture-index">I</span>
+    <div><p class="section-eyebrow">Interactive</p><h2>Why does CW EPR so often look like a derivative?</h2></div>
+  </div>
+
+  <div class="lecture-flow-bridge">
+    <p>This confused me the first time I saw an EPR spectrum: the physical absorption line is not necessarily the curve plotted by the instrument. In field-modulated CW EPR, a small sinusoidal field modulation plus phase-sensitive detection approximately measures the <strong>first derivative</strong> of the absorption line.</p>
+  </div>
+
+  <div class="interactive-card" id="cw-detection-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">CW detection explorer</span><h3>Absorption → field modulation → lock-in signal</h3></div>
+      <span class="interactive-model-note">Gaussian teaching line</span>
+    </div>
+
+    <div class="demo-prompt"><strong>Try this:</strong><span>make the modulation amplitude much smaller than the linewidth. The lock-in output approaches a clean first derivative. Then increase the modulation until the spectrum visibly distorts.</span></div>
+
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="cw-width"><span class="control-name">Absorption FWHM</span><output id="cw-width-out">2.0 mT</output></label>
+        <input id="cw-width" type="range" min="0.4" max="8" step="0.1" value="2">
+
+        <label for="cw-mod"><span class="control-name">Field-modulation amplitude</span><output id="cw-mod-out">0.20 mT</output></label>
+        <input id="cw-mod" type="range" min="0.02" max="5" step="0.02" value="0.2">
+
+        <div class="demo-presets">
+          <button type="button" data-cw="small">small modulation</button>
+          <button type="button" data-cw="matched">moderate</button>
+          <button type="button" data-cw="over">overmodulated</button>
+        </div>
+
+        <div class="interactive-readout">
+          <span>\(B_\mathrm{mod}/\Delta B_\mathrm{FWHM}\) <strong id="cw-ratio">0.10</strong></span>
+          <span>Derivative peak-to-peak <strong id="cw-pp">1.7 mT</strong></span>
+          <span>Detection regime <strong id="cw-regime">near derivative limit</strong></span>
+        </div>
+
+        <p id="cw-explanation" class="demo-explanation">The modulation is small compared with the linewidth, so first-harmonic lock-in detection closely follows the derivative of the underlying absorption line.</p>
+      </div>
+
+      <div class="plot-wrap">
+        <svg id="cw-svg" class="lecture-svg" viewBox="0 0 560 320" role="img" aria-label="CW EPR absorption and field-modulated lock-in signal">
+          <line x1="58" y1="270" x2="530" y2="270" class="plot-axis"/>
+          <line x1="58" y1="34" x2="58" y2="270" class="plot-axis"/>
+          <line x1="58" y1="152" x2="530" y2="152" class="plot-grid"/>
+          <text x="476" y="300" class="svg-caption">B − B₀ / mT</text>
+          <text x="14" y="38" class="svg-caption">signal</text>
+          <path id="cw-absorption-path" class="cw-absorption-line" fill="none" d=""/>
+          <path id="cw-lockin-path" class="cw-lockin-line" fill="none" d=""/>
+          <text x="78" y="55" class="svg-caption">absorption</text>
+          <text x="78" y="74" class="svg-caption">lock-in / derivative-like</text>
+        </svg>
+      </div>
+    </div>
+
+    <p class="interactive-footnote">The lock-in signal is computed as the first harmonic of a sinusoidally field-modulated Gaussian absorption line. Real CW EPR may contain Lorentzian/Voigt components, saturation, phase mixing, unresolved hyperfine structure and instrumental response.</p>
+  </div>
+</section>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
@@ -620,3 +681,4 @@ permalink: /lecture/magnetic-resonance/
 <script src="{{ site.url }}/assets/js/lecture-epr.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-hyperfine.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-powder.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-cw-detection.js" defer></script>
