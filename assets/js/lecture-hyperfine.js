@@ -33,7 +33,7 @@
       const intensities = Array.from({length:n+1}, (_,k) => binomial(n,k));
       const maxI = Math.max(...intensities);
       const outer = n * A / 2;
-      const axisHalf = Math.max(30, outer * 1.35);
+      const axisHalf = 220; // fixed teaching frame: n<=4 and A<=100 MHz fit inside ±200 MHz
       const xMap = (nu) => x0 + (x1-x0) * (nu + axisHalf) / (2*axisHalf);
 
       nOut.textContent = n.toString();
@@ -42,7 +42,7 @@
       spacingOut.textContent = A.toFixed(0) + " MHz";
       intensityOut.textContent = intensities.join(" : ");
       spanOut.textContent = (n*A).toFixed(0) + " MHz";
-      leftLabel.textContent = "−" + axisHalf.toFixed(axisHalf < 100 ? 0 : 0);
+      leftLabel.textContent = "−" + axisHalf.toFixed(0);
       rightLabel.textContent = axisHalf.toFixed(0);
 
       group.innerHTML = "";
