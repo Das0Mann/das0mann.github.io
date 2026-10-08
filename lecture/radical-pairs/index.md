@@ -403,6 +403,11 @@ permalink: /lecture/radical-pairs/
 </section>
 
 
+
+<div class="lecture-flow-bridge">
+  <p><strong>This is the point where the subject becomes chemistry.</strong> A radical pair can oscillate beautifully between spin characters, but nobody measures “the singlet coefficient” directly in a flask. The spin information matters because the singlet and triplet parts are allowed to react differently.</p>
+</div>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
