@@ -127,7 +127,7 @@
     let running = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function updatePhysics() {
-      const bMt = parseFloat(b.value);
+      const bMt = Math.pow(10, parseFloat(b.value));
       const gVal = parseFloat(g.value);
       const freqMHz = 13.99624555 * gVal * bMt;
       const periodNs = 1000 / freqMHz;
@@ -136,10 +136,12 @@
       fOut.textContent = freqMHz.toFixed(2) + " MHz";
       periodOut.textContent = periodNs.toFixed(2) + " ns";
       if (frequencyMeter && frequencyScale) {
-        const maxFreqMHz = 13.99624555 * 2.2 * 10;
-        const fraction = Math.max(0, Math.min(1, freqMHz / maxFreqMHz));
+        const logB = parseFloat(b.value);
+        const logMin = parseFloat(b.min);
+        const logMax = parseFloat(b.max);
+        const fraction = (logB - logMin) / (logMax - logMin);
         frequencyMeter.style.width = (100 * fraction).toFixed(1) + "%";
-        frequencyScale.textContent = (100 * fraction).toFixed(1) + "% of slider maximum";
+        frequencyScale.textContent = "logarithmic field position";
       }
 
       if (explanation) {
@@ -196,7 +198,7 @@
 
     document.querySelectorAll("[data-larmor-b]").forEach((button) => {
       button.addEventListener("click", () => {
-        b.value = button.dataset.larmorB;
+        b.value = Math.log10(parseFloat(button.dataset.larmorB)).toFixed(4);
         updatePhysics();
       });
     });
