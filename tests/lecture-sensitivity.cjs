@@ -86,7 +86,7 @@ const plotChecks = [
 ];
 function svgPoints(d) {
   assert(typeof d==="string" && /^[ML]/.test(d),"missing SVG path");
-  const numbers=[...d.matchAll(/[ML](-?\\d+(?:\\.\\d+)?)\\s+(-?\\d+(?:\\.\\d+)?)/g)]
+  const numbers=[...d.matchAll(/[ML](-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)/g)]
     .map(match=>[Number(match[1]),Number(match[2])]);
   assert(numbers.length>=25,"insufficient SVG points");
   return numbers;
