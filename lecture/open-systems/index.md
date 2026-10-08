@@ -391,7 +391,7 @@ permalink: /lecture/open-systems/
         <label for="memory-gamma"><span class="control-name">Markov rate \(\gamma\)</span><output id="memory-gamma-out">1.00 μs⁻¹</output></label>
         <input id="memory-gamma" type="range" min="0.1" max="5" step="0.05" value="1">
 
-        <label for="memory-tau"><span class="control-name">Memory time \(\tau_m\)</span><output id="memory-tau-out">0.20 μs</output></label>
+        <label for="memory-tau"><span class="control-name">Memory time \(\tau_m\) · log-spaced</span><output id="memory-tau-out">0.20 μs</output></label>
         <input id="memory-tau" type="range" min="-2" max="0.3010" step="0.01" value="-0.6990">
 
         <div class="demo-presets">
