@@ -156,7 +156,7 @@
         const lambda = parseFloat(lambdaInput.value);
         if (button.dataset.marcusMode === "normal") dgInput.value = (-0.5 * lambda).toFixed(2);
         if (button.dataset.marcusMode === "activationless") dgInput.value = (-lambda).toFixed(2);
-        if (button.dataset.marcusMode === "inverted") dgInput.value = (-1.6 * lambda).toFixed(2);
+        if (button.dataset.marcusMode === "inverted") dgInput.value = clamp(-1.6 * lambda, dgMin, dgMax).toFixed(2);
         update();
       });
     });
