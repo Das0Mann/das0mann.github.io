@@ -1,0 +1,32 @@
+/* First-party, analytics opt-in control. Nothing is loaded from a CMP vendor. */
+.privacy-banner[hidden] { display: none !important; }
+.privacy-banner {
+  position: fixed; z-index: 6000; bottom: 16px; left: 16px; right: 16px;
+  width: min(calc(100% - 32px), 800px); margin: 0 auto;
+  display: flex; gap: 20px; align-items: center; justify-content: space-between;
+  padding: 16px 18px; border: 1px solid #b9d0d0;
+  border-radius: 12px; background: #fff; color: #183747;
+  box-shadow: 0 15px 45px rgba(9,37,55,.19);
+}
+.privacy-banner-copy { flex: 1 1 300px; }
+.privacy-banner-copy strong { display: block; margin-bottom: 4px; font-size: .87rem; font-weight: 750; }
+.privacy-banner-copy p { margin: 0; color: #4c616b; font-size: .78rem; line-height: 1.6; }
+.privacy-banner-actions { display: flex; flex: 0 0 auto; gap: 7px; flex-wrap: wrap; }
+.privacy-banner-actions button {
+  min-height: 40px; padding: 9px 13px; cursor: pointer; border-radius: 7px;
+  font-size: .78rem; font-weight: 740;
+}
+.privacy-reject { color: #25434e; background: #f4f8f8; border: 1px solid #cddcdb; }
+.privacy-accept { color: #fff; background: #145b65; border: 1px solid #145b65; }
+.privacy-banner-actions button:hover { filter: brightness(.94); }
+.privacy-settings-trigger {
+  display: inline-flex; border: none; background: transparent; cursor: pointer;
+  margin: 0; padding: 0; color: inherit; font-size: inherit; font-weight: inherit;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.privacy-settings-trigger:hover { color: #6dd3cb; }
+@media (max-width: 640px) {
+  .privacy-banner { flex-direction: column; align-items: stretch; padding: 14px; gap: 12px; }
+  .privacy-banner-actions { width: 100%; }
+  .privacy-banner-actions button { flex: 1 1 115px; }
+}
