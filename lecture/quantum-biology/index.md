@@ -13,17 +13,21 @@ permalink: /lecture/quantum-biology/
   <h2>Quantum biology is a mechanism question, not a label</h2>
   <p>Every chemical bond is quantum mechanical. That alone does not make a biological process an interesting example of quantum biology. The useful question is whether a specifically quantum degree of freedom—coherence, tunnelling, spin correlation or non-classical state structure—survives long enough and couples strongly enough to change a biological observable.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Separate genuinely mechanism-specific quantum effects from the trivial statement that chemistry is quantum mechanical.</p></div>
     <div><span>02</span><p>Test a proposed mechanism against preparation, interaction, lifetime, decoherence, readout and experiment.</p></div>
     <div><span>03</span><p>Connect microscopic radical-pair or coherence dynamics to an actual biological observable without skipping scales.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
