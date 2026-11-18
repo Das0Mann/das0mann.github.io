@@ -13,14 +13,21 @@ permalink: /lecture/coherent-control/
   <h2>Instead of watching the spin evolve, drive it deliberately</h2>
   <p>A resonant RF or microwave field can rotate a spin state in a controlled way. The language of pulses—\(\pi/2\), \(\pi\), phase, detuning and echo—comes from solving a driven two-level problem and then using those rotations as building blocks for spectroscopy and quantum control.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Calculate Rabi oscillations and the duration of ideal π/2 and π pulses.</p></div>
     <div><span>02</span><p>Use the rotating-frame picture to understand resonance, detuning and pulse bandwidth.</p></div>
     <div><span>03</span><p>Explain what an echo refocuses and what irreversible decoherence it cannot reverse.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
