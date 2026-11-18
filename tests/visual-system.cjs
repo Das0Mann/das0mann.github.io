@@ -44,13 +44,19 @@ assert(countSvg(library) >= 19, "Catalogue should render 13 module icons and nav
 assert.equal((library.match(/class="library-card library-icon-card"/g) || []).length,13,
   "The rendered catalogue must contain exactly 13 self-contained links");
 assert(!library.includes("{% include icon.html"), "Unprocessed Liquid icons in built pages");
-assert(home.includes('class="hero-signature"'), "Simplified signature illustration must render");
+assert(home.includes('class="hero-signature hero-signature--animated"'), "Animated signature illustration must render");
+assert(home.includes('class="hero-motion-toggle"'), "Animation must expose a pause control");
+assert(home.includes('class="hero-signal-curve"'), "Spin mixing plot is missing");
+assert(home.includes("assets/js/hero-spin.js"), "Animation script must be loaded");
 assert(!home.includes('class="radical-pair-panel"'), "Legacy hero should not render");
 assert(home.includes("assets/css/iconic.css"), "Final design styles missing from homepage");
+assert(home.includes("assets/css/lecture-polish.css"), "Lecture reading layer must be loaded");
 
 for (const mod of modules) {
   const html = read(path.join("_site", mod.slice(1), "index.html"));
   assert(html.includes('class="page-hero-emblem"'), `No shared page icon on ${mod}`);
   assert(html.includes('class="lecture-knowledge-check"'), `Checkpoint missing on ${mod}`);
+  assert(html.includes("lecture-page"), `Lecture CSS scope missing on ${mod}`);
+  assert(html.includes('<details class="lecture-connections"'), `Expandable prerequisite panel missing on ${mod}`);
 }
 console.log("PASS: single text family, 31 line icons, 5 primary links and 13 rendered lecture cards");
