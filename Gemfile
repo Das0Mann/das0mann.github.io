@@ -1,8 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'jekyll'
-gem "jekyll-sitemap"
-gem 'octopress', '~> 3.0.0.rc.12'
-gem 'github-pages'
-
-gem "webrick", "~> 1.8"
+# GitHub Pages manages compatible Jekyll and plugin versions. Avoid the
+# obsolete Octopress/Grunt pipeline and do not pin transitive gems from 2023.
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.8", group: :development

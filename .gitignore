@@ -1,0 +1,10 @@
+# Generated website and local tool state
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+node_modules/
+.DS_Store
+
+# GitHub recommends not committing locally resolved gem locks for Pages.
+Gemfile.lock

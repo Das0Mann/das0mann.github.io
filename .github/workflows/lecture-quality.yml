@@ -16,6 +16,19 @@ on:
       - '_includes/icon.html'
       - 'index.md'
       - 'assets/js/lecture-*.js'
+      - 'assets/js/privacy-consent.js'
+      - 'assets/js/site-interactions.js'
+      - 'assets/js/mathjax-config.js'
+      - 'assets/js/mathjax-loader.js'
+      - 'assets/css/privacy-consent.css'
+      - 'assets/css/site-interactions.css'
+      - '_includes/_head.html'
+      - '_includes/_footer.html'
+      - '_includes/_scripts.html'
+      - 'privacy/**'
+      - 'tests/security.cjs'
+      - 'Gemfile'
+      - '.github/dependabot.yml'
       - 'lecture/**'
       - 'tests/lecture-*.cjs'
       - '.github/workflows/lecture-quality.yml'
@@ -29,25 +42,36 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: '22'
       - name: Verify navigation, concept checks and teaching-model invariants
         run: node tests/lecture-learning.cjs
       - name: Verify animation playback and reduced-motion behavior
         run: node tests/hero-spin.cjs
+      - name: Audit analytics consent and legacy dependencies
+        run: node tests/security.cjs
+      - name: Verify pinned MathJax asset fingerprint
+        run: |
+          curl --fail --silent --show-error --location --retry 2 https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js -o /tmp/approved-mathjax.js
+          actual="sha384-$(openssl dgst -sha384 -binary /tmp/approved-mathjax.js | openssl base64 -A)"
+          expected="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
+          echo "Pinned MathJax: $actual"
+          test "$actual" = "$expected"
       - name: Run existing parameter sensitivity and preset regressions
         run: |
           node tests/lecture-sensitivity.cjs
           node tests/lecture-presets.cjs
       - name: Build Jekyll pages before review
-        uses: actions/jekyll-build-pages@v1
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
         with:
           source: ./
           destination: ./_site
 
       - name: Inspect rendered lecture HTML and homepage entry points
         run: node tests/lecture-rendered.cjs
+      - name: Audit published HTML for tracking and browser policies
+        run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages
         run: node tests/visual-system.cjs

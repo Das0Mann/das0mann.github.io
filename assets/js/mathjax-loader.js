@@ -2,9 +2,7 @@
   "use strict";
 
   const SOURCES = [
-    "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
-    "https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"
   ];
 
   let settled = false;
@@ -44,7 +42,9 @@
     const script = document.createElement("script");
     script.src = SOURCES[index];
     script.async = true;
-    script.dataset.mathjaxFallback = String(index + 1);
+    script.dataset.mathjaxSource = "verified-cdnjs-v3.2.2";
+    script.crossOrigin = "anonymous";
+    script.integrity = "sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW";
 
     script.onload = () => {
       typesetPage().catch((error) => {

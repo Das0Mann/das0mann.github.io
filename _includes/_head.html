@@ -19,68 +19,23 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b2239">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://cdnjs.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ site.url }}/assets/css/main_pretty.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/modern.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-refresh.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/iconic.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-polish.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/privacy-consent.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/site-interactions.css">
 
 <meta http-equiv="cleartype" content="on">
 
-<!--[if lt IE 9]>
-  <script src="{{ site.url }}/assets/js/vendor/html5shiv.min.js"></script>
-  <script src="{{ site.url }}/assets/js/vendor/respond.min.js"></script>
-<![endif]-->
 
-<script src="{{ site.url }}/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    displayMath: [['\\[','\\]']],
-    processEscapes: true
-  },
-  chtml: {
-    scale: 0.96,
-    displayAlign: 'center',
-    displayIndent: '0'
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  startup: {
-    typeset: false
-  }
-};
-</script>
 
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-  window.cookieconsent.initialise({
-    "palette": {
-      "popup": {"background": "#0b2239"},
-      "button": {"background": "#ffffff", "text": "#0b2239"}
-    },
-    "theme": "classic",
-    "position": "bottom"
-  })
-});
-</script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNH61RX63Z"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-RNH61RX63Z');
-</script>
 
 <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
 <link rel="shortcut icon" href="{{ site.url }}/favicon.png">
