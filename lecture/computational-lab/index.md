@@ -13,17 +13,21 @@ permalink: /lecture/computational-lab/
   <h2>From a Hamiltonian to a calculation you can trust</h2>
   <p>Formal spin dynamics is only half the problem. The other half is numerical: how large is the Hilbert space, which representation should we propagate, how do we avoid constructing impossible matrices, and how do we know that a stochastic or time-discretized result is converged?</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Estimate Hilbert-, operator- and Liouville-space scaling before choosing a numerical method.</p></div>
     <div><span>02</span><p>Understand when sparse/Krylov or state-vector methods avoid impossible dense representations.</p></div>
     <div><span>03</span><p>Design convergence tests for timestep, stochastic trace samples, orientations and molecular ensembles.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
