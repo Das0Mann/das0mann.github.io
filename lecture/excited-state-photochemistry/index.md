@@ -256,7 +256,7 @@ permalink: /lecture/excited-state-photochemistry/
   \]
   </div>
 
-  <p>where the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate.</p>
+  <p>Here the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate. Reliable numerical predictions require attention to the relative singlet and triplet energies, relevant vibrational modes, state character and thermally accessible configurations. State orderings and singlet–triplet gaps from approximate TDDFT calculations should be checked before converting a SOC value into a kinetic estimate.</p>
 
   <details class="lecture-details">
     <summary>Where does El-Sayed's rule fit into this picture?</summary>
@@ -443,7 +443,7 @@ permalink: /lecture/excited-state-photochemistry/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -457,7 +457,7 @@ permalink: /lecture/excited-state-photochemistry/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
