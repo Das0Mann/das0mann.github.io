@@ -1,0 +1,69 @@
+{% comment %}Shared outline icon set. Every icon uses the same 24px geometry and stroke. Decorative; never replaces accessible link/button text.{% endcomment %}
+<svg class="site-icon{% if include.class %} {{ include.class }}{% endif %}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+{% case include.name %}
+{% when 'spin' %}
+  <circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/><path d="M6 5v3m-2-2 2-2 2 2M18 19v-3m-2 2 2 2 2-2"/>
+{% when 'atom' %}
+  <circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="10" ry="4.1"/><ellipse cx="12" cy="12" rx="10" ry="4.1" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.1" transform="rotate(120 12 12)"/>
+{% when 'research' %}
+  <circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2"/><circle cx="17" cy="18" r="3"/><path d="m10.8 7.6 4.2-.4M10 10.2l5.2 5.8M7.8 11v6"/>
+{% when 'person' %}
+  <circle cx="12" cy="8" r="4"/><path d="M4.5 21c.6-4.3 3.2-6.5 7.5-6.5s6.9 2.2 7.5 6.5"/>
+{% when 'book' %}
+  <path d="M12 6c-2.5-1.8-5.7-2-9-1v13c3.3-1 6.5-.8 9 1.1 2.5-1.9 5.7-2.1 9-1.1V5c-3.3-1-6.5-.8-9 1Z"/><path d="M12 6v13"/>
+{% when 'file' %}
+  <path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/>
+{% when 'code' %}
+  <rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="m8.5 10-3 2 3 2m7-4 3 2-3 2M13.7 8l-3.4 8"/>
+{% when 'news' %}
+  <path d="M5 3h15v17H7a4 4 0 0 1-4-4V6"/><path d="M3 6v10a2 2 0 0 0 4 0V3M10 8h7M10 12h7M10 16h7"/>
+{% when 'arrow-right' %}
+  <path d="M4 12h16m-7-7 7 7-7 7"/>
+{% when 'arrow-left' %}
+  <path d="M20 12H4m7-7-7 7 7 7"/>
+{% when 'arrow-up-right' %}
+  <path d="M7 17 17 7M8 7h9v9"/>
+{% when 'chevron-down' %}
+  <path d="m5 9 7 7 7-7"/>
+{% when 'layers' %}
+  <path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>
+{% when 'waves' %}
+  <path d="M2 8c2.6 0 2.6-4 5.2-4s2.6 4 5.2 4 2.6-4 5.2-4 2.6 4 4.4 4M2 16c2.6 0 2.6-4 5.2-4s2.6 4 5.2 4 2.6-4 5.2-4 2.6 4 4.4 4"/>
+{% when 'activity' %}
+  <path d="M2 12h4l3-7 5 14 3-7h5"/>
+{% when 'sun' %}
+  <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2 12h2m16 0h2M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"/>
+{% when 'transfer' %}
+  <path d="M3 8h18m-5-4 5 4-5 4M21 16H3m5-4-5 4 5 4"/>
+{% when 'link' %}
+  <path d="M10.2 13.8a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M13.8 10.2a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1.7-1.7"/>
+{% when 'radio' %}
+  <circle cx="12" cy="12" r="1.6"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6m7.6-7.6a5.4 5.4 0 0 1 0 7.6M5.2 5.2a9.6 9.6 0 0 0 0 13.6m13.6-13.6a9.6 9.6 0 0 1 0 13.6"/>
+{% when 'zap' %}
+  <path d="m13 2-9 11h7l-1 9 10-12h-7l0-8Z"/>
+{% when 'leaf' %}
+  <path d="M21 3C10.4 3 4 7 4 14a6 6 0 0 0 6 6c7 0 11-6.4 11-17Z"/><path d="M4 20c2-4 5.4-7.4 11-11"/>
+{% when 'cpu' %}
+  <rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx=".5"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/>
+{% when 'flask' %}
+  <path d="M9 3h6m-5 0v7l-6 10c-.4.7 0 1 1 1h14c1 0 1.4-.4 1-1l-6-10V3M8 16h8"/>
+{% when 'search' %}
+  <circle cx="10.7" cy="10.7" r="6.7"/><path d="m16 16 5 5"/>
+{% when 'lightbulb' %}
+  <path d="M9 18h6m-5 3h4m-6-5c-.7-1.4-3-3.3-3-6.3a7 7 0 0 1 14 0c0 3-2.3 4.9-3 6.3l-.5 2h-7L8 16Z"/>
+{% when 'check' %}
+  <path d="m4 12 5 5L20 6"/>
+{% when 'play' %}
+  <path d="m8 5 11 7-11 7V5Z"/>
+{% when 'clock' %}
+  <circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
+{% when 'sliders' %}
+  <path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/>
+{% when 'external' %}
+  <path d="M13 5h6v6M19 5l-9 9M19 14v5H5V5h5"/>
+{% when 'chart' %}
+  <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 16v-3m5 3V8m5 8v-5"/>
+{% else %}
+  <circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-9v.5"/>
+{% endcase %}
+</svg>
