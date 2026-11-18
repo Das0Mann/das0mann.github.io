@@ -395,7 +395,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>If both states are available as proper spin eigenstates, this is the direct electronic-energy mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection is then used to infer the pure-state splitting before converting it to the \(J\) convention above.</p>
+  <p>These expressions apply to two isolated spin-\(\tfrac12\) centres when the <em>isotropic exchange term is the only source</em> of the singlet–triplet splitting. With anisotropic interactions or other coupled degrees of freedom, a measured energy gap need not equal \(J\). If both states are proper spin eigenstates under the stated model, their electronic energy difference provides the mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection may be used to infer the splitting before converting it to the chosen \(J\) convention.</p>
 
   <p>The through-space magnetic dipolar interaction has a completely different origin. Using dimensionless spin operators and the point-dipole approximation,</p>
 
@@ -741,7 +741,7 @@ permalink: /lecture/spin-hamiltonians/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -755,7 +755,7 @@ permalink: /lecture/spin-hamiltonians/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
