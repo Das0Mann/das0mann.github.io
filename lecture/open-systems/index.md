@@ -160,7 +160,7 @@ permalink: /lecture/open-systems/
   </div>
 
 
-  <p>BRW theory starts from a weak system–bath interaction and expresses relaxation through correlation functions or spectral densities of the fluctuating Hamiltonian. In schematic form,</p>
+  <p>BRW theory connects weak system–environment interactions to correlation functions or spectral densities of fluctuating Hamiltonian terms. A useful starting point is a decomposition into independent stochastic interaction channels; correlations between different channels can be restored after the simplest case is understood.</p>
 
   <p>Write the fluctuating part of the spin Hamiltonian as operator channels,</p>
 
@@ -192,23 +192,23 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
-  <p>In the eigenbasis of \(\hat H_S\), a transition-rate contribution then has the schematic dimensional structure</p>
+  <p>For <strong>uncorrelated, real stationary classical noise channels</strong>, with Hermitian \(\hat A_\alpha\) and the two-sided spectral density \(J_\alpha(\omega)=\int C_{\alpha\alpha}(t)e^{i\omega t}\,dt\) defined above, the weak-noise Golden Rule gives</p>
 
   <div class="lecture-equation">
   \[
   k_{a\leftarrow b}
-  \sim
+  =
   \frac{1}{\hbar^2}
-  \sum_{\alpha\beta}
-  \langle a|\hat A_\alpha|b\rangle
-  \langle b|\hat A_\beta|a\rangle
-  J_{\alpha\beta}(\omega_{ba}),
+  \sum_\alpha
+  |\langle a|\hat A_\alpha|b\rangle|^2
+  J_\alpha(\omega_{ba}),
   \qquad
   \omega_{ba}=\frac{E_b-E_a}{\hbar}.
   \]
   </div>
 
-  <p>This is the mathematical bridge from the Molecular Motion module to relaxation theory: electronic structure determines which Hamiltonian parameters fluctuate, molecular dynamics determines their correlation functions, and the spin eigenstates determine which spectral-density components can actually drive a transition.</p>
+  <p>For correlated channels the full cross-spectral-density matrix \(J_{\alpha\beta}(\omega)\) and consistent operator ordering must be retained. For a <em>quantum</em> bath, the unsymmetrized correlation spectra at positive and negative frequencies need not be equal and obey detailed balance in thermal equilibrium. The simple expression above is consequently <strong>not a universal Redfield relaxation tensor</strong>, and it must not be used to infer finite-temperature spin polarization from classical symmetric noise alone.</p>
+  <p>This connection links electronic structure, molecular dynamics and spin transitions: electronic structure determines which Hamiltonian parameters fluctuate, MD estimates their time correlations, and the spin eigenstates determine which spectral components can drive transitions. Neither the scalar spectrum nor the schematic rate replaces the population–coherence coupling of a full BRW generator.</p>
 
   <aside class="lecture-note">
     <strong>The prefactor follows the unit convention.</strong>
@@ -348,7 +348,7 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
-  <p>The memory kernel \(\mathcal K\) says that the derivative at the current time can depend on the state at earlier times. The inhomogeneous term \(I(t)\) contains effects of initial system–bath correlations in the general formulation.</p>
+  <p>The kernel \(\mathcal K\) weights the earlier reduced states in the current derivative. In the projection-operator derivation, the inhomogeneous term \(I(t)\) accounts for initial contributions outside the projected subspace; it vanishes for the standard factorized, reference-bath initial preparation, but not for arbitrary initially correlated states. A truncated kernel need not preserve complete positivity without further checks.</p>
 
   <p>A time-nonlocal kernel is a natural language for memory, but “non-Markovian” is not synonymous with “contains an integral over the past.” Exact time-local master equations can also encode non-Markovian behaviour through time-dependent rates, while some kernels reduce effectively to Markovian dynamics on the timescale of interest. Operational definitions therefore depend on what property—divisibility, information backflow or correlation structure—is being tested.</p>
 
@@ -383,7 +383,7 @@ permalink: /lecture/open-systems/
     \]
     </div>
 
-    <p>This scalar model is not a complete quantum master equation. It is a deliberately simple way to see how a finite memory time changes an otherwise exponential decay.</p>
+    <p>This scalar model is <strong>not a quantum master equation</strong>. For \(x(0)=1\), its exact short-time slope is \(\dot x(0)=0\), whereas the comparison Markovian exponential \(e^{-\gamma t}\) starts with slope \(-\gamma\). Finite memory therefore modifies short-time behavior even when its long-time decay approximates a Markovian law. A negative \(x(t)\) indicates an amplitude-like mathematical variable, never a negative physical population.</p>
 
     <div class="demo-prompt">
       <strong>Try this:</strong>
@@ -432,7 +432,7 @@ permalink: /lecture/open-systems/
       </div>
     </div>
 
-    <p class="interactive-footnote">For the exponential kernel, the scalar equation is equivalent to \(\tau_m\ddot x+\dot x+\gamma x=0\) with \(x(0)=1\) and \(\dot x(0)=0\). Negative values in the underdamped regime are why \(x\) should be read as an amplitude-like toy variable, not automatically as a population.</p>
+    <p class="interactive-footnote">Exact reduction: \(\tau_m\ddot x+\dot x+\gamma x=0\), with \(x(0)=1\) and \(\dot x(0)=0\). The threshold \(\gamma\tau_m=1/4\) separates overdamped and underdamped <em>amplitude</em> trajectories, not two experimentally established quantum-memory phases. The green Markovian curve is a separate reference model, not a fitted approximation over the full finite-memory time interval.</p>
   </div>
 </section>
 

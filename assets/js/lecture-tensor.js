@@ -94,11 +94,11 @@
         } else if (Math.abs(tx - ty) < 0.5) {
           explanation.textContent = "The tensor is axially symmetric in the xy plane: changing phi cannot affect the projection. Theta still changes the relative weights of the parallel and perpendicular principal values.";
         } else if (Math.abs(theta) < 5) {
-          explanation.textContent = "The field is almost aligned with the z principal axis, so the effective value approaches T_z.";
+          explanation.textContent = "The field is almost aligned with the z principal axis, so the full hyperfine projection approaches A_z.";
         } else if (Math.abs(theta - 90) < 5) {
-          explanation.textContent = "The field lies almost in the xy plane. The azimuthal angle phi determines how strongly T_x and T_y contribute.";
+          explanation.textContent = "The field lies almost in the xy plane. The azimuthal angle phi determines how strongly A_x and A_y contribute.";
         } else {
-          explanation.textContent = "This orientation samples a weighted mixture of all three principal values. Rotating the molecule changes the effective interaction without changing the tensor eigenvalues.";
+          explanation.textContent = "This orientation samples the full hyperfine tensor. Rotating its principal axes changes A_eff but leaves A_iso and the three eigenvalues invariant.";
         }
       }
     }

@@ -19,7 +19,7 @@ const files={
   "magnetic-resonance":["lecture-hyperfine.js","lecture-epr.js","lecture-powder.js","lecture-cw-detection.js"],
   "photo-cidnp":["lecture-cidnp-model.js","lecture-cidnp.js"],
   "electron-transfer":["lecture-marcus.js","lecture-tunnelling.js"],
-  "molecular-motion":["lecture-motion.js"],
+  "molecular-motion":["lecture-motion.js","lecture-rotation-model.js","lecture-rotation.js"],
   "computational-lab":["lecture-scaling.js"],
   "open-systems":["lecture-memory.js","lecture-secular.js"],
   "quantum-biology":["lecture-qbio.js"],

@@ -341,7 +341,27 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>This is why rotational correlation times quoted for dielectric relaxation, translational diffusion or a simple vector autocorrelation are not automatically the correlation times needed for spin relaxation. The rank and the fluctuating interaction have to match.</p>
+  <p>For isotropic rotational diffusion with rotational diffusion constant \(D_r\), the rank-\(\ell\) orientational correlation decays as \(\exp[-\ell(\ell+1)D_rt]\). Thus</p>
+  <div class="lecture-equation">
+  \[
+  C_1(t)=e^{-2D_rt},\quad C_2(t)=e^{-6D_rt},
+  \qquad
+  \tau_1=\frac{1}{2D_r},\quad
+  \tau_2=\frac{1}{6D_r}=\frac{\tau_1}{3}.
+  \]
+  </div>
+  <p>The \(P_2\) function above must track a <strong>physically defined molecular axis or tensor direction in the laboratory frame</strong>. Whole-molecule RMSD or rigid-body fitting of flexible MD configurations is not, by itself, a measurement of rotational diffusion: internal rearrangements can contaminate its apparent reorientation. Use a stable local bond, radical-group normal or defined molecular frame, and compare the laboratory-frame orientational correlation with the correlation after removing overall motion to distinguish tumbling from internal dynamics.</p>
+  <p>Translational DOSY instead measures a translational diffusion coefficient \(D_t\). For an ideal spherical particle with no-slip hydrodynamics, the Stokes–Einstein and Debye relations give</p>
+  <div class="lecture-equation">
+  \[
+  D_t=\frac{k_BT}{6\pi\eta R_H},
+  \qquad
+  D_r=\frac{k_BT}{8\pi\eta R_H^3},
+  \qquad
+  \tau_2=\frac{2R_H^2}{9D_t}.
+  \]
+  </div>
+  <p>The last equality is a <strong>sphere-model estimate</strong>, not a universal conversion from DOSY to the rotational correlation time of a flexible peptide. Solvent viscosity, hydrodynamic radius, shape anisotropy and internal flexibility must be evaluated before comparing with an MD-derived rank-two correlation.</p>
 </section>
 
 <section class="lecture-section">
@@ -379,7 +399,52 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>Here \(S^2\) is an order parameter between 0 and 1, \(\tau_m\) describes global molecular reorientation and \(\tau_e\) an effective internal-motion timescale. \(S^2\approx1\) means the local vector is relatively rigid in the molecular frame; smaller \(S^2\) means larger-amplitude internal motion.</p>
+  <p>Here \(S^2\) is an order parameter from 0 to 1, \(\tau_m\) the <strong>rank-two global rotational time</strong>, and \(\tau_e\) an effective internal-motion time. The model assumes approximately independent global and internal rotations and a single effective exponential internal correlation. \(S^2\approx1\) means the local interaction axis is relatively rigid in the molecular frame, whereas smaller values indicate larger-amplitude internal motion. In particular, \(S^2\) is <em>not</em> the singlet population of a radical pair.</p>
+
+  <div class="interactive-card rotational-lab" id="rotation-demo">
+    <div class="interactive-head">
+      <div><span class="interactive-kicker">Molecular orientation · rank-aware model</span><h3>Separate tumbling from internal mobility</h3></div>
+      <span class="interactive-model-note">isotropic diffusion + model-free internal motion</span>
+    </div>
+    <p class="demo-prompt"><strong>Try this:</strong><span>hold the global rank-two time fixed while decreasing \(S^2\). The local rank-two correlation falls faster even though overall rotational diffusion is unchanged. Then compare the rank-one and rank-two global curves.</span></p>
+    <div class="interactive-layout">
+      <div class="interactive-controls">
+        <label for="rotation-tau2"><span class="control-name">Global rank-two \(\tau_2\)</span><output id="rotation-tau2-out">0.60 ns</output></label>
+        <input id="rotation-tau2" type="range" min="0.2" max="5" step="0.05" value="0.6">
+        <label for="rotation-order"><span class="control-name">Internal order parameter \(S^2\)</span><output id="rotation-order-out">0.75</output></label>
+        <input id="rotation-order" type="range" min="0" max="1" step="0.01" value="0.75">
+        <label for="rotation-taue"><span class="control-name">Effective internal time \(\tau_e\)</span><output id="rotation-taue-out">0.15 ns</output></label>
+        <input id="rotation-taue" type="range" min="0.05" max="2" step="0.05" value="0.15">
+        <div class="demo-presets">
+          <button type="button" data-rotation-mode="rigid">rigid axis</button>
+          <button type="button" data-rotation-mode="flexible">flexible axis</button>
+          <button type="button" data-rotation-mode="slow">slow tumbling</button>
+        </div>
+        <div class="interactive-readout">
+          <span>Global rank-one \(\tau_1\) <strong id="rotation-tau1-out">1.80 ns</strong></span>
+          <span>Effective fast rank-two component <strong id="rotation-fast-out">0.12 ns</strong></span>
+          <span>Local \(C_2\) at 1 ns <strong id="rotation-c1ns-out">0.142</strong></span>
+        </div>
+        <p id="rotation-explanation" class="demo-explanation">The local axis contains both the global rank-two time and internal motion. The rank-one global correlation has a threefold longer decay time in the isotropic rotational-diffusion model.</p>
+      </div>
+      <div class="plot-wrap">
+        <svg id="rotation-svg" class="lecture-svg" viewBox="0 0 560 300" role="img" aria-label="Laboratory-frame rank-one, global rank-two, and local rank-two orientational correlations over 0 to 10 nanoseconds">
+          <line x1="58" y1="248" x2="530" y2="248" class="plot-axis"/>
+          <line x1="58" y1="35" x2="58" y2="248" class="plot-axis"/>
+          <line x1="58" y1="141.5" x2="530" y2="141.5" class="plot-grid"/>
+          <text x="43" y="42" class="svg-tick">1</text><text x="42" y="254" class="svg-tick">0</text>
+          <text x="58" y="268" class="svg-tick">0</text><text x="520" y="268" class="svg-tick">10</text>
+          <text x="454" y="286" class="svg-caption">time / ns</text>
+          <text x="12" y="23" class="svg-caption">normalized C(t)</text>
+          <path id="rotation-rank1-path" class="rotation-rank1-curve" d="" fill="none"/>
+          <path id="rotation-global-path" class="rotation-global-curve" d="" fill="none"/>
+          <path id="rotation-local-path" class="rotation-local-curve" d="" fill="none"/>
+        </svg>
+        <div class="rotation-legend"><span class="rotation-legend-one">Global \(C_1\)</span><span class="rotation-legend-two">Global \(C_2\)</span><span class="rotation-legend-local">Local \(C_2\)</span></div>
+      </div>
+    </div>
+    <p class="interactive-footnote">Analytical example only: isotropic rotational diffusion, rank-\(\ell\) exponential correlations, independent internal motion and a single Lipari–Szabo-type internal timescale. The time axis is fixed at 0–10 ns and the vertical axis at 0–1, so changing parameters does not hide amplitude differences. These values are not extracted from any particular MD trajectory or DOSY measurement.</p>
+  </div>
 
   <aside class="lecture-note">
     <strong>Why this matters for spin dynamics:</strong>
@@ -511,3 +576,5 @@ permalink: /lecture/molecular-motion/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-motion.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-rotation-model.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-rotation.js" defer></script>
