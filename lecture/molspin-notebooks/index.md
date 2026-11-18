@@ -134,7 +134,7 @@ permalink: /lecture/molspin-notebooks/
   <aside class="lecture-analogy">
     <span class="lecture-analogy-label">Mental model</span>
     <h3>A MolSpin input is closer to a circuit diagram than to a settings file</h3>
-    <p>The spins are the degrees of freedom, interactions wire them together into a Hamiltonian, the initial state charges the circuit, transitions and relaxation add non-unitary channels, and the task specifies how the circuit is driven or read out. Changing one object therefore changes the mathematical model, not merely a software preference.</p>
+    <p>Spin objects define the retained degrees of freedom; interactions specify Hamiltonian operators; states define initial conditions or projectors; transitions and relaxation specify non-unitary terms; and tasks select numerical propagation and observables. Changing one object therefore changes the physical or numerical model, not merely a software preference.</p>
     <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the underlying object is a quantum dynamical equation, not an electrical network. The analogy is useful only for seeing that syntax encodes physical connectivity and operations.</span>
   </aside>
 </section>
@@ -430,7 +430,7 @@ PulseSequence seq
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
