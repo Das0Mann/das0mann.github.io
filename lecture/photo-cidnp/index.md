@@ -102,16 +102,16 @@ permalink: /lecture/photo-cidnp/
     </div>
     <div class="cidnp-controls cidnp-controls--four">
       <label for="cidnp-precursor">Precursor spin state
-        <select id="cidnp-precursor"><option value="triplet">Triplet-born (\(\mu=+1\))</option><option value="singlet">Singlet-born (\(\mu=-1\))</option></select>
+        <select id="cidnp-precursor"><option value="triplet">Triplet-born (μ=+1)</option><option value="singlet">Singlet-born (μ=−1)</option></select>
       </label>
       <label for="cidnp-exit">Observed reaction product
-        <select id="cidnp-exit"><option value="recombination">Singlet recombination (\(\varepsilon=+1\))</option><option value="escape">Escape-derived (\(\varepsilon=-1\))</option></select>
+        <select id="cidnp-exit"><option value="recombination">Singlet recombination (ε=+1)</option><option value="escape">Escape-derived (ε=−1)</option></select>
       </label>
-      <label for="cidnp-dg">Difference \(g_1-g_2\)
-        <select id="cidnp-dg"><option value="positive">Positive \(\Delta g\)</option><option value="negative">Negative \(\Delta g\)</option></select>
+      <label for="cidnp-dg">Difference g₁ − g₂
+        <select id="cidnp-dg"><option value="positive">Positive Δg</option><option value="negative">Negative Δg</option></select>
       </label>
       <label for="cidnp-a">Isotropic hyperfine sign
-        <select id="cidnp-a"><option value="positive">Positive \(A_{\mathrm{iso},i}\)</option><option value="negative">Negative \(A_{\mathrm{iso},i}\)</option></select>
+        <select id="cidnp-a"><option value="positive">Positive Aᵢ</option><option value="negative">Negative Aᵢ</option></select>
       </label>
     </div>
     <div class="cidnp-result-row">
@@ -258,7 +258,7 @@ permalink: /lecture/photo-cidnp/
     <span class="cidnp-widget-kicker">{% include icon.html name="research" %} Connection to ongoing research</span>
     <h3>Flavin–tryptophan dyads: conformational dynamics changes the spin Hamiltonian</h3>
     <p>In biomimetic oligoproline-linked flavin–tryptophan dyads, the molecular linker controls the ensemble of donor–acceptor arrangements. Work on distance-dependent photo-CIDNP and later conformational switching shows why a single static geometry and one exchange coupling can be inadequate. Compact conformers may access strongly exchange-coupled intramolecular radical-pair pathways, while more separated or diffusive encounters contribute differently to polarization and field dependence.</p>
-    <p>Consequently, **reproducing the sign alone is not a complete fit**. Site-resolved hyperfine assignments, experimentally observed low- and high-field features, nuclear-spin-selective kinetics and conformational weighting must be examined jointly. A robust computational protocol also separates independently supported quantities from parameters genuinely inferred by optimization.</p>
+    <p>Consequently, <strong>reproducing the sign alone is not a complete fit</strong>. Site-resolved hyperfine assignments, experimentally observed low- and high-field features, nuclear-spin-selective kinetics and conformational weighting must be examined jointly. A robust computational protocol also separates independently supported quantities from parameters genuinely inferred by optimization.</p>
     <div class="cidnp-paper-list">
       <a href="https://doi.org/10.1002/anie.202510116" target="_blank" rel="noopener"><strong>Distance-Dependence of Photo-CIDNP in Biomimetic Tryptophan–Flavin Diads</strong><span>Theiss, Musabirova, Gerhards et al. · Angew. Chem. Int. Ed. (2025)</span></a>
       <a href="https://doi.org/10.1021/jacs.5c22947" target="_blank" rel="noopener"><strong>Conformational Switching Controls Biradical Spin Dynamics in Flavin–Tryptophan Dyads</strong><span>Musabirova, Morozova, Kiryutin et al., including Gerhards · JACS (2026)</span></a>
