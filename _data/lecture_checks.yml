@@ -1,0 +1,105 @@
+# One concept checkpoint per module. Correct-answer index is zero-based.
+"/lecture/electronic-structure/":
+  question: "Which statement correctly distinguishes a Kohn–Sham orbital from the interacting electronic wavefunction?"
+  choices:
+    - "Each Kohn–Sham orbital gives the exact trajectory of a real electron."
+    - "Kohn–Sham orbitals belong to an auxiliary non-interacting system constructed to reproduce the ground-state density in exact Kohn–Sham DFT."
+    - "A Kohn–Sham determinant contains every many-electron correlation effect explicitly."
+  answer: 1
+  explanation: "Kohn–Sham DFT maps the interacting ground-state problem to auxiliary orbitals reproducing its density (where the mapping applies). Approximate exchange–correlation functionals make practical results approximate. Individual orbitals are not electron trajectories."
+"/lecture/spin-hamiltonians/":
+  question: "What is required to import a calculated anisotropic hyperfine tensor into a spin-dynamics calculation?"
+  choices:
+    - "Only its largest principal value."
+    - "The tensor components, units, spin-operator convention and reference-frame orientation."
+    - "Only the isotropic trace, even when molecular orientations matter."
+  answer: 1
+  explanation: "An anisotropic interaction depends on orientation. Tensor components must be expressed in a known frame, transformed consistently and converted using the simulator's spin and frequency conventions. Isotropic averaging discards directional information."
+"/lecture/spin-dynamics/":
+  question: "What are the Hilbert- and Liouville-space dimensions for two spin-1/2 particles?"
+  choices:
+    - "Hilbert dimension 2; Liouville dimension 4."
+    - "Hilbert dimension 4; vectorized density-matrix dimension 16."
+    - "Hilbert dimension 8; Liouville dimension 8."
+  answer: 1
+  explanation: "Two independent spin-1/2 factors give 2 × 2 = 4 basis states. A density operator on this Hilbert space is a 4 × 4 matrix, with 16 components before imposing Hermiticity, trace and positivity constraints."
+"/lecture/molecular-motion/":
+  question: "Two trajectories have equal fluctuation variance but different correlation times. Must they produce identical relaxation rates?"
+  choices:
+    - "Yes; variance alone fixes all relaxation rates."
+    - "No; the spectral density at the spin transition frequencies also matters."
+    - "Yes, as long as the simulations used equal time steps."
+  answer: 1
+  explanation: "Relaxation depends on both coupling amplitudes and how their fluctuations are distributed across frequency. Different autocorrelation functions can have the same variance yet different spectral densities near the relevant transitions."
+"/lecture/open-systems/":
+  question: "What is the principal conceptual distinction between a time-local Lindblad model and a Nakajima–Zwanzig equation?"
+  choices:
+    - "Nakajima–Zwanzig may include an integral over past reduced states via a memory kernel."
+    - "Only a Lindblad model can represent irreversible dynamics."
+    - "Every finite-memory kernel automatically guarantees complete positivity."
+  answer: 0
+  explanation: "A Nakajima–Zwanzig equation generally describes history dependence through a memory kernel. The GKSL/Lindblad form generates completely positive trace-preserving semigroups when its assumptions hold. Approximate memory kernels need separate physical-consistency checks."
+"/lecture/excited-state-photochemistry/":
+  question: "For two displaced harmonic potential surfaces of equal curvature, what is the vertical absorption-minus-emission energy?"
+  choices:
+    - "Zero, regardless of the displacement."
+    - "The adiabatic gap E₀₀."
+    - "Twice the reorganization energy λ, within this idealized model."
+  answer: 2
+  explanation: "The model gives E_abs = E₀₀ + λ and E_em = E₀₀ − λ. Their difference is 2λ. This relation assumes equal curvature, the same displacement energy in both states, and vertical transitions."
+"/lecture/electron-transfer/":
+  question: "In the classical nonadiabatic Marcus expression, what happens when the reaction free energy becomes more negative than −λ?"
+  choices:
+    - "The activation barrier increases again: the inverted region."
+    - "The rate must grow monotonically without limit."
+    - "The electronic coupling becomes exactly zero."
+  answer: 0
+  explanation: "For fixed λ, electronic coupling and temperature, the barrier is (ΔG° + λ)²/(4λ), minimized at ΔG° = −λ. Further exergonic driving raises the classical barrier. Vibronic and nuclear-quantum effects can modify this simple model."
+"/lecture/radical-pairs/":
+  question: "Can an identical, spatially uniform electron Zeeman term alone interconvert a pure electron singlet and triplet?"
+  choices:
+    - "Yes; any nonzero static field mixes singlet and triplet automatically."
+    - "No; unequal local fields, anisotropic or hyperfine couplings, or other symmetry-breaking terms are needed for mixing."
+    - "Yes; singlet–triplet conversion is independent of the spin Hamiltonian."
+  answer: 1
+  explanation: "When the two electrons have the same g value and experience the same field, their common Zeeman Hamiltonian is proportional to total S_z and does not couple singlet to triplet. Differences in their local magnetic interactions can generate interconversion."
+"/lecture/magnetic-resonance/":
+  question: "Why does conventional field-modulated, phase-sensitive CW EPR often display a first-derivative line shape?"
+  choices:
+    - "Because the unmodulated microwave absorption is intrinsically a derivative."
+    - "Because small field modulation and first-harmonic detection approximately measure the field derivative of the absorption signal."
+    - "Because all EPR transitions are forbidden in absorption."
+  answer: 1
+  explanation: "For sufficiently small field modulation, the detected first harmonic is proportional to the derivative of the underlying field-dependent signal. Larger modulation amplitudes distort and broaden the apparent line shape."
+"/lecture/coherent-control/":
+  question: "For a resonantly driven ideal spin-1/2, what determines a π pulse in the rotating-wave approximation?"
+  choices:
+    - "The rotating-frame rotation angle, equal to the integral of the angular Rabi frequency over pulse time."
+    - "Only the carrier frequency, irrespective of field amplitude and duration."
+    - "The static field strength alone."
+  answer: 0
+  explanation: "A π pulse requires a rotation angle of π: ∫Ω_R(t)dt = π when Ω_R is an angular frequency and the rotation axis is fixed. Detuning, inhomogeneity and finite pulse bandwidth alter the ideal result."
+"/lecture/quantum-biology/":
+  question: "What additional evidence is needed after detecting magnetic-field-dependent radical-pair chemistry to establish a biological magnetic-sensing function?"
+  choices:
+    - "None; any field-dependent reaction yield proves a biological compass."
+    - "A quantitative link to a physiological readout, with controls for competing mechanisms and realistic conditions."
+    - "Only a larger simulated spin coherence time."
+  answer: 1
+  explanation: "Chemical magnetosensitivity establishes a possible transduction mechanism, not by itself an organism-level function. Physiological consequences, causal perturbations, controls and realistic field conditions are essential for a biological claim."
+"/lecture/computational-lab/":
+  question: "How do the Hilbert-space size and dense density-matrix storage scale with N spin-1/2 particles?"
+  choices:
+    - "Both grow linearly with N."
+    - "Hilbert dimension 2^N; density-matrix element count 4^N."
+    - "Hilbert dimension N²; density-matrix element count N³."
+  answer: 1
+  explanation: "Each spin-1/2 doubles the Hilbert dimension. A dense operator in that space has (2^N)² = 4^N complex elements, motivating sparse operators, matrix-free propagation and controlled approximations."
+"/lecture/molspin-notebooks/":
+  question: "What should be validated before interpreting a MolSpin prediction of a magnetic-field-dependent observable?"
+  choices:
+    - "Only whether the input file parsed."
+    - "The Hamiltonian signs, units, state preparation, reaction model, numerical convergence and observable definition."
+    - "Only the number of CPU cores used."
+  answer: 1
+  explanation: "An executable simulation is not automatically a physically correct model. Validate conventions and limits with analytically tractable examples, then converge the observable with respect to timestep, spin model, orientation and sampling."
