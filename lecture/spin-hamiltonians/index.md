@@ -219,7 +219,7 @@ permalink: /lecture/spin-hamiltonians/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Reading perturbation theory</p><h2>Nearby electronic states matter because virtual mixing has an energy cost</h2></div>
   </div>
 
