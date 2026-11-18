@@ -310,7 +310,7 @@ permalink: /lecture/magnetic-resonance/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Selection rules &amp; field scale</p><h2>A resonance line also tells you which transition the microwave field can drive</h2></div>
   </div>
 
