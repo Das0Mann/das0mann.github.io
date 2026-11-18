@@ -320,7 +320,7 @@ permalink: /lecture/excited-state-photochemistry/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Competing excited-state channels</p><h2>Quantum yield is a branching problem between rates</h2></div>
   </div>
 
