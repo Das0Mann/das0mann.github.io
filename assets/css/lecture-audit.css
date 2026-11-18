@@ -1,0 +1,183 @@
+/* Shared revision for the original thirteen lectures.
+   Focus on comprehension: make secondary material opt-in, reduce decorative
+   framing, and keep the equation/interactive model in the primary reading flow.
+   All physics-related JavaScript remains untouched. */
+.lecture-page .module-learning.module-learning-disclosure {
+  display: block;
+  max-width: 900px;
+  margin: 0 0 11px;
+  padding: 0;
+  border: 1px solid #dfe9e8;
+  border-radius: 9px;
+  background: #fbfcfc;
+  box-shadow: none;
+}
+.lecture-page .module-learning-disclosure > summary {
+  display: flex; align-items: center; gap: 10px; min-height: 42px;
+  padding: 9px 13px;
+  color: #3b606b;
+  cursor: pointer;
+  list-style: none;
+}
+.lecture-page .module-learning-disclosure > summary::-webkit-details-marker { display: none; }
+.lecture-page .module-learning-summary-icon {
+  display: grid; place-items: center;
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  color: #287f80; background: #eaf5f3;
+}
+.lecture-page .module-learning-summary-icon .site-icon { width: 14px; height: 14px; }
+.lecture-page .module-learning-summary strong {
+  color: #305663; font-size: .78rem; font-weight: 750;
+}
+.lecture-page .module-learning-summary-count {
+  color: #789097; font-size: .7rem; font-weight: 600;
+}
+.lecture-page .module-learning-summary-chevron {
+  margin-left: auto;
+  display: inline-flex; color: #6b8a8f;
+  transition: transform .15s ease;
+}
+.lecture-page .module-learning-summary-chevron .site-icon { width: 16px; height: 16px; }
+.lecture-page .module-learning-disclosure[open] .module-learning-summary-chevron { transform: rotate(180deg); }
+.lecture-page .module-learning-content {
+  padding: 13px 15px 15px;
+  border-top: 1px solid #e2ebea;
+  background: #fff;
+  border-radius: 0 0 9px 9px;
+}
+.lecture-page .module-learning-disclosure .module-learning-grid { gap: 11px 20px; }
+.lecture-page .module-learning-disclosure .module-learning-grid > div { min-width: 0; }
+.lecture-page .module-learning-disclosure .module-learning-grid p {
+  font-size: .79rem !important; color: #506b74 !important; line-height: 1.65 !important;
+}
+
+/* Secondary chapter navigation at the bottom should not repeat the full
+   14-module picker and its progress ribbon. It remains available at top. */
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child {
+  margin: 38px 0 0;
+  border-radius: 9px;
+  background: #f7faf9;
+}
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-progress,
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-picker,
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-label,
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-context > strong {
+  display: none;
+}
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-header {
+  padding: 11px 14px; gap: 10px;
+}
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-context {
+  align-self: center;
+}
+
+/* Unify the reading column: historical theme CSS used 59px left offsets on
+   several kinds of secondary content, leaving a jagged layout on laptops. */
+.lecture-page .lecture-module :is(
+  .lecture-analogy, .lecture-flow-bridge, .lecture-details,
+  .lecture-checklist, .method-ladder, .timescale-strip,
+  .observable-list, .lecture-output-strip, .hamiltonian-legend,
+  .lecture-takeaway
+) { margin-left: 0; }
+.lecture-page .lecture-module .lecture-analogy {
+  max-width: 790px;
+  margin-top: 17px;
+  margin-bottom: 22px;
+  padding: 11px 0 11px 15px;
+  border: 0;
+  border-left: 2px solid #b2cbc9;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.lecture-page .lecture-module .lecture-analogy-label {
+  margin-bottom: 5px;
+  font-size: .66rem; font-weight: 740; letter-spacing: .065em;
+  color: #62848a;
+}
+.lecture-page .lecture-module .lecture-analogy h3 {
+  font-size: .94rem; color: #355563; font-weight: 720;
+}
+.lecture-page .lecture-module .lecture-analogy p {
+  font-size: .82rem !important;
+  line-height: 1.72 !important;
+}
+.lecture-page .lecture-module .analogy-limit {
+  display: block;
+  max-width: 750px;
+  margin-top: 10px;
+  color: #6d8388;
+  font-size: .74rem;
+  line-height: 1.6;
+}
+.lecture-page .lecture-module .lecture-flow-bridge {
+  max-width: 810px;
+  margin-top: 17px; margin-bottom: 20px;
+  padding: 10px 13px;
+  border-left: 2px solid #bfd4d0;
+  background: #f7faf9;
+  box-shadow: none;
+  font-size: .83rem;
+}
+.lecture-page .lecture-module .lecture-takeaway {
+  max-width: 850px;
+  margin-top: 34px; margin-bottom: 18px;
+  padding: 18px 20px;
+  border: 1px solid #d6e5e3;
+  border-radius: 10px;
+  background: #f5faf9;
+  box-shadow: none;
+}
+.lecture-page .lecture-module .lecture-takeaway h3 {
+  font-size: 1.04rem; font-weight: 750;
+}
+.lecture-page .lecture-module .lecture-checklist > div {
+  border-radius: 7px;
+  border-color: #e0eae9;
+  background: transparent;
+}
+.lecture-page .lecture-module .lecture-section.concept-extension {
+  border-top: 1px dashed #cadbd9;
+  padding-top: 23px;
+  padding-bottom: 22px;
+}
+.lecture-page .lecture-module .lecture-section.concept-extension .lecture-index {
+  width: 36px; min-width: 36px; height: 31px;
+  font-size: .58rem;
+  letter-spacing: .03em;
+  border-color: #d5e6e3;
+  color: #52777c;
+  background: #f7faf9;
+}
+.lecture-page .lecture-module .lecture-section.concept-extension .section-eyebrow {
+  color: #738e93;
+}
+.lecture-page .lecture-module .lecture-section.concept-extension h2 {
+  font-size: clamp(1.13rem, 2vw, 1.43rem) !important;
+}
+
+/* Keep scientific diagrams legible without over-decorating them. */
+.lecture-page .lecture-module .method-ladder > div {
+  padding: 13px 0;
+  border-top-color: #dfe9e8;
+}
+.lecture-page .lecture-module .timescale-strip > div {
+  border-top: 2px solid #bdd9d5;
+  background: #f7faf9;
+  border-radius: 0 0 7px 7px;
+}
+.lecture-page .lecture-module .lecture-checklist > div {
+  grid-template-columns: minmax(115px,.25fr) minmax(0,1fr);
+}
+@media (max-width: 720px) {
+  .lecture-page .module-learning-summary-count { display: none; }
+  .lecture-page .module-learning-content { padding: 11px 13px; }
+  .lecture-page .module-learning-disclosure .module-learning-grid { grid-template-columns: 1fr; }
+  .lecture-page .lecture-module .lecture-checklist > div { grid-template-columns: 1fr; gap: 4px; }
+  .lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-header { display: block; }
+  .lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child .lecture-route-neighbours { margin-top: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lecture-page .module-learning-summary-chevron { transition: none; }
+}
