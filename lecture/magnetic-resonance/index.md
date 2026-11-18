@@ -13,17 +13,21 @@ permalink: /lecture/magnetic-resonance/
   <h2>Turn spin-energy levels into a spectrum</h2>
   <p>Magnetic resonance asks a very practical question: at what field and frequency can an oscillating magnetic field drive a transition between spin states? From that simple starting point we get EPR spectra, hyperfine patterns, anisotropic powder lineshapes and reaction-yield detected resonance.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Use the resonance condition to connect microwave frequency, magnetic field and effective g-value.</p></div>
     <div><span>02</span><p>Predict qualitatively how hyperfine coupling, anisotropy and linewidth shape an EPR spectrum.</p></div>
     <div><span>03</span><p>Distinguish CW, time-resolved, pulsed and reaction-yield detected magnetic resonance.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
