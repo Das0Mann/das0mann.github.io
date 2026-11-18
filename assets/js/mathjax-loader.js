@@ -44,6 +44,7 @@
     script.async = true;
     script.dataset.mathjaxSource = "verified-cdnjs-v3.2.2";
     script.crossOrigin = "anonymous";
+    script.integrity = "sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW";
 
     script.onload = () => {
       typesetPage().catch((error) => {
