@@ -14,19 +14,19 @@
 <nav class="lecture-module-nav lecture-route-nav" aria-label="Lecture learning path">
   <div class="lecture-route-header">
     <div class="lecture-route-context">
-      <a class="lecture-route-back" href="{{ site.url }}/lecture/">← Lecture library</a>
+      <a class="lecture-route-back" href="{{ site.url }}/lecture/">{% include icon.html name="arrow-left" %} All lectures</a>
       <span class="lecture-route-label">Suggested path · step {{ current_step }} of {{ site.data.lecture_route.size }}</span>
       <strong>{{ current_module.theme }}</strong>
     </div>
     <div class="lecture-route-neighbours">
       {% if previous_module %}
       <a class="lecture-route-neighbour" href="{{ site.url }}{{ previous_module.url }}" rel="prev">
-        <small>← Previous</small><span>{{ previous_module.name }}</span>
+        <small>{% include icon.html name="arrow-left" %} Previous</small><span>{{ previous_module.name }}</span>
       </a>
       {% endif %}
       {% if next_module %}
       <a class="lecture-route-neighbour lecture-route-next" href="{{ site.url }}{{ next_module.url }}" rel="next">
-        <small>Next →</small><span>{{ next_module.name }}</span>
+        <small>Next {% include icon.html name="arrow-right" %}</small><span>{{ next_module.name }}</span>
       </a>
       {% endif %}
     </div>
@@ -35,12 +35,12 @@
     <span style="width: {{ current_step | times: 100 | divided_by: site.data.lecture_route.size }}%;"></span>
   </div>
   <details class="lecture-route-picker">
-    <summary>Browse the complete lecture library <span aria-hidden="true">⌄</span></summary>
+    <summary>{% include icon.html name="book" %} Browse all modules {% include icon.html name="chevron-down" class="route-chevron" %}</summary>
     <ol class="lecture-route-list">
       {% for module in site.data.lecture_route %}
       <li>
         <a href="{{ site.url }}{{ module.url }}"{% if module.url == page.url %} aria-current="page" class="is-current"{% endif %}>
-          <span class="lecture-route-step">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="lecture-route-step">{% include icon.html name=module.icon %}</span>
           <span class="lecture-route-chapter"><strong>{{ module.name }}</strong><small>Module {{ module.number }} · {{ module.theme }}</small></span>
         </a>
       </li>
