@@ -65,6 +65,8 @@ jobs:
           test "$actual" = "$expected"
       - name: Validate photo-CIDNP analytic model and sign conventions
         run: node tests/lecture-cidnp.cjs
+      - name: Independently validate rotational diffusion and relaxation model conventions
+        run: node tests/lecture-foundations.cjs
       - name: Run existing parameter sensitivity and preset regressions
         run: |
           node tests/lecture-sensitivity.cjs
@@ -81,6 +83,8 @@ jobs:
         run: node tests/lecture-audit.cjs --rendered
       - name: Validate rendered CIDNP widgets and source links
         run: node tests/lecture-cidnp.cjs --rendered
+      - name: Validate foundational lectures and rotational widget after Jekyll build
+        run: node tests/lecture-foundations.cjs --rendered
       - name: Audit published HTML for tracking and browser policies
         run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages
