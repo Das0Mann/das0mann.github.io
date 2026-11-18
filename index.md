@@ -28,32 +28,32 @@ image:
 
   <div class="card-grid">
     <div class="research-card">
-      <div class="card-icon">01</div>
+      <span class="card-icon">{% include icon.html name="spin" %}</span>
       <h3>Spin chemistry</h3>
       <p>Radical pairs, magnetic-field effects, coherent spin evolution, spin relaxation and stochastic quantum dynamics.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">02</div>
+      <span class="card-icon">{% include icon.html name="layers" %}</span>
       <h3>Multiscale modelling</h3>
       <p>Molecular dynamics, conformational ensembles, electronic structure and spin dynamics in one connected framework.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">03</div>
+      <span class="card-icon">{% include icon.html name="radio" %}</span>
       <h3>Magnetic resonance</h3>
       <p>Photo-CIDNP, EPR, NMR and reaction-yield detected magnetic resonance as mechanistic probes of spin chemistry.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">04</div>
+      <span class="card-icon">{% include icon.html name="sun" %}</span>
       <h3>Flavin photochemistry</h3>
       <p>Electron transfer, radical-pair formation and magnetosensitivity in cryptochromes and related flavoproteins.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">05</div>
+      <span class="card-icon">{% include icon.html name="atom" %}</span>
       <h3>Electronic structure</h3>
       <p>DFT, TD-DFT and multireference methods for excited states, charge transfer and magnetic parameters.</p>
     </div>
     <div class="research-card">
-      <div class="card-icon">06</div>
+      <span class="card-icon">{% include icon.html name="cpu" %}</span>
       <h3>Scientific computing</h3>
       <p>General algorithms and high-performance implementations for open-system and large-spin-system simulations.</p>
     </div>
@@ -66,18 +66,21 @@ image:
 
   <div class="card-grid">
     <article class="work-card">
+      <span class="work-card-symbol">{% include icon.html name="book" %}</span>
       <span class="meta">Chemical Reviews · 2025</span>
       <h3>Weak Radiofrequency Field Effects on Biological Systems Mediated through the Radical Pair Mechanism</h3>
       <p>A broad assessment of biological magnetic-field effects mediated by radical-pair chemistry.</p>
       <a href="https://doi.org/10.1021/acs.chemrev.5c00178" target="_blank" rel="noopener">Read publication →</a>
     </article>
     <article class="work-card">
+      <span class="work-card-symbol">{% include icon.html name="book" %}</span>
       <span class="meta">Advances in Physics: X · 2026</span>
       <h3>Multiscale modeling approaches in biomolecular physics</h3>
       <p>A framework for connecting molecular structure, dynamics and quantum-level observables across scales.</p>
       <a href="https://doi.org/10.1080/23746149.2026.2660655" target="_blank" rel="noopener">Read publication →</a>
     </article>
     <article class="work-card">
+      <span class="work-card-symbol">{% include icon.html name="book" %}</span>
       <span class="meta">Free Radical Biology & Medicine · 2026</span>
       <h3>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</h3>
       <p>Reaction-yield detected magnetic resonance applied to radical-pair spin dynamics in cryptochrome-4a.</p>
@@ -88,11 +91,12 @@ image:
 
 <section class="molspin-callout">
   <div>
+    <span class="molspin-symbol">{% include icon.html name="code" %}</span>
     <p class="section-eyebrow">Open-source software</p>
     <h2>MolSpin</h2>
     <p>I am the lead developer of MolSpin, a general and extensible molecular spin-dynamics framework for coherent and open-system simulations, relaxation, stochastic propagation and magnetic-resonance observables.</p>
   </div>
-  <a class="button-primary" href="https://molspin.eu" target="_blank" rel="noopener">Visit MolSpin</a>
+  <a class="button-primary" href="https://molspin.eu" target="_blank" rel="noopener">MolSpin project {% include icon.html name="arrow-up-right" %}</a>
 </section>
 
 <section class="section-block home-learning" aria-labelledby="home-learning-title">
@@ -100,12 +104,12 @@ image:
     <p class="section-eyebrow">Open lecture library</p>
     <h2 id="home-learning-title" class="section-heading">From quantum chemistry to measurable spin physics</h2>
     <p class="section-lead">Thirteen interconnected lectures combine physical intuition, quantitative derivations and interactive simulations. Follow the guided route or enter directly through a question relevant to your research.</p>
-    <a class="button-dark" href="{{ site.url }}/lecture/">Explore all lectures</a>
+    <a class="button-dark" href="{{ site.url }}/lecture/">{% include icon.html name="book" %} Browse lectures</a>
     <p class="home-learning-note">Teaching also includes the international Spin-Chemistry summer school and invited lectures on radical-pair mechanisms, including at the German Federal Office for Radiation Protection (BfS).</p>
   </div>
   <div class="home-learning-links" aria-label="Suggested lecture entry points">
-    <a href="{{ site.url }}/lecture/electronic-structure/"><span>01 · Fundamentals</span><strong>Electronic structure</strong><small>From the many-electron problem to magnetic parameters</small></a>
-    <a href="{{ site.url }}/lecture/radical-pairs/"><span>04 · Spin chemistry</span><strong>Radical-pair mechanisms</strong><small>Spin evolution, reaction kinetics and field effects</small></a>
-    <a href="{{ site.url }}/lecture/magnetic-resonance/"><span>05 · Spectroscopy</span><strong>Magnetic resonance</strong><small>From spin Hamiltonians to EPR observables</small></a>
+    <a href="{{ site.url }}/lecture/electronic-structure/">{% include icon.html name="atom" %}<span>01 · Fundamentals</span><strong>Electronic structure</strong><small>From the many-electron problem to magnetic parameters</small></a>
+    <a href="{{ site.url }}/lecture/radical-pairs/">{% include icon.html name="spin" %}<span>04 · Spin chemistry</span><strong>Radical-pair mechanisms</strong><small>Spin evolution, reaction kinetics and field effects</small></a>
+    <a href="{{ site.url }}/lecture/magnetic-resonance/">{% include icon.html name="radio" %}<span>05 · Spectroscopy</span><strong>Magnetic resonance</strong><small>From spin Hamiltonians to EPR observables</small></a>
   </div>
 </section>
