@@ -10,8 +10,8 @@ permalink: /lecture/
 <header class="library-intro">
   <p class="library-kicker">Lecture library</p>
   <h2>From electrons to quantum dynamics, spectroscopy and chemistry</h2>
-  <p>I am building this because I genuinely like these topics, but I also know how quickly they can become unreadable when every derivation arrives before the physical picture. My rule here is simple: first ask what the object physically is, then write the smallest useful equation, change something you can visualize, and only then add the harder theory. The full route still runs from electronic structure to effective Hamiltonians, quantum dynamics, spectroscopy, chemistry and biology—but it should feel like one story rather than thirteen separate subjects.</p>
-  <p class="library-note">The pages are intentionally written in layers. If an equation is unfamiliar, the text around it should still tell you what changes physically and what an experiment would notice. The analogies are there to get a picture into your head, the interactives let you stress-test that picture, and the deeper derivations are there when you want to push past intuition.</p>
+  <p>A guided course in theoretical chemistry and molecular spin physics. Begin with an intuitive model, identify the assumptions behind the equations, then test the response by changing parameters. Thirteen modules connect electronic structure to spin Hamiltonians, dynamics, photochemistry, magnetic resonance and biological applications.</p>
+  <p class="library-note">Each lecture provides learning goals, derivations, interactive models and a concept checkpoint. Module numbers are permanent references; the suggested study route below follows conceptual prerequisites.</p>
 
   <div class="library-flow" aria-label="Lecture library concept">
     <span>electronic structure</span>
@@ -98,6 +98,14 @@ permalink: /lecture/
   <h2>All lecture modules</h2>
   <p class="library-catalogue-note">The cards remain in stable module-number order for reference and linking. For a first full pass, use the dependency-based route above rather than reading the catalogue as a strict sequence.</p>
 
+  <div class="library-filter-bar" role="search" aria-label="Filter lecture modules">
+    <div class="library-filter-field">
+      <label for="lecture-module-search">Find a lecture by topic or method</label>
+      <input id="lecture-module-search" type="search" placeholder="Try: hyperfine, relaxation, Marcus, EPR…" autocomplete="off">
+    </div>
+    <output id="lecture-result-count" class="library-filter-counter" aria-live="polite">13 modules</output>
+  </div>
+  <p id="lecture-search-empty" class="library-search-empty" hidden>No matching modules. Try a broader topic or shorter term.</p>
   <div class="library-grid">
     <div class="library-group-label">
       <span>Cluster A</span><strong>Foundations</strong>
@@ -366,22 +374,6 @@ permalink: /lecture/
       </div>
     </article>
   </div>
-</section>
-
-<section class="library-section library-roadmap">
-  <p class="section-eyebrow">Where the library can grow next</p>
-  <h2>Future directions</h2>
-  <div class="roadmap-list">
-    <div><strong>Vibronic &amp; Nonadiabatic Dynamics</strong><span>Normal modes, vibronic coupling, surface hopping and beyond-Born–Oppenheimer dynamics.</span></div>
-    <div><strong>Advanced Pulse EPR</strong><span>Echo modulation, shaped pulses, orientation selection and optimal-control examples.</span></div>
-    <div><strong>Exercises &amp; Benchmarks</strong><span>Short problems, reference outputs and reproducible convergence exercises across the library.</span></div>
-  </div>
-</section>
-
-<section class="library-section">
-  <p class="section-eyebrow">How to use it</p>
-  <h2>Read it linearly—or jump in where you need it</h2>
-  <p class="library-closing">If you are new to the subject, I would start with Electronic Structure and then move through Spin Hamiltonians to Spin Dynamics. If you already know quantum chemistry, start with Spin Hamiltonians or Spin Dynamics. For cryptochromes and magnetic-field effects, Radical-Pair Spin Chemistry is the shortest route; for spectroscopy, jump directly to Magnetic Resonance. Electron Transfer and Molecular Motion extend the library toward quantitative photochemistry and multiscale dynamics; the Computational Laboratory and Open-System modules then focus on how those models are solved numerically, while the Quantum Biology section pulls the pieces together in concrete biological examples. The final three modules then extend the library into excited-state photochemistry, coherent control and verified MolSpin workflows.</p>
 </section>
 
 </div>
