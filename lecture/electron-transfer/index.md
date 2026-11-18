@@ -368,7 +368,7 @@ permalink: /lecture/electron-transfer/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Distance and tunnelling</p><h2>Electron transfer can be exponentially sensitive to geometry before Marcus energetics even enter</h2></div>
   </div>
 
@@ -506,7 +506,7 @@ permalink: /lecture/electron-transfer/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Beyond the simplest Marcus limit</p><h2>Weak coupling gives hopping; strong coupling starts to look adiabatic</h2></div>
   </div>
 
