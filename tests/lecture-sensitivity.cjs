@@ -257,7 +257,9 @@ const tested=new Set(fixtures.flatMap(f=>f.checks.map(c=>c[0])));
 for(const id of ["builder-electrons","builder-nuclei","builder-zeeman","builder-hyperfine","builder-exchange","builder-drive","builder-relax","builder-reaction"])tested.add(id);
 // CIDNP sliders are checked by the dedicated analytic and browser-widget suite.
 for(const id of ["cidnp-field","cidnp-hfi","cidnp-exchange","cidnp-lifetime"])tested.add(id);
-assert.equal(listed.size,77,"inventory size changed");
+// Rank-aware rotational inputs are independently numerically tested.
+for(const id of ["rotation-tau2","rotation-order","rotation-taue"])tested.add(id);
+assert.equal(listed.size,80,"inventory size changed");
 assert.deepEqual([...listed].filter(id=>!tested.has(id)),[],"untested controls");
 assert.deepEqual([...tested].filter(id=>!listed.has(id)),[],"undocumented tests");
 console.log("INVENTORY PASS",listed.size,"of",tested.size,"controls; evaluations",samples);
@@ -278,6 +280,6 @@ const htmlSet=new Set(htmlIds);
 assert.equal(htmlSet.size,htmlIds.length,"duplicate lecture input IDs");
 assert.deepEqual([...htmlSet].filter(id=>!listed.has(id)),[],"lecture controls not listed in inventory");
 assert.deepEqual([...listed].filter(id=>!htmlSet.has(id)),[],"inventory IDs not present in lecture HTML");
-assert.equal(htmlSet.size,77,"lecture HTML range/checkbox count changed");
+assert.equal(htmlSet.size,80,"lecture HTML range/checkbox count changed");
 console.log("HTML SOURCE PASS",htmlSet.size,"declared controls match the inventory and test fixtures");
 
