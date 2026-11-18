@@ -9,6 +9,7 @@ on:
       - 'assets/css/lecture-refresh.css'
       - 'assets/css/iconic.css'
       - 'assets/css/lecture-polish.css'
+      - 'assets/css/lecture-cidnp.css'
       - 'assets/js/hero-spin.js'
       - 'tests/hero-spin.cjs'
       - 'tests/visual-system.cjs'
@@ -59,6 +60,8 @@ jobs:
           expected="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
           echo "Pinned MathJax: $actual"
           test "$actual" = "$expected"
+      - name: Validate photo-CIDNP analytic model and sign conventions
+        run: node tests/lecture-cidnp.cjs
       - name: Run existing parameter sensitivity and preset regressions
         run: |
           node tests/lecture-sensitivity.cjs
@@ -71,6 +74,8 @@ jobs:
 
       - name: Inspect rendered lecture HTML and homepage entry points
         run: node tests/lecture-rendered.cjs
+      - name: Validate rendered CIDNP widgets and source links
+        run: node tests/lecture-cidnp.cjs --rendered
       - name: Audit published HTML for tracking and browser policies
         run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages

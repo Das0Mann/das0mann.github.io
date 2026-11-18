@@ -14,8 +14,8 @@ assert(source.includes('focusable="false"'), "SVG icons must not enter tab order
 const route = read("_data/lecture_route.yml");
 const modules = [...route.matchAll(/^  url: (\/lecture\/[^\s]+\/)$/gm)].map(match => match[1]);
 const icons = [...route.matchAll(/^  icon: "([^"]+)"$/gm)].map(match => match[1]);
-assert.equal(modules.length, 13);
-assert.equal(icons.length, 13);
+assert.equal(modules.length, 14);
+assert.equal(icons.length, modules.length);
 for (const name of icons) assert(names.includes(name), `Undefined module icon: ${name}`);
 
 const navigation = read("_data/navigation.yml");
@@ -41,8 +41,8 @@ const library = read("_site/lecture/index.html");
 const countSvg = (html) => (html.match(/class="site-icon/g) || []).length;
 assert(countSvg(home) >= 15, "Homepage should render navigation and research icons");
 assert(countSvg(library) >= 19, "Catalogue should render 13 module icons and navigation");
-assert.equal((library.match(/class="library-card library-icon-card"/g) || []).length,13,
-  "The rendered catalogue must contain exactly 13 self-contained links");
+assert.equal((library.match(/class="library-card library-icon-card"/g) || []).length,modules.length,
+  "The rendered catalogue must contain one self-contained link per module");
 assert(!library.includes("{% include icon.html"), "Unprocessed Liquid icons in built pages");
 assert(home.includes('class="hero-signature hero-signature--animated"'), "Animated signature illustration must render");
 assert(home.includes('class="hero-motion-toggle"'), "Animation must expose a pause control");
@@ -59,4 +59,4 @@ for (const mod of modules) {
   assert(html.includes("lecture-page"), `Lecture CSS scope missing on ${mod}`);
   assert(html.includes('<details class="lecture-connections"'), `Expandable prerequisite panel missing on ${mod}`);
 }
-console.log("PASS: single text family, 31 line icons, 5 primary links and 13 rendered lecture cards");
+console.log("PASS: unified icon system, 5 primary links and "+modules.length+" lecture cards");

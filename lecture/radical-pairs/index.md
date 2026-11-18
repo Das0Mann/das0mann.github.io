@@ -528,6 +528,7 @@ permalink: /lecture/radical-pairs/
       <a href="https://doi.org/10.1021/acs.jpcb.5c01187" target="_blank" rel="noopener"><strong>Magnetosensitivity of Model Flavin–Tryptophan Radical Pairs in a Dynamic Protein Environment</strong><span>J. Phys. Chem. B (2025)</span></a>
     </div>
   </aside>
+  <p class="lecture-next-topic"><strong>From reaction yields to nuclear magnetization:</strong> photo-CIDNP measures how spin evolution and reaction pathways sort nuclear projections into emissive or absorptive NMR products. Continue with <a href="{{ site.url }}/lecture/photo-cidnp/">Photo-CIDNP and Nuclear Hyperpolarization</a> for a Kaptein sign explorer and nucleus-resolved spin-dynamics widget.</p>
 </section>
 
 <aside class="lecture-takeaway">

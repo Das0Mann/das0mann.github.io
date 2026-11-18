@@ -733,3 +733,18 @@
   .lecture-page .lecture-details-chevron,
   .lecture-page .lecture-local-toc-chevron { transition: none; }
 }
+
+/* A quiet cross-module signpost; preserve the lecture's reading rhythm. */
+.lecture-page .lecture-next-topic {
+  margin: 21px 0 3px !important;
+  max-width: 800px;
+  padding: 12px 14px;
+  border-left: 2px solid #85bcb8;
+  border-radius: 0;
+  background: #f6faf9;
+  color: #3d606a !important;
+  font-size: .83rem !important;
+  line-height: 1.7 !important;
+}
+.lecture-page .lecture-next-topic strong { color: #214b56; }
+.lecture-page .lecture-next-topic a { font-weight: 730; }

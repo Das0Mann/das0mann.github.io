@@ -47,6 +47,12 @@
   theme: Reactive states
   icon: "spin"
   description: "Follow singlet–triplet evolution into field-dependent reaction yields."
+- number: "14"
+  name: Photo-CIDNP and nuclear hyperpolarization
+  url: /lecture/photo-cidnp/
+  theme: Measurement and control
+  icon: "nucleus"
+  description: "Predict signed nuclear polarization from radical-pair spin sorting and kinetics."
 - number: "05"
   name: Magnetic resonance
   url: /lecture/magnetic-resonance/

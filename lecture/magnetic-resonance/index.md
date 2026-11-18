@@ -636,6 +636,7 @@ permalink: /lecture/magnetic-resonance/
       <a href="https://doi.org/10.1016/j.freeradbiomed.2026.04.015" target="_blank" rel="noopener"><strong>Reaction-yield detected magnetic resonance spectroscopy of radical pairs in cryptochrome-4a: a computational study</strong><span>Free Radic. Biol. Med. (2026)</span></a>
     </div>
   </aside>
+  <p class="lecture-next-topic"><strong>What about CIDNP?</strong> EPR measures electron-spin transitions, whereas photo-CIDNP transfers radical-pair spin selectivity into nuclear-spin polarization detected by NMR. The new <a href="{{ site.url }}/lecture/photo-cidnp/">Photo-CIDNP and Nuclear Hyperpolarization</a> lecture explains Kaptein phases, hyperfine sign conventions and exchange-dependent spin sorting with interactive examples.</p>
 </section>
 
 <aside class="lecture-takeaway">
