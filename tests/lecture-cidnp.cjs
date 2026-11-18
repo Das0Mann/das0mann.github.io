@@ -147,7 +147,9 @@ if(process.argv.includes("--rendered")) {
   assert(html.includes("lecture-knowledge-check"));
   assert(html.includes('id="cidnp-field-y-plus"'), "missing labelled field axis");
   assert(html.includes('id="cidnp-field-scale"'), "missing autoscale disclosure");
-  assert(html.includes('<details class="cidnp-plot-panel" open>'), "accessible spin-evolution plot missing");
-  assert(html.includes('<details class="cidnp-plot-panel">'), "collapsible field plot missing");
+  const expanded = html.match(/<details[^>]*class="cidnp-plot-panel"[^>]*\bopen(?:\s|=|>)/g) || [];
+  const disclosures = html.match(/<details[^>]*class="cidnp-plot-panel"[^>]*>/g) || [];
+  assert.equal(expanded.length, 1, "Exactly one plot should initially be expanded");
+  assert.equal(disclosures.length, 2, "Both plots need native accessible disclosure controls");
 }
 console.log("PASS: Kaptein signs, coherent spin dynamics, lifetime integrals, signed imbalance and rendered widgets");
