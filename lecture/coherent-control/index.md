@@ -13,14 +13,21 @@ permalink: /lecture/coherent-control/
   <h2>Instead of watching the spin evolve, drive it deliberately</h2>
   <p>A resonant RF or microwave field can rotate a spin state in a controlled way. The language of pulses—\(\pi/2\), \(\pi\), phase, detuning and echo—comes from solving a driven two-level problem and then using those rotations as building blocks for spectroscopy and quantum control.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Calculate Rabi oscillations and the duration of ideal π/2 and π pulses.</p></div>
     <div><span>02</span><p>Use the rotating-frame picture to understand resonance, detuning and pulse bandwidth.</p></div>
     <div><span>03</span><p>Explain what an echo refocuses and what irreversible decoherence it cannot reverse.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -65,7 +72,7 @@ permalink: /lecture/coherent-control/
   \]
   </div>
 
-  <p>where \(\Delta\nu\) is the detuning from resonance and \(\nu_1\) is the on-resonance Rabi frequency in cycles per second.</p>
+  <p>Here \(\Delta\nu\) is the detuning and \(\nu_1\) the on-resonance Rabi frequency in cycles per second. The frequency \(\nu_1\) refers to the <em>co-rotating transverse drive component</em> in the rotating-wave approximation, not automatically to the peak amplitude of a linearly polarized laboratory field.</p>
 
   <p>For a two-level spin this dynamics can be visualized on the <strong>Bloch sphere</strong>. The north and south poles represent the two basis populations; points around the equator represent coherent superpositions with different phases. A resonant pulse rotates the Bloch vector around a transverse axis, while detuning adds a \(z\)-component to the effective rotation axis.</p>
 </section>
@@ -208,7 +215,7 @@ permalink: /lecture/coherent-control/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Pulse area</p><h2>A pulse is a controlled rotation whose angle is the time-integrated drive</h2></div>
   </div>
 
@@ -216,15 +223,14 @@ permalink: /lecture/coherent-control/
 
   <div class="lecture-equation">
   \[
-  \theta
-  =
-  \gamma B_1 t_p
-  =
-  2\pi\nu_1 t_p.
+  \theta = |\gamma|B_{1,\mathrm{rot}}t_p=2\pi\nu_1t_p,
+  \qquad
+  \nu_1=\frac{|\gamma|B_{1,\mathrm{rot}}}{2\pi}.
   \]
   </div>
 
-  <p>This makes pulse errors intuitive. A \(B_1\) calibration error changes the rotation angle; a frequency offset tilts the rotation axis; and a finite pulse length limits the excitation bandwidth. For a rectangular pulse the characteristic spectral width scales roughly as \(1/t_p\), so very short pulses are broad in frequency space.</p>
+  <p>\(B_{1,\mathrm{rot}}\) denotes the amplitude of the resonant co-rotating field. For a linearly polarized laboratory drive \(B_x(t)=B_{1,\mathrm{lab}}\cos(\omega t)\), the rotating-wave approximation gives \(B_{1,\mathrm{rot}}=B_{1,\mathrm{lab}}/2\). A circularly polarized resonant drive instead has its full rotating-field amplitude. Specifying the field convention avoids a factor-of-two error in the calculated pulse length.</p>
+  <p>This makes pulse errors intuitive. A drive-amplitude calibration error changes the rotation angle; a frequency offset tilts the rotation axis; and a finite pulse length limits the excitation bandwidth. For a rectangular pulse the characteristic spectral width scales roughly as \(1/t_p\), so very short pulses are broad in frequency space.</p>
 
   <aside class="lecture-note">
     <strong>Control is geometry in Hilbert space.</strong>
@@ -418,7 +424,7 @@ permalink: /lecture/coherent-control/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -431,7 +437,7 @@ permalink: /lecture/coherent-control/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

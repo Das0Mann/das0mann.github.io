@@ -13,17 +13,21 @@ permalink: /lecture/computational-lab/
   <h2>From a Hamiltonian to a calculation you can trust</h2>
   <p>Formal spin dynamics is only half the problem. The other half is numerical: how large is the Hilbert space, which representation should we propagate, how do we avoid constructing impossible matrices, and how do we know that a stochastic or time-discretized result is converged?</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Estimate Hilbert-, operator- and Liouville-space scaling before choosing a numerical method.</p></div>
     <div><span>02</span><p>Understand when sparse/Krylov or state-vector methods avoid impossible dense representations.</p></div>
     <div><span>03</span><p>Design convergence tests for timestep, stochastic trace samples, orientations and molecular ensembles.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -190,7 +194,7 @@ permalink: /lecture/computational-lab/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Matrix-free thinking</p><h2>You often need the action of an operator, not the operator itself</h2></div>
   </div>
 
@@ -252,7 +256,7 @@ permalink: /lecture/computational-lab/
   \]
   </div>
 
-  <p>The standard error decreases asymptotically as \(M^{-1/2}\), but the prefactor is observable-dependent. Twelve samples do not mean “12-fold accuracy”, and they do not guarantee a specific percentage error.</p>
+  <p>For independent, identically distributed samples with finite variance, the Monte Carlo standard error decreases asymptotically as \(M^{-1/2}\); the prefactor depends on the operator and sampling ensemble. Correlated or insufficiently mixed samples reduce the effective sample size, while an incorrectly normalized sampler can introduce bias. Twelve samples therefore do not imply a fixed percentage accuracy. Check the convergence of the actual observable against an independent benchmark where possible.</p>
 
   <aside class="lecture-note">
     <strong>Important distinction:</strong>
@@ -263,7 +267,7 @@ permalink: /lecture/computational-lab/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">A habit worth keeping</p><h2>Solve a tiny version exactly before trusting the large one</h2></div>
   </div>
 
@@ -367,7 +371,7 @@ permalink: /lecture/computational-lab/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

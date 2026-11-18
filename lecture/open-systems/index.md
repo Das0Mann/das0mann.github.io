@@ -13,17 +13,21 @@ permalink: /lecture/open-systems/
   <h2>What changes when the spin system remembers its environment?</h2>
   <p>The \(T_1/T_2\) picture is useful, but it hides the microscopic origin of relaxation. Open-system theory asks how a selected spin subsystem evolves when it is coupled to degrees of freedom that we do not explicitly keep.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish phenomenological Lindblad dynamics from microscopic weak-coupling relaxation theory.</p></div>
     <div><span>02</span><p>State the physical content of the Born, Markov and secular approximations.</p></div>
     <div><span>03</span><p>Explain what a memory kernel changes and when a time-nonlocal description becomes relevant.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -113,7 +117,7 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
-  <p>The dissipator is constructed so that the dynamics remains trace preserving and completely positive. The operators \(L_k\) encode specific channels such as relaxation or dephasing.</p>
+  <p>For a time-independent GKSL generator with nonnegative rates \(\gamma_k\), the dissipator generates trace-preserving, completely positive quantum dynamical maps. The operators \(L_k\) represent channels such as relaxation or dephasing. Simply writing an equation in this form is not sufficient if fitted coefficients violate the required rate conditions.</p>
 
   <details class="lecture-details">
     <summary>Why does “complete positivity” matter?</summary>
@@ -457,7 +461,7 @@ permalink: /lecture/open-systems/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Thermal directionality</p><h2>A thermal bath does more than broaden lines—it biases upward and downward transitions differently</h2></div>
   </div>
 
@@ -530,7 +534,7 @@ permalink: /lecture/open-systems/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -544,7 +548,7 @@ permalink: /lecture/open-systems/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

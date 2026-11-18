@@ -13,17 +13,21 @@ permalink: /lecture/electronic-structure/
   <h2>Start with the electrons</h2>
   <p>Before we talk about spin dynamics, we need to know what the electrons are doing. Electronic-structure theory is the layer that gives us energies, densities, excited states and ultimately the magnetic parameters that enter a spin Hamiltonian.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish the many-electron wavefunction, molecular orbitals and electron density.</p></div>
     <div><span>02</span><p>Explain the defining approximations of HF, Kohn–Sham DFT, post-HF ab initio and multiconfigurational methods, and choose an appropriate level for a given electronic-structure problem.</p></div>
     <div><span>03</span><p>Explain how electronic energies, spin densities and response derivatives are reduced to \(g\), hyperfine, exchange, dipolar and ZFS parameters.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -712,7 +716,7 @@ permalink: /lecture/electronic-structure/
   </div>
 
   <div class="lecture-flow-bridge">
-    <p><strong>This is one of those topics that sounds more intimidating than it needs to.</strong> The useful split is simple: scalar-relativistic effects change the orbital energies and radial shapes; spin–orbit coupling connects spin and orbital motion. Both can feed directly into the magnetic parameters we use later.</p>
+    <p>Relativistic effects contribute to molecular magnetic parameters through two related mechanisms: scalar-relativistic terms alter electronic energies and orbital distributions, whereas spin–orbit coupling mixes electronic states of different spin and orbital character. Both influence the effective interactions used in subsequent spin-Hamiltonian simulations.</p>
   </div>
 
   <div class="physical-concept-panel">
@@ -742,7 +746,7 @@ permalink: /lecture/electronic-structure/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
   </div>
 
@@ -939,7 +943,7 @@ permalink: /lecture/electronic-structure/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -953,7 +957,7 @@ permalink: /lecture/electronic-structure/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

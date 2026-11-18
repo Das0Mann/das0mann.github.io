@@ -13,17 +13,21 @@ permalink: /lecture/radical-pairs/
   <h2>Turn spin dynamics into chemistry</h2>
   <p>A radical pair is one of the cleanest places where quantum spin dynamics becomes chemically observable. The spins evolve coherently, but the singlet and triplet parts of the state can react differently. Change the spin evolution and you can change the reaction yield.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Construct the singlet/triplet basis for two electron spins and explain why it is not a classical arrow picture.</p></div>
     <div><span>02</span><p>Identify the magnetic interactions that generate singlet–triplet interconversion.</p></div>
     <div><span>03</span><p>Connect spin evolution to spin-selective reaction yields and magnetic-field effects.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -446,7 +450,7 @@ permalink: /lecture/radical-pairs/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">From spin state to product yield</p><h2>Reaction kinetics continuously measures the evolving singlet and triplet character</h2></div>
   </div>
 
@@ -464,7 +468,7 @@ permalink: /lecture/radical-pairs/
   \]
   </div>
 
-  <p>The corresponding integrated singlet yield is then</p>
+  <p>Here \(\rho(t)\) is the <em>unnormalized density operator of the radical pairs that have not yet reacted</em>, so its trace decreases with the spin-selective loss. The equation assumes first-order singlet and triplet reaction channels and does not include any separately specified spin-independent loss or product-state dynamics. For an initial state normalized to unit trace, the corresponding integrated singlet yield is</p>
 
   <div class="lecture-equation">
   \[
@@ -554,7 +558,7 @@ permalink: /lecture/radical-pairs/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -569,7 +573,7 @@ permalink: /lecture/radical-pairs/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

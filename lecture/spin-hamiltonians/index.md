@@ -13,17 +13,21 @@ permalink: /lecture/spin-hamiltonians/
   <h2>The spin Hamiltonian is the bridge</h2>
   <p>Electronic-structure theory gives us molecular magnetic parameters. Spin dynamics needs those parameters arranged into an effective Hamiltonian. This module is about understanding what each term means physically, what assumptions hide inside it, and which conventions you must state before a number becomes meaningful.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Read a spin Hamiltonian term by term and state the associated units and sign convention.</p></div>
     <div><span>02</span><p>Distinguish Zeeman, hyperfine, exchange, dipolar, quadrupole and zero-field-splitting physics.</p></div>
     <div><span>03</span><p>Map ab initio energies and response tensors onto the operator coefficients used in a spin Hamiltonian.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -215,7 +219,7 @@ permalink: /lecture/spin-hamiltonians/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Reading perturbation theory</p><h2>Nearby electronic states matter because virtual mixing has an energy cost</h2></div>
   </div>
 
@@ -391,7 +395,7 @@ permalink: /lecture/spin-hamiltonians/
   \]
   </div>
 
-  <p>If both states are available as proper spin eigenstates, this is the direct electronic-energy mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection is then used to infer the pure-state splitting before converting it to the \(J\) convention above.</p>
+  <p>These expressions apply to two isolated spin-\(\tfrac12\) centres when the <em>isotropic exchange term is the only source</em> of the singlet–triplet splitting. With anisotropic interactions or other coupled degrees of freedom, a measured energy gap need not equal \(J\). If both states are proper spin eigenstates under the stated model, their electronic energy difference provides the mapping. Broken-symmetry DFT instead produces a spin-contaminated determinant; a Noodleman/Yamaguchi-type projection may be used to infer the splitting before converting it to the chosen \(J\) convention.</p>
 
   <p>The through-space magnetic dipolar interaction has a completely different origin. Using dimensionless spin operators and the point-dipole approximation,</p>
 
@@ -737,7 +741,7 @@ permalink: /lecture/spin-hamiltonians/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -751,7 +755,7 @@ permalink: /lecture/spin-hamiltonians/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

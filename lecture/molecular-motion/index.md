@@ -13,17 +13,21 @@ permalink: /lecture/molecular-motion/
   <h2>The spin Hamiltonian is rarely truly static</h2>
   <p>In a protein, liquid or flexible molecular system, distances, orientations and electronic structure fluctuate continuously. That turns fixed spin parameters into time series and makes molecular motion part of the spin-dynamics problem rather than a separate background effect.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Turn a trajectory of molecular structures into fluctuations of spin-Hamiltonian parameters.</p></div>
     <div><span>02</span><p>Interpret autocorrelation functions and spectral densities in terms of dynamical timescales.</p></div>
     <div><span>03</span><p>Decide whether motion is fast, resonant with a spin transition, or effectively quasi-static.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -175,7 +179,7 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>provided the integral is well behaved. For a single exponential this reduces exactly to the parameter \(\tau_c\), but a multi-timescale protein trajectory need not be representable by one unique decay constant.</p>
+  <p>provided the stationary correlation function is integrable and \(C(0)>0\). For a single positive exponential this equals \(\tau_c\). Oscillatory or sign-changing correlations can exhibit strong cancellations, so their integral time need not represent a positive structural residence time. Multi-timescale trajectories may require the full frequency-dependent spectral density rather than one fitted \(\tau_c\).</p>
 
   <p>A common teaching model is a single exponential,</p>
 
@@ -315,7 +319,7 @@ permalink: /lecture/molecular-motion/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Rotational motion</p><h2>Anisotropic spin interactions usually care about second-rank rotation</h2></div>
   </div>
 
@@ -358,7 +362,7 @@ permalink: /lecture/molecular-motion/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Global versus internal motion</p><h2>A protein does not have one correlation time</h2></div>
   </div>
 
@@ -464,7 +468,7 @@ permalink: /lecture/molecular-motion/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -479,7 +483,7 @@ permalink: /lecture/molecular-motion/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

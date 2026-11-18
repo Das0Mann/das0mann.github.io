@@ -13,17 +13,21 @@ permalink: /lecture/spin-dynamics/
   <h2>What does a spin Hamiltonian do in time?</h2>
   <p>Once the electronic structure has been reduced to a spin Hamiltonian, the problem changes. We are no longer solving for the electrons in real space; we are propagating amplitudes, populations and coherences in spin space.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Turn electronic-structure-derived spin parameters into a matrix Hamiltonian and propagate pure states or density operators.</p></div>
     <div><span>02</span><p>Separate coherent evolution from population relaxation and dephasing.</p></div>
     <div><span>03</span><p>Recognize when an effective open-system description is required instead of closed Schrödinger dynamics.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -354,7 +358,7 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">A complete dynamical question</p><h2>A Hamiltonian alone does not define an experiment</h2></div>
   </div>
 
@@ -510,7 +514,7 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
-  <p>\(T_\phi\) is the pure-dephasing time. So \(T_2\) is not simply “the same relaxation as \(T_1\)”. Within this simple Bloch-type decomposition into independent exponential longitudinal relaxation and pure dephasing, eliminating pure dephasing gives the bound \(T_2=2T_1\). More general non-Markovian, multilevel or strongly coupled dynamics need not be captured by a single pair of \(T_1\) and \(T_2\) constants.</p>
+  <p>\(T_\phi\) is the pure-dephasing time. Within the stated Bloch-type model, nonnegative pure-dephasing rate implies \(T_2\leq2T_1\), with equality when pure dephasing vanishes. Thus \(T_2\) is not simply a second name for \(T_1\). More general non-Markovian, multilevel or strongly coupled dynamics need not be captured by a single pair of exponential \(T_1\) and \(T_2\) constants.</p>
 
   <div class="interactive-card" id="relaxation-demo">
     <div class="interactive-head">
@@ -568,7 +572,7 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Competing timescales</p><h2>Coherence matters only if it survives long enough to affect an observable</h2></div>
   </div>
 
@@ -646,7 +650,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -660,7 +664,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

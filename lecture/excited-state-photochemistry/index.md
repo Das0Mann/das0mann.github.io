@@ -13,14 +13,21 @@ permalink: /lecture/excited-state-photochemistry/
   <h2>Absorbing a photon is only the beginning</h2>
   <p>Photochemistry starts with an electronic excitation, but the molecule does not remain at the geometry at which the photon was absorbed. Nuclei move, electronic states approach one another, population can change electronic character, and spin–orbit coupling can transfer population between different spin manifolds.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish vertical excitation, excited-state relaxation and emission energies.</p></div>
     <div><span>02</span><p>Explain why conical intersections and nonadiabatic coupling enable efficient internal conversion.</p></div>
     <div><span>03</span><p>Relate spin–orbit coupling and vibronic overlap to intersystem crossing and triplet formation.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -249,7 +256,7 @@ permalink: /lecture/excited-state-photochemistry/
   \]
   </div>
 
-  <p>where the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate.</p>
+  <p>Here the vibronic density or Franck–Condon-weighted overlap determines whether nuclear motion can accommodate the energy mismatch. A large SOC matrix element alone therefore does not determine an ISC rate. Reliable numerical predictions require attention to the relative singlet and triplet energies, relevant vibrational modes, state character and thermally accessible configurations. State orderings and singlet–triplet gaps from approximate TDDFT calculations should be checked before converting a SOC value into a kinetic estimate.</p>
 
   <details class="lecture-details">
     <summary>Where does El-Sayed's rule fit into this picture?</summary>
@@ -313,7 +320,7 @@ permalink: /lecture/excited-state-photochemistry/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Competing excited-state channels</p><h2>Quantum yield is a branching problem between rates</h2></div>
   </div>
 
@@ -436,7 +443,7 @@ permalink: /lecture/excited-state-photochemistry/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -450,7 +457,7 @@ permalink: /lecture/excited-state-photochemistry/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

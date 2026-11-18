@@ -13,14 +13,21 @@ permalink: /lecture/molspin-notebooks/
   <h2>Read the input as a scientific model, not as configuration noise</h2>
   <p>A MolSpin input file encodes a physical problem: which spins exist, how they interact, how the state is prepared, which kinetic processes are present and which numerical task turns that model into an observable. This module walks through real examples from the public MolSpin repository.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Map each MolSpin input object onto the physical model it represents.</p></div>
     <div><span>02</span><p>Choose a task whose numerical capabilities match the Hamiltonian, kinetics and time dependence.</p></div>
     <div><span>03</span><p>Record software versions, units and convergence settings so that a simulation remains reproducible.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -127,7 +134,7 @@ permalink: /lecture/molspin-notebooks/
   <aside class="lecture-analogy">
     <span class="lecture-analogy-label">Mental model</span>
     <h3>A MolSpin input is closer to a circuit diagram than to a settings file</h3>
-    <p>The spins are the degrees of freedom, interactions wire them together into a Hamiltonian, the initial state charges the circuit, transitions and relaxation add non-unitary channels, and the task specifies how the circuit is driven or read out. Changing one object therefore changes the mathematical model, not merely a software preference.</p>
+    <p>Spin objects define the retained degrees of freedom; interactions specify Hamiltonian operators; states define initial conditions or projectors; transitions and relaxation specify non-unitary terms; and tasks select numerical propagation and observables. Changing one object therefore changes the physical or numerical model, not merely a software preference.</p>
     <span class="analogy-limit"><strong>Where the analogy breaks:</strong> the underlying object is a quantum dynamical equation, not an electrical network. The analogy is useful only for seeing that syntax encodes physical connectivity and operations.</span>
   </aside>
 </section>
@@ -351,7 +358,7 @@ PulseSequence seq
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Reproducibility contract</p><h2>An input file is incomplete without units, conventions and software version</h2></div>
   </div>
 
@@ -423,7 +430,7 @@ PulseSequence seq
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

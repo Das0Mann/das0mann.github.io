@@ -13,17 +13,21 @@ permalink: /lecture/quantum-biology/
   <h2>Quantum biology is a mechanism question, not a label</h2>
   <p>Every chemical bond is quantum mechanical. That alone does not make a biological process an interesting example of quantum biology. The useful question is whether a specifically quantum degree of freedom—coherence, tunnelling, spin correlation or non-classical state structure—survives long enough and couples strongly enough to change a biological observable.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Separate genuinely mechanism-specific quantum effects from the trivial statement that chemistry is quantum mechanical.</p></div>
     <div><span>02</span><p>Test a proposed mechanism against preparation, interaction, lifetime, decoherence, readout and experiment.</p></div>
     <div><span>03</span><p>Connect microscopic radical-pair or coherence dynamics to an actual biological observable without skipping scales.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -56,7 +60,7 @@ permalink: /lecture/quantum-biology/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Evidence ladder</p><h2>A quantum effect, a mechanism and a biological function are three different claims</h2></div>
   </div>
 
@@ -350,7 +354,7 @@ permalink: /lecture/quantum-biology/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">From molecule to biological signal</p><h2>A directional compass needs anisotropy and a route to amplify chemistry</h2></div>
   </div>
 
@@ -370,7 +374,7 @@ permalink: /lecture/quantum-biology/
 
   <aside class="research-connection">
     <span class="research-connection-label">Orientation requirement</span>
-    <p>For avian cryptochrome, membrane association and molecular ordering are therefore not peripheral structural details; they are part of the physical requirement for a directional response.</p>
+    <p>A directional signal requires the orientation-dependent response of the radical-pair ensemble not to average away. Partial orientational order of the receptor—or, in some mechanisms, orientational selection at photoexcitation—can provide that condition. The reported association of ErCry4a with model lipid bilayers offers a physically plausible route to partial ordering; it does not establish that membrane anchoring is the unique route or that a complete avian compass has been demonstrated.</p>
     <div class="research-connection-links">
       <a href="https://doi.org/10.1021/acschembio.4c00576" target="_blank" rel="noopener"><strong>European Robin Cryptochrome-4a Associates with Lipid Bilayers in an Ordered Manner, Fulfilling a Molecular-Level Condition for Magnetoreception</strong><span>ACS Chem. Biol. (2025)</span></a>
     </div>
@@ -429,7 +433,7 @@ permalink: /lecture/quantum-biology/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

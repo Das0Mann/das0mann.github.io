@@ -13,17 +13,21 @@ permalink: /lecture/magnetic-resonance/
   <h2>Turn spin-energy levels into a spectrum</h2>
   <p>Magnetic resonance asks a very practical question: at what field and frequency can an oscillating magnetic field drive a transition between spin states? From that simple starting point we get EPR spectra, hyperfine patterns, anisotropic powder lineshapes and reaction-yield detected resonance.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Use the resonance condition to connect microwave frequency, magnetic field and effective g-value.</p></div>
     <div><span>02</span><p>Predict qualitatively how hyperfine coupling, anisotropy and linewidth shape an EPR spectrum.</p></div>
     <div><span>03</span><p>Distinguish CW, time-resolved, pulsed and reaction-yield detected magnetic resonance.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -231,7 +235,7 @@ permalink: /lecture/magnetic-resonance/
   \]
   </div>
 
-  <p>The corresponding resonance field is \(B_\mathrm{res}=h\nu/(\mu_Bg_\mathrm{eff})\).</p>
+  <p>The corresponding resonance field is \(B_\mathrm{res}=h\nu/(\mu_Bg_\mathrm{eff})\) within this rigid, effective spin-\(\tfrac12\), high-field model. The formula shows the effect of an axial \(g\)-tensor on resonance position; it does not by itself determine the powder-spectrum intensity, transition matrix elements, orientation selection, saturation or linewidth.</p>
 
   <div class="interactive-card" id="epr-demo">
     <div class="interactive-head">
@@ -306,7 +310,7 @@ permalink: /lecture/magnetic-resonance/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Selection rules &amp; field scale</p><h2>A resonance line also tells you which transition the microwave field can drive</h2></div>
   </div>
 
@@ -662,7 +666,7 @@ permalink: /lecture/magnetic-resonance/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -676,7 +680,7 @@ permalink: /lecture/magnetic-resonance/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">

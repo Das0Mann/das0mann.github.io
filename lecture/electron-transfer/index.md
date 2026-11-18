@@ -13,17 +13,21 @@ permalink: /lecture/electron-transfer/
   <h2>How fast does an electron move from donor to acceptor?</h2>
   <p>Electron transfer sits exactly at the interface between electronic structure, nuclear motion and kinetics. The electronic states tell us where the electron can be; the environment controls how costly it is to reorganize; the coupling determines how efficiently the two states communicate.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Define diabatic donor/acceptor states, electronic coupling, reorganization energy and driving force.</p></div>
     <div><span>02</span><p>Locate a reaction in the normal, activationless or inverted Marcus regime.</p></div>
     <div><span>03</span><p>Understand what energy-gap sampling can—and cannot—determine from molecular ensembles.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
@@ -357,13 +361,14 @@ permalink: /lecture/electron-transfer/
     <span>If you define the gap in the opposite direction, the corresponding signs change. This is one reason energy-gap analyses should always state the gap convention explicitly.</span>
   </aside>
 
-  <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction.</p>
+  <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction <em>when the energy-gap statistics obey the linear-response assumptions</em>.</p>
+  <aside class="lecture-note"><strong>Check before using the two-ensemble formula.</strong><span>Approximately Gaussian energy-gap distributions with compatible curvatures, adequate sampling within each electronic state, and a consistent electronic-energy definition are needed for this simple mapping. Non-Gaussian distributions, slow conformational exchange or nonlinear response require more general free-energy treatment. Averaging fitted rates over conformers is not the same as inserting ensemble-averaged parameters into Marcus theory.</span></aside>
 </section>
 
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Distance and tunnelling</p><h2>Electron transfer can be exponentially sensitive to geometry before Marcus energetics even enter</h2></div>
   </div>
 
@@ -501,7 +506,7 @@ permalink: /lecture/electron-transfer/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Beyond the simplest Marcus limit</p><h2>Weak coupling gives hopping; strong coupling starts to look adiabatic</h2></div>
   </div>
 
@@ -559,7 +564,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -573,7 +578,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
