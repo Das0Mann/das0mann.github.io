@@ -361,7 +361,8 @@ permalink: /lecture/electron-transfer/
     <span>If you define the gap in the opposite direction, the corresponding signs change. This is one reason energy-gap analyses should always state the gap convention explicitly.</span>
   </aside>
 
-  <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction.</p>
+  <p>A single ensemble of vertical gaps is therefore not, by itself, enough to determine both \(\lambda\) and \(\Delta G^\circ\) without extra assumptions. Two properly equilibrated state-specific ensembles give a much cleaner Marcus construction <em>when the energy-gap statistics obey the linear-response assumptions</em>.</p>
+  <aside class="lecture-note"><strong>Check before using the two-ensemble formula.</strong><span>Approximately Gaussian energy-gap distributions with compatible curvatures, adequate sampling within each electronic state, and a consistent electronic-energy definition are needed for this simple mapping. Non-Gaussian distributions, slow conformational exchange or nonlinear response require more general free-energy treatment. Averaging fitted rates over conformers is not the same as inserting ensemble-averaged parameters into Marcus theory.</span></aside>
 </section>
 
 
@@ -563,7 +564,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -577,7 +578,7 @@ permalink: /lecture/electron-transfer/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
