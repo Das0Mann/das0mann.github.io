@@ -43,7 +43,7 @@
 
       const lambda = 0.5 * k * d * d;
       const eAbs = e00 + lambda;
-      const eEm = Math.max(0, e00 - lambda);
+      const eEm = e00 - lambda;
       const stokes = 2 * lambda;
 
       e00Out.textContent = e00.toFixed(2) + " eV";

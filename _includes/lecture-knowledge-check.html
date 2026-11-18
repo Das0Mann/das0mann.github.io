@@ -1,0 +1,30 @@
+{% assign check = site.data.lecture_checks[page.url] %}
+{% if check %}
+<section class="lecture-knowledge-check" aria-labelledby="lecture-check-heading">
+  <div class="lecture-check-heading">
+    <span class="lecture-check-kicker">Concept checkpoint</span>
+    <h2 id="lecture-check-heading">Test your understanding</h2>
+    <p>Use the question to test the main physical idea—not your ability to memorize an equation.</p>
+  </div>
+  <div class="lecture-check-form" data-answer="{{ check.answer }}">
+    <fieldset>
+      <legend>{{ check.question }}</legend>
+      {% assign question_id = page.url | slugify %}
+      {% for choice in check.choices %}
+      <label class="lecture-check-choice">
+        <input type="radio" name="lecture-check-{{ question_id }}" value="{{ forloop.index0 }}">
+        <span>{{ choice }}</span>
+      </label>
+      {% endfor %}
+    </fieldset>
+    <div class="lecture-check-actions">
+      <button class="lecture-check-submit" type="button">Check answer</button>
+      <p class="lecture-check-status" role="status" aria-live="polite"></p>
+    </div>
+    <div class="lecture-check-explanation" hidden>
+      <strong>Physical reasoning</strong>
+      <p>{{ check.explanation }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -95,12 +95,17 @@ image:
   <a class="button-primary" href="https://molspin.eu" target="_blank" rel="noopener">Visit MolSpin</a>
 </section>
 
-<section class="section-block">
-  <p class="section-eyebrow">Scientific communication</p>
-  <h2 class="section-heading">Teaching and invited talks</h2>
-  <p class="section-lead">In 2026 I taught at the international Spin-Chemistry summer school and gave an invited lecture at the German Federal Office for Radiation Protection (BfS) on the relevance of radical-pair mechanisms for radiation protection.</p>
-  <div class="hero-actions">
-    <a class="button-dark" href="{{ site.url }}/about/">More about me</a>
-    <a class="button-light" href="{{ site.url }}/publications/">Full publication list</a>
+<section class="section-block home-learning" aria-labelledby="home-learning-title">
+  <div class="home-learning-copy">
+    <p class="section-eyebrow">Open lecture library</p>
+    <h2 id="home-learning-title" class="section-heading">From quantum chemistry to measurable spin physics</h2>
+    <p class="section-lead">Thirteen interconnected lectures combine physical intuition, quantitative derivations and interactive simulations. Follow the guided route or enter directly through a question relevant to your research.</p>
+    <a class="button-dark" href="{{ site.url }}/lecture/">Explore all lectures</a>
+    <p class="home-learning-note">Teaching also includes the international Spin-Chemistry summer school and invited lectures on radical-pair mechanisms, including at the German Federal Office for Radiation Protection (BfS).</p>
+  </div>
+  <div class="home-learning-links" aria-label="Suggested lecture entry points">
+    <a href="{{ site.url }}/lecture/electronic-structure/"><span>01 · Fundamentals</span><strong>Electronic structure</strong><small>From the many-electron problem to magnetic parameters</small></a>
+    <a href="{{ site.url }}/lecture/radical-pairs/"><span>04 · Spin chemistry</span><strong>Radical-pair mechanisms</strong><small>Spin evolution, reaction kinetics and field effects</small></a>
+    <a href="{{ site.url }}/lecture/magnetic-resonance/"><span>05 · Spectroscopy</span><strong>Magnetic resonance</strong><small>From spin Hamiltonians to EPR observables</small></a>
   </div>
 </section>

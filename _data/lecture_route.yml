@@ -1,0 +1,53 @@
+# Suggested learning order; historical module numbers in page titles remain unchanged.
+- number: "01"
+  name: Electronic structure
+  url: /lecture/electronic-structure/
+  theme: Foundations
+- number: "02"
+  name: Spin Hamiltonians
+  url: /lecture/spin-hamiltonians/
+  theme: Foundations
+- number: "03"
+  name: Spin dynamics
+  url: /lecture/spin-dynamics/
+  theme: Foundations
+- number: "07"
+  name: Molecular motion
+  url: /lecture/molecular-motion/
+  theme: The environment
+- number: "09"
+  name: Open quantum systems
+  url: /lecture/open-systems/
+  theme: The environment
+- number: "11"
+  name: Excited-state photochemistry
+  url: /lecture/excited-state-photochemistry/
+  theme: Reactive states
+- number: "06"
+  name: Electron transfer
+  url: /lecture/electron-transfer/
+  theme: Reactive states
+- number: "04"
+  name: Radical-pair chemistry
+  url: /lecture/radical-pairs/
+  theme: Reactive states
+- number: "05"
+  name: Magnetic resonance
+  url: /lecture/magnetic-resonance/
+  theme: Measurement and control
+- number: "12"
+  name: Coherent control
+  url: /lecture/coherent-control/
+  theme: Measurement and control
+- number: "10"
+  name: Quantum biology
+  url: /lecture/quantum-biology/
+  theme: Applications
+- number: "08"
+  name: Computational laboratory
+  url: /lecture/computational-lab/
+  theme: Implementation
+- number: "13"
+  name: MolSpin examples
+  url: /lecture/molspin-notebooks/
+  theme: Implementation
