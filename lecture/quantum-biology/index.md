@@ -374,7 +374,7 @@ permalink: /lecture/quantum-biology/
 
   <aside class="research-connection">
     <span class="research-connection-label">Orientation requirement</span>
-    <p>For avian cryptochrome, membrane association and molecular ordering are therefore not peripheral structural details; they are part of the physical requirement for a directional response.</p>
+    <p>A directional signal requires the orientation-dependent response of the radical-pair ensemble not to average away. Partial orientational order of the receptor—or, in some mechanisms, orientational selection at photoexcitation—can provide that condition. The reported association of ErCry4a with model lipid bilayers offers a physically plausible route to partial ordering; it does not establish that membrane anchoring is the unique route or that a complete avian compass has been demonstrated.</p>
     <div class="research-connection-links">
       <a href="https://doi.org/10.1021/acschembio.4c00576" target="_blank" rel="noopener"><strong>European Robin Cryptochrome-4a Associates with Lipid Bilayers in an Ordered Manner, Fulfilling a Molecular-Level Condition for Magnetoreception</strong><span>ACS Chem. Biol. (2025)</span></a>
     </div>
@@ -433,7 +433,7 @@ permalink: /lecture/quantum-biology/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
