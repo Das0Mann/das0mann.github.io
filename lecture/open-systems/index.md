@@ -13,17 +13,21 @@ permalink: /lecture/open-systems/
   <h2>What changes when the spin system remembers its environment?</h2>
   <p>The \(T_1/T_2\) picture is useful, but it hides the microscopic origin of relaxation. Open-system theory asks how a selected spin subsystem evolves when it is coupled to degrees of freedom that we do not explicitly keep.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish phenomenological Lindblad dynamics from microscopic weak-coupling relaxation theory.</p></div>
     <div><span>02</span><p>State the physical content of the Born, Markov and secular approximations.</p></div>
     <div><span>03</span><p>Explain what a memory kernel changes and when a time-nonlocal description becomes relevant.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
