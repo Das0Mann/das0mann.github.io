@@ -87,6 +87,8 @@ permalink: /lecture/excited-state-photochemistry/
 
   <p>so the vertical absorption and emission energies are \(E_\mathrm{abs}=E_{00}+\lambda\) and \(E_\mathrm{em}=E_{00}-\lambda\).</p>
 
+  <p>The equal-curvature model predicts a Stokes shift of \(2\lambda\), provided the same two electronic surfaces describe absorption and emission. The diagram assumes the vertical emission energy remains positive; it is not a complete model of vibronic band maxima, nonradiative pathways or state crossings.</p>
+
   <div class="interactive-card" id="photo-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Interactive model</span><h3>Displaced excited-state surface</h3></div>
