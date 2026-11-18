@@ -179,7 +179,7 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
-  <p>provided the integral is well behaved. For a single exponential this reduces exactly to the parameter \(\tau_c\), but a multi-timescale protein trajectory need not be representable by one unique decay constant.</p>
+  <p>provided the stationary correlation function is integrable and \(C(0)>0\). For a single positive exponential this equals \(\tau_c\). Oscillatory or sign-changing correlations can exhibit strong cancellations, so their integral time need not represent a positive structural residence time. Multi-timescale trajectories may require the full frequency-dependent spectral density rather than one fitted \(\tau_c\).</p>
 
   <p>A common teaching model is a single exponential,</p>
 
@@ -468,7 +468,7 @@ permalink: /lecture/molecular-motion/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -483,7 +483,7 @@ permalink: /lecture/molecular-motion/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
