@@ -514,7 +514,7 @@ permalink: /lecture/spin-dynamics/
   \]
   </div>
 
-  <p>\(T_\phi\) is the pure-dephasing time. So \(T_2\) is not simply “the same relaxation as \(T_1\)”. Within this simple Bloch-type decomposition into independent exponential longitudinal relaxation and pure dephasing, eliminating pure dephasing gives the bound \(T_2=2T_1\). More general non-Markovian, multilevel or strongly coupled dynamics need not be captured by a single pair of \(T_1\) and \(T_2\) constants.</p>
+  <p>\(T_\phi\) is the pure-dephasing time. Within the stated Bloch-type model, nonnegative pure-dephasing rate implies \(T_2\leq2T_1\), with equality when pure dephasing vanishes. Thus \(T_2\) is not simply a second name for \(T_1\). More general non-Markovian, multilevel or strongly coupled dynamics need not be captured by a single pair of exponential \(T_1\) and \(T_2\) constants.</p>
 
   <div class="interactive-card" id="relaxation-demo">
     <div class="interactive-head">
@@ -650,7 +650,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">07</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -664,7 +664,7 @@ permalink: /lecture/spin-dynamics/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
