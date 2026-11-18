@@ -358,7 +358,7 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">A complete dynamical question</p><h2>A Hamiltonian alone does not define an experiment</h2></div>
   </div>
 
@@ -572,7 +572,7 @@ permalink: /lecture/spin-dynamics/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Competing timescales</p><h2>Coherence matters only if it survives long enough to affect an observable</h2></div>
   </div>
 
