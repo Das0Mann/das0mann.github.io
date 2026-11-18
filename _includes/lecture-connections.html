@@ -1,24 +1,31 @@
 {% assign bridge = site.data.lecture_connections[page.url] %}
 {% if bridge %}
-<aside class="lecture-connections" aria-label="Connections to other lecture modules">
-  <div class="connection-groups">
-    <div class="connection-group">
-      <span class="connection-label">Builds on</span>
-      <div class="connection-links">
-        {% for item in bridge.builds_on %}
-          <a href="{{ site.url }}{{ item.url }}">{{ item.label }}</a>
-        {% endfor %}
+<details class="lecture-connections">
+  <summary>
+    {% include icon.html name="link" %}
+    <span>Prerequisites and related modules</span>
+    {% include icon.html name="chevron-down" class="lecture-details-chevron" %}
+  </summary>
+  <div class="lecture-connections-body">
+    <div class="connection-groups">
+      <div class="connection-group">
+        <span class="connection-label">Builds on</span>
+        <div class="connection-links">
+          {% for item in bridge.builds_on %}
+            <a href="{{ site.url }}{{ item.url }}">{{ item.label }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="connection-group">
+        <span class="connection-label">Continue with</span>
+        <div class="connection-links">
+          {% for item in bridge.leads_to %}
+            <a href="{{ site.url }}{{ item.url }}">{{ item.label }}</a>
+          {% endfor %}
+        </div>
       </div>
     </div>
-    <div class="connection-group">
-      <span class="connection-label">Continue with</span>
-      <div class="connection-links">
-        {% for item in bridge.leads_to %}
-          <a href="{{ site.url }}{{ item.url }}">{{ item.label }}</a>
-        {% endfor %}
-      </div>
-    </div>
+    <p class="lecture-connection-note">{{ bridge.note }}</p>
   </div>
-  <p>{{ bridge.note }}</p>
-</aside>
+</details>
 {% endif %}

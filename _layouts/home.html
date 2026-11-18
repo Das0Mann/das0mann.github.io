@@ -21,18 +21,49 @@
       </div>
     </div>
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-signature">
+    <div class="hero-visual">
+      <div class="hero-signature hero-signature--animated" data-hero-animation>
         <div class="hero-signature-top">
           <span>Quantum chemistry</span>
-          <span class="hero-signature-pulse"></span>
+          <div class="hero-motion-controls">
+            <span class="hero-signature-pulse" aria-hidden="true"></span>
+            <button class="hero-motion-toggle" type="button" aria-label="Pause spin animation">Pause</button>
+          </div>
         </div>
-        <div class="hero-signature-symbol">{% include icon.html name="spin" %}</div>
+        <div class="hero-signature-symbol" aria-hidden="true">
+          <svg class="hero-spin-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="35" cy="60" r="24" class="hero-orbit"/>
+            <circle cx="85" cy="60" r="24" class="hero-orbit"/>
+            <path d="M46 60 H74" class="hero-spin-coupling"/>
+            <g class="hero-spin-rotor hero-spin-rotor--left">
+              <path d="M35 35V47" class="hero-spin-arrow"/>
+              <path d="m29 40 6-7 6 7" class="hero-spin-arrow"/>
+            </g>
+            <g class="hero-spin-rotor hero-spin-rotor--right">
+              <path d="M85 73V85" class="hero-spin-arrow"/>
+              <path d="m79 80 6 7 6-7" class="hero-spin-arrow"/>
+            </g>
+            <circle cx="35" cy="60" r="9.5" class="hero-spin-electron"/>
+            <circle cx="85" cy="60" r="9.5" class="hero-spin-electron"/>
+            <circle cx="35" cy="60" r="3" class="hero-spin-core"/>
+            <circle cx="85" cy="60" r="3" class="hero-spin-core"/>
+          </svg>
+        </div>
         <h2>From spin to signal.</h2>
         <p>Microscopic electronic structure. Quantum dynamics. Chemical observables.</p>
-        <div class="hero-signature-flow">
+        <div class="hero-signal-demo" aria-label="Illustrative singlet population oscillation for a simplified two-level spin model">
+          <div class="hero-signal-caption"><span>Coherent spin mixing</span><span>\(P_S(t)\)</span></div>
+          <svg class="hero-signal-plot" viewBox="0 0 312 65" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A smoothly oscillating singlet probability curve with a moving time marker">
+            <line x1="10" y1="54" x2="302" y2="54" class="hero-signal-axis"/>
+            <line x1="10" y1="12" x2="302" y2="12" class="hero-signal-guide"/>
+            <path class="hero-signal-curve" d="M10 12 C34 12 34 52 58 52 S82 12 106 12 S130 52 154 52 S178 12 202 12 S226 52 250 52 S274 12 302 12"/>
+            <circle class="hero-signal-marker" cx="10" cy="12" r="4"/>
+          </svg>
+        </div>
+        <div class="hero-signature-flow" aria-hidden="true">
           <span>Structure</span><i></i><span>Dynamics</span><i></i><span>Signal</span>
         </div>
+        <span class="hero-motion-note">Idealized spin-state dynamics · not experimental data</span>
       </div>
     </div>
   </div>
@@ -44,5 +75,6 @@
 
 {% include _footer.html %}
 {% include _scripts.html %}
+<script src="{{ site.url }}/assets/js/hero-spin.js" defer></script>
 </body>
 </html>
