@@ -60,6 +60,16 @@ Scripts: `lecture-interactive.js`, `lecture-radical-levels.js`.
 | `rp-level-dg` | range | 0 | 0.02 | 0.0001 | 0.005 |
 | `rp-level-v` | range | 0 | 20 | 0.2 | 1 |
 
+## molecular-motion — rank-aware model (added 2026-11-18)
+
+The global and local correlation curves use a fixed 0–10 ns horizontal axis and unit-normalized 0–1 vertical axis. The analytical model and GUI are tested separately by `tests/lecture-foundations.cjs`.
+
+| Control ID | Type | Minimum | Maximum | Step | Default |
+|---|---|---:|---:|---:|---:|
+| `rotation-tau2` | range | 0.2 | 5 | 0.05 | 0.6 |
+| `rotation-order` | range | 0 | 1 | 0.01 | 0.75 |
+| `rotation-taue` | range | 0.05 | 2 | 0.05 | 0.15 |
+
 ## photo-cidnp (added 2026-11-18)
 
 Interactive scripts: `lecture-cidnp-model.js` and `lecture-cidnp.js`. Numerical S/T₀ invariants are independently verified by `tests/lecture-cidnp.cjs`.
