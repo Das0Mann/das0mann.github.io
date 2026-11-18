@@ -19,6 +19,7 @@
     {% if entry.url == page.url %}{% assign hero_icon = entry.icon %}{% endif %}
   {% endfor %}
 {% endif %}
+{% unless page.hide_hero %}
 <header class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-emblem">{% include icon.html name=hero_icon %}</div>
@@ -29,6 +30,7 @@
     </div>
   </div>
 </header>
+{% endunless %}
 
 <main class="site-main" role="main" id="main-content">
   <article class="page-content">
