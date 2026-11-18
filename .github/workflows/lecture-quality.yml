@@ -1,0 +1,38 @@
+name: Lecture learning experience quality
+on:
+  pull_request:
+    paths:
+      - '_data/lecture_*.yml'
+      - '_includes/lecture-*.html'
+      - '_includes/_navigation.html'
+      - '_layouts/*.html'
+      - 'assets/css/lecture-refresh.css'
+      - 'assets/js/lecture-*.js'
+      - 'lecture/**'
+      - 'tests/lecture-*.cjs'
+      - '.github/workflows/lecture-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify navigation, concept checks and teaching-model invariants
+        run: node tests/lecture-learning.cjs
+      - name: Run existing parameter sensitivity and preset regressions
+        run: |
+          node tests/lecture-sensitivity.cjs
+          node tests/lecture-presets.cjs
+      - name: Build Jekyll pages before review
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
