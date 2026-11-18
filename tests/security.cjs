@@ -41,7 +41,7 @@ function mock() {
     const node = {
       tagName: tag.toUpperCase(), children: [], hidden: false, removed: false,
       append(...children) { this.children.push(...children); },
-      appendChild(child) { this.children.push(child); emitted.push(child); },
+      appendChild(child) { this.children.push(child); if (this.tagName === "HEAD" && child.tagName === "SCRIPT") emitted.push(child); },
       setAttribute() {},
       addEventListener(event, callback) { callbacks.set(event, callback); },
       fire(event) { assert(callbacks.has(event), "No " + event + " event"); callbacks.get(event)(); },
