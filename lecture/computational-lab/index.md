@@ -194,7 +194,7 @@ permalink: /lecture/computational-lab/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Matrix-free thinking</p><h2>You often need the action of an operator, not the operator itself</h2></div>
   </div>
 
@@ -267,7 +267,7 @@ permalink: /lecture/computational-lab/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">A habit worth keeping</p><h2>Solve a tiny version exactly before trusting the large one</h2></div>
   </div>
 
