@@ -8,13 +8,13 @@ const checks = read("_data/lecture_checks.yml");
 const modules = [...route.matchAll(/^  url: (\/lecture\/[^\s]+\/)$/gm)].map((match) => match[1]);
 const routeNumbers = [...route.matchAll(/^- number: "(\d{2})"$/gm)].map((match) => match[1]);
 
-assert.equal(modules.length, 13, "The learning path must contain 13 modules");
+assert.equal(modules.length, 14, "The learning path must include the new CIDNP module");
 assert.equal(new Set(modules).size, 13, "Each route entry must be unique");
-assert.equal(routeNumbers.length, 13, "Every route entry must retain a historical module number");
+assert.equal(routeNumbers.length, modules.length, "Every route entry must retain a historical module number");
 assert.equal(new Set(routeNumbers).size, 13, "Historical module numbers must be unique");
 
 const blocks = checks.split(/(?=^"\/lecture\/[^"]+":)/m).filter((block) => block.startsWith('"/lecture/'));
-assert.equal(blocks.length, 13, "Each lecture must have exactly one concept checkpoint");
+assert.equal(blocks.length, modules.length, "Each lecture must have exactly one concept checkpoint");
 const checked = new Set();
 for (const block of blocks) {
   const heading = block.match(/^"(\/lecture\/[^"]+)":/);
@@ -60,4 +60,4 @@ const eAbs = 2.30 + lambda;
 const eEm = 2.30 - lambda;
 assert(Math.abs(eAbs - eEm - 2 * lambda) < 1e-12,
   "Equal-curvature harmonic Stokes shift must be 2 lambda");
-console.log("PASS: 13 routes, 13 scientific checks, lecture wiring and harmonic-model sanity");
+console.log("PASS: "+modules.length+" routes, matching scientific checks, lecture wiring and harmonic-model sanity");
