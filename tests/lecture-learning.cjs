@@ -9,9 +9,9 @@ const modules = [...route.matchAll(/^  url: (\/lecture\/[^\s]+\/)$/gm)].map((mat
 const routeNumbers = [...route.matchAll(/^- number: "(\d{2})"$/gm)].map((match) => match[1]);
 
 assert.equal(modules.length, 14, "The learning path must include the new CIDNP module");
-assert.equal(new Set(modules).size, 13, "Each route entry must be unique");
+assert.equal(new Set(modules).size, modules.length, "Each route entry must be unique");
 assert.equal(routeNumbers.length, modules.length, "Every route entry must retain a historical module number");
-assert.equal(new Set(routeNumbers).size, 13, "Historical module numbers must be unique");
+assert.equal(new Set(routeNumbers).size, modules.length, "Historical module numbers must be unique");
 
 const blocks = checks.split(/(?=^"\/lecture\/[^"]+":)/m).filter((block) => block.startsWith('"/lecture/'));
 assert.equal(blocks.length, modules.length, "Each lecture must have exactly one concept checkpoint");
