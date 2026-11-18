@@ -576,4 +576,5 @@ permalink: /lecture/molecular-motion/
 </div>
 
 <script src="{{ site.url }}/assets/js/lecture-motion.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-rotation-model.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-rotation.js" defer></script>
