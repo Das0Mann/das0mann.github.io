@@ -60,7 +60,7 @@ permalink: /lecture/quantum-biology/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Evidence ladder</p><h2>A quantum effect, a mechanism and a biological function are three different claims</h2></div>
   </div>
 
@@ -354,7 +354,7 @@ permalink: /lecture/quantum-biology/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">From molecule to biological signal</p><h2>A directional compass needs anisotropy and a route to amplify chemistry</h2></div>
   </div>
 
