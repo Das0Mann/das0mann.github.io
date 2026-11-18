@@ -1,6 +1,6 @@
 # Lecture Interactive Control Inventory — 2026-10-08
 
-Baseline `main`: `8ee68468b2ed6616333bf5b0b5853e543998727b`. Inventory is source-derived, not a browser-rendered or exhaustive physical sensitivity certification. Values below are **HTML control attributes**; scripts may convert logarithmic values to physical quantities. Stable module URLs are unchanged.
+Baseline `main`: `8ee68468b2ed6616333bf5b0b5853e543998727b`. Inventory is source-derived, not a browser-rendered or exhaustive physical sensitivity certification. Values below are **HTML control attributes**; scripts may convert logarithmic values to physical quantities. Existing module URLs are unchanged; a new /lecture/photo-cidnp/ module was added on 2026-11-18.
 
 ## Landing page
 
@@ -59,6 +59,19 @@ Scripts: `lecture-interactive.js`, `lecture-radical-levels.js`.
 | `rp-level-j` | range | -60 | 60 | 0.5 | 10 |
 | `rp-level-dg` | range | 0 | 0.02 | 0.0001 | 0.005 |
 | `rp-level-v` | range | 0 | 20 | 0.2 | 1 |
+
+## photo-cidnp (added 2026-11-18)
+
+Interactive scripts: `lecture-cidnp-model.js` and `lecture-cidnp.js`. Numerical S/T₀ invariants are independently verified by `tests/lecture-cidnp.cjs`.
+
+| Control ID | Type | Minimum | Maximum | Step | Default |
+|---|---|---:|---:|---:|---:|
+| `cidnp-field` | range | 0 | 14 | 0.1 | 4 |
+| `cidnp-hfi` | range | -12 | 12 | 0.5 | 6 |
+| `cidnp-exchange` | range | 0 | 120 | 2 | 20 |
+| `cidnp-lifetime` | range | 0.5 | 25 | 0.5 | 5 |
+
+Additional categorical controls: `cidnp-precursor`, `cidnp-exit`, `cidnp-dg`, and `cidnp-a` (select lists). Their four-factor Kaptein signs are checked by `tests/lecture-cidnp.cjs`.
 
 ## magnetic-resonance
 
