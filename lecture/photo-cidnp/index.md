@@ -11,7 +11,7 @@ permalink: /lecture/photo-cidnp/
 <header class="module-intro">
   <span class="module-index">Module 14</span>
   <h2>How can a spin-selective chemical reaction polarize a nucleus?</h2>
-  <p>EPR reports transitions of electron spins, whereas NMR detects nuclear magnetization. Photo-chemically induced dynamic nuclear polarization (photo-CIDNP) links the two: light creates spin-correlated radicals, magnetic interactions cause nuclear-spin-dependent electron-spin evolution, and chemical reaction pathways convert that dependence into non-thermal nuclear populations. The resulting NMR signals can be enhanced or emissive.</p>
+  <p>EPR reports transitions of electron spins, whereas NMR detects nuclear magnetization. Photochemically induced dynamic nuclear polarization (photo-CIDNP) connects electron-spin chemistry to nuclear magnetization: light can create spin-correlated radical pairs, nuclear-dependent spin evolution changes the partitioning among reaction channels, and products acquire non-Boltzmann nuclear-spin populations. The resulting NMR signals can be enhanced or emissive.</p>
 </header>
 
 <section class="module-learning" aria-label="Learning goals">
@@ -29,7 +29,7 @@ permalink: /lecture/photo-cidnp/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">The observable</p><h2>EPR and CIDNP look at different spins in the same chemistry</h2></div>
   </div>
-  <p>A radical pair can be examined through electron-spin resonance, the yield of a chemical product, or the nuclear magnetization remaining after the radical-pair reaction. These observables are related through the <em>same spin-dependent kinetics</em>, but they are not interchangeable.</p>
+  <p>A radical pair can be examined through electron-spin resonance, the yield of a chemical product, or the nuclear magnetization remaining after the radical-pair reaction. These observables can probe the <em>same radical-pair mechanism</em>, but their measured quantities and experimental detection methods differ. In particular, CIDNP involves product-selective nuclear spin populations, not direct detection of the transient electronic density matrix.</p>
 
   <div class="cidnp-comparison" aria-label="Comparison of EPR, CIDNP and reaction-yield measurements">
     <article>
@@ -52,7 +52,7 @@ permalink: /lecture/photo-cidnp/
     </article>
   </div>
 
-  <p>In liquid-state photo-CIDNP, the spin-correlated radical-pair mechanism explains why nuclei with different hyperfine interactions may acquire different signal signs. The NMR experiment detects the <em>products of spin sorting</em>, not simply the electron-spin transition frequencies measured by EPR.</p>
+  <p>In liquid-state photo-CIDNP, the spin-correlated radical-pair mechanism explains why nuclei with different hyperfine interactions may acquire different signal signs. The NMR experiment detects nuclear magnetization produced by spin-dependent chemistry; it does not directly measure the electron-spin transitions observed in EPR.</p>
 </section>
 
 <section class="lecture-section">
@@ -67,7 +67,7 @@ permalink: /lecture/photo-cidnp/
     <div><span>04</span>{% include icon.html name="flask" %}<strong>Spin sorting</strong><small>Recombination and escape select different spin histories</small></div>
     <div><span>05</span>{% include icon.html name="radio" %}<strong>NMR detection</strong><small>Compare absorptive or emissive product resonances with a reference</small></div>
   </div>
-  <p>The nuclei initially need not be polarized. Consider a spin-\(\frac12\) nucleus with projections \(m_I=+\frac12\) and \(-\frac12\). The hyperfine field changes the effective electron-spin detuning in opposite directions for the two subensembles. Their probabilities of reaching a reactive spin state can therefore differ. If the pathways are spin selective, the nuclear populations of the observed products cease to be equal.</p>
+  <p>The nuclei can begin near thermal equilibrium. Consider one spin-\(\frac12\) nucleus with projections \(m_I=+\frac12\) and \(-\frac12\). The hyperfine field changes the effective electron-spin detuning in opposite directions for the two subensembles. Their probabilities of reaching a reactive spin state can therefore differ. If the pathways are spin selective, the nuclear populations of the observed products cease to be equal.</p>
 
   <div class="lecture-equation">
   \[
@@ -76,7 +76,7 @@ permalink: /lecture/photo-cidnp/
   I_{\mathrm{CIDNP}} \propto P_N-P_N^{\mathrm{thermal}}.
   \]
   </div>
-  <p>Signal phase depends on detection conventions and sample preparation. “Emissive” refers to the sign of a properly phased NMR resonance relative to absorption; it does not imply negative chemical concentration.</p>
+  <p>In the idealized population picture, \(P_N\) describes <em>one selected nuclear spin in one selected product</em>. Signal enhancement relative to an illuminated-free reference also depends on product concentration, nuclear gyromagnetic ratio, pulse sequence and spectral phasing. An “emissive” line means a negative resonance in the chosen absorptive phase convention, not a negative concentration; the sign convention for \(m_I\) needs particular care for nuclei with negative gyromagnetic ratios.</p>
 </section>
 
 <section class="lecture-section">
@@ -84,7 +84,7 @@ permalink: /lecture/photo-cidnp/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Kaptein’s sign rules</p><h2>Predict the sign before fitting the spectrum</h2></div>
   </div>
-  <p>In the familiar high-field radical-pair regime, Kaptein’s qualitative rule connects the sign of a CIDNP resonance to four ingredients. Define radical 1 as the radical containing the observed nucleus \(i\), and define \(\Delta g = g_1-g_2\). With the conventional factors below,</p>
+  <p>In the conventional high-field, net-CIDNP regime, Kaptein’s qualitative sign rule connects the phase of a product resonance to four ingredients. It does not predict the absolute intensity or the internal multiplet polarization pattern. Define radical 1 as the radical containing the observed nucleus \(i\), and define \(\Delta g = g_1-g_2\). With the conventional factors below,</p>
   <div class="lecture-equation">
   \[
   \Gamma_i
@@ -93,7 +93,7 @@ permalink: /lecture/photo-cidnp/
     \mathrm{sgn}(A_{\mathrm{iso},i}),
   \]
   </div>
-  <p>where \(\mu=+1\) for a triplet-born pair and \(-1\) for a singlet-born pair; \(\varepsilon=+1\) for singlet recombination products and \(-1\) for escape-derived products. A positive \(\Gamma_i\) denotes enhanced absorption in the stated phase convention, and a negative value denotes emission. The hyperfine sign must be assigned to the observed nucleus on <em>radical 1</em>; reversing the radical labels requires redefining \(\Delta g\) consistently.</p>
+  <p>where \(\mu=+1\) for triplet-born and \(-1\) for singlet-born radical pairs, and \(\varepsilon=+1\) for recombination products or \(-1\) for escape-derived products, as defined for this conventional net-polarization rule. Positive \(\Gamma_i\) corresponds to enhanced absorption and negative \(\Gamma_i\) to emission <em>when the reference resonance is correctly phased according to this convention</em>. The hyperfine sign belongs to the observed nucleus on radical 1; radical labels and \(\Delta g\) must be defined consistently. Near degeneracies, in multiplet CIDNP, and with competing channels, the simple sign rule need not describe the full spectrum.</p>
 
   <div class="cidnp-widget" id="cidnp-sign-lab">
     <div class="cidnp-widget-head">
@@ -130,7 +130,7 @@ permalink: /lecture/photo-cidnp/
         </svg>
       </div>
     </div>
-    <p class="cidnp-model-note">The curve illustrates signal phase only; it is not an experimental line shape. Kaptein’s rule is not universally valid near exchange-driven level crossings or when several nuclear spins, pathways, and relaxation processes compete.</p>
+    <p class="cidnp-model-note">The single Lorentzian is a <strong>phase illustration</strong>, not a predicted NMR spectrum or peak intensity. The rule addresses net polarization in a defined high-field regime; it does not predict multiplet effects, relaxation or exchange-driven level crossings.</p>
   </div>
   <p>Reading: <a href="https://doi.org/10.1039/C29710000732" target="_blank" rel="noopener">Kaptein (1971), simple rules for CIDNP</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12583242/" target="_blank" rel="noopener">tutorial on CW photo-CIDNP NMR spectroscopy</a>.</p>
 </section>
@@ -140,7 +140,7 @@ permalink: /lecture/photo-cidnp/
     <span class="lecture-index">04</span>
     <div><p class="section-eyebrow">Spin sorting in time</p><h2>Why do the two nuclear projections contribute differently?</h2></div>
   </div>
-  <p>A useful analytical starting point is a <em>deliberately restricted</em> \(S\)–\(T_0\) Hamiltonian for a triplet-\(T_0\)-born pair with one secularly coupled spin-\(\frac12\) nucleus. In cyclic-frequency units (MHz), with \(m=\pm\frac12\),</p>
+  <p>A useful analytical starting point is an <em>isolated, triplet-\(T_0\)-prepared</em> \(S\)–\(T_0\) subspace with one secularly coupled spin-\(\frac12\) nucleus. A real triplet-born radical-pair ensemble need not consist solely of \(T_0\): the \(T_+\) and \(T_-\) sectors, additional nuclei and magnetic interactions may be important. In cyclic-frequency units (MHz), with \(m=\pm\frac12\),</p>
   <div class="lecture-equation">
   \[
   \frac{H_m}{h} =
@@ -154,7 +154,7 @@ permalink: /lecture/photo-cidnp/
   f_m = \sqrt{(2J_\nu)^2+(\Delta\nu_m)^2}.
   \]
   </div>
-  <p>Here \(J_\nu\) is <em>half</em> the singlet–triplet energy separation expressed as a frequency; it is not automatically interchangeable with the exchange parameter \(J\) of every spin-Hamiltonian convention. In this model, the probability to enter the singlet subspace from \(T_0\) at time \(t\) is</p>
+  <p>Here \(J_\nu\) is <em>half</em> the singlet–triplet energy separation in cyclic-frequency units. The full splitting at zero mixing is \(2J_\nu\). In other conventions the exchange parameter \(J\) may differ in sign or by a numerical factor, so it cannot be imported without checking the Hamiltonian definition. In this model, the probability to enter the singlet subspace from \(T_0\) at time \(t\) is</p>
   <div class="lecture-equation">
   \[
   P^{(m)}_{T_0\to S}(t)
@@ -172,7 +172,7 @@ permalink: /lecture/photo-cidnp/
   Q=\frac{W_{+1/2}-W_{-1/2}}{W_{+1/2}+W_{-1/2}}.
   \]
   </div>
-  <p>\(W_m\) is an <strong>idealized singlet-weighted signal proxy</strong>, not an absolute recombination yield. The normalized \(Q\) is meaningful only when \(W_++W_->0\). A proper spin-selective loss term generally changes the survivor spin state and must be included in quantitative CIDNP modelling.</p>
+  <p>\(W_m\) is the singlet probability averaged over an <em>identical, spin-independent exponential lifetime distribution</em>, and therefore a <strong>dimensionless signal proxy</strong>, not an absolute recombination yield. Likewise, \(Q\) is a normalized contrast in the proxy, <strong>not an NMR polarization enhancement</strong> or a prediction of Kaptein’s sign for arbitrary reaction mechanisms. When \(W_++W_-=0\), \(Q\) is undefined. Spin-selective loss changes the surviving spin state and must be included for a quantitative product-polarization calculation.</p>
 
   <div class="cidnp-widget" id="cidnp-spin-sort-lab">
     <div class="cidnp-widget-head">
@@ -191,9 +191,10 @@ permalink: /lecture/photo-cidnp/
       <label for="cidnp-lifetime">Lifetime rate \(k\) <output id="cidnp-lifetime-out" for="cidnp-lifetime">5.0 μs⁻¹</output><input id="cidnp-lifetime" type="range" min="0.5" max="25" step="0.5" value="5"></label>
     </div>
     <p class="cidnp-assumption">Fixed illustrative \(\Delta g=+0.0008\), with the observed nucleus on radical 1. Controls use cycle-frequency MHz, tesla and microseconds; they are <strong>not fitted values</strong> for a particular flavin–tryptophan dyad.</p>
-    <div class="cidnp-plot-grid">
-      <figure class="cidnp-plot-panel">
-        <figcaption><strong>Spin evolution</strong><span>\(P_{T_0\to S}(t)\) at the selected field</span></figcaption>
+    <div class="cidnp-plot-grid" aria-label="Choose one spin-sorting visualization">
+      <details class="cidnp-plot-panel" open>
+        <summary><strong>01 · Spin evolution</strong><span>\(P_{T_0\to S}(t)\) at the selected field</span><span class="cidnp-plot-chevron" aria-hidden="true">⌄</span></summary>
+        <figure class="cidnp-plot-content" aria-label="Nuclear-dependent singlet mixing versus time">
         <svg viewBox="0 0 590 244" role="img" aria-label="Singlet population versus time for the two nuclear projections">
           <line x1="54" y1="18" x2="54" y2="194" class="cidnp-axis"/>
           <line x1="54" y1="194" x2="564" y2="194" class="cidnp-axis"/>
@@ -206,21 +207,25 @@ permalink: /lecture/photo-cidnp/
         </svg>
         <div class="cidnp-legend"><span class="cidnp-legend-plus">Nuclear α, \(m=+\frac12\)</span><span class="cidnp-legend-minus">Nuclear β, \(m=-\frac12\)</span></div>
       </figure>
-      <figure class="cidnp-plot-panel">
-        <figcaption><strong>Field dependence</strong><span>Singlet-weighted imbalance \(W_\alpha-W_\beta\)</span></figcaption>
+      </details>
+      <details class="cidnp-plot-panel">
+        <summary><strong>02 · Field dependence</strong><span>Singlet-weight difference \(W_\alpha-W_\beta\), autoscaled</span><span class="cidnp-plot-chevron" aria-hidden="true">⌄</span></summary>
+        <figure class="cidnp-plot-content" aria-label="Signed lifetime-weighted contrast against magnetic field">
         <svg viewBox="0 0 590 244" role="img" aria-label="Signed nuclear-state singlet-weight difference versus magnetic field with a zero-exchange comparison">
-          <line x1="54" y1="18" x2="54" y2="194" class="cidnp-axis"/>
-          <line x1="54" y1="106" x2="564" y2="106" class="cidnp-gridline"/>
-          <line x1="54" y1="194" x2="564" y2="194" class="cidnp-axis"/>
-          <text x="46" y="24" text-anchor="end">+</text><text x="46" y="110" text-anchor="end">0</text><text x="46" y="199" text-anchor="end">−</text>
-          <text x="54" y="214">0</text><text x="564" y="214" text-anchor="end">14</text>
-          <text x="309" y="228" text-anchor="middle">Magnetic field (T)</text>
+          <line x1="80" y1="18" x2="80" y2="194" class="cidnp-axis"/>
+          <line x1="80" y1="106" x2="564" y2="106" class="cidnp-gridline"/>
+          <line x1="80" y1="194" x2="564" y2="194" class="cidnp-axis"/>
+          <text id="cidnp-field-y-plus" x="76" y="24" text-anchor="end">+</text><text x="76" y="110" text-anchor="end">0</text><text id="cidnp-field-y-minus" x="76" y="199" text-anchor="end">−</text>
+          <text x="80" y="214">0</text><text x="564" y="214" text-anchor="end">14</text>
+          <text x="322" y="228" text-anchor="middle">Magnetic field (T)</text>
           <path id="cidnp-field-encounter" class="cidnp-trace cidnp-trace-reference"></path>
           <path id="cidnp-field-selected" class="cidnp-trace cidnp-trace-plus"></path>
-          <line id="cidnp-field-marker" x1="54" y1="19" x2="54" y2="193" class="cidnp-field-marker"/>
+          <line id="cidnp-field-marker" x1="80" y1="19" x2="80" y2="193" class="cidnp-field-marker"/>
         </svg>
         <div class="cidnp-legend"><span class="cidnp-legend-plus">Selected \(J_\nu\)</span><span class="cidnp-legend-reference">Reference \(J_\nu=0\)</span></div>
+        <p class="cidnp-plot-scale" id="cidnp-field-scale">Autoscaled dimensionless contrast. Both curves use the same vertical axis.</p>
       </figure>
+      </details>
     </div>
     <div class="cidnp-stat-grid" aria-live="polite">
       <div><span>Singlet weight, α</span><strong id="cidnp-weight-plus">—</strong></div>
@@ -229,7 +234,7 @@ permalink: /lecture/photo-cidnp/
       <div><span>Normalized imbalance \(Q\)</span><strong id="cidnp-q">—</strong></div>
     </div>
     <p class="cidnp-widget-explanation" id="cidnp-model-explanation" aria-live="polite"></p>
-    <p class="cidnp-model-note">Educational restrictions: one nuclear spin, high-field secular \(S/T_0\) sector, triplet-\(T_0\) precursor, a common state-independent lifetime envelope, no anisotropy or other nuclear spins. The zero-exchange reference is not an absolute encounter population prediction. In particular, this model <strong>cannot reproduce the \(2J\) level-crossing peak</strong> of a strongly coupled radical pair, which requires the relevant additional spin levels and reaction dynamics.</p>
+    <p class="cidnp-model-note">Educational restrictions: one nuclear spin, only the secular \(S/T_0\) sector, a pure \(T_0\) starting state, common state-independent lifetime, no anisotropy, \(T_\pm\) mixing or other nuclear spins. The \(J_\nu=0\) comparison is <em>not</em> an encounter-reaction prediction. In particular, this model <strong>cannot reproduce the \(2J\) level-crossing peak</strong> reported in strongly coupled biradical systems: realistic level anticrossings require the additional spin levels and full reaction dynamics.</p>
   </div>
 </section>
 
@@ -252,12 +257,12 @@ permalink: /lecture/photo-cidnp/
   \mathrm{Tr}\!\left[I_{i,z}\,\rho_{\mathrm{product}}\right].
   \]
   </div>
-  <p>The nuclear-spin operator must be defined consistently for the monitored nucleus, and the reaction-product density operator depends on the full preparation and kinetics. A change in sign can reflect more than a change of \(A_i\): distinct formation channels, exchange-driven level anticrossings, relaxation, or relative contributions of geminate and encounter reactions may alter the field response.</p>
+  <p>The nuclear-spin operator must be defined consistently for the monitored nucleus, and the reaction-product density operator depends on the full preparation and kinetics. A change in sign can reflect more than a change of \(A_i\): distinct initial multiplicities, escape versus recombination pathways, exchange-driven level anticrossings, relaxation, and relative contributions of geminate and encounter reactions may alter the field response.</p>
 
   <div class="cidnp-research-bridge">
     <span class="cidnp-widget-kicker">{% include icon.html name="research" %} Connection to ongoing research</span>
     <h3>Flavin–tryptophan dyads: conformational dynamics changes the spin Hamiltonian</h3>
-    <p>In biomimetic oligoproline-linked flavin–tryptophan dyads, the molecular linker controls the ensemble of donor–acceptor arrangements. Work on distance-dependent photo-CIDNP and later conformational switching shows why a single static geometry and one exchange coupling can be inadequate. Compact conformers may access strongly exchange-coupled intramolecular radical-pair pathways, while more separated or diffusive encounters contribute differently to polarization and field dependence.</p>
+    <p>In biomimetic oligoproline-linked flavin–tryptophan dyads, the molecular linker controls the ensemble of donor–acceptor arrangements. Work on distance-dependent photo-CIDNP and later conformational switching shows why a single static geometry and one exchange coupling can be inadequate. The 2026 conformational-switching study reports predominantly <em>intermolecular</em> contributions for most dyads, with an additional <em>intramolecular</em> contribution identified for the four-proline construct. The balance of mechanisms depends on isomerization, distance, and encounter kinetics, rather than on a universal compact-versus-extended assignment.</p>
     <p>Consequently, <strong>reproducing the sign alone is not a complete fit</strong>. Site-resolved hyperfine assignments, experimentally observed low- and high-field features, nuclear-spin-selective kinetics and conformational weighting must be examined jointly. A robust computational protocol also separates independently supported quantities from parameters genuinely inferred by optimization.</p>
     <div class="cidnp-paper-list">
       <a href="https://doi.org/10.1002/anie.202510116" target="_blank" rel="noopener"><strong>Distance-Dependence of Photo-CIDNP in Biomimetic Tryptophan–Flavin Diads</strong><span>Theiss, Musabirova, Gerhards et al. · Angew. Chem. Int. Ed. (2025)</span></a>

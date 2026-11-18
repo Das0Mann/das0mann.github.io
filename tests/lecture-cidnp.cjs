@@ -80,6 +80,62 @@ assert(!/\b(eval|innerHTML|outerHTML|document\.write)\b/.test(widget),
 assert(widget.includes("cidnp-nmr-path") && widget.includes("cidnp-time-plus") &&
   widget.includes("cidnp-field-encounter"), "Missing connected plotting widgets");
 
+// Exercise the actual browser widget, not only its analytical model. The
+// mock uses the same global model object and the documented DOM element IDs.
+{
+  const vm = require("node:vm");
+  const nodes = new Map();
+  const defaults = {
+    "cidnp-precursor":"triplet", "cidnp-exit":"recombination",
+    "cidnp-dg":"positive", "cidnp-a":"positive",
+    "cidnp-field":"4", "cidnp-hfi":"6",
+    "cidnp-exchange":"20", "cidnp-lifetime":"5"
+  };
+  function node(id) {
+    if (!nodes.has(id)) {
+      const events = {};
+      const attributes = {};
+      nodes.set(id, {
+        value: defaults[id] || "", textContent:"", events, attributes,
+        setAttribute(name,val) {
+          assert(!/NaN|Infinity/.test(String(val)), "invalid plot coordinate "+id);
+          attributes[name]=String(val);
+        },
+        addEventListener(name,fn) { events[name]=fn; },
+        querySelectorAll() { return []; },
+        classList: { toggle(){} }
+      });
+    }
+    return nodes.get(id);
+  }
+  const document = {
+    readyState: "complete",
+    getElementById: node
+  };
+  const source = fs.readFileSync("assets/js/lecture-cidnp.js","utf8");
+  vm.runInNewContext(source, {
+    window: { CIDNPModel:model }, document, console, Math, Number
+  }, {timeout:1000});
+
+  assert.equal(node("cidnp-sign").textContent, "+ · enhanced absorption");
+  assert(node("cidnp-field-y-plus").textContent.startsWith("+"), "missing numeric positive axis");
+  assert(node("cidnp-field-y-minus").textContent.startsWith("−"), "missing numeric negative axis");
+  assert(node("cidnp-field-scale").textContent.includes("dimensionless"), "autoscale not disclosed");
+  assert(node("cidnp-field-selected").attributes.d.length>1000,"field plot path missing");
+  assert(node("cidnp-time-plus").attributes.d.length>1000,"time plot path missing");
+  const first = node("cidnp-field-marker").attributes.x1;
+  node("cidnp-field").value="9";
+  node("cidnp-field").events.input();
+  assert.notEqual(node("cidnp-field-marker").attributes.x1,first,
+    "current-field marker must move with magnetic field input");
+  node("cidnp-a").value="negative";
+  node("cidnp-a").events.change();
+  assert(node("cidnp-sign").textContent.includes("emission"),
+    "sign widget must update its spectrum and explanation");
+  assert(node("cidnp-nmr-path").attributes.d.length>100,
+    "Kaptein plot should be initialized");
+}
+
 if(process.argv.includes("--rendered")) {
   const html=fs.readFileSync("_site/lecture/photo-cidnp/index.html","utf8");
   for(const id of ["cidnp-sign-lab","cidnp-spin-sort-lab","cidnp-nmr-path",
@@ -89,5 +145,11 @@ if(process.argv.includes("--rendered")) {
   assert(html.includes("lecture-cidnp.js"));
   assert(html.includes("assets/css/lecture-cidnp.css"));
   assert(html.includes("lecture-knowledge-check"));
+  assert(html.includes('id="cidnp-field-y-plus"'), "missing labelled field axis");
+  assert(html.includes('id="cidnp-field-scale"'), "missing autoscale disclosure");
+  const expanded = html.match(/<details[^>]*class="cidnp-plot-panel"[^>]*\bopen(?:\s|=|>)/g) || [];
+  const disclosures = html.match(/<details[^>]*class="cidnp-plot-panel"[^>]*>/g) || [];
+  assert.equal(expanded.length, 1, "Exactly one plot should initially be expanded");
+  assert.equal(disclosures.length, 2, "Both plots need native accessible disclosure controls");
 }
 console.log("PASS: Kaptein signs, coherent spin dynamics, lifetime integrals, signed imbalance and rendered widgets");

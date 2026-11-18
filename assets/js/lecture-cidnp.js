@@ -72,6 +72,9 @@
     const referenceCurve = byId("cidnp-field-encounter");
     const marker = byId("cidnp-field-marker");
     const timeMax = byId("cidnp-time-max");
+    const fieldAxisPlus = byId("cidnp-field-y-plus");
+    const fieldAxisMinus = byId("cidnp-field-y-minus");
+    const fieldScale = byId("cidnp-field-scale");
     const result = {
       plus: byId("cidnp-weight-plus"),
       minus: byId("cidnp-weight-minus"),
@@ -121,13 +124,21 @@
         curve.push([b, target]);
         reference.push([b, encounter]);
       }
+      // Both curves use the same signed axis. Show actual dimensionless values:
+      // autoscaling without a numerical scale can exaggerate tiny effects.
+      const axisLimit = 1.12 * maxMagnitude;
       const normalized = (item) =>
-        [54 + 510 * item[0] / 14, 106 - 82 * item[1] / (1.12 * maxMagnitude)];
+        [80 + 484 * item[0] / 14, 106 - 82 * item[1] / axisLimit];
+      const axisValue = axisLimit.toExponential(1);
+      fieldAxisPlus.textContent = "+" + axisValue;
+      fieldAxisMinus.textContent = "−" + axisValue;
+      fieldScale.textContent = "Shared vertical axis: ±" + axisValue +
+        " dimensionless; magnitudes are automatically rescaled when the controls change.";
       fieldCurve.setAttribute("d", samplePath((u) =>
         normalized(curve[Math.round(samples * u)]), samples));
       referenceCurve.setAttribute("d", samplePath((u) =>
         normalized(reference[Math.round(samples * u)]), samples));
-      const xMarker = 54 + 510 * B / 14;
+      const xMarker = 80 + 484 * B / 14;
       marker.setAttribute("x1", xMarker.toFixed(2));
       marker.setAttribute("x2", xMarker.toFixed(2));
 
