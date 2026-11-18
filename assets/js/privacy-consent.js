@@ -8,6 +8,7 @@
   const VALID_MS = 180 * 24 * 60 * 60 * 1000;
   let consent = "unset";
   let analyticsStarted = false;
+  let analyticsLoaded = false;
   let analyticsScript = null;
 
   function readPreference() {
@@ -52,10 +53,12 @@
         ad_user_data: "denied", ad_personalization: "denied"
       });
     }
-    if (analyticsScript) {
-      // Removing a pending element avoids loading it on a quick rejection.
+    if (analyticsScript && !analyticsLoaded) {
+      // Cancel a pending fetch; loaded Google code cannot be unloaded, so
+      // the ga-disable flag and denied consent must also remain active.
       analyticsScript.remove();
       analyticsScript = null;
+      analyticsStarted = false;
     }
     clearAnalyticsCookies();
   }
@@ -65,6 +68,10 @@
       window["ga-disable-" + ANALYTICS_ID] = false;
       if (typeof window.gtag === "function") {
         window.gtag("consent", "update", { analytics_storage: "granted" });
+        window.gtag("config", ANALYTICS_ID, {
+          anonymize_ip: true, allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
       }
       return;
     }
@@ -80,13 +87,20 @@
       ad_personalization: "denied"
     });
     window.gtag("js", new Date());
-    window.gtag("config", ANALYTICS_ID, { anonymize_ip: true });
+    window.gtag("config", ANALYTICS_ID, {
+      anonymize_ip: true, allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
 
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=" +
       encodeURIComponent(ANALYTICS_ID);
-    script.onerror = function () { console.warn("Optional analytics unavailable."); };
+    script.onload = function () { analyticsLoaded = true; };
+    script.onerror = function () {
+      analyticsStarted = false;
+      console.warn("Optional analytics unavailable.");
+    };
     analyticsScript = script;
     document.head.appendChild(script);
   }
