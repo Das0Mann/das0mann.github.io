@@ -13,17 +13,21 @@ permalink: /lecture/spin-dynamics/
   <h2>What does a spin Hamiltonian do in time?</h2>
   <p>Once the electronic structure has been reduced to a spin Hamiltonian, the problem changes. We are no longer solving for the electrons in real space; we are propagating amplitudes, populations and coherences in spin space.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Turn electronic-structure-derived spin parameters into a matrix Hamiltonian and propagate pure states or density operators.</p></div>
     <div><span>02</span><p>Separate coherent evolution from population relaxation and dephasing.</p></div>
     <div><span>03</span><p>Recognize when an effective open-system description is required instead of closed Schrödinger dynamics.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
