@@ -13,17 +13,21 @@ permalink: /lecture/spin-hamiltonians/
   <h2>The spin Hamiltonian is the bridge</h2>
   <p>Electronic-structure theory gives us molecular magnetic parameters. Spin dynamics needs those parameters arranged into an effective Hamiltonian. This module is about understanding what each term means physically, what assumptions hide inside it, and which conventions you must state before a number becomes meaningful.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head">
-    <span>After this module</span>
-    <strong>You should be able to…</strong>
-  </div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Read a spin Hamiltonian term by term and state the associated units and sign convention.</p></div>
     <div><span>02</span><p>Distinguish Zeeman, hyperfine, exchange, dipolar, quadrupole and zero-field-splitting physics.</p></div>
     <div><span>03</span><p>Map ab initio energies and response tensors onto the operator coefficients used in a spin Hamiltonian.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
