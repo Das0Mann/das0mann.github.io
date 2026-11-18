@@ -63,6 +63,14 @@
     - "Yes; singlet–triplet conversion is independent of the spin Hamiltonian."
   answer: 1
   explanation: "When the two electrons have the same g value and experience the same field, their common Zeeman Hamiltonian is proportional to total S_z and does not couple singlet to triplet. Differences in their local magnetic interactions can generate interconversion."
+"/lecture/photo-cidnp/":
+  question: "Under the stated high-field Kaptein convention, what does a triplet-born recombination product with positive Δg and negative isotropic hyperfine coupling predict?"
+  choices:
+    - "Enhanced absorption because the precursor is triplet-born."
+    - "Emission (negative CIDNP sign) because the product of the four sign factors is negative."
+    - "No signal regardless of magnetic field and reaction kinetics."
+  answer: 1
+  explanation: "For triplet-born (μ=+1), recombination (ε=+1), Δg>0 and A<0, the Kaptein sign product is −1. The sign rule is qualitative and assumes its high-field regime; exchange-driven crossings, multiple nuclei and competing pathways require a full spin-dynamics calculation."
 "/lecture/magnetic-resonance/":
   question: "Why does conventional field-modulated, phase-sensitive CW EPR often display a first-derivative line shape?"
   choices:
