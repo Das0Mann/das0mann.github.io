@@ -13,14 +13,21 @@ permalink: /lecture/molspin-notebooks/
   <h2>Read the input as a scientific model, not as configuration noise</h2>
   <p>A MolSpin input file encodes a physical problem: which spins exist, how they interact, how the state is prepared, which kinetic processes are present and which numerical task turns that model into an observable. This module walks through real examples from the public MolSpin repository.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Map each MolSpin input object onto the physical model it represents.</p></div>
     <div><span>02</span><p>Choose a task whose numerical capabilities match the Hamiltonian, kinetics and time dependence.</p></div>
     <div><span>03</span><p>Record software versions, units and convergence settings so that a simulation remains reproducible.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
