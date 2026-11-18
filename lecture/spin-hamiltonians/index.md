@@ -641,39 +641,39 @@ permalink: /lecture/spin-hamiltonians/
     <div><p class="section-eyebrow">Interactive</p><h2>Rotate a tensor relative to the magnetic field</h2></div>
   </div>
 
-  <p>For a diagonal tensor in its principal-axis frame, the scalar projection along a unit vector \(\mathbf n\) is</p>
+  <p>For a <em>general symmetric hyperfine tensor</em> \(\mathbf A\) diagonal in its principal-axis frame, the secular projection along a unit vector \(\mathbf n\) is</p>
 
   <div class="lecture-equation">
   \[
-  T_\mathrm{eff}
+  A_\mathrm{eff}
   =
-  \mathbf n^\mathrm T\mathbf T\mathbf n
+  \mathbf n^\mathrm T\mathbf A\mathbf n
   =
-  T_x\sin^2\theta\cos^2\phi
+  A_x\sin^2\theta\cos^2\phi
   +
-  T_y\sin^2\theta\sin^2\phi
+  A_y\sin^2\theta\sin^2\phi
   +
-  T_z\cos^2\theta.
+  A_z\cos^2\theta.
   \]
   </div>
 
-  <p>This high-field projection is the simplest way to see why an anisotropic \(g\)- or hyperfine tensor produces orientation-dependent resonance positions. The full spin Hamiltonian can contain additional non-secular mixing, but the geometry is already visible here.</p>
+  <p>The widget therefore varies the <em>full tensor</em> \(\mathbf A\), rather than the traceless anisotropic component \(\mathbf T=\mathbf A-A_\mathrm{iso}\mathbb I\) defined earlier. The three principal values may have any sum; the isotropic offset is \(A_\mathrm{iso}=(A_x+A_y+A_z)/3\). Only \(\mathbf T\) is constrained to have zero trace. The secular projection illustrates the geometric dependence of hyperfine couplings in the high-field limit; the full Hamiltonian may mix states through non-secular terms.</p>
 
   <div class="interactive-card" id="tensor-demo">
     <div class="interactive-head">
       <div><span class="interactive-kicker">Tensor rotation explorer</span><h3>Orientation turns principal values into an effective interaction</h3></div>
-      <span class="interactive-model-note">\(T_\mathrm{eff}=\mathbf n^\mathrm T T\mathbf n\)</span>
+      <span class="interactive-model-note">\(A_\mathrm{eff}=\mathbf n^\mathrm T A\mathbf n\)</span>
     </div>
 
     <div class="interactive-layout">
       <div class="interactive-controls">
-        <label for="tensor-tx"><span class="control-name">\(T_x\)</span><output id="tensor-tx-out">20 MHz</output></label>
+        <label for="tensor-tx"><span class="control-name">\(A_x\)</span><output id="tensor-tx-out">20 MHz</output></label>
         <input id="tensor-tx" type="range" min="-100" max="150" step="1" value="20">
 
-        <label for="tensor-ty"><span class="control-name">\(T_y\)</span><output id="tensor-ty-out">50 MHz</output></label>
+        <label for="tensor-ty"><span class="control-name">\(A_y\)</span><output id="tensor-ty-out">50 MHz</output></label>
         <input id="tensor-ty" type="range" min="-100" max="150" step="1" value="50">
 
-        <label for="tensor-tz"><span class="control-name">\(T_z\)</span><output id="tensor-tz-out">100 MHz</output></label>
+        <label for="tensor-tz"><span class="control-name">\(A_z\)</span><output id="tensor-tz-out">100 MHz</output></label>
         <input id="tensor-tz" type="range" min="-100" max="150" step="1" value="100">
 
         <label for="tensor-theta"><span class="control-name">Polar angle \(\theta\)</span><output id="tensor-theta-out">45°</output></label>
@@ -689,12 +689,12 @@ permalink: /lecture/spin-hamiltonians/
         </div>
 
         <div class="interactive-readout">
-          <span>Effective projection <strong id="tensor-effective">67.5 MHz</strong></span>
-          <span>Isotropic part <strong id="tensor-isotropic">56.7 MHz</strong></span>
+          <span>Hyperfine projection \(A_\mathrm{eff}\) <strong id="tensor-effective">67.5 MHz</strong></span>
+          <span>Isotropic coupling \(A_\mathrm{iso}\) <strong id="tensor-isotropic">56.7 MHz</strong></span>
           <span>Principal-value span <strong id="tensor-span">80 MHz</strong></span>
           <span>Azimuthal variation at this θ <strong id="tensor-azimuth-span">15.0 MHz</strong></span>
         </div>
-        <p class="interactive-footnote">The vertical axis is fixed from −120 to +170 MHz so changing the tensor offset cannot be hidden by plot rescaling. For an axial tensor (Tₓ = Tᵧ), rotating φ has no physical effect; at θ = 0° it has no effect for any diagonal tensor.</p>
+        <p class="interactive-footnote">The full symmetric hyperfine tensor is used, not just its traceless anisotropy. The vertical axis remains fixed at −120 to +170 MHz so isotropic offsets are visible. For axial symmetry (Aₓ = Aᵧ), rotating φ changes nothing; at θ = 0° the azimuth has no effect for any diagonal tensor.</p>
         <p id="tensor-explanation" class="demo-explanation">The field samples a mixture of the \(x\) and \(z\) principal values at this orientation.</p>
       </div>
 
@@ -704,7 +704,7 @@ permalink: /lecture/spin-hamiltonians/
           <line x1="58" y1="30" x2="58" y2="252" class="plot-axis"/>
           <line x1="58" y1="141" x2="528" y2="141" class="plot-grid"/>
           <text x="490" y="278" class="svg-caption">θ / degree</text>
-          <text x="14" y="34" class="svg-caption">T_eff</text>
+          <text x="14" y="34" class="svg-caption">A_eff / MHz</text>
           <text x="54" y="270" class="svg-tick">0</text>
           <text x="286" y="270" class="svg-tick">45</text>
           <text x="514" y="270" class="svg-tick">90</text>
