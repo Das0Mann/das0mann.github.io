@@ -50,6 +50,12 @@ jobs:
         run: node tests/lecture-learning.cjs
       - name: Verify animation playback and reduced-motion behavior
         run: node tests/hero-spin.cjs
+      - name: Audit analytics consent and legacy dependencies
+        run: node tests/security.cjs
+      - name: Verify pinned MathJax asset fingerprint
+        run: |
+          curl --fail --silent --show-error --location --retry 2 https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js -o /tmp/approved-mathjax.js
+          echo "MATHJAX_SRI=sha384-$(openssl dgst -sha384 -binary /tmp/approved-mathjax.js | openssl base64 -A)"
       - name: Run existing parameter sensitivity and preset regressions
         run: |
           node tests/lecture-sensitivity.cjs
@@ -62,5 +68,7 @@ jobs:
 
       - name: Inspect rendered lecture HTML and homepage entry points
         run: node tests/lecture-rendered.cjs
+      - name: Audit published HTML for tracking and browser policies
+        run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages
         run: node tests/visual-system.cjs
