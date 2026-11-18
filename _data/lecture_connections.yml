@@ -100,11 +100,28 @@
     - label: "Open Systems"
       url: "/lecture/open-systems/"
   leads_to:
+    - label: "Photo-CIDNP and Nuclear Hyperpolarization"
+      url: "/lecture/photo-cidnp/"
     - label: "Magnetic Resonance"
       url: "/lecture/magnetic-resonance/"
     - label: "Quantum Biology"
       url: "/lecture/quantum-biology/"
   note: "Home of singlet-triplet chemistry: coherent spin evolution, relaxation and spin-selective kinetics are combined here to produce reaction yields."
+
+"/lecture/photo-cidnp/":
+  builds_on:
+    - label: "Radical-Pair Spin Chemistry"
+      url: "/lecture/radical-pairs/"
+    - label: "Spin Hamiltonians"
+      url: "/lecture/spin-hamiltonians/"
+    - label: "Electron Transfer"
+      url: "/lecture/electron-transfer/"
+  leads_to:
+    - label: "Magnetic Resonance"
+      url: "/lecture/magnetic-resonance/"
+    - label: "MolSpin Examples"
+      url: "/lecture/molspin-notebooks/"
+  note: "From electron-spin mixing to nuclear-resolved observables: hyperfine sign conventions, precursor multiplicity, chemical reaction pathways and experimentally measured NMR phases."
 
 "/lecture/magnetic-resonance/":
   builds_on:
