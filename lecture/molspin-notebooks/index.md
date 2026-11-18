@@ -358,7 +358,7 @@ PulseSequence seq
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Reproducibility contract</p><h2>An input file is incomplete without units, conventions and software version</h2></div>
   </div>
 
