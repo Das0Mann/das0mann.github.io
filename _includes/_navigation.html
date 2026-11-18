@@ -1,3 +1,4 @@
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
   <div class="site-header-inner">
     <a class="site-brand" href="{{ site.url }}/" aria-label="Luca Gerhards home">
@@ -16,7 +17,7 @@
           {% if link.url != '/' and page.url contains link.url %}
             {% assign active_class = 'is-active' %}
           {% endif %}
-          <li><a class="{{ active_class }}" href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
+          <li><a class="{{ active_class }}" href="{{ domain }}{{ link.url }}" {% if active_class == "is-active" %}aria-current="page"{% endif %} {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>
