@@ -16,6 +16,19 @@ on:
       - '_includes/icon.html'
       - 'index.md'
       - 'assets/js/lecture-*.js'
+      - 'assets/js/privacy-consent.js'
+      - 'assets/js/site-interactions.js'
+      - 'assets/js/mathjax-config.js'
+      - 'assets/js/mathjax-loader.js'
+      - 'assets/css/privacy-consent.css'
+      - 'assets/css/site-interactions.css'
+      - '_includes/_head.html'
+      - '_includes/_footer.html'
+      - '_includes/_scripts.html'
+      - 'privacy/**'
+      - 'tests/security.cjs'
+      - 'Gemfile'
+      - '.github/dependabot.yml'
       - 'lecture/**'
       - 'tests/lecture-*.cjs'
       - '.github/workflows/lecture-quality.yml'
@@ -29,8 +42,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
       - name: Verify navigation, concept checks and teaching-model invariants
@@ -42,7 +55,7 @@ jobs:
           node tests/lecture-sensitivity.cjs
           node tests/lecture-presets.cjs
       - name: Build Jekyll pages before review
-        uses: actions/jekyll-build-pages@v1
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
         with:
           source: ./
           destination: ./_site
