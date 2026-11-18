@@ -256,7 +256,7 @@ permalink: /lecture/computational-lab/
   \]
   </div>
 
-  <p>The standard error decreases asymptotically as \(M^{-1/2}\), but the prefactor is observable-dependent. Twelve samples do not mean “12-fold accuracy”, and they do not guarantee a specific percentage error.</p>
+  <p>For independent, identically distributed samples with finite variance, the Monte Carlo standard error decreases asymptotically as \(M^{-1/2}\); the prefactor depends on the operator and sampling ensemble. Correlated or insufficiently mixed samples reduce the effective sample size, while an incorrectly normalized sampler can introduce bias. Twelve samples therefore do not imply a fixed percentage accuracy. Check the convergence of the actual observable against an independent benchmark where possible.</p>
 
   <aside class="lecture-note">
     <strong>Important distinction:</strong>
@@ -371,7 +371,7 @@ permalink: /lecture/computational-lab/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
