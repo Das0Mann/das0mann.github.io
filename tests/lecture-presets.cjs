@@ -17,6 +17,7 @@ const files={
   "spin-dynamics":["lecture-interactive.js","lecture-bloch.js","lecture-relaxation.js"],
   "radical-pairs":["lecture-interactive.js","lecture-radical-levels.js"],
   "magnetic-resonance":["lecture-hyperfine.js","lecture-epr.js","lecture-powder.js","lecture-cw-detection.js"],
+  "photo-cidnp":["lecture-cidnp-model.js","lecture-cidnp.js"],
   "electron-transfer":["lecture-marcus.js","lecture-tunnelling.js"],
   "molecular-motion":["lecture-motion.js"],
   "computational-lab":["lecture-scaling.js"],
@@ -38,6 +39,7 @@ for(const page of pages) {
       checked:!!attr.checked,textContent:"",dataset:{},style:{},listeners,
       addEventListener(event,fn){listeners[event]=fn;},
       appendChild(child){return child;},
+      querySelectorAll(selector){return doc.querySelectorAll(selector);},
       setAttribute(k,v){const text=String(v);assert(!/NaN|Infinity/.test(text),"invalid SVG "+id);this[k]=text;}
     };
     elements.set(id,el);return el;
@@ -51,7 +53,12 @@ for(const page of pages) {
   });
   const doc={
     readyState:"complete",
-    getElementById(id){return elements.get(id)??make(id);},
+    getElementById(id){
+      // The Kaptein sign selector uses <select> and has its own test suite;
+      // this generic harness validates the separate numerical preset widget.
+      if(page.name==="photo-cidnp" && id==="cidnp-sign-lab")return null;
+      return elements.get(id)??make(id);
+    },
     createElementNS(_ns,tag){return make("svg-"+tag+"-"+elements.size);},
     querySelectorAll(selector){
       const required=[...selector.matchAll(/\[data-([a-z0-9-]+)\]/g)].map(m=>"data-"+m[1]);
@@ -59,9 +66,11 @@ for(const page of pages) {
       return buttonNodes.filter(x=>required.every(k=>x.dataAttributes.includes(k)));
     }
   };
+  // Share one JS realm across the model and its UI script, as the browser does.
+  const sandbox={document:doc,console,Math,window:{matchMedia:()=>({matches:true})},requestAnimationFrame:()=>0};
   for(const filename of files[page.name]||[]) {
     const code=fs.readFileSync("assets/js/"+filename,"utf8");
-    vm.runInNewContext(code,{document:doc,console,Math,window:{matchMedia:()=>({matches:true})},requestAnimationFrame:()=>0},{filename,timeout:3000});
+    vm.runInNewContext(code,sandbox,{filename,timeout:3000});
   }
   for(const [index,button] of buttonNodes.entries()) {
     assert.equal(typeof button.listeners.click,"function",page.name+" preset "+index+" has no click handler");
