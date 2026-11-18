@@ -1,19 +1,16 @@
-# Site navigation links
-
-- title: About
-  url: /about/
-
+# Primary navigation. Icons refer to the shared icon.html vocabulary.
 - title: Research
   url: /research/
-
+  icon: research
 - title: Publications
   url: /publications/
-
+  icon: book
 - title: Software
   url: /repositories/
-
-- title: Lecture
+  icon: code
+- title: Lectures
   url: /lecture/
-
-- title: News
-  url: /news/
+  icon: file
+- title: About
+  url: /about/
+  icon: person

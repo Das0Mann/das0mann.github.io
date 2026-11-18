@@ -12,136 +12,26 @@
   <div class="hero-inner hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Theoretical chemistry · quantum dynamics · molecular biophysics</p>
-      <h1>Luca<br>Gerhards</h1>
+      <h1>Luca Gerhards</h1>
       <p class="hero-role">Carl von Ossietzky Young Researcher Fellow · University of Oldenburg</p>
       <p class="hero-subtitle">Connecting electronic structure, molecular motion and spin dynamics to understand magnetic-field effects, radical-pair chemistry and quantum phenomena in complex molecular and biological systems.</p>
-      <div class="hero-topics" aria-label="Research themes">
-        <span class="hero-topic">Spin chemistry</span>
-        <span class="hero-topic">Open quantum systems</span>
-        <span class="hero-topic">Multiscale modelling</span>
-        <span class="hero-topic">Magnetic resonance</span>
-      </div>
       <div class="hero-actions">
-        <a class="button-primary" href="{{ site.url }}/research/">Explore research</a>
-        <a class="button-secondary" href="{{ site.url }}/publications/">Publications</a>
-        <a class="button-secondary" href="{{ site.url }}/lecture/">Explore lectures</a>
+        <a class="button-primary" href="{{ site.url }}/research/">{% include icon.html name="research" %} Explore research</a>
+        <a class="button-secondary" href="{{ site.url }}/lecture/">{% include icon.html name="book" %} Interactive lectures</a>
       </div>
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="radical-pair-panel">
-        <div class="rp-panel-head">
-          <span class="rp-label">Radical-pair spin dynamics</span>
-          <span class="rp-state-badge">S ↔ T</span>
+      <div class="hero-signature">
+        <div class="hero-signature-top">
+          <span>Quantum chemistry</span>
+          <span class="hero-signature-pulse"></span>
         </div>
-
-        <svg class="radical-pair-svg" viewBox="0 0 420 300" role="presentation">
-          <defs>
-            <radialGradient id="rpGlow">
-              <stop offset="0%" stop-color="#ecffff"/>
-              <stop offset="34%" stop-color="#75e0e4"/>
-              <stop offset="100%" stop-color="#1c8894"/>
-            </radialGradient>
-            <linearGradient id="rpCoupling" x1="0" x2="1">
-              <stop offset="0%" stop-color="#60d4da" stop-opacity=".10"/>
-              <stop offset="50%" stop-color="#d5f8f9" stop-opacity=".84"/>
-              <stop offset="100%" stop-color="#60d4da" stop-opacity=".10"/>
-            </linearGradient>
-            <linearGradient id="rpTrace" x1="0" x2="1">
-              <stop offset="0%" stop-color="#62d8dd" stop-opacity=".34"/>
-              <stop offset="45%" stop-color="#c7f5f6" stop-opacity=".92"/>
-              <stop offset="100%" stop-color="#62d8dd" stop-opacity=".24"/>
-            </linearGradient>
-          </defs>
-
-          <!-- external magnetic field -->
-          <g class="rp-b0">
-            <line x1="348" y1="38" x2="348" y2="92"/>
-            <path d="M348 25 L341 41 L355 41 Z"/>
-            <text x="360" y="52">B₀</text>
-          </g>
-
-          <!-- radical centers and coupling -->
-          <line x1="155" y1="128" x2="265" y2="128" class="rp-coupling"/>
-          <text x="194" y="116" class="rp-coupling-label">J, D</text>
-
-          <circle cx="155" cy="128" r="20" class="rp-radical-halo"/>
-          <circle cx="265" cy="128" r="20" class="rp-radical-halo"/>
-          <circle cx="155" cy="128" r="12" class="rp-radical-core"/>
-          <circle cx="265" cy="128" r="12" class="rp-radical-core"/>
-
-          <text x="145" y="132" class="rp-electron">e⁻</text>
-          <text x="255" y="132" class="rp-electron">e⁻</text>
-          <text x="136" y="168" class="rp-radical-label">D•⁺</text>
-          <text x="250" y="168" class="rp-radical-label">A•⁻</text>
-
-          <!-- local hyperfine environments -->
-          <g class="rp-hyperfine">
-            <circle cx="105" cy="91" r="4"/>
-            <circle cx="95" cy="145" r="4"/>
-            <circle cx="118" cy="183" r="4"/>
-            <line x1="111" y1="96" x2="142" y2="118"/>
-            <line x1="101" y1="143" x2="139" y2="132"/>
-            <line x1="122" y1="177" x2="145" y2="143"/>
-
-            <circle cx="315" cy="91" r="4"/>
-            <circle cx="325" cy="145" r="4"/>
-            <circle cx="302" cy="183" r="4"/>
-            <line x1="309" y1="96" x2="278" y2="118"/>
-            <line x1="319" y1="143" x2="281" y2="132"/>
-            <line x1="298" y1="177" x2="275" y2="143"/>
-          </g>
-
-          <!-- precession cones -->
-          <ellipse cx="155" cy="92" rx="29" ry="9" class="rp-precession-ring"/>
-          <ellipse cx="265" cy="92" rx="29" ry="9" class="rp-precession-ring"/>
-
-          <!-- spin 1 -->
-          <g transform="translate(155 128)">
-            <g class="rp-spin rp-spin-left">
-              <line x1="0" y1="0" x2="-8" y2="-43"/>
-              <path d="M-10 -54 L-15 -40 L-3 -43 Z"/>
-            </g>
-          </g>
-
-          <!-- spin 2 -->
-          <g transform="translate(265 128)">
-            <g class="rp-spin rp-spin-right">
-              <line x1="0" y1="0" x2="11" y2="-42"/>
-              <path d="M14 -53 L4 -42 L17 -39 Z"/>
-            </g>
-          </g>
-
-          <!-- singlet-triplet conversion cue -->
-          <g class="rp-st-cue">
-            <text x="186" y="70">|S⟩</text>
-            <path d="M210 65 C224 51, 245 51, 257 65"/>
-            <path d="M255 59 L261 66 L252 68 Z"/>
-            <text x="267" y="70">|T₀⟩</text>
-          </g>
-
-          <!-- singlet population trace -->
-          <g class="rp-trace-group">
-            <text x="54" y="244" class="rp-trace-label">P<tspan baseline-shift="sub" font-size="8">S</tspan>(t)</text>
-            <line x1="90" y1="238" x2="362" y2="238" class="rp-trace-axis"/>
-            <path class="rp-trace"
-              d="M90 219
-                 C104 198, 118 198, 132 219
-                 S160 240, 174 219
-                 S202 201, 216 219
-                 S244 237, 258 219
-                 S286 204, 300 219
-                 S328 234, 362 222"/>
-            <path class="rp-envelope"
-              d="M90 197 C160 205, 230 211, 362 218"/>
-            <text x="303" y="257" class="rp-time-label">time</text>
-          </g>
-        </svg>
-
-        <div class="hero-equations">
-          <div class="hero-equation">\( \hat H_{\mathrm{RP}} = \hat H_Z + \hat H_{\mathrm{hf}} + \hat H_{J,D} \)</div>
-          <div class="hero-equation">\( \dot{\rho} = -\frac{i}{\hbar}[\hat H_{\mathrm{RP}},\rho] + \mathcal{L}(\rho) \)</div>
-          <div class="hero-equation">\( P_S(t) = \mathrm{Tr}\!\left[\hat P_S\rho(t)\right] \)</div>
+        <div class="hero-signature-symbol">{% include icon.html name="spin" %}</div>
+        <h2>From spin to signal.</h2>
+        <p>Microscopic electronic structure. Quantum dynamics. Chemical observables.</p>
+        <div class="hero-signature-flow">
+          <span>Structure</span><i></i><span>Dynamics</span><i></i><span>Signal</span>
         </div>
       </div>
     </div>

@@ -8,13 +8,29 @@
 {% include _browser-upgrade.html %}
 {% include _navigation.html %}
 
+{% assign hero_icon = "atom" %}
+{% if page.url == "/about/" %}{% assign hero_icon = "person" %}
+{% elsif page.url == "/research/" %}{% assign hero_icon = "research" %}
+{% elsif page.url == "/publications/" %}{% assign hero_icon = "book" %}
+{% elsif page.url == "/repositories/" %}{% assign hero_icon = "code" %}
+{% elsif page.url contains "/lecture/" %}
+  {% assign hero_icon = "file" %}
+  {% for entry in site.data.lecture_route %}
+    {% if entry.url == page.url %}{% assign hero_icon = entry.icon %}{% endif %}
+  {% endfor %}
+{% endif %}
+{% unless page.hide_hero %}
 <header class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-kicker">quantum-chemistry.org</p>
-    <h1>{{ page.title }}</h1>
-    {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}
+    <div class="page-hero-emblem">{% include icon.html name=hero_icon %}</div>
+    <div class="page-hero-copy">
+      <p class="page-kicker">{% if page.url contains "/lecture/" %}Learning / Quantum Chemistry{% else %}Luca Gerhards / Quantum Chemistry{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.excerpt %}<p class="page-excerpt">{{ page.excerpt }}</p>{% endif %}
+    </div>
   </div>
 </header>
+{% endunless %}
 
 <main class="site-main" role="main" id="main-content">
   <article class="page-content">

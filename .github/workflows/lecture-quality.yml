@@ -7,6 +7,10 @@ on:
       - '_includes/_navigation.html'
       - '_layouts/*.html'
       - 'assets/css/lecture-refresh.css'
+      - 'assets/css/iconic.css'
+      - '_data/navigation.yml'
+      - '_includes/icon.html'
+      - 'index.md'
       - 'assets/js/lecture-*.js'
       - 'lecture/**'
       - 'tests/lecture-*.cjs'
@@ -39,3 +43,5 @@ jobs:
 
       - name: Inspect rendered lecture HTML and homepage entry points
         run: node tests/lecture-rendered.cjs
+      - name: Validate unified icon and typography system in rendered pages
+        run: node tests/visual-system.cjs

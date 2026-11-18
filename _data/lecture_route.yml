@@ -3,51 +3,77 @@
   name: Electronic structure
   url: /lecture/electronic-structure/
   theme: Foundations
+  icon: "atom"
+  description: "From orbitals and electron correlation to magnetic interaction parameters."
 - number: "02"
   name: Spin Hamiltonians
   url: /lecture/spin-hamiltonians/
   theme: Foundations
+  icon: "sliders"
+  description: "Connect electronic structure to Zeeman, hyperfine, exchange and dipolar terms."
 - number: "03"
   name: Spin dynamics
   url: /lecture/spin-dynamics/
   theme: Foundations
+  icon: "activity"
+  description: "Work with spin operators, density matrices, coherence and relaxation."
 - number: "07"
   name: Molecular motion
   url: /lecture/molecular-motion/
   theme: The environment
+  icon: "waves"
+  description: "Translate trajectories into time-dependent interactions and spectral densities."
 - number: "09"
   name: Open quantum systems
   url: /lecture/open-systems/
   theme: The environment
+  icon: "layers"
+  description: "Understand dissipation, decoherence and non-Markovian memory kernels."
 - number: "11"
   name: Excited-state photochemistry
   url: /lecture/excited-state-photochemistry/
   theme: Reactive states
+  icon: "sun"
+  description: "Explore light absorption, intersystem crossing and photochemical kinetics."
 - number: "06"
   name: Electron transfer
   url: /lecture/electron-transfer/
   theme: Reactive states
+  icon: "transfer"
+  description: "Relate reorganization, electronic coupling and free energy to transfer rates."
 - number: "04"
   name: Radical-pair chemistry
   url: /lecture/radical-pairs/
   theme: Reactive states
+  icon: "spin"
+  description: "Follow singlet–triplet evolution into field-dependent reaction yields."
 - number: "05"
   name: Magnetic resonance
   url: /lecture/magnetic-resonance/
   theme: Measurement and control
+  icon: "radio"
+  description: "Learn how spin transitions become EPR and resonance signals."
 - number: "12"
   name: Coherent control
   url: /lecture/coherent-control/
   theme: Measurement and control
+  icon: "zap"
+  description: "Use resonant driving, pulses and echoes to control spin states."
 - number: "10"
   name: Quantum biology
   url: /lecture/quantum-biology/
   theme: Applications
+  icon: "leaf"
+  description: "Evaluate the evidence connecting spin chemistry to biological functions."
 - number: "08"
   name: Computational laboratory
   url: /lecture/computational-lab/
   theme: Implementation
+  icon: "cpu"
+  description: "Build scalable spin simulations and validate numerical convergence."
 - number: "13"
   name: MolSpin examples
   url: /lecture/molspin-notebooks/
   theme: Implementation
+  icon: "code"
+  description: "Construct reproducible MolSpin models from Hamiltonians and kinetics."

@@ -1,9 +1,9 @@
 {% unless page.layout == "full-page" %}<a class="skip-link" href="#main-content">Skip to main content</a>{% endunless %}
 <header class="site-header">
   <div class="site-header-inner">
-    <a class="site-brand" href="{{ site.url }}/" aria-label="Luca Gerhards home">
-      <span class="site-brand-mark">LG</span>
-      <span>Luca Gerhards</span>
+    <a class="site-brand" href="{{ site.url }}/" aria-label="Luca Gerhards · home">
+      <span class="site-brand-mark">{% include icon.html name="spin" %}</span>
+      <span class="site-brand-copy"><strong>Luca Gerhards</strong><small>Quantum Chemistry</small></span>
     </a>
     <nav class="modern-nav" aria-label="Primary navigation">
       <ul>
@@ -17,7 +17,10 @@
           {% if link.url != '/' and page.url contains link.url %}
             {% assign active_class = 'is-active' %}
           {% endif %}
-          <li><a class="{{ active_class }}" href="{{ domain }}{{ link.url }}" {% if active_class == "is-active" %}aria-current="page"{% endif %} {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
+          <li><a class="{{ active_class }}" href="{{ domain }}{{ link.url }}" {% if active_class == "is-active" %}aria-current="page"{% endif %} {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+            {% include icon.html name=link.icon %}
+            <span>{{ link.title }}</span>
+          </a></li>
         {% endfor %}
       </ul>
     </nav>
