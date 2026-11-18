@@ -450,7 +450,7 @@ permalink: /lecture/radical-pairs/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">From spin state to product yield</p><h2>Reaction kinetics continuously measures the evolving singlet and triplet character</h2></div>
   </div>
 
