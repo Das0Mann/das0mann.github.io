@@ -716,7 +716,7 @@ permalink: /lecture/electronic-structure/
   </div>
 
   <div class="lecture-flow-bridge">
-    <p><strong>This is one of those topics that sounds more intimidating than it needs to.</strong> The useful split is simple: scalar-relativistic effects change the orbital energies and radial shapes; spin–orbit coupling connects spin and orbital motion. Both can feed directly into the magnetic parameters we use later.</p>
+    <p>Relativistic effects contribute to molecular magnetic parameters through two related mechanisms: scalar-relativistic terms alter electronic energies and orbital distributions, whereas spin–orbit coupling mixes electronic states of different spin and orbital character. Both influence the effective interactions used in subsequent spin-Hamiltonian simulations.</p>
   </div>
 
   <div class="physical-concept-panel">
@@ -943,7 +943,7 @@ permalink: /lecture/electronic-structure/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">06</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -957,7 +957,7 @@ permalink: /lecture/electronic-structure/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
