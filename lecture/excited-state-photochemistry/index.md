@@ -13,14 +13,21 @@ permalink: /lecture/excited-state-photochemistry/
   <h2>Absorbing a photon is only the beginning</h2>
   <p>Photochemistry starts with an electronic excitation, but the molecule does not remain at the geometry at which the photon was absorbed. Nuclei move, electronic states approach one another, population can change electronic character, and spin–orbit coupling can transfer population between different spin manifolds.</p>
 </header>
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
-  <div class="module-learning-grid">
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
+    <div class="module-learning-grid">
     <div><span>01</span><p>Distinguish vertical excitation, excited-state relaxation and emission energies.</p></div>
     <div><span>02</span><p>Explain why conical intersections and nonadiabatic coupling enable efficient internal conversion.</p></div>
     <div><span>03</span><p>Relate spin–orbit coupling and vibronic overlap to intersystem crossing and triplet formation.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 {% include lecture-connections.html %}
 
