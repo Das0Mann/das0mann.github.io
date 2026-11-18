@@ -1,21 +1,50 @@
-<nav class="lecture-module-nav" aria-label="Lecture library navigation">
-  <div class="lecture-nav-meta">
-    <a href="{{ site.url }}/lecture/" class="lecture-module-home{% if page.url == '/lecture/' %} is-current{% endif %}">← Library</a>
-    <span>{{ page.title }} · stable module IDs</span>
+{% assign current_step = 0 %}
+{% assign previous_module = nil %}
+{% assign next_module = nil %}
+{% for module in site.data.lecture_route %}
+  {% if module.url == page.url %}
+    {% assign current_step = forloop.index %}
+    {% assign previous_index = forloop.index0 | minus: 1 %}
+    {% assign next_index = forloop.index %}
+    {% if forloop.first == false %}{% assign previous_module = site.data.lecture_route[previous_index] %}{% endif %}
+    {% if forloop.last == false %}{% assign next_module = site.data.lecture_route[next_index] %}{% endif %}
+    {% assign current_module = module %}
+  {% endif %}
+{% endfor %}
+<nav class="lecture-module-nav lecture-route-nav" aria-label="Lecture learning path">
+  <div class="lecture-route-header">
+    <div class="lecture-route-context">
+      <a class="lecture-route-back" href="{{ site.url }}/lecture/">← Lecture library</a>
+      <span class="lecture-route-label">Suggested path · step {{ current_step }} of {{ site.data.lecture_route.size }}</span>
+      <strong>{{ current_module.theme }}</strong>
+    </div>
+    <div class="lecture-route-neighbours">
+      {% if previous_module %}
+      <a class="lecture-route-neighbour" href="{{ site.url }}{{ previous_module.url }}" rel="prev">
+        <small>← Previous</small><span>{{ previous_module.name }}</span>
+      </a>
+      {% endif %}
+      {% if next_module %}
+      <a class="lecture-route-neighbour lecture-route-next" href="{{ site.url }}{{ next_module.url }}" rel="next">
+        <small>Next →</small><span>{{ next_module.name }}</span>
+      </a>
+      {% endif %}
+    </div>
   </div>
-  <div class="lecture-nav-links">
-    <a{% if page.url == '/lecture/electronic-structure/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/electronic-structure/">01 Electronic</a>
-    <a{% if page.url == '/lecture/spin-hamiltonians/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/spin-hamiltonians/">02 Hamiltonians</a>
-    <a{% if page.url == '/lecture/spin-dynamics/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/spin-dynamics/">03 Dynamics</a>
-    <a{% if page.url == '/lecture/radical-pairs/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/radical-pairs/">04 Radical pairs</a>
-    <a{% if page.url == '/lecture/magnetic-resonance/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/magnetic-resonance/">05 EPR</a>
-    <a{% if page.url == '/lecture/electron-transfer/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/electron-transfer/">06 Electron transfer</a>
-    <a{% if page.url == '/lecture/molecular-motion/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/molecular-motion/">07 Motion</a>
-    <a{% if page.url == '/lecture/computational-lab/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/computational-lab/">08 Lab</a>
-    <a{% if page.url == '/lecture/open-systems/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/open-systems/">09 Open systems</a>
-    <a{% if page.url == '/lecture/quantum-biology/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/quantum-biology/">10 Quantum biology</a>
-    <a{% if page.url == '/lecture/excited-state-photochemistry/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/excited-state-photochemistry/">11 Photochemistry</a>
-    <a{% if page.url == '/lecture/coherent-control/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/coherent-control/">12 Coherent control</a>
-    <a{% if page.url == '/lecture/molspin-notebooks/' %} class="is-current"{% endif %} href="{{ site.url }}/lecture/molspin-notebooks/">13 MolSpin</a>
+  <div class="lecture-route-progress" role="img" aria-label="Suggested learning path: step {{ current_step }} of {{ site.data.lecture_route.size }}">
+    <span style="width: {{ current_step | times: 100 | divided_by: site.data.lecture_route.size }}%;"></span>
   </div>
+  <details class="lecture-route-picker">
+    <summary>Browse the complete lecture library <span aria-hidden="true">⌄</span></summary>
+    <ol class="lecture-route-list">
+      {% for module in site.data.lecture_route %}
+      <li>
+        <a href="{{ site.url }}{{ module.url }}"{% if module.url == page.url %} aria-current="page" class="is-current"{% endif %}>
+          <span class="lecture-route-step">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="lecture-route-chapter"><strong>{{ module.name }}</strong><small>Module {{ module.number }} · {{ module.theme }}</small></span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </details>
 </nav>
