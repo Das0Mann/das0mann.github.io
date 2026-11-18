@@ -19,6 +19,9 @@
 <main class="site-main" role="main">
   <article class="page-content">
     {{ content }}
+    {% if page.url contains '/lecture/' and page.url != '/lecture/' %}
+      {% include lecture-knowledge-check.html %}
+    {% endif %}
   </article>
 </main>
 
@@ -26,6 +29,7 @@
 {% include _scripts.html %}
 {% if page.url contains '/lecture/' %}
 <script src="{{ site.url }}/assets/js/lecture-toc.js" defer></script>
+<script src="{{ site.url }}/assets/js/lecture-refresh.js" defer></script>
 {% endif %}
 </body>
 </html>
