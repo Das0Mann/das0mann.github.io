@@ -8,6 +8,10 @@ on:
       - '_layouts/*.html'
       - 'assets/css/lecture-refresh.css'
       - 'assets/css/iconic.css'
+      - 'assets/css/lecture-polish.css'
+      - 'assets/js/hero-spin.js'
+      - 'tests/hero-spin.cjs'
+      - 'tests/visual-system.cjs'
       - '_data/navigation.yml'
       - '_includes/icon.html'
       - 'index.md'
@@ -31,6 +35,8 @@ jobs:
           node-version: '22'
       - name: Verify navigation, concept checks and teaching-model invariants
         run: node tests/lecture-learning.cjs
+      - name: Verify animation playback and reduced-motion behavior
+        run: node tests/hero-spin.cjs
       - name: Run existing parameter sensitivity and preset regressions
         run: |
           node tests/lecture-sensitivity.cjs
