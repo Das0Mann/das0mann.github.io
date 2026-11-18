@@ -36,3 +36,6 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Inspect rendered lecture HTML and homepage entry points
+        run: node tests/lecture-rendered.cjs
