@@ -35,28 +35,30 @@
   font-size: .79rem !important; line-height: 1.66 !important;
 }
 .lecture-cidnp .cidnp-mechanism {
-  display: grid; grid-template-columns: repeat(5,minmax(0,1fr));
-  gap: 10px; margin: 22px 0 24px;
+  display: grid; grid-template-columns: minmax(0,1fr);
+  max-width: 830px; gap: 0; margin: 18px 0 23px;
+  border-top: 1px solid #dbe9e7;
 }
 .lecture-cidnp .cidnp-mechanism > div {
-  position: relative; min-width: 0;
-  padding: 12px 13px 14px; border-top: 2px solid #9fcaca;
-  background: #f7faf9; border-radius: 0 0 8px 8px;
+  display: grid; grid-template-columns: 27px 31px minmax(110px,165px) minmax(0,1fr);
+  align-items: center; gap: 10px;
+  min-width: 0; padding: 10px 4px;
+  border: 0; border-bottom: 1px solid #dbe9e7;
+  background: transparent; border-radius: 0;
 }
 .lecture-cidnp .cidnp-mechanism > div > span {
-  display: block; color: #54898d; font-size: .65rem; font-weight: 780;
+  display: block; color: #52898b; font-size: .71rem; font-weight: 770;
 }
 .lecture-cidnp .cidnp-mechanism .site-icon {
-  display: block; width: 24px; height: 24px;
-  margin: 13px 0; color: #188488;
+  display: block; width: 21px; height: 21px;
+  margin: 0; color: #188488;
 }
 .lecture-cidnp .cidnp-mechanism strong {
-  display: block; font-size: .78rem; font-weight: 760; color: #244452;
+  display: block; font-size: .85rem; font-weight: 740; color: #244452;
 }
 .lecture-cidnp .cidnp-mechanism small {
-  display: block; margin-top: 5px;
-  font-size: .7rem; line-height: 1.57;
-  color: #60757c;
+  display: block; margin: 0; font-size: .78rem;
+  line-height: 1.55; color: #60757c;
 }
 .lecture-cidnp .cidnp-widget {
   padding: 23px 23px 18px; margin: 24px 0 21px;
@@ -169,25 +171,48 @@
   line-height: 1.62 !important; color: #607782 !important;
 }
 .lecture-cidnp .cidnp-plot-grid {
-  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 13px; margin: 12px 0 16px;
+  display: grid; grid-template-columns: minmax(0,1fr);
+  gap: 9px; margin: 12px 0 16px;
 }
 .lecture-cidnp .cidnp-plot-panel {
-  min-width: 0; margin: 0;
-  padding: 13px 14px 10px;
-  border: 1px solid #dceae8; border-radius: 10px;
+  min-width: 0; margin: 0; padding: 0;
+  border: 1px solid #dceae8; border-radius: 9px;
   background: #fcfefd;
 }
-.lecture-cidnp .cidnp-plot-panel figcaption {
-  display: grid; gap: 2px; margin: 0 0 12px; padding: 0;
+.lecture-cidnp .cidnp-plot-panel > summary {
+  display: flex; gap: 11px; align-items: center;
+  min-height: 49px; padding: 12px 15px;
+  color: #274b55; list-style: none; cursor: pointer;
+  background: #f6fbf9; border-radius: 9px;
 }
-.lecture-cidnp .cidnp-plot-panel figcaption strong {
-  font-size: .79rem; font-weight: 760; color: #254b55;
+.lecture-cidnp .cidnp-plot-panel > summary::-webkit-details-marker { display: none; }
+.lecture-cidnp .cidnp-plot-panel > summary strong {
+  flex: 0 0 auto; font-size: .81rem; font-weight: 760;
 }
-.lecture-cidnp .cidnp-plot-panel figcaption span {
-  font-size: .72rem; color: #6d8289;
+.lecture-cidnp .cidnp-plot-panel > summary span:not(.cidnp-plot-chevron) {
+  min-width: 0; font-size: .75rem; color: #657e83;
 }
-.lecture-cidnp .cidnp-plot-panel svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lecture-cidnp .cidnp-plot-chevron {
+  margin-left: auto; font-size: 1rem;
+  color: #5a8789; transition: transform .15s ease;
+}
+.lecture-cidnp .cidnp-plot-panel[open] .cidnp-plot-chevron { transform: rotate(180deg); }
+.lecture-cidnp .cidnp-plot-panel[open] > summary {
+  border-radius: 9px 9px 0 0; border-bottom: 1px solid #deebe9;
+}
+.lecture-cidnp .cidnp-plot-content {
+  margin: 0; padding: 12px 16px 14px; background: #fff;
+  border-radius: 0 0 9px 9px;
+}
+.lecture-cidnp .cidnp-plot-content svg {
+  width: 100%; max-width: 760px; height: auto;
+  display: block; margin: auto; overflow: visible;
+}
+.lecture-cidnp .cidnp-plot-content .cidnp-legend { padding-top: 10px; }
+.lecture-cidnp .cidnp-plot-scale {
+  margin: 11px 0 0 !important; font-size: .74rem !important;
+  line-height: 1.6 !important; color: #5b7079 !important;
+}
 .lecture-cidnp .cidnp-trace {
   fill: none; stroke-width: 2.3; stroke-linecap: round;
   stroke-linejoin: round; vector-effect: non-scaling-stroke;
@@ -259,20 +284,31 @@
 .lecture-cidnp .cidnp-cautions strong { color: #234b58; font-size: .84rem; font-weight: 760; }
 .lecture-cidnp .cidnp-cautions p { color: #59707a !important; font-size: .78rem !important; line-height: 1.7 !important; margin: 8px 0 0 !important; }
 @media(max-width: 900px) {
-  .lecture-cidnp .cidnp-mechanism { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .lecture-cidnp .cidnp-stat-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media(max-width: 720px) {
   .lecture-cidnp .cidnp-comparison { grid-template-columns: 1fr; }
-  .lecture-cidnp .cidnp-mechanism { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .lecture-cidnp .cidnp-controls,.lecture-cidnp .cidnp-controls--four { grid-template-columns: 1fr; }
-  .lecture-cidnp .cidnp-result-row,.lecture-cidnp .cidnp-plot-grid { grid-template-columns: 1fr; }
+  .lecture-cidnp .cidnp-result-row { grid-template-columns: 1fr; }
   .lecture-cidnp .cidnp-cautions { grid-template-columns: 1fr; }
   .lecture-cidnp .cidnp-widget { padding: 18px 14px; }
   .lecture-cidnp .cidnp-widget-head { flex-direction: column; gap: 8px; }
 }
-@media(max-width: 460px) {
-  .lecture-cidnp .cidnp-mechanism { grid-template-columns: 1fr; }
+@media(max-width: 620px) {
+  .lecture-cidnp .cidnp-mechanism > div {
+    grid-template-columns: 23px 23px minmax(0,1fr);
+    align-items: start; gap: 6px 9px; padding: 11px 2px;
+  }
+  .lecture-cidnp .cidnp-mechanism small { grid-column: 3; }
+  .lecture-cidnp .cidnp-plot-panel > summary {
+    flex-wrap: wrap; gap: 4px 10px;
+  }
+  .lecture-cidnp .cidnp-plot-panel > summary span:not(.cidnp-plot-chevron) {
+    flex-basis: calc(100% - 31px);
+    order: 3;
+  }
+  .lecture-cidnp .cidnp-plot-chevron { order: 2; }
+  .lecture-cidnp .cidnp-plot-content { padding: 10px 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .lecture-cidnp * { transition: none !important; }
