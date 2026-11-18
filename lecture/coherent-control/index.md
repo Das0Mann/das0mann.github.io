@@ -215,7 +215,7 @@ permalink: /lecture/coherent-control/
 
 <section class="lecture-section concept-extension">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">P</span>
+    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
     <div><p class="section-eyebrow">Pulse area</p><h2>A pulse is a controlled rotation whose angle is the time-integrated drive</h2></div>
   </div>
 
