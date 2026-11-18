@@ -117,7 +117,7 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
-  <p>The dissipator is constructed so that the dynamics remains trace preserving and completely positive. The operators \(L_k\) encode specific channels such as relaxation or dephasing.</p>
+  <p>For a time-independent GKSL generator with nonnegative rates \(\gamma_k\), the dissipator generates trace-preserving, completely positive quantum dynamical maps. The operators \(L_k\) represent channels such as relaxation or dephasing. Simply writing an equation in this form is not sufficient if fitted coefficients violate the required rate conditions.</p>
 
   <details class="lecture-details">
     <summary>Why does “complete positivity” matter?</summary>
@@ -534,7 +534,7 @@ permalink: /lecture/open-systems/
 <section class="lecture-section module-reading">
   <div class="lecture-section-head">
     <span class="lecture-index">08</span>
-    <div><p class="section-eyebrow">Selected reading</p><h2>Examples from my work</h2></div>
+    <div><p class="section-eyebrow">Selected reading</p><h2>Research applications</h2></div>
   </div>
 
   <div class="lecture-reading-grid">
@@ -548,7 +548,7 @@ permalink: /lecture/open-systems/
 <section class="lecture-section external-reading">
   <div class="lecture-section-head">
     <span class="lecture-index literature-index">L</span>
-    <div><p class="section-eyebrow">Key external literature</p><h2>Where to read next</h2></div>
+    <div><p class="section-eyebrow">Key external literature</p><h2>Further reading</h2></div>
   </div>
   <p class="external-reading-intro">These are deliberately selected from outside my own work: foundational papers or reviews that are especially useful for this topic.</p>
   <div class="lecture-reading-grid external-literature-grid">
