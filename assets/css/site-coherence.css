@@ -301,6 +301,17 @@ a{text-underline-offset:3px;}
 .lecture-page .lecture-module .lecture-equation{overflow-x:auto;overscroll-behavior-inline:contain;}
 .lecture-page .lecture-module mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;}
 .lecture-page .lecture-module .plot-wrap svg{max-width:100%;}
+/* Inline MathJax can otherwise give paragraphs a greater scrollWidth than the
+   viewport (notably the magnetic-resonance chapter on narrow phones).
+   Keep the mathematical expression legible and independently scrollable. */
+.lecture-page .lecture-section :is(p,li) { overflow-wrap: anywhere; }
+.lecture-page .lecture-module :is(p,li) mjx-container:not([display="true"]) {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  -webkit-overflow-scrolling: touch;
+}
 .lecture-page .lecture-module :is(img,video){max-width:100%;height:auto;}
 /* Article templates and stand-alone pages must show content and share navigation. */
 .site-post-main,.site-news-index,.site-full-page-main{width:min(calc(100% - 44px),var(--site-width));margin:0 auto;padding:45px 0 80px;}
