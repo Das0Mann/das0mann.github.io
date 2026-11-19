@@ -42,6 +42,8 @@ for(let i=0;i<css.length;i++){
 assert.equal(depth,0,"Unbalanced sitewide CSS");
 assert(!comment&&!string,"Unclosed comment/string in sitewide CSS");
 assert(css.includes(".skip-link:focus"),"Keyboard skip link needs an explicit focused state");
+assert(css.includes(".home-main .home-learning-links{display:grid"),"Homepage lecture suggestions need a real grid, not inline links");
+assert(css.includes("grid-column:2;font-size:.97rem"),"Lecture link titles need independent columns and typography");
 assert(css.includes("grid-template-columns:repeat(3,minmax(0,1fr))"),"Mobile navigation should expose all destinations, not horizontally hide the last links");
 const layouts={
  "_layouts/home.html":['id="main-content"', "{{ content }}"],
