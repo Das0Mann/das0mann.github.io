@@ -63,6 +63,26 @@ const server=http.createServer((req,res)=>{
        });
        const id=route==="/"?"home":route==="/404.html"?"404":route.replace(/^\/|\/$/g,"").replaceAll("/","-");
        await page.screenshot({path:path.join(OUT,id+"-"+width+".png"),animations:"disabled",fullPage:false});
+       if(route==="/"){
+         const links=page.locator(".home-learning-links");
+         await links.scrollIntoViewIfNeeded();
+         const linkInfo=await links.evaluate(el=>{
+           const items=[...el.querySelectorAll(":scope > a")];
+           const rects=items.map(a=>a.getBoundingClientRect());
+           return {count:items.length,display:getComputedStyle(el).display,
+             first:rects[0]?{height:Math.round(rects[0].height),width:Math.round(rects[0].width)}:null,
+             vertical:rects.length<2||rects[1].top>=rects[0].bottom-2};
+         });
+         result.homeLearning=linkInfo;
+         await page.screenshot({path:path.join(OUT,"home-lecture-links-"+width+".png"),animations:"disabled",fullPage:false});
+       }
+       if(route.startsWith("/lecture/")&&route!=="/lecture/"){
+         const widget=page.locator(".interactive-card,.cidnp-widget").first();
+         if(await widget.count()){
+           await widget.scrollIntoViewIfNeeded();
+           await page.screenshot({path:path.join(OUT,id+"-widget-"+width+".png"),animations:"disabled",fullPage:false});
+         }
+       }
        report.push({route,width,...result,errors});
        await page.close();
      }
@@ -70,7 +90,7 @@ const server=http.createServer((req,res)=>{
    }
  }finally{await browser.close();server.close();}
  fs.writeFileSync(path.join(OUT,"report.json"),JSON.stringify(report,null,2));
- const failed=report.filter(r=>r.h1!==1||!r.mainVisible||r.docOverflow>4||r.navVisible!==5);
+ const failed=report.filter(r=>r.h1!==1||!r.mainVisible||r.docOverflow>4||r.navVisible!==5||(r.route==="/"&&(r.homeLearning?.count!==3||r.homeLearning?.display!=="grid"||!r.homeLearning?.vertical)));
  console.log(JSON.stringify({pages:routes.length,viewports:[1440,390],failed:failed.length,diagnostics:failed,fonts:[...new Set(report.map(r=>r.font))],pageErrors:report.filter(r=>r.errors.length).map(r=>({route:r.route,width:r.width,errors:r.errors}))},null,2));
  if(failed.length)process.exitCode=1;
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
