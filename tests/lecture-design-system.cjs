@@ -17,7 +17,7 @@ assert(css.includes("--course-stage: 990px"), "Allow wide science figures withou
 assert(css.includes("--lesson-body: 1.0625rem"), "Set 17px body text");
 assert(css.includes("--course-space-5: 48px"), "Use a shared spacing rhythm");
 assert(css.includes(".lecture-module .lecture-equation"), "Equations should use the shared unboxed treatment");
-assert(css.includes(".lecture-module .interactive-card"), "Interactive experiments should retain a shared surface");
+assert(css.includes(":is(.interactive-card,.cidnp-widget)"), "Interactive experiments should retain a shared surface");
 assert(css.includes(".lecture-module .lecture-section-head"), "One section heading hierarchy required");
 assert(css.includes(".lecture-route-picker"), "Course navigation must remain accessible");
 assert(css.includes(".lecture-local-toc"), "Section navigation must remain accessible");
