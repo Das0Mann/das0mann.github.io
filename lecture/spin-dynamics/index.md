@@ -10,9 +10,10 @@ permalink: /lecture/spin-dynamics/
 
 <header class="module-intro">
   <span class="module-index">Module 03</span>
-  <h2>What does a spin Hamiltonian do in time?</h2>
-  <p>Once the electronic structure has been reduced to a spin Hamiltonian, the problem changes. We are no longer solving for the electrons in real space; we are propagating amplitudes, populations and coherences in spin space.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -682,6 +683,7 @@ permalink: /lecture/spin-dynamics/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
