@@ -166,6 +166,18 @@
   --site-width:1120px;--site-font:system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 html{scroll-padding-top:110px;}
+
+/* Keyboard skip link is discoverable on focus, never constantly overlaying page content. */
+.skip-link {
+  position:fixed;top:0;left:12px;z-index:7000;
+  transform:translateY(calc(-100% - 14px));
+  padding:10px 14px;border-radius:0 0 8px 8px;
+  background:#12374a;color:#fff !important;
+  font:.85rem/1.4 var(--site-font);font-weight:700;
+  text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.2);
+}
+.skip-link:focus,.skip-link:focus-visible{top:0;transform:translateY(0);}
+
 body{background:var(--site-canvas);color:var(--site-ink);font-family:var(--site-font);font-size:16px;line-height:1.72;}
 body :is(h1,h2,h3,h4,h5,h6){font-family:var(--site-font);line-height:1.24;letter-spacing:-.025em;}
 a{text-underline-offset:3px;}
@@ -291,6 +303,14 @@ a{text-underline-offset:3px;}
   .site-header-inner,.home-hero .hero-inner,.home-main,.site-footer-inner,
   .page:not(.lecture-page) .page-hero-inner,.page:not(.lecture-page) .site-main,
   .site-post-main,.site-news-index,.site-full-page-main{width:calc(100% - 28px);}
+
+  /* All five destinations remain visible and tap-sized; no hidden horizontal menu. */
+  .modern-nav{overflow:visible;}
+  .modern-nav ul{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;}
+  .modern-nav li{min-width:0;}
+  .modern-nav a{justify-content:center;gap:5px;min-height:40px;padding:7px 4px;font-size:.75rem;white-space:nowrap;}
+  .modern-nav .site-icon{width:15px;height:15px;}
+
   .home-hero .hero-inner{padding:48px 0;}
   .home-hero h1{font-size:clamp(2.8rem,12vw,3.7rem);}
   .home-hero .hero-visual{justify-content:center;}
