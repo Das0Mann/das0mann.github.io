@@ -207,6 +207,7 @@ permalink: /lecture/electronic-structure/
   ].
   \]
   </div>
+  <p class="lesson-equation-meaning">The determinant makes the wavefunction change sign when two electrons are exchanged. It imposes the Pauli principle but does not yet account for the full correlated response to electron–electron repulsion.</p>
 
   <p>The orbitals are chosen variationally: among all determinants allowed by the chosen one-particle basis, HF finds the determinant with the lowest energy. This leads to the self-consistent one-electron equations</p>
 
@@ -226,6 +227,7 @@ permalink: /lecture/electronic-structure/
   \right),
   \]
   </div>
+  <p class="lesson-equation-meaning">The Fock operator contains the average Coulomb interaction and exchange from the occupied orbitals. Because those orbitals define the operator itself, the calculation must iterate to a self-consistent solution.</p>
 
   <p>where \(\hat h\) contains the one-electron kinetic and electron–nuclear terms, \(\hat J_j\) is the Coulomb operator and \(\hat K_j\) is the non-local exchange operator.</p>
 
@@ -238,6 +240,7 @@ permalink: /lecture/electronic-structure/
   \mathbf S\mathbf C\boldsymbol\varepsilon,
   \]
   </div>
+  <p class="lesson-equation-meaning">The overlap matrix \(\mathbf S\) appears because atom-centred basis functions generally are not orthogonal. Omitting it would solve a different eigenvalue problem.</p>
 
   <p>where \(\mathbf S\) is the basis-function overlap matrix. Because \(\mathbf F\) depends on the occupied orbitals that we are solving for, the equations must be iterated to self-consistency.</p>
 
@@ -258,6 +261,7 @@ permalink: /lecture/electronic-structure/
   V_\mathrm{NN}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The electron–electron energy contains a positive Coulomb contribution and a subtractive exchange contribution for appropriate spin orbitals. This exchange term is not the dynamical correlation missing from one determinant.</p>
 
   <p>Here \(h_{ii}=\langle i|\hat h|i\rangle\). In chemists’ notation, \((ii|jj)\) is the Coulomb two-electron integral and \((ij|ji)\) is the exchange integral. The indices \(i,j\) run over occupied spin orbitals \(\psi_i\); the earlier symbols \(\chi_\mu\) denote the atom-centred basis functions used to expand the molecular orbitals.</p>
 
@@ -315,6 +319,7 @@ permalink: /lecture/electronic-structure/
   \int n(\mathbf r)\,d\mathbf r=N,
   \]
   </div>
+  <p class="lesson-equation-meaning">This is a statement about the exact ground-state density, not a numerical algorithm. The practical difficulty is that the universal functional is not available in closed form.</p>
 
   <p>Kohn and Sham make this variational statement practical by introducing non-interacting orbitals that reproduce the interacting ground-state density:</p>
 
@@ -334,6 +339,7 @@ permalink: /lecture/electronic-structure/
   \varepsilon_i\phi_i.
   \]
   </div>
+  <p class="lesson-equation-meaning">The effective Kohn–Sham potential depends on the density being sought. Solving these orbital equations therefore also requires self-consistency.</p>
 
   <p>The density is reconstructed from the Kohn–Sham orbitals as \(n(\mathbf r)=\sum_i f_i|\phi_i(\mathbf r)|^2\), where \(f_i\) is the occupation number, while the total energy is decomposed as</p>
 
@@ -353,6 +359,7 @@ permalink: /lecture/electronic-structure/
   V_\mathrm{NN}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The exchange–correlation functional collects effects not already represented by non-interacting kinetic energy and classical Hartree electrostatics. Approximation of this term is a major source of property-dependent errors.</p>
 
   <p>Everything difficult is concentrated into the exchange–correlation functional \(E_\mathrm{xc}[n]\). With the exact functional, Kohn–Sham DFT would give the exact ground-state density and ground-state energy within the non-relativistic Born–Oppenheimer problem. In real calculations the functional is approximate, so practical DFT is a family of models rather than one unique method.</p>
 
@@ -405,6 +412,7 @@ permalink: /lecture/electronic-structure/
   E_\mathrm{HF},
   \]
   </div>
+  <p class="lesson-equation-meaning">For the same nonrelativistic Hamiltonian and a variational Hartree–Fock reference, the exact energy cannot exceed the Hartree–Fock energy. Thus the correlation energy is non-positive by this definition.</p>
 
   <p>where “exact” here means the exact non-relativistic electronic energy for the same Born–Oppenheimer Hamiltonian in the complete-basis limit. Post-HF methods differ mainly in how they reconstruct this missing correlation.</p>
 
@@ -426,6 +434,7 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p class="lesson-equation-meaning">The denominator measures orbital-energy separation. When occupied and virtual orbitals become nearly degenerate, a second-order expansion about one determinant may no longer be reliable.</p>
 
   <p>MP2 is inexpensive by correlated-wavefunction standards and often useful for ordinary closed-shell single-reference chemistry. But the denominator exposes its weakness: if occupied and virtual orbitals become nearly degenerate, the perturbative correction can become unphysically large. Strong correlation, bond breaking and many transition-metal situations are therefore poor MP2 territory.</p>
 
@@ -445,6 +454,7 @@ permalink: /lecture/electronic-structure/
     +\cdots .
     \]
     </div>
+  <p class="lesson-equation-meaning">The excited determinants add directions in wavefunction space around the reference. Truncating this linear expansion may break size extensivity even when the resulting CI energy remains variational.</p>
     <p>CIS retains only single substitutions and is mainly an excited-state model rather than a correlated ground-state method. CISD includes singles and doubles and is variational, but truncated CI is not size extensive: two non-interacting copies of a system do not acquire exactly twice the correlation energy. Full CI includes every determinant in the chosen orbital basis and is exact <em>within that finite basis</em>, but the determinant count grows combinatorially, so FCI is restricted to very small problems or small active spaces.</p>
   </details>
 
@@ -462,6 +472,7 @@ permalink: /lecture/electronic-structure/
   \hat T_1+\hat T_2+\hat T_3+\cdots .
   \]
   </div>
+  <p class="lesson-equation-meaning">The exponential ansatz generates products of excitation operators, which underlies the strong size-extensivity properties of standard coupled cluster. A truncated coupled-cluster energy is not generally a variational upper bound.</p>
 
   <p>CCSD retains single and double excitation operators; CCSD(T) adds the leading effect of triple excitations perturbatively. For well-behaved single-reference molecules, CCSD(T) is a standard high-accuracy benchmark method because the exponential ansatz is size extensive and captures dynamical correlation very efficiently.</p>
 
@@ -499,6 +510,7 @@ permalink: /lecture/electronic-structure/
   |\Phi_I(\boldsymbol\kappa)\rangle.
   \]
   </div>
+  <p class="lesson-equation-meaning">Several configurations contribute simultaneously, so a near-degenerate pair can be represented without forcing one occupation pattern to dominate.</p>
 
   <p>Both the configuration coefficients and the orbital rotations are optimized variationally,</p>
 
@@ -517,6 +529,7 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p class="lesson-equation-meaning">Both orbital shapes and configuration weights are varied. The active space must therefore be chosen based on the states and bond rearrangements one intends to describe.</p>
 
   <p>Complete Active Space SCF (CASSCF) makes this tractable by dividing the orbitals into three groups:</p>
 
@@ -538,6 +551,7 @@ permalink: /lecture/electronic-structure/
   E_\mathrm{corr}^{(2)}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The perturbative correction adds dynamical correlation absent from the chosen multiconfigurational reference. Its value, and even its reliability, depend on the specific second-order method and zeroth-order Hamiltonian.</p>
 
   <p>For second-order multireference perturbation theories such as CASPT2 or NEVPT2, \(E_\mathrm{corr}^{(2)}\) is the dynamical-correlation correction added to the CASSCF reference. MRCI uses a different, explicit correlated wavefunction construction rather than this simple additive second-order formula:</p>
 
