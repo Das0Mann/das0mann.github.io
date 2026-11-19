@@ -38,7 +38,34 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">The electronic problem</p><h2>Freeze the nuclei for a moment</h2></div>
   </div>
-  <div class="physical-concept-panel">
+  <p class="lesson-running-case"><strong>Running question: a flavin–tryptophan radical pair.</strong> Suppose light-driven electron transfer creates a flavin radical and a tryptophan radical. Can we predict where their unpaired spins are distributed, which nuclei couple to them, and whether two electronic states are close enough to mix? A Lewis structure cannot answer those questions; we need the electronic state of the molecule.</p>
+
+  <p>We begin with one fixed nuclear geometry. Electrons are treated quantum mechanically and the nuclei provide the electrostatic potential. This is the Born–Oppenheimer starting point; nuclear motion and its effects on spin dynamics return in later chapters.</p>
+
+  <p>The first equation identifies the physical difficulty rather than introducing a new method. In atomic units (\(\hbar=m_e=e=4\pi\varepsilon_0=1\)), the nonrelativistic electronic Hamiltonian for fixed nuclear positions is</p>
+
+  <div class="lecture-equation">
+  \[
+  \begin{aligned}
+  \hat H_\mathrm{e}
+  &=
+  -\frac{1}{2}\sum_i\nabla_i^2
+  -\sum_{iA}\frac{Z_A}{r_{iA}}\\
+  &\quad+
+  \sum_{i<j}\frac{1}{r_{ij}}
+  +V_\mathrm{NN}.
+  \end{aligned}
+  \]
+  </div>
+
+  <p><strong>Read the terms from left to right:</strong> electron kinetic energy; attraction between electrons and nuclei; repulsion between electron pairs; and the constant nucleus–nucleus repulsion at the chosen geometry. Here \(i,j\) label electrons, \(A\) labels nuclei, \(Z_A\) is a nuclear charge, and the \(r\)'s are the corresponding separations. The equation does not provide numerical energies by itself: we must solve an eigenvalue problem for the chosen electronic state.</p>
+
+  <p>The difficult term is the electron–electron repulsion. It couples the motion of all electrons, which is why the exact many-electron problem grows so quickly with system size.</p>
+
+  <p>This is why independent-particle pictures are so useful. They replace one function of all electronic coordinates by a tractable set of one-electron objects, then recover the missing many-body physics approximately through exchange, correlation or configuration mixing. Orbitals are therefore computational degrees of freedom—not literal trajectories followed by individual electrons.</p>
+  <details class="lecture-details lesson-glossary">
+    <summary>Concepts behind the equation: wavefunction, density and fixed nuclei</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Wavefunction and electron density describe the same electrons at different levels of information</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -61,27 +88,8 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
+  </details>
 
-
-  <p>Within the Born–Oppenheimer picture we first treat the nuclei as fixed. For that molecular geometry, the electronic Hamiltonian is</p>
-
-  <div class="lecture-equation">
-  \[
-  \begin{aligned}
-  \hat H_\mathrm{e}
-  &=
-  -\frac{1}{2}\sum_i\nabla_i^2
-  -\sum_{iA}\frac{Z_A}{r_{iA}}\\
-  &\quad+
-  \sum_{i<j}\frac{1}{r_{ij}}
-  +V_\mathrm{NN}.
-  \end{aligned}
-  \]
-  </div>
-
-  <p>The difficult term is the electron–electron repulsion. It couples the motion of all electrons, which is why the exact many-electron problem grows so quickly with system size.</p>
-
-  <p>This is why independent-particle pictures are so useful. They replace one function of all electronic coordinates by a tractable set of one-electron objects, then recover the missing many-body physics approximately through exchange, correlation or configuration mixing. Orbitals are therefore computational degrees of freedom—not literal trajectories followed by individual electrons.</p>
 
   <aside class="teacher-note">
     <strong>A useful way to think about it:</strong>
@@ -132,7 +140,19 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlated wavefunctions approximate the same many-electron problem differently</h2></div>
   </div>
-  <div class="physical-concept-panel">
+  <p>Two approximations must be separated: <strong>representation</strong> (the basis and orbitals) and <strong>electronic correlation</strong> (what the method does with interactions between electrons). This distinction is central when describing open-shell radicals, near-degenerate states and magnetic-response properties.</p>
+
+  <div class="method-ladder">
+    <div><span>Hartree–Fock · one determinant</span><p>Optimizes the best mean-field Slater determinant. Exchange is treated exactly inside that determinant; Coulomb correlation beyond the mean field is missing.</p></div>
+    <div><span>Kohn–Sham DFT · one density</span><p>Replaces the interacting problem by non-interacting Kohn–Sham orbitals reproducing the density. In practice the unknown exchange–correlation functional is approximated.</p></div>
+    <div><span>Post-HF ab initio · correlate the reference</span><p>MP2, coupled cluster and configuration-interaction methods start from a wavefunction reference and recover electron correlation systematically or hierarchically.</p></div>
+    <div><span>Multiconfigurational · several references</span><p>CASSCF and related methods optimize several important configurations together when no single determinant represents the electronic state adequately.</p></div>
+  </div>
+
+  <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+  <details class="lecture-details lesson-glossary">
+    <summary>When exchange, correlation and an exchange–correlation functional mean different things</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Exchange and correlation are distinct consequences of having many electrons</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -155,16 +175,7 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
-
-
-  <div class="method-ladder">
-    <div><span>Hartree–Fock · one determinant</span><p>Optimizes the best mean-field Slater determinant. Exchange is treated exactly inside that determinant; Coulomb correlation beyond the mean field is missing.</p></div>
-    <div><span>Kohn–Sham DFT · one density</span><p>Replaces the interacting problem by non-interacting Kohn–Sham orbitals reproducing the density. In practice the unknown exchange–correlation functional is approximated.</p></div>
-    <div><span>Post-HF ab initio · correlate the reference</span><p>MP2, coupled cluster and configuration-interaction methods start from a wavefunction reference and recover electron correlation systematically or hierarchically.</p></div>
-    <div><span>Multiconfigurational · several references</span><p>CASSCF and related methods optimize several important configurations together when no single determinant represents the electronic state adequately.</p></div>
-  </div>
-
-  <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+  </details>
 
   <details class="lecture-details">
     <summary>What does “self-consistent” actually mean in HF or Kohn–Sham DFT?</summary>
