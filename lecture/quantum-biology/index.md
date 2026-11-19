@@ -10,9 +10,10 @@ permalink: /lecture/quantum-biology/
 
 <header class="module-intro">
   <span class="module-index">Module 10</span>
-  <h2>Quantum biology is a mechanism question, not a label</h2>
-  <p>Every chemical bond is quantum mechanical. That alone does not make a biological process an interesting example of quantum biology. The useful question is whether a specifically quantum degree of freedom—coherence, tunnelling, spin correlation or non-classical state structure—survives long enough and couples strongly enough to change a biological observable.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -469,6 +470,7 @@ permalink: /lecture/quantum-biology/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
