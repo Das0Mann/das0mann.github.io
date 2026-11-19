@@ -19,6 +19,10 @@ assert(head.indexOf("lecture-system.css") < head.indexOf("site-coherence.css"),
  "Site refinements must follow lecture-specific styles");
 
 const css = read("assets/css/site-coherence.css");
+const consentCss = read("assets/css/privacy-consent.css");
+assert(consentCss.includes(".privacy-banner-copy { flex: 0 0 auto"),"Mobile consent panel must not inherit the 300px desktop flex basis");
+assert(consentCss.includes("max-height: min(55dvh, 330px)"),"Mobile consent panel must remain constrained to a manageable height");
+
 for (const rule of [".home-hero",".page-publications",".page-research",".page-news",
  ".page-lectures",".lecture-page",".site-post-main","@media(max-width:640px)",
  "prefers-reduced-motion"]) {
@@ -37,6 +41,8 @@ for(let i=0;i<css.length;i++){
 }
 assert.equal(depth,0,"Unbalanced sitewide CSS");
 assert(!comment&&!string,"Unclosed comment/string in sitewide CSS");
+assert(css.includes(".skip-link:focus"),"Keyboard skip link needs an explicit focused state");
+assert(css.includes("grid-template-columns:repeat(3,minmax(0,1fr))"),"Mobile navigation should expose all destinations, not horizontally hide the last links");
 const layouts={
  "_layouts/home.html":['id="main-content"', "{{ content }}"],
  "_layouts/page.html":['id="main-content"', "{{ content }}"],
