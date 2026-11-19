@@ -1,78 +1,39 @@
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
 {% include _head.html %}
 </head>
-
-<body class="post">
-
+<body class="page page-news-post">
 {% include _browser-upgrade.html %}
-
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
-
-<div id="main" role="main">
-  <span id="main-content" tabindex="-1"></span>
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <article>
-    <div class="headline-wrap">
-      {% if page.link %}
-        <h1><a href="{{ page.link }}">{{ page.title }}</a></h1>
-      {% else %}
-        <h1><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
-      {% endif %}
-    </div><!--/ .headline-wrap -->
-    <div class="article-wrap">
+<main class="site-post-main" id="main-content" role="main">
+  <article class="site-post">
+    <header class="site-post-header">
+      <p class="site-post-meta">Research and teaching updates{% if page.date %} · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.excerpt %}<p class="site-post-excerpt">{{ page.excerpt }}</p>{% endif %}
+    </header>
+    <div class="site-post-content">
       {{ content }}
-      <hr />
-      <footer role="contentinfo">
-        <div class="article-author-bottom">
-          {% include _author-bio.html %}
-        </div>
-        <p class="byline"><strong>{{ page.title }}</strong> was published on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>{% if page.modified %} and last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time>{% endif %}.</p>
-      </footer>
-    </div><!-- /.article-wrap -->
-  {% if site.owner.disqus-shortname and page.comments == true %}
-    <section id="disqus_thread"></section><!-- /#disqus_thread -->
-  {% endif %}
+    </div>
+    <p class="site-post-byline">Published <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>{% if page.modified %} · Updated <time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: "%-d %B %Y" }}</time>{% endif %}</p>
   </article>
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="{{ site.url }}/news/">View all news</a>)</small></h4>
+  {% assign related_items = site.related_posts | where_exp: "item", "item.url != page.url" %}
+  {% if related_items.size > 0 %}
+  <nav class="site-related" aria-label="Related news">
+    <h2>More updates</h2>
     <ul>
-    {% for post in site.related_posts limit:3 %}
-      <li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
+      {% for post in related_items limit: 3 %}
+      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
     </ul>
-    <hr />
-  </div><!-- /.related-articles -->
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}	        
-
+    <p><a href="{{ site.url }}/news/">All news and activities</a></p>
+  </nav>
+  {% else %}
+  <nav class="site-related" aria-label="News navigation"><a href="{{ site.url }}/news/">Back to news and activities</a></nav>
+  {% endif %}
+</main>
+{% include _footer.html %}
+{% include _scripts.html %}
 </body>
 </html>
