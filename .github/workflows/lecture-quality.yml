@@ -14,6 +14,7 @@ on:
       - 'assets/css/lecture-cidnp.css'
       - 'assets/css/site-coherence.css'
       - 'tests/site-integrity.cjs'
+      - 'tests/site-browser-audit.cjs'
       - 'about/**'
       - 'research/**'
       - 'publications/**'
@@ -51,7 +52,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
@@ -110,3 +111,17 @@ jobs:
         run: node tests/visual-system.cjs
       - name: Validate all public routes after Jekyll build
         run: node tests/site-integrity.cjs --rendered
+
+      - name: Install headless Chromium for visual regression checks
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Check actual browser layout on all pages at desktop and mobile sizes
+        run: node tests/site-browser-audit.cjs
+      - name: Keep screenshots and layout diagnostics for visual review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: website-visual-audit
+          path: visual-audit/
+          if-no-files-found: warn
