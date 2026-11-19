@@ -164,6 +164,7 @@
   --site-accent:#176c78;--site-rule:#dce6e8;
   --site-canvas:#f7f9fa;--site-reading:76ch;
   --site-width:1120px;--site-font:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-ui:var(--site-font); /* Earlier components resolve to the same text family. */
 }
 html{scroll-padding-top:110px;}
 
