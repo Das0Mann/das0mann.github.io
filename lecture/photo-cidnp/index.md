@@ -24,7 +24,7 @@ permalink: /lecture/photo-cidnp/
     <div><span>03</span><p>Distinguish an analytical teaching model from realistic exchange-coupled, relaxing and conformationally heterogeneous radical-pair simulations.</p></div>
   </div>
 </section>
-{% include lecture-connections.html %}
+
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -296,6 +296,7 @@ permalink: /lecture/photo-cidnp/
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 
