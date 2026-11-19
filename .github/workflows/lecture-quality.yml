@@ -55,6 +55,8 @@ jobs:
         run: node tests/lecture-audit.cjs
       - name: Verify chapter storyline, shared type and optional derivations
         run: node tests/lecture-story.cjs
+      - name: Audit student-first teaching layout and equation context
+        run: node tests/lecture-student-reading.cjs
       - name: Verify animation playback and reduced-motion behavior
         run: node tests/hero-spin.cjs
       - name: Audit analytics consent and legacy dependencies
@@ -86,6 +88,8 @@ jobs:
         run: node tests/lecture-audit.cjs --rendered
       - name: Verify continuous narrative and CSS migration in rendered chapters
         run: node tests/lecture-story.cjs --rendered
+      - name: Validate rendered one-heading course pages and scientific explanations
+        run: node tests/lecture-student-reading.cjs --rendered
       - name: Validate rendered CIDNP widgets and source links
         run: node tests/lecture-cidnp.cjs --rendered
       - name: Validate foundational lectures and rotational widget after Jekyll build

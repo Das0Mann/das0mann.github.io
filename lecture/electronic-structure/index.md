@@ -6,14 +6,15 @@ permalink: /lecture/electronic-structure/
 ---
 
 <div class="lecture-module">
-{% include lecture-library-nav.html %}
+
 
 <header class="module-intro">
-  <span class="module-index">Module 01</span>
-  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <span class="module-index">Module 01 · {{ page.title }}</span>
+  <h1>{{ site.data.lecture_story[page.url].question }}</h1>
   <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
 {% include lecture-story-opening.html %}
+{% include lecture-library-nav.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -30,7 +31,7 @@ permalink: /lecture/electronic-structure/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <section class="lecture-section">
@@ -38,7 +39,34 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">01</span>
     <div><p class="section-eyebrow">The electronic problem</p><h2>Freeze the nuclei for a moment</h2></div>
   </div>
-  <div class="physical-concept-panel">
+  <p class="lesson-running-case"><strong>Running question: a flavin–tryptophan radical pair.</strong> Suppose light-driven electron transfer creates a flavin radical and a tryptophan radical. Can we predict where their unpaired spins are distributed, which nuclei couple to them, and whether two electronic states are close enough to mix? A Lewis structure cannot answer those questions; we need the electronic state of the molecule.</p>
+
+  <p>We begin with one fixed nuclear geometry. Electrons are treated quantum mechanically and the nuclei provide the electrostatic potential. This is the Born–Oppenheimer starting point; nuclear motion and its effects on spin dynamics return in later chapters.</p>
+
+  <p>The first equation identifies the physical difficulty rather than introducing a new method. In atomic units (\(\hbar=m_e=e=4\pi\varepsilon_0=1\)), the nonrelativistic electronic Hamiltonian for fixed nuclear positions is</p>
+
+  <div class="lecture-equation">
+  \[
+  \begin{aligned}
+  \hat H_\mathrm{e}
+  &=
+  -\frac{1}{2}\sum_i\nabla_i^2
+  -\sum_{iA}\frac{Z_A}{r_{iA}}\\
+  &\quad+
+  \sum_{i<j}\frac{1}{r_{ij}}
+  +V_\mathrm{NN}.
+  \end{aligned}
+  \]
+  </div>
+
+  <p><strong>Read the terms from left to right:</strong> electron kinetic energy; attraction between electrons and nuclei; repulsion between electron pairs; and the constant nucleus–nucleus repulsion at the chosen geometry. Here \(i,j\) label electrons, \(A\) labels nuclei, \(Z_A\) is a nuclear charge, and the \(r\)'s are the corresponding separations. The equation does not provide numerical energies by itself: we must solve an eigenvalue problem for the chosen electronic state.</p>
+
+  <p>The difficult term is the electron–electron repulsion. It couples the motion of all electrons, which is why the exact many-electron problem grows so quickly with system size.</p>
+
+  <p>This is why independent-particle pictures are so useful. They replace one function of all electronic coordinates by a tractable set of one-electron objects, then recover the missing many-body physics approximately through exchange, correlation or configuration mixing. Orbitals are therefore computational degrees of freedom—not literal trajectories followed by individual electrons.</p>
+  <details class="lecture-details lesson-glossary">
+    <summary>Concepts behind the equation: wavefunction, density and fixed nuclei</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Wavefunction and electron density describe the same electrons at different levels of information</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -61,27 +89,8 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
+  </details>
 
-
-  <p>Within the Born–Oppenheimer picture we first treat the nuclei as fixed. For that molecular geometry, the electronic Hamiltonian is</p>
-
-  <div class="lecture-equation">
-  \[
-  \begin{aligned}
-  \hat H_\mathrm{e}
-  &=
-  -\frac{1}{2}\sum_i\nabla_i^2
-  -\sum_{iA}\frac{Z_A}{r_{iA}}\\
-  &\quad+
-  \sum_{i<j}\frac{1}{r_{ij}}
-  +V_\mathrm{NN}.
-  \end{aligned}
-  \]
-  </div>
-
-  <p>The difficult term is the electron–electron repulsion. It couples the motion of all electrons, which is why the exact many-electron problem grows so quickly with system size.</p>
-
-  <p>This is why independent-particle pictures are so useful. They replace one function of all electronic coordinates by a tractable set of one-electron objects, then recover the missing many-body physics approximately through exchange, correlation or configuration mixing. Orbitals are therefore computational degrees of freedom—not literal trajectories followed by individual electrons.</p>
 
   <aside class="teacher-note">
     <strong>A useful way to think about it:</strong>
@@ -97,13 +106,15 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Orbitals &amp; basis sets</p><h2>An orbital is a representation tool, not an electron trajectory</h2></div>
   </div>
 
-  <p>A molecular orbital \(\phi_p(\mathbf r)\) is a one-electron function. In most quantum-chemistry codes it is expanded in atom-centred basis functions \(\chi_\mu\):</p>
+  <p>We cannot store an arbitrary function of continuous coordinates. Instead, we choose known, atom-centred basis functions \(\chi_\mu(\mathbf r)\) and let the calculation optimize their coefficients. For molecular orbital \(p\), the approximation takes the form</p>
 
   <div class="lecture-equation">
   \[
   \phi_p(\mathbf r)=\sum_\mu C_{\mu p}\chi_\mu(\mathbf r).
   \]
   </div>
+
+  <p>Each coefficient \(C_{\mu p}\) is a weight in the orbital expansion—not the probability of finding electron \(p\) at an atom. For the running flavin-radical example, a basis that cannot describe spatially extended anionic density or local spin polarization will also distort the magnetic response derived from that state.</p>
 
   <p>The basis controls how flexibly the electronic wavefunction or density can respond. A minimal basis is cheap but restrictive; polarized and diffuse functions give the electrons more freedom. The important point is that a basis-set name is not just a technical label—it defines the variational space in which the electronic problem is solved.</p>
 
@@ -132,7 +143,19 @@ permalink: /lecture/electronic-structure/
     <span class="lecture-index">03</span>
     <div><p class="section-eyebrow">Approximations</p><h2>HF, DFT and correlated wavefunctions approximate the same many-electron problem differently</h2></div>
   </div>
-  <div class="physical-concept-panel">
+  <p>Two approximations must be separated: <strong>representation</strong> (the basis and orbitals) and <strong>electronic correlation</strong> (what the method does with interactions between electrons). This distinction is central when describing open-shell radicals, near-degenerate states and magnetic-response properties.</p>
+
+  <div class="method-ladder">
+    <div><span>Hartree–Fock · one determinant</span><p>Optimizes the best mean-field Slater determinant. Exchange is treated exactly inside that determinant; Coulomb correlation beyond the mean field is missing.</p></div>
+    <div><span>Kohn–Sham DFT · one density</span><p>Replaces the interacting problem by non-interacting Kohn–Sham orbitals reproducing the density. In practice the unknown exchange–correlation functional is approximated.</p></div>
+    <div><span>Post-HF ab initio · correlate the reference</span><p>MP2, coupled cluster and configuration-interaction methods start from a wavefunction reference and recover electron correlation systematically or hierarchically.</p></div>
+    <div><span>Multiconfigurational · several references</span><p>CASSCF and related methods optimize several important configurations together when no single determinant represents the electronic state adequately.</p></div>
+  </div>
+
+  <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+  <details class="lecture-details lesson-glossary">
+    <summary>When exchange, correlation and an exchange–correlation functional mean different things</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>Exchange and correlation are distinct consequences of having many electrons</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -155,16 +178,7 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
-
-
-  <div class="method-ladder">
-    <div><span>Hartree–Fock · one determinant</span><p>Optimizes the best mean-field Slater determinant. Exchange is treated exactly inside that determinant; Coulomb correlation beyond the mean field is missing.</p></div>
-    <div><span>Kohn–Sham DFT · one density</span><p>Replaces the interacting problem by non-interacting Kohn–Sham orbitals reproducing the density. In practice the unknown exchange–correlation functional is approximated.</p></div>
-    <div><span>Post-HF ab initio · correlate the reference</span><p>MP2, coupled cluster and configuration-interaction methods start from a wavefunction reference and recover electron correlation systematically or hierarchically.</p></div>
-    <div><span>Multiconfigurational · several references</span><p>CASSCF and related methods optimize several important configurations together when no single determinant represents the electronic state adequately.</p></div>
-  </div>
-
-  <p>There is no universal “best” method. The right level depends on the observable. Ground-state geometries, charge-transfer states, bond breaking and magnetic response can have very different sensitivities.</p>
+  </details>
 
   <details class="lecture-details">
     <summary>What does “self-consistent” actually mean in HF or Kohn–Sham DFT?</summary>
@@ -194,6 +208,7 @@ permalink: /lecture/electronic-structure/
   ].
   \]
   </div>
+  <p class="lesson-equation-meaning">The determinant makes the wavefunction change sign when two electrons are exchanged. It imposes the Pauli principle but does not yet account for the full correlated response to electron–electron repulsion.</p>
 
   <p>The orbitals are chosen variationally: among all determinants allowed by the chosen one-particle basis, HF finds the determinant with the lowest energy. This leads to the self-consistent one-electron equations</p>
 
@@ -213,6 +228,7 @@ permalink: /lecture/electronic-structure/
   \right),
   \]
   </div>
+  <p class="lesson-equation-meaning">The Fock operator contains the average Coulomb interaction and exchange from the occupied orbitals. Because those orbitals define the operator itself, the calculation must iterate to a self-consistent solution.</p>
 
   <p>where \(\hat h\) contains the one-electron kinetic and electron–nuclear terms, \(\hat J_j\) is the Coulomb operator and \(\hat K_j\) is the non-local exchange operator.</p>
 
@@ -225,6 +241,7 @@ permalink: /lecture/electronic-structure/
   \mathbf S\mathbf C\boldsymbol\varepsilon,
   \]
   </div>
+  <p class="lesson-equation-meaning">The overlap matrix \(\mathbf S\) appears because atom-centred basis functions generally are not orthogonal. Omitting it would solve a different eigenvalue problem.</p>
 
   <p>where \(\mathbf S\) is the basis-function overlap matrix. Because \(\mathbf F\) depends on the occupied orbitals that we are solving for, the equations must be iterated to self-consistency.</p>
 
@@ -245,6 +262,7 @@ permalink: /lecture/electronic-structure/
   V_\mathrm{NN}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The electron–electron energy contains a positive Coulomb contribution and a subtractive exchange contribution for appropriate spin orbitals. This exchange term is not the dynamical correlation missing from one determinant.</p>
 
   <p>Here \(h_{ii}=\langle i|\hat h|i\rangle\). In chemists’ notation, \((ii|jj)\) is the Coulomb two-electron integral and \((ij|ji)\) is the exchange integral. The indices \(i,j\) run over occupied spin orbitals \(\psi_i\); the earlier symbols \(\chi_\mu\) denote the atom-centred basis functions used to expand the molecular orbitals.</p>
 
@@ -302,6 +320,7 @@ permalink: /lecture/electronic-structure/
   \int n(\mathbf r)\,d\mathbf r=N,
   \]
   </div>
+  <p class="lesson-equation-meaning">This is a statement about the exact ground-state density, not a numerical algorithm. The practical difficulty is that the universal functional is not available in closed form.</p>
 
   <p>Kohn and Sham make this variational statement practical by introducing non-interacting orbitals that reproduce the interacting ground-state density:</p>
 
@@ -321,6 +340,7 @@ permalink: /lecture/electronic-structure/
   \varepsilon_i\phi_i.
   \]
   </div>
+  <p class="lesson-equation-meaning">The effective Kohn–Sham potential depends on the density being sought. Solving these orbital equations therefore also requires self-consistency.</p>
 
   <p>The density is reconstructed from the Kohn–Sham orbitals as \(n(\mathbf r)=\sum_i f_i|\phi_i(\mathbf r)|^2\), where \(f_i\) is the occupation number, while the total energy is decomposed as</p>
 
@@ -340,6 +360,7 @@ permalink: /lecture/electronic-structure/
   V_\mathrm{NN}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The exchange–correlation functional collects effects not already represented by non-interacting kinetic energy and classical Hartree electrostatics. Approximation of this term is a major source of property-dependent errors.</p>
 
   <p>Everything difficult is concentrated into the exchange–correlation functional \(E_\mathrm{xc}[n]\). With the exact functional, Kohn–Sham DFT would give the exact ground-state density and ground-state energy within the non-relativistic Born–Oppenheimer problem. In real calculations the functional is approximate, so practical DFT is a family of models rather than one unique method.</p>
 
@@ -392,6 +413,7 @@ permalink: /lecture/electronic-structure/
   E_\mathrm{HF},
   \]
   </div>
+  <p class="lesson-equation-meaning">For the same nonrelativistic Hamiltonian and a variational Hartree–Fock reference, the exact energy cannot exceed the Hartree–Fock energy. Thus the correlation energy is non-positive by this definition.</p>
 
   <p>where “exact” here means the exact non-relativistic electronic energy for the same Born–Oppenheimer Hamiltonian in the complete-basis limit. Post-HF methods differ mainly in how they reconstruct this missing correlation.</p>
 
@@ -413,6 +435,7 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p class="lesson-equation-meaning">The denominator measures orbital-energy separation. When occupied and virtual orbitals become nearly degenerate, a second-order expansion about one determinant may no longer be reliable.</p>
 
   <p>MP2 is inexpensive by correlated-wavefunction standards and often useful for ordinary closed-shell single-reference chemistry. But the denominator exposes its weakness: if occupied and virtual orbitals become nearly degenerate, the perturbative correction can become unphysically large. Strong correlation, bond breaking and many transition-metal situations are therefore poor MP2 territory.</p>
 
@@ -432,6 +455,7 @@ permalink: /lecture/electronic-structure/
     +\cdots .
     \]
     </div>
+  <p class="lesson-equation-meaning">The excited determinants add directions in wavefunction space around the reference. Truncating this linear expansion may break size extensivity even when the resulting CI energy remains variational.</p>
     <p>CIS retains only single substitutions and is mainly an excited-state model rather than a correlated ground-state method. CISD includes singles and doubles and is variational, but truncated CI is not size extensive: two non-interacting copies of a system do not acquire exactly twice the correlation energy. Full CI includes every determinant in the chosen orbital basis and is exact <em>within that finite basis</em>, but the determinant count grows combinatorially, so FCI is restricted to very small problems or small active spaces.</p>
   </details>
 
@@ -449,6 +473,7 @@ permalink: /lecture/electronic-structure/
   \hat T_1+\hat T_2+\hat T_3+\cdots .
   \]
   </div>
+  <p class="lesson-equation-meaning">The exponential ansatz generates products of excitation operators, which underlies the strong size-extensivity properties of standard coupled cluster. A truncated coupled-cluster energy is not generally a variational upper bound.</p>
 
   <p>CCSD retains single and double excitation operators; CCSD(T) adds the leading effect of triple excitations perturbatively. For well-behaved single-reference molecules, CCSD(T) is a standard high-accuracy benchmark method because the exponential ansatz is size extensive and captures dynamical correlation very efficiently.</p>
 
@@ -486,6 +511,7 @@ permalink: /lecture/electronic-structure/
   |\Phi_I(\boldsymbol\kappa)\rangle.
   \]
   </div>
+  <p class="lesson-equation-meaning">Several configurations contribute simultaneously, so a near-degenerate pair can be represented without forcing one occupation pattern to dominate.</p>
 
   <p>Both the configuration coefficients and the orbital rotations are optimized variationally,</p>
 
@@ -504,6 +530,7 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p class="lesson-equation-meaning">Both orbital shapes and configuration weights are varied. The active space must therefore be chosen based on the states and bond rearrangements one intends to describe.</p>
 
   <p>Complete Active Space SCF (CASSCF) makes this tractable by dividing the orbitals into three groups:</p>
 
@@ -525,6 +552,7 @@ permalink: /lecture/electronic-structure/
   E_\mathrm{corr}^{(2)}.
   \]
   </div>
+  <p class="lesson-equation-meaning">The perturbative correction adds dynamical correlation absent from the chosen multiconfigurational reference. Its value, and even its reliability, depend on the specific second-order method and zeroth-order Hamiltonian.</p>
 
   <p>For second-order multireference perturbation theories such as CASPT2 or NEVPT2, \(E_\mathrm{corr}^{(2)}\) is the dynamical-correlation correction added to the CASSCF reference. MRCI uses a different, explicit correlated wavefunction construction rather than this simple additive second-order formula:</p>
 
@@ -560,7 +588,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Active-space complexity</p><h2>How quickly does a complete active space grow?</h2></div>
   </div>
 
-  <p>A label such as CAS(10,10) looks compact, but it represents many electronic occupations. For \(m\) spatial active orbitals there are \(2m\) active spin orbitals. The total number of \(N\)-electron Slater determinants is</p>
+  <p>Why is a multiconfigurational treatment expensive even before adding dynamical correlation? A CAS(\(n,m\)) contains \(n\) active electrons distributed among \(m\) spatial active orbitals, or \(2m\) available spin orbitals. Without fixing a spin-projection sector, the number of possible Slater determinants is</p>
 
   <div class="lecture-equation">
   \[
@@ -570,7 +598,7 @@ permalink: /lecture/electronic-structure/
   \]
   </div>
 
-  <p>If one works in the smallest-\(|M_S|\) sector, a useful determinant count is</p>
+  <p>Calculations usually restrict the spin projection. When \(n_\alpha\) active electrons have alpha spin and \(n_\beta\) have beta spin, the count in that sector is</p>
 
   <div class="lecture-equation">
   \[
@@ -582,6 +610,7 @@ permalink: /lecture/electronic-structure/
   n_\alpha+n_\beta=n.
   \]
   </div>
+  <p class="lesson-worked-step"><strong>Check the smallest useful example.</strong> CAS(2,2) has two electrons and two spatial orbitals: \(\binom{4}{2}=6\) determinants overall, but only \(\binom{2}{1}\binom{2}{1}=4\) have \(M_S=0\). The latter are determinants, not necessarily spin-adapted singlet states. The interactive explorer below lets you increase the active space and observe the combinatorial growth yourself.</p>
 
   <div class="interactive-card" id="cas-demo">
     <div class="interactive-head">
@@ -656,7 +685,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">State mixing</p><h2>State mixing and avoided crossings</h2></div>
   </div>
 
-  <p>Two states can have very different physical character and still mix strongly if they come close in energy. This tiny two-state model is a useful prototype:</p>
+  <p>Why did we need more than one configuration in the first place? Two electronic arrangements can become nearly equal in energy and interact. Imagine two <em>diabatic</em> states whose uncoupled energy difference is \(\Delta\), connected by a real electronic coupling \(t\). In the basis of those states, the simplest possible Hamiltonian and its energies are</p>
 
   <div class="interactive-card" id="orbital-demo">
     <div class="interactive-head">
@@ -680,6 +709,7 @@ permalink: /lecture/electronic-structure/
       \]
       </div>
     </div>
+    <p class="lesson-equation-note">The diagonal entries are the uncoupled state energies relative to their mean; the off-diagonal entries mix them. At \(\Delta=0\), the energy separation is \(2|t|\). An avoided crossing is therefore evidence of mixing, not an instruction to interpret every pair of nearby electronic states as a radical-pair spin transition.</p>
 
     <div class="demo-prompt"><strong>Try this:</strong><span>set \(t=0\) first. The two diabatic states cross. Then increase \(t\): the crossing opens and the state character becomes mixed around \(\Delta=0\).</span></div>
 
@@ -783,7 +813,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
   </div>
 
-  <p>The ordinary electron density tells us where electronic charge is located. Magnetic interactions need one more piece of information: how the spin-up and spin-down densities differ. A common real-space quantity is the spin density</p>
+  <p>Two radicals can have almost identical total charge density and still produce very different hyperfine couplings. To locate the unpaired spin, separate the alpha- and beta-spin electron number densities in a collinear spin treatment. Their difference defines the signed spin-density distribution</p>
 
   <div class="lecture-equation">
   \[
@@ -794,6 +824,8 @@ permalink: /lecture/electronic-structure/
   \rho_\beta(\mathbf r).
   \]
   </div>
+
+  <p>The quantity \(m(\mathbf r)\) measures an excess of alpha- over beta-spin density at each position; it is not a classical trajectory or a map of a uniquely distinguishable electron. If the difference is zero in a region, that region has no local collinear spin polarization even though it may contain electron charge.</p>
 
   <p>A radical can therefore have a rather delocalized spin distribution even when a Lewis structure draws the unpaired electron on one atom. That distinction matters because the Fermi-contact hyperfine interaction probes spin density at a nucleus, whereas anisotropic hyperfine coupling and the \(g\)-tensor depend on the broader spatial and orbital character of the electronic state.</p>
 
@@ -861,54 +893,46 @@ permalink: /lecture/electronic-structure/
   </div>
 
   
-  <section class="parameter-derivation">
-    <p class="section-eyebrow">Mathematical reduction</p>
-    <h3>From the electronic Hamiltonian to an effective spin Hamiltonian</h3>
-
-    <p>The spin Hamiltonian is not a second, unrelated theory. It is a low-energy effective representation of the electronic problem. If \(P\) projects onto the magnetic states we want to keep and \(Q=1-P\) onto all other electronic states, perturbative downfolding gives schematically</p>
-
+  <div class="lesson-parameter-result">
+    <p>We can now answer the running question. The electronic-structure calculation provides effective couplings for the flavin and tryptophan radical spins. For a pair of electron spins, a representative energy-valued spin Hamiltonian is</p>
     <div class="lecture-equation">
     \[
-    \hat H_\mathrm{eff}^{(2)}
-    =
-    P\hat H_0P
-    +
-    P\hat V P
-    +
-    P\hat VQ
-    \left(
-    E_0-Q\hat H_0Q
-    \right)^{-1}
-    Q\hat VP.
+    \begin{aligned}
+    \hat H_{\mathrm{spin}}
+    =&\sum_{a=1}^{2}
+    \mu_B\,\mathbf B\cdot\mathbf g_a\cdot\hat{\mathbf S}_a
+    +\sum_{a,N}\hat{\mathbf S}_a\cdot\mathbf A_{aN}\cdot\hat{\mathbf I}_N\\
+    &+J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2
+    +\hat{\mathbf S}_1\cdot\mathbf D_{12}\cdot\hat{\mathbf S}_2+\cdots .
+    \end{aligned}
     \]
     </div>
+    <p><strong>Each term has a distinct origin.</strong> The \(g\)-tensors describe magnetic-field response; \(\mathbf A_{aN}\) couples electron spin \(a\) to nucleus \(N\); \(J\) is isotropic exchange; and \(\mathbf D_{12}\) is the <em>two-electron dipolar tensor</em>. The symbols follow the \(+J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2\) exchange convention. The ellipsis can include nuclear Zeeman interactions, additional spins and other effects. A separate zero-field-splitting operator \(\hat{\mathbf S}\cdot\mathbf D_{\mathrm{ZFS}}\cdot\hat{\mathbf S}\) describes a suitable higher-spin manifold (\(S\geq1\)); it is not interchangeable with \(\mathbf D_{12}\) for two individual radicals.</p>
+    <p>Notice what has changed: we no longer propagate all molecular electronic degrees of freedom. We propagate only the relevant spins using coefficients obtained from the electronic states. The next lecture develops the operators, units, reference frames and exchange-sign conventions needed to use this model quantitatively.</p>
+  </div>
 
-    <p>Writing \(\hat H=\hat H_0+\hat V\), the first two terms describe the zeroth-order manifold and perturbations acting directly inside it. The last term is the second-order virtual excursion into the eliminated \(Q\) space and back. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
-
-    <p>After this projection, the effective operator is expanded in a small set of spin operators,</p>
-
-    <div class="lecture-equation">
-    \[
-    \hat H_\mathrm{eff}
-    =
-    \sum_k p_k\,\hat O_k
-    =
-    \mu_B\mathbf B\cdot\mathbf g\cdot\hat{\mathbf S}
-    +
-    \sum_N
-    \hat{\mathbf S}\cdot\mathbf A_N\cdot\hat{\mathbf I}_N
-    +
-    J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2
-    +
-    \hat{\mathbf S}\cdot\mathbf D\cdot\hat{\mathbf S}
-    +\cdots .
-    \]
+  <details class="lecture-details lesson-derivation">
+    <summary>Advanced derivation: how eliminating high-energy electronic states produces the spin Hamiltonian</summary>
+    <div class="lesson-derivation-content">
+      <p>A spin Hamiltonian is a low-energy representation of the electronic problem, not a second unrelated physical theory. Let \(P\) project onto the electronic states we retain and \(Q=1-P\) onto the eliminated subspace. For \(\hat H=\hat H_0+\hat V\), second-order perturbative downfolding gives, schematically,</p>
+      <div class="lecture-equation">
+      \[
+      \hat H_\mathrm{eff}^{(2)}
+      =
+      P\hat H_0P
+      +P\hat VP
+      +P\hat VQ\big(E_0-Q\hat H_0Q\big)^{-1}Q\hat VP.
+      \]
+      </div>
+      <p>The first terms act inside the retained space. The last term represents a virtual excursion into the excluded electronic states and back. Energy denominators and spin–orbit matrix elements explain why relatively remote electronic states can influence \(g\)-shifts and zero-field splitting. The perturbative construction requires a sufficiently separated retained manifold and a well-defined inverse on the eliminated subspace; strong near-degeneracy calls for a larger retained space or a nonperturbative treatment.</p>
+      <p>Expanding the resulting low-energy operator in electron and nuclear spin operators determines which parameters must be extracted from electronic-structure calculations. Their values may come from response theory, energy derivatives, or state-energy mapping, depending on the observable and the chosen conventions.</p>
     </div>
+  </details>
 
-    <p>The quantum-chemistry problem is therefore to determine the coefficients \(p_k\). Depending on the parameter, this is done from expectation values, derivatives of the electronic energy with respect to external perturbations, response equations, differences between spin-state energies, or an effective-Hamiltonian fit to low-energy ab initio states.</p>
-  </section>
 
-  <div class="physical-concept-panel">
+  <details class="lecture-details lesson-glossary">
+    <summary>Reference: what the electronic calculation must deliver for each parameter</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>How the parameters are obtained</span><h3>Different spin parameters probe different pieces of the electronic state</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -933,6 +957,7 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
+  </details>
 
   <aside class="lecture-note">
     <strong>Response property does not mean “read it from one orbital”.</strong>
@@ -1052,6 +1077,7 @@ permalink: /lecture/electronic-structure/
 </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 

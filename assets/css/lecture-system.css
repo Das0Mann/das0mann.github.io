@@ -51,7 +51,7 @@
 .lecture-route-picker { padding: 0; }
 .lecture-route-picker summary {
   list-style: none; cursor: pointer; user-select: none;
-  padding: .72rem 1.2rem; font: 750 .78rem/1.4 Inter, sans-serif;
+  padding: .72rem 1.2rem; font: 750 .78rem/1.4 system-ui, sans-serif;
   color: #23485b; display: flex; justify-content: space-between;
   border-top: 1px solid #d8e7e9;
 }
@@ -70,7 +70,7 @@
 .lecture-module-nav.lecture-route-nav .lecture-route-list a[aria-current="page"] {
   border-color: #4daeb5 !important; background: #e9f7f7; color: #102d42 !important;
 }
-.lecture-route-step { min-width: 1.75rem; color: #178390; font: 800 .76rem/1 Inter,sans-serif; }
+.lecture-route-step { min-width: 1.75rem; color: #178390; font: 800 .76rem/1 system-ui,sans-serif; }
 .lecture-route-chapter { display: grid; gap: .18rem; min-width: 0; }
 .lecture-route-chapter strong { font-size: .81rem; line-height: 1.25; }
 .lecture-route-chapter small { color: #647b88; font-size: .69rem; line-height: 1.3; }
@@ -82,13 +82,13 @@
   background: linear-gradient(115deg,#f0f9f9,#fff);
 }
 .library-filter-field { display: grid; gap: .35rem; flex: 1 1 275px; }
-.library-filter-field label { color: #1e4455; font: 750 .75rem/1.3 Inter,sans-serif; }
+.library-filter-field label { color: #1e4455; font: 750 .75rem/1.3 system-ui,sans-serif; }
 .library-filter-field input {
   display: block; width: 100%; max-width: 550px; min-height: 45px;
   padding: .65rem .85rem; border: 1px solid #bdd3d9; border-radius: 9px;
-  color: #172e3c; background: #fff; font: 500 .93rem/1.4 Inter,sans-serif;
+  color: #172e3c; background: #fff; font: 500 .93rem/1.4 system-ui,sans-serif;
 }
-.library-filter-counter { color: #516b78; font: 700 .76rem/1.4 Inter,sans-serif; padding-bottom: .6rem; }
+.library-filter-counter { color: #516b78; font: 700 .76rem/1.4 system-ui,sans-serif; padding-bottom: .6rem; }
 .library-grid .library-card[hidden], .library-grid .library-group-label[hidden] { display: none !important; }
 .library-search-empty[hidden] { display: none !important; }
 .library-search-empty { color: #526b78; font-size: .93rem; }
@@ -101,14 +101,14 @@
   box-shadow: 0 14px 36px rgba(7,29,49,.05);
 }
 .lecture-check-kicker {
-  display: block; color: #147f8d; font: 800 .7rem/1.4 Inter,sans-serif;
+  display: block; color: #147f8d; font: 800 .7rem/1.4 system-ui,sans-serif;
   letter-spacing: .13em; text-transform: uppercase;
 }
 .lecture-knowledge-check h2 {
   margin: .28rem 0 .45rem; padding: 0; font-size: clamp(1.35rem,2.8vw,1.75rem);
 }
 .lecture-check-heading > p {
-  margin: 0 0 1.35rem !important; font: 400 .93rem/1.55 Inter,sans-serif !important;
+  margin: 0 0 1.35rem !important; font: 400 .93rem/1.55 system-ui,sans-serif !important;
   color: #526b77 !important;
 }
 .lecture-check-form fieldset {
@@ -116,13 +116,13 @@
 }
 .lecture-check-form legend {
   width: 100%; padding: 0 0 1rem; color: #163547;
-  font: 750 1.02rem/1.5 Inter,sans-serif;
+  font: 750 1.02rem/1.5 system-ui,sans-serif;
 }
 .lecture-check-choice {
   display: flex; align-items: flex-start; gap: .8rem; min-height: 50px;
   margin: 0 0 .5rem; padding: .8rem .9rem;
   background: #fff; border: 1px solid #d8e5e8; border-radius: 11px;
-  color: #263f4c; cursor: pointer; font: 500 .9rem/1.5 Inter,sans-serif;
+  color: #263f4c; cursor: pointer; font: 500 .9rem/1.5 system-ui,sans-serif;
   transition: border-color .14s, background-color .14s;
 }
 .lecture-check-choice:hover, .lecture-check-choice:has(input:checked) {
@@ -135,11 +135,11 @@
 .lecture-check-submit {
   padding: .75rem 1.2rem; min-height: 43px; border: none; border-radius: 9px;
   color: #fff; background: #0b344b; cursor: pointer;
-  font: 750 .85rem/1.25 Inter,sans-serif;
+  font: 750 .85rem/1.25 system-ui,sans-serif;
 }
 .lecture-check-submit:hover { background: #115470; }
 .lecture-check-status {
-  margin: 0 !important; font: 700 .87rem/1.5 Inter,sans-serif !important;
+  margin: 0 !important; font: 700 .87rem/1.5 system-ui,sans-serif !important;
   color: #345768 !important;
 }
 .lecture-check-status.is-correct { color: #226f5a !important; }
@@ -149,10 +149,10 @@
   background: #eaf4f6; border-left: 3px solid #168793;
 }
 .lecture-check-explanation[hidden] { display: none !important; }
-.lecture-check-explanation > strong { color: #11374b; font: 800 .75rem/1.4 Inter,sans-serif; text-transform: uppercase; letter-spacing: .05em; }
+.lecture-check-explanation > strong { color: #11374b; font: 800 .75rem/1.4 system-ui,sans-serif; text-transform: uppercase; letter-spacing: .05em; }
 .lecture-check-explanation > p {
   margin: .4rem 0 0 !important; color: #294a59 !important;
-  font: 400 .91rem/1.67 Inter,sans-serif !important;
+  font: 400 .91rem/1.67 system-ui,sans-serif !important;
 }
 @media (max-width: 750px) {
   .lecture-route-header { display: grid; padding: .9rem; }
@@ -177,7 +177,7 @@
 .home-learning .section-lead { max-width: 580px; margin-bottom: 1.5rem; }
 .home-learning-note {
   margin: 1.4rem 0 0 !important; color: #617781 !important;
-  font: 400 .82rem/1.65 Inter,sans-serif !important;
+  font: 400 .82rem/1.65 system-ui,sans-serif !important;
 }
 .home-learning-links { display: grid; gap: .65rem; }
 .home-learning-links a {
@@ -188,9 +188,9 @@
 .home-learning-links a:hover, .home-learning-links a:focus-visible {
   border-color: #56a9b2; box-shadow: 0 10px 22px rgba(7,29,49,.075);
 }
-.home-learning-links span { font: 800 .68rem/1.5 Inter,sans-serif; color: #187c89; letter-spacing: .07em; text-transform: uppercase; }
-.home-learning-links strong { font: 750 1.06rem/1.3 Inter,sans-serif; color: #102c3f; }
-.home-learning-links small { color: #617783; font: 450 .8rem/1.5 Inter,sans-serif; }
+.home-learning-links span { font: 800 .68rem/1.5 system-ui,sans-serif; color: #187c89; letter-spacing: .07em; text-transform: uppercase; }
+.home-learning-links strong { font: 750 1.06rem/1.3 system-ui,sans-serif; color: #102c3f; }
+.home-learning-links small { color: #617783; font: 450 .8rem/1.5 system-ui,sans-serif; }
 @media (max-width: 760px) {
   .home-learning { grid-template-columns: 1fr; }
 }
@@ -1317,7 +1317,7 @@
 .lecture-cidnp .cidnp-spectrum svg { display: block; width: 100%; height: auto; overflow: visible; }
 .lecture-cidnp .cidnp-spectrum text,
 .lecture-cidnp .cidnp-plot-panel svg text {
-  font-family: Inter,system-ui,sans-serif; font-size: 13px;
+  font-family: var(--course-font); font-size: 13px;
   fill: #758d91; pointer-events: none;
 }
 .lecture-cidnp .cidnp-gridline {
@@ -2069,4 +2069,444 @@
 @media (prefers-reduced-motion: reduce) {
   .lecture-page .story-deep-dive,
   .lecture-page .lecture-route-neighbour { transition: none; }
+}
+
+
+/* ==========================================================================
+   STUDENT READING SYSTEM v2 — 2026-11-19
+   Final course tokens. These replace competing micro-label, hero, equation,
+   note and simulation typography from earlier iterations. The chapter title
+   is the scientific question; the duplicate page hero has been removed.
+   ========================================================================== */
+.lecture-page {
+  --course-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --lesson-body: 1rem;
+  --lesson-small: .89rem;
+  --lesson-label: .82rem;
+  --lesson-h1: clamp(1.72rem, 3.1vw, 2.12rem);
+  --lesson-h2: clamp(1.3rem, 2.4vw, 1.6rem);
+  --lesson-h3: 1.06rem;
+  --lesson-line: 1.75;
+  --course-rule: #e2e9e7;
+  --course-tint: #f8faf9;
+  --course-ink: #273f47;
+  --course-secondary: #526871;
+  --course-accent: #226a6d;
+  background: #fff;
+  color: var(--course-ink);
+}
+.lecture-page .lecture-module :is(
+ h1,h2,h3,h4,h5,h6,p,li,dt,dd,summary,label,button,input,select,
+ textarea,output,figcaption,strong,b,small,span,em,a
+):not(mjx-container *) {
+  font-family: var(--course-font) !important;
+  letter-spacing: normal;
+}
+.lecture-page .lecture-module :is(pre,code,kbd,samp) {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace !important;
+}
+.lecture-page .site-main {
+  padding: 28px 0 76px;
+  background: #fff;
+}
+.lecture-page .page-content,
+.lecture-page .lecture-module { max-width: 940px; }
+.lecture-page .lecture-module .module-intro {
+  max-width: 800px;
+  margin: 0 0 10px;
+  padding: 0; border: none; background: none;
+}
+.lecture-page .lecture-module .module-intro .module-index {
+  display: block;
+  margin-bottom: 11px;
+  font-size: var(--lesson-label) !important;
+  font-weight: 660;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--course-accent);
+}
+.lecture-page .lecture-module .module-intro h1 {
+  max-width: 790px;
+  margin: 0 0 17px;
+  color: #173440;
+  font-size: var(--lesson-h1) !important;
+  font-weight: 720;
+  line-height: 1.3;
+}
+.lecture-page .lecture-module .module-intro > p {
+  max-width: 76ch;
+  font-size: 1.04rem !important;
+  line-height: 1.77 !important;
+  color: var(--course-ink) !important;
+  margin-bottom: 17px !important;
+}
+.lecture-page .lecture-chapter-context {
+  max-width: 76ch;
+  margin: 12px 0 24px !important;
+  padding: 0 0 0 14px;
+  font-size: var(--lesson-small) !important;
+  line-height: 1.73 !important;
+  border-left: 2px solid #acc9c4;
+  color: var(--course-secondary) !important;
+}
+.lecture-page .lecture-chapter-context strong {
+  color: #315b60; font-weight: 670;
+}
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:first-of-type {
+  margin: 14px 0 15px;
+  padding: 0;
+  max-width: 830px;
+  border: 1px solid var(--course-rule);
+  border-radius: 7px;
+  box-shadow: none;
+  background: #fff;
+}
+.lecture-page .lecture-module-nav.lecture-route-nav .lecture-route-header {
+  padding: 9px 13px;
+}
+.lecture-page .lecture-route-context > strong { font-size: var(--lesson-small) !important; }
+.lecture-page .lecture-route-label,
+.lecture-page .lecture-route-neighbour small,
+.lecture-page .lecture-route-back {
+  font-size: var(--lesson-label) !important;
+  font-weight: 620;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.lecture-page .lecture-module-nav.lecture-route-nav a.lecture-route-neighbour {
+  min-height: 39px;
+  padding: 6px 10px;
+  font-size: var(--lesson-small) !important;
+  background: #f7faf9;
+  box-shadow: none;
+  border-radius: 5px;
+}
+.lecture-page .lecture-module-nav.lecture-route-nav a.lecture-route-next {
+  background: #f0f7f6;
+  color: #245b60 !important;
+}
+.lecture-page .lecture-module-nav.lecture-route-nav .lecture-route-picker summary {
+  font-size: var(--lesson-label) !important;
+  font-weight: 650;
+  padding: 9px 13px;
+}
+.lecture-page .module-learning.module-learning-disclosure {
+  max-width: 830px;
+  margin: 10px 0;
+  background: #fff;
+  border-color: var(--course-rule);
+}
+.lecture-page .module-learning-disclosure > summary {
+  min-height: 41px;
+  padding: 9px 13px;
+}
+.lecture-page .module-learning-summary strong,
+.lecture-page .module-learning-summary-count { font-size: var(--lesson-label) !important; }
+.lecture-page .lecture-local-toc {
+  max-width: 830px;
+  margin: 10px 0 27px;
+}
+.lecture-page .lecture-module .lecture-section {
+  margin-top: 46px;
+  padding-top: 24px;
+  border-top: 1px solid var(--course-rule);
+}
+.lecture-page .lecture-module .lecture-section-head {
+  max-width: 830px;
+  grid-template-columns: 31px minmax(0,1fr);
+  gap: 13px; margin-bottom: 17px;
+}
+.lecture-page .lecture-module .lecture-index {
+  width: 29px; min-width: 29px; height: 29px;
+  border: none;
+  border-radius: 5px;
+  background: #eef5f3;
+  color: #326c6f;
+  font-size: .82rem !important;
+  font-weight: 680;
+}
+.lecture-page .lecture-module .section-eyebrow {
+  font-size: var(--lesson-label) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 630;
+  color: #628087;
+  line-height: 1.3;
+}
+.lecture-page .lecture-module .lecture-section-head h2 {
+  font-size: var(--lesson-h2) !important;
+  line-height: 1.34 !important;
+  font-weight: 710;
+  letter-spacing: -.015em;
+  margin: 3px 0 0;
+}
+.lecture-page .lecture-module :is(.lecture-section > p, .lecture-section > ul, .lecture-section > ol) {
+  max-width: 76ch;
+  font-size: var(--lesson-body) !important;
+  line-height: var(--lesson-line) !important;
+  color: var(--course-ink) !important;
+}
+.lecture-page .lecture-module .lecture-section h3 {
+  font-size: var(--lesson-h3) !important;
+  font-weight: 695;
+  line-height: 1.42;
+}
+.lecture-page .lecture-module .lesson-running-case {
+  margin: 0 0 22px !important;
+  padding: 0 0 0 17px;
+  border-left: 3px solid #7aac9f;
+  background: transparent;
+  font-size: 1.02rem !important;
+  line-height: 1.75 !important;
+}
+.lecture-page .lecture-module .lesson-worked-step {
+  max-width: 76ch;
+  padding: 12px 16px;
+  margin: 14px 0 23px !important;
+  border: 1px solid #d8e7e1;
+  border-radius: 6px;
+  background: #f7faf8;
+  font-size: .98rem !important;
+  line-height: 1.72 !important;
+}
+.lecture-page .lecture-module :is(.lesson-equation-note,.lesson-equation-meaning) {
+  max-width: 76ch;
+  margin: 9px 0 21px !important;
+  padding: 0;
+  background: transparent;
+  color: #4b6570 !important;
+  font-size: var(--lesson-small) !important;
+  line-height: 1.72 !important;
+}
+.lecture-page .lecture-module .lecture-equation,
+.lecture-page .lecture-module .lecture-equation.compact {
+  max-width: 840px;
+  margin: 14px 0 18px;
+  padding: 14px 18px;
+  border: 0;
+  border-left: 2px solid #c5d8d2;
+  border-radius: 0;
+  background: #fafbfa;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  font-size: 1.05rem !important;
+  color: #283f45;
+}
+.lecture-page .lecture-module mjx-container[display="true"] {
+  font-size: 1.02em !important;
+  max-width: 100%;
+  margin: .34em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.lecture-page .lecture-module .lecture-equation-grid {
+  gap: 14px;
+  margin: 16px 0;
+}
+.lecture-page .lecture-module .lecture-equation-grid .lecture-equation {
+  margin: 0;
+  padding: 12px;
+  font-size: 1rem !important;
+}
+.lecture-page .lecture-module :is(.lecture-note,.teacher-note,.lecture-flow-bridge,.lecture-analogy) {
+  max-width: 800px;
+  margin: 17px 0 23px;
+  padding: 10px 15px;
+  border: 0;
+  border-left: 2px solid #c0d6d1;
+  background: #fafbfa;
+  color: var(--course-secondary);
+}
+.lecture-page .lecture-module :is(.lecture-note,.teacher-note,.lecture-flow-bridge,.lecture-analogy)
+  :is(p,span,strong) {
+  font-size: var(--lesson-small) !important;
+  line-height: 1.71 !important;
+  color: var(--course-secondary) !important;
+}
+.lecture-page .lecture-module :is(.lecture-note,.teacher-note,.lecture-flow-bridge,.lecture-analogy) strong {
+  font-weight: 695;
+  color: #355b61 !important;
+}
+.lecture-page .lecture-module .physical-concept-panel {
+  background: #fff;
+  border: 0;
+  border-top: 1px solid var(--course-rule);
+  border-bottom: 1px solid var(--course-rule);
+  padding: 13px 0;
+  max-width: 830px;
+}
+.lecture-page .lecture-module .physical-concept-head > span,
+.lecture-page .lecture-module .physical-concept-head h3,
+.lecture-page .lecture-module .physical-concept-grid article strong {
+  font-size: var(--lesson-small) !important;
+  letter-spacing: normal;
+}
+.lecture-page .lecture-module .physical-concept-grid article p {
+  font-size: var(--lesson-small) !important;
+  line-height: 1.7 !important;
+}
+.lecture-page .lecture-module .method-ladder > div {
+  border-top: 1px solid var(--course-rule);
+  padding: 13px 1px;
+  background: transparent;
+}
+.lecture-page .lecture-module .method-ladder :is(span,strong) {
+  font-size: .95rem !important;
+  font-weight: 690;
+}
+.lecture-page .lecture-module .method-ladder p {
+  font-size: var(--lesson-small) !important;
+  line-height: 1.73 !important;
+}
+.lecture-page .lecture-module .lecture-details {
+  max-width: 840px;
+  padding: 0;
+  margin: 12px 0;
+  border: 1px solid var(--course-rule);
+  border-radius: 6px;
+  box-shadow: none;
+  background: #fff;
+}
+.lecture-page .lecture-module .lecture-details summary {
+  font-size: var(--lesson-small) !important;
+  font-weight: 655;
+  line-height: 1.55;
+  padding: 12px 14px;
+}
+.lecture-page .lecture-module .lesson-glossary > .physical-concept-panel,
+.lecture-page .lecture-module .lesson-glossary > .physical-concept-grid {
+  border: 0;
+}
+.lecture-page .lecture-module .lesson-glossary .physical-concept-panel {
+  max-width: 100%;
+  margin: 0;
+  padding: 14px;
+  border: none;
+  border-top: 1px solid var(--course-rule);
+}
+.lecture-page .lecture-module .lesson-derivation-content {
+  border-top: 1px solid var(--course-rule);
+  padding: 14px;
+}
+.lecture-page .lecture-module .lesson-derivation-content > p {
+  max-width: 76ch;
+  margin: 0 0 14px;
+  font-size: var(--lesson-small) !important;
+  line-height: 1.73 !important;
+}
+.lecture-page .lecture-module .lesson-derivation-content .lecture-equation {
+  max-width: 100%;
+  margin: 13px 0;
+}
+.lecture-page .lecture-module .interactive-card,
+.lecture-page .lecture-module .cidnp-widget {
+  max-width: 900px;
+  padding: 18px;
+  border: 1px solid #d6e6e1;
+  border-radius: 7px;
+  box-shadow: none;
+  background: #fff;
+}
+.lecture-page .lecture-module :is(.interactive-kicker,.interactive-model-note,.demo-prompt,.demo-explanation,.interactive-footnote) {
+  font-size: var(--lesson-small) !important;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.67;
+}
+.lecture-page .lecture-module .interactive-controls :is(label,output,small),
+.lecture-page .lecture-module .interactive-readout :is(span,strong) {
+  font-size: var(--lesson-small) !important;
+  line-height: 1.5 !important;
+}
+.lecture-page .lecture-module .interactive-head h3 {
+  font-size: var(--lesson-h3) !important;
+}
+.lecture-page .lecture-module .interactive-card :is(button,select,input),
+.lecture-page .lecture-module .cidnp-widget :is(button,select,input) {
+  font-family: var(--course-font) !important;
+}
+.lecture-page .lecture-module .interactive-card .svg-caption,
+.lecture-page .lecture-module .interactive-card .svg-tick,
+.lecture-page .lecture-module .cidnp-widget svg text {
+  font-family: var(--course-font) !important;
+  font-size: 13px !important;
+}
+.lecture-page .lecture-module .lecture-reading-grid article {
+  padding: 16px;
+  border: 1px solid var(--course-rule);
+  border-radius: 6px;
+  box-shadow: none;
+  background: #fff;
+}
+.lecture-page .lecture-module .lecture-reading-grid article :is(span,p,a) {
+  font-size: var(--lesson-small) !important;
+  line-height: 1.65 !important;
+  color: var(--course-secondary);
+}
+.lecture-page .lecture-module .lecture-reading-grid article h3 {
+  font-size: var(--lesson-h3) !important;
+}
+.lecture-page .lecture-module .lecture-story-transition {
+  max-width: 76ch;
+  padding-left: 14px;
+  border-left: 2px solid #ceded9;
+  background: #fff;
+  color: var(--course-secondary) !important;
+  font-size: .97rem !important;
+  line-height: 1.74 !important;
+}
+.lecture-page .lecture-module .lecture-chapter-handoff {
+  border-top: 2px solid #8dbbb0;
+  background: #fff;
+  max-width: 830px;
+}
+.lecture-page .lecture-module .lecture-chapter-handoff h2 {
+  font-size: var(--lesson-h2) !important;
+}
+.lecture-page .lecture-module .lecture-chapter-handoff p {
+  font-size: var(--lesson-body) !important;
+  line-height: var(--lesson-line) !important;
+}
+.lecture-page .lecture-module > .lecture-connections {
+  margin-top: 14px;
+  max-width: 830px;
+  background: #fff;
+  border-color: var(--course-rule);
+}
+.lecture-page .lecture-module .lecture-connections summary {
+  font-size: var(--lesson-label) !important;
+  font-weight: 650;
+  color: var(--course-secondary);
+}
+.lecture-page .lecture-module > .lecture-module-nav.lecture-route-nav:last-child {
+  margin-top: 25px;
+}
+.lecture-page .lecture-knowledge-check {
+  max-width: 840px;
+  border: 1px solid var(--course-rule);
+  background: #fff;
+  padding: 20px;
+  box-shadow: none;
+  border-radius: 7px;
+}
+.lecture-page .lecture-knowledge-check :is(p,label,legend,span,button,small,strong) {
+  font-family: var(--course-font) !important;
+}
+.lecture-page .lecture-knowledge-check :is(.lecture-check-kicker,.lecture-check-form legend) {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: var(--lesson-small) !important;
+}
+@media (max-width: 720px) {
+  .lecture-page .site-main { padding: 20px 0 65px; }
+  .lecture-page .lecture-module .module-intro h1 { font-size: 1.73rem !important; }
+  .lecture-page .lecture-module .lecture-section { margin-top: 36px; padding-top: 20px; }
+  .lecture-page .lecture-module .lecture-section-head { grid-template-columns: 28px minmax(0,1fr); gap: 9px; }
+  .lecture-page .lecture-module .lecture-equation { padding: 10px 12px; }
+  .lecture-page .lecture-module .interactive-card,
+  .lecture-page .lecture-module .cidnp-widget { padding: 12px; }
+  .lecture-page .lecture-module .lesson-glossary .physical-concept-grid {
+    grid-template-columns: minmax(0,1fr);
+  }
 }

@@ -54,7 +54,11 @@ assert(home.includes("assets/css/lecture-polish.css"), "Lecture reading layer mu
 
 for (const mod of modules) {
   const html = read(path.join("_site", mod.slice(1), "index.html"));
-  assert(html.includes('class="page-hero-emblem"'), `No shared page icon on ${mod}`);
+  assert(html.includes('class="module-intro"'), `No main scientific introduction on ${mod}`);
+  assert(/<header class="module-intro">[\s\S]*?<h1>/.test(html),
+    `The scientific driving question must be the only chapter h1: ${mod}`);
+  assert(!html.includes('class="page-hero"'),
+    `Lecture should not duplicate the title in a second hero: ${mod}`);
   assert(html.includes('class="lecture-knowledge-check"'), `Checkpoint missing on ${mod}`);
   assert(html.includes("lecture-page"), `Lecture CSS scope missing on ${mod}`);
   assert(html.includes('<details class="lecture-connections"'), `Expandable prerequisite panel missing on ${mod}`);

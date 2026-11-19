@@ -6,14 +6,15 @@ permalink: /lecture/molspin-notebooks/
 ---
 
 <div class="lecture-module">
-{% include lecture-library-nav.html %}
+
 
 <header class="module-intro">
-  <span class="module-index">Module 13</span>
-  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <span class="module-index">Module 13 · {{ page.title }}</span>
+  <h1>{{ site.data.lecture_story[page.url].question }}</h1>
   <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
 {% include lecture-story-opening.html %}
+{% include lecture-library-nav.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -30,7 +31,7 @@ permalink: /lecture/molspin-notebooks/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <aside class="lecture-note molspin-version-note">
@@ -86,37 +87,10 @@ permalink: /lecture/molspin-notebooks/
 
   <p>The syntax is therefore easier to understand if you read it in the order <strong>physical system → Hamiltonian → state preparation → kinetics → numerical task</strong>.</p>
 
-  <div class="lecture-equation">
-  \[
-  \texttt{Interaction}_q
-  \longrightarrow
-  \hat H_q,
-  \qquad
-  \hat H
-  =
-  \sum_q \hat H_q.
-  \]
-  </div>
+  <p><strong>Read the input as a physical sequence, not as a list of unrelated commands.</strong> An <code>Interaction</code> specifies an operator contributing to \(\hat H\); a <code>State</code> identifies the initial preparation or a projector; a <code>Transition</code> or relaxation specification introduces non-unitary kinetics; and the <code>Task</code> chooses a calculation and the output to record.</p>
+  <p>For example, a flavin–tryptophan radical-pair model first needs two electron spins and the relevant nuclear spins. Its Hamiltonian then needs the selected Zeeman, hyperfine, exchange and dipolar terms. A spin-selective recombination channel belongs in the kinetic model, not in the list of Hermitian Hamiltonian interactions. Only after these choices does it make sense to select a propagator.</p>
 
-  <p>The remaining objects can be read in the same mathematical way:</p>
-
-  <div class="lecture-equation">
-  \[
-  \texttt{State}
-  \longrightarrow
-  \rho(0),
-  \qquad
-  \texttt{Transition/Relaxation}
-  \longrightarrow
-  \mathcal K[\rho]\ \text{or}\ \mathcal R[\rho],
-  \qquad
-  \texttt{Task}
-  \longrightarrow
-  \text{propagator + requested observable}.
-  \]
-  </div>
-
-  <p>A useful conceptual master equation is therefore</p>
+  <p>The corresponding general <em>schematic</em> equation of motion can be written as follows; not every MolSpin task simultaneously includes both a relaxation generator and a time-nonlocal memory functional:</p>
 
   <div class="lecture-equation">
   \[
@@ -450,6 +424,7 @@ PulseSequence seq
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 <script src="{{ site.url }}/assets/js/lecture-molspin-builder.js" defer></script>
 </div>

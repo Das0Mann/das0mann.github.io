@@ -6,14 +6,15 @@ permalink: /lecture/computational-lab/
 ---
 
 <div class="lecture-module">
-{% include lecture-library-nav.html %}
+
 
 <header class="module-intro">
-  <span class="module-index">Module 08</span>
-  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <span class="module-index">Module 08 · {{ page.title }}</span>
+  <h1>{{ site.data.lecture_story[page.url].question }}</h1>
   <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
 {% include lecture-story-opening.html %}
+{% include lecture-library-nav.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -30,7 +31,7 @@ permalink: /lecture/computational-lab/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <section class="lecture-section">
@@ -397,6 +398,7 @@ permalink: /lecture/computational-lab/
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 
