@@ -10,9 +10,10 @@ permalink: /lecture/computational-lab/
 
 <header class="module-intro">
   <span class="module-index">Module 08</span>
-  <h2>From a Hamiltonian to a calculation you can trust</h2>
-  <p>Formal spin dynamics is only half the problem. The other half is numerical: how large is the Hilbert space, which representation should we propagate, how do we avoid constructing impossible matrices, and how do we know that a stochastic or time-discretized result is converged?</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -395,6 +396,7 @@ permalink: /lecture/computational-lab/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
