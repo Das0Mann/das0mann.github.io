@@ -61,9 +61,9 @@ assert(!molspin.includes("\\texttt{Interaction}_q"),
   "Remove pseudo-equations whose meaning is clearer in prose");
 
 const css=read("assets/css/lecture-system.css");
-assert(css.includes("EDITORIAL SCIENCE"),"Current editorial lecture design system missing");
-assert(css.includes("--lesson-body: 1.0625rem"),"Prose must use the defined 17px reading size");
-assert(css.includes("--lesson-small: .875rem"),"Use a consistent secondary typography size");
+assert(css.includes("STUDENT READING SYSTEM v2"),"Readable unified typography tokens missing");
+assert(css.includes("--lesson-body: 1rem"),"Establish an explicit base reading size");
+assert(css.includes("--lesson-small: .89rem"),"Do not create arbitrary note font sizes");
 assert(css.includes("--lesson-h1:"),"Establish a single hierarchy for scientific question headings");
 assert(css.includes("mjx-container[display"),"MathJax formula size must be coordinated with body text");
 assert(css.includes(".lesson-equation-meaning"),"Equation interpretations need consistent typography");

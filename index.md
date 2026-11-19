@@ -103,13 +103,13 @@ image:
   <div class="home-learning-copy">
     <p class="section-eyebrow">Open lecture library</p>
     <h2 id="home-learning-title" class="section-heading">From quantum chemistry to measurable spin physics</h2>
-    <p class="section-lead">{{ site.data.lecture_route.size }} interconnected lectures combine physical intuition, quantitative derivations and interactive simulations. Follow the guided route or enter directly through a question relevant to your research.</p>
+    <p class="section-lead">Thirteen interconnected lectures combine physical intuition, quantitative derivations and interactive simulations. Follow the guided route or enter directly through a question relevant to your research.</p>
     <a class="button-dark" href="{{ site.url }}/lecture/">{% include icon.html name="book" %} Browse lectures</a>
     <p class="home-learning-note">Teaching also includes the international Spin-Chemistry summer school and invited lectures on radical-pair mechanisms, including at the German Federal Office for Radiation Protection (BfS).</p>
   </div>
   <div class="home-learning-links" aria-label="Suggested lecture entry points">
     <a href="{{ site.url }}/lecture/electronic-structure/">{% include icon.html name="atom" %}<span>01 · Fundamentals</span><strong>Electronic structure</strong><small>From the many-electron problem to magnetic parameters</small></a>
-    <a href="{{ site.url }}/lecture/radical-pairs/">{% include icon.html name="spin" %}<span>Radical-pair chemistry</span><strong>Radical-pair mechanisms</strong><small>Spin evolution, reaction kinetics and field effects</small></a>
-    <a href="{{ site.url }}/lecture/magnetic-resonance/">{% include icon.html name="radio" %}<span>Magnetic resonance</span><strong>Magnetic resonance</strong><small>From spin Hamiltonians to EPR observables</small></a>
+    <a href="{{ site.url }}/lecture/radical-pairs/">{% include icon.html name="spin" %}<span>04 · Spin chemistry</span><strong>Radical-pair mechanisms</strong><small>Spin evolution, reaction kinetics and field effects</small></a>
+    <a href="{{ site.url }}/lecture/magnetic-resonance/">{% include icon.html name="radio" %}<span>05 · Spectroscopy</span><strong>Magnetic resonance</strong><small>From spin Hamiltonians to EPR observables</small></a>
   </div>
 </section>
