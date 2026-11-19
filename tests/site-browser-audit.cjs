@@ -58,7 +58,17 @@ const server=http.createServer((req,res)=>{
            navCount:nav.length,
            navVisible:nav.filter(a=>{const r=a.getBoundingClientRect(),cs=getComputedStyle(a);return r.width>=36&&r.height>=32&&cs.visibility!=="hidden"&&cs.display!=="none";}).length,
            font:probe?getComputedStyle(probe).fontFamily:"",
-           offenders
+           offenders,
+           rightEdge:[...document.querySelectorAll("body *")].filter(el=>{
+             const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+             return r.width>5&&r.right>width+3&&cs.display!=="none"&&cs.visibility!=="hidden";
+           }).slice(0,15).map(el=>({tag:el.tagName.toLowerCase(),className:String(el.className).slice(0,75),
+              right:Math.round(el.getBoundingClientRect().right),position:getComputedStyle(el).position,
+              overflow:getComputedStyle(el).overflowX})),
+           broadScroll:[...document.querySelectorAll("body *")].filter(el=>
+              el.clientWidth>10&&el.scrollWidth>el.clientWidth+8&&getComputedStyle(el).overflowX==="visible")
+             .slice(0,15).map(el=>({tag:el.tagName.toLowerCase(),className:String(el.className).slice(0,75),
+               client:el.clientWidth,scroll:el.scrollWidth}))
          };
        });
        const id=route==="/"?"home":route==="/404.html"?"404":route.replace(/^\/|\/$/g,"").replaceAll("/","-");
