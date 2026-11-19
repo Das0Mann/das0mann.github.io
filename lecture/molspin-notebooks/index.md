@@ -31,7 +31,7 @@ permalink: /lecture/molspin-notebooks/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <aside class="lecture-note molspin-version-note">
@@ -451,6 +451,7 @@ PulseSequence seq
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 <script src="{{ site.url }}/assets/js/lecture-molspin-builder.js" defer></script>
 </div>
