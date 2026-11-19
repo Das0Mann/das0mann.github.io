@@ -50,7 +50,8 @@ assert(home.includes('class="hero-signal-curve"'), "Spin mixing plot is missing"
 assert(home.includes("assets/js/hero-spin.js"), "Animation script must be loaded");
 assert(!home.includes('class="radical-pair-panel"'), "Legacy hero should not render");
 assert(home.includes("assets/css/iconic.css"), "Final design styles missing from homepage");
-assert(home.includes("assets/css/lecture-polish.css"), "Lecture reading layer must be loaded");
+assert(home.includes("assets/css/site-editorial.css"), "Every page must load the editorial design foundation");
+assert(!home.includes("assets/css/main_pretty.css"), "Legacy theme must not be loaded on homepage");
 
 for (const mod of modules) {
   const html = read(path.join("_site", mod.slice(1), "index.html"));
