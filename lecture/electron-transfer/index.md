@@ -60,15 +60,9 @@ permalink: /lecture/electron-transfer/
 
   <p>For an electron-transfer problem it is often useful to work with diabatic states: states whose charge localization retains a clear chemical meaning as the nuclei move. Schematically,</p>
 
-  <div class="lecture-equation">
-  \[
-  \lvert D\rangle
-  \rightleftharpoons
-  \lvert A\rangle.
-  \]
-  </div>
+  <p>The notation \(\lvert D\rangle\rightleftharpoons\lvert A\rangle\) simply labels the donor- and acceptor-localized charge states; the arrow is not a kinetic-rate equation. A two-state Hamiltonian makes the physical coupling explicit:</p>
 
-  <p>The two diabatic states are coupled by an electronic matrix element, often written \(V\) or \(H_{DA}\):</p>
+
 
   <div class="lecture-equation">
   \[
@@ -80,6 +74,8 @@ permalink: /lecture/electron-transfer/
   \end{pmatrix}.
   \]
   </div>
+
+  <p>The diagonal energies \(E_D\) and \(E_A\) are the diabatic energies at the specified nuclear geometry, while \(V\) is the electronic coupling between them. Neither a symbol for electron transfer nor a coupling by itself gives the transfer rate: the nuclear reorganization, driving force and available vibrational/thermal configurations must also be accounted for.</p>
 
   <p>Weak coupling gives predominantly localized donor and acceptor states and leads naturally to a nonadiabatic golden-rule description. Strong coupling mixes the states substantially and can push the problem toward the adiabatic regime.</p>
 
