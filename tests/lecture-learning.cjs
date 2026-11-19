@@ -44,7 +44,8 @@ const head = read("_includes/_head.html");
 const nav = read("_includes/lecture-library-nav.html");
 assert(layout.includes("lecture-knowledge-check.html"), "Lecture checkpoints must render");
 assert(layout.includes("lecture-refresh.js"), "Lecture checks must be interactive");
-assert(head.includes("lecture-refresh.css"), "Lecture styles must load");
+assert(head.includes("site-editorial.css") && head.includes("lecture-system.css"),
+  "Shared site design and specialist lecture styles must load");
 assert(nav.includes("lecture_route"), "Suggested path must come from route data");
 
 const index = read("lecture/index.md");
