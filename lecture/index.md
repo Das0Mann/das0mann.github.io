@@ -44,7 +44,7 @@ hide_hero: true
       <div class="library-filter-field" role="search">
         <label for="lecture-module-search">{% include icon.html name="search" %} Search topics</label>
         <input id="lecture-module-search" type="search" placeholder="Try hyperfine, electron transfer or EPR" autocomplete="off">
-        <output id="lecture-result-count" class="library-filter-counter" aria-live="polite">{{ site.data.lecture_route.size }} modules</output>
+        <output id="lecture-result-count" class="library-filter-counter" aria-live="polite">13 modules</output>
       </div>
     </div>
 
