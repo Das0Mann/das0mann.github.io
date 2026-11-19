@@ -47,7 +47,7 @@ const head = fs.readFileSync("_includes/_head.html","utf8");
 assert(css.includes("module-learning-disclosure"),"Learning outcome disclosure styles missing");
 assert(css.includes(".lecture-route-picker"),"Repeated footer picker should be suppressed");
 assert(css.includes(".lecture-section.concept-extension"),"Advanced section typography missing");
-assert(head.includes("assets/css/lecture-audit.css"),"Audited styles not loaded");
+assert(head.includes("assets/css/lecture-system.css"),"Audited styles not loaded");
 assert(fs.readFileSync("lecture/photo-cidnp/index.md","utf8").includes("<section class=\"module-learning\""),
   "The existing Photo-CIDNP lesson should not be rewritten by this sweep");
 
@@ -56,7 +56,7 @@ if(process.argv.includes("--rendered")) {
     const generated=fs.readFileSync(path.join("_site",url.slice(1),"index.html"),"utf8");
     assert(generated.includes('class="module-learning module-learning-disclosure"'),
       "Rendered disclosure missing: "+url);
-    assert(generated.includes("assets/css/lecture-audit.css"),
+    assert(generated.includes("assets/css/lecture-system.css"),
       "New reading style missing: "+url);
     assert(generated.includes("lecture-knowledge-check"),"Checkpoint lost: "+url);
   }
