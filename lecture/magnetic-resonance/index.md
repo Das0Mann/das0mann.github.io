@@ -10,9 +10,10 @@ permalink: /lecture/magnetic-resonance/
 
 <header class="module-intro">
   <span class="module-index">Module 05</span>
-  <h2>Turn spin-energy levels into a spectrum</h2>
-  <p>Magnetic resonance asks a very practical question: at what field and frequency can an oscillating magnetic field drive a transition between spin states? From that simple starting point we get EPR spectra, hyperfine patterns, anisotropic powder lineshapes and reaction-yield detected resonance.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -698,6 +699,7 @@ permalink: /lecture/magnetic-resonance/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
