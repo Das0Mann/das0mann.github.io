@@ -10,9 +10,10 @@ permalink: /lecture/molecular-motion/
 
 <header class="module-intro">
   <span class="module-index">Module 07</span>
-  <h2>The spin Hamiltonian is rarely truly static</h2>
-  <p>In a protein, liquid or flexible molecular system, distances, orientations and electronic structure fluctuate continuously. That turns fixed spin parameters into time series and makes molecular motion part of the spin-dynamics problem rather than a separate background effect.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -572,6 +573,7 @@ permalink: /lecture/molecular-motion/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
