@@ -23,23 +23,13 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://cdnjs.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
 
 
-{% assign is_lecture_chapter = false %}
+<!-- Shared presentation for all pages; chapters additionally receive their own scientific layout. -->
+<link rel="stylesheet" href="{{ site.url }}/assets/css/modern.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/iconic.css">
 {% if page.url contains '/lecture/' and page.url != '/lecture/' %}
-  {% assign is_lecture_chapter = true %}
+<link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-system.css">
 {% endif %}
-{% if is_lecture_chapter %}
-  <!-- Chapter pages use only the current shared layout, icon and course stylesheet. -->
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/modern.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/iconic.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-system.css">
-{% else %}
-  <!-- Legacy theme is retained only for non-lecture pages pending site-wide migration. -->
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/main_pretty.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/modern.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-refresh.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/iconic.css">
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-polish.css">
-{% endif %}
+<link rel="stylesheet" href="{{ site.url }}/assets/css/site-coherence.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/privacy-consent.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/site-interactions.css">
 

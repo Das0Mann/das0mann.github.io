@@ -12,6 +12,14 @@ on:
       - 'assets/css/lecture-audit.css'
       - 'assets/css/lecture-system.css'
       - 'assets/css/lecture-cidnp.css'
+      - 'assets/css/site-coherence.css'
+      - 'tests/site-integrity.cjs'
+      - 'about/**'
+      - 'research/**'
+      - 'publications/**'
+      - 'repositories/**'
+      - 'news/**'
+      - '404.md'
       - 'assets/js/hero-spin.js'
       - 'tests/hero-spin.cjs'
       - 'tests/visual-system.cjs'
@@ -76,6 +84,8 @@ jobs:
         run: |
           node tests/lecture-sensitivity.cjs
           node tests/lecture-presets.cjs
+      - name: Check all source templates and shared CSS
+        run: node tests/site-integrity.cjs
       - name: Build Jekyll pages before review
         uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
         with:
@@ -98,3 +108,5 @@ jobs:
         run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages
         run: node tests/visual-system.cjs
+      - name: Validate all public routes after Jekyll build
+        run: node tests/site-integrity.cjs --rendered

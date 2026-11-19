@@ -20,7 +20,7 @@ hide_hero: true
           {% include icon.html name="book" %} Explore modules
         </a>
       </div>
-      <p class="library-landing-note">14 modules · Graduate-level theory · Open access</p>
+      <p class="library-landing-note">{{ site.data.lecture_route.size }} modules · Graduate-level theory · Open access</p>
     </div>
     <div class="library-landing-graphic" aria-hidden="true">
       <div class="library-graphic-icon">{% include icon.html name="spin" %}</div>
@@ -44,7 +44,7 @@ hide_hero: true
       <div class="library-filter-field" role="search">
         <label for="lecture-module-search">{% include icon.html name="search" %} Search topics</label>
         <input id="lecture-module-search" type="search" placeholder="Try hyperfine, electron transfer or EPR" autocomplete="off">
-        <output id="lecture-result-count" class="library-filter-counter" aria-live="polite">13 modules</output>
+        <output id="lecture-result-count" class="library-filter-counter" aria-live="polite">{{ site.data.lecture_route.size }} modules</output>
       </div>
     </div>
 
