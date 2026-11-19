@@ -206,8 +206,40 @@ a{text-underline-offset:3px;}
 .home-main :is(.research-card,.work-card,.profile-panel){border:1px solid var(--site-rule);border-radius:13px;box-shadow:0 4px 17px rgba(19,47,64,.035);}
 .home-main .card-grid{gap:16px;}
 .home-main :is(.research-card,.work-card) h3{font-size:1.07rem;line-height:1.35;}
-.home-main .home-learning{margin-top:64px;border-radius:14px;box-shadow:none;}
-.home-main .home-learning-links a{box-shadow:none;border-radius:9px;}
+/* Home lecture module directory needs explicit grid: its old layout lived in a removed stylesheet. */
+.home-main .home-learning{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(275px,.85fr);
+  align-items:center;gap:clamp(22px,4vw,44px);
+  margin-top:64px;padding:clamp(20px,3vw,36px);
+  background:#edf6f4;border:1px solid var(--site-rule);border-radius:14px;box-shadow:none;
+}
+.home-main .home-learning-copy{min-width:0;}
+.home-main .home-learning-note{font-size:.85rem !important;line-height:1.6 !important;color:var(--site-muted) !important;}
+.home-main .home-learning-links{display:grid;grid-template-columns:minmax(0,1fr);gap:11px;min-width:0;}
+.home-main .home-learning-links a{
+  display:grid;grid-template-columns:26px minmax(0,1fr);
+  align-items:start;column-gap:12px;row-gap:3px;
+  min-width:0;padding:15px;border:1px solid #d2e2e3;
+  border-radius:9px;background:#fff;box-shadow:none;text-decoration:none;
+}
+.home-main .home-learning-links a:hover,.home-main .home-learning-links a:focus-visible{
+  border-color:#81afb2;box-shadow:0 5px 17px rgba(14,53,65,.065);
+}
+.home-main .home-learning-links a>.site-icon{
+  position:static;grid-column:1;grid-row:1/span 3;
+  width:22px;height:22px;margin:2px 0 0;color:#127880;
+}
+.home-main .home-learning-links a span{
+  grid-column:2;font-size:.69rem;line-height:1.4;font-weight:700;
+  letter-spacing:.035em;text-transform:none;color:#20747c;
+}
+.home-main .home-learning-links a strong{
+  grid-column:2;font-size:.97rem;line-height:1.32;color:#173949;font-weight:720;
+}
+.home-main .home-learning-links a small{
+  grid-column:2;font-size:.79rem;line-height:1.5;color:#526c78;
+}
+
 .home-main .molspin-callout{border-radius:16px;box-shadow:none;}
 /* All regular pages have the same restrained masthead and reading measure. */
 .page:not(.lecture-page) .page-hero{background:linear-gradient(110deg,#132e3f,#1b4954);color:#fff;border-bottom:1px solid #285060;}
@@ -292,6 +324,8 @@ a{text-underline-offset:3px;}
   .home-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(270px,.84fr);gap:25px;}
 }
 @media(max-width:820px){
+  .home-main .home-learning{grid-template-columns:minmax(0,1fr);}
+
   .site-header-inner{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:11px 0;}
   .modern-nav{width:100%;overflow-x:auto;overscroll-behavior-x:contain;}
   .modern-nav ul{width:max-content;flex-wrap:nowrap;}
