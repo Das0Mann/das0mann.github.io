@@ -239,7 +239,7 @@ a{text-underline-offset:3px;}
 .page-news .news-item h2,.page-news .news-item h3{margin:0 0 9px;font-size:1.14rem;line-height:1.38;}
 .page-news .news-item p{max-width:82ch;font-size:.96rem;line-height:1.7;}
 /* Catalogue is part of the same website, not a separate app. */
-.page-lectures .page-content{padding:0;border:0;background:transparent;box-shadow:none;}
+ .page:not(.lecture-page).page-lectures .page-content{padding:0;border:0;background:transparent;box-shadow:none;}
 .page-lectures .library-landing{border-radius:14px;}
 .page-lectures .library-landing h1{font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.14;}
 .page-lectures .library-card.library-icon-card{border:1px solid var(--site-rule);border-radius:12px;box-shadow:none;background:#fff;}
@@ -302,7 +302,7 @@ a{text-underline-offset:3px;}
   .page:not(.lecture-page) .page-hero h1{font-size:1.75rem;}
   .page:not(.lecture-page) .site-main{padding:22px 0 56px;}
   .page:not(.lecture-page) .page-content{padding:23px 18px;}
-  .page-lectures .page-content{padding:0;}
+   .page:not(.lecture-page).page-lectures .page-content{padding:0;}
   .lecture-page .site-main{width:calc(100% - 24px);padding:18px 0 56px;}
   .lecture-page .lecture-module .module-intro h1{font-size:1.75rem !important;}
   .site-post-main,.site-news-index,.site-full-page-main{padding:20px 0 55px;}
