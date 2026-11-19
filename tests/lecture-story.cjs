@@ -65,7 +65,8 @@ for(const [number,title] of [
     "Unclear numbering immediately before "+title);
 }
 const head=read("_includes/_head.html");
-assert(head.includes("is_lecture_chapter"),"Lecture needs a separate stylesheet strategy");
+assert(head.includes("page.url contains '/lecture/'") && head.includes("lecture-system.css"),
+  "Scientific chapters must layer their model styling on top of the sitewide foundation");
 assert(head.includes("lecture-system.css"),"Unified lecture CSS must be loaded");
 assert(!head.includes("main_pretty.css"),"All pages should share the modern editorial design rather than legacy themes");
 assert(head.includes("site-editorial.css"),"Shared sitewide design foundation missing");
