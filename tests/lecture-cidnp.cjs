@@ -143,7 +143,7 @@ if(process.argv.includes("--rendered")) {
     assert(html.includes('id="'+id+'"'),"Missing rendered widget target "+id);
   assert(html.includes("lecture-cidnp-model.js"));
   assert(html.includes("lecture-cidnp.js"));
-  assert(html.includes("assets/css/lecture-cidnp.css"));
+  assert(html.includes("assets/css/lecture-system.css"));
   assert(html.includes("lecture-knowledge-check"));
   assert(html.includes('id="cidnp-field-y-plus"'), "missing labelled field axis");
   assert(html.includes('id="cidnp-field-scale"'), "missing autoscale disclosure");
