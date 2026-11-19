@@ -26,12 +26,32 @@ async function main(){
       return {scrollWidth:document.documentElement.scrollWidth,width:innerWidth,
        h1:[...document.querySelectorAll("h1")].map(e=>e.textContent.trim().slice(0,70)),
        hasMain:!!document.querySelector("#main-content"),overflow,
+       skipLinkVisible:(()=>{
+         const el=document.querySelector(".skip-link");
+         if(!el)return null;
+         const r=el.getBoundingClientRect();
+         return r.bottom>1 && r.top<innerHeight;
+       })(),
+       navClipped:[...document.querySelectorAll(".modern-nav a")]
+         .filter(e=>{const r=e.getBoundingClientRect();return r.left<-2||r.right>innerWidth+2;})
+         .map(e=>e.textContent.trim()),
+       navCount:document.querySelectorAll(".modern-nav a").length,
+       consentHeight:(()=>{
+         const e=document.querySelector(".privacy-banner");
+         if(!e||e.hidden)return null;
+         return Math.round(e.getBoundingClientRect().height);
+       })(),
        fonts:[...new Set([...document.querySelectorAll("h1,h2,.page-content p")].slice(0,10).map(e=>getComputedStyle(e).fontFamily))]};
      });
      const status=resp?.status();
      console.log(JSON.stringify({route,screen:vp.label,status,...metrics}));
-     if(status!==200||metrics.scrollWidth>vp.width+3||metrics.h1.length!==1||!metrics.hasMain){
+     if(status!==200||metrics.scrollWidth>vp.width+3||metrics.h1.length!==1||!metrics.hasMain||metrics.skipLinkVisible!==false||metrics.navClipped.length||metrics.navCount!==5||(vp.label==="mobile"&&metrics.consentHeight!==null&&metrics.consentHeight>335)){
       issues.push({route,screen:vp.label,status,metrics});
+     }
+     const reject=page.locator(".privacy-reject");
+     if(await reject.isVisible()){
+       await page.screenshot({path:path.join("visual-captures",slug+"-consent-"+vp.label+".png"),animations:"disabled"});
+       await reject.click();
      }
      await page.screenshot({path:path.join("visual-captures",slug+"-"+vp.label+".png"),animations:"disabled"});
     }catch(e){issues.push({route,screen:vp.label,error:String(e)});console.error("AUDIT_ERROR",route,vp.label,String(e));}
