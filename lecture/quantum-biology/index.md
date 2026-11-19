@@ -31,7 +31,7 @@ permalink: /lecture/quantum-biology/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <section class="lecture-section">
@@ -472,6 +472,7 @@ permalink: /lecture/quantum-biology/
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 
