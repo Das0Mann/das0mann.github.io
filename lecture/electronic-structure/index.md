@@ -10,9 +10,10 @@ permalink: /lecture/electronic-structure/
 
 <header class="module-intro">
   <span class="module-index">Module 01</span>
-  <h2>Start with the electrons</h2>
-  <p>Before we talk about spin dynamics, we need to know what the electrons are doing. Electronic-structure theory is the layer that gives us energies, densities, excited states and ultimately the magnetic parameters that enter a spin Hamiltonian.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -1018,6 +1019,7 @@ permalink: /lecture/electronic-structure/
     </article>
 </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
