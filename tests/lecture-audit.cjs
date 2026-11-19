@@ -48,8 +48,8 @@ assert(css.includes("module-learning-disclosure"),"Learning outcome disclosure s
 assert(css.includes(".lecture-route-picker"),"Repeated footer picker should be suppressed");
 assert(css.includes(".lecture-section.concept-extension"),"Advanced section typography missing");
 assert(head.includes("assets/css/lecture-system.css"),"Audited styles not loaded");
-assert(fs.readFileSync("lecture/photo-cidnp/index.md","utf8").includes("<section class=\"module-learning\""),
-  "The existing Photo-CIDNP lesson should not be rewritten by this sweep");
+assert(fs.readFileSync("lecture/photo-cidnp/index.md","utf8").includes("<details class=\"module-learning module-learning-disclosure\""),
+  "Photo-CIDNP must use the same accessible learning-objective disclosure as the other lectures");
 
 if(process.argv.includes("--rendered")) {
   for(const url of modules) {
