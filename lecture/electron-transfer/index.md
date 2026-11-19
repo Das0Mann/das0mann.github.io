@@ -10,9 +10,10 @@ permalink: /lecture/electron-transfer/
 
 <header class="module-intro">
   <span class="module-index">Module 06</span>
-  <h2>How fast does an electron move from donor to acceptor?</h2>
-  <p>Electron transfer sits exactly at the interface between electronic structure, nuclear motion and kinetics. The electronic states tell us where the electron can be; the environment controls how costly it is to reorganize; the coupling determines how efficiently the two states communicate.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -602,6 +603,7 @@ permalink: /lecture/electron-transfer/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
