@@ -1,68 +1,31 @@
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
 {% include _head.html %}
 </head>
-
-<body class="post-index">
-
+<body class="page page-news-index">
 {% include _browser-upgrade.html %}
-
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
-
-<div class="article-author-side">
-  {% include _author-bio.html %}
-</div>
-
-<div id="index" role="main" tabindex="-1">
-    <span id="main-content"></span>
+<main class="site-news-index" id="main-content" role="main">
+  <header class="site-post-header">
     <h1>{{ page.title }}</h1>
-    {% for post in site.posts %}  
-        {% if post.next == nil %}
-            <h3>{{ post.date | date: '%B %Y' }}</h3>
-        {% else %}
-            {% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
-            {% capture nmonth %}{{ post.next.date | date: '%B' }}{% endcapture %}
-            {% if month != nmonth %}
-                <h3>{{ post.date | date: '%B %Y' }}</h3>
-            {% endif %}
-        {% endif %}
-        <article>
-            {% if post.link %}
-                <h2 class="link-post"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></h2>
-            {% else %}
-                <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-                <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-            {% endif %}
-        </article>
-    {% endfor %}
-</div><!-- /#index -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
+    {% if page.excerpt %}<p class="site-post-excerpt">{{ page.excerpt }}</p>{% endif %}
+  </header>
+  {{ content }}
+  {% assign previous_month = "" %}
+  {% for post in site.posts %}
+    {% assign month_label = post.date | date: "%B %Y" %}
+    {% if month_label != previous_month %}
+      <h2 class="news-month">{{ month_label }}</h2>
+      {% assign previous_month = month_label %}
+    {% endif %}
+    <article class="news-entry">
+      <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+      {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 220 }}</p>{% endif %}
+    </article>
+  {% endfor %}
+</main>
+{% include _footer.html %}
 {% include _scripts.html %}
-  
 </body>
 </html>
