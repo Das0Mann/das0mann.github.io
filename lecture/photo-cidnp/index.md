@@ -6,14 +6,15 @@ permalink: /lecture/photo-cidnp/
 ---
 
 <div class="lecture-module lecture-cidnp">
-{% include lecture-library-nav.html %}
+
 
 <header class="module-intro">
-  <span class="module-index">Module 14</span>
-  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <span class="module-index">Module 14 · {{ page.title }}</span>
+  <h1>{{ site.data.lecture_story[page.url].question }}</h1>
   <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
 {% include lecture-story-opening.html %}
+{% include lecture-library-nav.html %}
 
 <section class="module-learning" aria-label="Learning goals">
   <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
