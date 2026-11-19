@@ -105,13 +105,15 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Orbitals &amp; basis sets</p><h2>An orbital is a representation tool, not an electron trajectory</h2></div>
   </div>
 
-  <p>A molecular orbital \(\phi_p(\mathbf r)\) is a one-electron function. In most quantum-chemistry codes it is expanded in atom-centred basis functions \(\chi_\mu\):</p>
+  <p>We cannot store an arbitrary function of continuous coordinates. Instead, we choose known, atom-centred basis functions \(\chi_\mu(\mathbf r)\) and let the calculation optimize their coefficients. For molecular orbital \(p\), the approximation takes the form</p>
 
   <div class="lecture-equation">
   \[
   \phi_p(\mathbf r)=\sum_\mu C_{\mu p}\chi_\mu(\mathbf r).
   \]
   </div>
+
+  <p>Each coefficient \(C_{\mu p}\) is a weight in the orbital expansion—not the probability of finding electron \(p\) at an atom. For the running flavin-radical example, a basis that cannot describe spatially extended anionic density or local spin polarization will also distort the magnetic response derived from that state.</p>
 
   <p>The basis controls how flexibly the electronic wavefunction or density can respond. A minimal basis is cheap but restrictive; polarized and diffuse functions give the electrons more freedom. The important point is that a basis-set name is not just a technical label—it defines the variational space in which the electronic problem is solved.</p>
 
@@ -571,7 +573,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Active-space complexity</p><h2>How quickly does a complete active space grow?</h2></div>
   </div>
 
-  <p>A label such as CAS(10,10) looks compact, but it represents many electronic occupations. For \(m\) spatial active orbitals there are \(2m\) active spin orbitals. The total number of \(N\)-electron Slater determinants is</p>
+  <p>Why is a multiconfigurational treatment expensive even before adding dynamical correlation? A CAS(\(n,m\)) contains \(n\) active electrons distributed among \(m\) spatial active orbitals, or \(2m\) available spin orbitals. Without fixing a spin-projection sector, the number of possible Slater determinants is</p>
 
   <div class="lecture-equation">
   \[
@@ -581,7 +583,7 @@ permalink: /lecture/electronic-structure/
   \]
   </div>
 
-  <p>If one works in the smallest-\(|M_S|\) sector, a useful determinant count is</p>
+  <p>Calculations usually restrict the spin projection. When \(n_\alpha\) active electrons have alpha spin and \(n_\beta\) have beta spin, the count in that sector is</p>
 
   <div class="lecture-equation">
   \[
@@ -593,6 +595,7 @@ permalink: /lecture/electronic-structure/
   n_\alpha+n_\beta=n.
   \]
   </div>
+  <p class="lesson-worked-step"><strong>Check the smallest useful example.</strong> CAS(2,2) has two electrons and two spatial orbitals: \(\binom{4}{2}=6\) determinants overall, but only \(\binom{2}{1}\binom{2}{1}=4\) have \(M_S=0\). The latter are determinants, not necessarily spin-adapted singlet states. The interactive explorer below lets you increase the active space and observe the combinatorial growth yourself.</p>
 
   <div class="interactive-card" id="cas-demo">
     <div class="interactive-head">
@@ -667,7 +670,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">State mixing</p><h2>State mixing and avoided crossings</h2></div>
   </div>
 
-  <p>Two states can have very different physical character and still mix strongly if they come close in energy. This tiny two-state model is a useful prototype:</p>
+  <p>Why did we need more than one configuration in the first place? Two electronic arrangements can become nearly equal in energy and interact. Imagine two <em>diabatic</em> states whose uncoupled energy difference is \(\Delta\), connected by a real electronic coupling \(t\). In the basis of those states, the simplest possible Hamiltonian and its energies are</p>
 
   <div class="interactive-card" id="orbital-demo">
     <div class="interactive-head">
@@ -691,6 +694,7 @@ permalink: /lecture/electronic-structure/
       \]
       </div>
     </div>
+    <p class="lesson-equation-note">The diagonal entries are the uncoupled state energies relative to their mean; the off-diagonal entries mix them. At \(\Delta=0\), the energy separation is \(2|t|\). An avoided crossing is therefore evidence of mixing, not an instruction to interpret every pair of nearby electronic states as a radical-pair spin transition.</p>
 
     <div class="demo-prompt"><strong>Try this:</strong><span>set \(t=0\) first. The two diabatic states cross. Then increase \(t\): the crossing opens and the state character becomes mixed around \(\Delta=0\).</span></div>
 
@@ -794,7 +798,7 @@ permalink: /lecture/electronic-structure/
     <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
   </div>
 
-  <p>The ordinary electron density tells us where electronic charge is located. Magnetic interactions need one more piece of information: how the spin-up and spin-down densities differ. A common real-space quantity is the spin density</p>
+  <p>Two radicals can have almost identical total charge density and still produce very different hyperfine couplings. To locate the unpaired spin, separate the alpha- and beta-spin electron number densities in a collinear spin treatment. Their difference defines the signed spin-density distribution</p>
 
   <div class="lecture-equation">
   \[
@@ -805,6 +809,8 @@ permalink: /lecture/electronic-structure/
   \rho_\beta(\mathbf r).
   \]
   </div>
+
+  <p>The quantity \(m(\mathbf r)\) measures an excess of alpha- over beta-spin density at each position; it is not a classical trajectory or a map of a uniquely distinguishable electron. If the difference is zero in a region, that region has no local collinear spin polarization even though it may contain electron charge.</p>
 
   <p>A radical can therefore have a rather delocalized spin distribution even when a Lewis structure draws the unpaired electron on one atom. That distinction matters because the Fermi-contact hyperfine interaction probes spin density at a nucleus, whereas anisotropic hyperfine coupling and the \(g\)-tensor depend on the broader spatial and orbital character of the electronic state.</p>
 
