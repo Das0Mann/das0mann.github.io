@@ -10,9 +10,10 @@ permalink: /lecture/coherent-control/
 
 <header class="module-intro">
   <span class="module-index">Module 12</span>
-  <h2>Instead of watching the spin evolve, drive it deliberately</h2>
-  <p>A resonant RF or microwave field can rotate a spin state in a controlled way. The language of pulses—\(\pi/2\), \(\pi\), phase, detuning and echo—comes from solving a driven two-level problem and then using those rotations as building blocks for spectroscopy and quantum control.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -467,6 +468,7 @@ permalink: /lecture/coherent-control/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
