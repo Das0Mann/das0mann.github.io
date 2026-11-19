@@ -31,7 +31,7 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <section class="lecture-section">
@@ -490,6 +490,7 @@ permalink: /lecture/excited-state-photochemistry/
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 
