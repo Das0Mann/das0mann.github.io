@@ -685,7 +685,7 @@
    -------------------------------------------------------------------------- */
 .lecture-page {
   --course-font: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --lesson-body: 1rem;
+  --lesson-body: 1.0625rem;
   --lesson-small: .875rem;
   --lesson-label: .875rem;
   --lesson-h1: clamp(1.95rem,3.7vw,2.55rem);
