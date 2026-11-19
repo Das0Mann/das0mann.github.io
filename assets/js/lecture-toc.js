@@ -79,8 +79,8 @@
     }
     toc.append(summary, nav);
 
-    const anchor = lecture.querySelector(".lecture-connections") ||
-      lecture.querySelector(".module-learning") || lecture.querySelector(".module-intro");
+    const anchor = lecture.querySelector(".module-learning") ||
+      lecture.querySelector(".module-intro");
     if (anchor) anchor.insertAdjacentElement("afterend", toc);
 
     function mark(id) {
