@@ -31,7 +31,7 @@ permalink: /lecture/open-systems/
   </div>
 </details>
 
-{% include lecture-connections.html %}
+
 
 
 <section class="lecture-section">
@@ -587,6 +587,7 @@ permalink: /lecture/open-systems/
   </div>
 </section>
 {% include lecture-story-handoff.html %}
+{% include lecture-connections.html %}
 {% include lecture-library-nav.html %}
 </div>
 
