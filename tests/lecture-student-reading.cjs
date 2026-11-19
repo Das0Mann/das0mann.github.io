@@ -71,8 +71,10 @@ const fonts=[...css.matchAll(/font-family:\s*([^;}\n]+)/g)].map(m=>m[1].trim());
 for(const font of fonts)
  assert(font.startsWith("var(--course-font)") || font.startsWith("ui-monospace"),
    "Unexpected competing text font stack: "+font);
-assert(!css.includes("PT Sans Narrow"),"No legacy condensed lecture font");
-assert(!css.includes("PT Serif"),"No legacy serif lecture font");
+// The old font names may appear in historical CSS comments; only live
+// font-family declarations determine what is actually rendered.
+assert(!fonts.some(font => /PT Sans Narrow|PT Serif/.test(font)),
+  "No legacy lecture font should occur in a live declaration");
 const toc=read("assets/js/lecture-toc.js");
 assert(!toc.includes('lecture.querySelector(".lecture-connections")'),
   "Section navigator must appear near the chapter opening, not after footer references");
