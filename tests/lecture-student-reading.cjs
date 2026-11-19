@@ -43,7 +43,7 @@ assert(el.includes("\\mathbf D_{12}"),"Interelectron dipolar term must have a di
 assert(el.includes("\\mathbf D_{\\mathrm{ZFS}}"),"Higher-spin ZFS must be distinguished");
 assert((el.match(/class="lesson-equation-meaning"/g)||[]).length>=14,
   "Advanced equations should each have a specific physical interpretation");
-assert((el.match(/class="lesson-glossary"/g)||[]).length>=3,
+assert((el.match(/class="lecture-details lesson-glossary"/g)||[]).length>=3,
   "Large reference glossaries should not interrupt the main argument");
 assert.equal((el.match(/class="lecture-section story-deep-dive"/g)||[]).length,5,
   "Keep each full theoretical derivation accessible without overwhelming beginners");
