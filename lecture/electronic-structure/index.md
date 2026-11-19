@@ -878,54 +878,46 @@ permalink: /lecture/electronic-structure/
   </div>
 
   
-  <section class="parameter-derivation">
-    <p class="section-eyebrow">Mathematical reduction</p>
-    <h3>From the electronic Hamiltonian to an effective spin Hamiltonian</h3>
-
-    <p>The spin Hamiltonian is not a second, unrelated theory. It is a low-energy effective representation of the electronic problem. If \(P\) projects onto the magnetic states we want to keep and \(Q=1-P\) onto all other electronic states, perturbative downfolding gives schematically</p>
-
+  <div class="lesson-parameter-result">
+    <p>We can now answer the running question. The electronic-structure calculation provides effective couplings for the flavin and tryptophan radical spins. For a pair of electron spins, a representative energy-valued spin Hamiltonian is</p>
     <div class="lecture-equation">
     \[
-    \hat H_\mathrm{eff}^{(2)}
-    =
-    P\hat H_0P
-    +
-    P\hat V P
-    +
-    P\hat VQ
-    \left(
-    E_0-Q\hat H_0Q
-    \right)^{-1}
-    Q\hat VP.
+    \begin{aligned}
+    \hat H_{\mathrm{spin}}
+    =&\sum_{a=1}^{2}
+    \mu_B\,\mathbf B\cdot\mathbf g_a\cdot\hat{\mathbf S}_a
+    +\sum_{a,N}\hat{\mathbf S}_a\cdot\mathbf A_{aN}\cdot\hat{\mathbf I}_N\\
+    &+J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2
+    +\hat{\mathbf S}_1\cdot\mathbf D_{12}\cdot\hat{\mathbf S}_2+\cdots .
+    \end{aligned}
     \]
     </div>
+    <p><strong>Each term has a distinct origin.</strong> The \(g\)-tensors describe magnetic-field response; \(\mathbf A_{aN}\) couples electron spin \(a\) to nucleus \(N\); \(J\) is isotropic exchange; and \(\mathbf D_{12}\) is the <em>two-electron dipolar tensor</em>. The symbols follow the \(+J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2\) exchange convention. The ellipsis can include nuclear Zeeman interactions, additional spins and other effects. A separate zero-field-splitting operator \(\hat{\mathbf S}\cdot\mathbf D_{\mathrm{ZFS}}\cdot\hat{\mathbf S}\) describes a suitable higher-spin manifold (\(S\geq1\)); it is not interchangeable with \(\mathbf D_{12}\) for two individual radicals.</p>
+    <p>Notice what has changed: we no longer propagate all molecular electronic degrees of freedom. We propagate only the relevant spins using coefficients obtained from the electronic states. The next lecture develops the operators, units, reference frames and exchange-sign conventions needed to use this model quantitatively.</p>
+  </div>
 
-    <p>Writing \(\hat H=\hat H_0+\hat V\), the first two terms describe the zeroth-order manifold and perturbations acting directly inside it. The last term is the second-order virtual excursion into the eliminated \(Q\) space and back. This is the mathematical origin of many apparently empirical spin-Hamiltonian parameters: SOC-induced \(g\)-shifts and ZFS, for example, are strongly controlled by matrix elements to excited states and by their energy denominators.</p>
-
-    <p>After this projection, the effective operator is expanded in a small set of spin operators,</p>
-
-    <div class="lecture-equation">
-    \[
-    \hat H_\mathrm{eff}
-    =
-    \sum_k p_k\,\hat O_k
-    =
-    \mu_B\mathbf B\cdot\mathbf g\cdot\hat{\mathbf S}
-    +
-    \sum_N
-    \hat{\mathbf S}\cdot\mathbf A_N\cdot\hat{\mathbf I}_N
-    +
-    J\,\hat{\mathbf S}_1\cdot\hat{\mathbf S}_2
-    +
-    \hat{\mathbf S}\cdot\mathbf D\cdot\hat{\mathbf S}
-    +\cdots .
-    \]
+  <details class="lecture-details lesson-derivation">
+    <summary>Advanced derivation: how eliminating high-energy electronic states produces the spin Hamiltonian</summary>
+    <div class="lesson-derivation-content">
+      <p>A spin Hamiltonian is a low-energy representation of the electronic problem, not a second unrelated physical theory. Let \(P\) project onto the electronic states we retain and \(Q=1-P\) onto the eliminated subspace. For \(\hat H=\hat H_0+\hat V\), second-order perturbative downfolding gives, schematically,</p>
+      <div class="lecture-equation">
+      \[
+      \hat H_\mathrm{eff}^{(2)}
+      =
+      P\hat H_0P
+      +P\hat VP
+      +P\hat VQ\big(E_0-Q\hat H_0Q\big)^{-1}Q\hat VP.
+      \]
+      </div>
+      <p>The first terms act inside the retained space. The last term represents a virtual excursion into the excluded electronic states and back. Energy denominators and spin–orbit matrix elements explain why relatively remote electronic states can influence \(g\)-shifts and zero-field splitting. The perturbative construction requires a sufficiently separated retained manifold and a well-defined inverse on the eliminated subspace; strong near-degeneracy calls for a larger retained space or a nonperturbative treatment.</p>
+      <p>Expanding the resulting low-energy operator in electron and nuclear spin operators determines which parameters must be extracted from electronic-structure calculations. Their values may come from response theory, energy derivatives, or state-energy mapping, depending on the observable and the chosen conventions.</p>
     </div>
+  </details>
 
-    <p>The quantum-chemistry problem is therefore to determine the coefficients \(p_k\). Depending on the parameter, this is done from expectation values, derivatives of the electronic energy with respect to external perturbations, response equations, differences between spin-state energies, or an effective-Hamiltonian fit to low-energy ab initio states.</p>
-  </section>
 
-  <div class="physical-concept-panel">
+  <details class="lecture-details lesson-glossary">
+    <summary>Reference: what the electronic calculation must deliver for each parameter</summary>
+    <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>How the parameters are obtained</span><h3>Different spin parameters probe different pieces of the electronic state</h3></div>
     <div class="physical-concept-grid">
       <article>
@@ -950,6 +942,7 @@ permalink: /lecture/electronic-structure/
       </article>
     </div>
   </div>
+  </details>
 
   <aside class="lecture-note">
     <strong>Response property does not mean “read it from one orbital”.</strong>
