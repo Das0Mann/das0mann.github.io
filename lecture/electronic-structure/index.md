@@ -89,6 +89,8 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
+<p class="lecture-story-transition">The fixed-geometry Hamiltonian is the physical starting point, but solving it directly is generally impractical. The first simplification is a finite set of one-electron functions in which electronic states can be represented.</p>
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">02</span>
@@ -122,6 +124,8 @@ permalink: /lecture/electronic-structure/
     <span>A basis set can give a seemingly stable total energy while a magnetic response, spin density, excitation energy or diffuse charge-transfer state is still changing appreciably. Basis-set convergence is therefore observable-specific; polarization, diffuse and sometimes core-correlating functions should be tested against the quantity you actually intend to report.</span>
   </aside>
 </section>
+
+<p class="lecture-story-transition">Choosing orbitals and a basis specifies how a state can be represented. It does not determine how exchange and electron correlation are treated. That distinction leads to the main families of electronic-structure methods.</p>
 
 <section class="lecture-section">
   <div class="lecture-section-head">
@@ -168,11 +172,15 @@ permalink: /lecture/electronic-structure/
   </details>
 </section>
 
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">HF</span>
-    <div><p class="section-eyebrow">Hartree–Fock theory</p><h2>Find the best single Slater determinant</h2></div>
-  </div>
+<p class="lecture-story-transition">The same electronic Hamiltonian can be treated with different representations. Hartree–Fock provides the single-determinant reference, density-functional theory replaces the correlated problem with an effective density formulation, and post-HF or multiconfigurational approaches recover correlation when needed. The derivations are available below; the main storyline continues with their practical consequences.</p>
+
+<details class="lecture-section story-deep-dive" id="technical-hartree-fock">
+  <summary class="story-deep-summary">
+    <span class="story-deep-code">HF</span>
+    <span class="story-deep-title"><strong>Hartree–Fock</strong><small>Single-determinant variational equations, exchange, and limitations</small></span>
+    <span class="story-deep-toggle" aria-hidden="true">Expand derivation</span>
+  </summary>
+  <div class="story-deep-content">
 
   <p>Hartree–Fock (HF) starts by approximating the \(N\)-electron wavefunction with one antisymmetrized product of spin orbitals,</p>
 
@@ -270,13 +278,17 @@ permalink: /lecture/electronic-structure/
     <strong>Restricted versus unrestricted HF:</strong>
     <span>RHF pairs \(\alpha\) and \(\beta\) electrons in the same spatial orbitals and is natural for many closed shells. UHF allows different \(\alpha\) and \(\beta\) orbitals and is useful for open shells or bond breaking, but the determinant need not be an eigenfunction of \(\hat S^2\); spin contamination is therefore a diagnostic to inspect rather than ignore.</span>
   </aside>
-</section>
 
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">DFT</span>
-    <div><p class="section-eyebrow">Kohn–Sham density-functional theory</p><h2>Replace the many-electron wavefunction problem by an exact-in-principle density problem</h2></div>
   </div>
+</details>
+
+<details class="lecture-section story-deep-dive" id="technical-density-functional-theory">
+  <summary class="story-deep-summary">
+    <span class="story-deep-code">DFT</span>
+    <span class="story-deep-title"><strong>Kohn–Sham density-functional theory</strong><small>Density functionals, self-consistency, and excitation caveats</small></span>
+    <span class="story-deep-toggle" aria-hidden="true">Expand derivation</span>
+  </summary>
+  <div class="story-deep-content">
 
   <p>The Hohenberg–Kohn theorems establish that the exact ground-state energy can, in principle, be written as a functional of the electron density. Here \(\mathcal D_N\) denotes the physically admissible densities for \(N\) electrons.</p>
 
@@ -352,13 +364,17 @@ permalink: /lecture/electronic-structure/
     <summary>Where does TD-DFT fit?</summary>
     <p>Ground-state Kohn–Sham DFT does not directly provide excited-state energies. Linear-response time-dependent DFT (TD-DFT) obtains excitation energies from the response of the density to a time-dependent perturbation. It is often the practical first choice for many valence excitations in medium and large molecules, but the quality depends strongly on the functional and the state character. Long-range charge transfer, Rydberg states and states with strong double-excitation or multireference character require particular caution.</p>
   </details>
-</section>
 
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">WF</span>
-    <div><p class="section-eyebrow">Ab initio wavefunction methods</p><h2>Recover electron correlation systematically from a wavefunction reference</h2></div>
   </div>
+</details>
+
+<details class="lecture-section story-deep-dive" id="technical-wavefunction-correlation">
+  <summary class="story-deep-summary">
+    <span class="story-deep-code">WF</span>
+    <span class="story-deep-title"><strong>Correlated wavefunction methods</strong><small>Perturbation theory, coupled cluster, and single-reference diagnostics</small></span>
+    <span class="story-deep-toggle" aria-hidden="true">Expand derivation</span>
+  </summary>
+  <div class="story-deep-content">
 
   <aside class="lecture-note">
     <strong>“Ab initio” does not mean “exact”.</strong>
@@ -447,13 +463,17 @@ permalink: /lecture/electronic-structure/
     <strong>When should you distrust a single-reference post-HF result?</strong>
     <span>Warning signs include bond dissociation, near-degenerate frontier orbitals, several configurations with comparable weights, strongly fractional natural-orbital occupations, large spin contamination in an unrestricted reference, or unusually large coupled-cluster diagnostics. No single diagnostic is universal; the electronic structure should be inspected physically.</span>
   </aside>
-</section>
 
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">MR</span>
-    <div><p class="section-eyebrow">Multiconfigurational and multireference methods</p><h2>Use several configurations when one determinant cannot represent the state</h2></div>
   </div>
+</details>
+
+<details class="lecture-section story-deep-dive" id="technical-multireference-methods">
+  <summary class="story-deep-summary">
+    <span class="story-deep-code">MR</span>
+    <span class="story-deep-title"><strong>Multiconfigurational methods</strong><small>Active spaces, configuration mixing, and dynamical correlation</small></span>
+    <span class="story-deep-toggle" aria-hidden="true">Expand derivation</span>
+  </summary>
+  <div class="story-deep-content">
 
   <p>A multiconfigurational self-consistent-field wavefunction is expanded in several configuration state functions or determinants while the orbitals are optimized at the same time,</p>
 
@@ -529,13 +549,15 @@ permalink: /lecture/electronic-structure/
     <strong>When is multireference theory genuinely needed?</strong>
     <span>Typical cases are bond breaking, diradicals, strongly coupled transition-metal centres, low-lying states of different electronic character, conical intersections, important double excitations and spin-state manifolds in which several configurations are energetically competitive. The presence of a metal atom alone is not a sufficient reason.</span>
   </aside>
-</section>
+
+  </div>
+</details>
 
 
 <section class="lecture-section">
   <div class="lecture-section-head">
-    <span class="lecture-index">I</span>
-    <div><p class="section-eyebrow">Interactive</p><h2>How quickly does a complete active space grow?</h2></div>
+    <span class="lecture-index">04</span>
+    <div><p class="section-eyebrow">Active-space complexity</p><h2>How quickly does a complete active space grow?</h2></div>
   </div>
 
   <p>A label such as CAS(10,10) looks compact, but it represents many electronic occupations. For \(m\) spatial active orbitals there are \(2m\) active spin orbitals. The total number of \(N\)-electron Slater determinants is</p>
@@ -604,9 +626,11 @@ permalink: /lecture/electronic-structure/
   </div>
 </section>
 
-<section class="lecture-section concept-extension">
+<p class="lecture-story-transition">A multiconfigurational treatment represents several electronic occupations explicitly, but the size of that space grows rapidly. Method selection therefore depends on the physical character of the state and the observable—not on the numerical sophistication of a method alone.</p>
+
+<section class="lecture-section lecture-method-decision">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index">?</span>
+    <span class="lecture-index">05</span>
     <div><p class="section-eyebrow">Method selection</p><h2>Choose the method from the electronic structure and the property—not from a hierarchy of prestige</h2></div>
   </div>
 
@@ -628,8 +652,8 @@ permalink: /lecture/electronic-structure/
 
 <section class="lecture-section">
   <div class="lecture-section-head">
-    <span class="lecture-index">04</span>
-    <div><p class="section-eyebrow">Interactive</p><h2>State mixing and avoided crossings</h2></div>
+    <span class="lecture-index">06</span>
+    <div><p class="section-eyebrow">State mixing</p><h2>State mixing and avoided crossings</h2></div>
   </div>
 
   <p>Two states can have very different physical character and still mix strongly if they come close in energy. This tiny two-state model is a useful prototype:</p>
@@ -710,11 +734,15 @@ permalink: /lecture/electronic-structure/
 
 
 
-<section class="lecture-section concept-extension">
-  <div class="lecture-section-head">
-    <span class="lecture-index concept-index">R</span>
-    <div><p class="section-eyebrow">Relativity</p><h2>For magnetic properties, relativity is not only a “heavy-atom correction”</h2></div>
-  </div>
+<p class="lecture-story-transition">Electronic states that approach one another can mix and change their character. For magnetic observables, relativistic spin–orbit interactions provide an additional route by which nearby electronic states influence the effective spin Hamiltonian.</p>
+
+<details class="lecture-section story-deep-dive" id="technical-relativistic-response">
+  <summary class="story-deep-summary">
+    <span class="story-deep-code">SOC</span>
+    <span class="story-deep-title"><strong>Relativistic effects and spin–orbit coupling</strong><small>How orbital and spin motion enter magnetic response</small></span>
+    <span class="story-deep-toggle" aria-hidden="true">Expand derivation</span>
+  </summary>
+  <div class="story-deep-content">
 
   <div class="lecture-flow-bridge">
     <p>Relativistic effects contribute to molecular magnetic parameters through two related mechanisms: scalar-relativistic terms alter electronic energies and orbital distributions, whereas spin–orbit coupling mixes electronic states of different spin and orbital character. Both influence the effective interactions used in subsequent spin-Hamiltonian simulations.</p>
@@ -743,11 +771,15 @@ permalink: /lecture/electronic-structure/
     <div><strong>Transition metals</strong><span>Scalar relativity and SOC both become much more important; spin-state ordering and ZFS can be very method-sensitive.</span></div>
     <div><strong>Practical methods</strong><span>Common choices include ZORA, DKH and X2C-type Hamiltonians. The important point for this lecture is not memorizing the acronyms, but checking that the relativistic model is appropriate for the property being calculated.</span></div>
   </div>
-</section>
 
-<section class="lecture-section concept-extension">
+  </div>
+</details>
+
+<p class="lecture-story-transition">The energies of electronic states are only part of the information needed for spin chemistry. Their spatial spin distributions and magnetic response determine the couplings that can be carried forward into a compact spin model.</p>
+
+<section class="lecture-section lecture-spin-density">
   <div class="lecture-section-head">
-    <span class="lecture-index concept-index" aria-label="Advanced topic">ADV</span>
+    <span class="lecture-index">07</span>
     <div><p class="section-eyebrow">Spin density</p><h2>Magnetic observables care about where the unpaired spin lives</h2></div>
   </div>
 
@@ -781,8 +813,8 @@ permalink: /lecture/electronic-structure/
 
 <section class="lecture-section">
   <div class="lecture-section-head">
-    <span class="lecture-index">05</span>
-    <div><p class="section-eyebrow">Excited &amp; magnetic states</p><h2>Electronic structure supplies the spin Hamiltonian</h2></div>
+    <span class="lecture-index">08</span>
+    <div><p class="section-eyebrow">From electronic states to magnetic observables</p><h2>Electronic structure supplies the spin Hamiltonian</h2></div>
   </div>
   <div class="physical-concept-panel">
     <div class="physical-concept-head"><span>Physical meaning</span><h3>The magnetic parameters are response properties of the electronic state</h3></div>
