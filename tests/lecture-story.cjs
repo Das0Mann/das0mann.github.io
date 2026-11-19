@@ -67,7 +67,8 @@ for(const [number,title] of [
 const head=read("_includes/_head.html");
 assert(head.includes("is_lecture_chapter"),"Lecture needs a separate stylesheet strategy");
 assert(head.includes("lecture-system.css"),"Unified lecture CSS must be loaded");
-assert(head.includes("main_pretty.css"),"Legacy non-lecture pages should retain their existing design");
+assert(!head.includes("main_pretty.css"),"All pages should share the modern editorial design rather than legacy themes");
+assert(head.includes("site-editorial.css"),"Shared sitewide design foundation missing");
 const css=read("assets/css/lecture-system.css");
 assert(css.includes("--course-font: system-ui"),"One system font should be used for course text");
 for(const target of [".lecture-chapter-context",".lecture-chapter-handoff",".story-deep-dive",
@@ -97,6 +98,7 @@ if(process.argv.includes("--rendered")){
     "Jekyll should render each optional advanced explanation as one native disclosure");
   assert(!first.includes("{% include lecture-story"),"Raw Liquid must not appear on published pages");
   const homepage=read("_site/index.html");
-  assert(homepage.includes("lecture-polish.css"),"Unrelated homepage animation styles must be preserved");
+  assert(homepage.includes("site-editorial.css"),"Homepage must use the shared editorial system");
+  assert(homepage.includes("hero-signature--animated"),"Homepage animation must remain intact");
 }
 console.log("PASS: fourteen chapter-specific scientific narratives, optional in-depth derivations and one lecture typography system");
