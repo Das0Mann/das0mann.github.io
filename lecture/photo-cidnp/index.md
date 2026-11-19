@@ -16,14 +16,21 @@ permalink: /lecture/photo-cidnp/
 {% include lecture-story-opening.html %}
 {% include lecture-library-nav.html %}
 
-<section class="module-learning" aria-label="Learning goals">
-  <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
+<details class="module-learning module-learning-disclosure">
+  <summary class="module-learning-summary">
+    <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
+    <strong>Learning objectives</strong>
+    <span class="module-learning-summary-count">3 outcomes · expand to view</span>
+    <span class="module-learning-summary-chevron" aria-hidden="true">{% include icon.html name="chevron-down" %}</span>
+  </summary>
+  <div class="module-learning-content">
   <div class="module-learning-grid">
     <div><span>01</span><p>Explain electron-spin correlation, nuclear-spin sorting and the difference between EPR and CIDNP detection.</p></div>
     <div><span>02</span><p>Use Kaptein’s high-field sign rule with explicit precursor, exit-channel, \(\Delta g\), and hyperfine conventions.</p></div>
     <div><span>03</span><p>Distinguish an analytical teaching model from realistic exchange-coupled, relaxing and conformationally heterogeneous radical-pair simulations.</p></div>
   </div>
-</section>
+  </div>
+</details>
 
 
 <section class="lecture-section">
