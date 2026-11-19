@@ -121,7 +121,7 @@ if(process.argv.includes("--rendered")) {
   for(const slug of ["spin-hamiltonians","molecular-motion","open-systems"]) {
     const content=fs.readFileSync("_site/lecture/"+slug+"/index.html","utf8");
     assert(content.includes("lecture-knowledge-check"),"Missing knowledge check "+slug);
-    assert(content.includes("assets/css/lecture-audit.css"),"Missing shared style "+slug);
+    assert(content.includes("assets/css/lecture-system.css"),"Missing shared style "+slug);
   }
   const html=fs.readFileSync("_site/lecture/molecular-motion/index.html","utf8");
   assert(html.includes('id="rotation-demo"'),"Missing rotation lab");
