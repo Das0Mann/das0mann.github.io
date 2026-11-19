@@ -20,7 +20,7 @@ hide_hero: true
           {% include icon.html name="book" %} Explore modules
         </a>
       </div>
-      <p class="library-landing-note">14 modules · Graduate-level theory · Open access</p>
+      <p class="library-landing-note">{{ site.data.lecture_route.size }} modules · Graduate-level theory · Open access</p>
     </div>
     <div class="library-landing-graphic" aria-hidden="true">
       <div class="library-graphic-icon">{% include icon.html name="spin" %}</div>
