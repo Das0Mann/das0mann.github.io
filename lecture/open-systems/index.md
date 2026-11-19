@@ -10,9 +10,10 @@ permalink: /lecture/open-systems/
 
 <header class="module-intro">
   <span class="module-index">Module 09</span>
-  <h2>What changes when the spin system remembers its environment?</h2>
-  <p>The \(T_1/T_2\) picture is useful, but it hides the microscopic origin of relaxation. Open-system theory asks how a selected spin subsystem evolves when it is coupled to degrees of freedom that we do not explicitly keep.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -584,6 +585,7 @@ permalink: /lecture/open-systems/
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
