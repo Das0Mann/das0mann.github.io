@@ -40,7 +40,9 @@ permalink: /lecture/spin-hamiltonians/
     <div><p class="section-eyebrow">Overview</p><h2>Write only the physics you actually need</h2></div>
   </div>
 
-  <p>A useful generic spin Hamiltonian is</p>
+  <p>In the flavin–tryptophan example, which interactions are needed to predict coherent spin mixing? Electron Zeeman and hyperfine terms set different precession frequencies; exchange and dipolar interactions couple the two radical spins. The general expression below is therefore a <em>menu of interactions</em>, not a claim that every molecular system requires every term.</p>
+
+  <p>A compact operator bookkeeping expression is</p>
 
   <div class="lecture-equation">
   \[
@@ -59,36 +61,22 @@ permalink: /lecture/spin-hamiltonians/
 
   <p>In this module the spin operators are taken to be <em>dimensionless</em>, with eigenvalues such as \(m_s=\pm\tfrac12\). With that convention the coefficients multiplying them carry energy units (or, after division by \(h\) or \(\hbar\), frequency units). If instead one uses angular-momentum operators containing explicit factors of \(\hbar\), the Hamiltonian prefactors must change accordingly. Module 03 keeps the dimensionless convention and shows how these operators are embedded as matrices in a many-spin Hilbert space.</p>
 
-  <div class="lecture-equation-grid">
-    <div class="lecture-equation compact">
-    \[
-    \hat{\mathcal H}
-    \equiv
-    \frac{\hat H}{h},
-    \qquad
-    [\hat{\mathcal H}]=\mathrm{Hz}
-    \]
-    </div>
-    <div class="lecture-equation compact">
-    \[
-    \frac{\hat H}{\hbar}
-    =
-    2\pi\hat{\mathcal H},
-    \qquad
-    [\hat H/\hbar]=\mathrm{rad\,s^{-1}}
-    \]
-    </div>
-  </div>
+  <p>The Hamiltonian must have a consistent unit before we can predict any time evolution. An interaction quoted as an energy, an ordinary frequency, or an angular frequency describes the same physics only if the Planck factors are handled correctly:</p>
 
   <div class="lecture-equation">
   \[
-  U(t)
-  =
-  e^{-i\hat Ht/\hbar}
-  =
-  e^{-i\,2\pi\hat{\mathcal H}t}.
+  \begin{aligned}
+  \hat{\mathcal H}&=\frac{\hat H}{h}
+  &&\text{ordinary frequency (Hz)},\\[3pt]
+  \frac{\hat H}{\hbar}&=2\pi\hat{\mathcal H}
+  &&\text{angular frequency (rad/s)},\\[3pt]
+  U(t)&=e^{-i\hat Ht/\hbar}
+  =e^{-i\,2\pi\hat{\mathcal H}t}
+  &&\text{unitary evolution}.
+  \end{aligned}
   \]
   </div>
+  <p class="lesson-equation-meaning">The exponent of \(U(t)\) must be dimensionless. For example, a hyperfine splitting of \(20~\mathrm{MHz}\) enters \(2\pi\hat{\mathcal H}t\) with \(t\) in seconds, not directly in an energy expression unless multiplied by \(h\). This conversion is used throughout the subsequent spin-dynamics and resonance chapters.</p>
 
   <aside class="lecture-note">
     <strong>One interaction, three unit languages.</strong>
