@@ -1261,3 +1261,42 @@
 @media (prefers-reduced-motion:reduce) {
   .lecture-page :is(a,button,summary) {scroll-behavior:auto;transition:none;}
 }
+
+
+/* Legacy-theme compatibility: modern.css and iconic.css historically set some
+   lecture text and links with !important. Only these scoped declarations need
+   to outrank those rules; all ordinary layout remains in the editorial system.
+   The MathJax subtree is excluded to preserve its mathematical glyph fonts. */
+.lecture-page .lecture-module
+  :is(p,h1,h2,h3,h4,li,small,span,strong,summary,button,label,input,select,output,figcaption,a):not(mjx-container *) {
+  font-family:var(--course-font) !important;
+}
+.lecture-page .lecture-module .module-intro > p {
+  font-size:1.05rem !important;
+  line-height:1.72 !important;
+}
+.lecture-page .lecture-module .lecture-section-head h2 {
+  font-size:var(--lesson-h2) !important;
+}
+.lecture-page .lecture-module .physical-concept-grid article p {
+  font-size:var(--lesson-small) !important;
+  line-height:1.65 !important;
+  color:var(--course-secondary) !important;
+}
+.lecture-page .lecture-module .lecture-reading-grid p {
+  font-size:var(--lesson-small) !important;
+  line-height:1.65 !important;
+}
+.lecture-page .lecture-module .lecture-equation mjx-container[display="true"] {
+  font-size:1.02em !important;
+  margin:.35em 0 !important;
+}
+.lecture-page .lecture-local-toc-links a {
+  border:0 !important;
+  color:var(--course-secondary) !important;
+}
+.lecture-page .lecture-local-toc-links a.is-active {color:var(--course-accent) !important;}
+.lecture-page .lecture-module-nav.lecture-route-nav a.lecture-route-neighbour {
+  border-color:transparent !important;
+  color:var(--course-accent) !important;
+}
