@@ -10,9 +10,10 @@ permalink: /lecture/photo-cidnp/
 
 <header class="module-intro">
   <span class="module-index">Module 14</span>
-  <h2>How can a spin-selective chemical reaction polarize a nucleus?</h2>
-  <p>EPR reports transitions of electron spins, whereas NMR detects nuclear magnetization. Photochemically induced dynamic nuclear polarization (photo-CIDNP) connects electron-spin chemistry to nuclear magnetization: light can create spin-correlated radical pairs, nuclear-dependent spin evolution changes the partitioning among reaction channels, and products acquire non-Boltzmann nuclear-spin populations. The resulting NMR signals can be enhanced or emissive.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 
 <section class="module-learning" aria-label="Learning goals">
   <div class="module-learning-head"><span>After this module</span><strong>You should be able to…</strong></div>
@@ -293,6 +294,7 @@ permalink: /lecture/photo-cidnp/
     <article><span>Conceptual review</span><h3>Spin Hyperpolarization in Modern Magnetic Resonance</h3><p>Connects CIDNP, electron polarization and other hyperpolarization methods while distinguishing their spin-physical origins.</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9951229/" target="_blank" rel="noopener">Read review →</a></article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 </div>
 
