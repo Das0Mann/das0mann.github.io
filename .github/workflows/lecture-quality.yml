@@ -1,4 +1,4 @@
-name: Lecture learning experience quality
+name: Website and lecture quality
 on:
   pull_request:
     paths:
@@ -11,6 +11,15 @@ on:
       - 'assets/css/lecture-polish.css'
       - 'assets/css/lecture-audit.css'
       - 'assets/css/lecture-system.css'
+      - 'assets/css/site-editorial.css'
+      - 'docs/design/**'
+      - 'about/**'
+      - 'research/**'
+      - 'publications/**'
+      - 'repositories/**'
+      - 'news/**'
+      - '404.md'
+      - 'tests/sitewide-design.cjs'
       - 'assets/css/lecture-cidnp.css'
       - 'assets/js/hero-spin.js'
       - 'tests/hero-spin.cjs'
@@ -59,6 +68,8 @@ jobs:
         run: node tests/lecture-student-reading.cjs
       - name: Check source design tokens, stylesheet simplification and accessible contrast
         run: node tests/lecture-design-system.cjs
+      - name: Validate shared editorial design, templates, contrast and accessibility across all pages
+        run: node tests/sitewide-design.cjs
       - name: Verify animation playback and reduced-motion behavior
         run: node tests/hero-spin.cjs
       - name: Audit analytics consent and legacy dependencies
@@ -102,3 +113,5 @@ jobs:
         run: node tests/security.cjs --rendered
       - name: Validate unified icon and typography system in rendered pages
         run: node tests/visual-system.cjs
+      - name: Validate all public page renderings, including news and not-found pages
+        run: node tests/sitewide-design.cjs --rendered
