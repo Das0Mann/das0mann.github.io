@@ -10,9 +10,10 @@ permalink: /lecture/molspin-notebooks/
 
 <header class="module-intro">
   <span class="module-index">Module 13</span>
-  <h2>Read the input as a scientific model, not as configuration noise</h2>
-  <p>A MolSpin input file encodes a physical problem: which spins exist, how they interact, how the state is prepared, which kinetic processes are present and which numerical task turns that model into an observable. This module walks through real examples from the public MolSpin repository.</p>
+  <h2>{{ site.data.lecture_story[page.url].question }}</h2>
+  <p>{{ site.data.lecture_story[page.url].lead }}</p>
 </header>
+{% include lecture-story-opening.html %}
 <details class="module-learning module-learning-disclosure">
   <summary class="module-learning-summary">
     <span class="module-learning-summary-icon">{% include icon.html name="check" %}</span>
@@ -448,6 +449,7 @@ PulseSequence seq
     </article>
   </div>
 </section>
+{% include lecture-story-handoff.html %}
 {% include lecture-library-nav.html %}
 <script src="{{ site.url }}/assets/js/lecture-molspin-builder.js" defer></script>
 </div>
