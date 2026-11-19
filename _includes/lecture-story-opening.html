@@ -1,0 +1,4 @@
+{% assign chapter_story = site.data.lecture_story[page.url] %}
+{% if chapter_story %}
+<p class="lecture-chapter-context"><strong>How this follows:</strong> {{ chapter_story.bridge }}</p>
+{% endif %}

@@ -10,6 +10,7 @@ on:
       - 'assets/css/iconic.css'
       - 'assets/css/lecture-polish.css'
       - 'assets/css/lecture-audit.css'
+      - 'assets/css/lecture-system.css'
       - 'assets/css/lecture-cidnp.css'
       - 'assets/js/hero-spin.js'
       - 'tests/hero-spin.cjs'
@@ -52,6 +53,8 @@ jobs:
         run: node tests/lecture-learning.cjs
       - name: Validate all thirteen reviewed chapters and conventions
         run: node tests/lecture-audit.cjs
+      - name: Verify chapter storyline, shared type and optional derivations
+        run: node tests/lecture-story.cjs
       - name: Verify animation playback and reduced-motion behavior
         run: node tests/hero-spin.cjs
       - name: Audit analytics consent and legacy dependencies
@@ -81,6 +84,8 @@ jobs:
         run: node tests/lecture-rendered.cjs
       - name: Verify rendered editorial disclosures on all original lectures
         run: node tests/lecture-audit.cjs --rendered
+      - name: Verify continuous narrative and CSS migration in rendered chapters
+        run: node tests/lecture-story.cjs --rendered
       - name: Validate rendered CIDNP widgets and source links
         run: node tests/lecture-cidnp.cjs --rendered
       - name: Validate foundational lectures and rotational widget after Jekyll build

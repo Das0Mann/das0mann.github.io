@@ -1,0 +1,110 @@
+"/lecture/electronic-structure/":
+  question: "How can a molecular electronic state become a predictable magnetic signal?"
+  lead: "A spin-sensitive experiment ultimately depends on electronic states, spin density, and how electron energies respond to fields and geometry. We begin with the molecular electronic problem and ask which approximations give trustworthy quantities for later spin dynamics."
+  bridge: "We have no spin Hamiltonian yet. First we must decide what electronic information can be calculated reliably, and which features require correlation or multiple configurations."
+  takeaway: "We can now distinguish orbitals, electron density, correlated electronic states, and the properties from which magnetic parameters are extracted."
+  next_question: "Those electronic quantities are not yet a spin-dynamics model. Which few operators and parameters reproduce their effects on coupled electron and nuclear spins?"
+  next_url: "/lecture/spin-hamiltonians/"
+
+"/lecture/spin-hamiltonians/":
+  question: "How do we reduce many-electron physics to a manageable spin model?"
+  lead: "Electronic-structure methods produce energies, spin densities, and response tensors. The next task is to map them onto electron and nuclear spin operators with explicit units, reference frames, and sign conventions."
+  bridge: "The electronic state has been characterized, but a list of computed energies and tensors does not yet tell us how spins evolve."
+  takeaway: "We now have an effective Hamiltonian with Zeeman, hyperfine, exchange, and dipolar interactions, and know exactly what its coefficients mean."
+  next_question: "Given this Hamiltonian, what happens to a prepared spin state as time passes?"
+  next_url: "/lecture/spin-dynamics/"
+
+"/lecture/spin-dynamics/":
+  question: "What does a spin Hamiltonian predict as time passes?"
+  lead: "A Hamiltonian specifies the possible interactions but not the measured response by itself. We must prepare an initial state, propagate it, and calculate an observable while distinguishing coherence from relaxation."
+  bridge: "The preceding chapter supplied the operators and couplings. Now we use them to predict dynamical populations and phases."
+  takeaway: "We can propagate a density operator and connect coherence, oscillations, and simple phenomenological decay to signals."
+  next_question: "The Hamiltonian was largely static. How does molecular motion turn its parameters into fluctuating quantities?"
+  next_url: "/lecture/molecular-motion/"
+
+"/lecture/molecular-motion/":
+  question: "What happens when the molecular environment changes the spin Hamiltonian?"
+  lead: "A radical pair in solution does not experience one fixed geometry. Molecular motion changes tensor orientations, exchange couplings, and hyperfine interactions; their correlations determine which fluctuations are dynamically relevant."
+  bridge: "A static propagation cannot distinguish frozen conformational disorder from genuine time-dependent modulation."
+  takeaway: "We can translate molecular trajectories into fluctuating interactions, correlation functions, and frequency-resolved spectral densities."
+  next_question: "How should those fluctuations enter an equation for an open spin system, and when may their memory be neglected?"
+  next_url: "/lecture/open-systems/"
+
+"/lecture/open-systems/":
+  question: "When can the environment be replaced by relaxation rates—and when not?"
+  lead: "The preceding chapter characterized how Hamiltonian parameters fluctuate. Now we determine what those statistics do to the reduced spin state and which assumptions justify Lindblad, Redfield, or memory-kernel dynamics."
+  bridge: "A correlation function alone is not a relaxation superoperator. We must connect bath statistics to the evolution of populations and coherences."
+  takeaway: "We can distinguish Markovian generators, nonsecular Redfield couplings, and time-nonlocal memory kernels without confusing numerical convenience with physical validity."
+  next_question: "With the spin system and its environment defined, how are the reactive electronic states created by light?"
+  next_url: "/lecture/excited-state-photochemistry/"
+
+"/lecture/excited-state-photochemistry/":
+  question: "How does light prepare the electronic states from which spin chemistry begins?"
+  lead: "Magnetic interactions matter only after a molecular process populates relevant states. We follow photon absorption through vibronic excitation, intersystem crossing, and the formation of reactive precursors."
+  bridge: "We now understand how a spin state evolves and relaxes. We still need a physically justified source of that state."
+  takeaway: "We can identify excited-state populations, their energies, and spin-dependent preparation pathways."
+  next_question: "How quickly can the excited donor and acceptor exchange an electron and create a charge-separated state?"
+  next_url: "/lecture/electron-transfer/"
+
+"/lecture/electron-transfer/":
+  question: "What determines the rate of charge separation and recombination?"
+  lead: "A photoexcited donor–acceptor system can form a radical pair only if its electronic coupling and nuclear reorganization support electron transfer. We connect conformational structures and electronic energetics to kinetic rates."
+  bridge: "Photophysics prepares an excited state; electron transfer determines whether and when correlated radicals are created."
+  takeaway: "We can estimate how driving force, reorganization, electronic coupling, and conformational variability control electron-transfer kinetics."
+  next_question: "Once the radical pair is formed, how do spin mixing and spin-selective reactions change its chemical products?"
+  next_url: "/lecture/radical-pairs/"
+
+"/lecture/radical-pairs/":
+  question: "How does coherent spin evolution become a magnetic-field-dependent chemical yield?"
+  lead: "Electron transfer creates a pair of correlated radicals. Hyperfine, Zeeman, exchange, and dipolar couplings then drive spin dynamics while recombination and escape make the reaction spin selective."
+  bridge: "Earlier chapters supplied the Hamiltonian, environmental dynamics, and electron-transfer rates. Here all three determine a measurable chemical yield."
+  takeaway: "We can relate singlet–triplet mixing and reaction kinetics to the magnetic-field dependence of products."
+  next_question: "Can those same spin-selective pathways also polarize nuclear spins detectable by NMR?"
+  next_url: "/lecture/photo-cidnp/"
+
+"/lecture/photo-cidnp/":
+  question: "How can radical-pair chemistry generate an emissive or enhanced NMR signal?"
+  lead: "Spin-selective reactions can sort initially unpolarized nuclear-spin subensembles. We connect radical-pair dynamics to Kaptein sign conventions and the product nuclear populations observed by photo-CIDNP."
+  bridge: "The radical-pair chapter described reaction yields. CIDNP asks what remains in the nuclear-spin populations of particular products."
+  takeaway: "We can interpret the sign of net CIDNP under stated assumptions and identify when full spin-resolved kinetics are required."
+  next_question: "How can the same electron and nuclear interactions be interrogated directly through magnetic-resonance transitions?"
+  next_url: "/lecture/magnetic-resonance/"
+
+"/lecture/magnetic-resonance/":
+  question: "How do spin energies and populations become experimentally recorded resonance spectra?"
+  lead: "The same Zeeman, hyperfine, and anisotropic interactions governing chemistry also determine spectroscopic transition frequencies and intensities. We move from spin-dynamical observables to EPR and resonance detection."
+  bridge: "Photo-CIDNP measures nuclear polarization left by chemistry. Here we instead interrogate transitions and populations through applied electromagnetic fields."
+  takeaway: "We can connect spin-Hamiltonian eigenstates to resonance positions, transition probabilities, line shapes, and experimental readout."
+  next_question: "Can a controlled pulse sequence deliberately prepare or manipulate those spin coherences?"
+  next_url: "/lecture/coherent-control/"
+
+"/lecture/coherent-control/":
+  question: "How can oscillating fields deliberately control quantum spin evolution?"
+  lead: "Resonance can be used for more than observing a spectrum. Microwave or radiofrequency fields drive selected transitions and allow coherent preparation, rotation, and refocusing of spin states."
+  bridge: "Magnetic resonance explained how transitions are detected. We now turn the driving field into a controlled dynamical tool."
+  takeaway: "We can interpret Rabi oscillations, detuning, pulse lengths, and coherent control under explicit field-amplitude conventions."
+  next_question: "What would it take for such spin-chemical mechanisms to matter inside a living system?"
+  next_url: "/lecture/quantum-biology/"
+
+"/lecture/quantum-biology/":
+  question: "What evidence is needed to connect spin chemistry with biological function?"
+  lead: "A magnetic-field-dependent reaction yield is not by itself a biological sensor. We assemble state preparation, molecular structure, spin dynamics, kinetics, and biological readout into a testable mechanism."
+  bridge: "The earlier chapters supplied microscopic components and experimental observables. Now we ask whether they jointly support a physiological claim."
+  takeaway: "We can separate established molecular magnetic-field effects, predictive models, and evidence for an organism-level function."
+  next_question: "How can these multiscale spin models be simulated and tested without losing numerical reliability?"
+  next_url: "/lecture/computational-lab/"
+
+"/lecture/computational-lab/":
+  question: "How do we calculate realistic spin dynamics with limited computational resources?"
+  lead: "Scientifically correct equations can still produce unreliable results if Hilbert-space growth, numerical propagation, or stochastic sampling is mishandled. We connect representation choices and convergence tests to observable-level accuracy."
+  bridge: "The biological examples demand realistic Hamiltonians and trajectories. This chapter tests whether a chosen numerical strategy can actually support the prediction."
+  takeaway: "We can evaluate computational scaling and select appropriate deterministic or stochastic solvers with explicit convergence checks."
+  next_question: "How do we encode those physical assumptions in a reproducible MolSpin model?"
+  next_url: "/lecture/molspin-notebooks/"
+
+"/lecture/molspin-notebooks/":
+  question: "How do we turn a physical spin-chemical hypothesis into a reproducible simulation?"
+  lead: "All previous chapters supplied interactions, preparation, relaxation, chemistry, and numerical approximation. MolSpin organizes those choices into an executable model whose outputs can be compared with experiments."
+  bridge: "A numerical algorithm becomes a scientific tool only when its inputs, approximations, and observables are documented and reproducible."
+  takeaway: "We can specify spin systems, interactions, initial states, kinetics, propagation methods, and observables as a coherent simulation workflow."
+  next_question: "The next step is to challenge the model against experimental data, uncertainty, and competing mechanisms."

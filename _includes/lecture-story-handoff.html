@@ -1,0 +1,18 @@
+{% assign chapter_story = site.data.lecture_story[page.url] %}
+{% if chapter_story %}
+<section class="lecture-chapter-handoff" aria-label="Summary and connection to the next lecture">
+  <h2>From this chapter to the next</h2>
+  <p><strong>What we can now explain.</strong> {{ chapter_story.takeaway }}</p>
+  <p><strong>What remains unresolved.</strong> {{ chapter_story.next_question }}
+  {% if chapter_story.next_url %}
+    {% for item in site.data.lecture_route %}
+      {% if item.url == chapter_story.next_url %}
+      <a href="{{ site.url }}{{ item.url }}">Continue with {{ item.name }} {% include icon.html name="arrow-right" %}</a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <a href="{{ site.url }}/lecture/">Return to the lecture library {% include icon.html name="arrow-right" %}</a>
+  {% endif %}
+  </p>
+</section>
+{% endif %}
