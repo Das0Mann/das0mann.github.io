@@ -1,0 +1,21 @@
+<aside class="physics-lab" data-relaxation-lab aria-label="Interactive spin relaxation superoperator">
+  <div class="physics-lab-head"><span class="physics-lab-kicker">Interactive Liouville-space operator · one spin-½</span><h3>How rates populate the relaxation matrix</h3></div>
+  <p>Start with the smallest meaningful open spin system. Compare downward relaxation (|↑⟩ → |↓⟩), upward excitation and pure dephasing. The generator acts on <em>four density-matrix elements</em>, not four physical spin levels.</p>
+  <div class="physics-lab-controls">
+    <label>Downward transition γ↓ <input type="range" min="0" max="3" step="0.1" value="1" data-relax-down><output data-relax-down-out>1.0</output></label>
+    <label>Upward transition γ↑ <input type="range" min="0" max="3" step="0.1" value="0.2" data-relax-up><output data-relax-up-out>0.2</output></label>
+    <label>Pure dephasing γφ <input type="range" min="0" max="3" step="0.1" value="0.4" data-relax-phi><output data-relax-phi-out>0.4</output></label>
+    <label>Zeeman splitting ω <input type="range" min="0" max="4" step="0.25" value="1" data-relax-omega><output data-relax-omega-out>1.00</output></label>
+  </div>
+  <div class="physics-matrix-wrap" tabindex="0"><table data-relax-matrix class="physics-matrix"><caption>Relaxation + coherent generator, 4 × 4 (µs⁻¹)</caption></table></div>
+  <p class="physics-lab-readout" data-relax-insight aria-live="polite"></p>
+  <div class="lecture-equation">\[
+  \begin{aligned}
+  \mathcal L\rho&=-i[\omega S_z,\rho]+\gamma_\downarrow\mathcal D[\sigma_-]\rho
+  +\gamma_\uparrow\mathcal D[\sigma_+]\rho
+  +\frac{\gamma_\varphi}{2}\mathcal D[\sigma_z]\rho,\\
+  \mathcal D[L]\rho&=L\rho L^\dagger-\tfrac12\{L^\dagger L,\rho\}.
+  \end{aligned}
+  \]</div>
+  <p class="physics-lab-caution"><strong>Conventions:</strong> |↑⟩ is the first basis state, |↓⟩ the second; σ₋=|↓⟩⟨↑|. The density vector is (ρ↑↑,ρ↑↓,ρ↓↑,ρ↓↓). Rates are in µs⁻¹; ω is an angular frequency in rad/µs. γφ is the <em>additional decay of the off-diagonal density element</em>, not the coefficient in front of D[σz]. The stationary state is unique only when γ↓+γ↑ &gt; 0.</p>
+</aside>
