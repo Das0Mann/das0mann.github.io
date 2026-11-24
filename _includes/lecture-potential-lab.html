@@ -1,0 +1,21 @@
+<aside class="physics-lab" id="potential-lab" aria-labelledby="potential-lab-title">
+  <div class="physics-lab-head"><span class="physics-lab-kicker">Interactive molecular diagram · schematic 1D model</span><h3 id="potential-lab-title">Which particles contribute to the electronic Hamiltonian?</h3></div>
+  <p>The nuclei create an attractive potential for an electron. Move the nuclei apart or switch between H, H₂⁺ and H₂; then relate every interaction in the drawing to a term in the Hamiltonian above.</p>
+  <div class="physics-lab-controls">
+    <label>System <select data-potential-system><option value="h">H · one nucleus, one electron</option><option value="h2p" selected>H₂⁺ · two nuclei, one electron</option><option value="h2">H₂ · two nuclei, two electrons</option></select></label>
+    <label>Internuclear separation R <input type="range" min="1.2" max="5" step="0.1" value="2.2" data-potential-r><output data-potential-r-value>2.2 bohr</output></label>
+  </div>
+  <div class="physics-lab-figure">
+    <svg viewBox="0 0 640 250" role="img" aria-label="Nuclei and illustrative electrons above a one-dimensional regularized electron–nucleus potential curve" data-potential-svg>
+      <title>Molecular Coulomb interactions and an illustrative potential slice</title>
+      <g data-potential-molecule></g>
+      <line x1="48" y1="214" x2="610" y2="214" stroke="#bdcdd1"/>
+      <line x1="48" y1="117" x2="48" y2="215" stroke="#bdcdd1"/>
+      <path data-potential-curve fill="none" stroke="#167783" stroke-width="3" stroke-linecap="round"/>
+      <text x="54" y="236" class="lab-svg-label">Position along the molecular axis</text>
+      <text x="54" y="134" class="lab-svg-label">VₑN(x)</text>
+    </svg>
+  </div>
+  <p class="physics-lab-readout" data-potential-caption aria-live="polite">In H₂⁺, one electron feels attraction to both nuclei. The nuclei repel one another, but there is no electron–electron term.</p>
+  <p class="physics-lab-caution"><strong>Model boundary:</strong> the plotted curve is a softened one-dimensional Coulomb slice (not a computed orbital, probability density or molecular potential-energy surface). The particle drawing is illustrative, not a classical electron trajectory.</p>
+</aside>
