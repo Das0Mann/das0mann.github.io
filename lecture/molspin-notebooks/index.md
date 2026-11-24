@@ -90,7 +90,7 @@ permalink: /lecture/molspin-notebooks/
   <p><strong>Read the input as a physical sequence, not as a list of unrelated commands.</strong> An <code>Interaction</code> specifies an operator contributing to \(\hat H\); a <code>State</code> identifies the initial preparation or a projector; a <code>Transition</code> or relaxation specification introduces non-unitary kinetics; and the <code>Task</code> chooses a calculation and the output to record.</p>
   <p>For example, a flavin–tryptophan radical-pair model first needs two electron spins and the relevant nuclear spins. Its Hamiltonian then needs the selected Zeeman, hyperfine, exchange and dipolar terms. A spin-selective recombination channel belongs in the kinetic model, not in the list of Hermitian Hamiltonian interactions. Only after these choices does it make sense to select a propagator.</p>
 
-  <p>The corresponding general <em>schematic</em> equation of motion can be written as follows; not every MolSpin task simultaneously includes both a relaxation generator and a time-nonlocal memory functional:</p>
+  <p>The physical distinctions can be written as a <em>schematic time-local</em> model. Its Hamiltonian generates coherent motion, its relaxation superoperator describes environmental effects, and a distinct chemical superoperator represents reaction loss or transfer:</p>
 
   <div class="lecture-equation">
   \[
@@ -100,11 +100,11 @@ permalink: /lecture/molspin-notebooks/
   +
   \mathcal R[\rho]
   +
-  \mathcal K[\rho],
+  \mathcal K_{\mathrm{chem}}[\rho],
   \]
   </div>
 
-  <p>with the important caveat that different MolSpin tasks implement different subsets, approximations and representations of this general structure. Reading the input this way lets you debug the physics before you debug the parser.</p>
+  <p>Here, \(\mathcal K_{\mathrm{chem}}\) denotes a chemical reaction or population-transfer generator, <em>not</em> the bath-memory kernel from the open-systems chapter. A sink model can decrease the trace of the retained radical-pair density matrix; trace conservation is recovered when all relevant product populations are included. Genuine non-Markovian memory has a time-convolution form, \(\int_0^t\mathcal M(t-s)\rho(s)\,ds\), and must not be inserted into a time-local MolSpin task without a specifically supported implementation. Different tasks implement different subsets of these models.</p>
 
   <aside class="lecture-analogy">
     <span class="lecture-analogy-label">Mental model</span>
