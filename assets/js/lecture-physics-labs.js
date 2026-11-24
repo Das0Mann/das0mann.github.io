@@ -177,7 +177,8 @@ function initCAS(panel){
 function initPotential(panel){
  const get=s=>panel.querySelector(s),on=()=>{
   const species=get("[data-potential-system]").value,R=num(get("[data-potential-r]").value);
-  get("[data-potential-r-value]").textContent=R.toFixed(1)+" bohr";
+  get("[data-potential-r]").disabled=species==="h";
+  get("[data-potential-r-value]").textContent=species==="h"?"not applicable":R.toFixed(1)+" bohr";
   const svg=get("[data-potential-svg]"),g=get("[data-potential-molecule]");
   g.replaceChildren();
   const ns="http://www.w3.org/2000/svg";
@@ -195,6 +196,13 @@ function initPotential(panel){
   });
   make("circle",{cx:ne===1?320:284,cy:93,r:8,fill:"#db9261",stroke:"#965532","stroke-width":2});
   make("text",{x:ne===1?320:284,y:114,"text-anchor":"middle"},"e⁻");
+  const electronXs=ne===1?[320]:[284,356];
+  for(const eX of electronXs)for(const nX of xs)
+    make("line",{x1:eX,y1:85,x2:nX,y2:66,stroke:"#61a1a9","stroke-width":1.4,"stroke-dasharray":"3 5",opacity:.75});
+  if(two){
+    make("line",{x1:xs[0],y1:76,x2:xs[1],y2:76,stroke:"#c18559","stroke-width":1.4});
+    make("text",{x:320,y:88,"text-anchor":"middle"},"R");
+  }
   if(ne===2){
    make("circle",{cx:356,cy:93,r:8,fill:"#db9261",stroke:"#965532","stroke-width":2});
    make("text",{x:356,y:114,"text-anchor":"middle"},"e⁻");
