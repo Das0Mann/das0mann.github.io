@@ -132,6 +132,8 @@ permalink: /lecture/open-systems/
   </aside>
 </section>
 
+{% include lecture-relaxation-matrix-lab.html %}
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">03</span>
@@ -175,6 +177,8 @@ permalink: /lecture/open-systems/
   \]
   </div>
 
+  <p>For an operator-valued quantum bath, the operator ordering matters. Here the convention is \(C_{\alpha\beta}(t)=\langle\delta F_\alpha(t)\delta F_\beta(0)\rangle\) with Fourier factor \(e^{+i\omega t}\). With this choice, a downward transition from \(b\) to \(a\) with \(E_b-E_a=\hbar\omega_{ba}>0\) samples the bath spectral density at \(+\omega_{ba}\). At thermal equilibrium the positive- and negative-frequency spectra differ and enforce detailed balance. A classical stationary, real-valued autocorrelation is often symmetric in frequency, but that simplification must not be imposed on a quantum thermal bath.</p>
+
   <p>If \(\delta F_\alpha\) carries energy units and \(\hat A_\alpha\) is dimensionless, define</p>
 
   <div class="lecture-equation">
@@ -183,8 +187,8 @@ permalink: /lecture/open-systems/
   C_{\alpha\beta}(t)
   &=
   \left\langle
-  \delta F_\alpha(0)\,
-  \delta F_\beta(t)
+  \delta F_\alpha(t)\,
+  \delta F_\beta(0)
   \right\rangle,\\
   J_{\alpha\beta}(\omega)
   &=

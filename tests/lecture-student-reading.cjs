@@ -52,8 +52,8 @@ const spin=read("lecture/spin-hamiltonians/index.md");
 assert(spin.includes("The exponent of \\(U(t)\\) must be dimensionless"),
   "Energy/frequency conversions require an explanation of their purpose");
 const et=read("lecture/electron-transfer/index.md");
-assert(et.includes("the arrow is not a kinetic-rate equation"),
-  "Avoid presenting donor-acceptor notation as a quantitative rate law");
+assert(et.includes("same fixed nuclear geometry") && et.includes("V^* & E_A"),
+  "Donor and acceptor must be defined as diabatic states with a Hermitian coupling before kinetics");
 const molspin=read("lecture/molspin-notebooks/index.md");
 assert(molspin.includes("Read the input as a physical sequence"),
   "Software examples must begin with physical modelling intent");

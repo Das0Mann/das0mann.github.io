@@ -67,7 +67,7 @@ permalink: /lecture/quantum-biology/
   </div>
 
   <div class="lecture-flow-bridge">
-    <p>I find this distinction extremely useful because it stops the discussion from becoming mystical. Seeing a magnetic-field effect is interesting. Showing that a radical pair causes it is a stronger statement. Showing that an organism actually uses that mechanism is stronger again.</p>
+    <p>Three levels of evidence must be distinguished. Detecting a magnetic-field-dependent signal establishes a physical effect. Identifying a radical-pair pathway with quantitative, discriminating tests establishes a molecular mechanism. Demonstrating that this mechanism causes a physiological response requires additional causal evidence in the biological system.</p>
   </div>
 
   <div class="lecture-checklist">

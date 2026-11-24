@@ -93,6 +93,40 @@ const server=http.createServer((req,res)=>{
            await page.screenshot({path:path.join(OUT,id+"-widget-"+width+".png"),animations:"disabled",fullPage:false});
          }
        }
+       // Numerically meaningful first-party teaching widgets must render and react.
+       if(["/lecture/electronic-structure/","/lecture/spin-hamiltonians/","/lecture/spin-dynamics/","/lecture/open-systems/"].includes(route)){
+         const labs=page.locator(".physics-lab");
+         assert((await labs.count())>=1,"Physics laboratory absent from "+route);
+         const plot=page.locator("#potential-lab [data-potential-curve]");
+         if(route==="/lecture/electronic-structure/"){
+           assert((await plot.getAttribute("d")||"").length>250,"Potential plot not initialized");
+           assert.equal(await page.locator("[data-cas-bars] .cas-bar-row").count(),3);
+           const before=await page.locator("[data-cas-reading]").textContent();
+           await page.locator("[data-cas-root]").selectOption("1");
+           assert.notEqual(await page.locator("[data-cas-reading]").textContent(),before,"CAS roots did not update");
+         }
+         if(await page.locator("[data-spin-matrix-lab]").count()){
+           const lab=page.locator("[data-spin-matrix-lab]").first();
+           assert.equal(await lab.locator("tbody tr").count(),4,"Hamiltonian must have four rows");
+           await lab.locator("[data-spin-view]").selectOption("l");
+           assert.equal(await lab.locator("tbody tr").count(),16,"Two-spin Liouvillian must have sixteen rows");
+           await lab.locator("[data-spin-view]").selectOption("h");
+           await lab.locator("[data-spin-kind]").selectOption("s1");
+           assert.equal(await lab.locator("tbody tr").count(),3,"Spin-1 Hamiltonian must have three basis states");
+           await lab.locator("[data-spin-view]").selectOption("l");
+           assert.equal(await lab.locator("tbody tr").count(),9,"Spin-1 Liouvillian must have nine basis elements");
+           await lab.locator("[data-spin-kind]").selectOption("ee");
+           await lab.locator("[data-spin-view]").selectOption("h");
+           await lab.scrollIntoViewIfNeeded();
+           await page.screenshot({path:path.join(OUT,id+"-physics-matrix-"+width+".png"),animations:"disabled"});
+         }
+         if(await page.locator("[data-relaxation-lab]").count()){
+           const lab=page.locator("[data-relaxation-lab]").first();
+           assert.equal(await lab.locator("tbody tr").count(),4,"Lindblad generator must have four rows");
+           await lab.locator("[data-relax-up]").fill("0");
+           assert((await lab.locator("[data-relax-insight]").textContent()).includes("T₁"),"Relaxation readout not updated");
+         }
+       }
        report.push({route,width,...result,errors});
        await page.close();
      }
@@ -100,7 +134,7 @@ const server=http.createServer((req,res)=>{
    }
  }finally{await browser.close();server.close();}
  fs.writeFileSync(path.join(OUT,"report.json"),JSON.stringify(report,null,2));
- const failed=report.filter(r=>r.h1!==1||!r.mainVisible||r.docOverflow>4||r.navVisible!==5||(r.route==="/"&&(r.homeLearning?.count!==3||r.homeLearning?.display!=="grid"||!r.homeLearning?.vertical)));
+ const failed=report.filter(r=>r.errors.length||r.h1!==1||!r.mainVisible||r.docOverflow>4||r.navVisible!==5||(r.route==="/"&&(r.homeLearning?.count!==3||r.homeLearning?.display!=="grid"||!r.homeLearning?.vertical)));
  console.log(JSON.stringify({pages:routes.length,viewports:[1440,390],failed:failed.length,diagnostics:failed,fonts:[...new Set(report.map(r=>r.font))],pageErrors:report.filter(r=>r.errors.length).map(r=>({route:r.route,width:r.width,errors:r.errors}))},null,2));
  if(failed.length)process.exitCode=1;
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

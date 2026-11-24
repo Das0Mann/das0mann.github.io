@@ -1,0 +1,29 @@
+<aside class="physics-lab" id="cas-roots-lab" aria-labelledby="cas-roots-lab-title">
+  <div class="physics-lab-head"><span class="physics-lab-kicker">Interactive active-space experiment · CAS(2,2)</span><h3 id="cas-roots-lab-title">Determinants, spin-adapted configurations and electronic roots are not the same thing</h3></div>
+  <p>Two electrons distributed among two <em>spatial</em> orbitals give four spin orbitals and <strong>six Slater determinants</strong>. For the singlet sector there are three spin-adapted configuration-state functions (CSFs). Each singlet <em>root</em> is a different eigenvector—a linear combination of those CSFs—of the same Hamiltonian within this symmetry sector.</p>
+  <div class="physics-lab-controls">
+    <label>Electronic root <select data-cas-root><option value="0">S₀ · lowest singlet</option><option value="1">S₁ · second singlet</option><option value="2">S₂ · third singlet</option></select></label>
+    <label>Illustrative orbital gap Δ <input type="range" data-cas-gap min="0.2" max="2.4" step="0.05" value="0.9"><output data-cas-gap-value>0.90 (arb. units)</output></label>
+  </div>
+  <div class="physics-lab-split">
+    <div>
+      <div class="cas-orbital-picture" aria-label="Three spin-adapted singlet configuration diagrams for two electrons in two spatial orbitals">
+        <div><strong>Closed-shell |g²⟩</strong><span>g: ↑↓ &nbsp; u: —</span></div>
+        <div><strong>Open-shell singlet |gu; S=0⟩</strong><span>g: ↑ / ↓ &nbsp; u: ↓ / ↑</span></div>
+        <div><strong>Closed-shell |u²⟩</strong><span>g: — &nbsp; u: ↑↓</span></div>
+      </div>
+      <p class="physics-lab-small">The three singlet CSFs are |g²⟩, |gu; S=0⟩ and |u²⟩. The open-shell singlet is a spin-adapted linear combination of two opposite-spin determinants, not either determinant by itself. Its partner combination belongs to the triplet sector.</p>
+      <div class="physics-cas-bars" data-cas-bars aria-label="Selected root configuration weights"></div>
+    </div>
+    <div class="physics-lab-figure">
+      <svg data-cas-spectrum viewBox="0 0 310 200" role="img" aria-label="Three eigenenergy levels of a toy three-state singlet CI Hamiltonian"><title>Singlet roots from diagonalization of a three-by-three toy active-space Hamiltonian</title></svg>
+      <p class="physics-lab-readout" data-cas-reading aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="lecture-equation">\[
+  \lvert \Psi_k^{S=0} \rangle = \sum_{I=1}^{3} c_{Ik}\lvert \Phi_I^{S=0}\rangle,
+  \qquad \mathbf H_\mathrm{CAS}\mathbf c_k=E_k\mathbf c_k.
+  \]</div>
+  <p><strong>What changes between roots?</strong> The coefficient vector \(\mathbf c_k\), energy \(E_k\) and electronic state. The determinants/CSFs form a <em>basis for representing each root</em>; they are not three different excited-state roots. Under state-averaged CASSCF, selected roots share optimized orbitals but have different CI eigenvectors.</p>
+  <p class="physics-lab-caution"><strong>Model boundary:</strong> the 3×3 Hamiltonian and slider are an invented dimensionless coupling model designed to illustrate state mixing, not CASSCF energies for an actual molecule. Singlet and triplet roots belong to different spin-symmetry sectors in the spin-free treatment; this plot shows singlets only.</p>
+</aside>

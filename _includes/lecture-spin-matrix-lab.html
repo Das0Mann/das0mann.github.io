@@ -1,0 +1,17 @@
+<aside class="physics-lab" data-spin-matrix-lab aria-label="Interactive spin Hamiltonian and Liouvillian matrix">
+  <div class="physics-lab-head"><span class="physics-lab-kicker">Interactive operator matrix · two spin-½ particles or a spin-1 centre</span><h3>From physical interactions to matrix elements</h3></div>
+  <p>Choose a coupled spin pair or a spin-1 centre and change its interactions. The colored entries show which basis states are coupled. A non-zero off-diagonal element transfers amplitude between those basis states; a diagonal term changes their relative phases.</p>
+  <div class="physics-lab-controls">
+    <label>Physical system <select data-spin-kind><option value="ee">Two electrons (Zeeman, exchange, dipolar)</option><option value="en">Electron + nucleus (Zeeman, hyperfine)</option><option value="s1">Single spin-1 centre (Zeeman + ZFS)</option></select></label>
+    <label>Matrix representation <select data-spin-view><option value="h">Hilbert-space Hamiltonian 4 × 4</option><option value="l">Commutator Liouvillian 16 × 16</option></select></label>
+    <label><span data-spin-detune-label>Zeeman inequivalence Δω</span> <input type="range" data-spin-detune min="-4" max="4" step="0.25" value="1"><output data-spin-detune-out>1.00</output></label>
+    <label><span data-spin-j-label>Isotropic exchange J / hyperfine A⊥</span> <input type="range" data-spin-j min="-4" max="4" step="0.25" value="1.5"><output data-spin-j-out>1.50</output></label>
+    <label><span data-spin-d-label>Axial dipolar d / hyperfine A∥</span> <input type="range" data-spin-d min="-3" max="3" step="0.25" value="0.5"><output data-spin-d-out>0.50</output></label>
+  </div>
+  <p class="physics-lab-small" data-spin-equation></p>
+  <div class="physics-matrix-wrap" tabindex="0" aria-label="Scrollable matrix of interaction-dependent complex coefficients">
+    <table data-spin-matrix class="physics-matrix"><caption>Matrix elements, in angular-frequency units (rad/µs)</caption></table>
+  </div>
+  <p class="physics-lab-readout" data-spin-insight aria-live="polite"></p>
+  <p class="physics-lab-caution">For spin-½, dimensionless spin operators use Sᵢ=σᵢ/2; for spin-1, S_z has eigenvalues +1, 0 and −1. The displayed matrix is H/ℏ, with angular-frequency rather than joule units. The Liouvillian is the coherent generator −i[H/ℏ,ρ], with <em>row-major</em> vectorization |a⟩⟨b|. A d-dimensional Hilbert space produces a d²-dimensional Liouvillian. The signed axial parameter d multiplies (3S₁zS₂z − S₁·S₂); for a point-dipole axis aligned with z it is the <em>negative</em> of the usual positive prefactor of (S₁·S₂ − 3S₁zS₂z), divided by ℏ. Its 16×16 representation acts on density matrices, not on 16 spin states.</p>
+</aside>

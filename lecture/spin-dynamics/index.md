@@ -282,6 +282,8 @@ permalink: /lecture/spin-dynamics/
   </div>
 </section>
 
+{% include lecture-spin-matrix-lab.html %}
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">04</span>
@@ -604,6 +606,8 @@ permalink: /lecture/spin-dynamics/
     </div>
   </aside>
 </section>
+
+{% include lecture-relaxation-matrix-lab.html %}
 
 <section class="lecture-section">
   <div class="lecture-section-head">

@@ -97,6 +97,8 @@ permalink: /lecture/electronic-structure/
     <span>most electronic-structure methods are not different physical theories. They are different approximations to the same many-electron quantum problem.</span>
   </aside>
 </section>
+{% include lecture-potential-lab.html %}
+
 
 <p class="lecture-story-transition">The fixed-geometry Hamiltonian is the physical starting point, but solving it directly is generally impractical. The first simplification is a finite set of one-electron functions in which electronic states can be represented.</p>
 
@@ -185,6 +187,8 @@ permalink: /lecture/electronic-structure/
     <p>The orbitals determine an electron density, but that density also determines the effective one-electron potential in which the orbitals are solved. An SCF calculation therefore iterates <strong>orbitals → density → effective potential → new orbitals</strong> until the input and output densities agree within a chosen threshold. Failure to converge is not just a software nuisance: it can signal near-degeneracy, competing electronic states or an unstable reference solution.</p>
   </details>
 </section>
+
+{% include lecture-approximation-map.html %}
 
 <p class="lecture-story-transition">The same electronic Hamiltonian can be treated with different representations. Hartree–Fock provides the single-determinant reference, density-functional theory replaces the correlated problem with an effective density formulation, and post-HF or multiconfigurational approaches recover correlation when needed. The derivations are available below; the main storyline continues with their practical consequences.</p>
 
@@ -481,7 +485,7 @@ permalink: /lecture/electronic-structure/
     <div><span>MP2 · roughly \(N^5\)</span><p>Cheap correlated baseline. Useful when the HF reference is qualitatively good and near-degeneracy is weak.</p></div>
     <div><span>CCSD · roughly \(N^6\)</span><p>Robust dynamical correlation for single-reference states; significantly more expensive in memory and integral transformations.</p></div>
     <div><span>CCSD(T) · roughly \(N^7\)</span><p>Often the benchmark choice for small-to-medium single-reference molecules, but not a cure for genuine multireference character.</p></div>
-    <div><span>Full CI · combinatorial/exponential</span><p>Exact diagonalization within a finite orbital basis. It is a definition of the basis-set limit, not a generally scalable molecular method.</p></div>
+    <div><span>Full CI · combinatorial/exponential</span><p>Exact diagonalization within a finite orbital basis. It gives the exact solution in the chosen finite one-particle basis; reaching the complete-basis limit requires a separate basis-set convergence study.</p></div>
   </div>
 
   <aside class="teacher-note">
@@ -517,7 +521,7 @@ permalink: /lecture/electronic-structure/
 
   <div class="lecture-equation">
   \[
-  E_\mathrm{CASSCF}
+  E_0^\mathrm{CASSCF}
   =
   \min_{\mathbf C,\boldsymbol\kappa}
   \frac{
@@ -530,6 +534,8 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p>The expression above refers to minimizing the lowest root in the chosen symmetry sector. Excited roots require orthogonality to lower roots and a root-specific or state-averaged optimization; a single unconstrained global minimum cannot select an excited state.</p>
+
   <p class="lesson-equation-meaning">Both orbital shapes and configuration weights are varied. The active space must therefore be chosen based on the states and bond rearrangements one intends to describe.</p>
 
   <p>Complete Active Space SCF (CASSCF) makes this tractable by dividing the orbitals into three groups:</p>
@@ -567,6 +573,16 @@ permalink: /lecture/electronic-structure/
     <strong>The active space is part of the model.</strong>
     <span>Include the orbitals needed to represent the physical near-degeneracy: breaking/forming bonds, radical orbitals, relevant metal \(d\) shells, ligand orbitals, or the orbitals participating in low-lying excited states. A large but physically wrong active space is not automatically safer than a smaller well-motivated one.</span>
   </aside>
+
+  <p>Within a fixed spatial-and-spin symmetry, diagonalizing the active-space CI Hamiltonian gives several <em>roots</em>. A root is an electronic eigenstate, not an individual determinant: each root has its own coefficients over the same CSF basis. CAS(2,2), for example, has three singlet CSFs and hence three singlet CI roots in the full active-space singlet sector; triplets belong to a different spin-symmetry sector.</p>
+  <div class="lecture-equation">
+  \[
+  \sum_J \langle\Phi_I|\hat H|\Phi_J\rangle c_{Jk}=E_kc_{Ik},
+  \qquad
+  E_{\mathrm{SA}}=\sum_k w_k E_k,\quad w_k\ge0,\quad\sum_k w_k=1.
+  \]
+  </div>
+  <p class="lesson-equation-meaning">State-specific CASSCF optimizes orbitals for a selected root. State-averaged CASSCF optimizes a weighted energy across selected roots, yielding shared orbitals but distinct CI eigenvectors and energies. Different spin multiplicities and spatial symmetries must be handled according to the electronic-structure program's state-averaging capabilities.</p>
 
   <details class="lecture-details">
     <summary>Why use state-averaged CASSCF?</summary>
@@ -654,6 +670,8 @@ permalink: /lecture/electronic-structure/
     </div>
   </div>
 </section>
+
+{% include lecture-cas-roots-lab.html %}
 
 <p class="lecture-story-transition">A multiconfigurational treatment represents several electronic occupations explicitly, but the size of that space grows rapidly. Method selection therefore depends on the physical character of the state and the observable—not on the numerical sophistication of a method alone.</p>
 

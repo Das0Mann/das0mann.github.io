@@ -521,7 +521,7 @@ permalink: /lecture/magnetic-resonance/
   \[
   \Delta\nu_\mathrm{FWHM}
   =
-  \frac{1}{\pi T_2}.
+  \frac{1}{\pi T_2}\quad\text{(homogeneous Lorentzian absorption line)}.
   \]
   </div>
 
