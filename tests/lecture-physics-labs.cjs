@@ -1,7 +1,7 @@
 "use strict";
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
-const {toyCAS,jacobiSymmetric,pairHamiltonian,commutatorLiouvillian,singleSpinGenerator}=require("../assets/js/lecture-physics-labs.js");
+const {toyCAS,jacobiSymmetric,pairHamiltonian,spinOneHamiltonian,commutatorLiouvillian,singleSpinGenerator}=require("../assets/js/lecture-physics-labs.js");
 const close=(a,b,tol=1e-9)=>assert(Math.abs(a-b)<tol,"Expected "+a+" ≈ "+b);
 const C=toyCAS(.9);
 assert.equal(C.length,3);for(let i=1;i<3;i++)assert(C[i].energy>C[i-1].energy);
@@ -16,6 +16,12 @@ const e=jacobiSymmetric(H).map(x=>x.energy);
 const Hgap=pairHamiltonian("ee",2,0,0);close(Hgap[1][1],1);close(Hgap[2][2],-1);
 const Hn=pairHamiltonian("en",0,2,4);close(Hn[0][0],1);close(Hn[1][1],-1);close(Hn[1][2],1);
 const HD=pairHamiltonian("ee",0,0,2);close(HD[0][0],1);close(HD[1][1],-1);close(HD[1][2],-1);
+const spinOne=spinOneHamiltonian(0,3,.5);
+close(spinOne[0][0],1);close(spinOne[1][1],-2);close(spinOne[2][2],1);
+close(spinOne[0][2],.5);close(spinOne[2][0],.5);
+const spinOneE=jacobiSymmetric(spinOne).map(x=>x.energy);
+[-2,.5,1.5].forEach((v,i)=>close(spinOneE[i],v));
+assert.equal(commutatorLiouvillian(spinOne).length,9);
 const L=commutatorLiouvillian(H);
 assert.equal(L.length,16);assert.equal(L[0].length,16);
 // Column-major and row-major are distinct. This module declares row-major:
