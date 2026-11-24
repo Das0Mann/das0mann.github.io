@@ -49,6 +49,9 @@
 {% if page.url contains '/lecture/' %}
 <script src="{{ site.url }}/assets/js/lecture-toc.js" defer></script>
 <script src="{{ site.url }}/assets/js/lecture-refresh.js" defer></script>
+{% if page.url == "/lecture/electronic-structure/" or page.url == "/lecture/spin-hamiltonians/" or page.url == "/lecture/spin-dynamics/" or page.url == "/lecture/open-systems/" %}
+<script src="{{ site.url }}/assets/js/lecture-physics-labs.js" defer></script>
+{% endif %}
 {% endif %}
 </body>
 </html>
