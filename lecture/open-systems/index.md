@@ -132,6 +132,8 @@ permalink: /lecture/open-systems/
   </aside>
 </section>
 
+{% include lecture-relaxation-matrix-lab.html %}
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">03</span>
