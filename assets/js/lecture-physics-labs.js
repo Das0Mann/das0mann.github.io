@@ -108,13 +108,16 @@ function initSpin(panel){
   else {m=commutatorLiouvillian(H);basis=labels.flatMap((a)=>labels.map(b=>a+"|"+b));}
   renderMatrix(get("[data-spin-matrix]"),m,basis,view==="l");
   const nev=m.flat().filter(v=>(typeof v==="number"?Math.abs(v):Math.abs(v.re)+Math.abs(v.im))>EPS).length;
-  const evals=jacobiSymmetric(H).map(x=>short(x.energy)).join(", ");
+  const eig=jacobiSymmetric(H);
+  const evals=eig.map(x=>short(x.energy)).join(", ");
+  const sWeights=kind==="ee"?eig.map(x=>((x.coefficients[1]-x.coefficients[2])**2/2*100).toFixed(1)+"%").join(", "):"";
+  const gaps=eig.slice(1).map((x,i)=>short(x.energy-eig[i].energy)).join(", ");
   const od=short(H[1][2]);
   const eq=kind==="en"?
     "H/ℏ = (Δω/2)(Sz − Iz) + A⊥(SxIx + SyIy) + A∥SzIz; Δω is an illustrative rotating-frame detuning.":
     "H/ℏ = (Δω/2)(S1z − S2z) + J S1·S2 + d(3S1zS2z − S1·S2); common Zeeman frequency removed.";
   get("[data-spin-equation]").textContent=eq;
-  const insight="Non-zero entries: "+nev+" of "+m.length*m.length+". The |↑↓⟩↔|↓↑⟩ coupling is "+od+" rad/µs. Eigenfrequencies of H/ℏ: "+evals+". "+
+  const insight="Non-zero entries: "+nev+" of "+m.length*m.length+". The |↑↓⟩↔|↓↑⟩ coupling is "+od+" rad/µs. Eigenfrequencies of H/ℏ: "+evals+"; adjacent energy gaps /ℏ: "+gaps+" rad/µs. "+(kind==="ee"?"Singlet weights of the four eigenstates (in ascending energy order): "+sWeights+". ":"")+
     (kind==="ee"?"Exchange and axial dipolar terms change the singlet–triplet splitting; unequal Zeeman frequencies can mix S and T₀.":"A⊥ creates electron–nuclear flip-flop terms, whereas A∥ changes only diagonal energies in this collinear example.")+
     (view==="l"?" The 16 rows index density-matrix ket–bra pairs, not additional physical energy levels.":"");
   get("[data-spin-insight]").textContent=insight;
