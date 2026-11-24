@@ -97,6 +97,8 @@ permalink: /lecture/electronic-structure/
     <span>most electronic-structure methods are not different physical theories. They are different approximations to the same many-electron quantum problem.</span>
   </aside>
 </section>
+{% include lecture-potential-lab.html %}
+
 
 <p class="lecture-story-transition">The fixed-geometry Hamiltonian is the physical starting point, but solving it directly is generally impractical. The first simplification is a finite set of one-electron functions in which electronic states can be represented.</p>
 
@@ -185,6 +187,8 @@ permalink: /lecture/electronic-structure/
     <p>The orbitals determine an electron density, but that density also determines the effective one-electron potential in which the orbitals are solved. An SCF calculation therefore iterates <strong>orbitals → density → effective potential → new orbitals</strong> until the input and output densities agree within a chosen threshold. Failure to converge is not just a software nuisance: it can signal near-degeneracy, competing electronic states or an unstable reference solution.</p>
   </details>
 </section>
+
+{% include lecture-approximation-map.html %}
 
 <p class="lecture-story-transition">The same electronic Hamiltonian can be treated with different representations. Hartree–Fock provides the single-determinant reference, density-functional theory replaces the correlated problem with an effective density formulation, and post-HF or multiconfigurational approaches recover correlation when needed. The derivations are available below; the main storyline continues with their practical consequences.</p>
 
@@ -678,6 +682,8 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
+
+{% include lecture-cas-roots-lab.html %}
 
 <section class="lecture-section">
   <div class="lecture-section-head">
