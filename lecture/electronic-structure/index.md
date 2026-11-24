@@ -521,7 +521,7 @@ permalink: /lecture/electronic-structure/
 
   <div class="lecture-equation">
   \[
-  E_\mathrm{CASSCF}
+  E_0^\mathrm{CASSCF}
   =
   \min_{\mathbf C,\boldsymbol\kappa}
   \frac{
@@ -534,6 +534,8 @@ permalink: /lecture/electronic-structure/
   }.
   \]
   </div>
+  <p>The expression above refers to minimizing the lowest root in the chosen symmetry sector. Excited roots require orthogonality to lower roots and a root-specific or state-averaged optimization; a single unconstrained global minimum cannot select an excited state.</p>
+
   <p class="lesson-equation-meaning">Both orbital shapes and configuration weights are varied. The active space must therefore be chosen based on the states and bond rearrangements one intends to describe.</p>
 
   <p>Complete Active Space SCF (CASSCF) makes this tractable by dividing the orbitals into three groups:</p>
