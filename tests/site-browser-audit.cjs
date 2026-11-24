@@ -111,6 +111,12 @@ const server=http.createServer((req,res)=>{
            await lab.locator("[data-spin-view]").selectOption("l");
            assert.equal(await lab.locator("tbody tr").count(),16,"Two-spin Liouvillian must have sixteen rows");
            await lab.locator("[data-spin-view]").selectOption("h");
+           await lab.locator("[data-spin-kind]").selectOption("s1");
+           assert.equal(await lab.locator("tbody tr").count(),3,"Spin-1 Hamiltonian must have three basis states");
+           await lab.locator("[data-spin-view]").selectOption("l");
+           assert.equal(await lab.locator("tbody tr").count(),9,"Spin-1 Liouvillian must have nine basis elements");
+           await lab.locator("[data-spin-kind]").selectOption("ee");
+           await lab.locator("[data-spin-view]").selectOption("h");
            await lab.scrollIntoViewIfNeeded();
            await page.screenshot({path:path.join(OUT,id+"-physics-matrix-"+width+".png"),animations:"disabled"});
          }
