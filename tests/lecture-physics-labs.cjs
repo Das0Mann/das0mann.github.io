@@ -20,7 +20,7 @@ const L=commutatorLiouvillian(H);
 assert.equal(L.length,16);assert.equal(L[0].length,16);
 // Column-major and row-major are distinct. This module declares row-major:
 // index (r,c) = 4r + c. Verify the commutator entry and skew-Hermiticity.
-close(L[1][2].im,0);
+close(L[1][2].im,1); // The exchange flip-flop couples the bra index of this density-matrix element.
 for(let i=0;i<16;i++)for(let j=0;j<16;j++){
  close(L[i][j].re,0);close(L[i][j].im,L[j][i].im);
 }
