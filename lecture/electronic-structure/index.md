@@ -485,7 +485,7 @@ permalink: /lecture/electronic-structure/
     <div><span>MP2 · roughly \(N^5\)</span><p>Cheap correlated baseline. Useful when the HF reference is qualitatively good and near-degeneracy is weak.</p></div>
     <div><span>CCSD · roughly \(N^6\)</span><p>Robust dynamical correlation for single-reference states; significantly more expensive in memory and integral transformations.</p></div>
     <div><span>CCSD(T) · roughly \(N^7\)</span><p>Often the benchmark choice for small-to-medium single-reference molecules, but not a cure for genuine multireference character.</p></div>
-    <div><span>Full CI · combinatorial/exponential</span><p>Exact diagonalization within a finite orbital basis. It is a definition of the basis-set limit, not a generally scalable molecular method.</p></div>
+    <div><span>Full CI · combinatorial/exponential</span><p>Exact diagonalization within a finite orbital basis. It gives the exact solution in the chosen finite one-particle basis; reaching the complete-basis limit requires a separate basis-set convergence study.</p></div>
   </div>
 
   <aside class="teacher-note">
@@ -571,6 +571,16 @@ permalink: /lecture/electronic-structure/
     <strong>The active space is part of the model.</strong>
     <span>Include the orbitals needed to represent the physical near-degeneracy: breaking/forming bonds, radical orbitals, relevant metal \(d\) shells, ligand orbitals, or the orbitals participating in low-lying excited states. A large but physically wrong active space is not automatically safer than a smaller well-motivated one.</span>
   </aside>
+
+  <p>Within a fixed spatial-and-spin symmetry, diagonalizing the active-space CI Hamiltonian gives several <em>roots</em>. A root is an electronic eigenstate, not an individual determinant: each root has its own coefficients over the same CSF basis. CAS(2,2), for example, has three singlet CSFs and hence three singlet CI roots in the full active-space singlet sector; triplets belong to a different spin-symmetry sector.</p>
+  <div class="lecture-equation">
+  \[
+  \sum_J \langle\Phi_I|\hat H|\Phi_J\rangle c_{Jk}=E_kc_{Ik},
+  \qquad
+  E_{\mathrm{SA}}=\sum_k w_k E_k,\quad w_k\ge0,\quad\sum_k w_k=1.
+  \]
+  </div>
+  <p class="lesson-equation-meaning">State-specific CASSCF optimizes orbitals for a selected root. State-averaged CASSCF optimizes a weighted energy across selected roots, yielding shared orbitals but distinct CI eigenvectors and energies. Different spin multiplicities and spatial symmetries must be handled according to the electronic-structure program's state-averaging capabilities.</p>
 
   <details class="lecture-details">
     <summary>Why use state-averaged CASSCF?</summary>
@@ -659,6 +669,8 @@ permalink: /lecture/electronic-structure/
   </div>
 </section>
 
+{% include lecture-cas-roots-lab.html %}
+
 <p class="lecture-story-transition">A multiconfigurational treatment represents several electronic occupations explicitly, but the size of that space grows rapidly. Method selection therefore depends on the physical character of the state and the observable—not on the numerical sophistication of a method alone.</p>
 
 <section class="lecture-section lecture-method-decision">
@@ -682,8 +694,6 @@ permalink: /lecture/electronic-structure/
   </aside>
 </section>
 
-
-{% include lecture-cas-roots-lab.html %}
 
 <section class="lecture-section">
   <div class="lecture-section-head">
