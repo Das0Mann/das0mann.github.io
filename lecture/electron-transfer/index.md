@@ -58,9 +58,7 @@ permalink: /lecture/electron-transfer/
   </div>
 
 
-  <p>For an electron-transfer problem it is often useful to work with diabatic states: states whose charge localization retains a clear chemical meaning as the nuclei move. Schematically,</p>
-
-  <p>The notation \(\lvert D\rangle\rightleftharpoons\lvert A\rangle\) simply labels the donor- and acceptor-localized charge states; the arrow is not a kinetic-rate equation. A two-state Hamiltonian makes the physical coupling explicit:</p>
+  <p>We first define two diabatic states at the same fixed nuclear geometry: \(\lvert D\rangle\) with charge predominantly localized on the donor and \(\lvert A\rangle\) with the transferred charge predominantly on the acceptor. Their energies form the diagonal of a two-state electronic Hamiltonian, while the off-diagonal coupling describes mixing between those charge-localized states:</p>
 
 
 
@@ -70,12 +68,12 @@ permalink: /lecture/electron-transfer/
   =
   \begin{pmatrix}
   E_D & V\\
-  V & E_A
+  V^* & E_A
   \end{pmatrix}.
   \]
   </div>
 
-  <p>The diagonal energies \(E_D\) and \(E_A\) are the diabatic energies at the specified nuclear geometry, while \(V\) is the electronic coupling between them. Neither a symbol for electron transfer nor a coupling by itself gives the transfer rate: the nuclear reorganization, driving force and available vibrational/thermal configurations must also be accounted for.</p>
+  <p>The diagonal energies \(E_D\) and \(E_A\) are the diabatic energies at the specified nuclear geometry, while \(V\) is the electronic coupling between them. Hermiticity requires the conjugate \(V^*\) in the transposed position; for an isolated two-state model a phase convention can usually make \(V\) real. Neither a symbol for electron transfer nor a coupling by itself gives the transfer rate: the nuclear reorganization, driving force and available vibrational/thermal configurations must also be accounted for.</p>
 
   <p>Weak coupling gives predominantly localized donor and acceptor states and leads naturally to a nonadiabatic golden-rule description. Strong coupling mixes the states substantially and can push the problem toward the adiabatic regime.</p>
 
