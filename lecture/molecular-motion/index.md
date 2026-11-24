@@ -105,6 +105,8 @@ permalink: /lecture/molecular-motion/
   \]
   </div>
 
+  <p>The linear derivative approximation applies only to sufficiently small displacements around the selected reference geometry. Large conformational switches, radical relocation, bond rearrangements or abrupt changes in electronic-state character generally require explicit parameter evaluation on representative structures rather than extrapolation of one local gradient. For anisotropic interactions the reference frame must be treated consistently throughout the trajectory.</p>
+
   <p>This makes the multiscale connection explicit: molecular motion supplies \(\delta R_a(t)\), electronic structure supplies the derivatives or snapshot values of \(p_k\), and spin dynamics propagates the resulting time-dependent operator.</p>
 
   <aside class="teacher-note">
