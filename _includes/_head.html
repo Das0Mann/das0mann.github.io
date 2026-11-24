@@ -28,6 +28,9 @@
 <link rel="stylesheet" href="{{ site.url }}/assets/css/iconic.css">
 {% if page.url contains '/lecture/' and page.url != '/lecture/' %}
 <link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-system.css">
+{% if page.url == "/lecture/electronic-structure/" or page.url == "/lecture/spin-hamiltonians/" or page.url == "/lecture/spin-dynamics/" or page.url == "/lecture/open-systems/" %}
+<link rel="stylesheet" href="{{ site.url }}/assets/css/lecture-physics-labs.css">
+{% endif %}
 {% endif %}
 <link rel="stylesheet" href="{{ site.url }}/assets/css/site-coherence.css">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/privacy-consent.css">
