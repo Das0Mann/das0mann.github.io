@@ -11,6 +11,7 @@ on:
       - 'assets/css/lecture-polish.css'
       - 'assets/css/lecture-audit.css'
       - 'assets/css/lecture-system.css'
+      - 'assets/css/lecture-physics-labs.css'
       - 'assets/css/lecture-cidnp.css'
       - 'assets/css/site-coherence.css'
       - 'tests/site-integrity.cjs'
@@ -85,6 +86,8 @@ jobs:
         run: |
           node tests/lecture-sensitivity.cjs
           node tests/lecture-presets.cjs
+      - name: Verify active-space roots, Hamiltonian and relaxation invariants
+        run: node tests/lecture-physics-labs.cjs
       - name: Check all source templates and shared CSS
         run: node tests/site-integrity.cjs
       - name: Build Jekyll pages before review
@@ -95,6 +98,8 @@ jobs:
 
       - name: Inspect rendered lecture HTML and homepage entry points
         run: node tests/lecture-rendered.cjs
+      - name: Verify rendered active-space and spin-operator laboratories
+        run: node tests/lecture-physics-labs.cjs --rendered
       - name: Verify rendered editorial disclosures on all original lectures
         run: node tests/lecture-audit.cjs --rendered
       - name: Verify continuous narrative and CSS migration in rendered chapters
