@@ -471,6 +471,8 @@ permalink: /lecture/spin-hamiltonians/
   </div>
 </section>
 
+{% include lecture-spin-matrix-lab.html %}
+
 <section class="lecture-section">
   <div class="lecture-section-head">
     <span class="lecture-index">05</span>
